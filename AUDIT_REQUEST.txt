@@ -1,0 +1,66 @@
+AUDIT REQUEST - ITALIAN CULTURAL FLUENCY GUIDE
+===============================================
+
+You are an expert in Italian culture, etiquette, and social norms. Please audit this "Cultural Fluency Guide" for an Italian language learning app. 
+
+Review for:
+1. ACCURACY - Are these rules actually true? Any stereotypes or misconceptions?
+2. COMPLETENESS - What's missing? What other essential rules should be included?
+3. REGIONAL VARIATIONS - Do these apply everywhere in Italy or just certain regions?
+4. PHRASE CORRECTNESS - Are the Italian phrases natural and correctly translated?
+5. SEVERITY LEVELS - Are the consequences accurate or exaggerated?
+
+---
+
+THE 11 RULES:
+
+1. Cappuccino Curfew - Never order cappuccino after 11 AM
+   Consequence: "Barista might ask 'Sicuro?'"
+
+2. Stand at the Bar - Don't sit at tables for quick coffee (3x price)
+   Consequence: "Coperto charge €2-5 + higher prices"
+
+3. Compliment the Food - Always praise food someone cooked
+   Consequence: "Host might think you didn't like it"
+
+4. No Cheese on Fish - Never put parmesan on seafood pasta
+   Consequence: "The waiter might physically stop you. Seriously."
+
+5. Bread is for Sauce (Scarpetta) - Use bread to mop sauce, not with butter before meal
+
+6. Eat at Italian Time - Lunch 1-2:30 PM, Dinner 8-10 PM
+
+7. Respect the Riposo - Everything closes 1-4 PM
+
+8. Say Buongiorno First - Greet when entering ANY shop
+
+9. Tu vs Lei - Use Lei with elderly/professionals, tu with friends
+
+10. Don't Touch the Produce - At markets, they select; you receive
+    Consequence: "Vendor gently asserts their role: 'Lascio fare a me'"
+
+11. La Bella Figura - Present your best self, dress well
+
+---
+
+PHRASES TO VERIFY:
+
+- "Il pesce non si tocca con il formaggio" (Fish isn't touched with cheese)
+- "Posso darle del tu?" (May I use tu with you?)
+- "Scusi la scompigliata" (Excuse the mess/disarray)
+- "Lascio fare a me" (Let me handle it)
+- "Da leccarsi i baffi" (Lip-smacking good)
+- "Un chilo di pesche, per favore" (A kilo of peaches, please)
+- "Le scelga lei le migliori" (You choose the best ones)
+- "Complimenti alla cuoca" (Compliments to the cook)
+- "Al banco, grazie" (At the counter, thanks)
+- "Permesso, faccio la scarpetta?" (Excuse me, may I do the scarpetta?)
+
+---
+
+Provide your audit as JSON with:
+- overall_score (1-10)
+- accurate_rules[] 
+- needs_correction[] (with suggested fixes)
+- missing_rules[] (essential rules not covered)
+- regional_notes[]
