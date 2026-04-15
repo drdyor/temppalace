@@ -1,0 +1,1601 @@
+[
+  {
+    "id": "entrance-hall",
+    "name": "Entrance Hall",
+    "nameIt": "L'Ingresso",
+    "grammarFocus": "essere & avere (to be & to have)",
+    "description": "Step into the grand hall and master essere and avere through every element you see.",
+    "image": "/palace/rooms/entrance-hall.jpg",
+    "stats": {
+      "masculine": 7,
+      "feminine": 13,
+      "verbs": 2
+    },
+    "words": [
+      {
+        "word": "uomo",
+        "x": 25,
+        "y": 35,
+        "g": "m"
+      },
+      {
+        "word": "donna",
+        "x": 35,
+        "y": 35,
+        "g": "f"
+      },
+      {
+        "word": "famiglia",
+        "x": 30,
+        "y": 25,
+        "g": "f"
+      },
+      {
+        "word": "porta",
+        "x": 15,
+        "y": 50,
+        "g": "f"
+      },
+      {
+        "word": "finestra",
+        "x": 70,
+        "y": 30,
+        "g": "f"
+      },
+      {
+        "word": "scala",
+        "x": 50,
+        "y": 60,
+        "g": "f"
+      },
+      {
+        "word": "specchio",
+        "x": 80,
+        "y": 45,
+        "g": "m"
+      },
+      {
+        "word": "lampadario",
+        "x": 50,
+        "y": 15,
+        "g": "m"
+      },
+      {
+        "word": "tavolo",
+        "x": 85,
+        "y": 75,
+        "g": "m"
+      },
+      {
+        "word": "sedia",
+        "x": 75,
+        "y": 70,
+        "g": "f"
+      },
+      {
+        "word": "pianta",
+        "x": 20,
+        "y": 70,
+        "g": "f"
+      },
+      {
+        "word": "vaso",
+        "x": 22,
+        "y": 65,
+        "g": "m"
+      },
+      {
+        "word": "quadro",
+        "x": 60,
+        "y": 25,
+        "g": "m"
+      },
+      {
+        "word": "parete",
+        "x": 45,
+        "y": 20,
+        "g": "f"
+      },
+      {
+        "word": "pavimento",
+        "x": 50,
+        "y": 85,
+        "g": "m"
+      },
+      {
+        "word": "soffitto",
+        "x": 50,
+        "y": 5,
+        "g": "m"
+      },
+      {
+        "word": "luce",
+        "x": 40,
+        "y": 15,
+        "g": "f"
+      },
+      {
+        "word": "ombra",
+        "x": 60,
+        "y": 15,
+        "g": "f"
+      },
+      {
+        "word": "entrare",
+        "x": 10,
+        "y": 50,
+        "g": "v"
+      },
+      {
+        "word": "uscire",
+        "x": 90,
+        "y": 50,
+        "g": "v"
+      }
+    ]
+  },
+  {
+    "id": "kitchen",
+    "name": "Kitchen",
+    "nameIt": "La Cucina",
+    "grammarFocus": "fare & daily routines",
+    "description": "La cucina della villa - where every object teaches the verb 'fare' and daily activities.",
+    "image": "/palace/rooms/kitchen.jpg",
+    "stats": {
+      "masculine": 12,
+      "feminine": 18,
+      "verbs": 5
+    },
+    "words": [
+      {
+        "word": "cucina",
+        "x": 50,
+        "y": 50,
+        "g": "f"
+      },
+      {
+        "word": "forno",
+        "x": 75,
+        "y": 55,
+        "g": "m"
+      },
+      {
+        "word": "frigorifero",
+        "x": 85,
+        "y": 40,
+        "g": "m"
+      },
+      {
+        "word": "lavandino",
+        "x": 70,
+        "y": 65,
+        "g": "m"
+      },
+      {
+        "word": "tavolo",
+        "x": 30,
+        "y": 70,
+        "g": "m"
+      },
+      {
+        "word": "sedia",
+        "x": 25,
+        "y": 75,
+        "g": "f"
+      },
+      {
+        "word": "piatto",
+        "x": 35,
+        "y": 65,
+        "g": "m"
+      },
+      {
+        "word": "bicchiere",
+        "x": 40,
+        "y": 63,
+        "g": "m"
+      },
+      {
+        "word": "tazza",
+        "x": 38,
+        "y": 68,
+        "g": "f"
+      },
+      {
+        "word": "coltello",
+        "x": 72,
+        "y": 60,
+        "g": "m"
+      },
+      {
+        "word": "forchetta",
+        "x": 74,
+        "y": 60,
+        "g": "f"
+      },
+      {
+        "word": "cucchiaio",
+        "x": 76,
+        "y": 60,
+        "g": "m"
+      },
+      {
+        "word": "pentola",
+        "x": 78,
+        "y": 50,
+        "g": "f"
+      },
+      {
+        "word": "padella",
+        "x": 80,
+        "y": 52,
+        "g": "f"
+      },
+      {
+        "word": "cibo",
+        "x": 35,
+        "y": 60,
+        "g": "m"
+      },
+      {
+        "word": "acqua",
+        "x": 42,
+        "y": 62,
+        "g": "f"
+      },
+      {
+        "word": "pane",
+        "x": 32,
+        "y": 62,
+        "g": "m"
+      },
+      {
+        "word": "vino",
+        "x": 45,
+        "y": 65,
+        "g": "m"
+      },
+      {
+        "word": "latte",
+        "x": 88,
+        "y": 35,
+        "g": "m"
+      },
+      {
+        "word": "formaggio",
+        "x": 86,
+        "y": 38,
+        "g": "m"
+      },
+      {
+        "word": "frutta",
+        "x": 88,
+        "y": 42,
+        "g": "f"
+      },
+      {
+        "word": "verdura",
+        "x": 87,
+        "y": 45,
+        "g": "f"
+      },
+      {
+        "word": "carne",
+        "x": 85,
+        "y": 48,
+        "g": "f"
+      },
+      {
+        "word": "pesce",
+        "x": 83,
+        "y": 50,
+        "g": "m"
+      },
+      {
+        "word": "uovo",
+        "x": 89,
+        "y": 40,
+        "g": "m"
+      },
+      {
+        "word": "sale",
+        "x": 68,
+        "y": 62,
+        "g": "m"
+      },
+      {
+        "word": "pepe",
+        "x": 69,
+        "y": 62,
+        "g": "m"
+      },
+      {
+        "word": "olio",
+        "x": 67,
+        "y": 60,
+        "g": "m"
+      },
+      {
+        "word": "zucchero",
+        "x": 66,
+        "y": 63,
+        "g": "m"
+      },
+      {
+        "word": "farina",
+        "x": 65,
+        "y": 65,
+        "g": "f"
+      },
+      {
+        "word": "pasta",
+        "x": 64,
+        "y": 67,
+        "g": "f"
+      },
+      {
+        "word": "riso",
+        "x": 63,
+        "y": 69,
+        "g": "m"
+      },
+      {
+        "word": "cucinare",
+        "x": 50,
+        "y": 45,
+        "g": "v"
+      },
+      {
+        "word": "mangiare",
+        "x": 30,
+        "y": 55,
+        "g": "v"
+      },
+      {
+        "word": "bere",
+        "x": 40,
+        "y": 55,
+        "g": "v"
+      }
+    ]
+  },
+  {
+    "id": "bedroom",
+    "name": "Bedroom",
+    "nameIt": "La Camera",
+    "grammarFocus": "family & descriptions",
+    "description": "Learn family members and master adjective agreement in the comfort of the bedroom.",
+    "image": "/palace/rooms/bedroom.jpg",
+    "stats": {
+      "masculine": 10,
+      "feminine": 15,
+      "verbs": 3
+    },
+    "words": [
+      {
+        "word": "letto",
+        "x": 50,
+        "y": 60,
+        "g": "m"
+      },
+      {
+        "word": "cuscino",
+        "x": 45,
+        "y": 50,
+        "g": "m"
+      },
+      {
+        "word": "coperta",
+        "x": 55,
+        "y": 65,
+        "g": "f"
+      },
+      {
+        "word": "lenzuolo",
+        "x": 50,
+        "y": 55,
+        "g": "m"
+      },
+      {
+        "word": "armadio",
+        "x": 80,
+        "y": 45,
+        "g": "m"
+      },
+      {
+        "word": "comodino",
+        "x": 30,
+        "y": 55,
+        "g": "m"
+      },
+      {
+        "word": "lampada",
+        "x": 32,
+        "y": 50,
+        "g": "f"
+      },
+      {
+        "word": "orologio",
+        "x": 28,
+        "y": 52,
+        "g": "m"
+      },
+      {
+        "word": "specchio",
+        "x": 75,
+        "y": 30,
+        "g": "m"
+      },
+      {
+        "word": "finestra",
+        "x": 20,
+        "y": 35,
+        "g": "f"
+      },
+      {
+        "word": "tenda",
+        "x": 18,
+        "y": 40,
+        "g": "f"
+      },
+      {
+        "word": "moquette",
+        "x": 50,
+        "y": 80,
+        "g": "f"
+      },
+      {
+        "word": "parete",
+        "x": 60,
+        "y": 25,
+        "g": "f"
+      },
+      {
+        "word": "soffitto",
+        "x": 50,
+        "y": 10,
+        "g": "m"
+      },
+      {
+        "word": "pavimento",
+        "x": 50,
+        "y": 90,
+        "g": "m"
+      },
+      {
+        "word": "dormire",
+        "x": 50,
+        "y": 45,
+        "g": "v"
+      },
+      {
+        "word": "svegliarsi",
+        "x": 30,
+        "y": 45,
+        "g": "v"
+      },
+      {
+        "word": "alzarsi",
+        "x": 70,
+        "y": 45,
+        "g": "v"
+      }
+    ]
+  },
+  {
+    "id": "bathroom",
+    "name": "Bathroom",
+    "nameIt": "Il Bagno",
+    "grammarFocus": "reflexive verbs & hygiene",
+    "description": "Master reflexive verbs like 'lavarsi' while learning hygiene vocabulary.",
+    "image": "/palace/rooms/bathroom.jpg",
+    "stats": {
+      "masculine": 8,
+      "feminine": 12,
+      "verbs": 4
+    },
+    "words": [
+      {
+        "word": "bagno",
+        "x": 50,
+        "y": 50,
+        "g": "m"
+      },
+      {
+        "word": "doccia",
+        "x": 75,
+        "y": 40,
+        "g": "f"
+      },
+      {
+        "word": "vasca",
+        "x": 80,
+        "y": 50,
+        "g": "f"
+      },
+      {
+        "word": "lavandino",
+        "x": 25,
+        "y": 45,
+        "g": "m"
+      },
+      {
+        "word": "specchio",
+        "x": 25,
+        "y": 30,
+        "g": "m"
+      },
+      {
+        "word": "water",
+        "x": 85,
+        "y": 65,
+        "g": "m"
+      },
+      {
+        "word": "bidet",
+        "x": 80,
+        "y": 70,
+        "g": "m"
+      },
+      {
+        "word": "asciugamano",
+        "x": 70,
+        "y": 35,
+        "g": "m"
+      },
+      {
+        "word": "sapone",
+        "x": 28,
+        "y": 42,
+        "g": "m"
+      },
+      {
+        "word": "shampoo",
+        "x": 72,
+        "y": 35,
+        "g": "m"
+      },
+      {
+        "word": "spazzolino",
+        "x": 22,
+        "y": 40,
+        "g": "m"
+      },
+      {
+        "word": "dentifricio",
+        "x": 24,
+        "y": 38,
+        "g": "m"
+      },
+      {
+        "word": "pettine",
+        "x": 30,
+        "y": 38,
+        "g": "m"
+      },
+      {
+        "word": "phon",
+        "x": 35,
+        "y": 35,
+        "g": "m"
+      },
+      {
+        "word": "medicina",
+        "x": 15,
+        "y": 50,
+        "g": "f"
+      },
+      {
+        "word": "armadietto",
+        "x": 10,
+        "y": 45,
+        "g": "m"
+      },
+      {
+        "word": "lavarsi",
+        "x": 25,
+        "y": 50,
+        "g": "v"
+      },
+      {
+        "word": "farsi la doccia",
+        "x": 75,
+        "y": 50,
+        "g": "v"
+      },
+      {
+        "word": "pettinarsi",
+        "x": 30,
+        "y": 45,
+        "g": "v"
+      },
+      {
+        "word": "spazzolarsi",
+        "x": 22,
+        "y": 45,
+        "g": "v"
+      }
+    ]
+  },
+  {
+    "id": "living-room",
+    "name": "Living Room",
+    "nameIt": "Il Soggiorno",
+    "grammarFocus": "furniture & leisure",
+    "description": "Relax and learn furniture vocabulary while practicing leisure activities.",
+    "image": "/palace/rooms/living-room.jpg",
+    "stats": {
+      "masculine": 10,
+      "feminine": 12,
+      "verbs": 3
+    },
+    "words": [
+      {
+        "word": "soggiorno",
+        "x": 50,
+        "y": 50,
+        "g": "m"
+      },
+      {
+        "word": "divano",
+        "x": 50,
+        "y": 65,
+        "g": "m"
+      },
+      {
+        "word": "poltrona",
+        "x": 30,
+        "y": 60,
+        "g": "f"
+      },
+      {
+        "word": "tavolino",
+        "x": 50,
+        "y": 75,
+        "g": "m"
+      },
+      {
+        "word": "tappeto",
+        "x": 50,
+        "y": 85,
+        "g": "m"
+      },
+      {
+        "word": "televisione",
+        "x": 70,
+        "y": 40,
+        "g": "f"
+      },
+      {
+        "word": "tv",
+        "x": 70,
+        "y": 35,
+        "g": "f"
+      },
+      {
+        "word": "radio",
+        "x": 75,
+        "y": 45,
+        "g": "f"
+      },
+      {
+        "word": "libreria",
+        "x": 20,
+        "y": 45,
+        "g": "f"
+      },
+      {
+        "word": "libro",
+        "x": 18,
+        "y": 50,
+        "g": "m"
+      },
+      {
+        "word": "quadro",
+        "x": 60,
+        "y": 25,
+        "g": "m"
+      },
+      {
+        "word": "tenda",
+        "x": 25,
+        "y": 30,
+        "g": "f"
+      },
+      {
+        "word": "lampada",
+        "x": 40,
+        "y": 35,
+        "g": "f"
+      },
+      {
+        "word": "finestra",
+        "x": 30,
+        "y": 25,
+        "g": "f"
+      },
+      {
+        "word": "porta",
+        "x": 85,
+        "y": 50,
+        "g": "f"
+      },
+      {
+        "word": "parete",
+        "x": 55,
+        "y": 20,
+        "g": "f"
+      },
+      {
+        "word": "soffitto",
+        "x": 50,
+        "y": 10,
+        "g": "m"
+      },
+      {
+        "word": "pavimento",
+        "x": 50,
+        "y": 90,
+        "g": "m"
+      },
+      {
+        "word": "guardare",
+        "x": 70,
+        "y": 50,
+        "g": "v"
+      },
+      {
+        "word": "leggere",
+        "x": 20,
+        "y": 55,
+        "g": "v"
+      },
+      {
+        "word": "riposare",
+        "x": 50,
+        "y": 55,
+        "g": "v"
+      }
+    ]
+  },
+  {
+    "id": "garden",
+    "name": "Garden",
+    "nameIt": "Il Giardino",
+    "grammarFocus": "nature & weather",
+    "description": "Explore nature vocabulary and learn to describe the weather and seasons.",
+    "image": "/palace/rooms/garden.jpg",
+    "stats": {
+      "masculine": 8,
+      "feminine": 10,
+      "verbs": 2
+    },
+    "words": [
+      {
+        "word": "giardino",
+        "x": 50,
+        "y": 50,
+        "g": "m"
+      },
+      {
+        "word": "albero",
+        "x": 20,
+        "y": 35,
+        "g": "m"
+      },
+      {
+        "word": "fiore",
+        "x": 30,
+        "y": 70,
+        "g": "m"
+      },
+      {
+        "word": "pianta",
+        "x": 70,
+        "y": 65,
+        "g": "f"
+      },
+      {
+        "word": "erba",
+        "x": 50,
+        "y": 80,
+        "g": "f"
+      },
+      {
+        "word": "cielo",
+        "x": 50,
+        "y": 15,
+        "g": "m"
+      },
+      {
+        "word": "sole",
+        "x": 60,
+        "y": 20,
+        "g": "m"
+      },
+      {
+        "word": "nuvola",
+        "x": 40,
+        "y": 25,
+        "g": "f"
+      },
+      {
+        "word": "vento",
+        "x": 80,
+        "y": 30,
+        "g": "m"
+      },
+      {
+        "word": "pioggia",
+        "x": 20,
+        "y": 25,
+        "g": "f"
+      },
+      {
+        "word": "neve",
+        "x": 25,
+        "y": 20,
+        "g": "f"
+      },
+      {
+        "word": "strada",
+        "x": 50,
+        "y": 90,
+        "g": "f"
+      },
+      {
+        "word": "via",
+        "x": 45,
+        "y": 85,
+        "g": "f"
+      },
+      {
+        "word": "campo",
+        "x": 80,
+        "y": 75,
+        "g": "m"
+      },
+      {
+        "word": "zona",
+        "x": 15,
+        "y": 60,
+        "g": "f"
+      },
+      {
+        "word": "area",
+        "x": 85,
+        "y": 55,
+        "g": "f"
+      },
+      {
+        "word": "spazio",
+        "x": 75,
+        "y": 40,
+        "g": "m"
+      },
+      {
+        "word": "crescere",
+        "x": 30,
+        "y": 50,
+        "g": "v"
+      },
+      {
+        "word": "fiorire",
+        "x": 35,
+        "y": 60,
+        "g": "v"
+      }
+    ]
+  },
+  {
+    "id": "library",
+    "name": "Knowledge Hub",
+    "nameIt": "Lo Studio",
+    "grammarFocus": "regular -ARE verbs",
+    "description": "Master the pattern that unlocks hundreds of Italian verbs through study and practice.",
+    "image": "/palace/rooms/library.jpg",
+    "stats": {
+      "masculine": 12,
+      "feminine": 10,
+      "verbs": 8
+    },
+    "words": [
+      {
+        "word": "studio",
+        "x": 50,
+        "y": 50,
+        "g": "m"
+      },
+      {
+        "word": "libreria",
+        "x": 20,
+        "y": 40,
+        "g": "f"
+      },
+      {
+        "word": "libro",
+        "x": 18,
+        "y": 45,
+        "g": "m"
+      },
+      {
+        "word": "scaffale",
+        "x": 15,
+        "y": 50,
+        "g": "m"
+      },
+      {
+        "word": "scrivania",
+        "x": 60,
+        "y": 55,
+        "g": "f"
+      },
+      {
+        "word": "sedia",
+        "x": 55,
+        "y": 65,
+        "g": "f"
+      },
+      {
+        "word": "computer",
+        "x": 65,
+        "y": 50,
+        "g": "m"
+      },
+      {
+        "word": "penna",
+        "x": 62,
+        "y": 52,
+        "g": "f"
+      },
+      {
+        "word": "quaderno",
+        "x": 58,
+        "y": 54,
+        "g": "m"
+      },
+      {
+        "word": "carta",
+        "x": 64,
+        "y": 54,
+        "g": "f"
+      },
+      {
+        "word": "biblioteca",
+        "x": 25,
+        "y": 35,
+        "g": "f"
+      },
+      {
+        "word": "università",
+        "x": 80,
+        "y": 35,
+        "g": "f"
+      },
+      {
+        "word": "scuola",
+        "x": 75,
+        "y": 40,
+        "g": "f"
+      },
+      {
+        "word": "classe",
+        "x": 70,
+        "y": 45,
+        "g": "f"
+      },
+      {
+        "word": "lezione",
+        "x": 72,
+        "y": 50,
+        "g": "f"
+      },
+      {
+        "word": "professore",
+        "x": 85,
+        "y": 45,
+        "g": "m"
+      },
+      {
+        "word": "studente",
+        "x": 82,
+        "y": 50,
+        "g": "m"
+      },
+      {
+        "word": "studiare",
+        "x": 50,
+        "y": 45,
+        "g": "v"
+      },
+      {
+        "word": "leggere",
+        "x": 20,
+        "y": 55,
+        "g": "v"
+      },
+      {
+        "word": "scrivere",
+        "x": 60,
+        "y": 60,
+        "g": "v"
+      },
+      {
+        "word": "imparare",
+        "x": 75,
+        "y": 55,
+        "g": "v"
+      },
+      {
+        "word": "lavorare",
+        "x": 65,
+        "y": 65,
+        "g": "v"
+      },
+      {
+        "word": "parlare",
+        "x": 50,
+        "y": 60,
+        "g": "v"
+      },
+      {
+        "word": "ascoltare",
+        "x": 70,
+        "y": 60,
+        "g": "v"
+      }
+    ]
+  },
+  {
+    "id": "transport",
+    "name": "Transport Hub",
+    "nameIt": "La Stazione",
+    "grammarFocus": "andare & places",
+    "description": "Learn to navigate and describe journeys with the verb 'andare' and transport vocabulary.",
+    "image": "/palace/rooms/transport.jpg",
+    "stats": {
+      "masculine": 10,
+      "feminine": 8,
+      "verbs": 4
+    },
+    "words": [
+      {
+        "word": "stazione",
+        "x": 50,
+        "y": 50,
+        "g": "f"
+      },
+      {
+        "word": "treno",
+        "x": 60,
+        "y": 40,
+        "g": "m"
+      },
+      {
+        "word": "macchina",
+        "x": 75,
+        "y": 55,
+        "g": "f"
+      },
+      {
+        "word": "autobus",
+        "x": 30,
+        "y": 60,
+        "g": "m"
+      },
+      {
+        "word": "bicicletta",
+        "x": 20,
+        "y": 70,
+        "g": "f"
+      },
+      {
+        "word": "moto",
+        "x": 25,
+        "y": 65,
+        "g": "f"
+      },
+      {
+        "word": "taxi",
+        "x": 80,
+        "y": 50,
+        "g": "m"
+      },
+      {
+        "word": "metro",
+        "x": 40,
+        "y": 55,
+        "g": "f"
+      },
+      {
+        "word": "tram",
+        "x": 35,
+        "y": 65,
+        "g": "m"
+      },
+      {
+        "word": "aereo",
+        "x": 70,
+        "y": 25,
+        "g": "m"
+      },
+      {
+        "word": "nave",
+        "x": 85,
+        "y": 35,
+        "g": "f"
+      },
+      {
+        "word": "biglietto",
+        "x": 45,
+        "y": 70,
+        "g": "m"
+      },
+      {
+        "word": "abbonamento",
+        "x": 42,
+        "y": 75,
+        "g": "m"
+      },
+      {
+        "word": "fermata",
+        "x": 25,
+        "y": 55,
+        "g": "f"
+      },
+      {
+        "word": "binario",
+        "x": 55,
+        "y": 45,
+        "g": "m"
+      },
+      {
+        "word": "strada",
+        "x": 50,
+        "y": 85,
+        "g": "f"
+      },
+      {
+        "word": "via",
+        "x": 45,
+        "y": 80,
+        "g": "f"
+      },
+      {
+        "word": "andare",
+        "x": 50,
+        "y": 45,
+        "g": "v"
+      },
+      {
+        "word": "venire",
+        "x": 55,
+        "y": 55,
+        "g": "v"
+      },
+      {
+        "word": "arrivare",
+        "x": 60,
+        "y": 50,
+        "g": "v"
+      },
+      {
+        "word": "partire",
+        "x": 45,
+        "y": 50,
+        "g": "v"
+      }
+    ]
+  },
+  {
+    "id": "supermarket",
+    "name": "Supermarket",
+    "nameIt": "Il Supermercato",
+    "grammarFocus": "shopping & money",
+    "description": "Master shopping vocabulary and learn to handle money and prices in Italian.",
+    "image": "/palace/rooms/supermarket.jpg",
+    "stats": {
+      "masculine": 10,
+      "feminine": 12,
+      "verbs": 3
+    },
+    "words": [
+      {
+        "word": "supermercato",
+        "x": 50,
+        "y": 50,
+        "g": "m"
+      },
+      {
+        "word": "negozio",
+        "x": 80,
+        "y": 40,
+        "g": "m"
+      },
+      {
+        "word": "mercato",
+        "x": 85,
+        "y": 45,
+        "g": "m"
+      },
+      {
+        "word": "prodotto",
+        "x": 30,
+        "y": 45,
+        "g": "m"
+      },
+      {
+        "word": "frutta",
+        "x": 25,
+        "y": 55,
+        "g": "f"
+      },
+      {
+        "word": "verdura",
+        "x": 28,
+        "y": 60,
+        "g": "f"
+      },
+      {
+        "word": "mela",
+        "x": 22,
+        "y": 50,
+        "g": "f"
+      },
+      {
+        "word": "arancia",
+        "x": 24,
+        "y": 52,
+        "g": "f"
+      },
+      {
+        "word": "pomodoro",
+        "x": 26,
+        "y": 54,
+        "g": "m"
+      },
+      {
+        "word": "latte",
+        "x": 35,
+        "y": 45,
+        "g": "m"
+      },
+      {
+        "word": "formaggio",
+        "x": 38,
+        "y": 48,
+        "g": "m"
+      },
+      {
+        "word": "uovo",
+        "x": 40,
+        "y": 50,
+        "g": "m"
+      },
+      {
+        "word": "pane",
+        "x": 42,
+        "y": 52,
+        "g": "m"
+      },
+      {
+        "word": "carne",
+        "x": 45,
+        "y": 55,
+        "g": "f"
+      },
+      {
+        "word": "pesce",
+        "x": 48,
+        "y": 58,
+        "g": "m"
+      },
+      {
+        "word": "prezzo",
+        "x": 60,
+        "y": 70,
+        "g": "m"
+      },
+      {
+        "word": "soldi",
+        "x": 65,
+        "y": 75,
+        "g": "m"
+      },
+      {
+        "word": "euro",
+        "x": 68,
+        "y": 72,
+        "g": "m"
+      },
+      {
+        "word": "scontrino",
+        "x": 70,
+        "y": 70,
+        "g": "m"
+      },
+      {
+        "word": "cassa",
+        "x": 75,
+        "y": 65,
+        "g": "f"
+      },
+      {
+        "word": "comprare",
+        "x": 50,
+        "y": 60,
+        "g": "v"
+      },
+      {
+        "word": "pagare",
+        "x": 65,
+        "y": 65,
+        "g": "v"
+      },
+      {
+        "word": "vendere",
+        "x": 80,
+        "y": 50,
+        "g": "v"
+      }
+    ]
+  },
+  {
+    "id": "cafe",
+    "name": "Café",
+    "nameIt": "Il Caffè",
+    "grammarFocus": "social interactions",
+    "description": "Learn essential phrases for ordering and socializing at an Italian café.",
+    "image": "/palace/rooms/cafe.jpg",
+    "stats": {
+      "masculine": 8,
+      "feminine": 10,
+      "verbs": 5
+    },
+    "words": [
+      {
+        "word": "caffè",
+        "x": 50,
+        "y": 50,
+        "g": "m"
+      },
+      {
+        "word": "bar",
+        "x": 80,
+        "y": 40,
+        "g": "m"
+      },
+      {
+        "word": "tavolo",
+        "x": 30,
+        "y": 65,
+        "g": "m"
+      },
+      {
+        "word": "sedia",
+        "x": 25,
+        "y": 70,
+        "g": "f"
+      },
+      {
+        "word": "menu",
+        "x": 60,
+        "y": 45,
+        "g": "m"
+      },
+      {
+        "word": "conto",
+        "x": 70,
+        "y": 70,
+        "g": "m"
+      },
+      {
+        "word": "cornetto",
+        "x": 45,
+        "y": 55,
+        "g": "m"
+      },
+      {
+        "word": "pasticceria",
+        "x": 40,
+        "y": 50,
+        "g": "f"
+      },
+      {
+        "word": "dolce",
+        "x": 42,
+        "y": 52,
+        "g": "m"
+      },
+      {
+        "word": "acqua",
+        "x": 55,
+        "y": 55,
+        "g": "f"
+      },
+      {
+        "word": "vino",
+        "x": 58,
+        "y": 58,
+        "g": "m"
+      },
+      {
+        "word": "birra",
+        "x": 62,
+        "y": 60,
+        "g": "f"
+      },
+      {
+        "word": "amico",
+        "x": 35,
+        "y": 60,
+        "g": "m"
+      },
+      {
+        "word": "persona",
+        "x": 75,
+        "y": 55,
+        "g": "f"
+      },
+      {
+        "word": "gruppo",
+        "x": 85,
+        "y": 50,
+        "g": "m"
+      },
+      {
+        "word": "mangiare",
+        "x": 35,
+        "y": 55,
+        "g": "v"
+      },
+      {
+        "word": "bere",
+        "x": 55,
+        "y": 60,
+        "g": "v"
+      },
+      {
+        "word": "ordinare",
+        "x": 50,
+        "y": 45,
+        "g": "v"
+      },
+      {
+        "word": "chiedere",
+        "x": 65,
+        "y": 50,
+        "g": "v"
+      },
+      {
+        "word": "pagare",
+        "x": 70,
+        "y": 65,
+        "g": "v"
+      }
+    ]
+  },
+  {
+    "id": "gallery",
+    "name": "Gallery",
+    "nameIt": "La Galleria",
+    "grammarFocus": "art & culture",
+    "description": "Explore art vocabulary and learn to describe places and cultural experiences.",
+    "image": "/palace/rooms/gallery.jpg",
+    "stats": {
+      "masculine": 10,
+      "feminine": 10,
+      "verbs": 2
+    },
+    "words": [
+      {
+        "word": "galleria",
+        "x": 50,
+        "y": 50,
+        "g": "f"
+      },
+      {
+        "word": "museo",
+        "x": 80,
+        "y": 40,
+        "g": "m"
+      },
+      {
+        "word": "teatro",
+        "x": 85,
+        "y": 45,
+        "g": "m"
+      },
+      {
+        "word": "cinema",
+        "x": 75,
+        "y": 50,
+        "g": "m"
+      },
+      {
+        "word": "quadro",
+        "x": 30,
+        "y": 35,
+        "g": "m"
+      },
+      {
+        "word": "pittura",
+        "x": 35,
+        "y": 30,
+        "g": "f"
+      },
+      {
+        "word": "scultura",
+        "x": 40,
+        "y": 35,
+        "g": "f"
+      },
+      {
+        "word": "arte",
+        "x": 45,
+        "y": 25,
+        "g": "f"
+      },
+      {
+        "word": "artista",
+        "x": 50,
+        "y": 30,
+        "g": "m"
+      },
+      {
+        "word": "città",
+        "x": 20,
+        "y": 60,
+        "g": "f"
+      },
+      {
+        "word": "paese",
+        "x": 25,
+        "y": 65,
+        "g": "m"
+      },
+      {
+        "word": "nazione",
+        "x": 30,
+        "y": 70,
+        "g": "f"
+      },
+      {
+        "word": "centro",
+        "x": 60,
+        "y": 65,
+        "g": "m"
+      },
+      {
+        "word": "ospedale",
+        "x": 70,
+        "y": 60,
+        "g": "m"
+      },
+      {
+        "word": "farmacia",
+        "x": 75,
+        "y": 65,
+        "g": "f"
+      },
+      {
+        "word": "chiesa",
+        "x": 85,
+        "y": 55,
+        "g": "f"
+      },
+      {
+        "word": "vedere",
+        "x": 40,
+        "y": 45,
+        "g": "v"
+      },
+      {
+        "word": "guardare",
+        "x": 35,
+        "y": 50,
+        "g": "v"
+      }
+    ]
+  }
+]

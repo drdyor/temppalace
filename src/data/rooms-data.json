@@ -1,0 +1,1771 @@
+[
+  {
+    "id": "entrance-hall",
+    "name": "Entrance Hall",
+    "nameIt": "Ingresso",
+    "description": "The grand entrance to your Italian home. Learn family and people vocabulary.",
+    "grammarFocus": "essere & avere (to be & to have)",
+    "image": "/palace/rooms/entrance-hall.jpg",
+    "words": [
+      "porta",
+      "scala",
+      "pavimento",
+      "soffitto",
+      "luce",
+      "specchio",
+      "pianta",
+      "vaso"
+    ],
+    "mainVocab": [
+      {
+        "word": "porta",
+        "x": 45,
+        "y": 35,
+        "label": "door"
+      },
+      {
+        "word": "scala",
+        "x": 75,
+        "y": 50,
+        "label": "stairs"
+      },
+      {
+        "word": "pavimento",
+        "x": 50,
+        "y": 85,
+        "label": "floor"
+      },
+      {
+        "word": "soffitto",
+        "x": 50,
+        "y": 10,
+        "label": "ceiling"
+      },
+      {
+        "word": "luce",
+        "x": 50,
+        "y": 20,
+        "label": "light"
+      },
+      {
+        "word": "specchio",
+        "x": 25,
+        "y": 40,
+        "label": "mirror"
+      },
+      {
+        "word": "pianta",
+        "x": 15,
+        "y": 65,
+        "label": "plant"
+      },
+      {
+        "word": "vaso",
+        "x": 85,
+        "y": 70,
+        "label": "vase"
+      }
+    ],
+    "zones": [
+      {
+        "id": "portrait",
+        "name": "Family Portrait",
+        "nameIt": "Ritratto di Famiglia",
+        "x": 25,
+        "y": 15,
+        "width": 20,
+        "height": 30,
+        "icon": "👨‍👩‍👧‍👦",
+        "description": "Family members and relationships",
+        "interiorImage": "/palace/rooms/entrance-portrait.jpg",
+        "interiorVocab": [
+          {
+            "word": "padre",
+            "x": 30,
+            "y": 40
+          },
+          {
+            "word": "madre",
+            "x": 60,
+            "y": 40
+          },
+          {
+            "word": "fratello",
+            "x": 40,
+            "y": 65
+          },
+          {
+            "word": "sorella",
+            "x": 70,
+            "y": 65
+          }
+        ]
+      },
+      {
+        "id": "coat-rack",
+        "name": "Coat Rack",
+        "nameIt": "Attaccapanni",
+        "x": 70,
+        "y": 45,
+        "width": 15,
+        "height": 35,
+        "icon": "🧥",
+        "description": "Clothing items",
+        "interiorImage": "/palace/rooms/entrance-coat.jpg",
+        "interiorVocab": [
+          {
+            "word": "cappello",
+            "x": 30,
+            "y": 25
+          },
+          {
+            "word": "giacca",
+            "x": 50,
+            "y": 45
+          },
+          {
+            "word": "scarpe",
+            "x": 70,
+            "y": 75
+          }
+        ]
+      },
+      {
+        "id": "mirror",
+        "name": "The Mirror",
+        "nameIt": "Lo Specchio",
+        "x": 15,
+        "y": 25,
+        "width": 20,
+        "height": 40,
+        "icon": "🪞",
+        "description": "Body parts and appearance",
+        "interiorImage": "/palace/rooms/entrance-mirror.jpg",
+        "interiorVocab": [
+          {
+            "word": "faccia",
+            "x": 50,
+            "y": 35
+          },
+          {
+            "word": "occhio",
+            "x": 40,
+            "y": 45
+          },
+          {
+            "word": "capelli",
+            "x": 60,
+            "y": 30
+          },
+          {
+            "word": "mano",
+            "x": 35,
+            "y": 75
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "kitchen",
+    "name": "Kitchen",
+    "nameIt": "Cucina",
+    "description": "The heart of the Italian home. Learn food and cooking vocabulary.",
+    "grammarFocus": "mangiare & bere (to eat & to drink)",
+    "image": "/palace/rooms/kitchen.jpg",
+    "words": [
+      "tavolo",
+      "sedia",
+      "finestra",
+      "porta",
+      "parete",
+      "pavimento",
+      "luce"
+    ],
+    "mainVocab": [
+      {
+        "word": "tavolo",
+        "x": 50,
+        "y": 65,
+        "label": "table"
+      },
+      {
+        "word": "sedia",
+        "x": 35,
+        "y": 70,
+        "label": "chair"
+      },
+      {
+        "word": "sedia",
+        "x": 65,
+        "y": 70,
+        "label": "chair"
+      },
+      {
+        "word": "finestra",
+        "x": 75,
+        "y": 30,
+        "label": "window"
+      },
+      {
+        "word": "porta",
+        "x": 20,
+        "y": 40,
+        "label": "door"
+      },
+      {
+        "word": "parete",
+        "x": 30,
+        "y": 20,
+        "label": "wall"
+      },
+      {
+        "word": "pavimento",
+        "x": 50,
+        "y": 90,
+        "label": "floor"
+      },
+      {
+        "word": "luce",
+        "x": 50,
+        "y": 15,
+        "label": "light"
+      }
+    ],
+    "zones": [
+      {
+        "id": "fridge",
+        "name": "Refrigerator",
+        "nameIt": "Frigorifero",
+        "x": 10,
+        "y": 25,
+        "width": 15,
+        "height": 50,
+        "icon": "❄️",
+        "description": "Cold food and drinks",
+        "interiorImage": "/palace/rooms/kitchen-fridge.jpg",
+        "interiorVocab": [
+          {
+            "word": "latte",
+            "x": 25,
+            "y": 25
+          },
+          {
+            "word": "formaggio",
+            "x": 75,
+            "y": 30
+          },
+          {
+            "word": "uovo",
+            "x": 50,
+            "y": 50
+          },
+          {
+            "word": "frutta",
+            "x": 30,
+            "y": 75
+          }
+        ]
+      },
+      {
+        "id": "pantry",
+        "name": "Pantry",
+        "nameIt": "Dispensa",
+        "x": 75,
+        "y": 15,
+        "width": 20,
+        "height": 35,
+        "icon": "🥫",
+        "description": "Dry goods and pasta",
+        "interiorImage": "/palace/rooms/kitchen-pantry.jpg",
+        "interiorVocab": [
+          {
+            "word": "pasta",
+            "x": 30,
+            "y": 30
+          },
+          {
+            "word": "olio",
+            "x": 70,
+            "y": 35
+          },
+          {
+            "word": "sale",
+            "x": 25,
+            "y": 65
+          },
+          {
+            "word": "zucchero",
+            "x": 75,
+            "y": 70
+          },
+          {
+            "word": "pane",
+            "x": 50,
+            "y": 80
+          }
+        ]
+      },
+      {
+        "id": "stove",
+        "name": "Stove Area",
+        "nameIt": "Fornello",
+        "x": 35,
+        "y": 50,
+        "width": 25,
+        "height": 30,
+        "icon": "🔥",
+        "description": "Cooking and preparation",
+        "interiorImage": "/palace/rooms/kitchen-stove.jpg",
+        "interiorVocab": [
+          {
+            "word": "carne",
+            "x": 30,
+            "y": 40
+          },
+          {
+            "word": "pesce",
+            "x": 70,
+            "y": 45
+          },
+          {
+            "word": "verdura",
+            "x": 50,
+            "y": 70
+          }
+        ]
+      },
+      {
+        "id": "table",
+        "name": "Dining Table",
+        "nameIt": "Tavolo",
+        "x": 40,
+        "y": 60,
+        "width": 25,
+        "height": 25,
+        "icon": "🍽️",
+        "description": "Meals and dining",
+        "interiorImage": "/palace/rooms/kitchen-table.jpg",
+        "interiorVocab": [
+          {
+            "word": "pizza",
+            "x": 35,
+            "y": 40
+          },
+          {
+            "word": "vino",
+            "x": 65,
+            "y": 35
+          },
+          {
+            "word": "caffè",
+            "x": 50,
+            "y": 65
+          },
+          {
+            "word": "acqua",
+            "x": 25,
+            "y": 75
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bedroom",
+    "name": "Bedroom",
+    "nameIt": "Camera da Letto",
+    "description": "Your personal space. Learn daily routine vocabulary.",
+    "grammarFocus": "reflexive verbs (alzarsi, vestirsi)",
+    "image": "/palace/rooms/bedroom.jpg",
+    "words": [
+      "letto",
+      "cuscino",
+      "coperta",
+      "finestra",
+      "tenda",
+      "parete",
+      "pavimento"
+    ],
+    "mainVocab": [
+      {
+        "word": "letto",
+        "x": 50,
+        "y": 60,
+        "label": "bed"
+      },
+      {
+        "word": "cuscino",
+        "x": 40,
+        "y": 50,
+        "label": "pillow"
+      },
+      {
+        "word": "cuscino",
+        "x": 60,
+        "y": 50,
+        "label": "pillow"
+      },
+      {
+        "word": "coperta",
+        "x": 50,
+        "y": 70,
+        "label": "blanket"
+      },
+      {
+        "word": "finestra",
+        "x": 80,
+        "y": 35,
+        "label": "window"
+      },
+      {
+        "word": "tenda",
+        "x": 80,
+        "y": 20,
+        "label": "curtain"
+      },
+      {
+        "word": "parete",
+        "x": 20,
+        "y": 30,
+        "label": "wall"
+      },
+      {
+        "word": "pavimento",
+        "x": 50,
+        "y": 90,
+        "label": "floor"
+      }
+    ],
+    "zones": [
+      {
+        "id": "wardrobe",
+        "name": "Wardrobe",
+        "nameIt": "Armadio",
+        "x": 15,
+        "y": 20,
+        "width": 20,
+        "height": 55,
+        "icon": "👔",
+        "description": "Clothes and getting dressed",
+        "interiorImage": "/palace/rooms/bedroom-wardrobe.jpg",
+        "interiorVocab": [
+          {
+            "word": "camicia",
+            "x": 30,
+            "y": 30
+          },
+          {
+            "word": "pantaloni",
+            "x": 70,
+            "y": 40
+          },
+          {
+            "word": "vestito",
+            "x": 50,
+            "y": 65
+          }
+        ]
+      },
+      {
+        "id": "bed",
+        "name": "The Bed",
+        "nameIt": "Il Letto",
+        "x": 45,
+        "y": 50,
+        "width": 35,
+        "height": 35,
+        "icon": "🛏️",
+        "description": "Sleep and rest",
+        "interiorImage": "/palace/rooms/bedroom-bed.jpg",
+        "interiorVocab": [
+          {
+            "word": "letto",
+            "x": 50,
+            "y": 50
+          },
+          {
+            "word": "cuscino",
+            "x": 35,
+            "y": 35
+          },
+          {
+            "word": "coperta",
+            "x": 65,
+            "y": 55
+          }
+        ]
+      },
+      {
+        "id": "photos",
+        "name": "Photo Wall",
+        "nameIt": "Foto",
+        "x": 70,
+        "y": 15,
+        "width": 25,
+        "height": 25,
+        "icon": "📸",
+        "description": "Memories and people",
+        "interiorImage": "/palace/rooms/bedroom-photos.jpg",
+        "interiorVocab": [
+          {
+            "word": "amico",
+            "x": 30,
+            "y": 40
+          },
+          {
+            "word": "amica",
+            "x": 70,
+            "y": 45
+          },
+          {
+            "word": "famiglia",
+            "x": 50,
+            "y": 70
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bathroom",
+    "name": "Bathroom",
+    "nameIt": "Bagno",
+    "description": "Personal hygiene and daily routine.",
+    "grammarFocus": "daily routine verbs",
+    "image": "/palace/rooms/bathroom.jpg",
+    "words": [
+      "specchio",
+      "lavandino",
+      "doccia",
+      "finestra",
+      "parete",
+      "pavimento",
+      "asciugamano"
+    ],
+    "mainVocab": [
+      {
+        "word": "specchio",
+        "x": 30,
+        "y": 35,
+        "label": "mirror"
+      },
+      {
+        "word": "lavandino",
+        "x": 30,
+        "y": 55,
+        "label": "sink"
+      },
+      {
+        "word": "doccia",
+        "x": 75,
+        "y": 45,
+        "label": "shower"
+      },
+      {
+        "word": "finestra",
+        "x": 85,
+        "y": 30,
+        "label": "window"
+      },
+      {
+        "word": "parete",
+        "x": 15,
+        "y": 25,
+        "label": "wall"
+      },
+      {
+        "word": "pavimento",
+        "x": 50,
+        "y": 85,
+        "label": "floor"
+      },
+      {
+        "word": "asciugamano",
+        "x": 60,
+        "y": 55,
+        "label": "towel"
+      }
+    ],
+    "zones": [
+      {
+        "id": "sink",
+        "name": "Sink Area",
+        "nameIt": "Lavandino",
+        "x": 20,
+        "y": 30,
+        "width": 25,
+        "height": 35,
+        "icon": "🚰",
+        "description": "Washing and grooming",
+        "interiorImage": "/palace/rooms/bathroom-sink.jpg",
+        "interiorVocab": [
+          {
+            "word": "specchio",
+            "x": 50,
+            "y": 25
+          },
+          {
+            "word": "mano",
+            "x": 35,
+            "y": 60
+          },
+          {
+            "word": "faccia",
+            "x": 65,
+            "y": 55
+          }
+        ]
+      },
+      {
+        "id": "shower",
+        "name": "Shower",
+        "nameIt": "Doccia",
+        "x": 65,
+        "y": 20,
+        "width": 30,
+        "height": 50,
+        "icon": "🚿",
+        "description": "Bathing and hygiene",
+        "interiorImage": "/palace/rooms/bathroom-shower.jpg",
+        "interiorVocab": [
+          {
+            "word": "testa",
+            "x": 50,
+            "y": 25
+          },
+          {
+            "word": "capelli",
+            "x": 30,
+            "y": 40
+          },
+          {
+            "word": "piede",
+            "x": 70,
+            "y": 70
+          }
+        ]
+      },
+      {
+        "id": "cabinet",
+        "name": "Medicine Cabinet",
+        "nameIt": "Armadietto",
+        "x": 10,
+        "y": 15,
+        "width": 15,
+        "height": 25,
+        "icon": "💊",
+        "description": "Health and wellness",
+        "interiorImage": "/palace/rooms/bathroom-cabinet.jpg",
+        "interiorVocab": [
+          {
+            "word": "cuore",
+            "x": 50,
+            "y": 40
+          },
+          {
+            "word": "gamba",
+            "x": 30,
+            "y": 70
+          },
+          {
+            "word": "braccio",
+            "x": 70,
+            "y": 65
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "garden",
+    "name": "Garden",
+    "nameIt": "Giardino",
+    "description": "Outdoor nature vocabulary.",
+    "grammarFocus": "weather expressions (fa caldo, piove)",
+    "image": "/palace/rooms/garden.jpg",
+    "words": [
+      "albero",
+      "fiore",
+      "erba",
+      "cielo",
+      "sole",
+      "nuvola",
+      "casa",
+      "parete"
+    ],
+    "mainVocab": [
+      {
+        "word": "albero",
+        "x": 20,
+        "y": 40,
+        "label": "tree"
+      },
+      {
+        "word": "albero",
+        "x": 80,
+        "y": 35,
+        "label": "tree"
+      },
+      {
+        "word": "fiore",
+        "x": 35,
+        "y": 65,
+        "label": "flower"
+      },
+      {
+        "word": "fiore",
+        "x": 65,
+        "y": 70,
+        "label": "flower"
+      },
+      {
+        "word": "erba",
+        "x": 50,
+        "y": 85,
+        "label": "grass"
+      },
+      {
+        "word": "cielo",
+        "x": 50,
+        "y": 15,
+        "label": "sky"
+      },
+      {
+        "word": "sole",
+        "x": 75,
+        "y": 20,
+        "label": "sun"
+      },
+      {
+        "word": "nuvola",
+        "x": 25,
+        "y": 25,
+        "label": "cloud"
+      }
+    ],
+    "zones": [
+      {
+        "id": "flowers",
+        "name": "Flower Beds",
+        "nameIt": "Aiuole",
+        "x": 20,
+        "y": 55,
+        "width": 35,
+        "height": 35,
+        "icon": "🌸",
+        "description": "Plants and flowers",
+        "interiorImage": "/palace/rooms/garden-flowers.jpg",
+        "interiorVocab": [
+          {
+            "word": "fiore",
+            "x": 30,
+            "y": 35
+          },
+          {
+            "word": "albero",
+            "x": 70,
+            "y": 30
+          },
+          {
+            "word": "erba",
+            "x": 50,
+            "y": 70
+          },
+          {
+            "word": "rosso",
+            "x": 25,
+            "y": 55
+          },
+          {
+            "word": "giallo",
+            "x": 75,
+            "y": 60
+          }
+        ]
+      },
+      {
+        "id": "path",
+        "name": "Garden Path",
+        "nameIt": "Sentiero",
+        "x": 50,
+        "y": 75,
+        "width": 40,
+        "height": 20,
+        "icon": "🛤️",
+        "description": "Walking and exploring",
+        "interiorImage": "/palace/rooms/garden-path.jpg",
+        "interiorVocab": [
+          {
+            "word": "strada",
+            "x": 50,
+            "y": 50
+          },
+          {
+            "word": "verde",
+            "x": 30,
+            "y": 75
+          },
+          {
+            "word": "bello",
+            "x": 70,
+            "y": 70
+          }
+        ]
+      },
+      {
+        "id": "sky",
+        "name": "Open Sky",
+        "nameIt": "Cielo Aperto",
+        "x": 30,
+        "y": 10,
+        "width": 50,
+        "height": 30,
+        "icon": "🌤️",
+        "description": "Weather and sky",
+        "interiorImage": "/palace/rooms/garden-sky.jpg",
+        "interiorVocab": [
+          {
+            "word": "cielo",
+            "x": 50,
+            "y": 30
+          },
+          {
+            "word": "sole",
+            "x": 25,
+            "y": 45
+          },
+          {
+            "word": "nuvola",
+            "x": 75,
+            "y": 40
+          },
+          {
+            "word": "blu",
+            "x": 50,
+            "y": 70
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "living-room",
+    "name": "Living Room",
+    "nameIt": "Soggiorno",
+    "description": "Relaxation and entertainment space.",
+    "grammarFocus": "piacere (to like)",
+    "image": "/palace/rooms/living-room.jpg",
+    "words": [
+      "sofa",
+      "tavolo",
+      "lampada",
+      "finestra",
+      "tenda",
+      "parete",
+      "pavimento",
+      "quadro"
+    ],
+    "mainVocab": [
+      {
+        "word": "sofa",
+        "x": 50,
+        "y": 60,
+        "label": "sofa"
+      },
+      {
+        "word": "tavolo",
+        "x": 50,
+        "y": 75,
+        "label": "table"
+      },
+      {
+        "word": "lampada",
+        "x": 20,
+        "y": 45,
+        "label": "lamp"
+      },
+      {
+        "word": "lampada",
+        "x": 80,
+        "y": 50,
+        "label": "lamp"
+      },
+      {
+        "word": "finestra",
+        "x": 75,
+        "y": 30,
+        "label": "window"
+      },
+      {
+        "word": "tenda",
+        "x": 75,
+        "y": 15,
+        "label": "curtain"
+      },
+      {
+        "word": "parete",
+        "x": 30,
+        "y": 25,
+        "label": "wall"
+      },
+      {
+        "word": "quadro",
+        "x": 30,
+        "y": 40,
+        "label": "painting"
+      }
+    ],
+    "zones": [
+      {
+        "id": "sofa-area",
+        "name": "Sofa Area",
+        "nameIt": "Divano",
+        "x": 35,
+        "y": 50,
+        "width": 35,
+        "height": 30,
+        "icon": "🛋️",
+        "description": "Relaxation and comfort",
+        "interiorImage": "/palace/rooms/living-room-sofa.jpg",
+        "interiorVocab": [
+          {
+            "word": "casa",
+            "x": 50,
+            "y": 40
+          },
+          {
+            "word": "famiglia",
+            "x": 30,
+            "y": 65
+          },
+          {
+            "word": "amico",
+            "x": 70,
+            "y": 60
+          }
+        ]
+      },
+      {
+        "id": "tv",
+        "name": "Entertainment",
+        "nameIt": "TV",
+        "x": 65,
+        "y": 25,
+        "width": 25,
+        "height": 25,
+        "icon": "📺",
+        "description": "Media and entertainment",
+        "interiorImage": "/palace/rooms/living-room-tv.jpg",
+        "interiorVocab": [
+          {
+            "word": "telefono",
+            "x": 40,
+            "y": 40
+          },
+          {
+            "word": "computer",
+            "x": 70,
+            "y": 45
+          },
+          {
+            "word": "giorno",
+            "x": 55,
+            "y": 70
+          }
+        ]
+      },
+      {
+        "id": "furniture",
+        "name": "Furniture",
+        "nameIt": "Mobili",
+        "x": 15,
+        "y": 25,
+        "width": 30,
+        "height": 35,
+        "icon": "🪑",
+        "description": "Room furnishings",
+        "interiorImage": "/palace/rooms/living-room-furniture.jpg",
+        "interiorVocab": [
+          {
+            "word": "tavolo",
+            "x": 35,
+            "y": 35
+          },
+          {
+            "word": "sedia",
+            "x": 65,
+            "y": 40
+          },
+          {
+            "word": "porta",
+            "x": 25,
+            "y": 70
+          },
+          {
+            "word": "finestra",
+            "x": 75,
+            "y": 65
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "library",
+    "name": "Knowledge Hub",
+    "nameIt": "Studio",
+    "description": "Study and learning space.",
+    "grammarFocus": "studiare & imparare",
+    "image": "/palace/rooms/library.jpg",
+    "words": [
+      "libreria",
+      "libro",
+      "scrivania",
+      "sedia",
+      "lampada",
+      "finestra",
+      "parete"
+    ],
+    "mainVocab": [
+      {
+        "word": "libreria",
+        "x": 20,
+        "y": 45,
+        "label": "bookshelf"
+      },
+      {
+        "word": "libro",
+        "x": 25,
+        "y": 55,
+        "label": "book"
+      },
+      {
+        "word": "scrivania",
+        "x": 60,
+        "y": 55,
+        "label": "desk"
+      },
+      {
+        "word": "sedia",
+        "x": 70,
+        "y": 65,
+        "label": "chair"
+      },
+      {
+        "word": "lampada",
+        "x": 55,
+        "y": 45,
+        "label": "lamp"
+      },
+      {
+        "word": "finestra",
+        "x": 85,
+        "y": 35,
+        "label": "window"
+      },
+      {
+        "word": "parete",
+        "x": 15,
+        "y": 25,
+        "label": "wall"
+      }
+    ],
+    "zones": [
+      {
+        "id": "bookshelf",
+        "name": "Bookshelf",
+        "nameIt": "Libreria",
+        "x": 10,
+        "y": 15,
+        "width": 25,
+        "height": 55,
+        "icon": "📚",
+        "description": "Books and reading",
+        "interiorImage": "/palace/rooms/library-books.jpg",
+        "interiorVocab": [
+          {
+            "word": "libro",
+            "x": 30,
+            "y": 30
+          },
+          {
+            "word": "quaderno",
+            "x": 70,
+            "y": 35
+          },
+          {
+            "word": "penna",
+            "x": 50,
+            "y": 60
+          }
+        ]
+      },
+      {
+        "id": "desk",
+        "name": "Writing Desk",
+        "nameIt": "Scrivania",
+        "x": 50,
+        "y": 50,
+        "width": 30,
+        "height": 30,
+        "icon": "✍️",
+        "description": "Writing and studying",
+        "interiorImage": "/palace/rooms/library-desk.jpg",
+        "interiorVocab": [
+          {
+            "word": "scuola",
+            "x": 35,
+            "y": 40
+          },
+          {
+            "word": "università",
+            "x": 65,
+            "y": 45
+          },
+          {
+            "word": "lavoro",
+            "x": 50,
+            "y": 70
+          }
+        ]
+      },
+      {
+        "id": "computer",
+        "name": "Computer Station",
+        "nameIt": "Computer",
+        "x": 70,
+        "y": 30,
+        "width": 25,
+        "height": 25,
+        "icon": "💻",
+        "description": "Technology and learning",
+        "interiorImage": "/palace/rooms/library-computer.jpg",
+        "interiorVocab": [
+          {
+            "word": "computer",
+            "x": 50,
+            "y": 40
+          },
+          {
+            "word": "telefono",
+            "x": 30,
+            "y": 65
+          },
+          {
+            "word": "ufficio",
+            "x": 70,
+            "y": 70
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "transport",
+    "name": "Transport Hub",
+    "nameIt": "Trasporti",
+    "description": "Getting around Italy.",
+    "grammarFocus": "andare & venire (movement verbs)",
+    "image": "/palace/rooms/transport.jpg",
+    "words": [
+      "treno",
+      "binario",
+      "stazione",
+      "strada",
+      "cielo",
+      "luce"
+    ],
+    "mainVocab": [
+      {
+        "word": "treno",
+        "x": 70,
+        "y": 50,
+        "label": "train"
+      },
+      {
+        "word": "binario",
+        "x": 50,
+        "y": 75,
+        "label": "platform"
+      },
+      {
+        "word": "stazione",
+        "x": 30,
+        "y": 40,
+        "label": "station"
+      },
+      {
+        "word": "strada",
+        "x": 50,
+        "y": 90,
+        "label": "road"
+      },
+      {
+        "word": "cielo",
+        "x": 50,
+        "y": 15,
+        "label": "sky"
+      },
+      {
+        "word": "luce",
+        "x": 50,
+        "y": 25,
+        "label": "light"
+      }
+    ],
+    "zones": [
+      {
+        "id": "ticket",
+        "name": "Ticket Office",
+        "nameIt": "Biglietteria",
+        "x": 15,
+        "y": 30,
+        "width": 20,
+        "height": 35,
+        "icon": "🎫",
+        "description": "Tickets and money",
+        "interiorImage": "/palace/rooms/transport-ticket.jpg",
+        "interiorVocab": [
+          {
+            "word": "soldi",
+            "x": 35,
+            "y": 35
+          },
+          {
+            "word": "prezzo",
+            "x": 65,
+            "y": 40
+          },
+          {
+            "word": "sconto",
+            "x": 50,
+            "y": 65
+          }
+        ]
+      },
+      {
+        "id": "platform",
+        "name": "Train Platform",
+        "nameIt": "Binario",
+        "x": 45,
+        "y": 35,
+        "width": 35,
+        "height": 35,
+        "icon": "🚉",
+        "description": "Waiting and traveling",
+        "interiorImage": "/palace/rooms/transport-platform.jpg",
+        "interiorVocab": [
+          {
+            "word": "treno",
+            "x": 30,
+            "y": 40
+          },
+          {
+            "word": "autobus",
+            "x": 70,
+            "y": 35
+          },
+          {
+            "word": "ora",
+            "x": 50,
+            "y": 65
+          },
+          {
+            "word": "giorno",
+            "x": 25,
+            "y": 75
+          }
+        ]
+      },
+      {
+        "id": "street",
+        "name": "Street Level",
+        "nameIt": "Strada",
+        "x": 55,
+        "y": 70,
+        "width": 40,
+        "height": 25,
+        "icon": "🛣️",
+        "description": "City navigation",
+        "interiorImage": "/palace/rooms/transport-street.jpg",
+        "interiorVocab": [
+          {
+            "word": "macchina",
+            "x": 35,
+            "y": 40
+          },
+          {
+            "word": "bicicletta",
+            "x": 65,
+            "y": 45
+          },
+          {
+            "word": "strada",
+            "x": 50,
+            "y": 70
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "supermarket",
+    "name": "Supermarket",
+    "nameIt": "Supermercato",
+    "description": "Shopping and food vocabulary.",
+    "grammarFocus": "shopping phrases (quanto costa?)",
+    "image": "/palace/rooms/supermarket.jpg",
+    "words": [
+      "scaffale",
+      "carrello",
+      "cassa",
+      "porta",
+      "finestra",
+      "parete",
+      "pavimento",
+      "luce"
+    ],
+    "mainVocab": [
+      {
+        "word": "scaffale",
+        "x": 25,
+        "y": 45,
+        "label": "shelf"
+      },
+      {
+        "word": "scaffale",
+        "x": 75,
+        "y": 45,
+        "label": "shelf"
+      },
+      {
+        "word": "carrello",
+        "x": 15,
+        "y": 70,
+        "label": "cart"
+      },
+      {
+        "word": "cassa",
+        "x": 85,
+        "y": 55,
+        "label": "checkout"
+      },
+      {
+        "word": "porta",
+        "x": 50,
+        "y": 20,
+        "label": "door"
+      },
+      {
+        "word": "finestra",
+        "x": 30,
+        "y": 25,
+        "label": "window"
+      },
+      {
+        "word": "pavimento",
+        "x": 50,
+        "y": 85,
+        "label": "floor"
+      },
+      {
+        "word": "luce",
+        "x": 50,
+        "y": 10,
+        "label": "light"
+      }
+    ],
+    "zones": [
+      {
+        "id": "produce",
+        "name": "Fresh Produce",
+        "nameIt": "Ortofrutta",
+        "x": 20,
+        "y": 40,
+        "width": 30,
+        "height": 40,
+        "icon": "🍎",
+        "description": "Fruits and vegetables",
+        "interiorImage": "/palace/rooms/supermarket-produce.jpg",
+        "interiorVocab": [
+          {
+            "word": "frutta",
+            "x": 30,
+            "y": 35
+          },
+          {
+            "word": "verdura",
+            "x": 70,
+            "y": 40
+          },
+          {
+            "word": "rosso",
+            "x": 25,
+            "y": 65
+          },
+          {
+            "word": "verde",
+            "x": 75,
+            "y": 60
+          },
+          {
+            "word": "giallo",
+            "x": 50,
+            "y": 75
+          }
+        ]
+      },
+      {
+        "id": "dairy",
+        "name": "Dairy Section",
+        "nameIt": "Latticini",
+        "x": 55,
+        "y": 25,
+        "width": 20,
+        "height": 30,
+        "icon": "🥛",
+        "description": "Milk and cheese",
+        "interiorImage": "/palace/rooms/kitchen-fridge.jpg",
+        "interiorVocab": [
+          {
+            "word": "latte",
+            "x": 35,
+            "y": 40
+          },
+          {
+            "word": "formaggio",
+            "x": 65,
+            "y": 45
+          },
+          {
+            "word": "uovo",
+            "x": 50,
+            "y": 70
+          }
+        ]
+      },
+      {
+        "id": "checkout",
+        "name": "Checkout",
+        "nameIt": "Cassa",
+        "x": 75,
+        "y": 50,
+        "width": 20,
+        "height": 35,
+        "icon": "💳",
+        "description": "Paying and leaving",
+        "interiorImage": "/palace/rooms/supermarket-checkout.jpg",
+        "interiorVocab": [
+          {
+            "word": "prezzo",
+            "x": 40,
+            "y": 40
+          },
+          {
+            "word": "soldi",
+            "x": 70,
+            "y": 35
+          },
+          {
+            "word": "sconto",
+            "x": 55,
+            "y": 65
+          },
+          {
+            "word": "cassa",
+            "x": 30,
+            "y": 75
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cafe",
+    "name": "Café",
+    "nameIt": "Bar",
+    "description": "Italian café culture.",
+    "grammarFocus": "ordering (vorrei, per favore)",
+    "image": "/palace/rooms/cafe.jpg",
+    "words": [
+      "bancone",
+      "tavolo",
+      "sedia",
+      "porta",
+      "finestra",
+      "parete",
+      "pavimento",
+      "luce"
+    ],
+    "mainVocab": [
+      {
+        "word": "bancone",
+        "x": 50,
+        "y": 45,
+        "label": "counter"
+      },
+      {
+        "word": "tavolo",
+        "x": 30,
+        "y": 70,
+        "label": "table"
+      },
+      {
+        "word": "tavolo",
+        "x": 70,
+        "y": 70,
+        "label": "table"
+      },
+      {
+        "word": "sedia",
+        "x": 25,
+        "y": 75,
+        "label": "chair"
+      },
+      {
+        "word": "sedia",
+        "x": 75,
+        "y": 75,
+        "label": "chair"
+      },
+      {
+        "word": "porta",
+        "x": 20,
+        "y": 35,
+        "label": "door"
+      },
+      {
+        "word": "finestra",
+        "x": 80,
+        "y": 30,
+        "label": "window"
+      },
+      {
+        "word": "luce",
+        "x": 50,
+        "y": 15,
+        "label": "light"
+      }
+    ],
+    "zones": [
+      {
+        "id": "counter",
+        "name": "Coffee Counter",
+        "nameIt": "Bancone",
+        "x": 35,
+        "y": 30,
+        "width": 35,
+        "height": 30,
+        "icon": "☕",
+        "description": "Ordering coffee",
+        "interiorImage": "/palace/rooms/cafe-counter.jpg",
+        "interiorVocab": [
+          {
+            "word": "caffè",
+            "x": 40,
+            "y": 35
+          },
+          {
+            "word": "acqua",
+            "x": 70,
+            "y": 40
+          },
+          {
+            "word": "prezzo",
+            "x": 55,
+            "y": 65
+          },
+          {
+            "word": "soldi",
+            "x": 30,
+            "y": 70
+          }
+        ]
+      },
+      {
+        "id": "tables",
+        "name": "Seating Area",
+        "nameIt": "Tavoli",
+        "x": 20,
+        "y": 60,
+        "width": 50,
+        "height": 30,
+        "icon": "🪑",
+        "description": "Sitting and chatting",
+        "interiorImage": "/palace/rooms/cafe-table.jpg",
+        "interiorVocab": [
+          {
+            "word": "tavolo",
+            "x": 35,
+            "y": 40
+          },
+          {
+            "word": "sedia",
+            "x": 65,
+            "y": 45
+          },
+          {
+            "word": "amico",
+            "x": 50,
+            "y": 70
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gallery",
+    "name": "Gallery",
+    "nameIt": "Galleria",
+    "description": "Art and culture vocabulary.",
+    "grammarFocus": "describing art (bello, interessante)",
+    "image": "/palace/rooms/gallery.jpg",
+    "words": [
+      "quadro",
+      "scultura",
+      "parete",
+      "pavimento",
+      "luce",
+      "porta"
+    ],
+    "mainVocab": [
+      {
+        "word": "quadro",
+        "x": 25,
+        "y": 40,
+        "label": "painting"
+      },
+      {
+        "word": "quadro",
+        "x": 75,
+        "y": 40,
+        "label": "painting"
+      },
+      {
+        "word": "scultura",
+        "x": 50,
+        "y": 70,
+        "label": "sculpture"
+      },
+      {
+        "word": "parete",
+        "x": 50,
+        "y": 25,
+        "label": "wall"
+      },
+      {
+        "word": "pavimento",
+        "x": 50,
+        "y": 90,
+        "label": "floor"
+      },
+      {
+        "word": "luce",
+        "x": 50,
+        "y": 10,
+        "label": "light"
+      },
+      {
+        "word": "porta",
+        "x": 15,
+        "y": 50,
+        "label": "door"
+      }
+    ],
+    "zones": [
+      {
+        "id": "paintings",
+        "name": "Paintings",
+        "nameIt": "Dipinti",
+        "x": 15,
+        "y": 20,
+        "width": 35,
+        "height": 40,
+        "icon": "🖼️",
+        "description": "Paintings and art",
+        "interiorImage": "/palace/rooms/gallery-city.jpg",
+        "interiorVocab": [
+          {
+            "word": "quadro",
+            "x": 30,
+            "y": 35
+          },
+          {
+            "word": "rosso",
+            "x": 55,
+            "y": 30
+          },
+          {
+            "word": "blu",
+            "x": 75,
+            "y": 40
+          },
+          {
+            "word": "bello",
+            "x": 45,
+            "y": 65
+          }
+        ]
+      },
+      {
+        "id": "buildings",
+        "name": "Architecture",
+        "nameIt": "Architettura",
+        "x": 55,
+        "y": 25,
+        "width": 35,
+        "height": 35,
+        "icon": "🏛️",
+        "description": "Buildings and structures",
+        "interiorImage": "/palace/rooms/gallery-buildings.jpg",
+        "interiorVocab": [
+          {
+            "word": "casa",
+            "x": 35,
+            "y": 40
+          },
+          {
+            "word": "strada",
+            "x": 65,
+            "y": 45
+          },
+          {
+            "word": "grande",
+            "x": 50,
+            "y": 70
+          }
+        ]
+      },
+      {
+        "id": "shop",
+        "name": "Gift Shop",
+        "nameIt": "Negozio",
+        "x": 50,
+        "y": 65,
+        "width": 40,
+        "height": 30,
+        "icon": "🛍️",
+        "description": "Souvenirs and gifts",
+        "interiorImage": "/palace/rooms/gallery-shop.jpg",
+        "interiorVocab": [
+          {
+            "word": "negozio",
+            "x": 40,
+            "y": 40
+          },
+          {
+            "word": "prezzo",
+            "x": 70,
+            "y": 45
+          },
+          {
+            "word": "soldi",
+            "x": 55,
+            "y": 70
+          }
+        ]
+      }
+    ]
+  }
+]

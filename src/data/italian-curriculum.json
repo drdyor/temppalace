@@ -1,0 +1,457 @@
+{
+  "levels": {
+    "A1": {
+      "name": "Beginner",
+      "description": "Can understand and use familiar everyday expressions",
+      "topics": [
+        {
+          "id": "a1-greetings",
+          "title": "Greetings & Introductions",
+          "description": "Learn to greet people and introduce yourself",
+          "vocabulary": [
+            "ciao",
+            "buongiorno",
+            "buonasera",
+            "arrivederci",
+            "piacere",
+            "nome",
+            "paese"
+          ],
+          "grammar": [
+            "essere-presente",
+            "subject-pronouns"
+          ],
+          "gcse_topic": "Identity and culture",
+          "lessons": [
+            {
+              "id": "l1-greetings",
+              "title": "Basic Greetings",
+              "content": "\n# Basic Greetings in Italian\n\nItalians are very particular about greetings. The time of day matters!\n\n## Formal vs Informal\n- **Ciao** = Hello/Goodbye (informal, with friends)\n- **Buongiorno** = Good morning/Good day (formal, until ~5pm)\n- **Buonasera** = Good evening (formal, after ~5pm)\n- **Arrivederci** = Goodbye (formal)\n- **A presto** = See you soon\n\n## Practice Dialogues\n\n**Dialogue 1 - Informal:**\n- Marco: Ciao! Come stai?\n- Anna: Ciao! Sto bene, grazie. E tu?\n- Marco: Bene, grazie!\n\n**Dialogue 2 - Formal:**\n- Signor Rossi: Buongiorno, signora.\n- Signora Bianchi: Buongiorno, come sta?\n- Signor Rossi: Sto bene, grazie.\n",
+              "exercises": [
+                {
+                  "type": "fill-blank",
+                  "question": "_____! Come stai? (informal greeting)",
+                  "answer": "Ciao",
+                  "hint": "Use the informal greeting"
+                },
+                {
+                  "type": "fill-blank",
+                  "question": "_____, signore. (formal morning greeting)",
+                  "answer": "Buongiorno",
+                  "hint": "Formal greeting for morning/day"
+                },
+                {
+                  "type": "multiple-choice",
+                  "question": "When would you use 'Buonasera'?",
+                  "options": [
+                    "In the morning",
+                    "After 5pm",
+                    "Only with friends",
+                    "When saying goodbye"
+                  ],
+                  "answer": "After 5pm"
+                }
+              ]
+            },
+            {
+              "id": "l2-introducing",
+              "title": "Introducing Yourself",
+              "content": "\n# Introducing Yourself\n\n## Key Phrases\n- **Mi chiamo...** = My name is...\n- **Sono...** = I am...\n- **Piacere** = Nice to meet you\n- **Di dove sei?** = Where are you from?\n- **Sono di...** = I'm from...\n\n## The Verb ESSERE (to be)\n\n| Person | Italian | English |\n|--------|---------|---------|\n| Io | sono | I am |\n| Tu | sei | You are |\n| Lui/Lei | è | He/She is |\n| Noi | siamo | We are |\n| Voi | siete | You (pl) are |\n| Loro | sono | They are |\n\n## Examples\n- Mi chiamo Marco. = My name is Marco.\n- Sono di Roma. = I'm from Rome.\n- Sono italiano. = I'm Italian.\n",
+              "exercises": [
+                {
+                  "type": "fill-blank",
+                  "question": "_____ Maria. (My name is Maria)",
+                  "answer": "Mi chiamo",
+                  "hint": "Use 'Mi chiamo' for 'My name is'"
+                },
+                {
+                  "type": "fill-blank",
+                  "question": "Io _____ studente. (I am a student)",
+                  "answer": "sono",
+                  "hint": "Conjugate 'essere' for 'io'"
+                },
+                {
+                  "type": "conjugation",
+                  "verb": "essere",
+                  "tense": "presente",
+                  "questions": [
+                    {
+                      "pronoun": "io",
+                      "answer": "sono"
+                    },
+                    {
+                      "pronoun": "tu",
+                      "answer": "sei"
+                    },
+                    {
+                      "pronoun": "lui",
+                      "answer": "è"
+                    },
+                    {
+                      "pronoun": "noi",
+                      "answer": "siamo"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "a1-family",
+          "title": "Family & Relationships",
+          "description": "Talk about your family and describe people",
+          "vocabulary": [
+            "famiglia",
+            "padre",
+            "madre",
+            "fratello",
+            "sorella",
+            "nonno",
+            "nonna",
+            "genitore",
+            "figlio",
+            "figlia"
+          ],
+          "grammar": [
+            "possessive-adjectives",
+            "avere-presente"
+          ],
+          "gcse_topic": "Identity and culture",
+          "lessons": [
+            {
+              "id": "l3-family-words",
+              "title": "Family Members",
+              "content": "\n# Family Members (I Membri della Famiglia)\n\n## Immediate Family\n- **padre** = father (il padre)\n- **madre** = mother (la madre)\n- **genitori** = parents\n- **fratello** = brother\n- **sorella** = sister\n- **figlio** = son\n- **figlia** = daughter\n\n## Extended Family\n- **nonno** = grandfather\n- **nonna** = grandmother\n- **nonni** = grandparents\n- **zio** = uncle\n- **zia** = aunt\n- **cugino/cugina** = cousin\n\n## Possessive Adjectives\n- **mio/mia** = my\n- **tuo/tua** = your\n- **suo/sua** = his/her\n\n## Examples\n- Mio padre lavora in ufficio. = My father works in an office.\n- Mia madre è insegnante. = My mother is a teacher.\n- Ho due fratelli. = I have two brothers.\n",
+              "exercises": [
+                {
+                  "type": "fill-blank",
+                  "question": "_____ padre è medico. (My father is a doctor)",
+                  "answer": "Mio",
+                  "hint": "Possessive adjective for masculine noun"
+                },
+                {
+                  "type": "matching",
+                  "pairs": [
+                    {
+                      "it": "fratello",
+                      "en": "brother"
+                    },
+                    {
+                      "it": "sorella",
+                      "en": "sister"
+                    },
+                    {
+                      "it": "nonno",
+                      "en": "grandfather"
+                    },
+                    {
+                      "it": "zia",
+                      "en": "aunt"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "l4-avere",
+              "title": "The Verb AVERE (to have)",
+              "content": "\n# AVERE - To Have\n\nAvere is essential for talking about family, age, and possessions.\n\n## Conjugation\n\n| Person | Italian |\n|--------|---------|\n| Io | ho |\n| Tu | hai |\n| Lui/Lei | ha |\n| Noi | abbiamo |\n| Voi | avete |\n| Loro | hanno |\n\n## Common Expressions with AVERE\n- **avere... anni** = to be... years old\n- **avere fame** = to be hungry\n- **avere sete** = to be thirsty\n- **avere freddo** = to be cold\n- **avere caldo** = to be hot\n\n## Examples\n- Ho venti anni. = I'm twenty years old.\n- Hai fratelli? = Do you have brothers?\n- Mia madre ha due sorelle. = My mother has two sisters.\n",
+              "exercises": [
+                {
+                  "type": "conjugation",
+                  "verb": "avere",
+                  "tense": "presente",
+                  "questions": [
+                    {
+                      "pronoun": "io",
+                      "answer": "ho"
+                    },
+                    {
+                      "pronoun": "tu",
+                      "answer": "hai"
+                    },
+                    {
+                      "pronoun": "lei",
+                      "answer": "ha"
+                    },
+                    {
+                      "pronoun": "noi",
+                      "answer": "abbiamo"
+                    }
+                  ]
+                },
+                {
+                  "type": "fill-blank",
+                  "question": "Quanti anni _____? (How old are you?)",
+                  "answer": "hai",
+                  "hint": "Conjugate 'avere' for 'tu'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "a1-daily-routine",
+          "title": "Daily Routine",
+          "description": "Describe your typical day",
+          "vocabulary": [
+            "mattina",
+            "pomeriggio",
+            "sera",
+            "notte",
+            "colazione",
+            "pranzo",
+            "cena",
+            "dormire",
+            "svegliarsi"
+          ],
+          "grammar": [
+            "reflexive-verbs",
+            "time-expressions"
+          ],
+          "gcse_topic": "Daily life",
+          "lessons": [
+            {
+              "id": "l5-time",
+              "title": "Telling Time",
+              "content": "\n# Telling Time in Italian\n\n## Asking for Time\n- **Che ore sono?** = What time is it?\n\n## Hours\n- È l'una. = It's one o'clock.\n- Sono le due. = It's two o'clock.\n- Sono le tre. = It's three o'clock.\n\n## Minutes\n- Sono le tre e dieci. = It's 3:10.\n- Sono le tre e un quarto. = It's 3:15.\n- Sono le tre e mezza. = It's 3:30.\n- Sono le quattro meno dieci. = It's 3:50 (ten to four).\n\n## Parts of the Day\n- **la mattina** = morning (until ~1pm)\n- **il pomeriggio** = afternoon (~1pm-6pm)\n- **la sera** = evening (~6pm-10pm)\n- **la notte** = night\n",
+              "exercises": [
+                {
+                  "type": "multiple-choice",
+                  "question": "How do you say 'It's 3:30'?",
+                  "options": [
+                    "Sono le tre e trenta",
+                    "Sono le tre e mezza",
+                    "Sono le tre e tre",
+                    "Both A and B"
+                  ],
+                  "answer": "Both A and B"
+                },
+                {
+                  "type": "fill-blank",
+                  "question": "_____ ore sono? (What time is it?)",
+                  "answer": "Che",
+                  "hint": "Use 'Che' to ask 'What'"
+                }
+              ]
+            },
+            {
+              "id": "l6-reflexive",
+              "title": "Reflexive Verbs",
+              "content": "\n# Reflexive Verbs (Verbi Riflessivi)\n\nReflexive verbs are used for actions you do to yourself.\n\n## Formation\nAdd reflexive pronouns before the verb:\n- **mi** + verb (io)\n- **ti** + verb (tu)\n- **si** + verb (lui/lei)\n- **ci** + verb (noi)\n- **vi** + verb (voi)\n- **si** + verb (loro)\n\n## Common Reflexive Verbs\n- **alzarsi** = to get up\n- **lavarsi** = to wash oneself\n- **vestirsi** = to get dressed\n- **svegliarsi** = to wake up\n- **addormentarsi** = to fall asleep\n\n## Examples\n- Mi sveglio alle sette. = I wake up at seven.\n- Ti lavi la faccia? = Do you wash your face?\n- Si veste in fretta. = He gets dressed quickly.\n",
+              "exercises": [
+                {
+                  "type": "fill-blank",
+                  "question": "Io _____ alle otto. (I get up at eight)",
+                  "answer": "mi alzo",
+                  "hint": "Use reflexive 'mi' + 'alzo'"
+                },
+                {
+                  "type": "fill-blank",
+                  "question": "Tu _____ i denti. (You brush your teeth)",
+                  "answer": "ti lavi",
+                  "hint": "Use reflexive 'ti' + 'lavi'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "a1-food",
+          "title": "Food & Drink",
+          "description": "Order food and talk about meals",
+          "vocabulary": [
+            "pane",
+            "pasta",
+            "pizza",
+            "carne",
+            "pesce",
+            "frutta",
+            "verdura",
+            "acqua",
+            "vino",
+            "caffè"
+          ],
+          "grammar": [
+            "articles",
+            "plural-nouns"
+          ],
+          "gcse_topic": "Food and drink",
+          "lessons": [
+            {
+              "id": "l7-articles",
+              "title": "Articles (il, la, lo, l')",
+              "content": "\n# Italian Articles\n\n## Definite Articles (The)\n\n**Masculine:**\n- **il** → il libro, il pane\n- **lo** → lo studente, lo zucchero (before s+consonant, z, gn, ps, y)\n- **l'** → l'amico, l'uomo (before vowels)\n\n**Feminine:**\n- **la** → la casa, la pasta\n- **l'** → l'amica, l'acqua (before vowels)\n\n## Plural Articles\n- **i** → i libri, i pani (il plural)\n- **gli** → gli studenti, gli zuccheri (lo plural)\n- **le** → le case, le paste (la plural)\n\n## Indefinite Articles (A/An)\n- **un** → un libro, un amico\n- **uno** → uno studente, uno zucchero\n- **una** → una casa, una pasta\n- **un'** → un'amica, un'acqua\n",
+              "exercises": [
+                {
+                  "type": "fill-blank",
+                  "question": "_____ pane è fresco. (The bread is fresh)",
+                  "answer": "Il",
+                  "hint": "Masculine article for 'pane'"
+                },
+                {
+                  "type": "fill-blank",
+                  "question": "Mangio _____ mela. (I eat an apple)",
+                  "answer": "una",
+                  "hint": "Feminine indefinite article"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "A2": {
+      "name": "Elementary",
+      "description": "Can communicate in simple routine tasks",
+      "topics": [
+        {
+          "id": "a2-past",
+          "title": "Past Events (Passato Prossimo)",
+          "description": "Talk about what you did yesterday",
+          "vocabulary": [
+            "ieri",
+            "scorso",
+            "fa",
+            "andato",
+            "mangiato",
+            "visto",
+            "fatto"
+          ],
+          "grammar": [
+            "passato-prossimo",
+            "auxiliary-verbs"
+          ],
+          "gcse_topic": "Past, present, future",
+          "lessons": [
+            {
+              "id": "l8-passato-prossimo",
+              "title": "Passato Prossimo (Recent Past)",
+              "content": "\n# Passato Prossimo\n\nUsed for completed actions in the past (like English present perfect/simple past).\n\n## Formation\n**Auxiliary (essere/avere) + Past Participle**\n\n## Auxiliary Verbs\n- Most verbs use **avere**\n- Movement verbs use **essere** (andare, venire, arrivare)\n\n## Past Participles (-are verbs)\n- parlare → parl**ato**\n- mangiare → mangi**ato**\n- studiare → studi**ato**\n\n## Examples with AVERE\n- Ho mangiato la pizza. = I ate pizza.\n- Hai visto il film? = Did you see the movie?\n- Ha parlato con Maria. = He spoke with Maria.\n\n## Examples with ESSERE\n- Sono andato a Roma. = I went to Rome.\n- Sei arrivato in ritardo? = Did you arrive late?\n- È venuto con noi. = He came with us.\n\n## Agreement with ESSERE\nPast participle agrees with subject:\n- Sono andat**o** (masculine)\n- Sono andat**a** (feminine)\n- Siamo andat**i** (masculine plural)\n- Siamo andat**e** (feminine plural)\n",
+              "exercises": [
+                {
+                  "type": "fill-blank",
+                  "question": "Ieri ho _____ la pasta. (I ate pasta yesterday)",
+                  "answer": "mangiato",
+                  "hint": "Past participle of 'mangiare'"
+                },
+                {
+                  "type": "fill-blank",
+                  "question": "Sono _____ a casa. (I went home)",
+                  "answer": "andato",
+                  "hint": "Past participle of 'andare' with essere"
+                },
+                {
+                  "type": "multiple-choice",
+                  "question": "Which auxiliary does 'mangiare' use?",
+                  "options": [
+                    "essere",
+                    "avere",
+                    "both",
+                    "neither"
+                  ],
+                  "answer": "avere"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "a2-future",
+          "title": "Future Plans",
+          "description": "Talk about what you will do",
+          "vocabulary": [
+            "domani",
+            "prossimo",
+            "fra",
+            "andrò",
+            "mangerò",
+            "farò",
+            "verrò"
+          ],
+          "grammar": [
+            "futuro-semplice",
+            "andare-infinitive"
+          ],
+          "gcse_topic": "Past, present, future",
+          "lessons": [
+            {
+              "id": "l9-futuro",
+              "title": "Futuro Semplice",
+              "content": "\n# Future Tense (Futuro Semplice)\n\n## Formation: Infinitive + Endings\n\n| Person | Ending | Example (parlare) |\n|--------|--------|-------------------|\n| Io | -ò | parlerò |\n| Tu | -ai | parlerai |\n| Lui/Lei | -à | parlerà |\n| Noi | -emo | parleremo |\n| Voi | -ete | parlerete |\n| Loro | -anno | parleranno |\n\n## Irregular Futures\n- essere → sarò, sarai, sarà...\n- avere → avrò, avrai, avrà...\n- andare → andrò, andrai, andrà...\n- fare → farò, farai, farà...\n- venire → verrò, verrai, verrà...\n- vedere → vedrò, vedrai, vedrà...\n\n## Examples\n- Domani andrò al cinema. = Tomorrow I'll go to the cinema.\n- La prossima settimana visiterò Roma. = Next week I'll visit Rome.\n- Che farai stasera? = What will you do tonight?\n",
+              "exercises": [
+                {
+                  "type": "conjugation",
+                  "verb": "mangiare",
+                  "tense": "futuro",
+                  "questions": [
+                    {
+                      "pronoun": "io",
+                      "answer": "mangerò"
+                    },
+                    {
+                      "pronoun": "tu",
+                      "answer": "mangerai"
+                    },
+                    {
+                      "pronoun": "lui",
+                      "answer": "mangerà"
+                    }
+                  ]
+                },
+                {
+                  "type": "fill-blank",
+                  "question": "Domani io _____ a casa. (Tomorrow I'll stay home)",
+                  "answer": "starò",
+                  "hint": "Future of 'stare'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "a2-shopping",
+          "title": "Shopping & Money",
+          "description": "Buy things and ask about prices",
+          "vocabulary": [
+            "quanto",
+            "costa",
+            "caro",
+            "economico",
+            "sconto",
+            "pagare",
+            "contanti",
+            "carta"
+          ],
+          "grammar": [
+            "question-words",
+            "comparatives"
+          ],
+          "gcse_topic": "Shopping and money",
+          "lessons": [
+            {
+              "id": "l10-shopping",
+              "title": "At the Shop",
+              "content": "\n# Shopping Phrases\n\n## Asking About Prices\n- **Quanto costa?** = How much does it cost?\n- **Quanto costano?** = How much do they cost? (plural)\n- **È troppo caro!** = It's too expensive!\n- **C'è uno sconto?** = Is there a discount?\n\n## Useful Phrases\n- **Posso pagare con carta?** = Can I pay by card?\n- **Posso provarlo?** = Can I try it on?\n- **Avete una taglia più grande?** = Do you have a larger size?\n- **Vorrei...** = I would like...\n\n## Comparatives\n- **più... di** = more... than\n- **meno... di** = less... than\n- **così... come** = as... as\n\n## Examples\n- Questo è più caro di quello. = This is more expensive than that.\n- Il caffè costa due euro. = The coffee costs two euros.\n- Vorrei un caffè, per favore. = I'd like a coffee, please.\n",
+              "exercises": [
+                {
+                  "type": "fill-blank",
+                  "question": "_____ costa questa camicia? (How much does this shirt cost?)",
+                  "answer": "Quanto",
+                  "hint": "Use 'Quanto' for 'How much'"
+                },
+                {
+                  "type": "fill-blank",
+                  "question": "_____ un caffè. (I would like a coffee)",
+                  "answer": "Vorrei",
+                  "hint": "Conditional of 'volere'"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

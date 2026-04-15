@@ -1,0 +1,1406 @@
+{
+  "numero": {
+    "it": "numero",
+    "en": "number",
+    "g": "m",
+    "emoji": "🔢",
+    "cat": "school",
+    "room": "knowledge-hub",
+    "lvl": "A1"
+  },
+  "presidente": {
+    "it": "presidente",
+    "en": "president",
+    "g": "m",
+    "emoji": "👔",
+    "cat": "people",
+    "room": "knowledge-hub",
+    "lvl": "A1"
+  },
+  "livello": {
+    "it": "livello",
+    "en": "level",
+    "g": "m",
+    "emoji": "📊",
+    "cat": "buildings",
+    "room": "gallery",
+    "lvl": "A1"
+  },
+  "centro": {
+    "it": "centro",
+    "en": "center",
+    "g": "m",
+    "emoji": "🏢",
+    "cat": "buildings",
+    "room": "gallery",
+    "lvl": "A1"
+  },
+  "titolo": {
+    "it": "titolo",
+    "en": "title",
+    "g": "m",
+    "emoji": "📛",
+    "cat": "school",
+    "room": "knowledge-hub",
+    "lvl": "A1"
+  },
+  "uomo": {
+    "it": "uomo",
+    "en": "man",
+    "g": "m",
+    "emoji": "👨",
+    "cat": "people",
+    "room": "entrance-hall",
+    "lvl": "A1"
+  },
+  "donna": {
+    "it": "donna",
+    "en": "woman",
+    "g": "f",
+    "emoji": "👩",
+    "cat": "people",
+    "room": "entrance-hall",
+    "lvl": "A1"
+  },
+  "bambino": {
+    "it": "bambino",
+    "en": "child",
+    "g": "m",
+    "emoji": "🧒",
+    "cat": "people",
+    "room": "entrance-hall",
+    "lvl": "A1"
+  },
+  "mano": {
+    "it": "mano",
+    "en": "hand",
+    "g": "f",
+    "emoji": "🖐️",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A1"
+  },
+  "ufficio": {
+    "it": "ufficio",
+    "en": "office",
+    "g": "m",
+    "emoji": "🏢",
+    "cat": "work",
+    "room": "knowledge-hub",
+    "lvl": "A1"
+  },
+  "risposta": {
+    "it": "risposta",
+    "en": "answer",
+    "g": "f",
+    "emoji": "✅",
+    "cat": "school",
+    "room": "knowledge-hub",
+    "lvl": "A1"
+  },
+  "testo": {
+    "it": "testo",
+    "en": "text",
+    "g": "m",
+    "emoji": "📄",
+    "cat": "school",
+    "room": "knowledge-hub",
+    "lvl": "A1"
+  },
+  "libro": {
+    "it": "libro",
+    "en": "book",
+    "g": "m",
+    "emoji": "📖",
+    "cat": "school",
+    "room": "knowledge-hub",
+    "lvl": "A1"
+  },
+  "lettera": {
+    "it": "lettera",
+    "en": "letter",
+    "g": "f",
+    "emoji": "✉️",
+    "cat": "documents",
+    "room": "entrance-hall",
+    "lvl": "A1"
+  },
+  "famiglia": {
+    "it": "famiglia",
+    "en": "family",
+    "g": "f",
+    "emoji": "👨‍👩‍👧‍👦",
+    "cat": "people",
+    "room": "entrance-hall",
+    "lvl": "A1"
+  },
+  "casa": {
+    "it": "casa",
+    "en": "house",
+    "g": "f",
+    "emoji": "🏠",
+    "cat": "home",
+    "room": "entrance-hall",
+    "lvl": "A1"
+  },
+  "nome": {
+    "it": "nome",
+    "en": "name",
+    "g": "m",
+    "emoji": "🏷️",
+    "cat": "documents",
+    "room": "entrance-hall",
+    "lvl": "A1"
+  },
+  "città": {
+    "it": "città",
+    "en": "city",
+    "g": "f",
+    "emoji": "🏙️",
+    "cat": "buildings",
+    "room": "gallery",
+    "lvl": "A1"
+  },
+  "via": {
+    "it": "via",
+    "en": "street",
+    "g": "f",
+    "emoji": "🛣️",
+    "cat": "outdoors",
+    "room": "gallery",
+    "lvl": "A1"
+  },
+  "strada": {
+    "it": "strada",
+    "en": "road",
+    "g": "f",
+    "emoji": "🛣️",
+    "cat": "outdoors",
+    "room": "gallery",
+    "lvl": "A1"
+  },
+  "area": {
+    "it": "area",
+    "en": "area",
+    "g": "f",
+    "emoji": "📍",
+    "cat": "buildings",
+    "room": "gallery",
+    "lvl": "A1"
+  },
+  "spazio": {
+    "it": "spazio",
+    "en": "space",
+    "g": "m",
+    "emoji": "🌌",
+    "cat": "buildings",
+    "room": "gallery",
+    "lvl": "A1"
+  },
+  "mercato": {
+    "it": "mercato",
+    "en": "market",
+    "g": "m",
+    "emoji": "🏪",
+    "cat": "shop",
+    "room": "supermarket",
+    "lvl": "A1"
+  },
+  "euro": {
+    "it": "euro",
+    "en": "euro",
+    "g": "m",
+    "emoji": "💶",
+    "cat": "shop",
+    "room": "supermarket",
+    "lvl": "A1"
+  },
+  "conto": {
+    "it": "conto",
+    "en": "bill",
+    "g": "m",
+    "emoji": "🧾",
+    "cat": "restaurant",
+    "room": "cafe",
+    "lvl": "A1"
+  },
+  "vista": {
+    "it": "vista",
+    "en": "view",
+    "g": "f",
+    "emoji": "🪟",
+    "cat": "bedroom",
+    "room": "bedroom",
+    "lvl": "A1"
+  },
+  "tema": {
+    "it": "tema",
+    "en": "topic",
+    "g": "m",
+    "emoji": "📝",
+    "cat": "school",
+    "room": "knowledge-hub",
+    "lvl": "A1"
+  },
+  "strumento": {
+    "it": "strumento",
+    "en": "tool",
+    "g": "m",
+    "emoji": "🔧",
+    "cat": "kitchen",
+    "room": "kitchen",
+    "lvl": "A1"
+  },
+  "ambiente": {
+    "it": "ambiente",
+    "en": "environment",
+    "g": "m",
+    "emoji": "🌳",
+    "cat": "outdoors",
+    "room": "garden",
+    "lvl": "A1"
+  },
+  "campo": {
+    "it": "campo",
+    "en": "field",
+    "g": "m",
+    "emoji": "🌾",
+    "cat": "outdoors",
+    "room": "garden",
+    "lvl": "A1"
+  },
+  "domanda": {
+    "it": "domanda",
+    "en": "question",
+    "g": "f",
+    "emoji": "❓",
+    "cat": "school",
+    "room": "knowledge-hub",
+    "lvl": "A1"
+  },
+  "pagina": {
+    "it": "pagina",
+    "en": "page",
+    "g": "f",
+    "emoji": "📄",
+    "cat": "school",
+    "room": "knowledge-hub",
+    "lvl": "A1"
+  },
+  "grado": {
+    "it": "grado",
+    "en": "grade",
+    "g": "m",
+    "emoji": "🎓",
+    "cat": "school",
+    "room": "knowledge-hub",
+    "lvl": "A1"
+  },
+  "esperimento": {
+    "it": "esperimento",
+    "en": "experiment",
+    "g": "m",
+    "emoji": "🧪",
+    "cat": "school",
+    "room": "knowledge-hub",
+    "lvl": "A2"
+  },
+  "applicazione": {
+    "it": "applicazione",
+    "en": "application",
+    "g": "f",
+    "emoji": "📱",
+    "cat": "technology",
+    "room": "technology",
+    "lvl": "A2"
+  },
+  "documento": {
+    "it": "documento",
+    "en": "document",
+    "g": "m",
+    "emoji": "📄",
+    "cat": "work",
+    "room": "knowledge-hub",
+    "lvl": "A2"
+  },
+  "medicina": {
+    "it": "medicina",
+    "en": "medicine",
+    "g": "f",
+    "emoji": "💊",
+    "cat": "health",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "ospedale": {
+    "it": "ospedale",
+    "en": "hospital",
+    "g": "m",
+    "emoji": "🏥",
+    "cat": "health",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "malattia": {
+    "it": "malattia",
+    "en": "disease",
+    "g": "f",
+    "emoji": "🤒",
+    "cat": "health",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "dolore": {
+    "it": "dolore",
+    "en": "pain",
+    "g": "m",
+    "emoji": "😣",
+    "cat": "health",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "febbre": {
+    "it": "febbre",
+    "en": "fever",
+    "g": "f",
+    "emoji": "🤒",
+    "cat": "health",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "raffreddore": {
+    "it": "raffreddore",
+    "en": "cold",
+    "g": "m",
+    "emoji": "🤧",
+    "cat": "health",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "influenza": {
+    "it": "influenza",
+    "en": "flu",
+    "g": "f",
+    "emoji": "🤒",
+    "cat": "health",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "dottore": {
+    "it": "dottore",
+    "en": "doctor",
+    "g": "m",
+    "emoji": "👨‍⚕️",
+    "cat": "health",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "infermiere": {
+    "it": "infermiere",
+    "en": "nurse",
+    "g": "m",
+    "emoji": "👨‍⚕️",
+    "cat": "health",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "farmacia": {
+    "it": "farmacia",
+    "en": "pharmacy",
+    "g": "f",
+    "emoji": "💊",
+    "cat": "buildings",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "ricetta": {
+    "it": "ricetta",
+    "en": "prescription",
+    "g": "f",
+    "emoji": "📋",
+    "cat": "health",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "camera": {
+    "it": "camera",
+    "en": "room",
+    "g": "f",
+    "emoji": "🍽️",
+    "cat": "bedroom",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "cucina": {
+    "it": "cucina",
+    "en": "kitchen",
+    "g": "f",
+    "emoji": "🍳",
+    "cat": "kitchen",
+    "room": "kitchen",
+    "lvl": "A2"
+  },
+  "bagno": {
+    "it": "bagno",
+    "en": "bathroom",
+    "g": "m",
+    "emoji": "🚿",
+    "cat": "bathroom",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "soggiorno": {
+    "it": "soggiorno",
+    "en": "living room",
+    "g": "m",
+    "emoji": "🍽️",
+    "cat": "home",
+    "room": "living-room",
+    "lvl": "A2"
+  },
+  "giardino": {
+    "it": "giardino",
+    "en": "garden",
+    "g": "m",
+    "emoji": "🌳",
+    "cat": "outdoors",
+    "room": "garden",
+    "lvl": "A2"
+  },
+  "corridoio": {
+    "it": "corridoio",
+    "en": "hallway",
+    "g": "m",
+    "emoji": "🚪",
+    "cat": "home",
+    "room": "entrance-hall",
+    "lvl": "A2"
+  },
+  "scala": {
+    "it": "scala",
+    "en": "stairs",
+    "g": "f",
+    "emoji": "🪜",
+    "cat": "home",
+    "room": "entrance-hall",
+    "lvl": "A2"
+  },
+  "ascensore": {
+    "it": "ascensore",
+    "en": "elevator",
+    "g": "m",
+    "emoji": "🛗",
+    "cat": "home",
+    "room": "entrance-hall",
+    "lvl": "A2"
+  },
+  "finestra": {
+    "it": "finestra",
+    "en": "window",
+    "g": "f",
+    "emoji": "🪟",
+    "cat": "bedroom",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "porta": {
+    "it": "porta",
+    "en": "door",
+    "g": "f",
+    "emoji": "🚪",
+    "cat": "home",
+    "room": "entrance-hall",
+    "lvl": "A2"
+  },
+  "sofa": {
+    "it": "sofa",
+    "en": "sofa",
+    "g": "m",
+    "emoji": "🍽️",
+    "cat": "home",
+    "room": "living-room",
+    "lvl": "A2"
+  },
+  "letto": {
+    "it": "letto",
+    "en": "bed",
+    "g": "m",
+    "emoji": "🛏️",
+    "cat": "bedroom",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "tavolo": {
+    "it": "tavolo",
+    "en": "table",
+    "g": "m",
+    "emoji": "🪑",
+    "cat": "kitchen",
+    "room": "kitchen",
+    "lvl": "A2"
+  },
+  "sedia": {
+    "it": "sedia",
+    "en": "chair",
+    "g": "f",
+    "emoji": "🪑",
+    "cat": "kitchen",
+    "room": "kitchen",
+    "lvl": "A2"
+  },
+  "armadio": {
+    "it": "armadio",
+    "en": "wardrobe",
+    "g": "m",
+    "emoji": "🚪",
+    "cat": "bedroom",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "cuscino": {
+    "it": "cuscino",
+    "en": "pillow",
+    "g": "m",
+    "emoji": "🛏️",
+    "cat": "bedroom",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "coperta": {
+    "it": "coperta",
+    "en": "blanket",
+    "g": "f",
+    "emoji": "🛏️",
+    "cat": "bedroom",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "lenzuolo": {
+    "it": "lenzuolo",
+    "en": "sheet",
+    "g": "m",
+    "emoji": "🛏️",
+    "cat": "bedroom",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "lampada": {
+    "it": "lampada",
+    "en": "lamp",
+    "g": "f",
+    "emoji": "💡",
+    "cat": "bedroom",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "specchio": {
+    "it": "specchio",
+    "en": "mirror",
+    "g": "m",
+    "emoji": "🪞",
+    "cat": "bathroom",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "doccia": {
+    "it": "doccia",
+    "en": "shower",
+    "g": "f",
+    "emoji": "🚿",
+    "cat": "bathroom",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "vasca": {
+    "it": "vasca",
+    "en": "bathtub",
+    "g": "f",
+    "emoji": "🛁",
+    "cat": "bathroom",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "lavandino": {
+    "it": "lavandino",
+    "en": "sink",
+    "g": "m",
+    "emoji": "🚰",
+    "cat": "bathroom",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "asciugamano": {
+    "it": "asciugamano",
+    "en": "towel",
+    "g": "m",
+    "emoji": "🧴",
+    "cat": "bathroom",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "sapone": {
+    "it": "sapone",
+    "en": "soap",
+    "g": "m",
+    "emoji": "🧼",
+    "cat": "bathroom",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "pelle": {
+    "it": "pelle",
+    "en": "skin",
+    "g": "f",
+    "emoji": "🤚",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "occhio": {
+    "it": "occhio",
+    "en": "eye",
+    "g": "m",
+    "emoji": "👁️",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "orecchio": {
+    "it": "orecchio",
+    "en": "ear",
+    "g": "m",
+    "emoji": "👂",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "naso": {
+    "it": "naso",
+    "en": "nose",
+    "g": "m",
+    "emoji": "👃",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "bocca": {
+    "it": "bocca",
+    "en": "mouth",
+    "g": "f",
+    "emoji": "👄",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "dente": {
+    "it": "dente",
+    "en": "tooth",
+    "g": "m",
+    "emoji": "🦷",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "collo": {
+    "it": "collo",
+    "en": "neck",
+    "g": "m",
+    "emoji": "🦒",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "spalla": {
+    "it": "spalla",
+    "en": "shoulder",
+    "g": "f",
+    "emoji": "💪",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "braccio": {
+    "it": "braccio",
+    "en": "arm",
+    "g": "m",
+    "emoji": "💪",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "gomito": {
+    "it": "gomito",
+    "en": "elbow",
+    "g": "m",
+    "emoji": "🦴",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "gamba": {
+    "it": "gamba",
+    "en": "leg",
+    "g": "f",
+    "emoji": "🦵",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "ginocchio": {
+    "it": "ginocchio",
+    "en": "knee",
+    "g": "m",
+    "emoji": "🦵",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "schiena": {
+    "it": "schiena",
+    "en": "back",
+    "g": "f",
+    "emoji": "🦴",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "dito": {
+    "it": "dito",
+    "en": "finger",
+    "g": "m",
+    "emoji": "👆",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "testa": {
+    "it": "testa",
+    "en": "head",
+    "g": "f",
+    "emoji": "🗣️",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "faccia": {
+    "it": "faccia",
+    "en": "face",
+    "g": "f",
+    "emoji": "😊",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "capello": {
+    "it": "capello",
+    "en": "hair",
+    "g": "m",
+    "emoji": "💇",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "piede": {
+    "it": "piede",
+    "en": "foot",
+    "g": "m",
+    "emoji": "🦶",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "cuore": {
+    "it": "cuore",
+    "en": "heart",
+    "g": "m",
+    "emoji": "💓",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "sangue": {
+    "it": "sangue",
+    "en": "blood",
+    "g": "m",
+    "emoji": "🩸",
+    "cat": "body",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "farmaco": {
+    "it": "farmaco",
+    "en": "drug",
+    "g": "m",
+    "emoji": "💊",
+    "cat": "health",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "ferita": {
+    "it": "ferita",
+    "en": "wound",
+    "g": "f",
+    "emoji": "🩹",
+    "cat": "health",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "cerotto": {
+    "it": "cerotto",
+    "en": "bandage",
+    "g": "m",
+    "emoji": "🩹",
+    "cat": "health",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "temperatura": {
+    "it": "temperatura",
+    "en": "temperature",
+    "g": "f",
+    "emoji": "🌡️",
+    "cat": "health",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "termometro": {
+    "it": "termometro",
+    "en": "thermometer",
+    "g": "m",
+    "emoji": "🌡️",
+    "cat": "health",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "salute": {
+    "it": "salute",
+    "en": "health",
+    "g": "f",
+    "emoji": "💪",
+    "cat": "health",
+    "room": "bathroom",
+    "lvl": "A2"
+  },
+  "camicia": {
+    "it": "camicia",
+    "en": "shirt",
+    "g": "f",
+    "emoji": "👔",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "maglietta": {
+    "it": "maglietta",
+    "en": "t-shirt",
+    "g": "f",
+    "emoji": "👕",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "pantaloni": {
+    "it": "pantaloni",
+    "en": "pants",
+    "g": "m",
+    "emoji": "👖",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "jeans": {
+    "it": "jeans",
+    "en": "jeans",
+    "g": "m",
+    "emoji": "👖",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "gonna": {
+    "it": "gonna",
+    "en": "skirt",
+    "g": "f",
+    "emoji": "👗",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "vestito": {
+    "it": "vestito",
+    "en": "dress",
+    "g": "m",
+    "emoji": "👗",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "cappotto": {
+    "it": "cappotto",
+    "en": "coat",
+    "g": "m",
+    "emoji": "🍽️",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "giacca": {
+    "it": "giacca",
+    "en": "jacket",
+    "g": "f",
+    "emoji": "🧥",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "impermeabile": {
+    "it": "impermeabile",
+    "en": "raincoat",
+    "g": "m",
+    "emoji": "🧥",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "cappello": {
+    "it": "cappello",
+    "en": "hat",
+    "g": "m",
+    "emoji": "🎩",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "berretto": {
+    "it": "berretto",
+    "en": "cap",
+    "g": "m",
+    "emoji": "🧢",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "sciarpa": {
+    "it": "sciarpa",
+    "en": "scarf",
+    "g": "f",
+    "emoji": "🧣",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "guanti": {
+    "it": "guanti",
+    "en": "gloves",
+    "g": "m",
+    "emoji": "🧤",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "scarpe": {
+    "it": "scarpe",
+    "en": "shoes",
+    "g": "f",
+    "emoji": "👟",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "stivali": {
+    "it": "stivali",
+    "en": "boots",
+    "g": "m",
+    "emoji": "👢",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "pantofole": {
+    "it": "pantofole",
+    "en": "slippers",
+    "g": "f",
+    "emoji": "🩴",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "calze": {
+    "it": "calze",
+    "en": "socks",
+    "g": "f",
+    "emoji": "🧦",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "cravatta": {
+    "it": "cravatta",
+    "en": "tie",
+    "g": "f",
+    "emoji": "👔",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "cintura": {
+    "it": "cintura",
+    "en": "belt",
+    "g": "f",
+    "emoji": "🔗",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "orecchino": {
+    "it": "orecchino",
+    "en": "earring",
+    "g": "m",
+    "emoji": "💎",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "collana": {
+    "it": "collana",
+    "en": "necklace",
+    "g": "f",
+    "emoji": "📿",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "anello": {
+    "it": "anello",
+    "en": "ring",
+    "g": "m",
+    "emoji": "💍",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "orologio": {
+    "it": "orologio",
+    "en": "watch",
+    "g": "m",
+    "emoji": "⌚",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "zaino": {
+    "it": "zaino",
+    "en": "backpack",
+    "g": "m",
+    "emoji": "🎒",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "borse": {
+    "it": "borse",
+    "en": "bag",
+    "g": "f",
+    "emoji": "👛",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "portafoglio": {
+    "it": "portafoglio",
+    "en": "wallet",
+    "g": "m",
+    "emoji": "👛",
+    "cat": "clothing",
+    "room": "bedroom",
+    "lvl": "A2"
+  },
+  "ombrello": {
+    "it": "ombrello",
+    "en": "umbrella",
+    "g": "m",
+    "emoji": "☂️",
+    "cat": "home",
+    "room": "entrance-hall",
+    "lvl": "A2"
+  },
+  "chiave": {
+    "it": "chiave",
+    "en": "key",
+    "g": "f",
+    "emoji": "🔑",
+    "cat": "home",
+    "room": "entrance-hall",
+    "lvl": "A2"
+  },
+  "soldi": {
+    "it": "soldi",
+    "en": "money",
+    "g": "m",
+    "emoji": "💵",
+    "cat": "shop",
+    "room": "supermarket",
+    "lvl": "A2"
+  },
+  "portamonete": {
+    "it": "portamonete",
+    "en": "purse",
+    "g": "m",
+    "emoji": "👛",
+    "cat": "shop",
+    "room": "supermarket",
+    "lvl": "A2"
+  },
+  "banconota": {
+    "it": "banconota",
+    "en": "banknote",
+    "g": "f",
+    "emoji": "💵",
+    "cat": "shop",
+    "room": "supermarket",
+    "lvl": "A2"
+  },
+  "moneta": {
+    "it": "moneta",
+    "en": "coin",
+    "g": "f",
+    "emoji": "🪙",
+    "cat": "shop",
+    "room": "supermarket",
+    "lvl": "A2"
+  },
+  "carta": {
+    "it": "carta",
+    "en": "card",
+    "g": "f",
+    "emoji": "💳",
+    "cat": "shop",
+    "room": "supermarket",
+    "lvl": "A2"
+  },
+  "bancomat": {
+    "it": "bancomat",
+    "en": "ATM card",
+    "g": "m",
+    "emoji": "🏧",
+    "cat": "shop",
+    "room": "supermarket",
+    "lvl": "A2"
+  },
+  "macchina": {
+    "it": "macchina",
+    "en": "car",
+    "g": "f",
+    "emoji": "🚗",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "auto": {
+    "it": "auto",
+    "en": "car",
+    "g": "f",
+    "emoji": "🚗",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "treno": {
+    "it": "treno",
+    "en": "train",
+    "g": "m",
+    "emoji": "🚂",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "aereo": {
+    "it": "aereo",
+    "en": "plane",
+    "g": "m",
+    "emoji": "✈️",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "nave": {
+    "it": "nave",
+    "en": "ship",
+    "g": "f",
+    "emoji": "🚢",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "barca": {
+    "it": "barca",
+    "en": "boat",
+    "g": "f",
+    "emoji": "⛵",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "bicicletta": {
+    "it": "bicicletta",
+    "en": "bicycle",
+    "g": "f",
+    "emoji": "🚲",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "moto": {
+    "it": "moto",
+    "en": "motorcycle",
+    "g": "f",
+    "emoji": "🏍️",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "scooter": {
+    "it": "scooter",
+    "en": "scooter",
+    "g": "m",
+    "emoji": "🛵",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "taxi": {
+    "it": "taxi",
+    "en": "taxi",
+    "g": "m",
+    "emoji": "🚕",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "autobus": {
+    "it": "autobus",
+    "en": "bus",
+    "g": "m",
+    "emoji": "🚌",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "pullman": {
+    "it": "pullman",
+    "en": "coach",
+    "g": "m",
+    "emoji": "🚌",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "metro": {
+    "it": "metro",
+    "en": "subway",
+    "g": "f",
+    "emoji": "🚇",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "tram": {
+    "it": "tram",
+    "en": "tram",
+    "g": "m",
+    "emoji": "🚊",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "fermata": {
+    "it": "fermata",
+    "en": "stop",
+    "g": "f",
+    "emoji": "🚏",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "stazione": {
+    "it": "stazione",
+    "en": "station",
+    "g": "f",
+    "emoji": "🚉",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "aeroporto": {
+    "it": "aeroporto",
+    "en": "airport",
+    "g": "m",
+    "emoji": "🛫",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "porto": {
+    "it": "porto",
+    "en": "port",
+    "g": "m",
+    "emoji": "⚓",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "biglietto": {
+    "it": "biglietto",
+    "en": "ticket",
+    "g": "m",
+    "emoji": "🎫",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "abbonamento": {
+    "it": "abbonamento",
+    "en": "pass",
+    "g": "m",
+    "emoji": "🎟️",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "orario": {
+    "it": "orario",
+    "en": "schedule",
+    "g": "m",
+    "emoji": "🕐",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "mappa": {
+    "it": "mappa",
+    "en": "map",
+    "g": "f",
+    "emoji": "🗺️",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "guida": {
+    "it": "guida",
+    "en": "guide",
+    "g": "f",
+    "emoji": "📖",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  },
+  "valigia": {
+    "it": "valigia",
+    "en": "suitcase",
+    "g": "f",
+    "emoji": "🍽️",
+    "cat": "transport",
+    "room": "transport",
+    "lvl": "A2"
+  }
+}

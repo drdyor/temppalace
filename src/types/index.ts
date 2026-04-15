@@ -3,7 +3,7 @@
 export type Gender = 'masculine' | 'feminine' | 'none';
 export type Language = 'italian' | 'french' | 'spanish';
 export type DifficultyLevel = 'basic' | 'intermediate' | 'advanced';
-export type TabType = 'explore' | 'learn' | 'practice' | 'test' | 'narratives' | 'culture' | 'dialogue';
+export type TabType = 'explore' | 'learn' | 'practice' | 'test' | 'narratives' | 'culture' | 'dialogue' | 'stories';
 
 export interface Example {
   native: string;

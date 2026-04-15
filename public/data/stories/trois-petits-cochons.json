@@ -1,0 +1,73 @@
+{
+  "id": "trois-petits-cochons",
+  "title": "Les Trois Petits Cochons",
+  "englishTitle": "The Three Little Pigs",
+  "level": "A1",
+  "lines": [
+    {
+      "italian": "Il était une fois trois petits cochons.",
+      "english": "Once upon a time there were three little pigs."
+    },
+    {
+      "italian": "Le premier cochon construit une maison de paille.",
+      "english": "The first pig builds a house of straw."
+    },
+    {
+      "italian": "Le deuxième cochon construit une maison de bois.",
+      "english": "The second pig builds a house of wood."
+    },
+    {
+      "italian": "Le troisième cochon construit une maison de briques.",
+      "english": "The third pig builds a house of bricks."
+    },
+    {
+      "italian": "Le loup arrive et dit : « Je vais souffler ! »",
+      "english": "The wolf arrives and says: 'I will blow!'"
+    },
+    {
+      "italian": "Il souffle sur la maison de paille.",
+      "english": "He blows on the straw house."
+    },
+    {
+      "italian": "La maison de paille tombe !",
+      "english": "The straw house falls down!"
+    },
+    {
+      "italian": "Le premier cochon court chez le deuxième.",
+      "english": "The first pig runs to the second's house."
+    },
+    {
+      "italian": "Le loup souffle sur la maison de bois.",
+      "english": "The wolf blows on the wood house."
+    },
+    {
+      "italian": "La maison de bois tombe !",
+      "english": "The wood house falls down!"
+    },
+    {
+      "italian": "Les deux cochons courent chez le troisième.",
+      "english": "The two pigs run to the third's house."
+    },
+    {
+      "italian": "Le loup souffle sur la maison de briques.",
+      "english": "The wolf blows on the brick house."
+    },
+    {
+      "italian": "La maison de briques ne tombe pas !",
+      "english": "The brick house does not fall down!"
+    },
+    {
+      "italian": "Le loup est fatigué. Il part.",
+      "english": "The wolf is tired. He leaves."
+    },
+    {
+      "italian": "Les trois cochons sont contents et en sécurité.",
+      "english": "The three pigs are happy and safe."
+    },
+    {
+      "italian": "Ils dansent et chantent : « Hourra ! »",
+      "english": "They dance and sing: 'Hurray!'"
+    }
+  ],
+  "generatedAt": "2026-04-07T00:00:00.000Z"
+}

@@ -1,0 +1,2526 @@
+{
+  "uomo": {
+    "it": "uomo",
+    "en": "man",
+    "g": "m",
+    "emoji": "👨",
+    "cat": "people",
+    "plural": "uomini",
+    "irregular_plural": true,
+    "examples": [
+      {
+        "it": "L'uomo mangia la pizza.",
+        "en": "The man eats pizza."
+      },
+      {
+        "it": "Quell'uomo è mio padre.",
+        "en": "That man is my father."
+      },
+      {
+        "it": "Gli uomini lavorano qui.",
+        "en": "The men work here."
+      }
+    ],
+    "notes": "Irregular plural: uomo → uomini (not uomos)"
+  },
+  "donna": {
+    "it": "donna",
+    "en": "woman",
+    "g": "f",
+    "emoji": "👩",
+    "cat": "people",
+    "plural": "donne",
+    "examples": [
+      {
+        "it": "La donna legge un libro.",
+        "en": "The woman reads a book."
+      },
+      {
+        "it": "Quella donna è mia madre.",
+        "en": "That woman is my mother."
+      }
+    ]
+  },
+  "bambino": {
+    "it": "bambino",
+    "en": "child (boy)",
+    "g": "m",
+    "emoji": "👦",
+    "cat": "people",
+    "plural": "bambini",
+    "examples": [
+      {
+        "it": "Il bambino gioca nel parco.",
+        "en": "The child plays in the park."
+      }
+    ]
+  },
+  "bambina": {
+    "it": "bambina",
+    "en": "child (girl)",
+    "g": "f",
+    "emoji": "👧",
+    "cat": "people",
+    "plural": "bambine",
+    "examples": [
+      {
+        "it": "La bambina canta una canzone.",
+        "en": "The girl sings a song."
+      }
+    ]
+  },
+  "famiglia": {
+    "it": "famiglia",
+    "en": "family",
+    "g": "f",
+    "emoji": "👨‍👩‍👧‍👦",
+    "cat": "people",
+    "plural": "famiglie",
+    "examples": [
+      {
+        "it": "La mia famiglia è grande.",
+        "en": "My family is big."
+      },
+      {
+        "it": "Vado a casa dalla famiglia.",
+        "en": "I'm going home to family."
+      }
+    ]
+  },
+  "padre": {
+    "it": "padre",
+    "en": "father",
+    "g": "m",
+    "emoji": "👨‍🍼",
+    "cat": "people",
+    "plural": "padri",
+    "examples": [
+      {
+        "it": "Mio padre lavora in ufficio.",
+        "en": "My father works in an office."
+      }
+    ]
+  },
+  "madre": {
+    "it": "madre",
+    "en": "mother",
+    "g": "f",
+    "emoji": "👩‍🍼",
+    "cat": "people",
+    "plural": "madri",
+    "examples": [
+      {
+        "it": "Mia madre cucina bene.",
+        "en": "My mother cooks well."
+      }
+    ]
+  },
+  "fratello": {
+    "it": "fratello",
+    "en": "brother",
+    "g": "m",
+    "emoji": "👦",
+    "cat": "people",
+    "plural": "fratelli",
+    "examples": [
+      {
+        "it": "Mio fratello è più grande.",
+        "en": "My brother is older."
+      }
+    ]
+  },
+  "sorella": {
+    "it": "sorella",
+    "en": "sister",
+    "g": "f",
+    "emoji": "👧",
+    "cat": "people",
+    "plural": "sorelle",
+    "examples": [
+      {
+        "it": "Mia sorella studia medicina.",
+        "en": "My sister studies medicine."
+      }
+    ]
+  },
+  "nonno": {
+    "it": "nonno",
+    "en": "grandfather",
+    "g": "m",
+    "emoji": "👴",
+    "cat": "people",
+    "plural": "nonni",
+    "examples": [
+      {
+        "it": "Mio nonno racconta storie.",
+        "en": "My grandfather tells stories."
+      }
+    ]
+  },
+  "nonna": {
+    "it": "nonna",
+    "en": "grandmother",
+    "g": "f",
+    "emoji": "👵",
+    "cat": "people",
+    "plural": "nonne",
+    "examples": [
+      {
+        "it": "Mia nonna fa la pasta.",
+        "en": "My grandmother makes pasta."
+      }
+    ]
+  },
+  "amico": {
+    "it": "amico",
+    "en": "friend (m)",
+    "g": "m",
+    "emoji": "👫",
+    "cat": "people",
+    "plural": "amici",
+    "examples": [
+      {
+        "it": "Il mio amico viene a cena.",
+        "en": "My friend is coming to dinner."
+      }
+    ]
+  },
+  "amica": {
+    "it": "amica",
+    "en": "friend (f)",
+    "g": "f",
+    "emoji": "👭",
+    "cat": "people",
+    "plural": "amiche",
+    "examples": [
+      {
+        "it": "La mia amica abita qui.",
+        "en": "My friend lives here."
+      }
+    ]
+  },
+  "persona": {
+    "it": "persona",
+    "en": "person",
+    "g": "f",
+    "emoji": "🧑",
+    "cat": "people",
+    "plural": "persone",
+    "irregular_plural": true,
+    "examples": [
+      {
+        "it": "Quella persona è simpatica.",
+        "en": "That person is nice."
+      }
+    ],
+    "notes": "Irregular plural: persona → persone (not persone)"
+  },
+  "ragazzo": {
+    "it": "ragazzo",
+    "en": "boy/young man",
+    "g": "m",
+    "emoji": "👦",
+    "cat": "people",
+    "plural": "ragazzi",
+    "examples": [
+      {
+        "it": "Il ragazzo gioca a calcio.",
+        "en": "The boy plays soccer."
+      }
+    ]
+  },
+  "ragazza": {
+    "it": "ragazza",
+    "en": "girl/young woman",
+    "g": "f",
+    "emoji": "👧",
+    "cat": "people",
+    "plural": "ragazze",
+    "examples": [
+      {
+        "it": "La ragazza legge un libro.",
+        "en": "The girl reads a book."
+      }
+    ]
+  },
+  "casa": {
+    "it": "casa",
+    "en": "house/home",
+    "g": "f",
+    "emoji": "🏠",
+    "cat": "house",
+    "plural": "case",
+    "examples": [
+      {
+        "it": "La mia casa è grande.",
+        "en": "My house is big."
+      },
+      {
+        "it": "Vado a casa.",
+        "en": "I'm going home."
+      }
+    ]
+  },
+  "porta": {
+    "it": "porta",
+    "en": "door",
+    "g": "f",
+    "emoji": "🚪",
+    "cat": "house",
+    "plural": "porte",
+    "examples": [
+      {
+        "it": "Chiudi la porta, per favore.",
+        "en": "Close the door, please."
+      }
+    ]
+  },
+  "finestra": {
+    "it": "finestra",
+    "en": "window",
+    "g": "f",
+    "emoji": "🪟",
+    "cat": "house",
+    "plural": "finestre",
+    "examples": [
+      {
+        "it": "Apri la finestra.",
+        "en": "Open the window."
+      }
+    ]
+  },
+  "tavolo": {
+    "it": "tavolo",
+    "en": "table",
+    "g": "m",
+    "emoji": "🪑",
+    "cat": "house",
+    "plural": "tavoli",
+    "examples": [
+      {
+        "it": "Il libro è sul tavolo.",
+        "en": "The book is on the table."
+      }
+    ]
+  },
+  "sedia": {
+    "it": "sedia",
+    "en": "chair",
+    "g": "f",
+    "emoji": "🪑",
+    "cat": "house",
+    "plural": "sedie",
+    "examples": [
+      {
+        "it": "Siediti sulla sedia.",
+        "en": "Sit on the chair."
+      }
+    ]
+  },
+  "letto": {
+    "it": "letto",
+    "en": "bed",
+    "g": "m",
+    "emoji": "🛏️",
+    "cat": "house",
+    "plural": "letti",
+    "examples": [
+      {
+        "it": "Vado a letto alle dieci.",
+        "en": "I go to bed at ten."
+      }
+    ]
+  },
+  "bagno": {
+    "it": "bagno",
+    "en": "bathroom",
+    "g": "m",
+    "emoji": "🛁",
+    "cat": "house",
+    "plural": "bagni",
+    "examples": [
+      {
+        "it": "Il bagno è occupato.",
+        "en": "The bathroom is occupied."
+      }
+    ]
+  },
+  "cucina": {
+    "it": "cucina",
+    "en": "kitchen",
+    "g": "f",
+    "emoji": "🍳",
+    "cat": "house",
+    "plural": "cucine",
+    "examples": [
+      {
+        "it": "La cucina è pulita.",
+        "en": "The kitchen is clean."
+      }
+    ]
+  },
+  "camera": {
+    "it": "camera",
+    "en": "room/bedroom",
+    "g": "f",
+    "emoji": "🛏️",
+    "cat": "house",
+    "plural": "camere",
+    "examples": [
+      {
+        "it": "La mia camera è al primo piano.",
+        "en": "My bedroom is on the first floor."
+      }
+    ]
+  },
+  "specchio": {
+    "it": "specchio",
+    "en": "mirror",
+    "g": "m",
+    "emoji": "🪞",
+    "cat": "house",
+    "plural": "specchi",
+    "examples": [
+      {
+        "it": "Guardati nello specchio.",
+        "en": "Look at yourself in the mirror."
+      }
+    ]
+  },
+  "scala": {
+    "it": "scala",
+    "en": "stairs/ladder",
+    "g": "f",
+    "emoji": "🪜",
+    "cat": "house",
+    "plural": "scale",
+    "examples": [
+      {
+        "it": "Salgo le scale.",
+        "en": "I'm going up the stairs."
+      }
+    ]
+  },
+  "luce": {
+    "it": "luce",
+    "en": "light",
+    "g": "f",
+    "emoji": "💡",
+    "cat": "house",
+    "plural": "luci",
+    "examples": [
+      {
+        "it": "Accendi la luce.",
+        "en": "Turn on the light."
+      },
+      {
+        "it": "C'è molta luce qui.",
+        "en": "There's a lot of light here."
+      }
+    ]
+  },
+  "chiave": {
+    "it": "chiave",
+    "en": "key",
+    "g": "f",
+    "emoji": "🔑",
+    "cat": "house",
+    "plural": "chiavi",
+    "examples": [
+      {
+        "it": "Ho perso le chiavi.",
+        "en": "I lost the keys."
+      }
+    ]
+  },
+  "parete": {
+    "it": "parete",
+    "en": "wall",
+    "g": "f",
+    "emoji": "🧱",
+    "cat": "house",
+    "plural": "pareti",
+    "examples": [
+      {
+        "it": "Il quadro è sulla parete.",
+        "en": "The painting is on the wall."
+      }
+    ]
+  },
+  "pavimento": {
+    "it": "pavimento",
+    "en": "floor",
+    "g": "m",
+    "emoji": "🏠",
+    "cat": "house",
+    "plural": "pavimenti",
+    "examples": [
+      {
+        "it": "Il pavimento è pulito.",
+        "en": "The floor is clean."
+      }
+    ]
+  },
+  "soffitto": {
+    "it": "soffitto",
+    "en": "ceiling",
+    "g": "m",
+    "emoji": "🏠",
+    "cat": "house",
+    "plural": "soffitti",
+    "examples": [
+      {
+        "it": "Il lampadario è sul soffitto.",
+        "en": "The chandelier is on the ceiling."
+      }
+    ]
+  },
+  "pane": {
+    "it": "pane",
+    "en": "bread",
+    "g": "m",
+    "emoji": "🍞",
+    "cat": "shopping",
+    "plural": "pani",
+    "examples": [
+      {
+        "it": "Compro pane fresco.",
+        "en": "I buy fresh bread."
+      }
+    ]
+  },
+  "acqua": {
+    "it": "acqua",
+    "en": "water",
+    "g": "f",
+    "emoji": "💧",
+    "cat": "food",
+    "plural": "acque",
+    "examples": [
+      {
+        "it": "Bevo un bicchiere d'acqua.",
+        "en": "I drink a glass of water."
+      }
+    ]
+  },
+  "vino": {
+    "it": "vino",
+    "en": "wine",
+    "g": "m",
+    "emoji": "🍷",
+    "cat": "food",
+    "plural": "vini",
+    "examples": [
+      {
+        "it": "Un bicchiere di vino rosso.",
+        "en": "A glass of red wine."
+      }
+    ]
+  },
+  "latte": {
+    "it": "latte",
+    "en": "milk",
+    "g": "m",
+    "emoji": "🥛",
+    "cat": "shopping",
+    "plural": "latti",
+    "examples": [
+      {
+        "it": "Prendo il latte scremato.",
+        "en": "I get skim milk."
+      }
+    ]
+  },
+  "caffè": {
+    "it": "caffè",
+    "en": "coffee",
+    "g": "m",
+    "emoji": "☕",
+    "cat": "food",
+    "plural": "caffè",
+    "examples": [
+      {
+        "it": "Prendo un caffè al bar.",
+        "en": "I have a coffee at the café."
+      }
+    ]
+  },
+  "frutta": {
+    "it": "frutta",
+    "en": "fruit",
+    "g": "f",
+    "emoji": "🍎",
+    "cat": "shopping",
+    "plural": "frutte",
+    "examples": [
+      {
+        "it": "Compro frutta fresca.",
+        "en": "I buy fresh fruit."
+      }
+    ]
+  },
+  "verdura": {
+    "it": "verdura",
+    "en": "vegetable",
+    "g": "f",
+    "emoji": "🥦",
+    "cat": "shopping",
+    "plural": "verdure",
+    "examples": [
+      {
+        "it": "Le verdure sono fresche.",
+        "en": "The vegetables are fresh."
+      }
+    ]
+  },
+  "carne": {
+    "it": "carne",
+    "en": "meat",
+    "g": "f",
+    "emoji": "🥩",
+    "cat": "shopping",
+    "plural": "carni",
+    "examples": [
+      {
+        "it": "Compro carne dal macellaio.",
+        "en": "I buy meat from the butcher."
+      }
+    ]
+  },
+  "pesce": {
+    "it": "pesce",
+    "en": "fish",
+    "g": "m",
+    "emoji": "🐟",
+    "cat": "shopping",
+    "plural": "pesci",
+    "examples": [
+      {
+        "it": "Il pesce è fresco oggi.",
+        "en": "The fish is fresh today."
+      }
+    ]
+  },
+  "formaggio": {
+    "it": "formaggio",
+    "en": "cheese",
+    "g": "m",
+    "emoji": "🧀",
+    "cat": "shopping",
+    "plural": "formaggi",
+    "examples": [
+      {
+        "it": "Quel formaggio è buono.",
+        "en": "That cheese is good."
+      }
+    ]
+  },
+  "pasta": {
+    "it": "pasta",
+    "en": "pasta",
+    "g": "f",
+    "emoji": "🍝",
+    "cat": "food",
+    "plural": "paste",
+    "examples": [
+      {
+        "it": "La pasta è pronta.",
+        "en": "The pasta is ready."
+      }
+    ]
+  },
+  "pizza": {
+    "it": "pizza",
+    "en": "pizza",
+    "g": "f",
+    "emoji": "🍕",
+    "cat": "food",
+    "plural": "pizze",
+    "examples": [
+      {
+        "it": "Mangiamo pizza stasera.",
+        "en": "We're eating pizza tonight."
+      }
+    ]
+  },
+  "sale": {
+    "it": "sale",
+    "en": "salt",
+    "g": "m",
+    "emoji": "🧂",
+    "cat": "food",
+    "plural": "sali",
+    "examples": [
+      {
+        "it": "Passami il sale, per favore.",
+        "en": "Pass me the salt, please."
+      }
+    ]
+  },
+  "zucchero": {
+    "it": "zucchero",
+    "en": "sugar",
+    "g": "m",
+    "emoji": "🍬",
+    "cat": "food",
+    "plural": "zuccheri",
+    "examples": [
+      {
+        "it": "Metto zucchero nel caffè.",
+        "en": "I put sugar in my coffee."
+      }
+    ]
+  },
+  "olio": {
+    "it": "olio",
+    "en": "oil",
+    "g": "m",
+    "emoji": "🫒",
+    "cat": "food",
+    "plural": "oli",
+    "examples": [
+      {
+        "it": "L'olio d'oliva è sano.",
+        "en": "Olive oil is healthy."
+      }
+    ]
+  },
+  "uovo": {
+    "it": "uovo",
+    "en": "egg",
+    "g": "m",
+    "emoji": "🥚",
+    "cat": "food",
+    "plural": "uova",
+    "irregular_plural": true,
+    "examples": [
+      {
+        "it": "Mangio un uovo a colazione.",
+        "en": "I eat an egg for breakfast."
+      }
+    ],
+    "notes": "Irregular plural: uovo → uova (not uovi)"
+  },
+  "supermercato": {
+    "it": "supermercato",
+    "en": "supermarket",
+    "g": "m",
+    "emoji": "🏪",
+    "cat": "shopping",
+    "plural": "supermercati",
+    "examples": [
+      {
+        "it": "Vado al supermercato.",
+        "en": "I'm going to the supermarket."
+      }
+    ]
+  },
+  "negozio": {
+    "it": "negozio",
+    "en": "shop/store",
+    "g": "m",
+    "emoji": "🏪",
+    "cat": "shopping",
+    "plural": "negozi",
+    "examples": [
+      {
+        "it": "Il negozio è chiuso.",
+        "en": "The shop is closed."
+      }
+    ]
+  },
+  "mercato": {
+    "it": "mercato",
+    "en": "market",
+    "g": "m",
+    "emoji": "🏪",
+    "cat": "shopping",
+    "plural": "mercati",
+    "examples": [
+      {
+        "it": "Vado al mercato il sabato.",
+        "en": "I go to the market on Saturday."
+      }
+    ]
+  },
+  "prodotto": {
+    "it": "prodotto",
+    "en": "product",
+    "g": "m",
+    "emoji": "📦",
+    "cat": "shopping",
+    "plural": "prodotti",
+    "examples": [
+      {
+        "it": "Questo prodotto è buono.",
+        "en": "This product is good."
+      }
+    ]
+  },
+  "prezzo": {
+    "it": "prezzo",
+    "en": "price",
+    "g": "m",
+    "emoji": "💰",
+    "cat": "shopping",
+    "plural": "prezzi",
+    "examples": [
+      {
+        "it": "Qual è il prezzo?",
+        "en": "What's the price?"
+      },
+      {
+        "it": "Il prezzo è troppo alto.",
+        "en": "The price is too high."
+      }
+    ]
+  },
+  "sconto": {
+    "it": "sconto",
+    "en": "discount",
+    "g": "m",
+    "emoji": "🏷️",
+    "cat": "shopping",
+    "plural": "sconti",
+    "examples": [
+      {
+        "it": "C'è uno sconto del 20%.",
+        "en": "There's a 20% discount."
+      }
+    ]
+  },
+  "soldi": {
+    "it": "soldi",
+    "en": "money",
+    "g": "m",
+    "emoji": "💵",
+    "cat": "shopping",
+    "plural": "soldi",
+    "always_plural": true,
+    "examples": [
+      {
+        "it": "Non ho abbastanza soldi.",
+        "en": "I don't have enough money."
+      }
+    ],
+    "notes": "Always plural in Italian"
+  },
+  "cassa": {
+    "it": "cassa",
+    "en": "cash register/checkout",
+    "g": "f",
+    "emoji": "💳",
+    "cat": "shopping",
+    "plural": "casse",
+    "examples": [
+      {
+        "it": "Vado alla cassa.",
+        "en": "I'm going to the checkout."
+      }
+    ]
+  },
+  "carrello": {
+    "it": "carrello",
+    "en": "shopping cart",
+    "g": "m",
+    "emoji": "🛒",
+    "cat": "shopping",
+    "plural": "carrelli",
+    "examples": [
+      {
+        "it": "Prendi un carrello.",
+        "en": "Get a shopping cart."
+      }
+    ]
+  },
+  "sacchetto": {
+    "it": "sacchetto",
+    "en": "bag",
+    "g": "m",
+    "emoji": "🛍️",
+    "cat": "shopping",
+    "plural": "sacchetti",
+    "examples": [
+      {
+        "it": "Vuoi un sacchetto?",
+        "en": "Do you want a bag?"
+      }
+    ]
+  },
+  "essere": {
+    "it": "essere",
+    "en": "to be",
+    "g": "v",
+    "emoji": "✨",
+    "cat": "verbs",
+    "irregular": true,
+    "conjugation": {
+      "presente": {
+        "io": "sono",
+        "tu": "sei",
+        "lui/lei": "è",
+        "noi": "siamo",
+        "voi": "siete",
+        "loro": "sono"
+      },
+      "passato_prossimo": {
+        "io": "sono stato",
+        "tu": "sei stato",
+        "lui/lei": "è stato",
+        "noi": "siamo stati",
+        "voi": "siete stati",
+        "loro": "sono stati"
+      },
+      "futuro": {
+        "io": "sarò",
+        "tu": "sarai",
+        "lui/lei": "sarà",
+        "noi": "saremo",
+        "voi": "sarete",
+        "loro": "saranno"
+      }
+    },
+    "examples": [
+      {
+        "it": "Io sono italiano.",
+        "en": "I am Italian."
+      },
+      {
+        "it": "Lei è mia madre.",
+        "en": "She is my mother."
+      },
+      {
+        "it": "Noi siamo amici.",
+        "en": "We are friends."
+      }
+    ],
+    "notes": "Most irregular verb in Italian. Uses essere as auxiliary in passato prossimo."
+  },
+  "avere": {
+    "it": "avere",
+    "en": "to have",
+    "g": "v",
+    "emoji": "🤲",
+    "cat": "verbs",
+    "irregular": true,
+    "conjugation": {
+      "presente": {
+        "io": "ho",
+        "tu": "hai",
+        "lui/lei": "ha",
+        "noi": "abbiamo",
+        "voi": "avete",
+        "loro": "hanno"
+      },
+      "passato_prossimo": {
+        "io": "ho avuto",
+        "tu": "hai avuto",
+        "lui/lei": "ha avuto",
+        "noi": "abbiamo avuto",
+        "voi": "avete avuto",
+        "loro": "hanno avuto"
+      },
+      "futuro": {
+        "io": "avrò",
+        "tu": "avrai",
+        "lui/lei": "avrà",
+        "noi": "avremo",
+        "voi": "avrete",
+        "loro": "avranno"
+      }
+    },
+    "examples": [
+      {
+        "it": "Ho un gatto.",
+        "en": "I have a cat."
+      },
+      {
+        "it": "Hai fame?",
+        "en": "Are you hungry? (lit: Do you have hunger?)"
+      },
+      {
+        "it": "Lui ha molti amici.",
+        "en": "He has many friends."
+      }
+    ],
+    "notes": "Irregular verb. Uses avere as auxiliary in passato prossimo."
+  },
+  "fare": {
+    "it": "fare",
+    "en": "to do/make",
+    "g": "v",
+    "emoji": "🔨",
+    "cat": "verbs",
+    "irregular": true,
+    "conjugation": {
+      "presente": {
+        "io": "faccio",
+        "tu": "fai",
+        "lui/lei": "fa",
+        "noi": "facciamo",
+        "voi": "fate",
+        "loro": "fanno"
+      },
+      "passato_prossimo": {
+        "io": "ho fatto",
+        "tu": "hai fatto",
+        "lui/lei": "ha fatto",
+        "noi": "abbiamo fatto",
+        "voi": "avete fatto",
+        "loro": "hanno fatto"
+      },
+      "futuro": {
+        "io": "farò",
+        "tu": "farai",
+        "lui/lei": "farà",
+        "noi": "faremo",
+        "voi": "farete",
+        "loro": "faranno"
+      }
+    },
+    "examples": [
+      {
+        "it": "Cosa fai?",
+        "en": "What are you doing?"
+      },
+      {
+        "it": "Faccio colazione.",
+        "en": "I'm having breakfast."
+      },
+      {
+        "it": "Fa freddo oggi.",
+        "en": "It's cold today."
+      }
+    ],
+    "notes": "Very common irregular verb. Also used for weather (fa caldo/freddo)."
+  },
+  "andare": {
+    "it": "andare",
+    "en": "to go",
+    "g": "v",
+    "emoji": "🚶",
+    "cat": "verbs",
+    "irregular": true,
+    "conjugation": {
+      "presente": {
+        "io": "vado",
+        "tu": "vai",
+        "lui/lei": "va",
+        "noi": "andiamo",
+        "voi": "andate",
+        "loro": "vanno"
+      },
+      "passato_prossimo": {
+        "io": "sono andato",
+        "tu": "sei andato",
+        "lui/lei": "è andato",
+        "noi": "siamo andati",
+        "voi": "siete andati",
+        "loro": "sono andati"
+      },
+      "futuro": {
+        "io": "andrò",
+        "tu": "andrai",
+        "lui/lei": "andrà",
+        "noi": "andremo",
+        "voi": "andrete",
+        "loro": "andranno"
+      }
+    },
+    "examples": [
+      {
+        "it": "Vado a casa.",
+        "en": "I'm going home."
+      },
+      {
+        "it": "Andiamo al cinema.",
+        "en": "Let's go to the cinema."
+      },
+      {
+        "it": "Dove vai?",
+        "en": "Where are you going?"
+      }
+    ],
+    "notes": "Uses essere as auxiliary (movement verb)."
+  },
+  "venire": {
+    "it": "venire",
+    "en": "to come",
+    "g": "v",
+    "emoji": "🏃",
+    "cat": "verbs",
+    "irregular": true,
+    "conjugation": {
+      "presente": {
+        "io": "vengo",
+        "tu": "vieni",
+        "lui/lei": "viene",
+        "noi": "veniamo",
+        "voi": "venite",
+        "loro": "vengono"
+      },
+      "passato_prossimo": {
+        "io": "sono venuto",
+        "tu": "sei venuto",
+        "lui/lei": "è venuto",
+        "noi": "siamo venuti",
+        "voi": "siete venuti",
+        "loro": "sono venuti"
+      },
+      "futuro": {
+        "io": "verrò",
+        "tu": "verrai",
+        "lui/lei": "verrà",
+        "noi": "verremo",
+        "voi": "verrete",
+        "loro": "verranno"
+      }
+    },
+    "examples": [
+      {
+        "it": "Vieni con me?",
+        "en": "Are you coming with me?"
+      },
+      {
+        "it": "Vengo domani.",
+        "en": "I'm coming tomorrow."
+      }
+    ],
+    "notes": "Uses essere as auxiliary (movement verb)."
+  },
+  "dire": {
+    "it": "dire",
+    "en": "to say/tell",
+    "g": "v",
+    "emoji": "💬",
+    "cat": "verbs",
+    "irregular": true,
+    "conjugation": {
+      "presente": {
+        "io": "dico",
+        "tu": "dici",
+        "lui/lei": "dice",
+        "noi": "diciamo",
+        "voi": "dite",
+        "loro": "dicono"
+      },
+      "passato_prossimo": {
+        "io": "ho detto",
+        "tu": "hai detto",
+        "lui/lei": "ha detto",
+        "noi": "abbiamo detto",
+        "voi": "avete detto",
+        "loro": "hanno detto"
+      },
+      "futuro": {
+        "io": "dirò",
+        "tu": "dirai",
+        "lui/lei": "dirà",
+        "noi": "diremo",
+        "voi": "direte",
+        "loro": "diranno"
+      }
+    },
+    "examples": [
+      {
+        "it": "Cosa dici?",
+        "en": "What are you saying?"
+      },
+      {
+        "it": "Dico la verità.",
+        "en": "I'm telling the truth."
+      }
+    ],
+    "notes": "Irregular stem changes in present tense."
+  },
+  "potere": {
+    "it": "potere",
+    "en": "to be able to/can",
+    "g": "v",
+    "emoji": "💪",
+    "cat": "verbs",
+    "irregular": true,
+    "conjugation": {
+      "presente": {
+        "io": "posso",
+        "tu": "puoi",
+        "lui/lei": "può",
+        "noi": "possiamo",
+        "voi": "potete",
+        "loro": "possono"
+      },
+      "passato_prossimo": {
+        "io": "ho potuto",
+        "tu": "hai potuto",
+        "lui/lei": "ha potuto",
+        "noi": "abbiamo potuto",
+        "voi": "avete potuto",
+        "loro": "hanno potuto"
+      },
+      "futuro": {
+        "io": "potrò",
+        "tu": "potrai",
+        "lui/lei": "potrà",
+        "noi": "potremo",
+        "voi": "potrete",
+        "loro": "potranno"
+      }
+    },
+    "examples": [
+      {
+        "it": "Posso aiutarti?",
+        "en": "Can I help you?"
+      },
+      {
+        "it": "Non posso venire.",
+        "en": "I can't come."
+      }
+    ],
+    "notes": "Modal verb. Followed by infinitive."
+  },
+  "volere": {
+    "it": "volere",
+    "en": "to want",
+    "g": "v",
+    "emoji": "❤️",
+    "cat": "verbs",
+    "irregular": true,
+    "conjugation": {
+      "presente": {
+        "io": "voglio",
+        "tu": "vuoi",
+        "lui/lei": "vuole",
+        "noi": "vogliamo",
+        "voi": "volete",
+        "loro": "vogliono"
+      },
+      "passato_prossimo": {
+        "io": "ho voluto",
+        "tu": "hai voluto",
+        "lui/lei": "ha voluto",
+        "noi": "abbiamo voluto",
+        "voi": "avete voluto",
+        "loro": "hanno voluto"
+      },
+      "futuro": {
+        "io": "vorrò",
+        "tu": "vorrai",
+        "lui/lei": "vorrà",
+        "noi": "vorremo",
+        "voi": "vorrete",
+        "loro": "vorranno"
+      }
+    },
+    "examples": [
+      {
+        "it": "Voglio un caffè.",
+        "en": "I want a coffee."
+      },
+      {
+        "it": "Vuoi venire?",
+        "en": "Do you want to come?"
+      }
+    ],
+    "notes": "Modal verb. Followed by infinitive."
+  },
+  "dovere": {
+    "it": "dovere",
+    "en": "to have to/must",
+    "g": "v",
+    "emoji": "📋",
+    "cat": "verbs",
+    "irregular": true,
+    "conjugation": {
+      "presente": {
+        "io": "devo",
+        "tu": "devi",
+        "lui/lei": "deve",
+        "noi": "dobbiamo",
+        "voi": "dovete",
+        "loro": "devono"
+      },
+      "passato_prossimo": {
+        "io": "ho dovuto",
+        "tu": "hai dovuto",
+        "lui/lei": "ha dovuto",
+        "noi": "abbiamo dovuto",
+        "voi": "avete dovuto",
+        "loro": "hanno dovuto"
+      },
+      "futuro": {
+        "io": "dovrò",
+        "tu": "dovrai",
+        "lui/lei": "dovrà",
+        "noi": "dovremo",
+        "voi": "dovrete",
+        "loro": "dovranno"
+      }
+    },
+    "examples": [
+      {
+        "it": "Devo studiare.",
+        "en": "I have to study."
+      },
+      {
+        "it": "Dobbiamo andare.",
+        "en": "We must go."
+      }
+    ],
+    "notes": "Modal verb. Followed by infinitive."
+  },
+  "mangiare": {
+    "it": "mangiare",
+    "en": "to eat",
+    "g": "v",
+    "emoji": "🍽️",
+    "cat": "verbs",
+    "irregular": false,
+    "conjugation": {
+      "presente": {
+        "io": "mangio",
+        "tu": "mangi",
+        "lui/lei": "mangia",
+        "noi": "mangiamo",
+        "voi": "mangiate",
+        "loro": "mangiano"
+      },
+      "passato_prossimo": {
+        "io": "ho mangiato",
+        "tu": "hai mangiato",
+        "lui/lei": "ha mangiato",
+        "noi": "abbiamo mangiato",
+        "voi": "avete mangiato",
+        "loro": "hanno mangiato"
+      },
+      "futuro": {
+        "io": "mangerò",
+        "tu": "mangerai",
+        "lui/lei": "mangerà",
+        "noi": "mangeremo",
+        "voi": "mangerete",
+        "loro": "mangeranno"
+      }
+    },
+    "examples": [
+      {
+        "it": "Mangio la pasta.",
+        "en": "I eat pasta."
+      },
+      {
+        "it": "Mangi fuori stasera?",
+        "en": "Are you eating out tonight?"
+      }
+    ]
+  },
+  "bere": {
+    "it": "bere",
+    "en": "to drink",
+    "g": "v",
+    "emoji": "🥤",
+    "cat": "verbs",
+    "irregular": true,
+    "conjugation": {
+      "presente": {
+        "io": "bevo",
+        "tu": "bevi",
+        "lui/lei": "beve",
+        "noi": "beviamo",
+        "voi": "bevete",
+        "loro": "bevono"
+      },
+      "passato_prossimo": {
+        "io": "ho bevuto",
+        "tu": "hai bevuto",
+        "lui/lei": "ha bevuto",
+        "noi": "abbiamo bevuto",
+        "voi": "avete bevuto",
+        "loro": "hanno bevuto"
+      },
+      "futuro": {
+        "io": "berrò",
+        "tu": "berrai",
+        "lui/lei": "berrà",
+        "noi": "berremo",
+        "voi": "berrete",
+        "loro": "berranno"
+      }
+    },
+    "examples": [
+      {
+        "it": "Bevo acqua.",
+        "en": "I drink water."
+      },
+      {
+        "it": "Che cosa bevi?",
+        "en": "What are you drinking?"
+      }
+    ],
+    "notes": "Irregular verb with stem change."
+  },
+  "vedere": {
+    "it": "vedere",
+    "en": "to see",
+    "g": "v",
+    "emoji": "👁️",
+    "cat": "verbs",
+    "irregular": true,
+    "conjugation": {
+      "presente": {
+        "io": "vedo",
+        "tu": "vedi",
+        "lui/lei": "vede",
+        "noi": "vediamo",
+        "voi": "vedete",
+        "loro": "vedono"
+      },
+      "passato_prossimo": {
+        "io": "ho visto",
+        "tu": "hai visto",
+        "lui/lei": "ha visto",
+        "noi": "abbiamo visto",
+        "voi": "avete visto",
+        "loro": "hanno visto"
+      },
+      "futuro": {
+        "io": "vedrò",
+        "tu": "vedrai",
+        "lui/lei": "vedrà",
+        "noi": "vedremo",
+        "voi": "vedrete",
+        "loro": "vedranno"
+      }
+    },
+    "examples": [
+      {
+        "it": "Vedo la casa.",
+        "en": "I see the house."
+      },
+      {
+        "it": "Ci vediamo domani.",
+        "en": "See you tomorrow."
+      }
+    ],
+    "notes": "Irregular past participle: visto (not veduto)."
+  },
+  "testa": {
+    "it": "testa",
+    "en": "head",
+    "g": "f",
+    "emoji": "🫥",
+    "cat": "body",
+    "plural": "teste",
+    "examples": [
+      {
+        "it": "Mi fa male la testa.",
+        "en": "My head hurts."
+      }
+    ]
+  },
+  "occhio": {
+    "it": "occhio",
+    "en": "eye",
+    "g": "m",
+    "emoji": "👁️",
+    "cat": "body",
+    "plural": "occhi",
+    "examples": [
+      {
+        "it": "Ha gli occhi azzurri.",
+        "en": "He has blue eyes."
+      }
+    ]
+  },
+  "mano": {
+    "it": "mano",
+    "en": "hand",
+    "g": "f",
+    "emoji": "✋",
+    "cat": "body",
+    "plural": "mani",
+    "irregular_plural": true,
+    "examples": [
+      {
+        "it": "Mi lavo le mani.",
+        "en": "I wash my hands."
+      }
+    ],
+    "notes": "Irregular plural: mano → mani (not mane)"
+  },
+  "piede": {
+    "it": "piede",
+    "en": "foot",
+    "g": "m",
+    "emoji": "🦶",
+    "cat": "body",
+    "plural": "piedi",
+    "examples": [
+      {
+        "it": "Mi fa male il piede.",
+        "en": "My foot hurts."
+      }
+    ]
+  },
+  "braccio": {
+    "it": "braccio",
+    "en": "arm",
+    "g": "m",
+    "emoji": "💪",
+    "cat": "body",
+    "plural": "braccia",
+    "irregular_plural": true,
+    "examples": [
+      {
+        "it": "Alzo le braccia.",
+        "en": "I raise my arms."
+      }
+    ],
+    "notes": "Irregular plural: braccio → braccia"
+  },
+  "gamba": {
+    "it": "gamba",
+    "en": "leg",
+    "g": "f",
+    "emoji": "🦵",
+    "cat": "body",
+    "plural": "gambe",
+    "examples": [
+      {
+        "it": "Corro con le gambe.",
+        "en": "I run with my legs."
+      }
+    ]
+  },
+  "cuore": {
+    "it": "cuore",
+    "en": "heart",
+    "g": "m",
+    "emoji": "❤️",
+    "cat": "body",
+    "plural": "cuori",
+    "examples": [
+      {
+        "it": "Il cuore batte forte.",
+        "en": "The heart beats fast."
+      }
+    ]
+  },
+  "faccia": {
+    "it": "faccia",
+    "en": "face",
+    "g": "f",
+    "emoji": "😊",
+    "cat": "body",
+    "plural": "facce",
+    "examples": [
+      {
+        "it": "Lavo la faccia.",
+        "en": "I wash my face."
+      }
+    ]
+  },
+  "capelli": {
+    "it": "capelli",
+    "en": "hair",
+    "g": "m",
+    "emoji": "💇",
+    "cat": "body",
+    "plural": "capelli",
+    "always_plural": true,
+    "examples": [
+      {
+        "it": "I miei capelli sono lunghi.",
+        "en": "My hair is long."
+      }
+    ],
+    "notes": "Always plural in Italian"
+  },
+  "camicia": {
+    "it": "camicia",
+    "en": "shirt",
+    "g": "f",
+    "emoji": "👔",
+    "cat": "clothing",
+    "plural": "camicie",
+    "examples": [
+      {
+        "it": "Indosso una camicia bianca.",
+        "en": "I'm wearing a white shirt."
+      }
+    ]
+  },
+  "pantaloni": {
+    "it": "pantaloni",
+    "en": "pants/trousers",
+    "g": "m",
+    "emoji": "👖",
+    "cat": "clothing",
+    "plural": "pantaloni",
+    "always_plural": true,
+    "examples": [
+      {
+        "it": "I miei pantaloni sono nuovi.",
+        "en": "My pants are new."
+      }
+    ],
+    "notes": "Always plural in Italian"
+  },
+  "scarpe": {
+    "it": "scarpe",
+    "en": "shoes",
+    "g": "f",
+    "emoji": "👟",
+    "cat": "clothing",
+    "plural": "scarpe",
+    "always_plural": true,
+    "examples": [
+      {
+        "it": "Le mie scarpe sono comode.",
+        "en": "My shoes are comfortable."
+      }
+    ],
+    "notes": "Always plural in Italian"
+  },
+  "cappello": {
+    "it": "cappello",
+    "en": "hat",
+    "g": "m",
+    "emoji": "🎩",
+    "cat": "clothing",
+    "plural": "cappelli",
+    "examples": [
+      {
+        "it": "Porto un cappello.",
+        "en": "I'm wearing a hat."
+      }
+    ]
+  },
+  "giacca": {
+    "it": "giacca",
+    "en": "jacket",
+    "g": "f",
+    "emoji": "🧥",
+    "cat": "clothing",
+    "plural": "giacche",
+    "examples": [
+      {
+        "it": "Metto la giacca.",
+        "en": "I put on my jacket."
+      }
+    ]
+  },
+  "vestito": {
+    "it": "vestito",
+    "en": "dress/suit",
+    "g": "m",
+    "emoji": "👗",
+    "cat": "clothing",
+    "plural": "vestiti",
+    "examples": [
+      {
+        "it": "Lei indossa un bel vestito.",
+        "en": "She's wearing a nice dress."
+      }
+    ]
+  },
+  "giorno": {
+    "it": "giorno",
+    "en": "day",
+    "g": "m",
+    "emoji": "📅",
+    "cat": "time",
+    "plural": "giorni",
+    "examples": [
+      {
+        "it": "Oggi è un bel giorno.",
+        "en": "Today is a nice day."
+      },
+      {
+        "it": "Buon giorno!",
+        "en": "Good day/Good morning!"
+      }
+    ]
+  },
+  "settimana": {
+    "it": "settimana",
+    "en": "week",
+    "g": "f",
+    "emoji": "📅",
+    "cat": "time",
+    "plural": "settimane",
+    "examples": [
+      {
+        "it": "La settimana prossima vado a Roma.",
+        "en": "Next week I'm going to Rome."
+      }
+    ]
+  },
+  "mese": {
+    "it": "mese",
+    "en": "month",
+    "g": "m",
+    "emoji": "📆",
+    "cat": "time",
+    "plural": "mesi",
+    "examples": [
+      {
+        "it": "Questo mese è freddo.",
+        "en": "This month is cold."
+      }
+    ]
+  },
+  "anno": {
+    "it": "anno",
+    "en": "year",
+    "g": "m",
+    "emoji": "📅",
+    "cat": "time",
+    "plural": "anni",
+    "examples": [
+      {
+        "it": "Ho venti anni.",
+        "en": "I'm twenty years old."
+      },
+      {
+        "it": "Buon anno!",
+        "en": "Happy New Year!"
+      }
+    ]
+  },
+  "ora": {
+    "it": "ora",
+    "en": "hour/time",
+    "g": "f",
+    "emoji": "🕐",
+    "cat": "time",
+    "plural": "ore",
+    "examples": [
+      {
+        "it": "Che ora è?",
+        "en": "What time is it?"
+      },
+      {
+        "it": "È l'una.",
+        "en": "It's one o'clock."
+      }
+    ]
+  },
+  "minuto": {
+    "it": "minuto",
+    "en": "minute",
+    "g": "m",
+    "emoji": "⏱️",
+    "cat": "time",
+    "plural": "minuti",
+    "examples": [
+      {
+        "it": "Aspetta un minuto.",
+        "en": "Wait a minute."
+      }
+    ]
+  },
+  "oggi": {
+    "it": "oggi",
+    "en": "today",
+    "g": "adv",
+    "emoji": "📅",
+    "cat": "time",
+    "examples": [
+      {
+        "it": "Oggi è lunedì.",
+        "en": "Today is Monday."
+      }
+    ]
+  },
+  "domani": {
+    "it": "domani",
+    "en": "tomorrow",
+    "g": "adv",
+    "emoji": "📅",
+    "cat": "time",
+    "examples": [
+      {
+        "it": "A domani!",
+        "en": "See you tomorrow!"
+      }
+    ]
+  },
+  "ieri": {
+    "it": "ieri",
+    "en": "yesterday",
+    "g": "adv",
+    "emoji": "📅",
+    "cat": "time",
+    "examples": [
+      {
+        "it": "Ieri sono andato al cinema.",
+        "en": "Yesterday I went to the cinema."
+      }
+    ]
+  },
+  "mattina": {
+    "it": "mattina",
+    "en": "morning",
+    "g": "f",
+    "emoji": "🌅",
+    "cat": "time",
+    "plural": "mattine",
+    "examples": [
+      {
+        "it": "La mattina faccio colazione.",
+        "en": "In the morning I have breakfast."
+      }
+    ]
+  },
+  "pomeriggio": {
+    "it": "pomeriggio",
+    "en": "afternoon",
+    "g": "m",
+    "emoji": "🌤️",
+    "cat": "time",
+    "plural": "pomeriggi",
+    "examples": [
+      {
+        "it": "Nel pomeriggio lavoro.",
+        "en": "In the afternoon I work."
+      }
+    ]
+  },
+  "sera": {
+    "it": "sera",
+    "en": "evening",
+    "g": "f",
+    "emoji": "🌆",
+    "cat": "time",
+    "plural": "sere",
+    "examples": [
+      {
+        "it": "La sera guardo la TV.",
+        "en": "In the evening I watch TV."
+      }
+    ]
+  },
+  "notte": {
+    "it": "notte",
+    "en": "night",
+    "g": "f",
+    "emoji": "🌙",
+    "cat": "time",
+    "plural": "notti",
+    "examples": [
+      {
+        "it": "La notte dormo.",
+        "en": "At night I sleep."
+      }
+    ]
+  },
+  "uno": {
+    "it": "uno",
+    "en": "one",
+    "g": "num",
+    "emoji": "1️⃣",
+    "cat": "numbers",
+    "examples": [
+      {
+        "it": "Ho un gatto.",
+        "en": "I have one cat."
+      }
+    ]
+  },
+  "due": {
+    "it": "due",
+    "en": "two",
+    "g": "num",
+    "emoji": "2️⃣",
+    "cat": "numbers",
+    "examples": [
+      {
+        "it": "Ho due fratelli.",
+        "en": "I have two brothers."
+      }
+    ]
+  },
+  "tre": {
+    "it": "tre",
+    "en": "three",
+    "g": "num",
+    "emoji": "3️⃣",
+    "cat": "numbers",
+    "examples": [
+      {
+        "it": "Ci sono tre persone.",
+        "en": "There are three people."
+      }
+    ]
+  },
+  "quattro": {
+    "it": "quattro",
+    "en": "four",
+    "g": "num",
+    "emoji": "4️⃣",
+    "cat": "numbers",
+    "examples": [
+      {
+        "it": "Ho quattro sedie.",
+        "en": "I have four chairs."
+      }
+    ]
+  },
+  "cinque": {
+    "it": "cinque",
+    "en": "five",
+    "g": "num",
+    "emoji": "5️⃣",
+    "cat": "numbers",
+    "examples": [
+      {
+        "it": "Sono le cinque.",
+        "en": "It's five o'clock."
+      }
+    ]
+  },
+  "dieci": {
+    "it": "dieci",
+    "en": "ten",
+    "g": "num",
+    "emoji": "🔟",
+    "cat": "numbers",
+    "examples": [
+      {
+        "it": "Ho dieci euro.",
+        "en": "I have ten euros."
+      }
+    ]
+  },
+  "cento": {
+    "it": "cento",
+    "en": "hundred",
+    "g": "num",
+    "emoji": "💯",
+    "cat": "numbers",
+    "examples": [
+      {
+        "it": "Costa cento euro.",
+        "en": "It costs one hundred euros."
+      }
+    ]
+  },
+  "mille": {
+    "it": "mille",
+    "en": "thousand",
+    "g": "num",
+    "emoji": "1️⃣0️⃣0️⃣0️⃣",
+    "cat": "numbers",
+    "examples": [
+      {
+        "it": "Mille grazie!",
+        "en": "A thousand thanks!"
+      }
+    ]
+  },
+  "rosso": {
+    "it": "rosso",
+    "en": "red",
+    "g": "m",
+    "emoji": "🔴",
+    "cat": "colors",
+    "plural": "rossi",
+    "examples": [
+      {
+        "it": "Mi piace il rosso.",
+        "en": "I like red."
+      }
+    ]
+  },
+  "blu": {
+    "it": "blu",
+    "en": "blue",
+    "g": "m",
+    "emoji": "🔵",
+    "cat": "colors",
+    "plural": "blu",
+    "examples": [
+      {
+        "it": "Il cielo è blu.",
+        "en": "The sky is blue."
+      }
+    ]
+  },
+  "verde": {
+    "it": "verde",
+    "en": "green",
+    "g": "m",
+    "emoji": "🟢",
+    "cat": "colors",
+    "plural": "verdi",
+    "examples": [
+      {
+        "it": "L'erba è verde.",
+        "en": "The grass is green."
+      }
+    ]
+  },
+  "giallo": {
+    "it": "giallo",
+    "en": "yellow",
+    "g": "m",
+    "emoji": "🟡",
+    "cat": "colors",
+    "plural": "gialli",
+    "examples": [
+      {
+        "it": "Il sole è giallo.",
+        "en": "The sun is yellow."
+      }
+    ]
+  },
+  "nero": {
+    "it": "nero",
+    "en": "black",
+    "g": "m",
+    "emoji": "⚫",
+    "cat": "colors",
+    "plural": "neri",
+    "examples": [
+      {
+        "it": "Mi piace il nero.",
+        "en": "I like black."
+      }
+    ]
+  },
+  "bianco": {
+    "it": "bianco",
+    "en": "white",
+    "g": "m",
+    "emoji": "⚪",
+    "cat": "colors",
+    "plural": "bianchi",
+    "examples": [
+      {
+        "it": "La neve è bianca.",
+        "en": "Snow is white."
+      }
+    ]
+  },
+  "albero": {
+    "it": "albero",
+    "en": "tree",
+    "g": "m",
+    "emoji": "🌳",
+    "cat": "nature",
+    "plural": "alberi",
+    "examples": [
+      {
+        "it": "L'albero è alto.",
+        "en": "The tree is tall."
+      }
+    ]
+  },
+  "fiore": {
+    "it": "fiore",
+    "en": "flower",
+    "g": "m",
+    "emoji": "🌸",
+    "cat": "nature",
+    "plural": "fiori",
+    "examples": [
+      {
+        "it": "Il fiore è bello.",
+        "en": "The flower is beautiful."
+      }
+    ]
+  },
+  "erba": {
+    "it": "erba",
+    "en": "grass",
+    "g": "f",
+    "emoji": "🌿",
+    "cat": "nature",
+    "plural": "erbe",
+    "examples": [
+      {
+        "it": "L'erba è verde.",
+        "en": "The grass is green."
+      }
+    ]
+  },
+  "cielo": {
+    "it": "cielo",
+    "en": "sky",
+    "g": "m",
+    "emoji": "🌤️",
+    "cat": "nature",
+    "plural": "cieli",
+    "examples": [
+      {
+        "it": "Il cielo è azzurro.",
+        "en": "The sky is blue."
+      }
+    ]
+  },
+  "sole": {
+    "it": "sole",
+    "en": "sun",
+    "g": "m",
+    "emoji": "☀️",
+    "cat": "nature",
+    "plural": "soli",
+    "examples": [
+      {
+        "it": "Il sole splende.",
+        "en": "The sun is shining."
+      }
+    ]
+  },
+  "luna": {
+    "it": "luna",
+    "en": "moon",
+    "g": "f",
+    "emoji": "🌙",
+    "cat": "nature",
+    "plural": "lune",
+    "examples": [
+      {
+        "it": "La luna è piena.",
+        "en": "The moon is full."
+      }
+    ]
+  },
+  "stella": {
+    "it": "stella",
+    "en": "star",
+    "g": "f",
+    "emoji": "⭐",
+    "cat": "nature",
+    "plural": "stelle",
+    "examples": [
+      {
+        "it": "Le stelle brillano.",
+        "en": "The stars shine."
+      }
+    ]
+  },
+  "nuvola": {
+    "it": "nuvola",
+    "en": "cloud",
+    "g": "f",
+    "emoji": "☁️",
+    "cat": "nature",
+    "plural": "nuvole",
+    "examples": [
+      {
+        "it": "Le nuvole sono grigie.",
+        "en": "The clouds are gray."
+      }
+    ]
+  },
+  "pioggia": {
+    "it": "pioggia",
+    "en": "rain",
+    "g": "f",
+    "emoji": "🌧️",
+    "cat": "nature",
+    "plural": "piogge",
+    "examples": [
+      {
+        "it": "Piove. C'è la pioggia.",
+        "en": "It's raining. There's rain."
+      }
+    ]
+  },
+  "neve": {
+    "it": "neve",
+    "en": "snow",
+    "g": "f",
+    "emoji": "🌨️",
+    "cat": "nature",
+    "plural": "nevi",
+    "examples": [
+      {
+        "it": "Nevica. C'è la neve.",
+        "en": "It's snowing. There's snow."
+      }
+    ]
+  },
+  "vento": {
+    "it": "vento",
+    "en": "wind",
+    "g": "m",
+    "emoji": "💨",
+    "cat": "nature",
+    "plural": "venti",
+    "examples": [
+      {
+        "it": "Tira vento oggi.",
+        "en": "It's windy today."
+      }
+    ]
+  },
+  "mare": {
+    "it": "mare",
+    "en": "sea",
+    "g": "m",
+    "emoji": "🌊",
+    "cat": "nature",
+    "plural": "mari",
+    "examples": [
+      {
+        "it": "Il mare è blu.",
+        "en": "The sea is blue."
+      }
+    ]
+  },
+  "montagna": {
+    "it": "montagna",
+    "en": "mountain",
+    "g": "f",
+    "emoji": "⛰️",
+    "cat": "nature",
+    "plural": "montagne",
+    "examples": [
+      {
+        "it": "La montagna è alta.",
+        "en": "The mountain is high."
+      }
+    ]
+  },
+  "macchina": {
+    "it": "macchina",
+    "en": "car",
+    "g": "f",
+    "emoji": "🚗",
+    "cat": "transport",
+    "plural": "macchine",
+    "examples": [
+      {
+        "it": "Ho una macchina nuova.",
+        "en": "I have a new car."
+      }
+    ]
+  },
+  "treno": {
+    "it": "treno",
+    "en": "train",
+    "g": "m",
+    "emoji": "🚆",
+    "cat": "transport",
+    "plural": "treni",
+    "examples": [
+      {
+        "it": "Prendo il treno per Roma.",
+        "en": "I take the train to Rome."
+      }
+    ]
+  },
+  "autobus": {
+    "it": "autobus",
+    "en": "bus",
+    "g": "m",
+    "emoji": "🚌",
+    "cat": "transport",
+    "plural": "autobus",
+    "examples": [
+      {
+        "it": "Aspetto l'autobus.",
+        "en": "I'm waiting for the bus."
+      }
+    ]
+  },
+  "bicicletta": {
+    "it": "bicicletta",
+    "en": "bicycle",
+    "g": "f",
+    "emoji": "🚲",
+    "cat": "transport",
+    "plural": "biciclette",
+    "examples": [
+      {
+        "it": "Vado in bicicletta.",
+        "en": "I go by bicycle."
+      }
+    ]
+  },
+  "aereo": {
+    "it": "aereo",
+    "en": "airplane",
+    "g": "m",
+    "emoji": "✈️",
+    "cat": "transport",
+    "plural": "aerei",
+    "examples": [
+      {
+        "it": "Prendo l'aereo per Milano.",
+        "en": "I take the plane to Milan."
+      }
+    ]
+  },
+  "strada": {
+    "it": "strada",
+    "en": "road/street",
+    "g": "f",
+    "emoji": "🛣️",
+    "cat": "transport",
+    "plural": "strade",
+    "examples": [
+      {
+        "it": "La strada è lunga.",
+        "en": "The road is long."
+      }
+    ]
+  },
+  "lavoro": {
+    "it": "lavoro",
+    "en": "work/job",
+    "g": "m",
+    "emoji": "💼",
+    "cat": "work",
+    "plural": "lavori",
+    "examples": [
+      {
+        "it": "Vado al lavoro.",
+        "en": "I'm going to work."
+      }
+    ]
+  },
+  "ufficio": {
+    "it": "ufficio",
+    "en": "office",
+    "g": "m",
+    "emoji": "🏢",
+    "cat": "work",
+    "plural": "uffici",
+    "examples": [
+      {
+        "it": "Lavoro in ufficio.",
+        "en": "I work in an office."
+      }
+    ]
+  },
+  "scuola": {
+    "it": "scuola",
+    "en": "school",
+    "g": "f",
+    "emoji": "🏫",
+    "cat": "work",
+    "plural": "scuole",
+    "examples": [
+      {
+        "it": "Vado a scuola.",
+        "en": "I go to school."
+      }
+    ]
+  },
+  "università": {
+    "it": "università",
+    "en": "university",
+    "g": "f",
+    "emoji": "🎓",
+    "cat": "work",
+    "plural": "università",
+    "examples": [
+      {
+        "it": "Studio all'università.",
+        "en": "I study at university."
+      }
+    ]
+  },
+  "libro": {
+    "it": "libro",
+    "en": "book",
+    "g": "m",
+    "emoji": "📚",
+    "cat": "work",
+    "plural": "libri",
+    "examples": [
+      {
+        "it": "Leggo un libro.",
+        "en": "I'm reading a book."
+      }
+    ]
+  },
+  "penna": {
+    "it": "penna",
+    "en": "pen",
+    "g": "f",
+    "emoji": "🖊️",
+    "cat": "work",
+    "plural": "penne",
+    "examples": [
+      {
+        "it": "Ho bisogno di una penna.",
+        "en": "I need a pen."
+      }
+    ]
+  },
+  "quaderno": {
+    "it": "quaderno",
+    "en": "notebook",
+    "g": "m",
+    "emoji": "📓",
+    "cat": "work",
+    "plural": "quaderni",
+    "examples": [
+      {
+        "it": "Scrivo sul quaderno.",
+        "en": "I write in the notebook."
+      }
+    ]
+  },
+  "computer": {
+    "it": "computer",
+    "en": "computer",
+    "g": "m",
+    "emoji": "💻",
+    "cat": "work",
+    "plural": "computer",
+    "examples": [
+      {
+        "it": "Uso il computer per lavorare.",
+        "en": "I use the computer to work."
+      }
+    ]
+  },
+  "telefono": {
+    "it": "telefono",
+    "en": "telephone/phone",
+    "g": "m",
+    "emoji": "📱",
+    "cat": "work",
+    "plural": "telefoni",
+    "examples": [
+      {
+        "it": "Rispondo al telefono.",
+        "en": "I answer the phone."
+      }
+    ]
+  },
+  "buono": {
+    "it": "buono",
+    "en": "good",
+    "g": "adj",
+    "emoji": "👍",
+    "cat": "adjectives",
+    "examples": [
+      {
+        "it": "Questo cibo è buono.",
+        "en": "This food is good."
+      }
+    ]
+  },
+  "cattivo": {
+    "it": "cattivo",
+    "en": "bad",
+    "g": "adj",
+    "emoji": "👎",
+    "cat": "adjectives",
+    "examples": [
+      {
+        "it": "Il tempo è cattivo.",
+        "en": "The weather is bad."
+      }
+    ]
+  },
+  "grande": {
+    "it": "grande",
+    "en": "big/large",
+    "g": "adj",
+    "emoji": "⬆️",
+    "cat": "adjectives",
+    "examples": [
+      {
+        "it": "La casa è grande.",
+        "en": "The house is big."
+      }
+    ]
+  },
+  "piccolo": {
+    "it": "piccolo",
+    "en": "small",
+    "g": "adj",
+    "emoji": "⬇️",
+    "cat": "adjectives",
+    "examples": [
+      {
+        "it": "Il gatto è piccolo.",
+        "en": "The cat is small."
+      }
+    ]
+  },
+  "nuovo": {
+    "it": "nuovo",
+    "en": "new",
+    "g": "adj",
+    "emoji": "✨",
+    "cat": "adjectives",
+    "examples": [
+      {
+        "it": "Ho una macchina nuova.",
+        "en": "I have a new car."
+      }
+    ]
+  },
+  "vecchio": {
+    "it": "vecchio",
+    "en": "old",
+    "g": "adj",
+    "emoji": "👴",
+    "cat": "adjectives",
+    "examples": [
+      {
+        "it": "Questo edificio è vecchio.",
+        "en": "This building is old."
+      }
+    ]
+  },
+  "bello": {
+    "it": "bello",
+    "en": "beautiful/nice",
+    "g": "adj",
+    "emoji": "😍",
+    "cat": "adjectives",
+    "examples": [
+      {
+        "it": "Che bello!",
+        "en": "How beautiful!"
+      }
+    ]
+  },
+  "brutto": {
+    "it": "brutto",
+    "en": "ugly/bad",
+    "g": "adj",
+    "emoji": "😕",
+    "cat": "adjectives",
+    "examples": [
+      {
+        "it": "Il tempo è brutto.",
+        "en": "The weather is bad."
+      }
+    ]
+  },
+  "caldo": {
+    "it": "caldo",
+    "en": "hot/warm",
+    "g": "adj",
+    "emoji": "🥵",
+    "cat": "adjectives",
+    "examples": [
+      {
+        "it": "Fa caldo oggi.",
+        "en": "It's hot today."
+      }
+    ]
+  },
+  "freddo": {
+    "it": "freddo",
+    "en": "cold",
+    "g": "adj",
+    "emoji": "🥶",
+    "cat": "adjectives",
+    "examples": [
+      {
+        "it": "Fa freddo oggi.",
+        "en": "It's cold today."
+      }
+    ]
+  }
+}
