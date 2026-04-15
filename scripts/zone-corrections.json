@@ -1,0 +1,68 @@
+{
+  "note": "Authoritative word lists per zone (keyed roomId::zoneId). Script replaces interiorVocab for each zone with these words laid out in a grid, and rebuilds each room's vocabularyIds as the union of its zones. Zones not listed here are left untouched.",
+  "zones": {
+    "entrance-hall::family-portrait":  ["madre", "padre", "fratello", "sorella", "nonno", "nonna", "zio", "zia", "figlio", "figlia"],
+    "entrance-hall::coat-rack":        ["cappotto", "giacca", "impermeabile", "sciarpa", "cappello", "guanto", "cravatta", "cintura", "borsa", "maglione"],
+    "entrance-hall::mirror":           ["bello", "brutto", "giovane", "vecchio", "alto", "basso", "magro", "grasso", "forte", "debole"],
+    "entrance-hall::clock":            ["secondo", "minuto", "ora", "giorno", "notte", "mattina", "sera", "mezzogiorno", "mezzanotte", "tempo"],
+    "entrance-hall::number-plate":     ["uno", "due", "tre", "quattro", "cinque", "sei", "sette", "otto", "nove", "dieci", "undici", "dodici"],
+    "entrance-hall::welcome-mat":      ["ciao", "buongiorno", "buonasera", "buonanotte", "grazie", "prego", "scusa", "arrivederci", "permesso", "forse"],
+
+    "library::bookshelf":              ["libro", "romanzo", "poesia", "dizionario", "rivista", "giornale", "manuale", "racconto", "biografia", "biblioteca"],
+    "library::desk":                   ["quaderno", "penna", "matita", "gomma", "righello", "calendario", "carta", "scrivania", "lezione", "pagina"],
+    "library::computer":               ["schermo", "tastiera", "mouse", "stampante", "password", "file", "computer", "studente", "studentessa", "scienza"],
+
+    "bedroom::wardrobe":               ["camicia", "maglietta", "giacca", "vestito", "gonna", "pantaloni", "jeans", "pigiama", "maglione", "cappotto"],
+    "bedroom::drawer":                 ["calze", "orologio", "occhiali", "cintura", "cravatta", "sciarpa", "guanto", "borsa"],
+    "bedroom::jewelry":                ["orologio", "collana", "anello", "bracciale", "orecchini"],
+    "bedroom::shoes":                  ["scarpa", "stivale", "sandali", "pantofole", "scarpette"],
+    "bedroom::bed":                    ["letto", "cuscino", "coperta", "lenzuolo", "materasso"],
+    "bedroom::nightstand":             ["sveglia", "lampada", "libro", "orologio", "occhiali"],
+
+    "bathroom::sink":                  ["sapone", "dentifricio", "spazzolino", "asciugamano", "specchio", "rubinetto"],
+    "bathroom::shower":                ["doccia", "shampoo", "bagnoschiuma", "asciugamano", "acqua"],
+    "bathroom::cabinet":               ["medicina", "cerotto", "termometro", "aspirina", "pomata", "cotone"],
+
+    "garden::flowers":                 ["fiore", "rosa", "erba", "albero", "foglia", "ramo", "radice"],
+    "garden::path":                    ["sentiero", "ponte", "cancello", "pietra", "terra"],
+    "garden::sky":                     ["cielo", "sole", "luna", "stella", "nuvola"],
+
+    "transport::ticket-office":        ["biglietto", "orario", "valigia", "zaino", "abbonamento", "partenza", "arrivo"],
+    "transport::platform":             ["treno", "binario", "partenza", "arrivo", "ritardo", "vagone"],
+    "transport::street":               ["uscita", "entrata", "semaforo", "incrocio", "direzione", "cartello", "strada"],
+
+    "living-room::sofa":               ["divano", "poltrona", "tavolino", "cuscino", "coperta"],
+    "living-room::tv":                 ["televisione", "telecomando", "film", "musica", "schermo"],
+    "living-room::furniture":          ["tavolo", "sedia", "lampada", "quadro", "tappeto", "tenda", "specchio", "libreria"],
+
+    "supermarket::produce":            ["mela", "pera", "arancia", "banana", "carota", "lattuga", "pomodoro", "uva", "fragola", "pesca"],
+    "supermarket::dairy":              ["latte", "formaggio", "yogurt", "burro", "panna", "uova"],
+    "supermarket::checkout":           ["cassa", "carrello", "scontrino", "contanti", "carta", "prezzo", "euro"],
+
+    "cafe::counter":                   ["caffe", "cornetto", "tazza", "menu", "barista"],
+    "cafe::table-cafe":                ["tavolo", "sedia", "menu", "conto", "bicchiere", "piatto", "tovagliolo"],
+
+    "gallery::paintings":              ["quadro", "scultura", "colore", "luce", "artista", "mostra", "pennello"],
+    "gallery::shopping":               ["regalo", "cartolina", "maglietta", "libro", "souvenir"],
+
+    "animals::reptiles":               ["serpente", "lucertola", "tartaruga", "coccodrillo"],
+    "animals::mammals":                ["cane", "gatto", "cavallo", "mucca", "maiale", "pecora", "capra", "coniglio"],
+
+    "weather::sky-weather":            ["sole", "nuvola", "vento", "arcobaleno", "fulmine", "pioggia"],
+
+    "tools::hand-tools":               ["martello", "cacciavite", "pinza", "sega", "trapano", "metro", "vite", "chiodo"],
+    "tools::workbench":                ["banco", "morsa", "lima"],
+
+    "actions::movement":               ["correre", "saltare", "camminare", "nuotare", "volare", "cadere", "spingere", "tirare", "girare"],
+    "actions::daily-actions":          ["svegliarsi", "lavarsi", "vestirsi", "pettinarsi", "addormentarsi", "alzarsi", "aprire", "chiudere"],
+
+    "emotions::feelings":              ["gioia", "tristezza", "rabbia", "paura", "amore", "odio"],
+    "emotions::states":                ["fiducia", "sorpresa", "ansia", "orgoglio", "vergogna"],
+
+    "farm::vegetables":                ["pomodoro", "carota", "lattuga", "cipolla", "aglio", "peperone", "patata"],
+    "farm::fruits":                    ["mela", "pera", "pesca", "ciliegia", "limone", "arancia", "fragola", "uva"],
+
+    "fantasy::creatures":              ["drago", "elfo", "fata", "strega", "nano", "mago"],
+    "fantasy::supernatural":           ["fantasma", "strega", "zombie", "vampiro"]
+  }
+}
