@@ -122,7 +122,6 @@ export default function RoomPage() {
           {[
             { id: 'explore', label: 'Explore', icon: Map },
             { id: 'learn', label: 'Learn', icon: BookOpen },
-            { id: 'stories', label: 'Stories', icon: Scroll },
             { id: 'practice', label: 'Practice', icon: GraduationCap },
             { id: 'dialogue', label: 'Dialogue', icon: MessageCircle },
             { id: 'culture', label: 'Culture', icon: Sparkles },
