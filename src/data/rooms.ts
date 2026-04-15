@@ -224,10 +224,9 @@ export const rooms: Room[] = [
     image: '/rooms/gallery.jpg',
     description: 'Learn the passato prossimo to talk about completed actions.',
     grammarFocus: 'passato prossimo: avere/essere + participio passato',
-    vocabularyIds: ["quadro", "scultura", "colore", "luce", "artista", "mostra", "pennello", "nero", "nuova", "nuovo", "ombra", "ombre", "operaio", "oro", "oscuro", "piccola", "piccolo", "regalo", "cartolina", "maglietta", "libro", "souvenir"],
+    vocabularyIds: ["quadro", "scultura", "colore", "luce", "artista", "mostra", "pennello", "regalo", "cartolina", "maglietta", "libro", "souvenir"],
     zones: [
       { id: 'paintings', name: 'The Paintings', nameNative: "I Quadri", description: 'Emotions and feelings', icon: '🎨', x: 40, y: 35, width: 25, height: 20, interiorVocab: [{ wordId: 'quadro', x: 17, y: 17 }, { wordId: 'scultura', x: 50, y: 17 }, { wordId: 'colore', x: 83, y: 17 }, { wordId: 'luce', x: 17, y: 50 }, { wordId: 'artista', x: 50, y: 50 }, { wordId: 'mostra', x: 83, y: 50 }, { wordId: 'pennello', x: 17, y: 83 }] },
-      { id: 'pharmacy', name: 'Medicine Cabinet', nameNative: "Armadietto Medicinale", description: 'Health and body', icon: '💊', x: 75, y: 50, width: 15, height: 20, interiorVocab: [{ wordId: 'nero', x: 12, y: 12 }, { wordId: 'nuova', x: 37, y: 12 }, { wordId: 'nuovo', x: 62, y: 12 }, { wordId: 'ombra', x: 87, y: 12 }, { wordId: 'ombre', x: 12, y: 37 }, { wordId: 'operaio', x: 37, y: 37 }, { wordId: 'oro', x: 62, y: 37 }, { wordId: 'oscuro', x: 87, y: 37 }, { wordId: 'piccola', x: 12, y: 62 }, { wordId: 'piccolo', x: 37, y: 62 }] },
       { id: 'shopping', name: 'Gift Shop', nameNative: "Il Negozio", description: 'Shopping and commerce', icon: '🛍️', x: 20, y: 60, width: 15, height: 15, interiorVocab: [{ wordId: 'regalo', x: 17, y: 25 }, { wordId: 'cartolina', x: 50, y: 25 }, { wordId: 'maglietta', x: 83, y: 25 }, { wordId: 'libro', x: 17, y: 75 }, { wordId: 'souvenir', x: 50, y: 75 }] },
     ],
     grammarPoints: [
