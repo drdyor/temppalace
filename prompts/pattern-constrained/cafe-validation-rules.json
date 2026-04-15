@@ -1,0 +1,193 @@
+{
+  "room": "cafe",
+  "version": "pattern-v1.0",
+  "description": "Validation rules for café pattern-constrained generation",
+  "hard_constraints": {
+    "paragraph_count": {
+      "expected": 9,
+      "operator": "exact"
+    },
+    "sentences_per_paragraph": {
+      "min": 2,
+      "max": 3
+    },
+    "vocab_per_paragraph": {
+      "min": 8,
+      "max": 12
+    },
+    "english_words": {
+      "allowed": false,
+      "check_type": "regex"
+    },
+    "banned_vocab": [
+      "telefono", "computer", "cucinare", "letto", "doccia", "treno", "macchina", 
+      "lavorare", "bagno", "cucina", "scuola"
+    ]
+  },
+  "pattern_constraints": {
+    "paragraph_1": {
+      "timeframe": "past",
+      "pattern": "past_problem",
+      "tense": "passato_prossimo",
+      "zones": ["counter"],
+      "allowed_templates": [
+        "Ho ordinato X, ma Y",
+        "Il cameriere ha portato Z",
+        "Ho chiesto... ma...",
+        "Non ha capito"
+      ],
+      "required_verbs": ["ordinare", "portare"],
+      "auxiliary_must_be": ["avere", "essere"]
+    },
+    "paragraph_2": {
+      "timeframe": "past",
+      "pattern": "past_problem",
+      "tense": "passato_prossimo",
+      "zones": ["counter", "table"],
+      "allowed_templates": [
+        "Sono andato/a...",
+        "Ho pagato, ma...",
+        "Il conto era sbagliato",
+        "Non ho ricevuto..."
+      ],
+      "required_verbs": ["andare", "pagare", "ricevere"],
+      "zone_transition": "counter_to_table"
+    },
+    "paragraph_3": {
+      "timeframe": "past",
+      "pattern": "past_problem",
+      "tense": "imperfetto",
+      "zones": ["table"],
+      "allowed_templates": [
+        "Volevo...",
+        "Non c'era...",
+        "Non veniva",
+        "Non sono riuscito/a a..."
+      ],
+      "required_verbs": ["volere", "venire", "riuscire"],
+      "tense_must_be": "imperfetto"
+    },
+    "paragraph_4": {
+      "timeframe": "present",
+      "pattern": "present_functional",
+      "tense": "presente",
+      "zones": ["table"],
+      "allowed_templates": [
+        "Sono al tavolo...",
+        "Bevo / Mangio...",
+        "Parliamo / Stiamo..."
+      ],
+      "required_verbs": ["essere", "bere", "mangiare", "parlare", "stare"],
+      "dialogue_required": false
+    },
+    "paragraph_5": {
+      "timeframe": "present",
+      "pattern": "present_functional",
+      "tense": "presente_conditional",
+      "zones": ["table", "counter"],
+      "allowed_templates": [
+        "Vorrei [infinitive]...",
+        "Posso [infinitive]...?",
+        "Vado al bancone per..."
+      ],
+      "required_verbs": ["volere", "potere", "andare", "pagare"],
+      "must_contain": ["vorrei", "posso"],
+      "zone_transition": "table_to_counter"
+    },
+    "paragraph_6": {
+      "timeframe": "present",
+      "pattern": "present_functional",
+      "tense": "presente",
+      "zones": ["counter"],
+      "allowed_templates": [
+        "Al bancone...",
+        "Prendo...",
+        "Pago con...",
+        "Dico: «Grazie»"
+      ],
+      "required_verbs": ["prendere", "pagare", "dire"],
+      "dialogue_required": true
+    },
+    "paragraph_7": {
+      "timeframe": "future",
+      "pattern": "future_intent",
+      "tense": "futuro_semplice",
+      "zones": ["counter"],
+      "allowed_templates": [
+        "Domani tornerò...",
+        "Ordinerò..."
+      ],
+      "required_verbs": ["tornare", "ordinare"],
+      "time_marker_required": ["domani", "la prossima volta", "presto"]
+    },
+    "paragraph_8": {
+      "timeframe": "future",
+      "pattern": "future_intent",
+      "tense": "futuro_semplice",
+      "zones": ["counter", "table"],
+      "allowed_templates": [
+        "Mi siederò...",
+        "Parleremo / Berremo..."
+      ],
+      "required_verbs": ["sedersi", "parlare", "bere"],
+      "reflexive_required": ["mi siederò"],
+      "zone_transition": "counter_to_table"
+    },
+    "paragraph_9": {
+      "timeframe": "future",
+      "pattern": "future_intent",
+      "tense": "futuro_semplice",
+      "zones": ["table"],
+      "allowed_templates": [
+        "Sarà...",
+        "Pagherò...",
+        "Lascerò...",
+        "Tornerò..."
+      ],
+      "required_verbs": ["essere", "pagare", "lasciare", "tornare"],
+      "evaluation_phrase": "sarà"
+    }
+  },
+  "grammar_checks": {
+    "passato_prossimo": {
+      "avere_verbs": ["ordinare", "portare", "chiedere", "capire", "pagare", "ricevere", "prendere", "lasciare", "dire"],
+      "essere_verbs": ["andare", "venire", "tornare", "riuscire"],
+      "participio_check": true
+    },
+    "imperfetto": {
+      "common_verbs": ["volere", "essere", "avere", "andare", "fare"],
+      "ending_patterns": ["-avo", "-evo", "-ivo"]
+    },
+    "presente": {
+      "modal_verbs": ["volere", "potere", "dovere"],
+      "modal_plus_infinitive": true
+    },
+    "futuro_semplice": {
+      "ending_patterns": ["-ò", "-ai", "-à", "-emo", "-ete", "-anno"],
+      "irregulars": ["sarà", "andrò", "avrò", "verrò"]
+    },
+    "reflexives": {
+      "check_conjugation": true,
+      "common_reflexives": ["mi siederò", "mi siedo", "mi sono seduto"],
+      "forbidden_forms": ["radersmi", "pettinarsmi", "lavarmi"]
+    }
+  },
+  "vocab_whitelist": {
+    "nouns": ["caffè", "bancone", "cameriere", "tavolo", "amico", "amica", "conto", "cornetto", "biscotto", "acqua", "moneta", "resto", "menu", "mancia", "visita"],
+    "verbs": ["essere", "avere", "andare", "venire", "tornare", "ordinare", "prendere", "bere", "mangiare", "pagare", "parlare", "capire", "chiedere", "ricevere", "lasciare", "dire", "stare", "volere", "potere", "riuscire", "sedersi", "cambiare"],
+    "adverbs": ["ieri", "oggi", "domani", "adesso", "subito", "anche", "ancora", "insieme", "ma", "e", "quindi", "per favore", "scusi", "grazie"],
+    "adjectives": ["caldo", "freddo", "sbagliato", "gentile", "perfetto", "buono"]
+  },
+  "repetition_rules": {
+    "max_reuse_per_room": 3,
+    "intentional_repetition": ["caffè", "cameriere", "tavolo", "bancone", "conto", "cornetto", "amico", "pagare"],
+    "sentence_opener_check": true,
+    "verb_stem_check": true
+  },
+  "scoring": {
+    "pattern_compliance": 0.4,
+    "grammar_accuracy": 0.3,
+    "vocab_compliance": 0.2,
+    "zone_accuracy": 0.1
+  }
+}

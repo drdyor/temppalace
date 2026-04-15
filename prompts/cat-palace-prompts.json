@@ -1,0 +1,142 @@
+{
+  "style_bible": {
+    "prefix": "(masterpiece, best quality), realistic cartoon style, 2.5D semi-realistic, 3D rendered Disney-like character, volumetric lighting, soft shadows, detailed fur texture, cinematic lighting,",
+    "cat_base": "anthropomorphic cat character, realistic proportions, detailed fur, large expressive Pixar-style eyes, big round sparkling glossy eyes with bright catchlights and vivid iris reflections, emotive soulful gaze, warm lively personality, charming facial expression, small pink nose, pointed ears, fluffy tail, subsurface scattering on fur, digital 3D render style,",
+    "suffix": "octane render, unreal engine 5, highly detailed, 4k, sharp focus, realistic lighting",
+    "negative": "dead eyes, lifeless eyes, glassy eyes, dull eyes, soulless, blank stare, empty expression, flat expression, vacant, taxidermy, uncanny, 2D flat, anime, sketch, drawing, painting, blurry, low quality, worst quality, normal quality, extra limbs, deformed paws, bad anatomy, human hands, human face, ugly, disfigured, complex background, watermark, signature, text, jpeg artifacts, duplicate, multiple cats, oversaturated"
+  },
+  
+  "characters": [
+    {
+      "id": "barista",
+      "name": "Barista Cat",
+      "filename": "barista.png",
+      "prompt": "orange tabby cat wearing white barista apron with espresso cup logo, red neckerchief, holding silver portafilter, friendly smile with head tilt, white background, no shadows",
+      "width": 512,
+      "height": 768
+    },
+    {
+      "id": "vendor", 
+      "name": "Market Vendor Cat",
+      "filename": "vendor.png",
+      "prompt": "grey cat wearing green-and-white striped apron, flat cap coppola, holding wicker basket overflowing with grapes and peaches, cheerful open-mouth expression, welcoming gesture, white background, no shadows",
+      "width": 512,
+      "height": 768
+    },
+    {
+      "id": "agent",
+      "name": "Train Agent Cat",
+      "filename": "agent.png",
+      "prompt": "tuxedo cat wearing navy blue railway uniform with gold buttons, matching peaked cap with emblem, holding ticket puncher, professional neutral expression, attentive ears, white background, no shadows",
+      "width": 512,
+      "height": 768
+    },
+    {
+      "id": "pharmacist",
+      "name": "Pharmacist Cat",
+      "filename": "pharmacist.png",
+      "prompt": "white cat wearing pristine white lab coat, stethoscope around neck, holding small medicine bottle, caring gentle expression, one ear tilted listening pose, white background, no shadows",
+      "width": 512,
+      "height": 768
+    },
+    {
+      "id": "business",
+      "name": "Business Cat",
+      "filename": "business.png",
+      "prompt": "siamese cat wearing charcoal grey pinstripe suit, crisp white shirt, red silk tie, holding leather briefcase, serious professional expression, perfect posture, white background, no shadows",
+      "width": 512,
+      "height": 768
+    },
+    {
+      "id": "tourist",
+      "name": "Tourist Cat",
+      "filename": "tourist.png",
+      "prompt": "calico cat wearing casual linen shirt unbuttoned at collar, khaki shorts, small backpack, camera with strap around neck, wide-brimmed hat, curious excited expression, holding map, white background, no shadows",
+      "width": 512,
+      "height": 768
+    },
+    {
+      "id": "security",
+      "name": "Security Cat",
+      "filename": "security.png",
+      "prompt": "black cat wearing light blue security uniform, badge on chest, utility belt, serious watchful expression, ears rotated outward scanning, standing at attention, white background, no shadows",
+      "width": 512,
+      "height": 768
+    }
+  ],
+
+  "backgrounds": [
+    {
+      "id": "kitchen",
+      "name": "Kitchen",
+      "filename": "kitchen.png",
+      "prompt": "rustic Italian kitchen interior, terracotta tile floor, vintage chrome espresso machine on marble-topped wooden counter, copper pots hanging from wrought iron rack, wooden dining table with red-and-white checkered tablecloth, window showing rolling Tuscan hills, warm golden hour sunlight, potted basil, ceramic plates on wall, warm orange and cream palette, realistic 3D environment, volumetric lighting, no characters",
+      "width": 1920,
+      "height": 1080,
+      "negative_add": "cat, character, person, animal, anthropomorphic"
+    },
+    {
+      "id": "market",
+      "name": "Market Square",
+      "filename": "market.png",
+      "prompt": "Italian outdoor market piazza, cobblestone ground, wooden market stalls with striped awnings red green white, displays of colorful fruits oranges lemons grapes, vintage brass weighing scale, stone fountain in background, Mediterranean architecture shuttered windows, string lights overhead, bright midday sun sharp shadows, vibrant colors, no characters",
+      "width": 1920,
+      "height": 1080,
+      "negative_add": "cat, character, person, animal, anthropomorphic"
+    },
+    {
+      "id": "station",
+      "name": "Train Station",
+      "filename": "station.png",
+      "prompt": "classic Italian train station interior, high vaulted arched ceiling iron beams, large arched windows warm light streaming through, terrazzo floor pattern, wooden ticket counter with glass partition brass grill, vintage wall clock, wooden passenger benches, departure board with flip-digits, travel posters on walls, nostalgic atmosphere, no characters",
+      "width": 1920,
+      "height": 1080,
+      "negative_add": "cat, character, person, animal, anthropomorphic"
+    },
+    {
+      "id": "clinic",
+      "name": "Clinic",
+      "filename": "clinic.png",
+      "prompt": "Italian pharmacy interior, white walls with green cross signage, glass-fronted medicine cabinets, modern pharmacy counter with computer, blue upholstered waiting chairs, health posters on walls, bright fluorescent lighting mixed with natural light, clean sterile atmosphere, soft white and green color scheme, no characters",
+      "width": 1920,
+      "height": 1080,
+      "negative_add": "cat, character, person, animal, anthropomorphic"
+    },
+    {
+      "id": "gallery",
+      "name": "Gallery",
+      "filename": "gallery.png",
+      "prompt": "Italian museum gallery, polished herringbone wood floor, cream colored walls, large framed Renaissance paintings in gold frames with spotlights, marble classical sculpture on pedestal center, velvet ropes with brass stanchions, high ceilings decorative moldings, large windows natural light, warm elegant color palette, no characters",
+      "width": 1920,
+      "height": 1080,
+      "negative_add": "cat, character, person, animal, anthropomorphic"
+    },
+    {
+      "id": "airport",
+      "name": "Airport",
+      "filename": "airport.png",
+      "prompt": "modern Italian airport terminal, polished reflective floor, floor-to-ceiling glass windows showing airplanes on tarmac, security checkpoint with metal detectors conveyor belt, rows of modern seating, digital flight information displays on pillars, sleek contemporary design, blue and grey color scheme, modern travel environment, no characters",
+      "width": 1920,
+      "height": 1080,
+      "negative_add": "cat, character, person, animal, anthropomorphic"
+    },
+    {
+      "id": "office",
+      "name": "Office",
+      "filename": "office.png",
+      "prompt": "professional Italian bank office, dark mahogany wood paneling walls, leather client chairs, bank teller counter with security glass partition, reception desk with potted plant, framed certificates diplomas on walls, warm desk lamp lighting, subdued elegant colors browns creams gold accents, professional formal atmosphere, no characters",
+      "width": 1920,
+      "height": 1080,
+      "negative_add": "cat, character, person, animal, anthropomorphic"
+    },
+    {
+      "id": "entrance",
+      "name": "Entrance Hall",
+      "filename": "entrance.png",
+      "prompt": "grand Italian villa entrance hall, black and white checkered marble floor pattern, ornate carved wooden coat rack with mirror, ceramic umbrella stand, small console table with ceramic bowl, high arched doorway, warm afternoon sunlight through tall window, family portraits on walls, cream walls decorative moldings, welcoming elegant atmosphere, no characters",
+      "width": 1920,
+      "height": 1080,
+      "negative_add": "cat, character, person, animal, anthropomorphic"
+    }
+  ]
+}
