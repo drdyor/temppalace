@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useParams, useLocation } from 'wouter';
-import { ArrowLeft, Map, BookOpen, GraduationCap, ClipboardCheck, Scroll, Volume2, X, Check, Sparkles, MessageCircle, Mic, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Map, BookOpen, GraduationCap, ClipboardCheck, Volume2, X, Check, Sparkles, MessageCircle, Mic, ChevronRight } from 'lucide-react';
 import { getRoomById, rooms } from '../data/rooms';
 import { universalRules } from '../data/cultural-fluency';
 import { stories } from '../data/stories';

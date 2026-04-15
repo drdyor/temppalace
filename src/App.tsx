@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import RoomListPage from './pages/RoomListPage';
 import RoomPage from './pages/RoomPage';
 import ReviewPage from './pages/ReviewPage';
+import AuditPage from './pages/AuditPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route path="/rooms" component={RoomListPage} />
               <Route path="/rooms/:roomId" component={RoomPage} />
               <Route path="/review" component={ReviewPage} />
+              <Route path="/audit" component={AuditPage} />
             </Switch>
           </DialogueProgressProvider>
         </ProgressProvider>
