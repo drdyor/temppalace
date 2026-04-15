@@ -6,6 +6,7 @@ import { DialogueProgressProvider } from './context/DialogueProgressContext';
 import HomePage from './pages/HomePage';
 import RoomListPage from './pages/RoomListPage';
 import RoomPage from './pages/RoomPage';
+import ReviewPage from './pages/ReviewPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               <Route path="/" component={HomePage} />
               <Route path="/rooms" component={RoomListPage} />
               <Route path="/rooms/:roomId" component={RoomPage} />
+              <Route path="/review" component={ReviewPage} />
             </Switch>
           </DialogueProgressProvider>
         </ProgressProvider>
