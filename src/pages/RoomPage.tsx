@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useParams, useLocation } from 'wouter';
-import { ArrowLeft, Map, BookOpen, GraduationCap, ClipboardCheck, Volume2, X, Check, Sparkles, MessageCircle, Mic, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Map, BookOpen, GraduationCap, ClipboardCheck, Volume2, X, Check, Sparkles, MessageCircle, Mic, ChevronRight, Brain } from 'lucide-react';
 import { getRoomById, rooms } from '../data/rooms';
 import { universalRules } from '../data/cultural-fluency';
 import { stories } from '../data/stories';
@@ -8,6 +8,7 @@ import { branchingScenarios, type BranchingScenario, type ScenarioNode } from '.
 import { getWordSentences, practicalPhrases } from '../data/word-sentences';
 import { useProgress } from '../context/ProgressContext';
 import { useSpeechRecognition, compareItalianSpoken } from '../hooks/useSpeechRecognition';
+import { useFSRS } from '../hooks/useFSRS';
 import { useLanguage } from '../context/LanguageContext';
 import type { TabType, VocabularyItem, Gender, Zone } from '../types';
 import RoomImage from '../components/RoomImage';
@@ -63,6 +64,18 @@ export default function RoomPage() {
   const { getWordProgress, markWordLearned, getRoomMastery } = useProgress();
   const { getWord } = useLanguage();
   const { speak } = useItalianSpeech();
+  const { addWord: addToSRS, getCard } = useFSRS();
+  const [inDeck, setInDeck] = useState<Record<string, boolean>>({});
+
+  const checkDeck = useCallback(async (wordId: string) => {
+    const card = await getCard(wordId);
+    setInDeck((prev) => ({ ...prev, [wordId]: !!card }));
+  }, [getCard]);
+
+  const handleAddToSRS = useCallback(async (wordId: string) => {
+    await addToSRS(wordId);
+    setInDeck((prev) => ({ ...prev, [wordId]: true }));
+  }, [addToSRS]);
   
   if (!room) {
     return (
@@ -205,7 +218,17 @@ export default function RoomPage() {
 
       {/* Word Detail Modal */}
       {selectedWord && (
-        <WordModal word={selectedWord} onClose={() => setSelectedWord(null)} onSpeak={() => speak(selectedWord.native)} progress={getWordProgress(room.id, selectedWord.id)} onMarkLearned={() => markWordLearned(room.id, selectedWord.id)} getGenderColor={getGenderColor} />
+        <WordModal
+          word={selectedWord}
+          onClose={() => setSelectedWord(null)}
+          onSpeak={() => speak(selectedWord.native)}
+          progress={getWordProgress(room.id, selectedWord.id)}
+          onMarkLearned={() => markWordLearned(room.id, selectedWord.id)}
+          getGenderColor={getGenderColor}
+          onAddToSRS={() => handleAddToSRS(selectedWord.id)}
+          onCheckDeck={() => checkDeck(selectedWord.id)}
+          inDeck={!!inDeck[selectedWord.id]}
+        />
       )}
     </div>
   );
@@ -411,7 +434,7 @@ function LearnTab({ room, roomVocab, getWordProgress, speak, setSelectedWord, ge
         <div className="divide-y divide-palace-text/10">
           {roomVocab.map(word => {
             const progress = getWordProgress(room.id, word.id);
-            const sentences = getWordSentences(word.id);
+            const sentences = getWordSentences(word.id, word);
             return (
               <div key={word.id} className="p-4 hover:bg-palace-text/5">
                 <div className="flex items-center justify-between cursor-pointer" onClick={() => setSelectedWord(word)}>
@@ -915,16 +938,21 @@ function DialogueTab({ roomScenarios, activeScenario, currentNode, onStartScenar
   );
 }
 
-function WordModal({ word, onClose, onSpeak, progress, onMarkLearned, getGenderColor }: {
+function WordModal({ word, onClose, onSpeak, progress, onMarkLearned, getGenderColor, onAddToSRS, onCheckDeck, inDeck }: {
   word: VocabularyItem;
   onClose: () => void;
   onSpeak: () => void;
   progress: { learned: boolean; attempts: number; correct: number } | undefined;
   onMarkLearned: () => void;
   getGenderColor: (g: Gender) => string;
+  onAddToSRS: () => void;
+  onCheckDeck: () => void;
+  inDeck: boolean;
 }) {
-  const sentences = getWordSentences(word.id);
+  const sentences = getWordSentences(word.id, word);
   const [showPhrases, setShowPhrases] = useState(false);
+
+  useEffect(() => { onCheckDeck(); }, [word.id, onCheckDeck]);
   
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
@@ -1005,6 +1033,18 @@ function WordModal({ word, onClose, onSpeak, progress, onMarkLearned, getGenderC
               <span className="font-cinzel">{progress?.learned ? 'Learned' : 'Mark Learned'}</span>
             </button>
           </div>
+          <button
+            onClick={onAddToSRS}
+            disabled={inDeck}
+            className={`mt-3 w-full flex items-center justify-center gap-2 p-3 rounded-xl transition-colors font-cinzel ${
+              inDeck
+                ? 'bg-green-500/20 text-green-500 cursor-default'
+                : 'bg-palace-gold text-palace-bg hover:bg-palace-gold/90'
+            }`}
+          >
+            <Brain className="w-5 h-5" />
+            <span>{inDeck ? 'In Review Deck' : 'Add to Review Deck'}</span>
+          </button>
         </div>
       </div>
     </div>

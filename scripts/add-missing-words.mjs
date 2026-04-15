@@ -96,6 +96,15 @@ const STUBS = {
   fantasma: { english: 'ghost', gender: 'masculine', emoji: '👻' },
   zombie: { english: 'zombie', gender: 'masculine', emoji: '🧟' },
   vampiro: { english: 'vampire', gender: 'masculine', emoji: '🧛' },
+  farina: { english: 'flour', gender: 'feminine', emoji: '🌾' },
+  mestolo: { english: 'ladle', gender: 'masculine', emoji: '🥄' },
+  spatola: { english: 'spatula', gender: 'feminine', emoji: '' },
+  grattugia: { english: 'grater', gender: 'feminine', emoji: '' },
+  tagliere: { english: 'cutting board', gender: 'masculine', emoji: '' },
+  fornello: { english: 'stove / burner', gender: 'masculine', emoji: '🔥' },
+  colino: { english: 'colander', gender: 'masculine', emoji: '' },
+  biscotto: { english: 'biscuit / cookie', gender: 'masculine', emoji: '🍪' },
+  grandine: { english: 'hail', gender: 'feminine', emoji: '🌨️' },
 };
 
 // crude pronunciation: uppercase, basic vowel hints

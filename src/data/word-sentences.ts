@@ -231,10 +231,86 @@ export const wordSentences: Record<string, WordSentence[]> = {
   ],
 };
 
-// Helper function to get sentences for a word
-export const getWordSentences = (wordId: string): WordSentence[] => {
-  return wordSentences[wordId] || [];
+// Helper function to get sentences for a word.
+// If no curated sentences exist and a VocabularyItem is provided, generate
+// simple template sentences so every word has at least some context.
+import type { VocabularyItem } from '../types';
+
+export const getWordSentences = (
+  wordId: string,
+  item?: VocabularyItem
+): WordSentence[] => {
+  const curated = wordSentences[wordId];
+  if (curated && curated.length > 0) return curated;
+  if (!item) return [];
+  return generateSentences(item);
 };
+
+function primaryEnglish(en: string): string {
+  // "excuse me / sorry" → "excuse me". "bread / loaf" → "bread".
+  const first = en.split('/')[0].trim();
+  return first || en;
+}
+
+function isVerb(en: string): boolean {
+  return /^to\s+/i.test(en.trim());
+}
+
+function generateSentences(item: VocabularyItem): WordSentence[] {
+  const en = primaryEnglish(item.english);
+  const native = item.native;
+
+  if (isVerb(en)) {
+    const bare = en.replace(/^to\s+/i, '');
+    return [
+      {
+        italian: `Devo ${native}.`,
+        english: `I have to ${bare}.`,
+        context: 'obligation',
+      },
+      {
+        italian: `Mi piace ${native}.`,
+        english: `I like to ${bare}.`,
+        context: 'preference',
+      },
+    ];
+  }
+
+  const article =
+    item.gender === 'masculine' ? 'Il' : item.gender === 'feminine' ? 'La' : '';
+  const articleLower =
+    item.gender === 'masculine' ? 'il' : item.gender === 'feminine' ? 'la' : '';
+  const enArticle = /^[aeiou]/i.test(en) ? 'an' : 'a';
+
+  if (article) {
+    return [
+      {
+        italian: `${article} ${native} è qui.`,
+        english: `The ${en} is here.`,
+        context: 'location',
+      },
+      {
+        italian: `Vedo ${articleLower} ${native}.`,
+        english: `I see the ${en}.`,
+        context: 'observation',
+      },
+    ];
+  }
+
+  // Adjective / adverb / other — use predicate frame
+  return [
+    {
+      italian: `È ${native}.`,
+      english: `It is ${en}.`,
+      context: 'description',
+    },
+    {
+      italian: `Questo è ${enArticle === 'an' ? 'un' : 'un'} esempio di "${native}".`,
+      english: `This is ${enArticle} example of "${en}".`,
+      context: 'usage',
+    },
+  ];
+}
 
 // Practical phrases for "Do you speak English" conversations
 export const practicalPhrases = [

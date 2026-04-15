@@ -1,6 +1,15 @@
 {
   "note": "Authoritative word lists per zone (keyed roomId::zoneId). Script replaces interiorVocab for each zone with these words laid out in a grid, and rebuilds each room's vocabularyIds as the union of its zones. Zones not listed here are left untouched.",
   "zones": {
+    "kitchen::fridge":                 ["acqua", "latte", "uova", "burro", "formaggio", "carne", "pesce", "pollo", "yogurt", "panna"],
+    "kitchen::pantry":                 ["pasta", "riso", "pane", "farina", "zucchero", "caffe", "olio", "sale"],
+    "kitchen::utensil-drawer":         ["coltello", "forchetta", "cucchiaio", "mestolo", "spatola", "grattugia"],
+    "kitchen::stove":                  ["padella", "pentola", "tagliere", "forno", "fornello", "colino"],
+    "kitchen::table":                  ["piatto", "bicchiere", "tazza", "tovagliolo", "vino", "birra", "succo"],
+    "kitchen::dessert":                ["torta", "gelato", "cornetto", "cioccolata", "miele", "biscotto"],
+
+    "weather::storms":                 ["temporale", "tuono", "fulmine", "nebbia", "grandine", "pioggia"],
+
     "entrance-hall::family-portrait":  ["madre", "padre", "fratello", "sorella", "nonno", "nonna", "zio", "zia", "figlio", "figlia"],
     "entrance-hall::coat-rack":        ["cappotto", "giacca", "impermeabile", "sciarpa", "cappello", "guanto", "cravatta", "cintura", "borsa", "maglione"],
     "entrance-hall::mirror":           ["bello", "brutto", "giovane", "vecchio", "alto", "basso", "magro", "grasso", "forte", "debole"],
