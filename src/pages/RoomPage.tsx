@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useParams, useLocation } from 'wouter';
-import { ArrowLeft, Map, BookOpen, GraduationCap, ClipboardCheck, Scroll, Volume2, X, Check, Sparkles, MessageCircle, Loader2 } from 'lucide-react';
+import { ArrowLeft, Map, BookOpen, GraduationCap, ClipboardCheck, Scroll, Volume2, X, Check, Sparkles, MessageCircle, Loader2, Mic } from 'lucide-react';
 import { getRoomById, rooms } from '../data/rooms';
 import { roomCultures, universalRules, branchingScenarios } from '../data/cultural-fluency';
 import { useLanguage } from '../context/LanguageContext';
 import { useProgress } from '../context/ProgressContext';
 import { useOllama } from '../hooks/useOllama';
+import { useSpeechRecognition, compareItalianSpoken } from '../hooks/useSpeechRecognition';
 // useComfyUI hook removed - using services/comfyService instead
 import type { TabType, VocabularyItem, Gender, Zone, Room } from '../types';
 import type { BranchingScenario } from '../data/cultural-fluency';
@@ -17,7 +18,7 @@ import RoomImage from '../components/RoomImage';
 export default function RoomPage() {
   const { roomId } = useParams<{ roomId: string }>();
   const [, setLocation] = useLocation();
-  const [activeTab, setActiveTab] = useState<TabType>('explore');
+  const [activeTab, setActiveTab] = useState<TabType>('dialogue');
   const [selectedWord, setSelectedWord] = useState<VocabularyItem | null>(null);
   const [genderFilter, setGenderFilter] = useState<Gender | 'all'>('all');
   
@@ -101,12 +102,12 @@ export default function RoomPage() {
       <div className="fixed top-14 left-0 right-0 z-40 bg-palace-bg/95 backdrop-blur-md border-b border-palace-text/10">
         <div className="flex justify-center gap-1 p-2 max-w-xl mx-auto flex-wrap">
           {[
+            { id: 'dialogue', label: 'Dialogue', icon: MessageCircle },
+            { id: 'narratives', label: 'Stories', icon: Scroll },
+            { id: 'practice', label: 'Practice', icon: GraduationCap },
             { id: 'explore', label: 'Explore', icon: Map },
             { id: 'learn', label: 'Learn', icon: BookOpen },
-            { id: 'narratives', label: 'Stories', icon: Scroll },
             { id: 'culture', label: 'Culture', icon: Sparkles },
-            { id: 'dialogue', label: 'Dialogue', icon: MessageCircle },
-            { id: 'practice', label: 'Practice', icon: GraduationCap },
             { id: 'test', label: 'Test', icon: ClipboardCheck },
           ].map(({ id, label, icon: Icon }) => (
             <button
@@ -584,10 +585,22 @@ function PracticeTab({ vocabulary, roomId, onMarkLearned }: {
   roomId: string;
   onMarkLearned: (_roomId: string, wordId: string) => void;
 }) {
-  const [mode, setMode] = useState<'flashcard' | 'gender'>('flashcard');
+  const [mode, setMode] = useState<'flashcard' | 'gender' | 'speak'>('flashcard');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [showGenderResult, setShowGenderResult] = useState<'correct' | 'incorrect' | null>(null);
+  const [speakResult, setSpeakResult] = useState<{ similarity: number; isMatch: boolean; missingWords: string[] } | null>(null);
+  
+  const { isListening, transcript, hasSupport, startListening, stopListening } = useSpeechRecognition({
+    language: 'it-IT',
+    onResult: (spoken) => {
+      const result = compareItalianSpoken(spoken, currentWord.native);
+      setSpeakResult(result);
+      if (result.isMatch) {
+        onMarkLearned(roomId, currentWord.id);
+      }
+    },
+  });
 
   const currentWord = vocabulary[currentIndex];
   if (!currentWord) return null;
@@ -595,6 +608,7 @@ function PracticeTab({ vocabulary, roomId, onMarkLearned }: {
   const nextWord = () => {
     setFlipped(false);
     setShowGenderResult(null);
+    setSpeakResult(null);
     setCurrentIndex((currentIndex + 1) % vocabulary.length);
   };
 
@@ -609,7 +623,7 @@ function PracticeTab({ vocabulary, roomId, onMarkLearned }: {
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-center gap-2">
+      <div className="flex justify-center gap-2 flex-wrap">
         <button
           onClick={() => setMode('flashcard')}
           className={`px-4 py-2 rounded-full font-cinzel text-sm ${
@@ -626,13 +640,21 @@ function PracticeTab({ vocabulary, roomId, onMarkLearned }: {
         >
           Gender Practice
         </button>
+        <button
+          onClick={() => setMode('speak')}
+          className={`px-4 py-2 rounded-full font-cinzel text-sm ${
+            mode === 'speak' ? 'bg-palace-gold text-palace-bg' : 'text-palace-text/70'
+          }`}
+        >
+          Speak It
+        </button>
       </div>
 
       <div className="text-center text-palace-text/50 text-sm">
         Card {currentIndex + 1} of {vocabulary.length}
       </div>
 
-      {mode === 'flashcard' ? (
+      {mode === 'flashcard' && (
         <div 
           onClick={() => setFlipped(!flipped)}
           className="aspect-[3/2] max-w-md mx-auto cursor-pointer bg-palace-bg/50 border border-palace-text/20 rounded-2xl flex flex-col items-center justify-center"
@@ -651,7 +673,9 @@ function PracticeTab({ vocabulary, roomId, onMarkLearned }: {
             </>
           )}
         </div>
-      ) : (
+      )}
+
+      {mode === 'gender' && (
         <div className="max-w-md mx-auto text-center">
           <h3 className="font-cinzel text-3xl text-palace-text mb-8">{currentWord.native}</h3>
           <p className="text-palace-text/50 mb-8">What is the gender?</p>
@@ -675,6 +699,53 @@ function PracticeTab({ vocabulary, roomId, onMarkLearned }: {
             <div className={`mt-6 p-4 rounded-xl ${showGenderResult === 'correct' ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'}`}>
               {showGenderResult === 'correct' ? '✓ Correct!' : `✗ Incorrect. It's ${currentWord.gender === 'masculine' ? 'il (masculine)' : 'la (feminine)'}`}
             </div>
+          )}
+        </div>
+      )}
+
+      {mode === 'speak' && (
+        <div className="max-w-md mx-auto text-center space-y-6">
+          <div>
+            <span className="text-palace-text/50 text-sm block mb-2">Say this in Italian:</span>
+            <h3 className="font-cinzel text-2xl text-palace-text">{currentWord.english}</h3>
+          </div>
+
+          {!hasSupport ? (
+            <p className="text-palace-text/50 text-sm">Speech recognition is not supported in this browser.</p>
+          ) : (
+            <>
+              <button
+                onClick={isListening ? stopListening : startListening}
+                className={`w-24 h-24 mx-auto rounded-full flex items-center justify-center transition-all ${
+                  isListening 
+                    ? 'bg-red-500/20 text-red-500 animate-pulse scale-110' 
+                    : 'bg-palace-gold/20 text-palace-gold hover:bg-palace-gold/30 hover:scale-105'
+                }`}
+              >
+                <Mic className="w-10 h-10" />
+              </button>
+
+              {isListening && (
+                <p className="text-palace-text/60 text-sm italic">{transcript || 'Listening...'}</p>
+              )}
+
+              {speakResult && !isListening && (
+                <div className={`p-4 rounded-xl ${speakResult.isMatch ? 'bg-green-500/10 text-green-500' : 'bg-yellow-500/10 text-yellow-500'}`}>
+                  <div className="flex items-center justify-center gap-2 mb-1">
+                    {speakResult.isMatch ? (
+                      <>
+                        <Check className="w-5 h-5" />
+                        <span className="font-cinzel">Excellent!</span>
+                      </>
+                    ) : (
+                      <span className="font-cinzel">Not quite</span>
+                    )}
+                  </div>
+                  <p className="text-palace-text/70 text-sm">You said: "{transcript}"</p>
+                  <p className="text-palace-text/70 text-sm">Expected: "{currentWord.native}"</p>
+                </div>
+              )}
+            </>
           )}
         </div>
       )}
@@ -1076,6 +1147,70 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
   );
 }
 
+// Speak It Challenge Component
+function SpeakItChallenge({ word }: { word: string }) {
+  const [result, setResult] = useState<{ similarity: number; isMatch: boolean; missingWords: string[] } | null>(null);
+  const { isListening, transcript, hasSupport, startListening, stopListening } = useSpeechRecognition({
+    language: 'it-IT',
+    onResult: (spoken) => {
+      setResult(compareItalianSpoken(spoken, word));
+    },
+  });
+
+  if (!hasSupport) {
+    return (
+      <div className="bg-palace-text/5 rounded-xl p-4 text-center">
+        <p className="text-palace-text/50 text-sm">Speech practice is not supported in this browser.</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="bg-palace-text/5 rounded-xl p-4">
+      <div className="flex items-center justify-between mb-3">
+        <span className="text-palace-text/70 text-sm font-cinzel">Speak It</span>
+        <button
+          onClick={isListening ? stopListening : startListening}
+          className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm transition-all ${
+            isListening 
+              ? 'bg-red-500/20 text-red-500 animate-pulse' 
+              : 'bg-palace-gold/20 text-palace-gold hover:bg-palace-gold/30'
+          }`}
+        >
+          <Mic className="w-4 h-4" />
+          {isListening ? 'Listening...' : 'Say it'}
+        </button>
+      </div>
+
+      {isListening && (
+        <p className="text-palace-text/60 text-sm italic min-h-[1.5rem]">{transcript || 'Listening...'}</p>
+      )}
+
+      {result && !isListening && (
+        <div className={`mt-2 p-3 rounded-lg ${result.isMatch ? 'bg-green-500/10' : 'bg-yellow-500/10'}`}>
+          <div className="flex items-center gap-2">
+            {result.isMatch ? (
+              <>
+                <Check className="w-5 h-5 text-green-500" />
+                <span className="text-green-500 font-cinzel">Great pronunciation!</span>
+              </>
+            ) : (
+              <>
+                <span className="text-yellow-500 font-cinzel">Keep practicing</span>
+              </>
+            )}
+          </div>
+          {result.missingWords.length > 0 && (
+            <p className="text-palace-text/60 text-xs mt-1">
+              We heard: "{transcript}" — try to include: {result.missingWords.join(', ')}
+            </p>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // Word Modal Component
 function WordModal({ word, room, onClose, onSpeak, progress, onMarkLearned, getGenderColor }: {
   word: VocabularyItem;
@@ -1144,6 +1279,8 @@ function WordModal({ word, room, onClose, onSpeak, progress, onMarkLearned, getG
             <span className="text-palace-text/50 text-sm">Pronunciation:</span>
             <p className="text-palace-gold font-cinzel">/{word.pronunciation}/</p>
           </div>
+
+          <SpeakItChallenge word={word.native} />
 
           {word.plural && (
             <div>

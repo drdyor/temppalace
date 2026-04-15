@@ -333,13 +333,13 @@ export const branchingScenarios: BranchingScenario[] = [
         backgroundEffect: 'neutral',
         choices: [
           { text: 'Continue pointing', nextNodeId: 'point-fail' },
-          { text: 'Recover: "Scusi, buongiorno! Un caffè, per favore."', nextNodeId: 'recover-good' },
+          { text: 'Recover: "Scusa, buongiorno! Un caffè, per favore."', nextNodeId: 'recover-good' },
         ],
       },
       'greeting-good': {
         id: 'greeting-good',
         speaker: 'npc',
-        text: '🐱 Barista Cat\'s ears perk up, tail curves happily. "Buongiorno a lei! Cosa prende?"',
+        text: '🐱 Barista Cat\'s ears perk up, tail curves happily. "Buongiorno! Cosa prendi?"',
         backgroundEffect: 'happy',
         choices: [
           { text: '☕ "Un cappuccino, per favore"', nextNodeId: 'order-cappuccino' },
@@ -439,11 +439,11 @@ export const branchingScenarios: BranchingScenario[] = [
       'touch-wrong': {
         id: 'touch-wrong',
         speaker: 'npc',
-        text: '🐱 Vendor Cat gently taps your hand with a paw. "Lascio fare a me, signore." (Ears twitch)',
+        text: '🐱 Vendor Cat gently taps your hand with a paw. "Lascia fare a me." (Ears twitch)',
         backgroundEffect: 'surprised',
         choices: [
           { text: '😤 Insist: "Voglio scegliere io" (I want to choose)', nextNodeId: 'insist-fail' },
-          { text: '😅 "Certo, mi scusi! Le scelga lei le migliori."', nextNodeId: 'trust-good' },
+          { text: '😅 "Certo, scusa! Scegli tu le migliori."', nextNodeId: 'trust-good' },
         ],
       },
       'greet-good': {
@@ -452,13 +452,13 @@ export const branchingScenarios: BranchingScenario[] = [
         text: '🐱 Vendor Cat\'s ears perk up. "Buongiorno! Due euro al chilo. Sono buonissime oggi!" (Tail swishes)',
         backgroundEffect: 'happy',
         choices: [
-          { text: '💬 "Un chilo, per favore. Le scelga lei."', nextNodeId: 'trust-good' },
+          { text: '💬 "Un chilo, per favore. Scegli tu."', nextNodeId: 'trust-good' },
         ],
       },
       'compliment-good': {
         id: 'compliment-good',
         speaker: 'npc',
-        text: '🐱 Vendor Cat smiles, ears forward. "Ha buon occhio! Sono appena arrivate."',
+        text: '🐱 Vendor Cat smiles, ears forward. "Hai buon occhio! Sono appena arrivate."',
         backgroundEffect: 'happy',
         choices: [
           { text: '💬 "Perfetto, un chilo per favore."', nextNodeId: 'trust-good' },
@@ -476,7 +476,7 @@ export const branchingScenarios: BranchingScenario[] = [
       'trust-good': {
         id: 'trust-good',
         speaker: 'npc',
-        text: '🐱 Vendor Cat beams, selects carefully. "Ecco, le migliori per lei!" (Proud tail up)',
+        text: '🐱 Vendor Cat beams, selects carefully. "Ecco, le migliori per te!" (Proud tail up)',
         backgroundEffect: 'happy',
         choices: [
           { text: '😊 "Grazie mille, sembrano perfette!"', nextNodeId: 'end-perfect' },
@@ -496,8 +496,645 @@ export const branchingScenarios: BranchingScenario[] = [
       },
     },
   },
+  {
+    id: 'train-digital-checkin',
+    roomId: 'transport',
+    title: 'The Digital Train',
+    titleNative: 'Il Treno Digitale',
+    timeContext: '15 minutes before departure',
+    startNodeId: 'platform',
+    culturalLesson: 'On Italian regional trains, you MUST check in via the Trenitalia app before boarding. A ticket without check-in is invalid.',
+    nodes: {
+      'platform': {
+        id: 'platform',
+        speaker: 'narrator',
+        text: '🐱 Conductor Cat paces the platform, tail twitching nervously. Your phone shows the QR ticket, but the app says "Check-in richiesto".',
+        choices: [
+          { text: '📱 Board immediately without checking in', nextNodeId: 'board-wrong', effect: { culturalNote: 'Regional trains require check-in; high-speed trains do not' } },
+          { text: '📱 Tap "Effettua check-in" on the app', nextNodeId: 'checkin-good' },
+          { text: '📱 The app crashes when you tap check-in', nextNodeId: 'app-crash' },
+          { text: '💬 "Scusa, devo fare il check-in?"', nextNodeId: 'ask-help' },
+        ],
+      },
+      'board-wrong': {
+        id: 'board-wrong',
+        speaker: 'npc',
+        text: '🐱 Conductor Cat scans your phone and frowns, ears flattening. "Non hai fatto il check-in. Devi pagare una multa."',
+        backgroundEffect: 'angry',
+        choices: [
+          { text: '😰 Accept the fine silently', nextNodeId: 'end-fine' },
+          { text: '💬 "Scusa, non lo sapevo. Posso farlo adesso?"', nextNodeId: 'recover-checkin' },
+        ],
+      },
+      'checkin-good': {
+        id: 'checkin-good',
+        speaker: 'narrator',
+        text: '✅ The app confirms: "Check-in effettuato. Buon viaggio!" The QR code turns green.',
+        choices: [
+          { text: '🚂 Board the train confidently', nextNodeId: 'onboard' },
+        ],
+      },
+      'app-crash': {
+        id: 'app-crash',
+        speaker: 'narrator',
+        text: '🚨 The app freezes on the loading screen. The train is about to leave. Panic rises.',
+        choices: [
+          { text: '😤 Keep restarting the app frantically', nextNodeId: 'board-wrong' },
+          { text: '💬 "Scusa, l\'app non funziona, puoi aiutarmi?" to the conductor', nextNodeId: 'ask-help' },
+        ],
+      },
+      'ask-help': {
+        id: 'ask-help',
+        speaker: 'npc',
+        text: '🐱 Conductor Cat\'s ears perk up helpfully. "Sì, per i treni regionali è obbligatorio. Vedi, sul telefono, il pulsante verde."',
+        backgroundEffect: 'happy',
+        choices: [
+          { text: '📱 Follow instructions and check in', nextNodeId: 'onboard' },
+        ],
+      },
+      'recover-checkin': {
+        id: 'recover-checkin',
+        speaker: 'npc',
+        text: '🐱 Conductor Cat\'s tail relaxes slightly. "Va bene, ma la prossima volta fallo prima." He watches you tap the app.',
+        backgroundEffect: 'neutral',
+        choices: [
+          { text: '📱 Complete check-in and thank him', nextNodeId: 'onboard' },
+        ],
+      },
+      'onboard': {
+        id: 'onboard',
+        speaker: 'narrator',
+        text: 'You find your seat. An announcement crackles: "Attenzione passeggeri, il treno per Roma Termini è in partenza dal binario nove."',
+        choices: [
+          { text: '💬 "Scusa, questo è il posto 12A?" to the passenger', nextNodeId: 'seat-check' },
+          { text: '😌 Sit down without asking', nextNodeId: 'end-uncertain' },
+        ],
+      },
+      'seat-check': {
+        id: 'seat-check',
+        speaker: 'npc',
+        text: '🐱 A friendly Passenger Cat nods. "Sì, è il tuo posto. Io sono 12B."',
+        backgroundEffect: 'happy',
+        choices: [
+          { text: '💬 "Grazie, buon viaggio!"', nextNodeId: 'end-perfect' },
+        ],
+      },
+      'end-fine': {
+        id: 'end-fine',
+        speaker: 'narrator',
+        text: '⚠️ You pay a €50 fine. Always check in on regional trains — the app makes it easy, but forgetting is expensive.',
+        choices: [],
+      },
+      'end-uncertain': {
+        id: 'end-uncertain',
+        speaker: 'narrator',
+        text: '✅ You made the train, but you sat in silence wondering if it was your seat. Asking politely saves stress.',
+        choices: [],
+      },
+      'end-perfect': {
+        id: 'end-perfect',
+        speaker: 'narrator',
+        text: '✅ Perfect! Checked in, found your seat, and exchanged a friendly word. The modern Italian train journey mastered.',
+        choices: [],
+      },
+    },
+  },
+  {
+    id: 'busy-bar-ordering',
+    roomId: 'cafe',
+    title: 'At the Crowded Bar',
+    titleNative: 'Al Bar Affollato',
+    timeContext: '8:00 AM',
+    startNodeId: 'enter-bar',
+    culturalLesson: 'In a busy Italian bar, speed and clarity matter. Know your order before the barista looks at you.',
+    nodes: {
+      'enter-bar': {
+        id: 'enter-bar',
+        speaker: 'narrator',
+        text: '🐱 Barista Cat is a blur of motion behind the counter, ears swiveling to catch orders from three directions. The bar is packed with locals.',
+        choices: [
+          { text: '🙊 Wait to be asked what you want', nextNodeId: 'ignored-wrong' },
+          { text: '💬 "Buongiorno, un espresso e un cornetto, per favore"', nextNodeId: 'order-good' },
+          { text: '📱 Try to order through an app', nextNodeId: 'app-wrong' },
+        ],
+      },
+      'ignored-wrong': {
+        id: 'ignored-wrong',
+        speaker: 'npc',
+        text: '🐱 Barista Cat serves two customers who spoke up, then glances at you with a questioning ear tilt. "Sì?"',
+        backgroundEffect: 'neutral',
+        choices: [
+          { text: 'Continue waiting silently', nextNodeId: 'end-ignored' },
+          { text: '💬 "Scusa, un caffè, per favore"', nextNodeId: 'order-late' },
+        ],
+      },
+      'app-wrong': {
+        id: 'app-wrong',
+        speaker: 'npc',
+        text: '🐱 Barista Cat looks confused at your phone screen. "Qui si ordina al banco." No app orders at this old-school bar.',
+        backgroundEffect: 'surprised',
+        choices: [
+          { text: '💬 "Ah, scusa. Un espresso, per favore"', nextNodeId: 'order-late' },
+        ],
+      },
+      'order-good': {
+        id: 'order-good',
+        speaker: 'npc',
+        text: '🐱 Barista Cat\'s ears lock onto you. "Subito!" Espresso poured in three seconds. Cornetto placed on the counter.',
+        backgroundEffect: 'happy',
+        choices: [
+          { text: '🧍 Drink standing, pay at the register', nextNodeId: 'end-perfect' },
+          { text: '🪑 "Posso sedermi?"', nextNodeId: 'sit-expensive' },
+        ],
+      },
+      'order-late': {
+        id: 'order-late',
+        speaker: 'npc',
+        text: '🐱 Barista Cat nods, making your coffee. "Un euro e venti." Quick and efficient.',
+        backgroundEffect: 'neutral',
+        choices: [
+          { text: 'Pay and leave', nextNodeId: 'end-okay' },
+        ],
+      },
+      'sit-expensive': {
+        id: 'sit-expensive',
+        speaker: 'npc',
+        text: '🐱 Barista Cat points to the tables. "Al tavolo? Ci sono tre euro di coperto."',
+        backgroundEffect: 'surprised',
+        choices: [
+          { text: '💬 "No, grazie, al banco va benissimo"', nextNodeId: 'end-perfect' },
+          { text: 'Sit down anyway', nextNodeId: 'end-expensive' },
+        ],
+      },
+      'end-ignored': {
+        id: 'end-ignored',
+        speaker: 'narrator',
+        text: '⚠️ You waited too long. In a busy Roman bar, you must speak up clearly and confidently.',
+        choices: [],
+      },
+      'end-expensive': {
+        id: 'end-expensive',
+        speaker: 'narrator',
+        text: '⚠️ Your €1.20 espresso became €4.20. Sitting at a table in a busy bar is for lingering, not a quick caffeine hit.',
+        choices: [],
+      },
+      'end-okay': {
+        id: 'end-okay',
+        speaker: 'narrator',
+        text: '✅ You got your coffee, but you hesitated. In Italy, confidence in ordering is half the battle.',
+        choices: [],
+      },
+      'end-perfect': {
+        id: 'end-perfect',
+        speaker: 'narrator',
+        text: '✅ Perfect! Fast, clear, standing at the bar. Barista Cat respects a traveler who knows the routine.',
+        choices: [],
+      },
+    },
+  },
+  {
+    id: 'self-checkout-help',
+    roomId: 'supermarket',
+    title: 'The Self-Checkout',
+    titleNative: 'La Cassa Automatica',
+    timeContext: 'Evening shopping',
+    startNodeId: 'scan-error',
+    culturalLesson: 'Italian self-checkouts often require staff approval for age-restricted items, discounts, or weighing errors. Knowing how to ask for help is essential.',
+    nodes: {
+      'scan-error': {
+        id: 'scan-error',
+        speaker: 'narrator',
+        text: '🚨 The self-checkout machine freezes. Red light blinking. A message appears: "Operatore richiesto." Your pasta won\'t scan.',
+        choices: [
+          { text: '😤 Keep trying to scan the pasta aggressively', nextNodeId: 'frustrated-wrong' },
+          { text: '💬 "Scusa, non funziona" to the nearest employee', nextNodeId: 'ask-help-good' },
+          { text: '🙋 Raise your hand and look around', nextNodeId: 'wait-help' },
+        ],
+      },
+      'frustrated-wrong': {
+        id: 'frustrated-wrong',
+        speaker: 'narrator',
+        text: 'The machine beeps louder. A queue forms behind you. Frustration won\'t fix a technical problem.',
+        choices: [
+          { text: 'Abandon the cart and leave', nextNodeId: 'end-giveup' },
+          { text: '💬 "Scusa, puoi aiutarmi?"', nextNodeId: 'ask-help-good' },
+        ],
+      },
+      'wait-help': {
+        id: 'wait-help',
+        speaker: 'narrator',
+        text: 'You stand there awkwardly. The employee is busy with another customer.',
+        choices: [
+          { text: 'Keep waiting', nextNodeId: 'end-waiting' },
+          { text: '💬 "Scusa, c\'è un problema con la cassa"', nextNodeId: 'ask-help-good' },
+        ],
+      },
+      'ask-help-good': {
+        id: 'ask-help-good',
+        speaker: 'npc',
+        text: '🐱 Shop Assistant Cat approaches with a calm expression. "Sì, dimmi. Ah, la pasta. Devo inserire il codice manualmente."',
+        backgroundEffect: 'happy',
+        choices: [
+          { text: '💬 "Grazie mille. Pago con la carta"', nextNodeId: 'pay-card' },
+          { text: '💬 "Posso pagare in contanti?"', nextNodeId: 'pay-cash' },
+          { text: '🛍️ The bag scale says "Peso inatteso" after packing', nextNodeId: 'bag-error' },
+        ],
+      },
+      'pay-card': {
+        id: 'pay-card',
+        speaker: 'npc',
+        text: '🐱 Shop Assistant Cat nods. "Certo, avvicina la carta."',
+        backgroundEffect: 'happy',
+        choices: [
+          { text: 'Tap your card on the reader', nextNodeId: 'end-perfect' },
+        ],
+      },
+      'pay-cash': {
+        id: 'pay-cash',
+        speaker: 'npc',
+        text: '🐱 Shop Assistant Cat checks the machine. "Sì, accetta contanti. Inserisci qui."',
+        backgroundEffect: 'neutral',
+        choices: [
+          { text: 'Insert cash and collect change', nextNodeId: 'end-perfect' },
+        ],
+      },
+      'bag-error': {
+        id: 'bag-error',
+        speaker: 'narrator',
+        text: '🚨 The machine screams: "ATTENZIONE: PESO INATTESO NELLA ZONA DI CARICO." Everyone looks at you.',
+        choices: [
+          { text: '😤 Push the bag harder onto the scale', nextNodeId: 'end-frustrated' },
+          { text: '💬 "Scusa, di nuovo un problema con la cassa"', nextNodeId: 'ask-help-good' },
+        ],
+      },
+      'end-giveup': {
+        id: 'end-giveup',
+        speaker: 'narrator',
+        text: '⚠️ You left without dinner. Technical problems happen — knowing how to ask for help calmly is a survival skill.',
+        choices: [],
+      },
+      'end-waiting': {
+        id: 'end-waiting',
+        speaker: 'narrator',
+        text: '⚠️ You waited forever. In Italy, polite but clear communication gets attention faster than silence.',
+        choices: [],
+      },
+      'end-frustrated': {
+        id: 'end-frustrated',
+        speaker: 'narrator',
+        text: '⚠️ The machine beeps even louder. The bag scale is sensitive — force only makes it worse.',
+        choices: [],
+      },
+      'end-perfect': {
+        id: 'end-perfect',
+        speaker: 'narrator',
+        text: '✅ Problem solved! You asked clearly, stayed polite, and paid smoothly. That\'s modern Italian supermarket success.',
+        choices: [],
+      },
+    },
+  },
+  {
+    id: 'whatsapp-host',
+    roomId: 'entrance-hall',
+    title: 'The Host\'s Message',
+    titleNative: 'Il Messaggio dell\'Host',
+    timeContext: 'Arrival day',
+    startNodeId: 'phone-beep',
+    culturalLesson: 'In Italy, WhatsApp is the default communication channel for hosts, restaurants, and small businesses. Voice notes are extremely common.',
+    nodes: {
+      'phone-beep': {
+        id: 'phone-beep',
+        speaker: 'narrator',
+        text: '📱 Your phone buzzes. A WhatsApp voice note from your Airbnb host, 🐱 Host Cat: "Ciao, sono Marco! Benvenuto. Il codice della cassaforte è 4821. Il WiFi si chiama CasaFiore, password BellaVista23. A presto!"',
+        choices: [
+          { text: '📱 Reply with a long English message', nextNodeId: 'english-wrong' },
+          { text: '💬 Voice note: "Grazie Marco, sono arrivato. A presto"', nextNodeId: 'reply-good' },
+          { text: '💬 Text: "Perfetto, grazie mille per le info"', nextNodeId: 'reply-text' },
+        ],
+      },
+      'english-wrong': {
+        id: 'english-wrong',
+        speaker: 'narrator',
+        text: 'Host Cat replies in confused Italian mixed with English. Many hosts appreciate the effort of Italian, even if it\'s simple.',
+        choices: [
+          { text: 'Send a short Italian correction', nextNodeId: 'reply-text' },
+        ],
+      },
+      'reply-good': {
+        id: 'reply-good',
+        speaker: 'npc',
+        text: '🐱 Host Cat replies immediately with a happy voice note. "Benvenuto! Se hai bisogno, scrivimi. Buona permanenza!"',
+        backgroundEffect: 'happy',
+        choices: [
+          { text: '🔑 Find the key box and enter 4821', nextNodeId: 'enter-flat' },
+        ],
+      },
+      'reply-text': {
+        id: 'reply-text',
+        speaker: 'npc',
+        text: '🐱 Host Cat sends a thumbs-up emoji. "A disposizione!"',
+        backgroundEffect: 'happy',
+        choices: [
+          { text: '🔑 Find the key box and enter 4821', nextNodeId: 'enter-flat' },
+        ],
+      },
+      'enter-flat': {
+        id: 'enter-flat',
+        speaker: 'narrator',
+        text: 'You\'re inside. The WiFi connects. But the hot water isn\'t working.',
+        choices: [
+          { text: '💬 Message: "C\'è un problema con l\'acqua calda"', nextNodeId: 'problem-good' },
+          { text: '😤 Complain angrily about the hot water', nextNodeId: 'angry-wrong' },
+          { text: 'Say nothing and take a cold shower', nextNodeId: 'end-suffering' },
+          { text: '📱 Host isn\'t responding to messages', nextNodeId: 'host-silent' },
+        ],
+      },
+      'problem-good': {
+        id: 'problem-good',
+        speaker: 'npc',
+        text: '🐱 Host Cat replies quickly. "Scusa! Controllo subito. Aspetta due minuti e riprova. Se non funziona, mando il tecnico."',
+        backgroundEffect: 'happy',
+        choices: [
+          { text: '💬 "Grazie, nessun problema"', nextNodeId: 'end-perfect' },
+        ],
+      },
+      'angry-wrong': {
+        id: 'angry-wrong',
+        speaker: 'npc',
+        text: '🐱 Host Cat\'s reply is defensive. "È un vecchio palazzo, a volte succede." The tone turns cold.',
+        backgroundEffect: 'neutral',
+        choices: [
+          { text: 'Apologize and soften the message', nextNodeId: 'problem-good' },
+          { text: 'Escalate the complaint', nextNodeId: 'end-hostile' },
+        ],
+      },
+      'host-silent': {
+        id: 'host-silent',
+        speaker: 'narrator',
+        text: 'You\'ve been waiting 20 minutes. No blue ticks. The hot water is still cold.',
+        choices: [
+          { text: '📱 Call the host directly', nextNodeId: 'problem-good' },
+          { text: '😤 Leave a bad review threat', nextNodeId: 'end-hostile' },
+          { text: '💬 Send a polite follow-up: "Scusa se ti disturbo ancora"', nextNodeId: 'problem-good' },
+        ],
+      },
+      'end-suffering': {
+        id: 'end-suffering',
+        speaker: 'narrator',
+        text: '⚠️ You froze unnecessarily. A polite message in Italian would have fixed it in minutes.',
+        choices: [],
+      },
+      'end-hostile': {
+        id: 'end-hostile',
+        speaker: 'narrator',
+        text: '⚠️ The host relationship is now tense. Italians respond much better to polite, collaborative problem-solving.',
+        choices: [],
+      },
+      'end-perfect': {
+        id: 'end-perfect',
+        speaker: 'narrator',
+        text: '✅ Perfect! You navigated the Italian host relationship like a local. WhatsApp, voice notes, and polite problem-solving.',
+        choices: [],
+      },
+    },
+  },
+  {
+    id: 'pharmacy-visit',
+    roomId: 'bathroom',
+    title: 'At the Pharmacy',
+    titleNative: 'In Farmacia',
+    timeContext: 'Morning',
+    startNodeId: 'pharmacy-door',
+    culturalLesson: 'Italian pharmacies are primary healthcare points. Pharmacists can diagnose minor issues and recommend medication without a prescription.',
+    nodes: {
+      'pharmacy-door': {
+        id: 'pharmacy-door',
+        speaker: 'narrator',
+        text: '🐱 Pharmacist Cat looks up from behind the counter, ears alert and professional. "Buongiorno, dimmi."',
+        choices: [
+          { text: '💬 "Buongiorno, ho mal di testa. Mi consigli qualcosa?"', nextNodeId: 'explain-good' },
+          { text: '📱 Show a photo of a medicine from your home country', nextNodeId: 'photo-wrong' },
+          { text: '💬 "Voglio gli antibiotici"', nextNodeId: 'antibiotics-wrong' },
+        ],
+      },
+      'photo-wrong': {
+        id: 'photo-wrong',
+        speaker: 'npc',
+        text: '🐱 Pharmacist Cat squints at your phone. "Non conosco questo prodotto. Descrivimi i sintomi."',
+        backgroundEffect: 'neutral',
+        choices: [
+          { text: '💬 "Mi fa male la testa da ieri sera"', nextNodeId: 'explain-good' },
+        ],
+      },
+      'antibiotics-wrong': {
+        id: 'antibiotics-wrong',
+        speaker: 'npc',
+        text: '🐱 Pharmacist Cat\'s ears flatten slightly. "Gli antibiotici servono la ricetta del dottore. Senza ricetta non posso darteli."',
+        backgroundEffect: 'neutral',
+        choices: [
+          { text: '💬 "Capisco. Per il mal di testa, cosa posso prendere?"', nextNodeId: 'explain-good' },
+          { text: 'Insist on antibiotics', nextNodeId: 'end-refused' },
+        ],
+      },
+      'explain-good': {
+        id: 'explain-good',
+        speaker: 'npc',
+        text: '🐱 Pharmacist Cat nods professionally, tail still. "Ah, mal di testa. Da quanto tempo? Hai anche la febbre?"',
+        backgroundEffect: 'happy',
+        choices: [
+          { text: '💬 "Da ieri. No, non ho febbre."', nextNodeId: 'recommendation' },
+          { text: '💬 "Sì, anche un po\' di febbre"', nextNodeId: 'recommendation-fever' },
+        ],
+      },
+      'recommendation': {
+        id: 'recommendation',
+        speaker: 'npc',
+        text: '🐱 Pharmacist Cat selects a box from the shelf. "Ti do questo. Uno ogni otto ore. Se domani non passa, vai dal dottore."',
+        backgroundEffect: 'happy',
+        choices: [
+          { text: '💬 "Grazie. Costa molto?"', nextNodeId: 'pay-good' },
+          { text: '💬 "Ha effetti collaterali?"', nextNodeId: 'side-effects' },
+        ],
+      },
+      'recommendation-fever': {
+        id: 'recommendation-fever',
+        speaker: 'npc',
+        text: '🐱 Pharmacist Cat\'s ears twitch with concern. "Con la febbre è meglio che prendi anche questo per abbassarla. E riposa."',
+        backgroundEffect: 'surprised',
+        choices: [
+          { text: '💬 "Grazie mille, molto gentile"', nextNodeId: 'pay-good' },
+          { text: '💬 "Ha effetti collaterali?"', nextNodeId: 'side-effects' },
+        ],
+      },
+      'side-effects': {
+        id: 'side-effects',
+        speaker: 'npc',
+        text: '🐱 Pharmacist Cat reassures you. "No, è molto leggero. Magari un po\' di sonnolenza."',
+        backgroundEffect: 'happy',
+        choices: [
+          { text: '💬 "Perfetto, grazie"', nextNodeId: 'pay-good' },
+        ],
+      },
+      'pay-good': {
+        id: 'pay-good',
+        speaker: 'npc',
+        text: '🐱 Pharmacist Cat rings up the total. "Dieci euro e cinquanta. Accetti anche la carta?"',
+        backgroundEffect: 'happy',
+        choices: [
+          { text: 'Pay with card', nextNodeId: 'end-perfect' },
+        ],
+      },
+      'end-refused': {
+        id: 'end-refused',
+        speaker: 'narrator',
+        text: '⚠️ Pharmacist Cat refused. Antibiotics require a prescription in Italy. Describe symptoms, don\'t demand specific drugs.',
+        choices: [],
+      },
+      'end-perfect': {
+        id: 'end-perfect',
+        speaker: 'narrator',
+        text: '✅ Perfect! You described your symptoms clearly, accepted professional advice, and paid smoothly. Italian pharmacy mastered.',
+        choices: [],
+      },
+    },
+  },
+  {
+    id: 'restaurant-reservation',
+    roomId: 'kitchen',
+    title: 'The Phone Reservation',
+    titleNative: 'La Prenotazione Telefonica',
+    timeContext: '11:00 AM',
+    startNodeId: 'phone-rings',
+    culturalLesson: 'Many traditional Italian restaurants still prefer phone reservations over apps. Speaking clearly on the phone is a real test of confidence.',
+    nodes: {
+      'phone-rings': {
+        id: 'phone-rings',
+        speaker: 'narrator',
+        text: '📞 The phone rings twice before someone picks up. 🐱 Restaurant Cat\'s voice is warm but rushed. "Pronto, Da Mario, buongiorno!"',
+        choices: [
+          { text: '💬 "Buongiorno, vorrei prenotare un tavolo per stasera"', nextNodeId: 'booking-good' },
+          { text: '💬 "Ciao, tavolo per due"', nextNodeId: 'casual-wrong' },
+          { text: '💬 "Parli inglese?"', nextNodeId: 'english-wrong' },
+        ],
+      },
+      'casual-wrong': {
+        id: 'casual-wrong',
+        speaker: 'npc',
+        text: '🐱 Restaurant Cat pauses. "...Sì, certo. Per che ora?" (A bit too casual for a first phone call, but he\'s busy.)',
+        backgroundEffect: 'neutral',
+        choices: [
+          { text: '💬 "Alle nove, per favore"', nextNodeId: 'time-set' },
+        ],
+      },
+      'english-wrong': {
+        id: 'english-wrong',
+        speaker: 'npc',
+        text: '🐱 Restaurant Cat\'s voice stiffens. "Un momento..." You hear him calling for someone else. Avoiding Italian slows everything down.',
+        backgroundEffect: 'neutral',
+        choices: [
+          { text: '💬 "Scusa, posso provare in italiano. Vorrei prenotare"', nextNodeId: 'booking-good' },
+          { text: 'Wait for the English speaker', nextNodeId: 'end-delayed' },
+        ],
+      },
+      'booking-good': {
+        id: 'booking-good',
+        speaker: 'npc',
+        text: '🐱 Restaurant Cat\'s tone brightens. "Buongiorno! Sì, per quante persone?"',
+        backgroundEffect: 'happy',
+        choices: [
+          { text: '💬 "Per due persone"', nextNodeId: 'time-set' },
+          { text: '💬 "Per quattro persone"', nextNodeId: 'time-set-four' },
+        ],
+      },
+      'time-set': {
+        id: 'time-set',
+        speaker: 'npc',
+        text: '🐱 Restaurant Cat checks the book. "Per due, alle nove va bene?"',
+        backgroundEffect: 'happy',
+        choices: [
+          { text: '💬 "Perfetto, alle nove"', nextNodeId: 'dietary-question' },
+          { text: '💬 "È possibile alle dieci?"', nextNodeId: 'late-check' },
+        ],
+      },
+      'time-set-four': {
+        id: 'time-set-four',
+        speaker: 'npc',
+        text: '🐱 Restaurant Cat hesitates. "Per quattro... alle nove e mezza? Alle nove è tutto pieno."',
+        backgroundEffect: 'surprised',
+        choices: [
+          { text: '💬 "Va benissimo, alle nove e mezza"', nextNodeId: 'dietary-question' },
+          { text: '💬 "Non va bene, devono essere alle nove"', nextNodeId: 'end-inflexible' },
+        ],
+      },
+      'late-check': {
+        id: 'late-check',
+        speaker: 'npc',
+        text: '🐱 Restaurant Cat\'s voice drops. "Alle dieci la cucina chiude alle undici. Meglio alle nove e un quarto."',
+        backgroundEffect: 'neutral',
+        choices: [
+          { text: '💬 "D\'accordo, alle nove e un quarto"', nextNodeId: 'dietary-question' },
+          { text: '💬 "No, alle dieci o niente"', nextNodeId: 'end-inflexible' },
+        ],
+      },
+      'dietary-question': {
+        id: 'dietary-question',
+        speaker: 'npc',
+        text: '🐱 Restaurant Cat asks efficiently. "A nome di? ...Bene. Hai qualche intolleranza o preferenza?"',
+        backgroundEffect: 'happy',
+        choices: [
+          { text: '💬 "Sono vegetariano"', nextNodeId: 'note-dietary' },
+          { text: '💬 "Nessuna, grazie"', nextNodeId: 'confirm-good' },
+          { text: '💬 "Sono allergico alle noci"', nextNodeId: 'note-allergy' },
+        ],
+      },
+      'note-dietary': {
+        id: 'note-dietary',
+        speaker: 'npc',
+        text: '🐱 Restaurant Cat makes a note. "Perfetto, ci pensiamo noi. Benvenuto da Mario."',
+        backgroundEffect: 'happy',
+        choices: [
+          { text: '💬 "Grazie, a stasera"', nextNodeId: 'end-perfect' },
+        ],
+      },
+      'note-allergy': {
+        id: 'note-allergy',
+        speaker: 'npc',
+        text: '🐱 Restaurant Cat\'s ears perk up with concern. "Ah, importante. Lo dico subito allo chef. Grazie per l\'avviso."',
+        backgroundEffect: 'surprised',
+        choices: [
+          { text: '💬 "Grazie mille, a stasera"', nextNodeId: 'end-perfect' },
+        ],
+      },
+      'confirm-good': {
+        id: 'confirm-good',
+        speaker: 'npc',
+        text: '🐱 Restaurant Cat confirms. "Prenotato. A stasera, arrivederci!"',
+        backgroundEffect: 'happy',
+        choices: [
+          { text: '💬 "Grazie, arrivederci"', nextNodeId: 'end-perfect' },
+        ],
+      },
+      'end-delayed': {
+        id: 'end-delayed',
+        speaker: 'narrator',
+        text: '⚠️ You waited on hold for three minutes. Most small restaurants in Italy operate in Italian — jumping to English just creates friction.',
+        choices: [],
+      },
+      'end-inflexible': {
+        id: 'end-inflexible',
+        speaker: 'narrator',
+        text: '⚠️ The restaurant couldn\'t accommodate your rigid time. In Italy, a little flexibility goes a long way.',
+        choices: [],
+      },
+      'end-perfect': {
+        id: 'end-perfect',
+        speaker: 'narrator',
+        text: '✅ Prenotazione confermata! You spoke clearly, handled the time negotiation, and communicated dietary needs. That\'s real-world Italian.',
+        choices: [],
+      },
+    },
+  },
 ];
-
 // ============================================
 // ROOM-SPECIFIC CULTURE
 // ============================================
