@@ -11,7 +11,7 @@
     ],
     "register": "friendly",
     "contextNote": "Asking someone to prepare food or drink",
-    "imagePrompt": "Cute cartoon cat in a cozy kitchen interior with wooden cabinets and warm lighting, asking someone to prepare food or drink, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A hopeful anthropomorphic cat mascot sitting at a kitchen table holding an empty plate with both paws, looking up with big round eyes at an off-screen cook, warm wooden cabinets in the background, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "kt-02",
@@ -24,7 +24,7 @@
     ],
     "register": "friendly",
     "contextNote": "Asking about toppings or fillings",
-    "imagePrompt": "Cute cartoon cat in a cozy kitchen interior with wooden cabinets and warm lighting, asking about toppings or fillings, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A curious anthropomorphic cat mascot in a kitchen pointing with one paw at various toppings scattered on a counter, head tilted in question, cozy kitchen with warm lighting, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "kt-03",
@@ -39,7 +39,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking for something at the table",
-    "imagePrompt": "Cute cartoon cat in a cozy kitchen interior with wooden cabinets and warm lighting, asking for something at the table, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A polite anthropomorphic cat mascot at a dinner table extending one paw toward an empty space where a napkin would be, expectant expression, kitchen background, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "kt-04",
@@ -53,7 +53,7 @@
     ],
     "register": "family",
     "contextNote": "Checking supplies",
-    "imagePrompt": "Cute cartoon cat in a cozy kitchen interior with wooden cabinets and warm lighting, checking supplies, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot standing on tiptoes peering into an almost-empty bread box or container, one eye squinted, checking for leftovers, kitchen counter behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "kt-05",
@@ -66,7 +66,7 @@
     ],
     "register": "friendly",
     "contextNote": "Offering to prepare something",
-    "imagePrompt": "Cute cartoon cat in a cozy kitchen interior with wooden cabinets and warm lighting, offering to prepare something, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A friendly anthropomorphic cat mascot wearing a tiny apron and holding a wooden spoon, gesturing welcomingly toward an empty stool, cozy kitchen interior, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "kt-06",
@@ -75,7 +75,7 @@
     "slots": [],
     "register": "family",
     "contextNote": "Preparing for a meal",
-    "imagePrompt": "Cute cartoon cat in a cozy kitchen interior with wooden cabinets and warm lighting, preparing for a meal, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A busy anthropomorphic cat mascot carefully placing plates and cups on a wooden table, tongue sticking out in concentration, warm kitchen behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "kt-07",
@@ -88,7 +88,7 @@
     ],
     "register": "family",
     "contextNote": "Asking what is being served",
-    "imagePrompt": "Cute cartoon cat in a cozy kitchen interior with wooden cabinets and warm lighting, asking what is being served, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A hungry anthropomorphic cat mascot sitting at a set table looking at an empty plate, then glancing at a wall clock, hopeful expression, homey kitchen, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "kt-08",
@@ -102,7 +102,7 @@
     ],
     "register": "friendly",
     "contextNote": "Offering food or drink",
-    "imagePrompt": "Cute cartoon cat in a cozy kitchen interior with wooden cabinets and warm lighting, offering food or drink, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A generous anthropomorphic cat mascot holding out a bowl with both paws toward the viewer, tail curled in a question mark, friendly kitchen setting, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "eh-01",
@@ -116,7 +116,7 @@
     ],
     "register": "friendly",
     "contextNote": "Introducing family members",
-    "imagePrompt": "Cute cartoon cat in a grand entrance hall with a coat rack and family portraits on the wall, introducing family members, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A proud anthropomorphic cat mascot standing in a doorway gesturing with one paw toward a family portrait on the wall, chest puffed out, grand entrance hall, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "eh-02",
@@ -130,7 +130,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking for clothing from the rack",
-    "imagePrompt": "Cute cartoon cat in a grand entrance hall with a coat rack and family portraits on the wall, asking for clothing from the rack, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot reaching up with one paw toward a coat rack trying to grab a hanging item, balancing on one leg, entrance hall with family portraits, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "eh-03",
@@ -144,7 +144,7 @@
     ],
     "register": "friendly",
     "contextNote": "Casual questions about family",
-    "imagePrompt": "Cute cartoon cat in a grand entrance hall with a coat rack and family portraits on the wall, casual questions about family, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot holding a small photo frame and gesturing with the other paw, standing in an entrance hall with portraits on the wall, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "eh-04",
@@ -158,7 +158,7 @@
     ],
     "register": "family",
     "contextNote": "Leaving and returning",
-    "imagePrompt": "Cute cartoon cat in a grand entrance hall with a coat rack and family portraits on the wall, leaving and returning, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot with one paw on an open door, looking back over its shoulder while holding a tiny wristwatch, entrance hall with coat rack, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "eh-05",
@@ -167,7 +167,7 @@
     "slots": [],
     "register": "friendly",
     "contextNote": "Checking the clock",
-    "imagePrompt": "Cute cartoon cat in a grand entrance hall with a coat rack and family portraits on the wall, checking the clock, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A confused anthropomorphic cat mascot staring up at a tall grandfather clock, paw raised to its chin, standing in a grand entrance hall, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "eh-06",
@@ -180,7 +180,7 @@
     ],
     "register": "friendly",
     "contextNote": "Greeting someone at the door",
-    "imagePrompt": "Cute cartoon cat in a grand entrance hall with a coat rack and family portraits on the wall, greeting someone at the door, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "Two friendly anthropomorphic cat mascots waving at each other across an entrance hall doorway, both with big smiles, family portraits on the walls, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "eh-07",
@@ -192,7 +192,7 @@
     ],
     "register": "friendly",
     "contextNote": "Welcoming a visitor",
-    "imagePrompt": "Cute cartoon cat in a grand entrance hall with a coat rack and family portraits on the wall, welcoming a visitor, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A gracious anthropomorphic cat mascot holding a door open with one paw and bowing slightly, tail wagging like a dog, warm entrance hall, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "eh-08",
@@ -206,7 +206,7 @@
     ],
     "register": "friendly",
     "contextNote": "Saying goodbye",
-    "imagePrompt": "Cute cartoon cat in a grand entrance hall with a coat rack and family portraits on the wall, saying goodbye, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A cheerful anthropomorphic cat mascot waving goodbye from a doorway, one paw high in the air, standing in a grand entrance hall with portraits, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "li-01",
@@ -220,7 +220,7 @@
     ],
     "register": "friendly",
     "contextNote": "Talking about reading",
-    "imagePrompt": "Cute cartoon cat in a quiet library with tall bookshelves and a wooden study desk, talking about reading, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An enthusiastic anthropomorphic cat mascot in a library holding up an open book with both paws, showing it to another cat, tall bookshelves behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "li-02",
@@ -234,7 +234,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking for stationery at the desk",
-    "imagePrompt": "Cute cartoon cat in a quiet library with tall bookshelves and a wooden study desk, asking for stationery at the desk, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A polite anthropomorphic cat mascot sitting at a wooden study desk extending one paw toward a stack of books, expectant expression, library with tall shelves, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "li-03",
@@ -248,7 +248,7 @@
     ],
     "register": "family",
     "contextNote": "Study-related tasks",
-    "imagePrompt": "Cute cartoon cat in a quiet library with tall bookshelves and a wooden study desk, study-related tasks, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A determined anthropomorphic cat mascot surrounded by scattered papers and pencils at a desk, one paw holding a pen, library bookshelves towering behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "li-04",
@@ -261,7 +261,7 @@
     ],
     "register": "friendly",
     "contextNote": "Organizing study or work",
-    "imagePrompt": "Cute cartoon cat in a quiet library with tall bookshelves and a wooden study desk, organizing study or work, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot standing in a library pointing at a calendar on the wall with one paw, head tilted, wooden study desk nearby, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "li-05",
@@ -275,7 +275,7 @@
     ],
     "register": "friendly",
     "contextNote": "Tech problems at the computer station",
-    "imagePrompt": "Cute cartoon cat in a quiet library with tall bookshelves and a wooden study desk, tech problems at the computer station, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A frustrated anthropomorphic cat mascot tapping a silent computer or phone with one paw, screen dark, sitting at a library desk with bookshelves behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "li-06",
@@ -289,7 +289,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking for study help",
-    "imagePrompt": "Cute cartoon cat in a quiet library with tall bookshelves and a wooden study desk, asking for study help, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A hopeful anthropomorphic cat mascot pointing at a difficult book with one paw while looking up pleadingly, sitting at a wooden library desk, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "li-07",
@@ -303,7 +303,7 @@
     ],
     "register": "family",
     "contextNote": "Finding information",
-    "imagePrompt": "Cute cartoon cat in a quiet library with tall bookshelves and a wooden study desk, finding information, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot standing on a small stool reaching for a heavy encyclopedia on a tall bookshelf, one paw stretched high, quiet library, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "li-08",
@@ -317,7 +317,7 @@
     ],
     "register": "friendly",
     "contextNote": "Inviting someone to study",
-    "imagePrompt": "Cute cartoon cat in a quiet library with tall bookshelves and a wooden study desk, inviting someone to study, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot spreading a large map across a library desk with both paws, looking excited, tall bookshelves in the background, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "bd-01",
@@ -331,7 +331,7 @@
     ],
     "register": "family",
     "contextNote": "Looking for clothes in the wardrobe",
-    "imagePrompt": "Cute cartoon cat in a comfortable bedroom with a wardrobe, bed, and soft pillows, looking for clothes in the wardrobe, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot rummaging through an open wardrobe with its head inside and tail sticking out, searching for something, cozy bedroom, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "bd-02",
@@ -345,7 +345,7 @@
     ],
     "register": "family",
     "contextNote": "Searching for accessories",
-    "imagePrompt": "Cute cartoon cat in a comfortable bedroom with a wardrobe, bed, and soft pillows, searching for accessories, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot holding up a missing sock with one paw and looking around the bedroom with a questioning expression, bed unmade behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "bd-03",
@@ -359,7 +359,7 @@
     ],
     "register": "friendly",
     "contextNote": "Admiring jewelry",
-    "imagePrompt": "Cute cartoon cat in a comfortable bedroom with a wardrobe, bed, and soft pillows, admiring jewelry, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot admiring itself in a mirror wearing a shiny necklace or bracelet, paw touching the jewelry, soft bedroom interior, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "bd-04",
@@ -373,7 +373,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking for footwear",
-    "imagePrompt": "Cute cartoon cat in a comfortable bedroom with a wardrobe, bed, and soft pillows, asking for footwear, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot sitting on the edge of a bed reaching out one paw toward a pair of slippers on the floor, polite expression, bedroom, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "bd-05",
@@ -387,7 +387,7 @@
     ],
     "register": "friendly",
     "contextNote": "Talking about bedding",
-    "imagePrompt": "Cute cartoon cat in a comfortable bedroom with a wardrobe, bed, and soft pillows, talking about bedding, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A sleepy anthropomorphic cat mascot buried in fluffy pillows on a bed, only its face visible, eyes half-closed in bliss, comfortable bedroom, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "bd-06",
@@ -399,7 +399,7 @@
     ],
     "register": "family",
     "contextNote": "Checking wake-up time",
-    "imagePrompt": "Cute cartoon cat in a comfortable bedroom with a wardrobe, bed, and soft pillows, checking wake-up time, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot leaning over a bedside table squinting at an alarm clock, one paw reaching to tap it, early morning bedroom, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "bd-07",
@@ -413,7 +413,7 @@
     ],
     "register": "family",
     "contextNote": "Getting dressed",
-    "imagePrompt": "Cute cartoon cat in a comfortable bedroom with a wardrobe, bed, and soft pillows, getting dressed, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in front of a mirror trying to put on a tiny hat or piece of clothing, one paw caught in the fabric, bedroom wardrobe behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "bd-08",
@@ -426,7 +426,7 @@
     ],
     "register": "polite",
     "contextNote": "Nightstand requests",
-    "imagePrompt": "Cute cartoon cat in a comfortable bedroom with a wardrobe, bed, and soft pillows, nightstand requests, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot stretching up to flip a light switch by the bed, one paw on the switch, ready to turn it off, cozy bedroom, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ba-01",
@@ -440,7 +440,7 @@
     ],
     "register": "family",
     "contextNote": "Looking for toiletries at the sink",
-    "imagePrompt": "Cute cartoon cat in a clean bathroom with a sink, mirror, and white tiles, looking for toiletries at the sink, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot peeking around a shower curtain with one paw holding it back, looking for something, clean white-tiled bathroom, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ba-02",
@@ -452,7 +452,7 @@
     ],
     "register": "family",
     "contextNote": "Daily hygiene routine",
-    "imagePrompt": "Cute cartoon cat in a clean bathroom with a sink, mirror, and white tiles, daily hygiene routine, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot wrapped in a fluffy towel with a shower cap on its head, one paw testing the bath water, bright bathroom, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ba-03",
@@ -466,7 +466,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking for shower items",
-    "imagePrompt": "Cute cartoon cat in a clean bathroom with a sink, mirror, and white tiles, asking for shower items, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot sitting in a bathtub extending one wet paw toward a bar of soap on the edge, expectant expression, white tiles, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ba-04",
@@ -480,7 +480,7 @@
     ],
     "register": "family",
     "contextNote": "Checking the medicine cabinet",
-    "imagePrompt": "Cute cartoon cat in a clean bathroom with a sink, mirror, and white tiles, checking the medicine cabinet, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot peering into an empty shampoo bottle held up to one eye, the other eye squinted, bathroom counter behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ba-05",
@@ -492,7 +492,7 @@
     ],
     "register": "family",
     "contextNote": "Commenting on shower temperature",
-    "imagePrompt": "Cute cartoon cat in a clean bathroom with a sink, mirror, and white tiles, commenting on shower temperature, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a bathtub with steam rising around it, one paw dipped in water testing temperature, surprised expression, bathroom, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ba-06",
@@ -506,7 +506,7 @@
     ],
     "register": "family",
     "contextNote": "Daily washing routine",
-    "imagePrompt": "Cute cartoon cat in a clean bathroom with a sink, mirror, and white tiles, daily washing routine, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot standing at a sink on a small stool, lathering one paw with soap, bubbles everywhere, mirror and sink behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ba-07",
@@ -520,7 +520,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking for bathroom items",
-    "imagePrompt": "Cute cartoon cat in a clean bathroom with a sink, mirror, and white tiles, asking for bathroom items, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a bathtub reaching one paw toward a towel rack just out of reach, body stretched long, bathroom interior, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ba-08",
@@ -534,7 +534,7 @@
     ],
     "register": "family",
     "contextNote": "Bathroom commands",
-    "imagePrompt": "Cute cartoon cat in a clean bathroom with a sink, mirror, and white tiles, bathroom commands, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot standing on hind legs pressing a faucet handle with both paws, water just starting to flow, delighted expression, bathroom sink, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ga-01",
@@ -548,7 +548,7 @@
     ],
     "register": "friendly",
     "contextNote": "Admiring garden plants",
-    "imagePrompt": "Cute cartoon cat in a sunny garden with green grass, flowers, and a stone path, admiring garden plants, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a sunny garden pointing with one paw at a blooming flower, eyes wide with wonder, green grass and stone path, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ga-02",
@@ -562,7 +562,7 @@
     ],
     "register": "friendly",
     "contextNote": "Suggesting a garden walk",
-    "imagePrompt": "Cute cartoon cat in a sunny garden with green grass, flowers, and a stone path, suggesting a garden walk, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot walking carefully along a winding stone path in a garden, one paw raised mid-step, flowers on both sides, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ga-03",
@@ -576,7 +576,7 @@
     ],
     "register": "friendly",
     "contextNote": "Observing the sky",
-    "imagePrompt": "Cute cartoon cat in a sunny garden with green grass, flowers, and a stone path, observing the sky, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot lying on its back in green grass looking straight up at a bright sun or fluffy clouds, paws in the air, garden setting, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ga-04",
@@ -590,7 +590,7 @@
     ],
     "register": "friendly",
     "contextNote": "Commenting on garden weather",
-    "imagePrompt": "Cute cartoon cat in a sunny garden with green grass, flowers, and a stone path, commenting on garden weather, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot sprawled on a picnic blanket in a garden with a half-eaten sandwich nearby, sunhat over one eye, perfect sunny day, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ga-05",
@@ -604,7 +604,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking for garden help",
-    "imagePrompt": "Cute cartoon cat in a sunny garden with green grass, flowers, and a stone path, asking for garden help, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot holding a watering can with both paws, water arcing toward a potted plant, some water splashing on its own feet, garden, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ga-06",
@@ -618,7 +618,7 @@
     ],
     "register": "family",
     "contextNote": "Noticing weather changes",
-    "imagePrompt": "Cute cartoon cat in a sunny garden with green grass, flowers, and a stone path, noticing weather changes, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a garden looking up at dark clouds gathering overhead, one paw shielding its eyes, wind ruffling its fur, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ga-07",
@@ -632,7 +632,7 @@
     ],
     "register": "friendly",
     "contextNote": "Suggesting where to relax",
-    "imagePrompt": "Cute cartoon cat in a sunny garden with green grass, flowers, and a stone path, suggesting where to relax, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot sitting contentedly under a large tree in a garden, dappled sunlight on its fur, tail curled around its paws, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ga-08",
@@ -646,7 +646,7 @@
     ],
     "register": "friendly",
     "contextNote": "Enjoying nature",
-    "imagePrompt": "Cute cartoon cat in a sunny garden with green grass, flowers, and a stone path, enjoying nature, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot rolling on its back in soft green grass with eyes closed in bliss, one paw twitching, sunny garden with flowers, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "tr-01",
@@ -659,7 +659,7 @@
     ],
     "register": "polite",
     "contextNote": "Buying tickets",
-    "imagePrompt": "Cute cartoon cat in a busy train station platform with ticket machines and a departure board, buying tickets, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot standing at a train station ticket counter holding a tiny suitcase in one paw and pointing at a departure board with the other, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "tr-02",
@@ -672,7 +672,7 @@
     ],
     "register": "polite",
     "contextNote": "Checking train times",
-    "imagePrompt": "Cute cartoon cat in a busy train station platform with ticket machines and a departure board, checking train times, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot at a train station platform looking up at a large departure clock, one paw tapping its foot impatiently, ticket machines behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "tr-03",
@@ -686,7 +686,7 @@
     ],
     "register": "polite",
     "contextNote": "Navigating the station",
-    "imagePrompt": "Cute cartoon cat in a busy train station platform with ticket machines and a departure board, navigating the station, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A confused anthropomorphic cat mascot at a train station staring at platform signs pointing in opposite directions, one paw scratching its head, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "tr-04",
@@ -700,7 +700,7 @@
     ],
     "register": "friendly",
     "contextNote": "Commenting on train status",
-    "imagePrompt": "Cute cartoon cat in a busy train station platform with ticket machines and a departure board, commenting on train status, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot pressed against a train window from the inside, nose flattened on the glass, waving one paw, platform visible outside, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "tr-05",
@@ -714,7 +714,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking for directions",
-    "imagePrompt": "Cute cartoon cat in a busy train station platform with ticket machines and a departure board, asking for directions, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot holding a tiny map upside down at a train station, looking around in confusion, departure board in the background, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "tr-06",
@@ -726,7 +726,7 @@
     ],
     "register": "polite",
     "contextNote": "Confirming directions",
-    "imagePrompt": "Cute cartoon cat in a busy train station platform with ticket machines and a departure board, confirming directions, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot standing at the edge of a train platform leaning forward to read a direction sign, one paw pointing, train tracks behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "tr-07",
@@ -740,7 +740,7 @@
     ],
     "register": "friendly",
     "contextNote": "Travel preparations",
-    "imagePrompt": "Cute cartoon cat in a busy train station platform with ticket machines and a departure board, travel preparations, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot struggling to carry an oversized suitcase at a train station, body leaning to one side, ticket counter in the background, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "tr-08",
@@ -754,7 +754,7 @@
     ],
     "register": "friendly",
     "contextNote": "Street safety warnings",
-    "imagePrompt": "Cute cartoon cat in a busy train station platform with ticket machines and a departure board, street safety warnings, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot at a crosswalk looking both ways with wide eyes, one paw raised in a stop gesture, traffic light glowing red behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "lr-01",
@@ -768,7 +768,7 @@
     ],
     "register": "friendly",
     "contextNote": "Suggesting where to sit",
-    "imagePrompt": "Cute cartoon cat in a modern living room with a sofa, TV, and warm carpet, suggesting where to sit, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot happily bouncing on a soft sofa in a living room, mid-jump with all four paws off the cushion, warm carpet below, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "lr-02",
@@ -782,7 +782,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking for comfort items",
-    "imagePrompt": "Cute cartoon cat in a modern living room with a sofa, TV, and warm carpet, asking for comfort items, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot lounging on a sofa extending one lazy paw toward a remote control on the coffee table, expectant expression, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "lr-03",
@@ -796,7 +796,7 @@
     ],
     "register": "friendly",
     "contextNote": "Entertainment suggestions",
-    "imagePrompt": "Cute cartoon cat in a modern living room with a sofa, TV, and warm carpet, entertainment suggestions, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot sitting on a sofa pointing excitedly at a dark TV screen with one paw, popcorn spilled nearby, cozy living room, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "lr-04",
@@ -810,7 +810,7 @@
     ],
     "register": "friendly",
     "contextNote": "Requesting entertainment",
-    "imagePrompt": "Cute cartoon cat in a modern living room with a sofa, TV, and warm carpet, requesting entertainment, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot standing in front of a music player or TV with both paws on the buttons, head bobbing to an imagined tune, living room, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "lr-05",
@@ -823,7 +823,7 @@
     ],
     "register": "family",
     "contextNote": "Adjusting the TV",
-    "imagePrompt": "Cute cartoon cat in a modern living room with a sofa, TV, and warm carpet, adjusting the tv, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot squinting at a bright TV screen from a sofa, one paw shielding its eyes, remote control in the other paw, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "lr-06",
@@ -837,7 +837,7 @@
     ],
     "register": "friendly",
     "contextNote": "Admiring living room decor",
-    "imagePrompt": "Cute cartoon cat in a modern living room with a sofa, TV, and warm carpet, admiring living room decor, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot hugging a decorative cushion on a sofa, cheek pressed against it, eyes closed in happiness, warm living room, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "lr-07",
@@ -851,7 +851,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking to turn things on",
-    "imagePrompt": "Cute cartoon cat in a modern living room with a sofa, TV, and warm carpet, asking to turn things on, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot standing on hind legs reaching for a light switch or power button near a TV, tail straight out for balance, living room, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "lr-08",
@@ -865,7 +865,7 @@
     ],
     "register": "friendly",
     "contextNote": "Suggesting living room activities",
-    "imagePrompt": "Cute cartoon cat in a modern living room with a sofa, TV, and warm carpet, suggesting living room activities, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot stretching on a soft rug in the middle of a living room, yoga pose with eyes closed, warm afternoon light, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "sm-01",
@@ -879,7 +879,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking prices",
-    "imagePrompt": "Cute cartoon cat in a bright supermarket aisle with shelves of fresh produce, asking prices, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a supermarket holding a price tag with both paws, eyes wide at the numbers, shelves of fresh produce behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "sm-02",
@@ -893,7 +893,7 @@
     ],
     "register": "friendly",
     "contextNote": "Buying quantities",
-    "imagePrompt": "Cute cartoon cat in a bright supermarket aisle with shelves of fresh produce, buying quantities, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a supermarket carefully placing apples or vegetables into a basket, one paw holding the item, bright aisle behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "sm-03",
@@ -907,7 +907,7 @@
     ],
     "register": "polite",
     "contextNote": "Checking availability",
-    "imagePrompt": "Cute cartoon cat in a bright supermarket aisle with shelves of fresh produce, checking availability, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot peeking around a supermarket shelf looking for a missing item, one paw holding an empty shopping list, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "sm-04",
@@ -921,7 +921,7 @@
     ],
     "register": "polite",
     "contextNote": "Finding supermarket sections",
-    "imagePrompt": "Cute cartoon cat in a bright supermarket aisle with shelves of fresh produce, finding supermarket sections, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a supermarket looking up at tall aisle signs, spinning in a circle trying to find the right section, bright lighting, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "sm-05",
@@ -934,7 +934,7 @@
     ],
     "register": "polite",
     "contextNote": "Payment options",
-    "imagePrompt": "Cute cartoon cat in a bright supermarket aisle with shelves of fresh produce, payment options, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot at a supermarket checkout holding a tiny credit card in one paw and an empty wallet in the other, hopeful expression, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "sm-06",
@@ -948,7 +948,7 @@
     ],
     "register": "friendly",
     "contextNote": "Commenting on produce",
-    "imagePrompt": "Cute cartoon cat in a bright supermarket aisle with shelves of fresh produce, commenting on produce, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a supermarket holding a piece of fruit up to its nose, sniffing with eyes closed, delighted expression, produce shelves, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "sm-07",
@@ -962,7 +962,7 @@
     ],
     "register": "friendly",
     "contextNote": "Shopping logistics",
-    "imagePrompt": "Cute cartoon cat in a bright supermarket aisle with shelves of fresh produce, shopping logistics, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot trying to push an oversized shopping cart in a supermarket, barely reaching the handle, one wheel spinning crookedly, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "sm-08",
@@ -976,7 +976,7 @@
     ],
     "register": "friendly",
     "contextNote": "Stating prices",
-    "imagePrompt": "Cute cartoon cat in a bright supermarket aisle with shelves of fresh produce, stating prices, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot at a checkout counter holding up a price tag that reads a number with euro symbol, proud expression, supermarket background, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "cf-01",
@@ -989,7 +989,7 @@
     ],
     "register": "polite",
     "contextNote": "Ordering at the counter",
-    "imagePrompt": "Cute cartoon cat in a small Italian cafe with a wooden counter and espresso machine, ordering at the counter, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A polite anthropomorphic cat mascot sitting at a small cafe table holding a menu with both paws, looking up at an off-screen waiter, espresso machine behind counter, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "cf-02",
@@ -1003,7 +1003,7 @@
     ],
     "register": "polite",
     "contextNote": "Ordering combinations",
-    "imagePrompt": "Cute cartoon cat in a small Italian cafe with a wooden counter and espresso machine, ordering combinations, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot at a cafe counter pointing with one paw at a pastry display case, other paw holding a tiny coffee cup, wooden counter, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "cf-03",
@@ -1017,7 +1017,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking where to sit",
-    "imagePrompt": "Cute cartoon cat in a small Italian cafe with a wooden counter and espresso machine, asking where to sit, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a cafe looking around for an empty table, one paw scratching its chin, small tables and chairs around, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "cf-04",
@@ -1031,7 +1031,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking for cafe items",
-    "imagePrompt": "Cute cartoon cat in a small Italian cafe with a wooden counter and espresso machine, asking for cafe items, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot at a cafe table raising one paw to get attention while holding an empty plate with the other, polite expression, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "cf-05",
@@ -1045,7 +1045,7 @@
     ],
     "register": "friendly",
     "contextNote": "Complimenting the drink",
-    "imagePrompt": "Cute cartoon cat in a small Italian cafe with a wooden counter and espresso machine, complimenting the drink, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a cafe holding a steaming cup with both paws, eyes closed in bliss, a tiny heart floating above its head, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "cf-06",
@@ -1059,7 +1059,7 @@
     ],
     "register": "friendly",
     "contextNote": "Offering food",
-    "imagePrompt": "Cute cartoon cat in a small Italian cafe with a wooden counter and espresso machine, offering food, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot at a cafe pointing with one paw at a pastry on a plate in front of another cat, inviting expression, wooden counter behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "cf-07",
@@ -1073,7 +1073,7 @@
     ],
     "register": "friendly",
     "contextNote": "Making a cafe order",
-    "imagePrompt": "Cute cartoon cat in a small Italian cafe with a wooden counter and espresso machine, making a cafe order, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a cafe pointing confidently at a menu item with one paw, the other paw on its hip, decisive expression, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "cf-08",
@@ -1085,7 +1085,7 @@
     ],
     "register": "polite",
     "contextNote": "Thanking the barista",
-    "imagePrompt": "Cute cartoon cat in a small Italian cafe with a wooden counter and espresso machine, thanking the barista, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A grateful anthropomorphic cat mascot at a cafe table bowing its head slightly with both paws pressed together, tiny coffee cup on the table, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "gl-01",
@@ -1099,7 +1099,7 @@
     ],
     "register": "friendly",
     "contextNote": "Admiring art",
-    "imagePrompt": "Cute cartoon cat in a elegant art gallery with paintings on white walls, admiring art, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in an art gallery standing on hind legs with both paws pressed together in awe, gazing up at a large painting on white wall, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "gl-02",
@@ -1112,7 +1112,7 @@
     ],
     "register": "friendly",
     "contextNote": "Talking about artists",
-    "imagePrompt": "Cute cartoon cat in a elegant art gallery with paintings on white walls, talking about artists, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in an art gallery pointing with one paw at a painting's name plaque, head tilted in curiosity, elegant white walls, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "gl-03",
@@ -1126,7 +1126,7 @@
     ],
     "register": "friendly",
     "contextNote": "Shopping at the gift shop",
-    "imagePrompt": "Cute cartoon cat in a elegant art gallery with paintings on white walls, shopping at the gift shop, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a gallery gift shop holding a tiny postcard with both paws, examining it closely, souvenirs on shelves behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "gl-04",
@@ -1140,7 +1140,7 @@
     ],
     "register": "friendly",
     "contextNote": "Commenting on exhibitions",
-    "imagePrompt": "Cute cartoon cat in a elegant art gallery with paintings on white walls, commenting on exhibitions, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in an art gallery with its mouth open in amazement, both paws on its cheeks, staring at an abstract sculpture, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "gl-05",
@@ -1154,7 +1154,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking for a photo",
-    "imagePrompt": "Cute cartoon cat in a elegant art gallery with paintings on white walls, asking for a photo, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot posing proudly in front of a famous painting while an unseen photographer takes the picture, one paw on hip, gallery interior, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "gl-06",
@@ -1168,7 +1168,7 @@
     ],
     "register": "friendly",
     "contextNote": "Discussing art details",
-    "imagePrompt": "Cute cartoon cat in a elegant art gallery with paintings on white walls, discussing art details, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in an art gallery pointing with one paw at bright colors in a painting, tail curled in appreciation, white walls, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "gl-07",
@@ -1182,7 +1182,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking prices in the shop",
-    "imagePrompt": "Cute cartoon cat in a elegant art gallery with paintings on white walls, asking prices in the shop, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a gallery looking at a price tag below a painting, eyes bulging out comically, one paw holding its wallet, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "gl-08",
@@ -1196,7 +1196,7 @@
     ],
     "register": "friendly",
     "contextNote": "Moving through the gallery",
-    "imagePrompt": "Cute cartoon cat in a elegant art gallery with paintings on white walls, moving through the gallery, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot walking through an art gallery doorway into the next room, one paw beckoning the viewer to follow, elegant white walls, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "an-01",
@@ -1210,7 +1210,7 @@
     ],
     "register": "friendly",
     "contextNote": "Spotting animals",
-    "imagePrompt": "Cute cartoon cat in a friendly animal sanctuary with green meadows and a wooden fence, spotting animals, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a sunny meadow pointing with one paw at a distant animal over a wooden fence, eyes wide with excitement, friendly animal sanctuary, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "an-02",
@@ -1224,7 +1224,7 @@
     ],
     "register": "friendly",
     "contextNote": "Describing farm animals",
-    "imagePrompt": "Cute cartoon cat in a friendly animal sanctuary with green meadows and a wooden fence, describing farm animals, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot leaning over a fence reaching one paw toward a fluffy creature, soft expression, green meadows behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "an-03",
@@ -1238,7 +1238,7 @@
     ],
     "register": "friendly",
     "contextNote": "Expressing animal preferences",
-    "imagePrompt": "Cute cartoon cat in a friendly animal sanctuary with green meadows and a wooden fence, expressing animal preferences, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot surrounded by various small animals in a green meadow, arms spread wide in a hug, eyes closed in happiness, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "an-04",
@@ -1252,7 +1252,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking to touch animals",
-    "imagePrompt": "Cute cartoon cat in a friendly animal sanctuary with green meadows and a wooden fence, asking to touch animals, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot at a wooden fence extending one paw through the slats to pet a friendly animal on the other side, gentle expression, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "an-05",
@@ -1266,7 +1266,7 @@
     ],
     "register": "friendly",
     "contextNote": "Reacting to reptiles",
-    "imagePrompt": "Cute cartoon cat in a friendly animal sanctuary with green meadows and a wooden fence, reacting to reptiles, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot peeking from behind a fence post with wide nervous eyes, looking at a small harmless lizard, body frozen in place, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "an-06",
@@ -1280,7 +1280,7 @@
     ],
     "register": "friendly",
     "contextNote": "Observing animal behavior",
-    "imagePrompt": "Cute cartoon cat in a friendly animal sanctuary with green meadows and a wooden fence, observing animal behavior, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot watching another animal eat from a trough, head resting on its paws, content expression, sunny farm meadow, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "an-07",
@@ -1294,7 +1294,7 @@
     ],
     "register": "friendly",
     "contextNote": "Suggesting to feed animals",
-    "imagePrompt": "Cute cartoon cat in a friendly animal sanctuary with green meadows and a wooden fence, suggesting to feed animals, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot holding a handful of feed toward animals behind a fence, some feed spilling from its paws, green meadows, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "an-08",
@@ -1308,7 +1308,7 @@
     ],
     "register": "friendly",
     "contextNote": "Admiring baby animals",
-    "imagePrompt": "Cute cartoon cat in a friendly animal sanctuary with green meadows and a wooden fence, admiring baby animals, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a meadow holding a tiny baby animal in both paws, nose touching its fur, big loving eyes, wooden fence behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "we-01",
@@ -1322,7 +1322,7 @@
     ],
     "register": "friendly",
     "contextNote": "Weather forecasts",
-    "imagePrompt": "Cute cartoon cat in a open landscape under a dramatic sky showing weather phenomena, weather forecasts, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot standing in a doorway looking up at dark storm clouds gathering outside, one paw pointing at the sky, dramatic landscape, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "we-02",
@@ -1335,7 +1335,7 @@
     ],
     "register": "friendly",
     "contextNote": "Noticing weather sounds",
-    "imagePrompt": "Cute cartoon cat in a open landscape under a dramatic sky showing weather phenomena, noticing weather sounds, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot with ears flattened back by wind, listening intently to a distant rumble of thunder, open landscape behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "we-03",
@@ -1349,7 +1349,7 @@
     ],
     "register": "friendly",
     "contextNote": "Pointing out weather events",
-    "imagePrompt": "Cute cartoon cat in a open landscape under a dramatic sky showing weather phenomena, pointing out weather events, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot lying on a hill looking straight up at colorful clouds or a rainbow, paws behind its head, dramatic sky above, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "we-04",
@@ -1363,7 +1363,7 @@
     ],
     "register": "friendly",
     "contextNote": "Commenting on temperature",
-    "imagePrompt": "Cute cartoon cat in a open landscape under a dramatic sky showing weather phenomena, commenting on temperature, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot standing at an open window feeling the breeze, fur blowing sideways, satisfied expression, landscape outside, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "we-05",
@@ -1377,7 +1377,7 @@
     ],
     "register": "family",
     "contextNote": "Weather advice",
-    "imagePrompt": "Cute cartoon cat in a open landscape under a dramatic sky showing weather phenomena, weather advice, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot holding a tiny umbrella that is flipping inside out in the wind, struggling to keep it steady, stormy sky behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "we-06",
@@ -1391,7 +1391,7 @@
     ],
     "register": "friendly",
     "contextNote": "Noticing weather clearing",
-    "imagePrompt": "Cute cartoon cat in a open landscape under a dramatic sky showing weather phenomena, noticing weather clearing, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot stepping out from under an umbrella onto wet grass, looking up at clearing blue sky breaking through clouds, puddles around, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "we-07",
@@ -1405,7 +1405,7 @@
     ],
     "register": "friendly",
     "contextNote": "Weather wishes",
-    "imagePrompt": "Cute cartoon cat in a open landscape under a dramatic sky showing weather phenomena, weather wishes, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot looking out a window at dark clouds with worried eyes, one paw pressed against the glass, fingers crossed on the other paw, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "we-08",
@@ -1419,7 +1419,7 @@
     ],
     "register": "friendly",
     "contextNote": "Reacting to weather",
-    "imagePrompt": "Cute cartoon cat in a open landscape under a dramatic sky showing weather phenomena, reacting to weather, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot spinning in a circle on a sunny hill with arms wide open, face tilted up to a bright blue sky, flowers around, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "tl-01",
@@ -1433,7 +1433,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking for tools",
-    "imagePrompt": "Cute cartoon cat in a rustic workshop with a workbench and hanging tools, asking for tools, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a rustic workshop extending one paw toward a hammer on a workbench, expectant expression, hanging tools behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "tl-02",
@@ -1447,7 +1447,7 @@
     ],
     "register": "family",
     "contextNote": "Explaining a DIY task",
-    "imagePrompt": "Cute cartoon cat in a rustic workshop with a workbench and hanging tools, explaining a diy task, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a workshop struggling to hold a tool that is too big for its paws, working on a wooden object, sawdust flying, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "tl-03",
@@ -1461,7 +1461,7 @@
     ],
     "register": "family",
     "contextNote": "Looking for tools",
-    "imagePrompt": "Cute cartoon cat in a rustic workshop with a workbench and hanging tools, looking for tools, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot rummaging through a tool box with its head inside and tail sticking up, searching for the right tool, workshop background, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "tl-04",
@@ -1475,7 +1475,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking for help with tools",
-    "imagePrompt": "Cute cartoon cat in a rustic workshop with a workbench and hanging tools, asking for help with tools, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a workshop holding one end of a long plank while another cat holds the other end, teamwork expression, workbench behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "tl-05",
@@ -1489,7 +1489,7 @@
     ],
     "register": "family",
     "contextNote": "Reporting broken tools",
-    "imagePrompt": "Cute cartoon cat in a rustic workshop with a workbench and hanging tools, reporting broken tools, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A frustrated anthropomorphic cat mascot looking at a broken tool in two pieces, one paw scratching its head, rustic workshop setting, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "tl-06",
@@ -1503,7 +1503,7 @@
     ],
     "register": "family",
     "contextNote": "Describing tool usage",
-    "imagePrompt": "Cute cartoon cat in a rustic workshop with a workbench and hanging tools, describing tool usage, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a workshop carefully aiming a tiny hammer at a nail, tongue sticking out in concentration, workbench cluttered with tools, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "tl-07",
@@ -1517,7 +1517,7 @@
     ],
     "register": "family",
     "contextNote": "Safety warnings",
-    "imagePrompt": "Cute cartoon cat in a rustic workshop with a workbench and hanging tools, safety warnings, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A nervous anthropomorphic cat mascot tiptoeing around a sharp tool on a workbench, wide eyes, one paw raised in caution, workshop interior, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "tl-08",
@@ -1531,7 +1531,7 @@
     ],
     "register": "friendly",
     "contextNote": "Suggesting a project",
-    "imagePrompt": "Cute cartoon cat in a rustic workshop with a workbench and hanging tools, suggesting a project, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A proud anthropomorphic cat mascot in a workshop standing next to a lopsided wooden birdhouse, holding a tiny flag that says 'MIO', tools scattered around, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ac-01",
@@ -1545,7 +1545,7 @@
     ],
     "register": "family",
     "contextNote": "Expressing need to move",
-    "imagePrompt": "Cute cartoon cat in a simple indoor or outdoor space showing movement and activity, expressing need to move, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot looking at a watch or clock with urgency, one paw tapping its foot, ready to run, simple indoor setting, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ac-02",
@@ -1559,7 +1559,7 @@
     ],
     "register": "polite",
     "contextNote": "Calling someone to move",
-    "imagePrompt": "Cute cartoon cat in a simple indoor or outdoor space showing movement and activity, calling someone to move, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot beckoning with one paw while the other is on its hip, standing in an open doorway, inviting expression, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ac-03",
@@ -1573,7 +1573,7 @@
     ],
     "register": "family",
     "contextNote": "Movement warnings",
-    "imagePrompt": "Cute cartoon cat in a simple indoor or outdoor space showing movement and activity, movement warnings, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot holding a stop sign or making a halt gesture with one paw, the other paw waving 'slow down', concerned expression, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ac-04",
@@ -1587,7 +1587,7 @@
     ],
     "register": "family",
     "contextNote": "Daily action updates",
-    "imagePrompt": "Cute cartoon cat in a simple indoor or outdoor space showing movement and activity, daily action updates, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "A sleepy anthropomorphic cat mascot sitting up in bed rubbing its eyes with both paws, blanket falling off, just woke up, simple room, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ac-05",
@@ -1601,7 +1601,7 @@
     ],
     "register": "family",
     "contextNote": "Daily routine reminders",
-    "imagePrompt": "Cute cartoon cat in a simple indoor or outdoor space showing movement and activity, daily routine reminders, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot looking at an alarm clock with resigned expression, one paw reaching to turn it off, morning routine beginning, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ac-06",
@@ -1615,7 +1615,7 @@
     ],
     "register": "polite",
     "contextNote": "Door commands",
-    "imagePrompt": "Cute cartoon cat in a simple indoor or outdoor space showing movement and activity, door commands, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot standing on hind legs turning a doorknob with both paws, body leaning into the motion, door cracking open, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ac-07",
@@ -1628,7 +1628,7 @@
     ],
     "register": "family",
     "contextNote": "Reporting accidents",
-    "imagePrompt": "Cute cartoon cat in a simple indoor or outdoor space showing movement and activity, reporting accidents, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot sitting on the floor holding one paw up with a tiny bandage on it, looking at it with a pout, simple indoor space, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ac-08",
@@ -1642,7 +1642,7 @@
     ],
     "register": "friendly",
     "contextNote": "Inviting joint activity",
-    "imagePrompt": "Cute cartoon cat in a simple indoor or outdoor space showing movement and activity, inviting joint activity, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot reaching both paws toward another cat across a table, inviting them to join, happy expression, simple cozy room, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "em-01",
@@ -1656,7 +1656,7 @@
     ],
     "register": "friendly",
     "contextNote": "Expressing feelings",
-    "imagePrompt": "Cute cartoon cat in a soft abstract room with warm colors representing feelings, expressing feelings, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot walking on a path with a big smile, sunshine rays around its head, tail held high, warm abstract background, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "em-02",
@@ -1670,7 +1670,7 @@
     ],
     "register": "friendly",
     "contextNote": "Noticing others' emotions",
-    "imagePrompt": "Cute cartoon cat in a soft abstract room with warm colors representing feelings, noticing others' emotions, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot pointing at a mirror reflection with one paw, the reflection shows a different expression, soft warm room, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "em-03",
@@ -1684,7 +1684,7 @@
     ],
     "register": "friendly",
     "contextNote": "Reacting to situations",
-    "imagePrompt": "Cute cartoon cat in a soft abstract room with warm colors representing feelings, reacting to situations, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot with heart-shaped eyes hugging itself with both paws, floating slightly off the ground, warm colored abstract room, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "em-04",
@@ -1698,7 +1698,7 @@
     ],
     "register": "friendly",
     "contextNote": "Expressing strong positive feelings",
-    "imagePrompt": "Cute cartoon cat in a soft abstract room with warm colors representing feelings, expressing strong positive feelings, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot bouncing on its toes with energy, sparks or stars around it, big enthusiastic grin, soft warm background, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "em-05",
@@ -1712,7 +1712,7 @@
     ],
     "register": "family",
     "contextNote": "Comforting someone",
-    "imagePrompt": "Cute cartoon cat in a soft abstract room with warm colors representing feelings, comforting someone, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot sitting with another cat, one paw gently patting the other's shoulder in comfort, soft warm abstract room, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "em-06",
@@ -1721,7 +1721,7 @@
     "slots": [],
     "register": "friendly",
     "contextNote": "Expressing trust",
-    "imagePrompt": "Cute cartoon cat in a soft abstract room with warm colors representing feelings, expressing trust, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot shaking paws with another cat while looking straight into its eyes, sincere expression, warm glowing abstract background, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "em-07",
@@ -1735,7 +1735,7 @@
     ],
     "register": "friendly",
     "contextNote": "Reacting to surprises",
-    "imagePrompt": "Cute cartoon cat in a soft abstract room with warm colors representing feelings, reacting to surprises, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot with paws on its cheeks and mouth open in delighted surprise, confetti or sparkles around, warm abstract room, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "em-08",
@@ -1748,7 +1748,7 @@
     ],
     "register": "friendly",
     "contextNote": "Expressing feelings toward someone",
-    "imagePrompt": "Cute cartoon cat in a soft abstract room with warm colors representing feelings, expressing feelings toward someone, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot giving a thumbs-up with one paw while beaming with pride at another cat, warm glowing abstract background, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "fa-01",
@@ -1762,7 +1762,7 @@
     ],
     "register": "friendly",
     "contextNote": "Harvesting produce",
-    "imagePrompt": "Cute cartoon cat in a sunny farm with vegetable gardens and fruit trees, harvesting produce, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a vegetable garden holding a ripe tomato or vegetable up to the sun, inspecting it proudly, sunny farm, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "fa-02",
@@ -1776,7 +1776,7 @@
     ],
     "register": "friendly",
     "contextNote": "Offering farm produce",
-    "imagePrompt": "Cute cartoon cat in a sunny farm with vegetable gardens and fruit trees, offering farm produce, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot at a farm stand holding out a basket of fresh produce with both paws, inviting expression, vegetable gardens behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "fa-03",
@@ -1790,7 +1790,7 @@
     ],
     "register": "friendly",
     "contextNote": "Tasting farm fruits",
-    "imagePrompt": "Cute cartoon cat in a sunny farm with vegetable gardens and fruit trees, tasting farm fruits, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in an orchard biting into a juicy fruit, juice dripping from its chin, eyes closed in bliss, fruit trees around, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "fa-04",
@@ -1804,7 +1804,7 @@
     ],
     "register": "family",
     "contextNote": "Farm maintenance",
-    "imagePrompt": "Cute cartoon cat in a sunny farm with vegetable gardens and fruit trees, farm maintenance, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a garden holding a watering can that is tipping over, water splashing on its own feet, vegetable patches behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "fa-05",
@@ -1818,7 +1818,7 @@
     ],
     "register": "friendly",
     "contextNote": "Suggesting harvest",
-    "imagePrompt": "Cute cartoon cat in a sunny farm with vegetable gardens and fruit trees, suggesting harvest, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a field carrying a basket of vegetables that is overflowing, one carrot falling out, sunny farm landscape, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "fa-06",
@@ -1832,7 +1832,7 @@
     ],
     "register": "friendly",
     "contextNote": "Commenting on growth",
-    "imagePrompt": "Cute cartoon cat in a sunny farm with vegetable gardens and fruit trees, commenting on growth, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot standing next to an enormous vegetable plant that is twice its height, looking up with awe, garden rows behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "fa-07",
@@ -1846,7 +1846,7 @@
     ],
     "register": "polite",
     "contextNote": "Asking for harvest help",
-    "imagePrompt": "Cute cartoon cat in a sunny farm with vegetable gardens and fruit trees, asking for harvest help, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot on a small ladder in an orchard reaching for a fruit with one paw, basket hanging from its arm, sunny farm, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "fa-08",
@@ -1860,7 +1860,7 @@
     ],
     "register": "friendly",
     "contextNote": "Sharing homegrown food",
-    "imagePrompt": "Cute cartoon cat in a sunny farm with vegetable gardens and fruit trees, sharing homegrown food, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot at a farm gate holding a sign that reads 'from our garden', pointing proudly at vegetable rows behind, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ft-01",
@@ -1874,7 +1874,7 @@
     ],
     "register": "friendly",
     "contextNote": "Spotting fantasy creatures",
-    "imagePrompt": "Cute cartoon cat in a whimsical fantasy realm with magical glowing elements, spotting fantasy creatures, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a magical forest pointing with one paw at a glowing fairy creature, eyes wide with wonder, whimsical fantasy realm, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ft-02",
@@ -1888,7 +1888,7 @@
     ],
     "register": "friendly",
     "contextNote": "Telling fantasy stories",
-    "imagePrompt": "Cute cartoon cat in a whimsical fantasy realm with magical glowing elements, telling fantasy stories, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a fantasy realm wearing a tiny wizard hat, holding a sparkling wand that shoots glitter, magical glowing elements around, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ft-03",
@@ -1902,7 +1902,7 @@
     ],
     "register": "friendly",
     "contextNote": "Imaginary roleplay",
-    "imagePrompt": "Cute cartoon cat in a whimsical fantasy realm with magical glowing elements, imaginary roleplay, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in front of a mirror wearing a cardboard crown and cape, pretending to be a royal character, whimsical magical background, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ft-04",
@@ -1916,7 +1916,7 @@
     ],
     "register": "friendly",
     "contextNote": "Fantasy storytelling",
-    "imagePrompt": "Cute cartoon cat in a whimsical fantasy realm with magical glowing elements, fantasy storytelling, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot peeking from behind a glowing mushroom in a fantasy forest, one eye visible, watching a tiny dragon, magical atmosphere, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ft-05",
@@ -1930,7 +1930,7 @@
     ],
     "register": "friendly",
     "contextNote": "Starting a fairy tale",
-    "imagePrompt": "Cute cartoon cat in a whimsical fantasy realm with magical glowing elements, starting a fairy tale, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot sitting on a mushroom in a magical forest holding an open storybook, a tiny castle visible in the background mist, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ft-06",
@@ -1944,7 +1944,7 @@
     ],
     "register": "friendly",
     "contextNote": "Fantasy discussions",
-    "imagePrompt": "Cute cartoon cat in a whimsical fantasy realm with magical glowing elements, fantasy discussions, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a fantasy realm looking up at floating glowing beings in the sky, paws pressed together in wonder, magical lights around, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ft-07",
@@ -1958,7 +1958,7 @@
     ],
     "register": "friendly",
     "contextNote": "Narrating fantasy events",
-    "imagePrompt": "Cute cartoon cat in a whimsical fantasy realm with magical glowing elements, narrating fantasy events, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a magical landscape waving goodbye as a winged creature flies into a colorful sunset, one paw shielding its eyes, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   },
   {
     "id": "ft-08",
@@ -1972,6 +1972,6 @@
     ],
     "register": "friendly",
     "contextNote": "Imaginative play",
-    "imagePrompt": "Cute cartoon cat in a whimsical fantasy realm with magical glowing elements, imaginative play, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+    "imagePrompt": "An anthropomorphic cat mascot in a fantasy forest wearing a tiny knight's helmet made from a teacup, holding a wooden sword, magical glowing plants around, 3D rendered elegant character with big expressive eyes and soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed"
   }
 ]
