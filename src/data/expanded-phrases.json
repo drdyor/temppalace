@@ -1,0 +1,218 @@
+[
+  {
+    "id": "kt-01-01",
+    "roomId": "kitchen",
+    "templateId": "kt-01",
+    "english": "Can you make me a sandwich?",
+    "italian": "",
+    "register": "friendly"
+  },
+  {
+    "id": "kt-01-02",
+    "roomId": "kitchen",
+    "templateId": "kt-01",
+    "english": "Can you make me a coffee?",
+    "italian": "",
+    "register": "friendly"
+  },
+  {
+    "id": "kt-01-03",
+    "roomId": "kitchen",
+    "templateId": "kt-01",
+    "english": "Can you make me a tea?",
+    "italian": "",
+    "register": "friendly"
+  },
+  {
+    "id": "kt-01-04",
+    "roomId": "kitchen",
+    "templateId": "kt-01",
+    "english": "Can you make me a pasta?",
+    "italian": "",
+    "register": "friendly"
+  },
+  {
+    "id": "kt-02-01",
+    "roomId": "kitchen",
+    "templateId": "kt-02",
+    "english": "What do you want on your sandwich?",
+    "italian": "",
+    "register": "friendly"
+  },
+  {
+    "id": "kt-02-02",
+    "roomId": "kitchen",
+    "templateId": "kt-02",
+    "english": "What do you want on your pizza?",
+    "italian": "",
+    "register": "friendly"
+  },
+  {
+    "id": "kt-02-03",
+    "roomId": "kitchen",
+    "templateId": "kt-02",
+    "english": "What do you want on your pasta?",
+    "italian": "",
+    "register": "friendly"
+  },
+  {
+    "id": "kt-03-01",
+    "roomId": "kitchen",
+    "templateId": "kt-03",
+    "english": "Pass me the napkin, please.",
+    "italian": "",
+    "register": "polite"
+  },
+  {
+    "id": "kt-03-02",
+    "roomId": "kitchen",
+    "templateId": "kt-03",
+    "english": "Pass me the salt, please.",
+    "italian": "",
+    "register": "polite"
+  },
+  {
+    "id": "kt-03-03",
+    "roomId": "kitchen",
+    "templateId": "kt-03",
+    "english": "Pass me the pepper, please.",
+    "italian": "",
+    "register": "polite"
+  },
+  {
+    "id": "kt-03-04",
+    "roomId": "kitchen",
+    "templateId": "kt-03",
+    "english": "Pass me the ketchup, please.",
+    "italian": "",
+    "register": "polite"
+  },
+  {
+    "id": "kt-03-05",
+    "roomId": "kitchen",
+    "templateId": "kt-03",
+    "english": "Pass me the mayo, please.",
+    "italian": "",
+    "register": "polite"
+  },
+  {
+    "id": "kt-04-01",
+    "roomId": "kitchen",
+    "templateId": "kt-04",
+    "english": "Is there any bread left?",
+    "italian": "",
+    "register": "family"
+  },
+  {
+    "id": "kt-04-02",
+    "roomId": "kitchen",
+    "templateId": "kt-04",
+    "english": "Is there any cheese left?",
+    "italian": "",
+    "register": "family"
+  },
+  {
+    "id": "kt-04-03",
+    "roomId": "kitchen",
+    "templateId": "kt-04",
+    "english": "Is there any milk left?",
+    "italian": "",
+    "register": "family"
+  },
+  {
+    "id": "kt-04-04",
+    "roomId": "kitchen",
+    "templateId": "kt-04",
+    "english": "Is there any water left?",
+    "italian": "",
+    "register": "family"
+  },
+  {
+    "id": "kt-05-01",
+    "roomId": "kitchen",
+    "templateId": "kt-05",
+    "english": "Want me to make you a tea?",
+    "italian": "",
+    "register": "friendly"
+  },
+  {
+    "id": "kt-05-02",
+    "roomId": "kitchen",
+    "templateId": "kt-05",
+    "english": "Want me to make you a coffee?",
+    "italian": "",
+    "register": "friendly"
+  },
+  {
+    "id": "kt-05-03",
+    "roomId": "kitchen",
+    "templateId": "kt-05",
+    "english": "Want me to make you a sandwich?",
+    "italian": "",
+    "register": "friendly"
+  },
+  {
+    "id": "kt-06-01",
+    "roomId": "kitchen",
+    "templateId": "kt-06",
+    "english": "I'll set the table.",
+    "italian": "",
+    "register": "family"
+  },
+  {
+    "id": "kt-07-01",
+    "roomId": "kitchen",
+    "templateId": "kt-07",
+    "english": "What's for dinner?",
+    "italian": "",
+    "register": "family"
+  },
+  {
+    "id": "kt-07-02",
+    "roomId": "kitchen",
+    "templateId": "kt-07",
+    "english": "What's for lunch?",
+    "italian": "",
+    "register": "family"
+  },
+  {
+    "id": "kt-07-03",
+    "roomId": "kitchen",
+    "templateId": "kt-07",
+    "english": "What's for breakfast?",
+    "italian": "",
+    "register": "family"
+  },
+  {
+    "id": "kt-08-01",
+    "roomId": "kitchen",
+    "templateId": "kt-08",
+    "english": "Do you want some water?",
+    "italian": "",
+    "register": "friendly"
+  },
+  {
+    "id": "kt-08-02",
+    "roomId": "kitchen",
+    "templateId": "kt-08",
+    "english": "Do you want some wine?",
+    "italian": "",
+    "register": "friendly"
+  },
+  {
+    "id": "kt-08-03",
+    "roomId": "kitchen",
+    "templateId": "kt-08",
+    "english": "Do you want some bread?",
+    "italian": "",
+    "register": "friendly"
+  },
+  {
+    "id": "kt-08-04",
+    "roomId": "kitchen",
+    "templateId": "kt-08",
+    "english": "Do you want some cheese?",
+    "italian": "",
+    "register": "friendly"
+  }
+]

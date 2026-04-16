@@ -1,0 +1,1977 @@
+[
+  {
+    "id": "kt-01",
+    "roomId": "kitchen",
+    "frame": "Can you make me {item}?",
+    "slots": [
+      "a sandwich",
+      "a coffee",
+      "some tea",
+      "some pasta"
+    ],
+    "register": "friendly",
+    "contextNote": "Asking someone to prepare food or drink",
+    "imagePrompt": "Cute cartoon cat in a cozy kitchen interior with wooden cabinets and warm lighting, asking someone to prepare food or drink, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "kt-02",
+    "roomId": "kitchen",
+    "frame": "What do you want on your {item}?",
+    "slots": [
+      "sandwich",
+      "pizza",
+      "pasta"
+    ],
+    "register": "friendly",
+    "contextNote": "Asking about toppings or fillings",
+    "imagePrompt": "Cute cartoon cat in a cozy kitchen interior with wooden cabinets and warm lighting, asking about toppings or fillings, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "kt-03",
+    "roomId": "kitchen",
+    "frame": "Pass me {the item}, please.",
+    "slots": [
+      "the napkin",
+      "the salt",
+      "the pepper",
+      "the ketchup",
+      "the mayo"
+    ],
+    "register": "polite",
+    "contextNote": "Asking for something at the table",
+    "imagePrompt": "Cute cartoon cat in a cozy kitchen interior with wooden cabinets and warm lighting, asking for something at the table, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "kt-04",
+    "roomId": "kitchen",
+    "frame": "Is there any {item} left?",
+    "slots": [
+      "bread",
+      "cheese",
+      "milk",
+      "water"
+    ],
+    "register": "family",
+    "contextNote": "Checking supplies",
+    "imagePrompt": "Cute cartoon cat in a cozy kitchen interior with wooden cabinets and warm lighting, checking supplies, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "kt-05",
+    "roomId": "kitchen",
+    "frame": "Want me to make you {item}?",
+    "slots": [
+      "some tea",
+      "a coffee",
+      "a sandwich"
+    ],
+    "register": "friendly",
+    "contextNote": "Offering to prepare something",
+    "imagePrompt": "Cute cartoon cat in a cozy kitchen interior with wooden cabinets and warm lighting, offering to prepare something, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "kt-06",
+    "roomId": "kitchen",
+    "frame": "I'll set the table.",
+    "slots": [],
+    "register": "family",
+    "contextNote": "Preparing for a meal",
+    "imagePrompt": "Cute cartoon cat in a cozy kitchen interior with wooden cabinets and warm lighting, preparing for a meal, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "kt-07",
+    "roomId": "kitchen",
+    "frame": "What's for {meal}?",
+    "slots": [
+      "dinner",
+      "lunch",
+      "breakfast"
+    ],
+    "register": "family",
+    "contextNote": "Asking what is being served",
+    "imagePrompt": "Cute cartoon cat in a cozy kitchen interior with wooden cabinets and warm lighting, asking what is being served, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "kt-08",
+    "roomId": "kitchen",
+    "frame": "Do you want some {item}?",
+    "slots": [
+      "water",
+      "wine",
+      "bread",
+      "cheese"
+    ],
+    "register": "friendly",
+    "contextNote": "Offering food or drink",
+    "imagePrompt": "Cute cartoon cat in a cozy kitchen interior with wooden cabinets and warm lighting, offering food or drink, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "eh-01",
+    "roomId": "entrance-hall",
+    "frame": "This is my {relation}.",
+    "slots": [
+      "mother",
+      "father",
+      "brother",
+      "sister"
+    ],
+    "register": "friendly",
+    "contextNote": "Introducing family members",
+    "imagePrompt": "Cute cartoon cat in a grand entrance hall with a coat rack and family portraits on the wall, introducing family members, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "eh-02",
+    "roomId": "entrance-hall",
+    "frame": "Can you pass me my {item}?",
+    "slots": [
+      "coat",
+      "scarf",
+      "gloves",
+      "hat"
+    ],
+    "register": "polite",
+    "contextNote": "Asking for clothing from the rack",
+    "imagePrompt": "Cute cartoon cat in a grand entrance hall with a coat rack and family portraits on the wall, asking for clothing from the rack, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "eh-03",
+    "roomId": "entrance-hall",
+    "frame": "How {adjective} is your family?",
+    "slots": [
+      "big",
+      "small",
+      "loud",
+      "nice"
+    ],
+    "register": "friendly",
+    "contextNote": "Casual questions about family",
+    "imagePrompt": "Cute cartoon cat in a grand entrance hall with a coat rack and family portraits on the wall, casual questions about family, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "eh-04",
+    "roomId": "entrance-hall",
+    "frame": "I'll be back in {time}.",
+    "slots": [
+      "a minute",
+      "an hour",
+      "a second",
+      "a moment"
+    ],
+    "register": "family",
+    "contextNote": "Leaving and returning",
+    "imagePrompt": "Cute cartoon cat in a grand entrance hall with a coat rack and family portraits on the wall, leaving and returning, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "eh-05",
+    "roomId": "entrance-hall",
+    "frame": "What time is it?",
+    "slots": [],
+    "register": "friendly",
+    "contextNote": "Checking the clock",
+    "imagePrompt": "Cute cartoon cat in a grand entrance hall with a coat rack and family portraits on the wall, checking the clock, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "eh-06",
+    "roomId": "entrance-hall",
+    "frame": "{greeting}! How are you?",
+    "slots": [
+      "Hello",
+      "Good morning",
+      "Good evening"
+    ],
+    "register": "friendly",
+    "contextNote": "Greeting someone at the door",
+    "imagePrompt": "Cute cartoon cat in a grand entrance hall with a coat rack and family portraits on the wall, greeting someone at the door, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "eh-07",
+    "roomId": "entrance-hall",
+    "frame": "{thanks} for coming.",
+    "slots": [
+      "Thanks",
+      "Thank you"
+    ],
+    "register": "friendly",
+    "contextNote": "Welcoming a visitor",
+    "imagePrompt": "Cute cartoon cat in a grand entrance hall with a coat rack and family portraits on the wall, welcoming a visitor, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "eh-08",
+    "roomId": "entrance-hall",
+    "frame": "See you {time}!",
+    "slots": [
+      "later",
+      "tomorrow",
+      "soon",
+      "tonight"
+    ],
+    "register": "friendly",
+    "contextNote": "Saying goodbye",
+    "imagePrompt": "Cute cartoon cat in a grand entrance hall with a coat rack and family portraits on the wall, saying goodbye, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "li-01",
+    "roomId": "library",
+    "frame": "Have you read this {item}?",
+    "slots": [
+      "book",
+      "novel",
+      "poem",
+      "magazine"
+    ],
+    "register": "friendly",
+    "contextNote": "Talking about reading",
+    "imagePrompt": "Cute cartoon cat in a quiet library with tall bookshelves and a wooden study desk, talking about reading, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "li-02",
+    "roomId": "library",
+    "frame": "Pass me the {item}, please.",
+    "slots": [
+      "pen",
+      "pencil",
+      "ruler",
+      "notebook"
+    ],
+    "register": "polite",
+    "contextNote": "Asking for stationery at the desk",
+    "imagePrompt": "Cute cartoon cat in a quiet library with tall bookshelves and a wooden study desk, asking for stationery at the desk, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "li-03",
+    "roomId": "library",
+    "frame": "I need to finish my {task}.",
+    "slots": [
+      "homework",
+      "lesson",
+      "page",
+      "essay"
+    ],
+    "register": "family",
+    "contextNote": "Study-related tasks",
+    "imagePrompt": "Cute cartoon cat in a quiet library with tall bookshelves and a wooden study desk, study-related tasks, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "li-04",
+    "roomId": "library",
+    "frame": "What's the {item} for this month?",
+    "slots": [
+      "calendar",
+      "schedule",
+      "deadline"
+    ],
+    "register": "friendly",
+    "contextNote": "Organizing study or work",
+    "imagePrompt": "Cute cartoon cat in a quiet library with tall bookshelves and a wooden study desk, organizing study or work, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "li-05",
+    "roomId": "library",
+    "frame": "My {device} isn't working.",
+    "slots": [
+      "computer",
+      "screen",
+      "keyboard",
+      "printer"
+    ],
+    "register": "friendly",
+    "contextNote": "Tech problems at the computer station",
+    "imagePrompt": "Cute cartoon cat in a quiet library with tall bookshelves and a wooden study desk, tech problems at the computer station, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "li-06",
+    "roomId": "library",
+    "frame": "Can you help me with this {subject}?",
+    "slots": [
+      "science",
+      "lesson",
+      "page",
+      "essay"
+    ],
+    "register": "polite",
+    "contextNote": "Asking for study help",
+    "imagePrompt": "Cute cartoon cat in a quiet library with tall bookshelves and a wooden study desk, asking for study help, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "li-07",
+    "roomId": "library",
+    "frame": "I'll look it up in the {source}.",
+    "slots": [
+      "dictionary",
+      "manual",
+      "newspaper",
+      "biography"
+    ],
+    "register": "family",
+    "contextNote": "Finding information",
+    "imagePrompt": "Cute cartoon cat in a quiet library with tall bookshelves and a wooden study desk, finding information, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "li-08",
+    "roomId": "library",
+    "frame": "Do you want to study {place}?",
+    "slots": [
+      "here",
+      "at the library",
+      "at the desk",
+      "together"
+    ],
+    "register": "friendly",
+    "contextNote": "Inviting someone to study",
+    "imagePrompt": "Cute cartoon cat in a quiet library with tall bookshelves and a wooden study desk, inviting someone to study, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "bd-01",
+    "roomId": "bedroom",
+    "frame": "Where is my {item}?",
+    "slots": [
+      "shirt",
+      "dress",
+      "jacket",
+      "sweater"
+    ],
+    "register": "family",
+    "contextNote": "Looking for clothes in the wardrobe",
+    "imagePrompt": "Cute cartoon cat in a comfortable bedroom with a wardrobe, bed, and soft pillows, looking for clothes in the wardrobe, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "bd-02",
+    "roomId": "bedroom",
+    "frame": "Have you seen my {item}?",
+    "slots": [
+      "socks",
+      "belt",
+      "scarf",
+      "glasses"
+    ],
+    "register": "family",
+    "contextNote": "Searching for accessories",
+    "imagePrompt": "Cute cartoon cat in a comfortable bedroom with a wardrobe, bed, and soft pillows, searching for accessories, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "bd-03",
+    "roomId": "bedroom",
+    "frame": "I love this {jewelry}.",
+    "slots": [
+      "ring",
+      "necklace",
+      "bracelet",
+      "watch"
+    ],
+    "register": "friendly",
+    "contextNote": "Admiring jewelry",
+    "imagePrompt": "Cute cartoon cat in a comfortable bedroom with a wardrobe, bed, and soft pillows, admiring jewelry, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "bd-04",
+    "roomId": "bedroom",
+    "frame": "Pass me my {item}, please.",
+    "slots": [
+      "shoes",
+      "boots",
+      "slippers",
+      "sandals"
+    ],
+    "register": "polite",
+    "contextNote": "Asking for footwear",
+    "imagePrompt": "Cute cartoon cat in a comfortable bedroom with a wardrobe, bed, and soft pillows, asking for footwear, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "bd-05",
+    "roomId": "bedroom",
+    "frame": "The bed is so {adjective}.",
+    "slots": [
+      "soft",
+      "comfortable",
+      "warm",
+      "big"
+    ],
+    "register": "friendly",
+    "contextNote": "Talking about bedding",
+    "imagePrompt": "Cute cartoon cat in a comfortable bedroom with a wardrobe, bed, and soft pillows, talking about bedding, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "bd-06",
+    "roomId": "bedroom",
+    "frame": "What time does the {item} ring?",
+    "slots": [
+      "alarm",
+      "clock"
+    ],
+    "register": "family",
+    "contextNote": "Checking wake-up time",
+    "imagePrompt": "Cute cartoon cat in a comfortable bedroom with a wardrobe, bed, and soft pillows, checking wake-up time, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "bd-07",
+    "roomId": "bedroom",
+    "frame": "I'm going to put on my {item}.",
+    "slots": [
+      "pajamas",
+      "jeans",
+      "skirt",
+      "coat"
+    ],
+    "register": "family",
+    "contextNote": "Getting dressed",
+    "imagePrompt": "Cute cartoon cat in a comfortable bedroom with a wardrobe, bed, and soft pillows, getting dressed, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "bd-08",
+    "roomId": "bedroom",
+    "frame": "Turn off the {item}, please.",
+    "slots": [
+      "lamp",
+      "light",
+      "alarm"
+    ],
+    "register": "polite",
+    "contextNote": "Nightstand requests",
+    "imagePrompt": "Cute cartoon cat in a comfortable bedroom with a wardrobe, bed, and soft pillows, nightstand requests, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ba-01",
+    "roomId": "bathroom",
+    "frame": "Where's the {item}?",
+    "slots": [
+      "soap",
+      "toothpaste",
+      "towel",
+      "brush"
+    ],
+    "register": "family",
+    "contextNote": "Looking for toiletries at the sink",
+    "imagePrompt": "Cute cartoon cat in a clean bathroom with a sink, mirror, and white tiles, looking for toiletries at the sink, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ba-02",
+    "roomId": "bathroom",
+    "frame": "I'm going to take a {thing}.",
+    "slots": [
+      "shower",
+      "bath"
+    ],
+    "register": "family",
+    "contextNote": "Daily hygiene routine",
+    "imagePrompt": "Cute cartoon cat in a clean bathroom with a sink, mirror, and white tiles, daily hygiene routine, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ba-03",
+    "roomId": "bathroom",
+    "frame": "Pass me the {item}, please.",
+    "slots": [
+      "shampoo",
+      "towel",
+      "soap",
+      "toothbrush"
+    ],
+    "register": "polite",
+    "contextNote": "Asking for shower items",
+    "imagePrompt": "Cute cartoon cat in a clean bathroom with a sink, mirror, and white tiles, asking for shower items, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ba-04",
+    "roomId": "bathroom",
+    "frame": "Do we have any {item}?",
+    "slots": [
+      "medicine",
+      "band-aids",
+      "aspirin",
+      "cotton"
+    ],
+    "register": "family",
+    "contextNote": "Checking the medicine cabinet",
+    "imagePrompt": "Cute cartoon cat in a clean bathroom with a sink, mirror, and white tiles, checking the medicine cabinet, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ba-05",
+    "roomId": "bathroom",
+    "frame": "The water is too {adjective}.",
+    "slots": [
+      "hot",
+      "cold"
+    ],
+    "register": "family",
+    "contextNote": "Commenting on shower temperature",
+    "imagePrompt": "Cute cartoon cat in a clean bathroom with a sink, mirror, and white tiles, commenting on shower temperature, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ba-06",
+    "roomId": "bathroom",
+    "frame": "I need to wash my {body part}.",
+    "slots": [
+      "face",
+      "hands",
+      "hair",
+      "teeth"
+    ],
+    "register": "family",
+    "contextNote": "Daily washing routine",
+    "imagePrompt": "Cute cartoon cat in a clean bathroom with a sink, mirror, and white tiles, daily washing routine, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ba-07",
+    "roomId": "bathroom",
+    "frame": "Can you hand me the {item}?",
+    "slots": [
+      "mirror",
+      "thermometer",
+      "ointment",
+      "towel"
+    ],
+    "register": "polite",
+    "contextNote": "Asking for bathroom items",
+    "imagePrompt": "Cute cartoon cat in a clean bathroom with a sink, mirror, and white tiles, asking for bathroom items, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ba-08",
+    "roomId": "bathroom",
+    "frame": "Turn on the {item}.",
+    "slots": [
+      "water",
+      "faucet",
+      "shower",
+      "light"
+    ],
+    "register": "family",
+    "contextNote": "Bathroom commands",
+    "imagePrompt": "Cute cartoon cat in a clean bathroom with a sink, mirror, and white tiles, bathroom commands, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ga-01",
+    "roomId": "garden",
+    "frame": "Look at that beautiful {item}.",
+    "slots": [
+      "flower",
+      "rose",
+      "tree",
+      "leaf"
+    ],
+    "register": "friendly",
+    "contextNote": "Admiring garden plants",
+    "imagePrompt": "Cute cartoon cat in a sunny garden with green grass, flowers, and a stone path, admiring garden plants, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ga-02",
+    "roomId": "garden",
+    "frame": "Let's walk along the {path}.",
+    "slots": [
+      "path",
+      "bridge",
+      "gate",
+      "stones"
+    ],
+    "register": "friendly",
+    "contextNote": "Suggesting a garden walk",
+    "imagePrompt": "Cute cartoon cat in a sunny garden with green grass, flowers, and a stone path, suggesting a garden walk, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ga-03",
+    "roomId": "garden",
+    "frame": "The {sky thing} is so bright today.",
+    "slots": [
+      "sun",
+      "moon",
+      "sky",
+      "stars"
+    ],
+    "register": "friendly",
+    "contextNote": "Observing the sky",
+    "imagePrompt": "Cute cartoon cat in a sunny garden with green grass, flowers, and a stone path, observing the sky, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ga-04",
+    "roomId": "garden",
+    "frame": "It's a perfect day for {activity}.",
+    "slots": [
+      "a picnic",
+      "a walk",
+      "the garden",
+      "sunbathing"
+    ],
+    "register": "friendly",
+    "contextNote": "Commenting on garden weather",
+    "imagePrompt": "Cute cartoon cat in a sunny garden with green grass, flowers, and a stone path, commenting on garden weather, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ga-05",
+    "roomId": "garden",
+    "frame": "Can you water the {plant}?",
+    "slots": [
+      "flowers",
+      "grass",
+      "trees",
+      "roses"
+    ],
+    "register": "polite",
+    "contextNote": "Asking for garden help",
+    "imagePrompt": "Cute cartoon cat in a sunny garden with green grass, flowers, and a stone path, asking for garden help, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ga-06",
+    "roomId": "garden",
+    "frame": "There's a {weather} coming.",
+    "slots": [
+      "cloud",
+      "storm",
+      "rain",
+      "rainbow"
+    ],
+    "register": "family",
+    "contextNote": "Noticing weather changes",
+    "imagePrompt": "Cute cartoon cat in a sunny garden with green grass, flowers, and a stone path, noticing weather changes, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ga-07",
+    "roomId": "garden",
+    "frame": "Let's sit under the {thing}.",
+    "slots": [
+      "tree",
+      "sun",
+      "stars",
+      "sky"
+    ],
+    "register": "friendly",
+    "contextNote": "Suggesting where to relax",
+    "imagePrompt": "Cute cartoon cat in a sunny garden with green grass, flowers, and a stone path, suggesting where to relax, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ga-08",
+    "roomId": "garden",
+    "frame": "The {nature} feels nice.",
+    "slots": [
+      "earth",
+      "grass",
+      "air",
+      "sun"
+    ],
+    "register": "friendly",
+    "contextNote": "Enjoying nature",
+    "imagePrompt": "Cute cartoon cat in a sunny garden with green grass, flowers, and a stone path, enjoying nature, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "tr-01",
+    "roomId": "transport",
+    "frame": "A {ticket} to {city}, please.",
+    "slots": [
+      "ticket",
+      "return ticket",
+      "monthly pass"
+    ],
+    "register": "polite",
+    "contextNote": "Buying tickets",
+    "imagePrompt": "Cute cartoon cat in a busy train station platform with ticket machines and a departure board, buying tickets, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "tr-02",
+    "roomId": "transport",
+    "frame": "What time is the {departure}?",
+    "slots": [
+      "departure",
+      "arrival",
+      "next train"
+    ],
+    "register": "polite",
+    "contextNote": "Checking train times",
+    "imagePrompt": "Cute cartoon cat in a busy train station platform with ticket machines and a departure board, checking train times, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "tr-03",
+    "roomId": "transport",
+    "frame": "Which {platform} do I need?",
+    "slots": [
+      "platform",
+      "track",
+      "exit",
+      "entrance"
+    ],
+    "register": "polite",
+    "contextNote": "Navigating the station",
+    "imagePrompt": "Cute cartoon cat in a busy train station platform with ticket machines and a departure board, navigating the station, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "tr-04",
+    "roomId": "transport",
+    "frame": "The train is {status}.",
+    "slots": [
+      "late",
+      "on time",
+      "delayed",
+      "cancelled"
+    ],
+    "register": "friendly",
+    "contextNote": "Commenting on train status",
+    "imagePrompt": "Cute cartoon cat in a busy train station platform with ticket machines and a departure board, commenting on train status, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "tr-05",
+    "roomId": "transport",
+    "frame": "Where is the {place}?",
+    "slots": [
+      "exit",
+      "entrance",
+      "station",
+      "street"
+    ],
+    "register": "polite",
+    "contextNote": "Asking for directions",
+    "imagePrompt": "Cute cartoon cat in a busy train station platform with ticket machines and a departure board, asking for directions, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "tr-06",
+    "roomId": "transport",
+    "frame": "Is this the {direction} to {place}?",
+    "slots": [
+      "right way",
+      "correct street"
+    ],
+    "register": "polite",
+    "contextNote": "Confirming directions",
+    "imagePrompt": "Cute cartoon cat in a busy train station platform with ticket machines and a departure board, confirming directions, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "tr-07",
+    "roomId": "transport",
+    "frame": "I need a {bag} for my trip.",
+    "slots": [
+      "suitcase",
+      "backpack",
+      "ticket",
+      "map"
+    ],
+    "register": "friendly",
+    "contextNote": "Travel preparations",
+    "imagePrompt": "Cute cartoon cat in a busy train station platform with ticket machines and a departure board, travel preparations, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "tr-08",
+    "roomId": "transport",
+    "frame": "Watch out for the {traffic item}.",
+    "slots": [
+      "traffic lights",
+      "crossing",
+      "signs",
+      "cars"
+    ],
+    "register": "friendly",
+    "contextNote": "Street safety warnings",
+    "imagePrompt": "Cute cartoon cat in a busy train station platform with ticket machines and a departure board, street safety warnings, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "lr-01",
+    "roomId": "living-room",
+    "frame": "Let's sit on the {furniture}.",
+    "slots": [
+      "sofa",
+      "armchair",
+      "rug",
+      "floor"
+    ],
+    "register": "friendly",
+    "contextNote": "Suggesting where to sit",
+    "imagePrompt": "Cute cartoon cat in a modern living room with a sofa, TV, and warm carpet, suggesting where to sit, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "lr-02",
+    "roomId": "living-room",
+    "frame": "Can you pass me the {item}?",
+    "slots": [
+      "remote",
+      "pillow",
+      "blanket",
+      "book"
+    ],
+    "register": "polite",
+    "contextNote": "Asking for comfort items",
+    "imagePrompt": "Cute cartoon cat in a modern living room with a sofa, TV, and warm carpet, asking for comfort items, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "lr-03",
+    "roomId": "living-room",
+    "frame": "Do you want to watch a {show}?",
+    "slots": [
+      "movie",
+      "film",
+      "TV show",
+      "match"
+    ],
+    "register": "friendly",
+    "contextNote": "Entertainment suggestions",
+    "imagePrompt": "Cute cartoon cat in a modern living room with a sofa, TV, and warm carpet, entertainment suggestions, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "lr-04",
+    "roomId": "living-room",
+    "frame": "Put on some {entertainment}.",
+    "slots": [
+      "music",
+      "TV",
+      "a film",
+      "the game"
+    ],
+    "register": "friendly",
+    "contextNote": "Requesting entertainment",
+    "imagePrompt": "Cute cartoon cat in a modern living room with a sofa, TV, and warm carpet, requesting entertainment, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "lr-05",
+    "roomId": "living-room",
+    "frame": "The {screen} is too {adjective}.",
+    "slots": [
+      "screen",
+      "volume",
+      "light"
+    ],
+    "register": "family",
+    "contextNote": "Adjusting the TV",
+    "imagePrompt": "Cute cartoon cat in a modern living room with a sofa, TV, and warm carpet, adjusting the tv, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "lr-06",
+    "roomId": "living-room",
+    "frame": "I love this {decor}.",
+    "slots": [
+      "lamp",
+      "painting",
+      "mirror",
+      "curtain"
+    ],
+    "register": "friendly",
+    "contextNote": "Admiring living room decor",
+    "imagePrompt": "Cute cartoon cat in a modern living room with a sofa, TV, and warm carpet, admiring living room decor, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "lr-07",
+    "roomId": "living-room",
+    "frame": "Can you turn on the {item}?",
+    "slots": [
+      "light",
+      "lamp",
+      "TV",
+      "music"
+    ],
+    "register": "polite",
+    "contextNote": "Asking to turn things on",
+    "imagePrompt": "Cute cartoon cat in a modern living room with a sofa, TV, and warm carpet, asking to turn things on, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "lr-08",
+    "roomId": "living-room",
+    "frame": "Let's {activity} here.",
+    "slots": [
+      "relax",
+      "watch TV",
+      "read",
+      "talk"
+    ],
+    "register": "friendly",
+    "contextNote": "Suggesting living room activities",
+    "imagePrompt": "Cute cartoon cat in a modern living room with a sofa, TV, and warm carpet, suggesting living room activities, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "sm-01",
+    "roomId": "supermarket",
+    "frame": "How much is {the item}?",
+    "slots": [
+      "the apple",
+      "the cheese",
+      "the milk",
+      "the bread"
+    ],
+    "register": "polite",
+    "contextNote": "Asking prices",
+    "imagePrompt": "Cute cartoon cat in a bright supermarket aisle with shelves of fresh produce, asking prices, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "sm-02",
+    "roomId": "supermarket",
+    "frame": "I'll take {quantity} of {item}.",
+    "slots": [
+      "a kilo",
+      "a liter",
+      "a bunch",
+      "a box"
+    ],
+    "register": "friendly",
+    "contextNote": "Buying quantities",
+    "imagePrompt": "Cute cartoon cat in a bright supermarket aisle with shelves of fresh produce, buying quantities, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "sm-03",
+    "roomId": "supermarket",
+    "frame": "Do you have any {item}?",
+    "slots": [
+      "bananas",
+      "tomatoes",
+      "oranges",
+      "eggs"
+    ],
+    "register": "polite",
+    "contextNote": "Checking availability",
+    "imagePrompt": "Cute cartoon cat in a bright supermarket aisle with shelves of fresh produce, checking availability, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "sm-04",
+    "roomId": "supermarket",
+    "frame": "Where is the {section}?",
+    "slots": [
+      "dairy section",
+      "produce",
+      "checkout",
+      "fruit"
+    ],
+    "register": "polite",
+    "contextNote": "Finding supermarket sections",
+    "imagePrompt": "Cute cartoon cat in a bright supermarket aisle with shelves of fresh produce, finding supermarket sections, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "sm-05",
+    "roomId": "supermarket",
+    "frame": "Can I pay by {method}?",
+    "slots": [
+      "card",
+      "cash",
+      "credit card"
+    ],
+    "register": "polite",
+    "contextNote": "Payment options",
+    "imagePrompt": "Cute cartoon cat in a bright supermarket aisle with shelves of fresh produce, payment options, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "sm-06",
+    "roomId": "supermarket",
+    "frame": "The {item} looks fresh.",
+    "slots": [
+      "fruit",
+      "vegetables",
+      "cheese",
+      "bread"
+    ],
+    "register": "friendly",
+    "contextNote": "Commenting on produce",
+    "imagePrompt": "Cute cartoon cat in a bright supermarket aisle with shelves of fresh produce, commenting on produce, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "sm-07",
+    "roomId": "supermarket",
+    "frame": "I need a {cart item}.",
+    "slots": [
+      "cart",
+      "bag",
+      "receipt",
+      "basket"
+    ],
+    "register": "friendly",
+    "contextNote": "Shopping logistics",
+    "imagePrompt": "Cute cartoon cat in a bright supermarket aisle with shelves of fresh produce, shopping logistics, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "sm-08",
+    "roomId": "supermarket",
+    "frame": "That's {price} euros.",
+    "slots": [
+      "two",
+      "three",
+      "five",
+      "ten"
+    ],
+    "register": "friendly",
+    "contextNote": "Stating prices",
+    "imagePrompt": "Cute cartoon cat in a bright supermarket aisle with shelves of fresh produce, stating prices, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "cf-01",
+    "roomId": "cafe",
+    "frame": "{polite request}, a {drink} please.",
+    "slots": [
+      "I'd like",
+      "Can I have",
+      "May I have"
+    ],
+    "register": "polite",
+    "contextNote": "Ordering at the counter",
+    "imagePrompt": "Cute cartoon cat in a small Italian cafe with a wooden counter and espresso machine, ordering at the counter, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "cf-02",
+    "roomId": "cafe",
+    "frame": "A {coffee} and a {pastry}, please.",
+    "slots": [
+      "coffee",
+      "cappuccino",
+      "espresso",
+      "tea"
+    ],
+    "register": "polite",
+    "contextNote": "Ordering combinations",
+    "imagePrompt": "Cute cartoon cat in a small Italian cafe with a wooden counter and espresso machine, ordering combinations, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "cf-03",
+    "roomId": "cafe",
+    "frame": "Can I sit {place}?",
+    "slots": [
+      "here",
+      "at the table",
+      "outside",
+      "by the window"
+    ],
+    "register": "polite",
+    "contextNote": "Asking where to sit",
+    "imagePrompt": "Cute cartoon cat in a small Italian cafe with a wooden counter and espresso machine, asking where to sit, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "cf-04",
+    "roomId": "cafe",
+    "frame": "Could I have the {item}, please?",
+    "slots": [
+      "menu",
+      "bill",
+      "check",
+      "napkin"
+    ],
+    "register": "polite",
+    "contextNote": "Asking for cafe items",
+    "imagePrompt": "Cute cartoon cat in a small Italian cafe with a wooden counter and espresso machine, asking for cafe items, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "cf-05",
+    "roomId": "cafe",
+    "frame": "This {drink} is delicious.",
+    "slots": [
+      "coffee",
+      "cappuccino",
+      "chocolate",
+      "juice"
+    ],
+    "register": "friendly",
+    "contextNote": "Complimenting the drink",
+    "imagePrompt": "Cute cartoon cat in a small Italian cafe with a wooden counter and espresso machine, complimenting the drink, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "cf-06",
+    "roomId": "cafe",
+    "frame": "Do you want a {pastry} too?",
+    "slots": [
+      "croissant",
+      "cookie",
+      "cake",
+      "muffin"
+    ],
+    "register": "friendly",
+    "contextNote": "Offering food",
+    "imagePrompt": "Cute cartoon cat in a small Italian cafe with a wooden counter and espresso machine, offering food, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "cf-07",
+    "roomId": "cafe",
+    "frame": "I'll have the {order}.",
+    "slots": [
+      "usual",
+      "special",
+      "combo",
+      "special of the day"
+    ],
+    "register": "friendly",
+    "contextNote": "Making a cafe order",
+    "imagePrompt": "Cute cartoon cat in a small Italian cafe with a wooden counter and espresso machine, making a cafe order, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "cf-08",
+    "roomId": "cafe",
+    "frame": "{thanks} very much.",
+    "slots": [
+      "Thanks",
+      "Thank you"
+    ],
+    "register": "polite",
+    "contextNote": "Thanking the barista",
+    "imagePrompt": "Cute cartoon cat in a small Italian cafe with a wooden counter and espresso machine, thanking the barista, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "gl-01",
+    "roomId": "gallery",
+    "frame": "This {artwork} is beautiful.",
+    "slots": [
+      "painting",
+      "sculpture",
+      "color",
+      "light"
+    ],
+    "register": "friendly",
+    "contextNote": "Admiring art",
+    "imagePrompt": "Cute cartoon cat in a elegant art gallery with paintings on white walls, admiring art, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "gl-02",
+    "roomId": "gallery",
+    "frame": "Who is the {creator}?",
+    "slots": [
+      "artist",
+      "painter",
+      "sculptor"
+    ],
+    "register": "friendly",
+    "contextNote": "Talking about artists",
+    "imagePrompt": "Cute cartoon cat in a elegant art gallery with paintings on white walls, talking about artists, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "gl-03",
+    "roomId": "gallery",
+    "frame": "I want to buy a {souvenir}.",
+    "slots": [
+      "postcard",
+      "book",
+      "T-shirt",
+      "gift"
+    ],
+    "register": "friendly",
+    "contextNote": "Shopping at the gift shop",
+    "imagePrompt": "Cute cartoon cat in a elegant art gallery with paintings on white walls, shopping at the gift shop, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "gl-04",
+    "roomId": "gallery",
+    "frame": "The {exhibit} is amazing.",
+    "slots": [
+      "show",
+      "exhibition",
+      "collection",
+      "gallery"
+    ],
+    "register": "friendly",
+    "contextNote": "Commenting on exhibitions",
+    "imagePrompt": "Cute cartoon cat in a elegant art gallery with paintings on white walls, commenting on exhibitions, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "gl-05",
+    "roomId": "gallery",
+    "frame": "Can you take a photo of me {place}?",
+    "slots": [
+      "here",
+      "by the painting",
+      "in the gallery",
+      "outside"
+    ],
+    "register": "polite",
+    "contextNote": "Asking for a photo",
+    "imagePrompt": "Cute cartoon cat in a elegant art gallery with paintings on white walls, asking for a photo, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "gl-06",
+    "roomId": "gallery",
+    "frame": "I love the {aspect} in this piece.",
+    "slots": [
+      "colors",
+      "light",
+      "style",
+      "details"
+    ],
+    "register": "friendly",
+    "contextNote": "Discussing art details",
+    "imagePrompt": "Cute cartoon cat in a elegant art gallery with paintings on white walls, discussing art details, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "gl-07",
+    "roomId": "gallery",
+    "frame": "How much does this {item} cost?",
+    "slots": [
+      "painting",
+      "book",
+      "postcard",
+      "gift"
+    ],
+    "register": "polite",
+    "contextNote": "Asking prices in the shop",
+    "imagePrompt": "Cute cartoon cat in a elegant art gallery with paintings on white walls, asking prices in the shop, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "gl-08",
+    "roomId": "gallery",
+    "frame": "Let's go to the next {room}.",
+    "slots": [
+      "room",
+      "hall",
+      "exhibition",
+      "floor"
+    ],
+    "register": "friendly",
+    "contextNote": "Moving through the gallery",
+    "imagePrompt": "Cute cartoon cat in a elegant art gallery with paintings on white walls, moving through the gallery, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "an-01",
+    "roomId": "animals",
+    "frame": "Look at that {animal}!",
+    "slots": [
+      "dog",
+      "cat",
+      "horse",
+      "rabbit"
+    ],
+    "register": "friendly",
+    "contextNote": "Spotting animals",
+    "imagePrompt": "Cute cartoon cat in a friendly animal sanctuary with green meadows and a wooden fence, spotting animals, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "an-02",
+    "roomId": "animals",
+    "frame": "The {creature} is so {adjective}.",
+    "slots": [
+      "cow",
+      "sheep",
+      "goat",
+      "pig"
+    ],
+    "register": "friendly",
+    "contextNote": "Describing farm animals",
+    "imagePrompt": "Cute cartoon cat in a friendly animal sanctuary with green meadows and a wooden fence, describing farm animals, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "an-03",
+    "roomId": "animals",
+    "frame": "I love {animals}.",
+    "slots": [
+      "dogs",
+      "cats",
+      "horses",
+      "rabbits"
+    ],
+    "register": "friendly",
+    "contextNote": "Expressing animal preferences",
+    "imagePrompt": "Cute cartoon cat in a friendly animal sanctuary with green meadows and a wooden fence, expressing animal preferences, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "an-04",
+    "roomId": "animals",
+    "frame": "Can I pet the {animal}?",
+    "slots": [
+      "dog",
+      "cat",
+      "rabbit",
+      "horse"
+    ],
+    "register": "polite",
+    "contextNote": "Asking to touch animals",
+    "imagePrompt": "Cute cartoon cat in a friendly animal sanctuary with green meadows and a wooden fence, asking to touch animals, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "an-05",
+    "roomId": "animals",
+    "frame": "That {reptile} looks scary.",
+    "slots": [
+      "snake",
+      "lizard",
+      "turtle",
+      "crocodile"
+    ],
+    "register": "friendly",
+    "contextNote": "Reacting to reptiles",
+    "imagePrompt": "Cute cartoon cat in a friendly animal sanctuary with green meadows and a wooden fence, reacting to reptiles, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "an-06",
+    "roomId": "animals",
+    "frame": "The {animal} is eating.",
+    "slots": [
+      "cow",
+      "sheep",
+      "horse",
+      "pig"
+    ],
+    "register": "friendly",
+    "contextNote": "Observing animal behavior",
+    "imagePrompt": "Cute cartoon cat in a friendly animal sanctuary with green meadows and a wooden fence, observing animal behavior, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "an-07",
+    "roomId": "animals",
+    "frame": "Let's feed the {animals}.",
+    "slots": [
+      "rabbits",
+      "goats",
+      "sheep",
+      "birds"
+    ],
+    "register": "friendly",
+    "contextNote": "Suggesting to feed animals",
+    "imagePrompt": "Cute cartoon cat in a friendly animal sanctuary with green meadows and a wooden fence, suggesting to feed animals, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "an-08",
+    "roomId": "animals",
+    "frame": "What a cute little {animal}!",
+    "slots": [
+      "cat",
+      "dog",
+      "rabbit",
+      "lamb"
+    ],
+    "register": "friendly",
+    "contextNote": "Admiring baby animals",
+    "imagePrompt": "Cute cartoon cat in a friendly animal sanctuary with green meadows and a wooden fence, admiring baby animals, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "we-01",
+    "roomId": "weather",
+    "frame": "It's going to {weather} today.",
+    "slots": [
+      "rain",
+      "storm",
+      "be sunny",
+      "be cloudy"
+    ],
+    "register": "friendly",
+    "contextNote": "Weather forecasts",
+    "imagePrompt": "Cute cartoon cat in a open landscape under a dramatic sky showing weather phenomena, weather forecasts, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "we-02",
+    "roomId": "weather",
+    "frame": "Did you hear the {sound}?",
+    "slots": [
+      "thunder",
+      "rain",
+      "wind"
+    ],
+    "register": "friendly",
+    "contextNote": "Noticing weather sounds",
+    "imagePrompt": "Cute cartoon cat in a open landscape under a dramatic sky showing weather phenomena, noticing weather sounds, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "we-03",
+    "roomId": "weather",
+    "frame": "Look at the {sky phenomenon}.",
+    "slots": [
+      "lightning",
+      "rainbow",
+      "clouds",
+      "sun"
+    ],
+    "register": "friendly",
+    "contextNote": "Pointing out weather events",
+    "imagePrompt": "Cute cartoon cat in a open landscape under a dramatic sky showing weather phenomena, pointing out weather events, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "we-04",
+    "roomId": "weather",
+    "frame": "It's so {adjective} outside.",
+    "slots": [
+      "cold",
+      "hot",
+      "windy",
+      "foggy"
+    ],
+    "register": "friendly",
+    "contextNote": "Commenting on temperature",
+    "imagePrompt": "Cute cartoon cat in a open landscape under a dramatic sky showing weather phenomena, commenting on temperature, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "we-05",
+    "roomId": "weather",
+    "frame": "Take an {item} with you.",
+    "slots": [
+      "umbrella",
+      "jacket",
+      "coat",
+      "hat"
+    ],
+    "register": "family",
+    "contextNote": "Weather advice",
+    "imagePrompt": "Cute cartoon cat in a open landscape under a dramatic sky showing weather phenomena, weather advice, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "we-06",
+    "roomId": "weather",
+    "frame": "The {weather} stopped.",
+    "slots": [
+      "rain",
+      "storm",
+      "fog",
+      "hail"
+    ],
+    "register": "friendly",
+    "contextNote": "Noticing weather clearing",
+    "imagePrompt": "Cute cartoon cat in a open landscape under a dramatic sky showing weather phenomena, noticing weather clearing, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "we-07",
+    "roomId": "weather",
+    "frame": "I hope it doesn't {verb}.",
+    "slots": [
+      "rain",
+      "storm",
+      "hail",
+      "get cold"
+    ],
+    "register": "friendly",
+    "contextNote": "Weather wishes",
+    "imagePrompt": "Cute cartoon cat in a open landscape under a dramatic sky showing weather phenomena, weather wishes, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "we-08",
+    "roomId": "weather",
+    "frame": "What {beautiful} weather!",
+    "slots": [
+      "beautiful",
+      "terrible",
+      "lovely",
+      "strange"
+    ],
+    "register": "friendly",
+    "contextNote": "Reacting to weather",
+    "imagePrompt": "Cute cartoon cat in a open landscape under a dramatic sky showing weather phenomena, reacting to weather, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "tl-01",
+    "roomId": "tools",
+    "frame": "Pass me the {tool}, please.",
+    "slots": [
+      "hammer",
+      "screwdriver",
+      "pliers",
+      "saw"
+    ],
+    "register": "polite",
+    "contextNote": "Asking for tools",
+    "imagePrompt": "Cute cartoon cat in a rustic workshop with a workbench and hanging tools, asking for tools, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "tl-02",
+    "roomId": "tools",
+    "frame": "I need to {verb} this {object}.",
+    "slots": [
+      "fix",
+      "build",
+      "repair",
+      "measure"
+    ],
+    "register": "family",
+    "contextNote": "Explaining a DIY task",
+    "imagePrompt": "Cute cartoon cat in a rustic workshop with a workbench and hanging tools, explaining a diy task, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "tl-03",
+    "roomId": "tools",
+    "frame": "Where is the {tool}?",
+    "slots": [
+      "drill",
+      "tape measure",
+      "nail",
+      "screw"
+    ],
+    "register": "family",
+    "contextNote": "Looking for tools",
+    "imagePrompt": "Cute cartoon cat in a rustic workshop with a workbench and hanging tools, looking for tools, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "tl-04",
+    "roomId": "tools",
+    "frame": "Can you help me {task}?",
+    "slots": [
+      "hammer this",
+      "cut this",
+      "measure that",
+      "tighten this"
+    ],
+    "register": "polite",
+    "contextNote": "Asking for help with tools",
+    "imagePrompt": "Cute cartoon cat in a rustic workshop with a workbench and hanging tools, asking for help with tools, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "tl-05",
+    "roomId": "tools",
+    "frame": "The {tool} is broken.",
+    "slots": [
+      "drill",
+      "saw",
+      "bench",
+      "vise"
+    ],
+    "register": "family",
+    "contextNote": "Reporting broken tools",
+    "imagePrompt": "Cute cartoon cat in a rustic workshop with a workbench and hanging tools, reporting broken tools, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "tl-06",
+    "roomId": "tools",
+    "frame": "I'll use the {tool} on the {object}.",
+    "slots": [
+      "file",
+      "hammer",
+      "drill",
+      "pliers"
+    ],
+    "register": "family",
+    "contextNote": "Describing tool usage",
+    "imagePrompt": "Cute cartoon cat in a rustic workshop with a workbench and hanging tools, describing tool usage, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "tl-07",
+    "roomId": "tools",
+    "frame": "Be careful with the {tool}.",
+    "slots": [
+      "saw",
+      "drill",
+      "hammer",
+      "knife"
+    ],
+    "register": "family",
+    "contextNote": "Safety warnings",
+    "imagePrompt": "Cute cartoon cat in a rustic workshop with a workbench and hanging tools, safety warnings, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "tl-08",
+    "roomId": "tools",
+    "frame": "Let's build a {project}.",
+    "slots": [
+      "shelf",
+      "table",
+      "chair",
+      "box"
+    ],
+    "register": "friendly",
+    "contextNote": "Suggesting a project",
+    "imagePrompt": "Cute cartoon cat in a rustic workshop with a workbench and hanging tools, suggesting a project, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ac-01",
+    "roomId": "actions",
+    "frame": "I need to {verb} now.",
+    "slots": [
+      "run",
+      "jump",
+      "walk",
+      "swim"
+    ],
+    "register": "family",
+    "contextNote": "Expressing need to move",
+    "imagePrompt": "Cute cartoon cat in a simple indoor or outdoor space showing movement and activity, expressing need to move, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ac-02",
+    "roomId": "actions",
+    "frame": "Can you {verb} over here?",
+    "slots": [
+      "come",
+      "run",
+      "walk",
+      "fly"
+    ],
+    "register": "polite",
+    "contextNote": "Calling someone to move",
+    "imagePrompt": "Cute cartoon cat in a simple indoor or outdoor space showing movement and activity, calling someone to move, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ac-03",
+    "roomId": "actions",
+    "frame": "Don't {verb} too fast.",
+    "slots": [
+      "run",
+      "push",
+      "pull",
+      "turn"
+    ],
+    "register": "family",
+    "contextNote": "Movement warnings",
+    "imagePrompt": "Cute cartoon cat in a simple indoor or outdoor space showing movement and activity, movement warnings, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ac-04",
+    "roomId": "actions",
+    "frame": "I just {verb} up.",
+    "slots": [
+      "woke",
+      "got",
+      "stood",
+      "opened"
+    ],
+    "register": "family",
+    "contextNote": "Daily action updates",
+    "imagePrompt": "Cute cartoon cat in a simple indoor or outdoor space showing movement and activity, daily action updates, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ac-05",
+    "roomId": "actions",
+    "frame": "It's time to {routine}.",
+    "slots": [
+      "get dressed",
+      "comb your hair",
+      "wash up",
+      "go to sleep"
+    ],
+    "register": "family",
+    "contextNote": "Daily routine reminders",
+    "imagePrompt": "Cute cartoon cat in a simple indoor or outdoor space showing movement and activity, daily routine reminders, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ac-06",
+    "roomId": "actions",
+    "frame": "Please {verb} the door.",
+    "slots": [
+      "open",
+      "close",
+      "lock",
+      "unlock"
+    ],
+    "register": "polite",
+    "contextNote": "Door commands",
+    "imagePrompt": "Cute cartoon cat in a simple indoor or outdoor space showing movement and activity, door commands, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ac-07",
+    "roomId": "actions",
+    "frame": "I fell and {result}.",
+    "slots": [
+      "hurt myself",
+      "dropped everything",
+      "got dirty"
+    ],
+    "register": "family",
+    "contextNote": "Reporting accidents",
+    "imagePrompt": "Cute cartoon cat in a simple indoor or outdoor space showing movement and activity, reporting accidents, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ac-08",
+    "roomId": "actions",
+    "frame": "Let's {activity} together.",
+    "slots": [
+      "dance",
+      "swim",
+      "run",
+      "walk"
+    ],
+    "register": "friendly",
+    "contextNote": "Inviting joint activity",
+    "imagePrompt": "Cute cartoon cat in a simple indoor or outdoor space showing movement and activity, inviting joint activity, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "em-01",
+    "roomId": "emotions",
+    "frame": "I feel so {emotion} today.",
+    "slots": [
+      "happy",
+      "sad",
+      "angry",
+      "afraid"
+    ],
+    "register": "friendly",
+    "contextNote": "Expressing feelings",
+    "imagePrompt": "Cute cartoon cat in a soft abstract room with warm colors representing feelings, expressing feelings, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "em-02",
+    "roomId": "emotions",
+    "frame": "You look {emotion}.",
+    "slots": [
+      "happy",
+      "nervous",
+      "surprised",
+      "proud"
+    ],
+    "register": "friendly",
+    "contextNote": "Noticing others' emotions",
+    "imagePrompt": "Cute cartoon cat in a soft abstract room with warm colors representing feelings, noticing others' emotions, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "em-03",
+    "roomId": "emotions",
+    "frame": "That makes me feel {emotion}.",
+    "slots": [
+      "joyful",
+      "anxious",
+      "loved",
+      "ashamed"
+    ],
+    "register": "friendly",
+    "contextNote": "Reacting to situations",
+    "imagePrompt": "Cute cartoon cat in a soft abstract room with warm colors representing feelings, reacting to situations, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "em-04",
+    "roomId": "emotions",
+    "frame": "I'm full of {emotion}.",
+    "slots": [
+      "joy",
+      "love",
+      "pride",
+      "confidence"
+    ],
+    "register": "friendly",
+    "contextNote": "Expressing strong positive feelings",
+    "imagePrompt": "Cute cartoon cat in a soft abstract room with warm colors representing feelings, expressing strong positive feelings, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "em-05",
+    "roomId": "emotions",
+    "frame": "Don't be {emotion}.",
+    "slots": [
+      "afraid",
+      "ashamed",
+      "sad",
+      "angry"
+    ],
+    "register": "family",
+    "contextNote": "Comforting someone",
+    "imagePrompt": "Cute cartoon cat in a soft abstract room with warm colors representing feelings, comforting someone, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "em-06",
+    "roomId": "emotions",
+    "frame": "I trust you completely.",
+    "slots": [],
+    "register": "friendly",
+    "contextNote": "Expressing trust",
+    "imagePrompt": "Cute cartoon cat in a soft abstract room with warm colors representing feelings, expressing trust, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "em-07",
+    "roomId": "emotions",
+    "frame": "What a {emotion} surprise!",
+    "slots": [
+      "lovely",
+      "terrible",
+      "wonderful",
+      "strange"
+    ],
+    "register": "friendly",
+    "contextNote": "Reacting to surprises",
+    "imagePrompt": "Cute cartoon cat in a soft abstract room with warm colors representing feelings, reacting to surprises, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "em-08",
+    "roomId": "emotions",
+    "frame": "I'm so {emotion} of you.",
+    "slots": [
+      "proud",
+      "jealous",
+      "fond"
+    ],
+    "register": "friendly",
+    "contextNote": "Expressing feelings toward someone",
+    "imagePrompt": "Cute cartoon cat in a soft abstract room with warm colors representing feelings, expressing feelings toward someone, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "fa-01",
+    "roomId": "farm",
+    "frame": "The {crop} is ready to pick.",
+    "slots": [
+      "tomatoes",
+      "carrots",
+      "lettuce",
+      "apples"
+    ],
+    "register": "friendly",
+    "contextNote": "Harvesting produce",
+    "imagePrompt": "Cute cartoon cat in a sunny farm with vegetable gardens and fruit trees, harvesting produce, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "fa-02",
+    "roomId": "farm",
+    "frame": "Do you want some fresh {produce}?",
+    "slots": [
+      "peppers",
+      "onions",
+      "garlic",
+      "potatoes"
+    ],
+    "register": "friendly",
+    "contextNote": "Offering farm produce",
+    "imagePrompt": "Cute cartoon cat in a sunny farm with vegetable gardens and fruit trees, offering farm produce, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "fa-03",
+    "roomId": "farm",
+    "frame": "These {fruit} are so sweet.",
+    "slots": [
+      "peaches",
+      "cherries",
+      "lemons",
+      "oranges"
+    ],
+    "register": "friendly",
+    "contextNote": "Tasting farm fruits",
+    "imagePrompt": "Cute cartoon cat in a sunny farm with vegetable gardens and fruit trees, tasting farm fruits, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "fa-04",
+    "roomId": "farm",
+    "frame": "I need to water the {plants}.",
+    "slots": [
+      "vegetables",
+      "fruit trees",
+      "flowers",
+      "herbs"
+    ],
+    "register": "family",
+    "contextNote": "Farm maintenance",
+    "imagePrompt": "Cute cartoon cat in a sunny farm with vegetable gardens and fruit trees, farm maintenance, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "fa-05",
+    "roomId": "farm",
+    "frame": "Let's harvest the {crop}.",
+    "slots": [
+      "strawberries",
+      "grapes",
+      "apples",
+      "pears"
+    ],
+    "register": "friendly",
+    "contextNote": "Suggesting harvest",
+    "imagePrompt": "Cute cartoon cat in a sunny farm with vegetable gardens and fruit trees, suggesting harvest, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "fa-06",
+    "roomId": "farm",
+    "frame": "The {vegetable} grew really well this year.",
+    "slots": [
+      "tomato",
+      "carrot",
+      "lettuce",
+      "pepper"
+    ],
+    "register": "friendly",
+    "contextNote": "Commenting on growth",
+    "imagePrompt": "Cute cartoon cat in a sunny farm with vegetable gardens and fruit trees, commenting on growth, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "fa-07",
+    "roomId": "farm",
+    "frame": "Can you help me pick the {fruit}?",
+    "slots": [
+      "apples",
+      "peaches",
+      "lemons",
+      "cherries"
+    ],
+    "register": "polite",
+    "contextNote": "Asking for harvest help",
+    "imagePrompt": "Cute cartoon cat in a sunny farm with vegetable gardens and fruit trees, asking for harvest help, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "fa-08",
+    "roomId": "farm",
+    "frame": "This {produce} is from our garden.",
+    "slots": [
+      "onion",
+      "garlic",
+      "potato",
+      "pepper"
+    ],
+    "register": "friendly",
+    "contextNote": "Sharing homegrown food",
+    "imagePrompt": "Cute cartoon cat in a sunny farm with vegetable gardens and fruit trees, sharing homegrown food, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ft-01",
+    "roomId": "fantasy",
+    "frame": "Look, a {creature}!",
+    "slots": [
+      "dragon",
+      "elf",
+      "fairy",
+      "witch"
+    ],
+    "register": "friendly",
+    "contextNote": "Spotting fantasy creatures",
+    "imagePrompt": "Cute cartoon cat in a whimsical fantasy realm with magical glowing elements, spotting fantasy creatures, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ft-02",
+    "roomId": "fantasy",
+    "frame": "The {being} cast a spell.",
+    "slots": [
+      "wizard",
+      "witch",
+      "fairy",
+      "elf"
+    ],
+    "register": "friendly",
+    "contextNote": "Telling fantasy stories",
+    "imagePrompt": "Cute cartoon cat in a whimsical fantasy realm with magical glowing elements, telling fantasy stories, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ft-03",
+    "roomId": "fantasy",
+    "frame": "I want to be a {character}.",
+    "slots": [
+      "wizard",
+      "elf",
+      "dwarf",
+      "knight"
+    ],
+    "register": "friendly",
+    "contextNote": "Imaginary roleplay",
+    "imagePrompt": "Cute cartoon cat in a whimsical fantasy realm with magical glowing elements, imaginary roleplay, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ft-04",
+    "roomId": "fantasy",
+    "frame": "The {creature} is hiding.",
+    "slots": [
+      "ghost",
+      "vampire",
+      "zombie",
+      "dragon"
+    ],
+    "register": "friendly",
+    "contextNote": "Fantasy storytelling",
+    "imagePrompt": "Cute cartoon cat in a whimsical fantasy realm with magical glowing elements, fantasy storytelling, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ft-05",
+    "roomId": "fantasy",
+    "frame": "Once upon a time there was a {character}.",
+    "slots": [
+      "princess",
+      "dragon",
+      "witch",
+      "wizard"
+    ],
+    "register": "friendly",
+    "contextNote": "Starting a fairy tale",
+    "imagePrompt": "Cute cartoon cat in a whimsical fantasy realm with magical glowing elements, starting a fairy tale, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ft-06",
+    "roomId": "fantasy",
+    "frame": "Do you believe in {beings}?",
+    "slots": [
+      "fairies",
+      "ghosts",
+      "dragons",
+      "magic"
+    ],
+    "register": "friendly",
+    "contextNote": "Fantasy discussions",
+    "imagePrompt": "Cute cartoon cat in a whimsical fantasy realm with magical glowing elements, fantasy discussions, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ft-07",
+    "roomId": "fantasy",
+    "frame": "The {creature} flew away.",
+    "slots": [
+      "dragon",
+      "fairy",
+      "ghost",
+      "witch"
+    ],
+    "register": "friendly",
+    "contextNote": "Narrating fantasy events",
+    "imagePrompt": "Cute cartoon cat in a whimsical fantasy realm with magical glowing elements, narrating fantasy events, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  },
+  {
+    "id": "ft-08",
+    "roomId": "fantasy",
+    "frame": "Let's pretend we're {characters}.",
+    "slots": [
+      "elves",
+      "wizards",
+      "dwarves",
+      "knights"
+    ],
+    "register": "friendly",
+    "contextNote": "Imaginative play",
+    "imagePrompt": "Cute cartoon cat in a whimsical fantasy realm with magical glowing elements, imaginative play, children's storybook illustration style, warm colors, clean lines, friendly expression, cozy atmosphere"
+  }
+]

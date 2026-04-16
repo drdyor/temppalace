@@ -1,0 +1,66 @@
+[
+  {
+    "id": "kt-01",
+    "roomId": "kitchen",
+    "frame": "Can you make me a {item}?",
+    "slots": ["a sandwich", "a coffee", "some tea", "some pasta"],
+    "register": "friendly",
+    "contextNote": "Asking someone to prepare food or drink"
+  },
+  {
+    "id": "kt-02",
+    "roomId": "kitchen",
+    "frame": "What do you want on your {item}?",
+    "slots": ["sandwich", "pizza", "pasta"],
+    "register": "friendly",
+    "contextNote": "Asking about toppings or fillings"
+  },
+  {
+    "id": "kt-03",
+    "roomId": "kitchen",
+    "frame": "Pass me {the item}, please.",
+    "slots": ["the napkin", "the salt", "the pepper", "the ketchup", "the mayo"],
+    "register": "polite",
+    "contextNote": "Asking for something at the table"
+  },
+  {
+    "id": "kt-04",
+    "roomId": "kitchen",
+    "frame": "Is there any {item} left?",
+    "slots": ["bread", "cheese", "milk", "water"],
+    "register": "family",
+    "contextNote": "Checking supplies"
+  },
+  {
+    "id": "kt-05",
+    "roomId": "kitchen",
+    "frame": "Want me to make you a {item}?",
+    "slots": ["some tea", "a coffee", "a sandwich"],
+    "register": "friendly",
+    "contextNote": "Offering to prepare something"
+  },
+  {
+    "id": "kt-06",
+    "roomId": "kitchen",
+    "frame": "I'll set the table.",
+    "slots": [],
+    "register": "family",
+    "contextNote": "Preparing for a meal"
+  },
+  {
+    "id": "kt-07",
+    "roomId": "kitchen",
+    "frame": "What's for {meal}?",
+    "slots": ["dinner", "lunch", "breakfast"],
+    "register": "family",
+    "contextNote": "Asking what is being served"
+  },
+  {
+    "id": "kt-08",
+    "roomId": "kitchen",
+    "frame": "Do you want some {item}?",
+    "slots": ["water", "wine", "bread", "cheese"],
+    "register": "friendly",
+    "contextNote": "Offering food or drink"
+  }
+]

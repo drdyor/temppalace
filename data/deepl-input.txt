@@ -1,0 +1,27 @@
+Can you make me a sandwich?
+Can you make me a coffee?
+Can you make me a tea?
+Can you make me a pasta?
+What do you want on your sandwich?
+What do you want on your pizza?
+What do you want on your pasta?
+Pass me the napkin, please.
+Pass me the salt, please.
+Pass me the pepper, please.
+Pass me the ketchup, please.
+Pass me the mayo, please.
+Is there any bread left?
+Is there any cheese left?
+Is there any milk left?
+Is there any water left?
+Want me to make you a tea?
+Want me to make you a coffee?
+Want me to make you a sandwich?
+I'll set the table.
+What's for dinner?
+What's for lunch?
+What's for breakfast?
+Do you want some water?
+Do you want some wine?
+Do you want some bread?
+Do you want some cheese?
