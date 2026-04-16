@@ -1,7 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useParams, useLocation } from 'wouter';
-import { ArrowLeft, Map, BookOpen, GraduationCap, ClipboardCheck, Volume2, X, Check, Sparkles, MessageCircle, Mic, ChevronRight, Brain } from 'lucide-react';
+import { ArrowLeft, Map, BookOpen, GraduationCap, ClipboardCheck, Volume2, X, Check, Sparkles, MessageCircle, Mic, ChevronRight, Brain, MessagesSquare } from 'lucide-react';
 import { getRoomById, rooms } from '../data/rooms';
+import expandedPhrases from '../data/expanded-phrases.json';
+import type { ExpandedPhrase } from '../data/conversation-templates';
+import TemplateDrill from '../components/TemplateDrill';
 import { universalRules } from '../data/cultural-fluency';
 import { stories } from '../data/stories';
 import { branchingScenarios, type BranchingScenario, type ScenarioNode } from '../data/branching-scenarios';
@@ -325,9 +328,11 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
   getGenderColor: (g: Gender) => string;
 }) {
   if (!room) return null;
-  
+
   const zoneWords = zone.interiorVocab?.map(iv => roomVocab.find(w => w.id === iv.wordId)).filter(Boolean) || [];
-  
+  const [showPractice, setShowPractice] = useState(false);
+  const roomPhrases = (expandedPhrases as ExpandedPhrase[]).filter((p) => p.roomId === room.id);
+
   return (
     <div className="fixed inset-0 z-50 bg-palace-bg/98 backdrop-blur-md p-4">
       <div className="max-w-4xl mx-auto h-full flex flex-col">
@@ -340,10 +345,35 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
               <p className="text-palace-gold">{zone.nameNative}</p>
             </div>
           </div>
-          <button onClick={onClose} className="p-2 text-palace-text/70 hover:text-palace-gold">
-            <X className="w-6 h-6" />
-          </button>
+          <div className="flex items-center gap-2">
+            {roomPhrases.length > 0 && (
+              <button
+                onClick={() => setShowPractice(true)}
+                className="flex items-center gap-2 px-3 py-2 rounded-lg border border-palace-gold/40 text-palace-gold hover:bg-palace-gold/10 font-cinzel text-sm"
+              >
+                <MessagesSquare className="w-4 h-4" />
+                Practice
+              </button>
+            )}
+            <button onClick={onClose} className="p-2 text-palace-text/70 hover:text-palace-gold">
+              <X className="w-6 h-6" />
+            </button>
+          </div>
         </div>
+        {showPractice && (
+          <div className="fixed inset-0 z-60 bg-palace-bg/98 backdrop-blur-md overflow-y-auto p-4">
+            <div className="max-w-2xl mx-auto flex justify-end mb-2">
+              <button
+                onClick={() => setShowPractice(false)}
+                className="p-2 text-palace-text/70 hover:text-palace-gold"
+                aria-label="Close practice"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            <TemplateDrill phrases={roomPhrases} title={`${room.name} — Practice`} />
+          </div>
+        )}
         
         {/* Interior Image with Vocabulary Labels */}
         <div className="flex-1 relative bg-palace-bg/50 rounded-2xl overflow-hidden border border-palace-text/10">
