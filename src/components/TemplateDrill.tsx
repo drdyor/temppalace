@@ -53,6 +53,7 @@ export default function TemplateDrill({ phrases, title }: TemplateDrillProps) {
   }
 
   const current = filtered[Math.min(index, filtered.length - 1)];
+  const imageUrl = `./conversations/${current.templateId}.jpg`;
   const speak = (text: string) => {
     if (!text || !('speechSynthesis' in window)) return;
     const utterance = new SpeechSynthesisUtterance(text);
@@ -91,6 +92,7 @@ export default function TemplateDrill({ phrases, title }: TemplateDrillProps) {
 
         {!showAll ? (
           <>
+            <TemplateImage key={imageUrl} src={imageUrl} alt={current.english} />
             <div className="space-y-4 mb-6">
               <div>
                 <p className="text-sm text-palace-text/50 uppercase tracking-wide mb-1">English</p>
@@ -191,6 +193,22 @@ export default function TemplateDrill({ phrases, title }: TemplateDrillProps) {
           </>
         )}
       </div>
+    </div>
+  );
+}
+
+function TemplateImage({ src, alt }: { src: string; alt: string }) {
+  const [ok, setOk] = useState(true);
+  if (!ok) return null;
+  return (
+    <div className="mb-5 rounded-xl overflow-hidden border border-palace-gold/20 bg-palace-bg/50">
+      <img
+        src={src}
+        alt={alt}
+        onError={() => setOk(false)}
+        className="w-full h-48 sm:h-56 object-cover"
+        loading="lazy"
+      />
     </div>
   );
 }
