@@ -1,10 +1,20 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { useParams, useLocation } from 'wouter';
-import { ArrowLeft, Map, BookOpen, GraduationCap, ClipboardCheck, Volume2, X, Check, Sparkles, MessageCircle, Mic, ChevronRight, Brain, MessagesSquare } from 'lucide-react';
+import { ArrowLeft, Map, BookOpen, GraduationCap, ClipboardCheck, Volume2, X, Check, Sparkles, MessageCircle, Mic, ChevronRight, Brain, MessagesSquare, Pencil, Trash2, Download, Upload, Loader2, Plus } from 'lucide-react';
 import { getRoomById, rooms } from '../data/rooms';
 import expandedPhrases from '../data/expanded-phrases.json';
 import type { ExpandedPhrase } from '../data/conversation-templates';
 import TemplateDrill from '../components/TemplateDrill';
+import { translate, isoFor } from '../lib/translate';
+import {
+  listForZone,
+  addUserVocab,
+  removeUserVocab,
+  updateUserVocab,
+  exportJson,
+  importJson,
+  type UserVocabEntry,
+} from '../lib/user-vocab';
 import { universalRules } from '../data/cultural-fluency';
 import { stories } from '../data/stories';
 import { branchingScenarios, type BranchingScenario, type ScenarioNode } from '../data/branching-scenarios';
@@ -333,6 +343,133 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
   const [showPractice, setShowPractice] = useState(false);
   const roomPhrases = (expandedPhrases as ExpandedPhrase[]).filter((p) => p.roomId === room.id);
 
+  const { currentLanguage } = useLanguage();
+  const targetLang = isoFor(currentLanguage);
+  const speechLang = useMemo(() => {
+    switch (targetLang) {
+      case 'it': return 'it-IT';
+      case 'fr': return 'fr-FR';
+      case 'es': return 'es-ES';
+      default: return 'en-US';
+    }
+  }, [targetLang]);
+  const speakIt = useCallback((text: string) => {
+    if (!text || !('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = speechLang;
+    u.rate = 0.85;
+    window.speechSynthesis.speak(u);
+  }, [speechLang]);
+
+  const [editMode, setEditMode] = useState(false);
+  const [userEntries, setUserEntries] = useState<UserVocabEntry[]>(() =>
+    listForZone(targetLang, room.id, zone.id),
+  );
+  const [draft, setDraft] = useState<{ x: number; y: number; english: string; loading: boolean; error: string | null } | null>(null);
+  const [editingEntry, setEditingEntry] = useState<{ id: string; native: string } | null>(null);
+  const imageWrapRef = useRef<HTMLDivElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    setUserEntries(listForZone(targetLang, room.id, zone.id));
+  }, [targetLang, room.id, zone.id]);
+
+  const refreshUser = useCallback(() => {
+    setUserEntries(listForZone(targetLang, room.id, zone.id));
+  }, [targetLang, room.id, zone.id]);
+
+  const handleImageClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!editMode) return;
+    if (e.target !== e.currentTarget && !(e.target as HTMLElement).dataset.imageSurface) return;
+    const rect = imageWrapRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    setDraft({ x, y, english: '', loading: false, error: null });
+  };
+
+  const submitDraft = async () => {
+    if (!draft || !draft.english.trim() || draft.loading) return;
+    setDraft({ ...draft, loading: true, error: null });
+    let native = '';
+    let failed = false;
+    try {
+      native = await translate(draft.english, targetLang, 'en');
+    } catch (err) {
+      failed = true;
+    }
+    addUserVocab(targetLang, {
+      roomId: room.id,
+      zoneId: zone.id,
+      x: draft.x,
+      y: draft.y,
+      english: draft.english.trim(),
+      native,
+      needsReview: true,
+    });
+    refreshUser();
+    if (failed) {
+      setDraft({ ...draft, loading: false, error: 'Auto-translate failed — saved with empty translation, edit it manually.' });
+      setTimeout(() => setDraft(null), 1800);
+    } else {
+      setDraft(null);
+    }
+  };
+
+  const handleDeleteUser = (id: string) => {
+    removeUserVocab(targetLang, id);
+    refreshUser();
+  };
+
+  const handleSaveEdit = () => {
+    if (!editingEntry) return;
+    updateUserVocab(targetLang, editingEntry.id, {
+      native: editingEntry.native.trim(),
+      needsReview: false,
+    });
+    setEditingEntry(null);
+    refreshUser();
+  };
+
+  const handleRetranslate = async (entry: UserVocabEntry) => {
+    updateUserVocab(targetLang, entry.id, { needsReview: true });
+    try {
+      const native = await translate(entry.english, targetLang, 'en');
+      updateUserVocab(targetLang, entry.id, { native, needsReview: true });
+    } catch {
+      // ignore — entry still exists with prior native
+    }
+    refreshUser();
+  };
+
+  const handleExport = () => {
+    const json = exportJson(targetLang);
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `memory-palace-${targetLang}-vocab.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleImportPick = () => fileInputRef.current?.click();
+
+  const handleImportFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    try {
+      const text = await file.text();
+      importJson(text, 'merge');
+      refreshUser();
+    } catch (err) {
+      alert('Import failed — file must be JSON exported by this app.');
+    } finally {
+      e.target.value = '';
+    }
+  };
+
   return (
     <div className="fixed inset-0 z-50 bg-palace-bg/98 backdrop-blur-md p-4">
       <div className="max-w-4xl mx-auto h-full flex flex-col">
@@ -355,11 +492,54 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
                 Practice
               </button>
             )}
+            <button
+              onClick={() => { setEditMode((v) => !v); setDraft(null); }}
+              className={`flex items-center gap-2 px-3 py-2 rounded-lg border font-cinzel text-sm transition-colors ${
+                editMode
+                  ? 'border-palace-gold bg-palace-gold text-palace-bg'
+                  : 'border-palace-gold/40 text-palace-gold hover:bg-palace-gold/10'
+              }`}
+              title="Add your own words to this zone"
+            >
+              <Pencil className="w-4 h-4" />
+              {editMode ? 'Done' : 'Edit'}
+            </button>
+            {editMode && (
+              <>
+                <button
+                  onClick={handleExport}
+                  className="p-2 text-palace-text/70 hover:text-palace-gold"
+                  title="Export your words as JSON"
+                >
+                  <Download className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={handleImportPick}
+                  className="p-2 text-palace-text/70 hover:text-palace-gold"
+                  title="Import a JSON backup"
+                >
+                  <Upload className="w-5 h-5" />
+                </button>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="application/json"
+                  className="hidden"
+                  onChange={handleImportFile}
+                />
+              </>
+            )}
             <button onClick={onClose} className="p-2 text-palace-text/70 hover:text-palace-gold">
               <X className="w-6 h-6" />
             </button>
           </div>
         </div>
+        {editMode && (
+          <div className="mb-2 text-xs text-palace-gold/80 font-cinzel flex items-center gap-2">
+            <Plus className="w-3 h-3" />
+            Click anywhere on the image to add a word. Auto-translates to {targetLang.toUpperCase()}.
+          </div>
+        )}
         {showPractice && (
           <div className="fixed inset-0 z-60 bg-palace-bg/98 backdrop-blur-md overflow-y-auto p-4">
             <div className="max-w-2xl mx-auto flex justify-end mb-2">
@@ -376,36 +556,43 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
         )}
         
         {/* Interior Image with Vocabulary Labels */}
-        <div className="flex-1 relative bg-palace-bg/50 rounded-2xl overflow-hidden border border-palace-text/10">
+        <div
+          ref={imageWrapRef}
+          onClick={handleImageClick}
+          className={`flex-1 relative bg-palace-bg/50 rounded-2xl overflow-hidden border border-palace-text/10 ${
+            editMode ? 'cursor-crosshair ring-2 ring-palace-gold/40' : ''
+          }`}
+          data-image-surface="true"
+        >
           {zone.interiorImage ? (
-            <RoomImage src={zone.interiorImage} alt={zone.name} roomId={room.id} className="w-full h-full" />
+            <div data-image-surface="true" className="w-full h-full pointer-events-none">
+              <RoomImage src={zone.interiorImage} alt={zone.name} roomId={room.id} className="w-full h-full" />
+            </div>
           ) : (
-            <div className="w-full h-full flex items-center justify-center">
+            <div data-image-surface="true" className="w-full h-full flex items-center justify-center">
               <span className="text-palace-text/40">Interior image coming soon</span>
             </div>
           )}
-          
-          {/* Vocabulary labels positioned on the image */}
+
+          {/* Preset vocabulary labels */}
           {zone.interiorVocab?.map((iv) => {
             const word = roomVocab.find(w => w.id === iv.wordId);
             if (!word) return null;
             return (
               <button
                 key={word.id}
-                onClick={() => onSelectWord(word)}
+                onClick={(e) => { e.stopPropagation(); onSelectWord(word); }}
                 className="absolute transform -translate-x-1/2 -translate-y-1/2 group"
                 style={{ left: `${iv.x}%`, top: `${iv.y}%` }}
               >
-                {/* Dot marker */}
-                <div 
+                <div
                   className="w-4 h-4 rounded-full border-2 border-white shadow-lg group-hover:scale-150 transition-transform"
                   style={{ backgroundColor: getGenderColor(word.gender) }}
                 />
-                {/* Label - always visible */}
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 whitespace-nowrap z-10">
-                  <span 
+                  <span
                     className="px-2 py-0.5 rounded text-xs font-cinzel font-bold shadow-md"
-                    style={{ 
+                    style={{
                       backgroundColor: getGenderColor(word.gender),
                       color: 'white'
                     }}
@@ -413,7 +600,6 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
                     {word.native}
                   </span>
                 </div>
-                {/* English on hover */}
                 <div className="absolute top-[calc(100%+18px)] left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
                   <span className="bg-palace-bg/90 text-palace-text/70 px-2 py-0.5 rounded text-xs border border-palace-text/20">
                     {word.english}
@@ -422,6 +608,125 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
               </button>
             );
           })}
+
+          {/* User-added vocabulary markers */}
+          {userEntries.map((entry) => (
+            <div
+              key={entry.id}
+              className="absolute transform -translate-x-1/2 -translate-y-1/2 group"
+              style={{ left: `${entry.x}%`, top: `${entry.y}%` }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="w-4 h-4 rounded-full border-2 border-palace-gold bg-palace-bg shadow-lg group-hover:scale-150 transition-transform" />
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 whitespace-nowrap z-10 flex items-center gap-1">
+                {editMode && editingEntry?.id === entry.id ? (
+                  <div className="flex items-center gap-1">
+                    <input
+                      autoFocus
+                      type="text"
+                      value={editingEntry.native}
+                      onChange={(e) => setEditingEntry({ ...editingEntry, native: e.target.value })}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') handleSaveEdit();
+                        if (e.key === 'Escape') setEditingEntry(null);
+                      }}
+                      className="w-28 px-2 py-0.5 rounded text-xs bg-palace-bg border border-palace-gold text-palace-text focus:outline-none"
+                    />
+                    <button
+                      onClick={handleSaveEdit}
+                      className="p-1 rounded bg-palace-gold text-palace-bg"
+                      title="Save"
+                    >
+                      <Check className="w-3 h-3" />
+                    </button>
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => {
+                      if (editMode) {
+                        setEditingEntry({ id: entry.id, native: entry.native });
+                      } else {
+                        speakIt(entry.native || entry.english);
+                      }
+                    }}
+                    className="px-2 py-0.5 rounded text-xs font-cinzel font-bold shadow-md bg-palace-gold text-palace-bg border border-palace-bg/20"
+                    title={editMode ? 'Click to edit translation' : entry.needsReview ? 'Auto-translated — verify with DeepL later' : undefined}
+                  >
+                    {entry.native || entry.english}
+                    {entry.needsReview && <span className="ml-1 opacity-60">·</span>}
+                  </button>
+                )}
+                {editMode && editingEntry?.id !== entry.id && (
+                  <button
+                    onClick={() => handleDeleteUser(entry.id)}
+                    className="p-1 rounded bg-red-500/80 text-white hover:bg-red-500"
+                    title="Remove"
+                  >
+                    <Trash2 className="w-3 h-3" />
+                  </button>
+                )}
+              </div>
+              <div className="absolute top-[calc(100%+22px)] left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 flex items-center gap-1">
+                <span className="bg-palace-bg/90 text-palace-text/70 px-2 py-0.5 rounded text-xs border border-palace-text/20">
+                  {entry.english}
+                </span>
+                {editMode && (
+                  <button
+                    onClick={() => handleRetranslate(entry)}
+                    className="text-xs text-palace-gold/80 hover:text-palace-gold underline"
+                  >
+                    re-translate
+                  </button>
+                )}
+              </div>
+            </div>
+          ))}
+
+          {/* Draft popover — in-place form for a new word */}
+          {draft && (
+            <div
+              className="absolute z-20 -translate-x-1/2"
+              style={{ left: `${draft.x}%`, top: `${draft.y}%` }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="mt-2 w-56 bg-palace-bg border border-palace-gold rounded-xl shadow-2xl p-3">
+                <p className="text-xs text-palace-text/60 font-cinzel mb-1">
+                  New word → {targetLang.toUpperCase()}
+                </p>
+                <input
+                  autoFocus
+                  type="text"
+                  value={draft.english}
+                  placeholder="english word"
+                  onChange={(e) => setDraft({ ...draft, english: e.target.value, error: null })}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') submitDraft();
+                    if (e.key === 'Escape') setDraft(null);
+                  }}
+                  className="w-full px-2 py-1 rounded bg-palace-bg/50 border border-palace-text/20 text-palace-text text-sm focus:outline-none focus:border-palace-gold"
+                />
+                {draft.error && (
+                  <p className="text-xs text-red-400 mt-1">{draft.error}</p>
+                )}
+                <div className="flex items-center justify-between mt-2">
+                  <button
+                    onClick={() => setDraft(null)}
+                    className="text-xs text-palace-text/50 hover:text-palace-text"
+                  >
+                    cancel
+                  </button>
+                  <button
+                    onClick={submitDraft}
+                    disabled={!draft.english.trim() || draft.loading}
+                    className="flex items-center gap-1 px-3 py-1 rounded bg-palace-gold text-palace-bg text-xs font-cinzel disabled:opacity-50"
+                  >
+                    {draft.loading ? <Loader2 className="w-3 h-3 animate-spin" /> : <Plus className="w-3 h-3" />}
+                    save
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
         
         {/* Word list for this zone */}
