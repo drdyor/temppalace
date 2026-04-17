@@ -27,6 +27,10 @@ These go in `public/conversations/` as `{templateId}.jpg`. The TemplateDrill com
 
 Use the `imagePrompt` field from `src/data/conversation-templates-all.json` for generation prompts. Style: cute cartoon cat, children's storybook illustration, warm colors, clean lines.
 
+All 144 templates already have detailed `imagePrompt` fields in `src/data/conversation-templates-all.json`. Style: "3D rendered elegant anthropomorphic cat mascot, big expressive eyes, soft fluffy fur, vintage luxury aesthetic, warm cinematic lighting, highly detailed". Each prompt is scene-specific (e.g. kt-03: "A polite anthropomorphic cat mascot at a dinner table extending one paw toward an empty space where a napkin would be...").
+
+See `scripts/add-image-prompts-v2.py` for the full prompt dictionary — use these directly in your image generator.
+
 **Missing by room:**
 
 | Room | Template IDs needed | Count |
@@ -56,18 +60,20 @@ Kitchen (kt-01 to kt-08) is already complete.
 
 These go in `public/rooms/` and need to be referenced via `interiorImage` in `src/data/rooms.ts`.
 
-| Room | Zone ID | Zone Name | Suggested filename |
-|------|---------|-----------|-------------------|
-| animals | mammals | Mammal Zone | animals-mammals.jpg |
-| tools | hand-tools | Hand Tools | tools-hand.jpg |
-| tools | workbench | Workbench | tools-workbench.jpg |
-| actions | movement | Movement Zone | actions-movement.jpg |
-| actions | daily-actions | Daily Actions | actions-daily.jpg |
-| emotions | feelings | Feelings | emotions-feelings.jpg |
-| emotions | states | Mental States | emotions-states.jpg |
-| farm | fruits | Fruit Orchard | farm-fruits.jpg |
-| fantasy | creatures | Mythical Creatures | fantasy-creatures.jpg |
-| fantasy | supernatural | Supernatural | fantasy-supernatural.jpg |
+Style for all: **Cozy interior scene, children's storybook illustration, warm colors, clean lines, detailed background with labeled areas for vocabulary placement, no text or words in the image**
+
+| Room | Zone ID | Zone Name | Filename | Image Prompt |
+|------|---------|-----------|----------|-------------|
+| animals | mammals | Mammal Zone | animals-mammals.jpg | Inside a warm barn-like shelter with straw bedding, wooden stalls containing a horse, cow, sheep, rabbit, and pig. Soft golden light from a window. Friendly cozy sanctuary atmosphere. |
+| tools | hand-tools | Hand Tools | tools-hand.jpg | Close-up of a rustic workshop wall with hooks and pegs displaying hand tools: hammer, screwdriver, pliers, wrench, saw, tape measure. Warm wood paneling, soft lantern light. |
+| tools | workbench | Workbench | tools-workbench.jpg | Sturdy wooden workbench in a workshop with a vice, scattered nails, sandpaper, wood shavings, a ruler, and a half-built wooden box. Warm overhead lamp, sawdust particles in the air. |
+| actions | movement | Movement Zone | actions-movement.jpg | Open indoor gymnasium or park space with motion trails showing running, jumping, climbing, swimming. Warm afternoon light, clean lines, dynamic composition suggesting movement. |
+| actions | daily-actions | Daily Actions | actions-daily.jpg | Cozy home interior split into morning routine vignettes: a set breakfast table, an open door with shoes, a hanging jacket, a clock on the wall, a bed being made. Warm pastel colors. |
+| emotions | feelings | Feelings | emotions-feelings.jpg | Soft abstract room with warm gradients of color — rosy pink, sunshine yellow, calm blue, deep purple sections. Each section has a subtle facial expression motif (smile, tear, surprise). Dreamy, gentle. |
+| emotions | states | Mental States | emotions-states.jpg | Cozy reading nook with a window showing changing weather outside. Inside: a thinking chair, scattered puzzle pieces, a journal, a candle. Calm, contemplative atmosphere, warm muted colors. |
+| farm | fruits | Fruit Orchard | farm-fruits.jpg | Sunny orchard with fruit trees bearing apples, oranges, lemons, cherries, pears. A wooden ladder leaning on one tree, a basket on the ground. Golden hour light, green grass. |
+| fantasy | creatures | Mythical Creatures | fantasy-creatures.jpg | Enchanted forest clearing with magical creatures: a small dragon sleeping on a rock, a unicorn drinking from a glowing stream, a tiny phoenix on a branch. Soft magical light, mushrooms, fireflies. |
+| fantasy | supernatural | Supernatural | fantasy-supernatural.jpg | Mystical tower room with a crystal ball on a table, floating candles, a spell book open with glowing pages, a magic mirror on the wall. Purple and gold magical glow, starry ceiling. |
 
 After generating, add `interiorImage: '/rooms/{filename}'` to the matching zone in `src/data/rooms.ts`.
 
