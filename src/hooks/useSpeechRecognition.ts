@@ -1,4 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import { getTtsCode } from '../lib/language-config';
 
 interface SpeechRecognitionAlternative {
   transcript: string;
@@ -27,7 +29,8 @@ interface UseSpeechRecognitionOptions {
 }
 
 export function useSpeechRecognition(options: UseSpeechRecognitionOptions = {}) {
-  const { onResult, onError, language = 'it-IT' } = options;
+  const { currentLanguage } = useLanguage();
+  const { onResult, onError, language = getTtsCode(currentLanguage) } = options;
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState('');
   const [hasSupport, setHasSupport] = useState(false);

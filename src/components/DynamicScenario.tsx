@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useOllama } from '../hooks/useOllama';
+import { useLanguage } from '../context/LanguageContext';
+import { getTtsCode } from '../lib/language-config';
 import { Sparkles, Loader2, RefreshCw } from 'lucide-react';
 import DialogueScene from './DialogueScene';
 import type { BranchingScenario } from '../data/cultural-fluency';
@@ -14,9 +16,11 @@ interface DynamicScenarioProps {
 export default function DynamicScenario({ roomId, roomName, onClose }: DynamicScenarioProps) {
   const [scenario, setScenario] = useState<BranchingScenario | null>(null);
   const [showDialogue, setShowDialogue] = useState(false);
-  const { generateScenario, isLoading, error } = useOllama({ 
+  const { currentLanguage } = useLanguage();
+  const { generateScenario, isLoading, error } = useOllama({
     model: 'llama3.2',
-    temperature: 0.8 
+    temperature: 0.8,
+    language: currentLanguage,
   });
 
   const situationTemplates: Record<string, string[]> = {
@@ -73,7 +77,7 @@ export default function DynamicScenario({ roomId, roomName, onClose }: DynamicSc
         roomId,
         title: result.title,
         titleNative: 'Scenario Generato',
-        timeContext: new Date().toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' }),
+        timeContext: new Date().toLocaleTimeString(getTtsCode(currentLanguage), { hour: '2-digit', minute: '2-digit' }),
         startNodeId: 'start',
         culturalLesson: 'Cultural nuances learned from this interaction',
         nodes: {}

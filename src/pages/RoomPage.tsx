@@ -16,13 +16,13 @@ import {
 } from '../lib/user-vocab';
 import { universalRules } from '../data/cultural-fluency';
 import { stories } from '../data/stories';
-import { branchingScenarios, type BranchingScenario, type ScenarioNode } from '../data/branching-scenarios';
+import { branchingScenarios } from '../data/branching-scenarios';
 import { getWordSentences, practicalPhrases } from '../data/word-sentences';
 import { useProgress } from '../context/ProgressContext';
 import { useSpeechRecognition, compareSpoken } from '../hooks/useSpeechRecognition';
 import { useFSRS } from '../hooks/useFSRS';
 import { useLanguage } from '../context/LanguageContext';
-import type { TabType, VocabularyItem, Gender, Zone } from '../types';
+import type { TabType, VocabularyItem, Gender, Zone, BranchingScenario, ScenarioNode } from '../types';
 import RoomImage from '../components/RoomImage';
 import { getTtsCode, getVoiceSearch, getArticle } from '../lib/language-config';
 
@@ -80,7 +80,7 @@ export default function RoomPage() {
   
   const room = roomId ? getRoomById(roomId) : undefined;
   const { getWordProgress, markWordLearned, getRoomMastery } = useProgress();
-  const { getWord, currentLanguage, targetLabel, sourceLabel, getTargetText, getSourceText } = useLanguage();
+  const { getWord } = useLanguage();
   const { speak } = useTtsSpeech();
   const { addWord: addToSRS, getCard } = useFSRS();
   const [inDeck, setInDeck] = useState<Record<string, boolean>>({});
@@ -918,12 +918,13 @@ function StoriesTab({ stories, speak }: { stories: typeof import('../data/storie
 // (keeping the same implementation as before)
 
 function PracticeTab({ vocabulary, roomId, onMarkLearned }: { vocabulary: VocabularyItem[]; roomId: string; onMarkLearned: (_roomId: string, wordId: string) => void }) {
+  const { currentLanguage, targetLabel, sourceLabel, getTargetText, getSourceText } = useLanguage();
   const [mode, setMode] = useState<'flashcard' | 'gender' | 'speak'>('flashcard');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [showGenderResult, setShowGenderResult] = useState<'correct' | 'incorrect' | null>(null);
   const [speakResult, setSpeakResult] = useState<{ similarity: number; isMatch: boolean; missingWords: string[] } | null>(null);
-  
+
   const { isListening, transcript, hasSupport, startListening, stopListening } = useSpeechRecognition({
     language: getTtsCode(currentLanguage),
     onResult: (spoken) => {
@@ -1308,11 +1309,12 @@ function WordModal({ word, onClose, onSpeak, progress, onMarkLearned, getGenderC
   onCheckDeck: () => void;
   inDeck: boolean;
 }) {
+  const { currentLanguage, sourceLabel, getSourceText } = useLanguage();
   const sentences = getWordSentences(word.id, word);
   const [showPhrases, setShowPhrases] = useState(false);
 
   useEffect(() => { onCheckDeck(); }, [word.id, onCheckDeck]);
-  
+
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
       <div className="bg-palace-bg border border-palace-text/20 rounded-2xl max-w-lg w-full max-h-[90vh] overflow-auto">
@@ -1325,7 +1327,7 @@ function WordModal({ word, onClose, onSpeak, progress, onMarkLearned, getGenderC
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-palace-text/50 text-sm">{word.gender === 'masculine' ? 'il' : word.gender === 'feminine' ? 'la' : ''}</span>
+                  <span className="text-palace-text/50 text-sm">{getArticle(word.gender === 'none' ? 'none' : word.gender, currentLanguage)}</span>
                 </div>
                 <h3 className="font-cinzel text-3xl text-palace-text">{word.native}</h3>
               </div>

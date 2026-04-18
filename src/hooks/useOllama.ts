@@ -1,6 +1,6 @@
-// TODO(LANG-VELCRO): Italian-only system prompts. Update for multi-language generation.
-
 import { useState, useCallback } from 'react';
+import type { Language } from '../types';
+import { getLangConfig } from '../lib/language-config';
 
 interface OllamaMessage {
   role: 'system' | 'user' | 'assistant';
@@ -10,10 +10,12 @@ interface OllamaMessage {
 interface UseOllamaOptions {
   model?: string;
   temperature?: number;
+  language?: Language;
 }
 
 export function useOllama(options: UseOllamaOptions = {}) {
-  const { model = 'llama3.2', temperature = 0.7 } = options;
+  const { model = 'llama3.2', temperature = 0.7, language = 'italian' } = options;
+  const langConfig = getLangConfig(language);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -74,15 +76,15 @@ export function useOllama(options: UseOllamaOptions = {}) {
       }>;
     }>;
   } | null> => {
-    const systemPrompt = `You are a language learning scenario generator. Create branching dialogue scenarios for Italian cultural situations.
-    
+    const systemPrompt = `You are a language learning scenario generator. Create branching dialogue scenarios for ${langConfig.name} cultural situations.
+
 Rules:
-- Focus on authentic Italian cultural nuances
+- Focus on authentic ${langConfig.name} cultural nuances
 - Include multiple choice paths (A/B/C)
 - One path should be culturally "perfect", one "acceptable", one "faux pas"
 - Provide brief feedback for each choice explaining the cultural reasoning
 - Keep dialogue natural and conversational
-- Use Italian phrases with English translations
+- Use ${langConfig.name} phrases with English translations
 
 Output valid JSON in this format:
 {
@@ -91,7 +93,7 @@ Output valid JSON in this format:
     {
       "id": "start",
       "speaker": "npc",
-      "text": "Italian dialogue with English translation in parentheses",
+      "text": "${langConfig.name} dialogue with English translation in parentheses",
       "choices": [
         {
           "text": "Choice text in English",
@@ -103,8 +105,8 @@ Output valid JSON in this format:
   ]
 }`;
 
-    const vocabSection = context.vocabulary?.length 
-      ? `\n- Try to naturally incorporate some of these Italian words: ${context.vocabulary.slice(0, 15).join(', ')}`
+    const vocabSection = context.vocabulary?.length
+      ? `\n- Try to naturally incorporate some of these ${langConfig.name} words: ${context.vocabulary.slice(0, 15).join(', ')}`
       : '';
 
     const prompt = `Create a branching scenario for:
@@ -131,7 +133,7 @@ Generate 3-4 nodes with choices leading to different outcomes.`;
 
   // Generate cultural explanation for a word or phrase
   const explainCulturalContext = useCallback(async (phrase: string, context: string): Promise<string> => {
-    const systemPrompt = `You are an Italian cultural expert. Explain the cultural context of phrases and expressions.
+    const systemPrompt = `You are a ${langConfig.name} cultural expert. Explain the cultural context of phrases and expressions.
     Be concise but informative. Include when to use it, when NOT to use it, and any regional variations.`;
 
     const prompt = `Explain the cultural context of "${phrase}" in this situation: ${context}`;
@@ -141,7 +143,7 @@ Generate 3-4 nodes with choices leading to different outcomes.`;
 
   // Generate alternative responses for a dialogue
   const generateAlternatives = useCallback(async (situation: string, currentDialogue: string): Promise<string[]> => {
-    const systemPrompt = `You are an Italian language teacher. Given a dialogue situation, suggest 3-4 alternative ways to say the same thing, 
+    const systemPrompt = `You are a ${langConfig.name} language teacher. Given a dialogue situation, suggest 3-4 alternative ways to say the same thing,
     ranging from formal to informal. Only return the alternatives, one per line.`;
 
     const prompt = `Situation: ${situation}\nCurrent dialogue: ${currentDialogue}\n\nSuggest alternative responses:`;
@@ -157,19 +159,19 @@ Generate 3-4 nodes with choices leading to different outcomes.`;
     notes: string;
     isVerb: boolean;
   } | null> => {
-    const systemPrompt = `You are an Italian language teacher creating vocabulary cards. Respond ONLY with valid JSON.`;
+    const systemPrompt = `You are a ${langConfig.name} language teacher creating vocabulary cards. Respond ONLY with valid JSON.`;
 
-    const prompt = `For the Italian word "${word}" (English: ${english}), generate a learning card for a student in the "${roomName}" room.
+    const prompt = `For the ${langConfig.name} word "${word}" (English: ${english}), generate a learning card for a student in the "${roomName}" room.
 
 Respond with valid JSON:
 {
   "examples": [
-    {"native": "Italian sentence with ${word}", "english": "English translation", "context": "e.g. kitchen, dining"}
+    {"native": "${langConfig.name} sentence with ${word}", "english": "English translation", "context": "e.g. kitchen, dining"}
   ],
   "conjugation": {
-    "present": ["io ...", "tu ...", "lui/lei ...", "noi ...", "voi ...", "loro ..."],
-    "past": ["io ...", "tu ...", "lui/lei ...", "noi ...", "voi ...", "loro ..."],
-    "future": ["io ...", "tu ...", "lui/lei ...", "noi ...", "voi ...", "loro ..."]
+    "present": ["${langConfig.nativeName} conjugation line 1", "..."],
+    "past": ["..."],
+    "future": ["..."]
   },
   "notes": "Brief grammar note or exception (1-2 sentences).",
   "isVerb": true/false

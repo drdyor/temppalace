@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ZoomIn, ZoomOut, RotateCcw, X, Volume2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LANGUAGE_REGISTRY } from "../../lib/language-config";
 
 // ===== TYPES =====
 export interface SpatialZone {
@@ -72,7 +73,8 @@ export function SimpleViewer({
 
   const speak = (text: string) => {
     const u = new SpeechSynthesisUtterance(text);
-    u.lang = language === 'fr' ? "fr-FR" : "it-IT";
+    u.lang = Object.values(LANGUAGE_REGISTRY).find(c => c.iso === language)?.ttsCode
+      ?? LANGUAGE_REGISTRY.italian.ttsCode;
     u.rate = 0.85;
     speechSynthesis.speak(u);
   };

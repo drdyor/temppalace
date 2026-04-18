@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useFSRS } from '../hooks/useFSRS';
+import { useLanguage } from '../context/LanguageContext';
+import { getTtsCode } from '../lib/language-config';
 
 interface Props {
   text: string;
@@ -37,7 +39,9 @@ function stripPunct(w: string): string {
   return w.toLowerCase().replace(/[^\p{L}\p{N}']/gu, '');
 }
 
-export function StoryReader({ text, lang = 'it-IT', rate = 0.9, onUnknownWord }: Props) {
+export function StoryReader({ text, lang, rate = 0.9, onUnknownWord }: Props) {
+  const { currentLanguage } = useLanguage();
+  const effectiveLang = lang ?? getTtsCode(currentLanguage);
   const [isPlaying, setIsPlaying] = useState(false);
   const [activeId, setActiveId] = useState<number | null>(null);
   const [savedIds, setSavedIds] = useState<Set<number>>(new Set());
@@ -68,7 +72,7 @@ export function StoryReader({ text, lang = 'it-IT', rate = 0.9, onUnknownWord }:
   const play = () => {
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = lang;
+    utterance.lang = effectiveLang;
     utterance.rate = rate;
 
     utterance.onboundary = (event) => {

@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import type { Language, LanguageData, VocabularyItem, NarrativeParagraph, LearningDirection } from '../types';
 import { italianData } from '../data/italian';
-import { getLangConfig, getLabel } from '../lib/language-config';
+import { getLabel } from '../lib/language-config';
 
 interface LanguageContextType {
   currentLanguage: Language;

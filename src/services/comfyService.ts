@@ -1,7 +1,14 @@
 // Flexible ComfyUI Service - Adapts to your loaded models
 
 import { getRoomById } from '../data/rooms';
-import { italianVocabulary } from '../data/italian-generated';
+
+export interface VocabEntry {
+  native?: string;
+  english?: string;
+  emoji?: string;
+  gender?: string;
+}
+type VocabMap = Record<string, VocabEntry>;
 
 const COMFY_API_URL = 'http://127.0.0.1:8188';
 
@@ -109,8 +116,9 @@ class ComfyService {
     return checkpoints[0].name;
   }
 
-  // Generate a room image enriched with room vocabulary
-  async generateRoom(roomType: string, style: string = 'italian'): Promise<GenerationResult> {
+  // Generate a room image enriched with room vocabulary.
+  // Pass vocabMap from the current language's vocabulary (e.g. italianVocabulary for Italian).
+  async generateRoom(roomType: string, style: string = 'mediterranean', vocabMap?: VocabMap): Promise<GenerationResult> {
     const model = this.getBestModel('realistic');
     const seed = Math.floor(Math.random() * 1000000);
 
@@ -140,13 +148,11 @@ class ComfyService {
     // Build vocabulary enrichment from room words
     let vocabEnrichment = '';
     const room = getRoomById(roomType);
-    if (room && room.vocabularyIds.length > 0) {
-      // Pick up to 8 visual/noun words from the room vocabulary
+    if (vocabMap && room && room.vocabularyIds.length > 0) {
       const visualWords = room.vocabularyIds
-        .map(id => italianVocabulary[id])
+        .map(id => vocabMap[id])
         .filter(w => w && (w.emoji || w.gender !== 'none'))
         .slice(0, 8);
-      
       if (visualWords.length > 0) {
         const wordDesc = visualWords.map(w => w.native).join(', ');
         vocabEnrichment = ` featuring: ${wordDesc}`;
@@ -218,8 +224,9 @@ class ComfyService {
     return this.executeWorkflow(workflow, fullPrompt, seed, model);
   }
 
-  // Generate a cat character enriched with room vocabulary
-  async generateCatCharacter(role: string, mood: string, roomId?: string): Promise<GenerationResult> {
+  // Generate a cat character enriched with room vocabulary.
+  // Pass vocabMap from the current language's vocabulary.
+  async generateCatCharacter(role: string, mood: string, roomId?: string, vocabMap?: VocabMap): Promise<GenerationResult> {
     const model = this.getBestModel('anime'); // Cats work better with anime/cartoon models
     const seed = Math.floor(Math.random() * 1000000);
 
@@ -251,14 +258,13 @@ class ComfyService {
 
     // Build vocabulary enrichment from room words for the character context
     let vocabEnrichment = '';
-    if (roomId) {
+    if (vocabMap && roomId) {
       const room = getRoomById(roomId);
       if (room && room.vocabularyIds.length > 0) {
         const visualWords = room.vocabularyIds
-          .map(id => italianVocabulary[id])
+          .map(id => vocabMap[id])
           .filter(w => w && w.emoji)
           .slice(0, 5);
-        
         if (visualWords.length > 0) {
           const words = visualWords.map(w => w.english).join(', ');
           vocabEnrichment = `, surrounded by ${words}, themed environment`;

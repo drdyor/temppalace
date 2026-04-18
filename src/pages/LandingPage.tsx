@@ -7,7 +7,7 @@ const LandingPage = () => {
   const navigate = useNavigate();
   const rooms = getAllRooms();
   const totalWords = rooms.reduce((acc, room) => acc + room.vocabularyIds.length, 0);
-  const { languageData, targetLabel } = useLanguage();
+  const { targetLabel } = useLanguage();
 
   const features = [
     {
