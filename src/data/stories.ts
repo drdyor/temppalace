@@ -1,3 +1,5 @@
+// TODO(LANG-VELCRO): Italian-only stories. Needs translated versions for other languages.
+
 export interface StoryLine {
   italian: string;
   english: string;

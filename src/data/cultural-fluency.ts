@@ -1,4 +1,4 @@
-// ITALIAN Cultural Fluency Guide
+// TODO(LANG-VELCRO): Italian-only cultural content. Needs per-country variants.
 // How to not look like a tourist in Italy
 // These rules are ITALY-SPECIFIC and do not apply to other languages/cultures
 

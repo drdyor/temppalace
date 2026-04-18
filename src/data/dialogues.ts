@@ -1,4 +1,4 @@
-// Role-Play Dialogues & Conversation Patterns
+// TODO(LANG-VELCRO): Italian-only legacy dialogues. Unused by RoomPage. Keep for reference or migrate to branching-scenarios.
 // Real situations, real patterns, real practice
 
 export interface DialogueLine {

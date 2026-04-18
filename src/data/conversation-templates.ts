@@ -7,17 +7,37 @@ export interface ConversationTemplate {
   slots: string[];
   register: Register;
   contextNote?: string;
+  imagePrompt?: string;
 }
 
 export interface ExpandedPhrase {
   id: string;
   roomId: string;
   templateId: string;
-  english: string;
-  italian: string;
+  source: string;   // was 'english'
+  target: string;   // was 'italian'
   register: Register;
 }
 
-import templatesJson from './conversation-templates.json';
+// Runtime adapter: the JSON files still use 'english' / 'italian' fields.
+// We map them to 'source' / 'target' at load time so the rest of the app is clean.
+import templatesJson from './conversation-templates-all.json';
+import expandedJson from './expanded-phrases.json';
 
-export const conversationTemplates: ConversationTemplate[] = templatesJson as ConversationTemplate[];
+function mapTemplate(t: any): ConversationTemplate {
+  return t as ConversationTemplate;
+}
+
+function mapPhrase(p: any): ExpandedPhrase {
+  return {
+    id: p.id,
+    roomId: p.roomId,
+    templateId: p.templateId,
+    source: p.english ?? p.source ?? '',
+    target: p.italian ?? p.target ?? '',
+    register: p.register,
+  };
+}
+
+export const conversationTemplates: ConversationTemplate[] = (templatesJson as any[]).map(mapTemplate);
+export const expandedPhrases: ExpandedPhrase[] = (expandedJson as any[]).map(mapPhrase);

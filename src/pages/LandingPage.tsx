@@ -1,11 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Map, BookOpen, GraduationCap, Volume2 } from 'lucide-react';
 import { getAllRooms } from '../data/rooms';
+import { useLanguage } from '../context/LanguageContext';
 
 const LandingPage = () => {
   const navigate = useNavigate();
   const rooms = getAllRooms();
   const totalWords = rooms.reduce((acc, room) => acc + room.vocabularyIds.length, 0);
+  const { languageData, targetLabel } = useLanguage();
 
   const features = [
     {
@@ -16,17 +18,17 @@ const LandingPage = () => {
     {
       icon: BookOpen,
       title: 'Visual Dictionary',
-      description: 'Every object is labeled with its Italian name, gender color (blue for masculine, pink for feminine), and English translation.',
+      description: `Every object is labeled with its ${targetLabel} name, gender color (blue for masculine, pink for feminine), and English translation.`,
     },
     {
       icon: GraduationCap,
       title: 'Grammar Focus',
-      description: 'Learn essential Italian grammar with clear explanations and examples.',
+      description: `Learn essential ${targetLabel} grammar with clear explanations and examples.`,
     },
     {
       icon: Volume2,
       title: 'Listen & Learn',
-      description: 'Hear proper Italian pronunciation for every word.',
+      description: `Hear proper ${targetLabel} pronunciation for every word.`,
     },
   ];
 
@@ -52,10 +54,10 @@ const LandingPage = () => {
             {/* Left: Text */}
             <div>
               <h1 className="font-cinzel text-[#F3E8D7] text-3xl lg:text-5xl leading-tight mb-4">
-                Learn Italian by Walking Through a Palace
+                Learn {targetLabel} by Walking Through a Palace
               </h1>
               <p className="font-inter text-[#F3E8D7]/70 text-lg mb-6">
-                The Italian Memory Palace transforms A1-A2 vocabulary into {rooms.length} immersive rooms. 
+                The {targetLabel} Memory Palace transforms A1-A2 vocabulary into {rooms.length} immersive rooms. 
                 Each object you see becomes a word you remember.
               </p>
               <div className="flex flex-wrap gap-3 mb-8">
@@ -98,7 +100,7 @@ const LandingPage = () => {
               </div>
               <div className="absolute bottom-4 left-4 right-4 bg-[#2B1E1A]/90 backdrop-blur-sm rounded-xl p-4 border border-[#F3E8D7]/10">
                 <p className="font-inter text-[#F3E8D7]/70 text-sm">
-                  <span className="text-[#E7A04D]">Villa Memoria</span> — Your Italian memory palace for A1-A2 learners
+                  <span className="text-[#E7A04D]">Villa Memoria</span> — Your {targetLabel} memory palace for A1-A2 learners
                 </p>
               </div>
             </div>
@@ -125,7 +127,7 @@ const LandingPage = () => {
       <section className="py-16 px-4 lg:px-8 text-center">
         <h2 className="font-cinzel text-[#F3E8D7] text-2xl mb-4">Ready to Begin Your Journey?</h2>
         <p className="font-inter text-[#F3E8D7]/60 mb-8 max-w-lg mx-auto">
-          Step into the palace and start learning Italian the natural way — one room at a time.
+          Step into the palace and start learning {targetLabel} the natural way — one room at a time.
         </p>
         <button
           onClick={() => navigate('/rooms/entrance-hall')}

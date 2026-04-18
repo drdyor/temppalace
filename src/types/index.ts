@@ -1,19 +1,22 @@
 // Language-agnostic types for Memory Palace
+// NOTE: VocabularyItem uses 'native' (= target language) and 'english' (= source language).
+//       When learningDirection === 'inverse', the UI swaps which is shown as prompt/answer.
 
 export type Gender = 'masculine' | 'feminine' | 'none';
 export type Language = 'italian' | 'french' | 'spanish';
+export type LearningDirection = 'target' | 'inverse';
 export type DifficultyLevel = 'basic' | 'intermediate' | 'advanced';
 export type TabType = 'explore' | 'learn' | 'practice' | 'test' | 'narratives' | 'culture' | 'dialogue' | 'stories';
 
 export interface Example {
-  native: string;
-  english: string;
+  native: string;   // target language text
+  english: string;  // source language text (English)
 }
 
 export interface VocabularyItem {
   id: string;
-  native: string;
-  english: string;
+  native: string;   // target language word
+  english: string;  // English translation
   gender: Gender;
   pronunciation: string;
   emoji?: string;
@@ -55,8 +58,8 @@ export interface NarrativeParagraph {
   id: string;
   order: number;
   tense: 'past' | 'present' | 'future';
-  native: string;
-  english: string;
+  native: string;   // target language text
+  english: string;  // source language text
   highlightedWords: string[];
   grammarFocus: string;
   zonePath?: string[];
@@ -100,7 +103,96 @@ export interface RoomProgress {
   mastery: number;
 }
 
+// ========================
+// Dialogue & Template Types (language-agnostic)
+// ========================
+
+// TODO(LANG-VELCRO): The following types use 'italian'/'english' because their data files
+// (dialogues.ts, dialogues-social.ts, dialogues-strategy.ts) are legacy Italian-only content.
+// They are kept as-is to avoid breaking the data layer. These files are flagged in the audit.
+
+export interface DialogueLine {
+  speaker: 'A' | 'B' | string;
+  italian: string;
+  english: string;
+  pattern?: string;
+  level: 'beginner' | 'intermediate' | 'advanced';
+  tip?: string;
+  strategicLayer?: {
+    hiddenAgenda: string;
+    powerDynamic: 'superior' | 'inferior' | 'equal' | 'shifting' | string;
+    emotionalState: string;
+    lawOfPower?: string;
+  };
+}
+
+export interface ConversationPattern {
+  id: string;
+  name: string;
+  nameNative: string;
+  formula: string;
+  examples: { italian: string; english: string }[];
+  variations: string[];
+  whenToUse: string;
+}
+
+export interface RolePlayScenario {
+  id: string;
+  roomId: string;
+  title: string;
+  titleNative: string;
+  context: string;
+  yourRole: string;
+  partnerRole: string;
+  goal: string;
+  dialogue: DialogueLine[];
+  patterns: string[];
+  alternatives: { situation: string; responses: string[] }[];
+}
+
+// Branching scenario types
+export interface ScenarioChoice {
+  text: string;
+  textTarget?: string;
+  nextNodeId: string;
+  feedback?: string;
+  feedbackTarget?: string;
+  effect?: {
+    culturalNote?: string;
+    reputationChange?: number;
+  };
+}
+
+export interface ScenarioNode {
+  id: string;
+  speaker: 'narrator' | 'npc' | 'player';
+  text: string;          // source language (English) description
+  textTarget?: string;   // target language text
+  backgroundEffect?: 'happy' | 'angry' | 'neutral' | 'surprised';
+  choices: ScenarioChoice[];
+}
+
+export interface BranchingScenario {
+  id: string;
+  roomId: string;
+  title: string;
+  titleNative: string;
+  timeContext: string;
+  startNodeId: string;
+  culturalLesson: string;
+  phrasesLearned: { target: string; source: string; situation: string }[];
+  catCharacter: {
+    id: string;
+    name: string;
+    emoji: string;
+    color: string;
+  };
+  nodes: Record<string, ScenarioNode>;
+}
+
 // Cultural Fluency Types
+// TODO(LANG-VELCRO): cultural-fluency.ts is Italian-only content. Keeping original field names.
+
 export interface CulturalRule {
   id: string;
   category: 'food' | 'coffee' | 'greetings' | 'timing' | 'shopping' | 'transport' | 'social';

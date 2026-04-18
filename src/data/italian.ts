@@ -1,4 +1,4 @@
-// Italian vocabulary data - combines generated dictionary with rich content
+// TODO(LANG-VELCRO): Italian-only content. Create parallel files for French/Spanish.
 import type { LanguageData, NarrativeParagraph } from '../types';
 import { italianVocabulary } from './italian-generated';
 

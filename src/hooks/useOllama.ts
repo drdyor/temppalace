@@ -1,3 +1,5 @@
+// TODO(LANG-VELCRO): Italian-only system prompts. Update for multi-language generation.
+
 import { useState, useCallback } from 'react';
 
 interface OllamaMessage {

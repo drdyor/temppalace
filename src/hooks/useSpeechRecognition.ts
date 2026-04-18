@@ -108,7 +108,11 @@ export function useSpeechRecognition(options: UseSpeechRecognitionOptions = {}) 
   };
 }
 
-export function normalizeItalian(text: string): string {
+/**
+ * Normalizes spoken text for comparison across Romance languages.
+ * Strips diacritics and punctuation. Works for Italian, French, Spanish.
+ */
+export function normalizeSpoken(text: string): string {
   return text
     .toLowerCase()
     .replace(/[àáâãäå]/g, 'a')
@@ -116,28 +120,41 @@ export function normalizeItalian(text: string): string {
     .replace(/[ìíîï]/g, 'i')
     .replace(/[òóôõö]/g, 'o')
     .replace(/[ùúûü]/g, 'u')
+    .replace(/[ç]/g, 'c')
+    .replace(/[ñ]/g, 'n')
     .replace(/[^a-z0-9\s]/g, '')
     .trim();
 }
 
+/**
+ * @deprecated Use `compareSpoken` instead.
+ */
 export function compareItalianSpoken(spoken: string, expected: string): {
   similarity: number;
   isMatch: boolean;
   missingWords: string[];
 } {
-  const normSpoken = normalizeItalian(spoken);
-  const normExpected = normalizeItalian(expected);
-  
+  return compareSpoken(spoken, expected);
+}
+
+export function compareSpoken(spoken: string, expected: string): {
+  similarity: number;
+  isMatch: boolean;
+  missingWords: string[];
+} {
+  const normSpoken = normalizeSpoken(spoken);
+  const normExpected = normalizeSpoken(expected);
+
   const spokenWords = normSpoken.split(/\s+/).filter(Boolean);
   const expectedWords = normExpected.split(/\s+/).filter(Boolean);
-  
+
   if (expectedWords.length === 0) {
     return { similarity: 0, isMatch: false, missingWords: [] };
   }
 
   let matched = 0;
   const missing: string[] = [];
-  
+
   for (const expectedWord of expectedWords) {
     if (spokenWords.some(sw => sw === expectedWord || sw.includes(expectedWord) || expectedWord.includes(sw))) {
       matched++;

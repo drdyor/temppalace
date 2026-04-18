@@ -2,8 +2,7 @@ import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { useParams, useLocation } from 'wouter';
 import { ArrowLeft, Map, BookOpen, GraduationCap, ClipboardCheck, Volume2, X, Check, Sparkles, MessageCircle, Mic, ChevronRight, Brain, MessagesSquare, Pencil, Trash2, Download, Upload, Loader2, Plus } from 'lucide-react';
 import { getRoomById, rooms } from '../data/rooms';
-import expandedPhrases from '../data/expanded-phrases.json';
-import type { ExpandedPhrase } from '../data/conversation-templates';
+import { expandedPhrases, type ExpandedPhrase } from '../data/conversation-templates';
 import TemplateDrill from '../components/TemplateDrill';
 import { translate, isoFor } from '../lib/translate';
 import {
@@ -20,14 +19,16 @@ import { stories } from '../data/stories';
 import { branchingScenarios, type BranchingScenario, type ScenarioNode } from '../data/branching-scenarios';
 import { getWordSentences, practicalPhrases } from '../data/word-sentences';
 import { useProgress } from '../context/ProgressContext';
-import { useSpeechRecognition, compareItalianSpoken } from '../hooks/useSpeechRecognition';
+import { useSpeechRecognition, compareSpoken } from '../hooks/useSpeechRecognition';
 import { useFSRS } from '../hooks/useFSRS';
 import { useLanguage } from '../context/LanguageContext';
 import type { TabType, VocabularyItem, Gender, Zone } from '../types';
 import RoomImage from '../components/RoomImage';
+import { getTtsCode, getVoiceSearch, getArticle } from '../lib/language-config';
 
-// Hook for Italian speech synthesis
-function useItalianSpeech() {
+// Hook for dynamic TTS — reads current language from context
+function useTtsSpeech() {
+  const { currentLanguage } = useLanguage();
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
 
   useEffect(() => {
@@ -53,13 +54,17 @@ function useItalianSpeech() {
     const cleanedText = cleanTextForSpeech(text);
     if (!cleanedText) return;
     const utterance = new SpeechSynthesisUtterance(cleanedText);
-    utterance.lang = 'it-IT';
+    const ttsCode = getTtsCode(currentLanguage);
+    const voiceHints = getVoiceSearch(currentLanguage);
+    utterance.lang = ttsCode;
     utterance.rate = 0.85;
     utterance.pitch = 1;
-    const italianVoice = voices.find(v => v.lang.startsWith('it') || v.name.toLowerCase().includes('italian'));
-    if (italianVoice) utterance.voice = italianVoice;
+    const matchedVoice = voices.find(v =>
+      voiceHints.some(h => v.lang.toLowerCase().startsWith(h) || v.name.toLowerCase().includes(h))
+    );
+    if (matchedVoice) utterance.voice = matchedVoice;
     window.speechSynthesis.speak(utterance);
-  }, [voices]);
+  }, [voices, currentLanguage]);
 
   return { speak, cleanTextForSpeech };
 }
@@ -75,8 +80,8 @@ export default function RoomPage() {
   
   const room = roomId ? getRoomById(roomId) : undefined;
   const { getWordProgress, markWordLearned, getRoomMastery } = useProgress();
-  const { getWord } = useLanguage();
-  const { speak } = useItalianSpeech();
+  const { getWord, currentLanguage, targetLabel, sourceLabel, getTargetText, getSourceText } = useLanguage();
+  const { speak } = useTtsSpeech();
   const { addWord: addToSRS, getCard } = useFSRS();
   const [inDeck, setInDeck] = useState<Record<string, boolean>>({});
 
@@ -148,6 +153,7 @@ export default function RoomPage() {
           {[
             { id: 'explore', label: 'Explore', icon: Map },
             { id: 'learn', label: 'Learn', icon: BookOpen },
+            { id: 'stories', label: 'Stories', icon: BookOpen },
             { id: 'practice', label: 'Practice', icon: GraduationCap },
             { id: 'dialogue', label: 'Dialogue', icon: MessageCircle },
             { id: 'culture', label: 'Culture', icon: Sparkles },
@@ -345,14 +351,7 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
 
   const { currentLanguage } = useLanguage();
   const targetLang = isoFor(currentLanguage);
-  const speechLang = useMemo(() => {
-    switch (targetLang) {
-      case 'it': return 'it-IT';
-      case 'fr': return 'fr-FR';
-      case 'es': return 'es-ES';
-      default: return 'en-US';
-    }
-  }, [targetLang]);
+  const speechLang = useMemo(() => getTtsCode(currentLanguage), [currentLanguage]);
   const speakIt = useCallback((text: string) => {
     if (!text || !('speechSynthesis' in window)) return;
     window.speechSynthesis.cancel();
@@ -697,7 +696,7 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
                   autoFocus
                   type="text"
                   value={draft.english}
-                  placeholder="english word"
+                  placeholder="source word"
                   onChange={(e) => setDraft({ ...draft, english: e.target.value, error: null })}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter') submitDraft();
@@ -887,8 +886,8 @@ function StoriesTab({ stories, speak }: { stories: typeof import('../data/storie
   return (
     <div className="space-y-6">
       <div className="text-center mb-6">
-        <h3 className="font-cinzel text-xl text-palace-text mb-2">Classic Italian Stories</h3>
-        <p className="text-palace-text/60 text-sm">Read and listen to famous Italian fables and classics</p>
+        <h3 className="font-cinzel text-xl text-palace-text mb-2">Classic Stories</h3>
+        <p className="text-palace-text/60 text-sm">Read and listen to famous fables and classics</p>
       </div>
 
       <div className="grid gap-4">
@@ -926,9 +925,9 @@ function PracticeTab({ vocabulary, roomId, onMarkLearned }: { vocabulary: Vocabu
   const [speakResult, setSpeakResult] = useState<{ similarity: number; isMatch: boolean; missingWords: string[] } | null>(null);
   
   const { isListening, transcript, hasSupport, startListening, stopListening } = useSpeechRecognition({
-    language: 'it-IT',
+    language: getTtsCode(currentLanguage),
     onResult: (spoken) => {
-      const result = compareItalianSpoken(spoken, currentWord.native);
+      const result = compareSpoken(spoken, currentWord.native);
       setSpeakResult(result);
       if (result.isMatch) onMarkLearned(roomId, currentWord.id);
     },
@@ -969,14 +968,14 @@ function PracticeTab({ vocabulary, roomId, onMarkLearned }: { vocabulary: Vocabu
         <div onClick={() => setFlipped(!flipped)} className="aspect-[3/2] max-w-md mx-auto cursor-pointer bg-palace-bg/50 border border-palace-text/20 rounded-2xl flex flex-col items-center justify-center">
           {!flipped ? (
             <>
-              <span className="text-palace-text/50 text-sm mb-4">English</span>
-              <h3 className="font-cinzel text-3xl text-palace-text">{currentWord.english}</h3>
+              <span className="text-palace-text/50 text-sm mb-4">{sourceLabel}</span>
+              <h3 className="font-cinzel text-3xl text-palace-text">{getSourceText(currentWord)}</h3>
               <span className="text-palace-text/40 text-sm mt-4">Click to flip</span>
             </>
           ) : (
             <>
-              <span className="text-palace-gold text-sm mb-4">Italian</span>
-              <h3 className="font-cinzel text-3xl text-palace-text">{currentWord.native}</h3>
+              <span className="text-palace-gold text-sm mb-4">{targetLabel}</span>
+              <h3 className="font-cinzel text-3xl text-palace-text">{getTargetText(currentWord)}</h3>
               <p className="text-palace-text/60 mt-2">/{currentWord.pronunciation}/</p>
             </>
           )}
@@ -988,12 +987,12 @@ function PracticeTab({ vocabulary, roomId, onMarkLearned }: { vocabulary: Vocabu
           <h3 className="font-cinzel text-3xl text-palace-text mb-8">{currentWord.native}</h3>
           <p className="text-palace-text/50 mb-8">What is the gender?</p>
           <div className="flex gap-4 justify-center">
-            <button onClick={() => checkGender('masculine')} className="px-8 py-4 bg-palace-blue text-white rounded-full font-cinzel text-lg hover:opacity-90">♂ il (masculine)</button>
-            <button onClick={() => checkGender('feminine')} className="px-8 py-4 bg-palace-pink text-white rounded-full font-cinzel text-lg hover:opacity-90">♀ la (feminine)</button>
+            <button onClick={() => checkGender('masculine')} className="px-8 py-4 bg-palace-blue text-white rounded-full font-cinzel text-lg hover:opacity-90">♂ {getArticle('masculine', currentLanguage)} (masculine)</button>
+            <button onClick={() => checkGender('feminine')} className="px-8 py-4 bg-palace-pink text-white rounded-full font-cinzel text-lg hover:opacity-90">♀ {getArticle('feminine', currentLanguage)} (feminine)</button>
           </div>
           {showGenderResult && (
             <div className={`mt-6 p-4 rounded-xl ${showGenderResult === 'correct' ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'}`}>
-              {showGenderResult === 'correct' ? '✓ Correct!' : `✗ Incorrect. It's ${currentWord.gender === 'masculine' ? 'il (masculine)' : 'la (feminine)'}`}
+              {showGenderResult === 'correct' ? '✓ Correct!' : `✗ Incorrect. It's ${currentWord.gender === 'masculine' ? getArticle('masculine', currentLanguage) + ' (masculine)' : getArticle('feminine', currentLanguage) + ' (feminine)'}`}
             </div>
           )}
         </div>
@@ -1002,7 +1001,7 @@ function PracticeTab({ vocabulary, roomId, onMarkLearned }: { vocabulary: Vocabu
       {mode === 'speak' && (
         <div className="max-w-md mx-auto text-center space-y-6">
           <div>
-            <span className="text-palace-text/50 text-sm block mb-2">Say this in Italian:</span>
+            <span className="text-palace-text/50 text-sm block mb-2">Say this in {targetLabel}:</span>
             <h3 className="font-cinzel text-2xl text-palace-text">{currentWord.english}</h3>
           </div>
           {!hasSupport ? (
@@ -1175,7 +1174,10 @@ function DialogueTab({ roomScenarios, activeScenario, currentNode, onStartScenar
   onClose: () => void;
   speak: (text: string) => void;
 }) {
+  const { targetLabel } = useLanguage();
+
   if (activeScenario && currentNode) {
+    const isEndNode = currentNode.choices.length === 0;
     return (
       <div className="space-y-6">
         <div className="flex items-center justify-between">
@@ -1209,30 +1211,52 @@ function DialogueTab({ roomScenarios, activeScenario, currentNode, onStartScenar
           'border-palace-text/20'
         }`}>
           <p className="text-palace-text text-lg mb-2">{currentNode.text}</p>
-          {currentNode.textItalian && <p className="text-palace-gold text-sm italic">{currentNode.textItalian}</p>}
-          {currentNode.textItalian && (
-            <button onClick={() => speak(currentNode.textItalian || currentNode.text)} className="mt-4 flex items-center gap-2 text-palace-text/50 hover:text-palace-gold transition-colors">
+          {currentNode.textTarget && <p className="text-palace-gold text-sm italic">{currentNode.textTarget}</p>}
+          {currentNode.textTarget && (
+            <button onClick={() => speak(currentNode.textTarget || currentNode.text)} className="mt-4 flex items-center gap-2 text-palace-text/50 hover:text-palace-gold transition-colors">
               <Volume2 className="w-4 h-4" />
-              <span className="text-sm">Listen in Italian</span>
+              <span className="text-sm">Listen in {targetLabel}</span>
             </button>
           )}
         </div>
 
-        {currentNode.choices.length > 0 && (
+        {!isEndNode && (
           <div className="space-y-3">
             <p className="text-palace-text/50 text-sm">What do you do?</p>
             {currentNode.choices.map((choice, i) => (
               <button key={i} onClick={() => onChoice(choice.nextNodeId)} className="w-full p-4 rounded-xl border border-palace-text/20 bg-palace-bg/50 hover:border-palace-gold hover:bg-palace-gold/10 transition-all text-left">
                 <p className="text-palace-text">{choice.text}</p>
-                {choice.textItalian && <p className="text-palace-gold text-sm italic mt-1">{choice.textItalian}</p>}
+                {choice.textTarget && <p className="text-palace-gold text-sm italic mt-1">{choice.textTarget}</p>}
               </button>
             ))}
           </div>
         )}
 
-        {currentNode.choices.length === 0 && (
-          <div className="text-center">
-            <button onClick={onClose} className="px-6 py-3 bg-palace-gold text-palace-bg rounded-full font-cinzel">Scenario Complete</button>
+        {isEndNode && (
+          <div className="space-y-6">
+            <div className="text-center">
+              <button onClick={onClose} className="px-6 py-3 bg-palace-gold text-palace-bg rounded-full font-cinzel">Scenario Complete</button>
+            </div>
+
+            {activeScenario.phrasesLearned.length > 0 && (
+              <div className="bg-palace-bg/50 border border-palace-gold/30 rounded-2xl p-6">
+                <h4 className="font-cinzel text-palace-gold mb-4">📝 Phrases You Learned</h4>
+                <div className="space-y-3">
+                  {activeScenario.phrasesLearned.map((phrase, i) => (
+                    <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-palace-text/5">
+                      <div className="flex-1">
+                        <p className="text-palace-gold font-cinzel">{phrase.target}</p>
+                        <p className="text-palace-text/60 text-sm">{phrase.source}</p>
+                        <p className="text-palace-text/40 text-xs italic mt-1">{phrase.situation}</p>
+                      </div>
+                      <button onClick={() => speak(phrase.target)} className="text-palace-text/30 hover:text-palace-gold">
+                        <Volume2 className="w-4 h-4" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -1243,7 +1267,7 @@ function DialogueTab({ roomScenarios, activeScenario, currentNode, onStartScenar
     <div className="space-y-6">
       <div className="text-center mb-6">
         <h3 className="font-cinzel text-xl text-palace-text mb-2">Interactive Scenarios</h3>
-        <p className="text-palace-text/60 text-sm">Practice conversations with cat characters in real Italian situations</p>
+        <p className="text-palace-text/60 text-sm">Practice real conversations for everyday situations</p>
       </div>
 
       {roomScenarios.length > 0 ? (
@@ -1313,8 +1337,8 @@ function WordModal({ word, onClose, onSpeak, progress, onMarkLearned, getGenderC
 
           {/* Translation */}
           <div className="mb-6 p-4 bg-palace-gold/10 rounded-xl">
-            <p className="text-palace-text/50 text-sm mb-1">English:</p>
-            <p className="text-palace-text text-xl font-cinzel">{word.english}</p>
+            <p className="text-palace-text/50 text-sm mb-1">{sourceLabel}:</p>
+            <p className="text-palace-text text-xl font-cinzel">{getSourceText(word)}</p>
           </div>
 
           {/* Pronunciation */}

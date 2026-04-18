@@ -1,4 +1,4 @@
-// Contextual sentences for vocabulary words
+// TODO(LANG-VELCRO): Italian-only sentences. Needs per-language variants.
 // Each word has 2-3 example sentences showing practical usage
 
 export interface WordSentence {

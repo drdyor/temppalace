@@ -1,848 +1,130 @@
-// Branching Dialogue Scenarios for each room
-// Each scenario has cat characters, subroom contexts, and multiple choice paths
+// Branching Dialogue Scenarios — Practical Conversations
+// Language-agnostic structure: 'text' = English context, 'textTarget' = target language phrase.
+// TODO(LANG-VELCRO): Content is currently Italian-targeted. For French/Spanish, replace textTarget strings.
 
-export interface ScenarioNode {
-  id: string;
-  speaker: 'narrator' | 'npc' | 'player';
-  text: string;
-  textItalian?: string;
-  backgroundEffect?: 'happy' | 'angry' | 'neutral' | 'surprised';
-  choices: {
-    text: string;
-    textItalian?: string;
-    nextNodeId: string;
-    feedback?: string;
-    feedbackItalian?: string;
-  }[];
-}
-
-export interface BranchingScenario {
-  id: string;
-  roomId: string;
-  title: string;
-  titleNative: string;
-  timeContext: string;
-  startNodeId: string;
-  culturalLesson: string;
-  catCharacter: {
-    id: string;
-    name: string;
-    emoji: string;
-    color: string;
-  };
-  nodes: Record<string, ScenarioNode>;
-}
+import type { BranchingScenario } from '../types';
 
 // ============================================
-// KITCHEN SCENARIOS
+// KITCHEN — The Messy Roommate
 // ============================================
 
-const kitchenBreakfastScenario: BranchingScenario = {
-  id: 'kitchen-breakfast-order',
+const kitchenScenario: BranchingScenario = {
+  id: 'kitchen-messy-roommate',
   roomId: 'kitchen',
-  title: 'The Breakfast Order',
-  titleNative: "L'Ordine della Colazione",
-  timeContext: 'Sunday morning, 8:30 AM',
+  title: 'The Messy Roommate',
+  titleNative: 'Il Coinquilino Disordinato',
+  timeContext: 'Saturday morning, 10:00 AM',
   startNodeId: 'enter-kitchen',
-  culturalLesson: 'Italian breakfast is light: coffee and a pastry. Planning ahead for tomorrow shows good household management.',
+  culturalLesson: 'In shared Italian homes, kitchen cleanliness is a shared responsibility. Direct confrontation is avoided; polite requests work better.',
+  phrasesLearned: [
+    { target: 'Puoi pulire il tavolo, per favore?', source: 'Can you clean the table, please?', situation: 'Polite request' },
+    { target: 'Mi dai una mano in cucina?', source: 'Can you give me a hand in the kitchen?', situation: 'Asking for help' },
+    { target: 'Dopo mangiato laviamo i piatti?', source: 'After eating, shall we wash the dishes?', situation: 'Suggesting shared task' },
+  ],
   catCharacter: {
-    id: 'chef-cat',
-    name: 'Chef Cat',
-    emoji: '👨‍🍳',
+    id: 'roommate-cat',
+    name: 'Roommate',
+    emoji: '🧑',
     color: '#E7A04D'
   },
   nodes: {
     'enter-kitchen': {
       id: 'enter-kitchen',
       speaker: 'narrator',
-      text: 'You enter the kitchen. 🐱 Chef Cat is checking the pantry with a worried expression.',
-      textItalian: 'Entri in cucina. 🐱 Chef Cat sta controllando la dispensa con un\'espressione preoccupata.',
+      text: 'You walk into the kitchen. The sink is full of dishes and crumbs cover the table. Your roommate is scrolling on their phone.',
+      textTarget: 'Entri in cucina. Il lavello è pieno di piatti e ci sono briciole sul tavolo. Il tuo coinquilino sta scrollando sul telefono.',
       choices: [
-        { 
-          text: '💬 "Buongiorno! Cosa stai facendo?"', 
-          textItalian: 'Buongiorno! Cosa stai facendo?',
-          nextNodeId: 'explain-problem' 
-        },
-        { 
-          text: '🍳 "Posso aiutarti con la colazione?"', 
-          textItalian: 'Posso aiutarti con la colazione?',
-          nextNodeId: 'offer-help' 
-        },
-        { 
-          text: '☕ "Fammi un caffè, per favore."', 
-          textItalian: 'Fammi un caffè, per favore.',
-          nextNodeId: 'direct-order' 
-        }
+        { text: '💬 "Puoi pulire il tavolo, per favore?"', textTarget: 'Puoi pulire il tavolo, per favore?', nextNodeId: 'polite-request' },
+        { text: '😤 "Questa cucina è un disastro!"', textTarget: 'Questa cucina è un disastro!', nextNodeId: 'direct-complaint' },
+        { text: '🧽 "Io lavo i piatti, tu pulisci il tavolo?"', textTarget: 'Io lavo i piatti, tu pulisci il tavolo?', nextNodeId: 'offer-split' },
       ]
     },
-    'explain-problem': {
-      id: 'explain-problem',
+    'polite-request': {
+      id: 'polite-request',
       speaker: 'npc',
-      text: '🐱 Chef Cat turns to you. "Non abbiamo abbastanza per la colazione di domani. Il pane è finito, il latte è scaduto, e non abbiamo più caffè!"',
-      textItalian: 'Non abbiamo abbastanza per la colazione di domani. Il pane è finito, il latte è scaduto, e non abbiamo più caffè!',
-      backgroundEffect: 'neutral',
-      choices: [
-        { 
-          text: '🛒 "Andiamo al supermercato ora!"', 
-          textItalian: 'Andiamo al supermercato ora!',
-          nextNodeId: 'supermarket-plan' 
-        },
-        { 
-          text: '📋 "Facciamo una lista della spesa."', 
-          textItalian: 'Facciamo una lista della spesa.',
-          nextNodeId: 'make-list' 
-        },
-        { 
-          text: '🍞 "Prendiamo il pane dal forno sotto casa."', 
-          textItalian: 'Prendiamo il pane dal forno sotto casa.',
-          nextNodeId: 'bakery-option' 
-        }
-      ]
-    },
-    'offer-help': {
-      id: 'offer-help',
-      speaker: 'npc',
-      text: '🐱 Chef Cat smiles. "Grazie! Sì, ho bisogno di aiuto. Dobbiamo fare una lista per domani."',
-      textItalian: 'Grazie! Sì, ho bisogno di aiuto. Dobbiamo fare una lista per domani.',
+      text: '"Ah, scusa! Ho dimenticato. Lo faccio subito." Your roommate grabs a cloth and starts cleaning. Politeness wins.',
+      textTarget: '"Ah, scusa! Ho dimenticato. Lo faccio subito." Il tuo coinquilino prende uno straccio e inizia a pulire. La cortesia vince.',
       backgroundEffect: 'happy',
       choices: [
-        { 
-          text: '📝 "Cosa ci serve?"', 
-          textItalian: 'Cosa ci serve?',
-          nextNodeId: 'make-list' 
-        }
+        { text: '💬 "Grazie mille!"', textTarget: 'Grazie mille!', nextNodeId: 'end-perfect' },
       ]
     },
-    'direct-order': {
-      id: 'direct-order',
+    'direct-complaint': {
+      id: 'direct-complaint',
       speaker: 'npc',
-      text: '🐱 Chef Cat looks stressed. "Mi dispiace, non posso fare il caffè. Non abbiamo più caffè!"',
-      textItalian: 'Mi dispiace, non posso fare il caffè. Non abbiamo più caffè!',
+      text: '"Non è solo colpa mia!" Your roommate gets defensive. Direct complaints often backfire in shared spaces.',
+      textTarget: '"Non è solo colpa mia!" Il tuo coinquilino si difende. I reclami diretti spesso si ritorcono contro negli spazi condivisi.',
       backgroundEffect: 'angry',
       choices: [
-        { 
-          text: '😱 "Niente caffè?! Dobbiamo andare a comprarlo subito!"', 
-          textItalian: 'Niente caffè?! Dobbiamo andare a comprarlo subito!',
-          nextNodeId: 'urgent-coffee' 
-        }
+        { text: '💬 "Scusa, hai ragione. Dividiamo il lavoro."', textTarget: 'Scusa, hai ragione. Dividiamo il lavoro.', nextNodeId: 'recover-good' },
+        { text: '😤 "Sì, invece lo è!"', textTarget: 'Sì, invece lo è!', nextNodeId: 'end-hostile' },
       ]
     },
-    'make-list': {
-      id: 'make-list',
+    'offer-split': {
+      id: 'offer-split',
       speaker: 'npc',
-      text: '🐱 Chef Cat pulls out a notepad. "Allora: pane, latte, caffè, burro, marmellata... e forse anche delle uova?"',
-      textItalian: 'Allora: pane, latte, caffè, burro, marmellata... e forse anche delle uova?',
+      text: '"Va bene, affare fatto. Tu lavi, io pulisco." Teamwork makes the dream work.',
+      textTarget: '"Va bene, affare fatto. Tu lavi, io pulisco." Il lavoro di squadra funziona.',
       backgroundEffect: 'happy',
       choices: [
-        { 
-          text: '✅ "Perfetto! Andiamo al supermercato."', 
-          textItalian: 'Perfetto! Andiamo al supermercato.',
-          nextNodeId: 'end-success' 
-        },
-        { 
-          text: '🍊 "Aggiungiamo anche la frutta!"', 
-          textItalian: 'Aggiungiamo anche la frutta!',
-          nextNodeId: 'add-fruit' 
-        }
+        { text: '💬 "Perfetto, iniziamo!"', textTarget: 'Perfetto, iniziamo!', nextNodeId: 'end-perfect' },
       ]
     },
-    'supermarket-plan': {
-      id: 'supermarket-plan',
+    'recover-good': {
+      id: 'recover-good',
       speaker: 'npc',
-      text: '🐱 Chef Cat nods. "Buona idea! Ma prima dobbiamo fare una lista, altrimenti dimentichiamo qualcosa."',
-      textItalian: 'Buona idea! Ma prima dobbiamo fare una lista, altrimenti dimentichiamo qualcosa.',
+      text: '"Ok, d\'accordo. La prossima volta avvisami prima." Crisis averted.',
+      textTarget: '"Ok, d\'accordo. La prossima volta avvisami prima." Crisi evitata.',
+      backgroundEffect: 'neutral',
       choices: [
-        { 
-          text: '📝 "Hai ragione. Iniziamo la lista."', 
-          textItalian: 'Hai ragione. Iniziamo la lista.',
-          nextNodeId: 'make-list' 
-        }
+        { text: '💬 "Certo, grazie."', textTarget: 'Certo, grazie.', nextNodeId: 'end-good' },
       ]
-    },
-    'bakery-option': {
-      id: 'bakery-option',
-      speaker: 'npc',
-      text: '🐱 Chef Cat considers. "Buona idea per il pane, ma abbiamo ancora bisogno di latte e caffè dal supermercato."',
-      textItalian: 'Buona idea per il pane, ma abbiamo ancora bisogno di latte e caffè dal supermercato.',
-      choices: [
-        { 
-          text: '🛒 "Allora facciamo entrambi!"', 
-          textItalian: 'Allora facciamo entrambi!',
-          nextNodeId: 'end-success' 
-        }
-      ]
-    },
-    'urgent-coffee': {
-      id: 'urgent-coffee',
-      speaker: 'npc',
-      text: '🐱 Chef Cat grabs his keys. "Sì, andiamo subito! Senza caffè, domani mattina sarà un disastro!"',
-      textItalian: 'Sì, andiamo subito! Senza caffè, domani mattina sarà un disastro!',
-      backgroundEffect: 'happy',
-      choices: [
-        { 
-          text: '☕ "Il caffè è sacro!"', 
-          textItalian: 'Il caffè è sacro!',
-          nextNodeId: 'end-success' 
-        }
-      ]
-    },
-    'add-fruit': {
-      id: 'add-fruit',
-      speaker: 'npc',
-      text: '🐱 Chef Cat adds to the list. "Sì, ottima idea! Arance, mele, banane... una colazione completa!"',
-      textItalian: 'Sì, ottima idea! Arance, mele, banane... una colazione completa!',
-      backgroundEffect: 'happy',
-      choices: [
-        { 
-          text: '🍎 "Perfetto! Andiamo!"', 
-          textItalian: 'Perfetto! Andiamo!',
-          nextNodeId: 'end-perfect' 
-        }
-      ]
-    },
-    'end-success': {
-      id: 'end-success',
-      speaker: 'narrator',
-      text: '✅ You and Chef Cat made a shopping list. Tomorrow\'s breakfast is saved!',
-      textItalian: 'Tu e Chef Cat avete fatto una lista della spesa. La colazione di domani è salva!',
-      choices: []
     },
     'end-perfect': {
       id: 'end-perfect',
       speaker: 'narrator',
-      text: '✅ Perfect planning! You even remembered the fruit. Chef Cat is impressed.',
-      textItalian: 'Pianificazione perfetta! Hai anche ricordato la frutta. Chef Cat è impressionato.',
+      text: '✅ The kitchen is clean and harmony is restored. Shared responsibility + polite communication = success.',
+      textTarget: '✅ La cucina è pulita e l\'armonia è ripristinata. Responsabilità condivisa + comunicazione educata = successo.',
       choices: []
-    }
-  }
-};
-
-// ============================================
-// BEDROOM SCENARIOS
-// ============================================
-
-const bedroomWrongBagScenario: BranchingScenario = {
-  id: 'bedroom-wrong-bag',
-  roomId: 'bedroom',
-  title: 'The Wrong Bag',
-  titleNative: "La Borsa Sbagliata",
-  timeContext: 'Afternoon arrival',
-  startNodeId: 'knock',
-  culturalLesson: 'Always check your luggage immediately. Italian hostels and small B&Bs often have manual bag handling, and mix-ups happen.',
-  catCharacter: {
-    id: 'porter-cat',
-    name: 'Porter Cat',
-    emoji: '🐱',
-    color: '#8B5CF6'
-  },
-  nodes: {
-    'knock': {
-      id: 'knock',
+    },
+    'end-good': {
+      id: 'end-good',
       speaker: 'narrator',
-      text: 'There\'s a knock at the door. 🐱 Porter Cat holds a large suitcase, tail wagging with effort. "Ciao, ho portato la tua valigia!"',
-      textItalian: 'C\'è un bussare alla porta. 🐱 Porter Cat tiene una grande valigia, la coda si muove con sforzo. "Ciao, ho portato la tua valigia!"',
-      choices: [
-        { 
-          text: '👍 "Sì, è mia. Entra."', 
-          textItalian: 'Sì, è mia. Entra.',
-          nextNodeId: 'assume-wrong' 
-        },
-        { 
-          text: '🔍 "Aspetta, devo controllare"', 
-          textItalian: 'Aspetta, devo controllare',
-          nextNodeId: 'check-good' 
-        },
-        { 
-          text: '🙅 "Non è la mia. Io ho uno zaino."', 
-          textItalian: 'Non è la mia. Io ho uno zaino.',
-          nextNodeId: 'correct-good' 
-        }
-      ]
-    },
-    'assume-wrong': {
-      id: 'assume-wrong',
-      speaker: 'narrator',
-      text: 'You open the suitcase. Inside are slippers and a shirt that definitely aren\'t yours.',
-      textItalian: 'Apri la valigia. Dentro ci sono pantofole e una camicia che sicuramente non sono le tue.',
-      choices: [
-        { 
-          text: '💬 "Scusa, ho sbagliato. Non è la mia."', 
-          textItalian: 'Scusa, ho sbagliato. Non è la mia.',
-          nextNodeId: 'correct-good' 
-        },
-        { 
-          text: '😤 "Deve essere mia! Me l\'hai portata tu!"', 
-          textItalian: 'Deve essere mia! Me l\'hai portata tu!',
-          nextNodeId: 'end-hostile' 
-        }
-      ]
-    },
-    'check-good': {
-      id: 'check-good',
-      speaker: 'npc',
-      text: '🐱 Porter Cat nods patiently. "Certo, controlla." You unzip it — your shoes and jacket are inside.',
-      textItalian: '🐱 Porter Cat annuisce pazientemente. "Certo, controlla." Apri la cerniera — le tue scarpe e la giacca sono dentro.',
-      backgroundEffect: 'happy',
-      choices: [
-        { 
-          text: '💬 "Sì, è tutto qui. Grazie!"', 
-          textItalian: 'Sì, è tutto qui. Grazie!',
-          nextNodeId: 'end-perfect' 
-        },
-        { 
-          text: '🔌 "Dov\'è il caricabatterie?" (search frantically)', 
-          textItalian: 'Dov\'è il caricabatterie?',
-          nextNodeId: 'search-panic' 
-        }
-      ]
-    },
-    'correct-good': {
-      id: 'correct-good',
-      speaker: 'npc',
-      text: '🐱 Porter Cat\'s ears perk up. "Ah, capisco! Aspetta un attimo." He returns with your backpack. "Ecco, questo è il tuo!"',
-      textItalian: '🐱 Porter Cat ha le orecchie dritte. "Ah, capisco! Aspetta un attimo." Torna con il tuo zaino. "Ecco, questo è il tuo!"',
-      backgroundEffect: 'happy',
-      choices: [
-        { 
-          text: '💬 "Grazie mille, perfetto!"', 
-          textItalian: 'Grazie mille, perfetto!',
-          nextNodeId: 'end-perfect' 
-        }
-      ]
-    },
-    'search-panic': {
-      id: 'search-panic',
-      speaker: 'narrator',
-      text: 'You tear through the backpack. No charger. Your phone is at 3%.',
-      textItalian: 'Rovisti nello zaino. Nessun caricabatterie. Il tuo telefono è al 3%.',
-      choices: [
-        { 
-          text: '💡 "Forse è nel cassetto del comodino!"', 
-          textItalian: 'Forse è nel cassetto del comodino!',
-          nextNodeId: 'end-perfect' 
-        },
-        { 
-          text: '😰 "Oh no, l\'ho dimenticato!"', 
-          textItalian: 'Oh no, l\'ho dimenticato!',
-          nextNodeId: 'end-forgotten' 
-        }
-      ]
+      text: '✅ You recovered from a tense moment. Admitting fault and offering a solution goes a long way.',
+      textTarget: '✅ Ti sei ripreso da un momento teso. Ammettere la colpa e offrire una soluzione fa molto.',
+      choices: []
     },
     'end-hostile': {
       id: 'end-hostile',
       speaker: 'narrator',
-      text: '⚠️ Porter Cat left with flattened ears. Blaming staff for an honest mistake gets you nowhere in Italy.',
-      textItalian: '⚠️ Porter Cat se n\'è andato con le orecchie basse. Dare la colpa al personale per un errore onesto non ti porta da nessuna parte in Italia.',
+      text: '⚠️ The argument escalated. In shared living, blaming never solves anything. Offer solutions, not accusations.',
+      textTarget: '⚠️ La discussione è degenerata. In convivenza, dare la colpa non risolve nulla. Offri soluzioni, non accuse.',
       choices: []
     },
-    'end-forgotten': {
-      id: 'end-forgotten',
-      speaker: 'narrator',
-      text: '⚠️ You forgot the charger. Always double-check your backpack before leaving home.',
-      textItalian: '⚠️ Hai dimenticato il caricabatterie. Controlla sempre due volte lo zaino prima di uscire di casa.',
-      choices: []
-    },
-    'end-perfect': {
-      id: 'end-perfect',
-      speaker: 'narrator',
-      text: '✅ Bag correct, everything accounted for. Ready to explore Italy!',
-      textItalian: '✅ Borsa corretta, tutto controllato. Pronto per esplorare l\'Italia!',
-      choices: []
-    }
   }
 };
 
 // ============================================
-// LIVING ROOM SCENARIOS
+// CAFE — Ordering Coffee
 // ============================================
 
-const livingRoomMatchScenario: BranchingScenario = {
-  id: 'living-room-match-night',
-  roomId: 'living-room',
-  title: 'Match Night',
-  titleNative: "Serata Partita",
-  timeContext: 'Saturday evening',
-  startNodeId: 'sofa',
-  culturalLesson: 'Football is sacred in many Italian homes. Talking during a critical moment is a serious social error.',
-  catCharacter: {
-    id: 'roommate-cat',
-    name: 'Roommate Cat',
-    emoji: '🐱',
-    color: '#10B981'
-  },
-  nodes: {
-    'sofa': {
-      id: 'sofa',
-      speaker: 'narrator',
-      text: 'You flop onto the sofa. 🐱 Roommate Cat is gripping the remote, eyes locked on the TV.',
-      textItalian: 'Ti butti sul divano. 🐱 Roommate Cat tiene stretto il telecomando, gli occhi fissi sulla TV.',
-      choices: [
-        { 
-          text: '⚽ "Metti la partita"', 
-          textItalian: 'Metti la partita',
-          nextNodeId: 'match-path' 
-        },
-        { 
-          text: '🎬 "Guardiamo un film"', 
-          textItalian: 'Guardiamo un film',
-          nextNodeId: 'film-path' 
-        },
-        { 
-          text: '🎮 "Giochiamo a un videogame?"', 
-          textItalian: 'Giochiamo a un videogame?',
-          nextNodeId: 'game-path' 
-        }
-      ]
-    },
-    'match-path': {
-      id: 'match-path',
-      speaker: 'npc',
-      text: '🐱 Roommate Cat\'s tail swishes with excitement. "Sì! È rigore!"',
-      textItalian: '🐱 Roommate Cat ha la coda che si muove per l\'eccitazione. "Sì! È rigore!"',
-      backgroundEffect: 'happy',
-      choices: [
-        { 
-          text: '💬 "Come è andata la tua giornata?"', 
-          textItalian: 'Come è andata la tua giornata?',
-          nextNodeId: 'talk-wrong' 
-        },
-        { 
-          text: '🤐 Watch in silence', 
-          textItalian: 'Guarda in silenzio',
-          nextNodeId: 'end-match' 
-        },
-        { 
-          text: '👏 Cheer when the ball goes in', 
-          textItalian: 'Esulta quando entra la palla',
-          nextNodeId: 'celebrate-good' 
-        }
-      ]
-    },
-    'film-path': {
-      id: 'film-path',
-      speaker: 'npc',
-      text: '🐱 Roommate Cat sighs but changes the channel. "Va bene, scegli tu il film." But the screen says "No signal."',
-      textItalian: '🐱 Roommate Cat sospira ma cambia canale. "Va bene, scegli tu il film." Ma lo schermo dice "Nessun segnale."',
-      backgroundEffect: 'neutral',
-      choices: [
-        { 
-          text: '📱 "Guardiamo dal cellulare"', 
-          textItalian: 'Guardiamo dal cellulare',
-          nextNodeId: 'phone-streaming' 
-        },
-        { 
-          text: '📻 "Allora mettiamo la radio"', 
-          textItalian: 'Allora mettiamo la radio',
-          nextNodeId: 'end-music' 
-        },
-        { 
-          text: '😤 "Il wifi qui è terribile!"', 
-          textItalian: 'Il wifi qui è terribile!',
-          nextNodeId: 'complain-wrong' 
-        }
-      ]
-    },
-    'game-path': {
-      id: 'game-path',
-      speaker: 'npc',
-      text: '🐱 Roommate Cat\'s ears perk up. "Sì, prendiamo i tablet!"',
-      textItalian: '🐱 Roommate Cat ha le orecchie dritte. "Sì, prendiamo i tablet!"',
-      backgroundEffect: 'happy',
-      choices: [
-        { 
-          text: 'Grab your tablet and play together', 
-          textItalian: 'Prendi il tuo tablet e giocate insieme',
-          nextNodeId: 'end-gaming' 
-        }
-      ]
-    },
-    'talk-wrong': {
-      id: 'talk-wrong',
-      speaker: 'npc',
-      text: '🐱 Roommate Cat\'s ears flatten. "Shh! È rigore!" He misses the goal because of your chatter.',
-      textItalian: '🐱 Roommate Cat ha le orecchie basse. "Shh! È rigore!" Ha perso il gol a causa delle tue chiacchiere.',
-      backgroundEffect: 'angry',
-      choices: [
-        { 
-          text: '💬 "Scusa, non sapevo"', 
-          textItalian: 'Scusa, non sapevo',
-          nextNodeId: 'recover-respect' 
-        },
-        { 
-          text: 'Keep talking anyway', 
-          textItalian: 'Continua a parlare comunque',
-          nextNodeId: 'end-annoying' 
-        }
-      ]
-    },
-    'celebrate-good': {
-      id: 'celebrate-good',
-      speaker: 'npc',
-      text: '🐱 Roommate Cat high-fives you with a paw. "Gol! Lo visto? Perfetto!"',
-      textItalian: '🐱 Roommate Cat ti dà il cinque con la zampa. "Gol! L\'hai visto? Perfetto!"',
-      backgroundEffect: 'happy',
-      choices: [
-        { 
-          text: '🍻 "Evviva! Che partita!"', 
-          textItalian: 'Evviva! Che partita!',
-          nextNodeId: 'end-match' 
-        }
-      ]
-    },
-    'recover-respect': {
-      id: 'recover-respect',
-      speaker: 'npc',
-      text: '🐱 Roommate Cat\'s tail relaxes. "Va bene, ma durante la partita... silenzio."',
-      textItalian: '🐱 Roommate Cat ha la coda rilassata. "Va bene, ma durante la partita... silenzio."',
-      backgroundEffect: 'neutral',
-      choices: [
-        { 
-          text: 'Nod and watch quietly', 
-          textItalian: 'Annuisci e guarda in silenzio',
-          nextNodeId: 'end-match' 
-        }
-      ]
-    },
-    'complain-wrong': {
-      id: 'complain-wrong',
-      speaker: 'npc',
-      text: '🐱 Roommate Cat shrugs. "Succede. Meglio la radio allora." Complaining doesn\'t fix the wifi.',
-      textItalian: '🐱 Roommate Cat si stringe nelle spalle. "Succede. Meglio la radio allora." Lamentarsi non aggiusta il wifi.',
-      backgroundEffect: 'neutral',
-      choices: [
-        { 
-          text: 'Accept the radio option', 
-          textItalian: 'Accetta l\'opzione radio',
-          nextNodeId: 'end-music' 
-        }
-      ]
-    },
-    'phone-streaming': {
-      id: 'phone-streaming',
-      speaker: 'narrator',
-      text: 'You prop the phone against a book on the table. Not cinematic, but it works.',
-      textItalian: 'Appoggi il telefono contro un libro sul tavolo. Non è cinematografico, ma funziona.',
-      choices: [
-        { 
-          text: '😌 Watch together anyway', 
-          textItalian: 'Guardate insieme comunque',
-          nextNodeId: 'end-perfect' 
-        }
-      ]
-    },
-    'end-annoying': {
-      id: 'end-annoying',
-      speaker: 'narrator',
-      text: '⚠️ Roommate Cat sends you to another room. In Italy, football concentration is not negotiable.',
-      textItalian: '⚠️ Roommate Cat ti manda in un\'altra stanza. In Italia, la concentrazione per il calcio non è negoziabile.',
-      choices: []
-    },
-    'end-match': {
-      id: 'end-match',
-      speaker: 'narrator',
-      text: '✅ You survived match night without offending Roommate Cat. Football diplomacy: mastered.',
-      textItalian: '✅ Hai sopravvissuto alla serata partita senza offendere Roommate Cat. Diplomazia calcistica: padroneggiata.',
-      choices: []
-    },
-    'end-music': {
-      id: 'end-music',
-      speaker: 'narrator',
-      text: '✅ The radio plays a song. Sometimes low-tech is the best tech.',
-      textItalian: '✅ La radio suona una canzone. A volte la tecnologia semplice è la migliore.',
-      choices: []
-    },
-    'end-gaming': {
-      id: 'end-gaming',
-      speaker: 'narrator',
-      text: '✅ You spent the evening gaming together. A peaceful alternative to football politics.',
-      textItalian: '✅ Avete passato la serata a giocare insieme. Un\'alternativa pacifica alla politica calcistica.',
-      choices: []
-    },
-    'end-perfect': {
-      id: 'end-perfect',
-      speaker: 'narrator',
-      text: '✅ Perfect! Flexible, resourceful, and culturally aware. That\'s Italian living-room harmony.',
-      textItalian: '✅ Perfetto! Flessibile, ingegnoso e culturalmente consapevole. Questa è l\'armonia del soggiorno italiano.',
-      choices: []
-    }
-  }
-};
-
-// ============================================
-// GARDEN SCENARIOS
-// ============================================
-
-const gardenWeekendScenario: BranchingScenario = {
-  id: 'garden-weekend-plan',
-  roomId: 'garden',
-  title: 'The Weekend Plan',
-  titleNative: "Il Programma del Weekend",
-  timeContext: 'Saturday morning',
-  startNodeId: 'grass',
-  culturalLesson: 'Italians often let weather dictate outdoor plans. Arguing with rain is futile.',
-  catCharacter: {
-    id: 'friend-cat',
-    name: 'Friend Cat',
-    emoji: '🐱',
-    color: '#22C55E'
-  },
-  nodes: {
-    'grass': {
-      id: 'grass',
-      speaker: 'narrator',
-      text: 'You and 🐱 Friend Cat are lying on the grass. The sun is warm.',
-      textItalian: 'Tu e 🐱 Friend Cat siete sdraiati sull\'erba. Il sole è caldo.',
-      choices: [
-        { 
-          text: '🏖️ "Andiamo al mare"', 
-          textItalian: 'Andiamo al mare',
-          nextNodeId: 'beach-plan' 
-        },
-        { 
-          text: '⛰️ "Andiamo in montagna"', 
-          textItalian: 'Andiamo in montagna',
-          nextNodeId: 'mountain-plan' 
-        },
-        { 
-          text: '🌳 "Restiamo qui nel giardino"', 
-          textItalian: 'Restiamo qui nel giardino',
-          nextNodeId: 'garden-stay' 
-        }
-      ]
-    },
-    'beach-plan': {
-      id: 'beach-plan',
-      speaker: 'npc',
-      text: '🐱 Friend Cat stretches. "Sì! Prendiamo il sole sulla spiaggia!" But a dark cloud appears.',
-      textItalian: '🐱 Friend Cat si stiracchia. "Sì! Prendiamo il sole sulla spiaggia!" Ma appare una nuvola scura.',
-      backgroundEffect: 'happy',
-      choices: [
-        { 
-          text: '☁️ "Non importa, andiamo lo stesso"', 
-          textItalian: 'Non importa, andiamo lo stesso',
-          nextNodeId: 'beach-cloudy' 
-        },
-        { 
-          text: '🌳 "Meglio restare nel giardino"', 
-          textItalian: 'Meglio restare nel giardino',
-          nextNodeId: 'garden-stay' 
-        },
-        { 
-          text: '🥪 "Prendiamo un panino prima"', 
-          textItalian: 'Prendiamo un panino prima',
-          nextNodeId: 'picnic-delay' 
-        }
-      ]
-    },
-    'mountain-plan': {
-      id: 'mountain-plan',
-      speaker: 'npc',
-      text: '🐱 Friend Cat\'s ears perk up. "Bella idea! Corriamo nel bosco!"',
-      textItalian: '🐱 Friend Cat ha le orecchie dritte. "Bella idea! Corriamo nel bosco!"',
-      backgroundEffect: 'happy',
-      choices: [
-        { 
-          text: '🏃 "Sì, corro nel bosco!"', 
-          textItalian: 'Sì, corro nel bosco!',
-          nextNodeId: 'run-forest' 
-        },
-        { 
-          text: '😴 "No, sono stanco. Restiamo qui."', 
-          textItalian: 'No, sono stanco. Restiamo qui.',
-          nextNodeId: 'garden-stay' 
-        },
-        { 
-          text: '🌧️ "Guarda quella nuvola. Piove!"', 
-          textItalian: 'Guarda quella nuvola. Piove!',
-          nextNodeId: 'rain-cancel' 
-        }
-      ]
-    },
-    'garden-stay': {
-      id: 'garden-stay',
-      speaker: 'npc',
-      text: '🐱 Friend Cat curls up under a tree. "Perfetto. È tranquillo qui."',
-      textItalian: '🐱 Friend Cat si rannicchia sotto un albero. "Perfetto. È tranquillo qui."',
-      backgroundEffect: 'happy',
-      choices: [
-        { 
-          text: '🥪 "Mangiamo un panino"', 
-          textItalian: 'Mangiamo un panino',
-          nextNodeId: 'picnic-good' 
-        },
-        { 
-          text: '🍃 "Ascoltiamo il vento tra le foglie"', 
-          textItalian: 'Ascoltiamo il vento tra le foglie',
-          nextNodeId: 'end-zen' 
-        }
-      ]
-    },
-    'rain-cancel': {
-      id: 'rain-cancel',
-      speaker: 'narrator',
-      text: 'The rain arrives in big drops. Friend Cat\'s tail puffs up.',
-      textItalian: 'La pioggia arriva a grandi gocce. La coda di Friend Cat si gonfia.',
-      choices: [
-        { 
-          text: '🌳 "Corriamo sotto l\'albero!"', 
-          textItalian: 'Corriamo sotto l\'albero!',
-          nextNodeId: 'tree-shelter' 
-        },
-        { 
-          text: '☂️ "Ho l\'ombrello!"', 
-          textItalian: 'Ho l\'ombrello!',
-          nextNodeId: 'umbrella-hero' 
-        },
-        { 
-          text: '💧 "Ci bagniamo lo stesso!"', 
-          textItalian: 'Ci bagniamo lo stesso!',
-          nextNodeId: 'end-soaked' 
-        }
-      ]
-    },
-    'beach-cloudy': {
-      id: 'beach-cloudy',
-      speaker: 'narrator',
-      text: 'You arrive at the beach. The sea is grey. The wind is cold. Not exactly paradise.',
-      textItalian: 'Arrivi alla spiaggia. Il mare è grigio. Il vento è freddo. Non è esattamente il paradiso.',
-      choices: [
-        { 
-          text: '😤 "Volevo il sole!"', 
-          textItalian: 'Volevo il sole!',
-          nextNodeId: 'end-grumpy' 
-        },
-        { 
-          text: '🌳 "Torniamo nel giardino"', 
-          textItalian: 'Torniamo nel giardino',
-          nextNodeId: 'garden-stay' 
-        }
-      ]
-    },
-    'picnic-delay': {
-      id: 'picnic-delay',
-      speaker: 'narrator',
-      text: 'You eat the sandwich. By the time you finish, the cloud has turned into a storm.',
-      textItalian: 'Mangi il panino. Quando finisci, la nuvola si è trasformata in un temporale.',
-      choices: [
-        { 
-          text: '🌳 "Restiamo nel giardino"', 
-          textItalian: 'Restiamo nel giardino',
-          nextNodeId: 'garden-stay' 
-        }
-      ]
-    },
-    'run-forest': {
-      id: 'run-forest',
-      speaker: 'narrator',
-      text: 'You run through the forest, leaves crunching underfoot. Then you hear thunder.',
-      textItalian: 'Corri nel bosco, le foglie scricchiolano sotto i piedi. Poi senti il tuono.',
-      choices: [
-        { 
-          text: '🏃 "Corriamo più veloce!"', 
-          textItalian: 'Corriamo più veloce!',
-          nextNodeId: 'end-thunder' 
-        },
-        { 
-          text: '🌳 "Torniamo indietro!"', 
-          textItalian: 'Torniamo indietro!',
-          nextNodeId: 'garden-stay' 
-        }
-      ]
-    },
-    'picnic-good': {
-      id: 'picnic-good',
-      speaker: 'npc',
-      text: '🐱 Friend Cat takes a bite. "Buonissimo! Hai portato anche la frutta?"',
-      textItalian: '🐱 Friend Cat dà un morso. "Buonissimo! Hai portato anche la frutta?"',
-      backgroundEffect: 'happy',
-      choices: [
-        { 
-          text: '💬 "Sì, una mela"', 
-          textItalian: 'Sì, una mela',
-          nextNodeId: 'end-perfect' 
-        }
-      ]
-    },
-    'tree-shelter': {
-      id: 'tree-shelter',
-      speaker: 'narrator',
-      text: 'Under the tree the leaves form a natural roof. You stay almost dry.',
-      textItalian: 'Sotto l\'albero le foglie formano un tetto naturale. Rimani quasi asciutto.',
-      choices: [
-        { 
-          text: '💬 "Siamo riparati qui"', 
-          textItalian: 'Siamo riparati qui',
-          nextNodeId: 'end-perfect' 
-        }
-      ]
-    },
-    'umbrella-hero': {
-      id: 'umbrella-hero',
-      speaker: 'npc',
-      text: '🐱 Friend Cat looks surprised and grateful. "Sei un eroe! Non sapevo che avessi l\'ombrello!"',
-      textItalian: '🐱 Friend Cat sembra sorpreso e grato. "Sei un eroe! Non sapevo che avessi l\'ombrello!"',
-      backgroundEffect: 'happy',
-      choices: [
-        { 
-          text: '💬 "Sempre preparato!"', 
-          textItalian: 'Sempre preparato!',
-          nextNodeId: 'end-perfect' 
-        }
-      ]
-    },
-    'end-grumpy': {
-      id: 'end-grumpy',
-      speaker: 'narrator',
-      text: '⚠️ You complained while the grey waves crashed. In Italy, you adapt to the weather, not the other way around.',
-      textItalian: '⚠️ Ti sei lamentato mentre le onde grigie si infrangevano. In Italia, ti adatti al tempo, non il contrario.',
-      choices: []
-    },
-    'end-thunder': {
-      id: 'end-thunder',
-      speaker: 'narrator',
-      text: '⚠️ Lightning flashed nearby. Running in a forest during a storm is dangerous. When thunder roars, go indoors.',
-      textItalian: '⚠️ Un fulmine ha lampeggiato vicino. Correre in un bosco durante un temporale è pericoloso. Quando tuona, vai al chiuso.',
-      choices: []
-    },
-    'end-soaked': {
-      id: 'end-soaked',
-      speaker: 'narrator',
-      text: '⚠️ You are completely soaked. Checking the weather before going out is essential!',
-      textItalian: '⚠️ Siete completamente bagnati. Controllare il tempo prima di uscire è fondamentale!',
-      choices: []
-    },
-    'end-zen': {
-      id: 'end-zen',
-      speaker: 'narrator',
-      text: '✅ Sometimes the best plan is no plan. You and Friend Cat enjoyed the garden in peace.',
-      textItalian: '✅ A volte il miglior piano è non avere un piano. Tu e Friend Cat avete goduto del giardino in pace.',
-      choices: []
-    },
-    'end-perfect': {
-      id: 'end-perfect',
-      speaker: 'narrator',
-      text: '✅ Weekend plan: adapted, executed, enjoyed. That\'s the Italian way.',
-      textItalian: '✅ Piano del weekend: adattato, eseguito, goduto. Questo è il modo italiano.',
-      choices: []
-    }
-  }
-};
-
-// ============================================
-// CAFE SCENARIOS
-// ============================================
-
-const cafeOrderScenario: BranchingScenario = {
+const cafeScenario: BranchingScenario = {
   id: 'cafe-order-coffee',
   roomId: 'cafe',
-  title: 'The Coffee Order',
-  titleNative: "L'Ordine del Caffè",
+  title: 'Ordering at the Bar',
+  titleNative: "Ordinare al Bar",
   timeContext: 'Monday morning, 9:00 AM',
   startNodeId: 'enter-cafe',
-  culturalLesson: 'At Italian bars, you pay first at the register (cassa), then order at the counter. Saying "al banco" means standing at the counter.',
+  culturalLesson: 'At Italian bars, you usually pay first at the register (cassa), then order at the counter. "Al banco" means standing at the counter.',
+  phrasesLearned: [
+    { target: 'Un caffè, per favore.', source: 'A coffee, please.', situation: 'Ordering' },
+    { target: 'Vorrei un cappuccino e un cornetto.', source: 'I would like a cappuccino and a croissant.', situation: 'Ordering breakfast' },
+    { target: 'Quanto viene?', source: 'How much is it?', situation: 'Asking for the bill' },
+    { target: 'Il conto, per favore.', source: 'The bill, please.', situation: 'Asking for the bill (at table)' },
+  ],
   catCharacter: {
     id: 'barista-cat',
-    name: 'Barista Cat',
+    name: 'Barista',
     emoji: '☕',
     color: '#A16207'
   },
@@ -850,147 +132,107 @@ const cafeOrderScenario: BranchingScenario = {
     'enter-cafe': {
       id: 'enter-cafe',
       speaker: 'narrator',
-      text: 'You enter the café. 🐱 Barista Cat is steaming milk behind the espresso machine. The smell of coffee fills the air.',
-      textItalian: 'Entri nel caffè. 🐱 Barista Cat sta montando il latte dietro la macchina del caffè. L\'aroma di caffè riempie l\'aria.',
+      text: 'You enter a busy café. The barista is steaming milk behind the espresso machine.',
+      textTarget: 'Entri in un caffè affollato. Il barista sta montando il latte dietro la macchina del caffè.',
       choices: [
-        { 
-          text: '💬 "Buongiorno! Un caffè, per favore."', 
-          textItalian: 'Buongiorno! Un caffè, per favore.',
-          nextNodeId: 'order-direct' 
-        },
-        { 
-          text: '🪑 Sit at a table first', 
-          textItalian: 'Siediti prima a un tavolo',
-          nextNodeId: 'table-wrong' 
-        },
-        { 
-          text: '💶 Go to the register (cassa) first', 
-          textItalian: 'Vai prima alla cassa',
-          nextNodeId: 'pay-first' 
-        }
+        { text: '💬 "Un caffè, per favore."', textTarget: 'Un caffè, per favore.', nextNodeId: 'order-direct' },
+        { text: '💬 "Vorrei un cappuccino e un cornetto."', textTarget: 'Vorrei un cappuccino e un cornetto.', nextNodeId: 'order-polite' },
+        { text: '🪑 Sit down at a table first', textTarget: 'Mi siedo prima a un tavolo.', nextNodeId: 'table-wrong' },
       ]
     },
     'order-direct': {
       id: 'order-direct',
       speaker: 'npc',
-      text: '🐱 Barista Cat looks confused. "Ha pagato alla cassa?" (Did you pay at the register?)',
-      textItalian: '🐱 Barista Cat sembra confuso. "Ha pagato alla cassa?"',
+      text: '"Certo. Macchiato o normale?" The barista assumes you know the system.',
+      textTarget: '"Certo. Macchiato o normale?" Il barista assume che tu conosca il sistema.',
+      backgroundEffect: 'neutral',
       choices: [
-        { 
-          text: '😅 "No, scusi. Vado subito."', 
-          textItalian: 'No, scusi. Vado subito.',
-          nextNodeId: 'pay-first' 
-        },
-        { 
-          text: '💳 "Pago qui?"', 
-          textItalian: 'Pago qui?',
-          nextNodeId: 'explain-system' 
-        }
+        { text: '☕ "Normale, grazie."', textTarget: 'Normale, grazie.', nextNodeId: 'get-coffee' },
+        { text: '🥛 "Macchiato, per favore."', textTarget: 'Macchiato, per favore.', nextNodeId: 'get-coffee' },
+      ]
+    },
+    'order-polite': {
+      id: 'order-polite',
+      speaker: 'npc',
+      text: '"Volentieri! Lo mangi qui o da portar via?" Polite orders get warmer service.',
+      textTarget: '"Volentieri! Lo mangi qui o da portar via?" Gli ordini educati ricevono un servizio più caloroso.',
+      backgroundEffect: 'happy',
+      choices: [
+        { text: '🪑 "Qui, grazie."', textTarget: 'Qui, grazie.', nextNodeId: 'pay-question' },
+        { text: '📦 "Da portar via."', textTarget: 'Da portar via.', nextNodeId: 'pay-question' },
       ]
     },
     'table-wrong': {
       id: 'table-wrong',
       speaker: 'narrator',
-      text: 'You sit at a table. Barista Cat looks at you expectantly, but doesn\'t come over. In Italy, table service is different.',
-      textItalian: 'Ti siedi a un tavolo. Barista Cat ti guarda in attesa, ma non si avvicina. In Italia, il servizio ai tavoli è diverso.',
+      text: 'You sit down, but nobody comes to take your order. In many Italian bars, you order at the counter.',
+      textTarget: 'Ti siedi, ma nessuno viene a prendere l\'ordine. In molti bar italiani, si ordina al bancone.',
+      backgroundEffect: 'neutral',
       choices: [
-        { 
-          text: '🚶 Go to the counter', 
-          textItalian: 'Vai al bancone',
-          nextNodeId: 'enter-cafe' 
-        }
+        { text: '🚶 Go to the counter', textTarget: 'Vado al bancone.', nextNodeId: 'enter-cafe' },
       ]
     },
-    'pay-first': {
-      id: 'pay-first',
+    'pay-question': {
+      id: 'pay-question',
       speaker: 'npc',
-      text: '🐱 Cashier Cat takes your money. "Un caffè al banco. Ecco lo scontrino." (Here\'s the receipt.)',
-      textItalian: '🐱 Cashier Cat prende i tuoi soldi. "Un caffè al banco. Ecco lo scontrino."',
+      text: '"Tre euro e cinquanta." The barista hands you the receipt.',
+      textTarget: '"Tre euro e cinquanta." Il barista ti consegna lo scontrino.',
       backgroundEffect: 'happy',
       choices: [
-        { 
-          text: '🧾 Take receipt to the counter', 
-          textItalian: 'Porta lo scontrino al bancone',
-          nextNodeId: 'get-coffee' 
-        }
-      ]
-    },
-    'explain-system': {
-      id: 'explain-system',
-      speaker: 'npc',
-      text: '🐱 Barista Cat explains: "Prima paga alla cassa, poi torna qui con lo scontrino." (First pay at the register, then come back with the receipt.)',
-      textItalian: '🐱 Barista Cat spiega: "Prima paga alla cassa, poi torna qui con lo scontrino."',
-      choices: [
-        { 
-          text: '💶 Go to the register', 
-          textItalian: 'Vai alla cassa',
-          nextNodeId: 'pay-first' 
-        }
+        { text: '💶 "Ecco i soldi."', textTarget: 'Ecco i soldi.', nextNodeId: 'end-perfect' },
+        { text: '💳 "Accettate carta?"', textTarget: 'Accettate carta?', nextNodeId: 'card-check' },
       ]
     },
     'get-coffee': {
       id: 'get-coffee',
       speaker: 'npc',
-      text: '🐱 Barista Cat takes your receipt and starts the espresso machine. "Un caffè, subito pronto!"',
-      textItalian: '🐱 Barista Cat prende il tuo scontrino e avvia la macchina del caffè. "Un caffè, subito pronto!"',
+      text: '"Ecco il caffè, buona giornata!" The barista slides the tiny cup across the counter.',
+      textTarget: '"Ecco il caffè, buona giornata!" Il barista fa scivolare la tazzina sul bancone.',
       backgroundEffect: 'happy',
       choices: [
-        { 
-          text: '☕ "Grazie!"', 
-          textItalian: 'Grazie!',
-          nextNodeId: 'end-perfect' 
-        },
-        { 
-          text: '🥐 "Anche un cornetto, per favore."', 
-          textItalian: 'Anche un cornetto, per favore.',
-          nextNodeId: 'add-croissant' 
-        }
+        { text: '☕ "Grazie, buona giornata!"', textTarget: 'Grazie, buona giornata!', nextNodeId: 'end-perfect' },
       ]
     },
-    'add-croissant': {
-      id: 'add-croissant',
+    'card-check': {
+      id: 'card-check',
       speaker: 'npc',
-      text: '🐱 Barista Cat grabs a fresh croissant. "Ecco! Vuole la crema o la marmellata?"',
-      textItalian: '🐱 Barista Cat prende un cornetto fresco. "Ecco! Vuole la crema o la marmellata?"',
+      text: '"Sì, certo." The barista pulls out the card reader. Always good to ask first in small bars.',
+      textTarget: '"Sì, certo." Il barista tira fuori il POS. È sempre bene chiedere prima nei bar piccoli.',
       backgroundEffect: 'happy',
       choices: [
-        { 
-          text: '🍯 "La marmellata, grazie."', 
-          textItalian: 'La marmellata, grazie.',
-          nextNodeId: 'end-perfect' 
-        },
-        { 
-          text: '🍦 "La crema, per favore."', 
-          textItalian: 'La crema, per favore.',
-          nextNodeId: 'end-perfect' 
-        }
+        { text: '💳 "Perfetto, grazie."', textTarget: 'Perfetto, grazie.', nextNodeId: 'end-perfect' },
       ]
     },
     'end-perfect': {
       id: 'end-perfect',
       speaker: 'narrator',
-      text: '✅ Perfect! You learned the Italian bar system: cassa first, then banconco. Enjoy your caffè!',
-      textItalian: '✅ Perfetto! Hai imparato il sistema del bar italiano: prima la cassa, poi il bancone. Buon caffè!',
+      text: '✅ Coffee ordered, paid for, and enjoyed. Remember: polite requests and knowing the system make you look like a local.',
+      textTarget: '✅ Caffè ordinato, pagato e gustato. Ricorda: le richieste educate e conoscere il sistema ti fanno sembrare un locale.',
       choices: []
-    }
+    },
   }
 };
 
 // ============================================
-// SUPERMARKET SCENARIOS
+// SUPERMARKET — Finding Items
 // ============================================
 
-const supermarketShoppingScenario: BranchingScenario = {
-  id: 'supermarket-shopping',
+const supermarketScenario: BranchingScenario = {
+  id: 'supermarket-finding-items',
   roomId: 'supermarket',
-  title: 'The Shopping List',
-  titleNative: "La Lista della Spesa",
+  title: 'Finding Something',
+  titleNative: 'Trovare Qualcosa',
   timeContext: 'Tuesday afternoon',
   startNodeId: 'enter-market',
-  culturalLesson: 'In Italian supermarkets, you weigh and label produce yourself at special scales before checkout.',
+  culturalLesson: 'In Italian supermarkets, produce is often weighed and labeled at special scales before checkout. Asking employees for help is normal and expected.',
+  phrasesLearned: [
+    { target: 'Mi scusi, sa dov\'è la pasta?', source: 'Excuse me, do you know where the pasta is?', situation: 'Asking for location' },
+    { target: 'Dov\'è il latte senza lattosio?', source: 'Where is the lactose-free milk?', situation: 'Asking for specific item' },
+    { target: 'Quanto costa questo?', source: 'How much does this cost?', situation: 'Asking price' },
+  ],
   catCharacter: {
-    id: 'vendor-cat',
-    name: 'Vendor Cat',
+    id: 'employee-cat',
+    name: 'Employee',
     emoji: '🛒',
     color: '#22C55E'
   },
@@ -998,526 +240,694 @@ const supermarketShoppingScenario: BranchingScenario = {
     'enter-market': {
       id: 'enter-market',
       speaker: 'narrator',
-      text: 'You enter the supermarket with a list. 🐱 Vendor Cat is arranging fresh vegetables.',
-      textItalian: 'Entri nel supermercato con una lista. 🐱 Vendor Cat sta sistemando le verdure fresche.',
+      text: 'You\'re in the supermarket but can\'t find the pasta aisle. An employee is stocking shelves nearby.',
+      textTarget: 'Sei al supermercato ma non trovi il reparto della pasta. Un dipendente sta rifornendo gli scaffali vicino.',
       choices: [
-        { 
-          text: '🍎 Go to the produce section', 
-          textItalian: 'Vai alla sezione ortofrutta',
-          nextNodeId: 'produce-section' 
-        },
-        { 
-          text: '🥛 Go to the dairy section', 
-          textItalian: 'Vai alla sezione latticini',
-          nextNodeId: 'dairy-section' 
-        },
-        { 
-          text: '📋 Check the list first', 
-          textItalian: 'Controlla prima la lista',
-          nextNodeId: 'check-list' 
-        }
+        { text: '💬 "Mi scusi, sa dov\'è la pasta?"', textTarget: 'Mi scusi, sa dov\'è la pasta?', nextNodeId: 'ask-polite' },
+        { text: '🔍 Look around without asking', textTarget: 'Guardo in giro senza chiedere.', nextNodeId: 'wander-lost' },
+        { text: '📱 Check your phone map', textTarget: 'Controllo la mappa sul telefono.', nextNodeId: 'phone-map' },
       ]
     },
-    'produce-section': {
-      id: 'produce-section',
+    'ask-polite': {
+      id: 'ask-polite',
       speaker: 'npc',
-      text: '🐱 Vendor Cat points to the scales. "Deve pesare la frutta e mettere l\'etichetta." (You need to weigh the fruit and put the label.)',
-      textItalian: '🐱 Vendor Cat indica le bilance. "Deve pesare la frutta e mettere l\'etichetta."',
-      choices: [
-        { 
-          text: '🍎 Weigh the apples', 
-          textItalian: 'Pesa le mele',
-          nextNodeId: 'weigh-produce' 
-        },
-        { 
-          text: '😕 "Non capisco. Mi aiuti?"', 
-          textItalian: 'Non capisco. Mi aiuti?',
-          nextNodeId: 'help-offered' 
-        }
-      ]
-    },
-    'weigh-produce': {
-      id: 'weigh-produce',
-      speaker: 'narrator',
-      text: 'You put the apples on the scale and press the button with the apple picture. A label prints out.',
-      textItalian: 'Metti le mele sulla bilancia e premi il pulsante con l\'immagine della mela. Esce un\'etichetta.',
-      choices: [
-        { 
-          text: '🏷️ Stick label on the bag', 
-          textItalian: 'Attacca l\'etichetta sulla busta',
-          nextNodeId: 'end-perfect' 
-        }
-      ]
-    },
-    'help-offered': {
-      id: 'help-offered',
-      speaker: 'npc',
-      text: '🐱 Vendor Cat smiles and shows you how. "Vede? Mette qui, preme il numero, e prende l\'etichetta."',
-      textItalian: '🐱 Vendor Cat sorride e ti mostra come fare. "Vede? Mette qui, preme il numero, e prende l\'etichetta."',
+      text: '"Sì, al terzo scaffale, dietro di lei." The employee points clearly. Asking politely always works.',
+      textTarget: '"Sì, al terzo scaffale, dietro di lei." Il dipendente indica chiaramente. Chiedere educatamente funziona sempre.',
       backgroundEffect: 'happy',
       choices: [
-        { 
-          text: '💬 "Grazie mille!"', 
-          textItalian: 'Grazie mille!',
-          nextNodeId: 'end-perfect' 
-        }
+        { text: '💬 "Grazie mille!"', textTarget: 'Grazie mille!', nextNodeId: 'end-perfect' },
+        { text: '💬 "E il pane integrale?"', textTarget: 'E il pane integrale?', nextNodeId: 'follow-up' },
       ]
     },
-    'dairy-section': {
-      id: 'dairy-section',
+    'wander-lost': {
+      id: 'wander-lost',
       speaker: 'narrator',
-      text: 'You find the milk, but there are so many types: intero, parzialmente scremato, scremato...',
-      textItalian: 'Trovi il latte, ma ci sono così tanti tipi: intero, parzialmente scremato, scremato...',
+      text: 'You wander for ten minutes. The pasta was behind the rice. Sometimes asking saves time.',
+      textTarget: 'Giri per dieci minuti. La pasta era dietro il riso. A volte chiedere fa risparmiare tempo.',
+      backgroundEffect: 'neutral',
       choices: [
-        { 
-          text: '🥛 Take whole milk (intero)', 
-          textItalian: 'Prendi il latte intero',
-          nextNodeId: 'end-perfect' 
-        },
-        { 
-          text: '🤔 Ask someone for help', 
-          textItalian: 'Chiedi aiuto a qualcuno',
-          nextNodeId: 'ask-help' 
-        }
+        { text: '💬 "Mi scusi, dov\'è la pasta?"', textTarget: 'Mi scusi, dov\'è la pasta?', nextNodeId: 'ask-polite' },
       ]
     },
-    'ask-help': {
-      id: 'ask-help',
+    'phone-map': {
+      id: 'phone-map',
+      speaker: 'narrator',
+      text: 'The store app shows the layout. Technology helps, but a smile and "scusi" builds connections.',
+      textTarget: 'L\'app del negozio mostra la pianta. La tecnologia aiuta, ma un sorriso e uno "scusi" costruiscono connessioni.',
+      backgroundEffect: 'neutral',
+      choices: [
+        { text: '📱 Follow the map', textTarget: 'Seguo la mappa.', nextNodeId: 'end-good' },
+      ]
+    },
+    'follow-up': {
+      id: 'follow-up',
       speaker: 'npc',
-      text: '🐱 Another shopper Cat explains: "Intero è whole, scremato è skimmed. Io prendo il parzialmente scremato."',
-      textItalian: '🐱 Un altro gatto acquirente spiega: "Intero è whole, scremato è skimmed. Io prendo il parzialmente scremato."',
+      text: '"Il pane integrale è al reparto panetteria, di fronte alle casse." Helpful and specific.',
+      textTarget: '"Il pane integrale è al reparto panetteria, di fronte alle casse." Utile e specifico.',
       backgroundEffect: 'happy',
       choices: [
-        { 
-          text: '💬 "Grazie! Prendo lo stesso."', 
-          textItalian: 'Grazie! Prendo lo stesso.',
-          nextNodeId: 'end-perfect' 
-        }
-      ]
-    },
-    'check-list': {
-      id: 'check-list',
-      speaker: 'narrator',
-      text: 'Your list says: pane, latte, uova, mela, pasta. You have a plan now.',
-      textItalian: 'La tua lista dice: pane, latte, uova, mela, pasta. Hai un piano ora.',
-      choices: [
-        { 
-          text: '🍎 Start with produce', 
-          textItalian: 'Inizia con l\'ortofrutta',
-          nextNodeId: 'produce-section' 
-        }
+        { text: '💬 "Perfetto, grazie ancora!"', textTarget: 'Perfetto, grazie ancora!', nextNodeId: 'end-perfect' },
       ]
     },
     'end-perfect': {
       id: 'end-perfect',
       speaker: 'narrator',
-      text: '✅ Shopping success! You learned to weigh your own produce and navigate Italian dairy options.',
-      textItalian: '✅ Spesa riuscita! Hai imparato a pesare la tua frutta e a navigare tra le opzioni lattiero-casearie italiane.',
+      text: '✅ You found everything and made a friendly connection. "Mi scusi" opens doors — and aisles.',
+      textTarget: '✅ Hai trovato tutto e creato un contatto amichevole. "Mi scusi" apre porte — e corsie.',
       choices: []
-    }
+    },
+    'end-good': {
+      id: 'end-good',
+      speaker: 'narrator',
+      text: '✅ You found the pasta, but next time try asking. Small interactions are where language lives.',
+      textTarget: '✅ Hai trovato la pasta, ma la prossima volta prova a chiedere. Le piccole interazioni sono dove vive la lingua.',
+      choices: []
+    },
   }
 };
 
 // ============================================
-// TRANSPORT SCENARIOS
+// BEDROOM — The Morning Rush
 // ============================================
 
-const transportTicketScenario: BranchingScenario = {
-  id: 'transport-buy-ticket',
-  roomId: 'transport',
-  title: 'Buying a Ticket',
-  titleNative: "Comprare un Biglietto",
-  timeContext: 'Friday morning, rush hour',
-  startNodeId: 'enter-station',
-  culturalLesson: 'Italian train tickets must be validated (stamped) at the yellow machines before boarding, or you face a fine.',
-  catCharacter: {
-    id: 'agent-cat',
-    name: 'Agent Cat',
-    emoji: '🎫',
-    color: '#6366F1'
-  },
-  nodes: {
-    'enter-station': {
-      id: 'enter-station',
-      speaker: 'narrator',
-      text: 'You enter the train station. 🐱 Agent Cat is behind the counter, helping another customer.',
-      textItalian: 'Entri nella stazione del treno. 🐱 Agent Cat è dietro il bancone, ad aiutare un altro cliente.',
-      choices: [
-        { 
-          text: '🎫 Go to the counter', 
-          textItalian: 'Vai al bancone',
-          nextNodeId: 'at-counter' 
-        },
-        { 
-          text: '🤖 Use the ticket machine', 
-          textItalian: 'Usa la macchina dei biglietti',
-          nextNodeId: 'machine-path' 
-        },
-        { 
-          text: '📱 Check the departure board first', 
-          textItalian: 'Controlla prima il tabellone delle partenze',
-          nextNodeId: 'check-board' 
-        }
-      ]
-    },
-    'at-counter': {
-      id: 'at-counter',
-      speaker: 'npc',
-      text: '🐱 Agent Cat looks up. "Buongiorno! Dove vuole andare?" (Where do you want to go?)',
-      textItalian: '🐱 Agent Cat alza lo sguardo. "Buongiorno! Dove vuole andare?"',
-      choices: [
-        { 
-          text: '💬 "Vorrei andare a Roma, per favore."', 
-          textItalian: 'Vorrei andare a Roma, per favore.',
-          nextNodeId: 'ticket-roma' 
-        },
-        { 
-          text: '💬 "Un biglietto per Firenze."', 
-          textItalian: 'Un biglietto per Firenze.',
-          nextNodeId: 'ticket-firenze' 
-        },
-        { 
-          text: '❓ "Quanto costa per Milano?"', 
-          textItalian: 'Quanto costa per Milano?',
-          nextNodeId: 'ask-price' 
-        }
-      ]
-    },
-    'ticket-roma': {
-      id: 'ticket-roma',
-      speaker: 'npc',
-      text: '🐱 Agent Cat types on the computer. "Andata o andata e ritorno?" (One way or round trip?)',
-      textItalian: '🐱 Agent Cat digita sul computer. "Andata o andata e ritorno?"',
-      choices: [
-        { 
-          text: '🔄 "Andata e ritorno, grazie."', 
-          textItalian: 'Andata e ritorno, grazie.',
-          nextNodeId: 'validate-reminder' 
-        },
-        { 
-          text: '➡️ "Solo andata."', 
-          textItalian: 'Solo andata.',
-          nextNodeId: 'validate-reminder' 
-        }
-      ]
-    },
-    'validate-reminder': {
-      id: 'validate-reminder',
-      speaker: 'npc',
-      text: '🐱 Agent Cat hands you the ticket. "Ricordi di convalidare il biglietto prima di salire!" (Remember to validate before boarding!)',
-      textItalian: '🐱 Agent Cat ti porge il biglietto. "Ricordi di convalidare il biglietto prima di salire!"',
-      backgroundEffect: 'happy',
-      choices: [
-        { 
-          text: '💬 "Sì, lo so. Grazie!"', 
-          textItalian: 'Sì, lo so. Grazie!',
-          nextNodeId: 'end-perfect' 
-        },
-        { 
-          text: '❓ "Come si fa?"', 
-          textItalian: 'Come si fa?',
-          nextNodeId: 'explain-validation' 
-        }
-      ]
-    },
-    'explain-validation': {
-      id: 'explain-validation',
-      speaker: 'npc',
-      text: '🐱 Agent Cat points. "Vede le macchine gialle? Mette il biglietto lì. Fa bip!" (See the yellow machines? Put the ticket there. It goes beep!)',
-      textItalian: '🐱 Agent Cat indica. "Vede le macchine gialle? Mette il biglietto lì. Fa bip!"',
-      choices: [
-        { 
-          text: '💬 "Capito! Grazie mille!"', 
-          textItalian: 'Capito! Grazie mille!',
-          nextNodeId: 'end-perfect' 
-        }
-      ]
-    },
-    'machine-path': {
-      id: 'machine-path',
-      speaker: 'narrator',
-      text: 'The machine has many options. Regionale, Intercity, Frecciarossa... Where do you press?',
-      textItalian: 'La macchina ha molte opzioni. Regionale, Intercity, Frecciarossa... Dove premi?',
-      choices: [
-        { 
-          text: '🚂 Press "Regionale" (local train)', 
-          textItalian: 'Premi "Regionale"',
-          nextNodeId: 'machine-success' 
-        },
-        { 
-          text: '❓ Go ask for help', 
-          textItalian: 'Vai a chiedere aiuto',
-          nextNodeId: 'at-counter' 
-        }
-      ]
-    },
-    'machine-success': {
-      id: 'machine-success',
-      speaker: 'narrator',
-      text: 'The machine prints your ticket. But wait... you need to validate it!',
-      textItalian: 'La macchina stampa il tuo biglietto. Ma aspetta... devi convalidarlo!',
-      choices: [
-        { 
-          text: '🟡 Find the yellow validation machine', 
-          textItalian: 'Trova la macchina gialla di convalida',
-          nextNodeId: 'end-perfect' 
-        }
-      ]
-    },
-    'check-board': {
-      id: 'check-board',
-      speaker: 'narrator',
-      text: 'The departure board shows: Roma - Binario 5 - 10:15. You have 20 minutes.',
-      textItalian: 'Il tabellone delle partenze mostra: Roma - Binario 5 - 10:15. Hai 20 minuti.',
-      choices: [
-        { 
-          text: '🎫 Go buy the ticket now', 
-          textItalian: 'Vai a comprare il biglietto ora',
-          nextNodeId: 'at-counter' 
-        }
-      ]
-    },
-    'ticket-firenze': {
-      id: 'ticket-firenze',
-      speaker: 'npc',
-      text: '🐱 Agent Cat checks the schedule. "Il prossimo treno per Firenze parte alle 11:30."',
-      textItalian: '🐱 Agent Cat controlla l\'orario. "Il prossimo treno per Firenze parte alle 11:30."',
-      choices: [
-        { 
-          text: '💬 "Perfetto, prendo quello."', 
-          textItalian: 'Perfetto, prendo quello.',
-          nextNodeId: 'validate-reminder' 
-        }
-      ]
-    },
-    'ask-price': {
-      id: 'ask-price',
-      speaker: 'npc',
-      text: '🐱 Agent Cat checks. "Per Milano? Trentacinque euro. Vuole il biglietto?"',
-      textItalian: '🐱 Agent Cat controlla. "Per Milano? Trentacinque euro. Vuole il biglietto?"',
-      choices: [
-        { 
-          text: '💬 "Sì, grazie."', 
-          textItalian: 'Sì, grazie.',
-          nextNodeId: 'validate-reminder' 
-        },
-        { 
-          text: '💬 "Troppo caro. Forse un altro giorno."', 
-          textItalian: 'Troppo caro. Forse un altro giorno.',
-          nextNodeId: 'end-later' 
-        }
-      ]
-    },
-    'end-later': {
-      id: 'end-later',
-      speaker: 'narrator',
-      text: '✅ Smart choice to check the price first. Italian trains can be expensive if you don\'t book in advance.',
-      textItalian: '✅ Scelta intelligente controllare prima il prezzo. I treni italiani possono essere costosi se non prenoti in anticipo.',
-      choices: []
-    },
-    'end-perfect': {
-      id: 'end-perfect',
-      speaker: 'narrator',
-      text: '✅ Ticket purchased and validated! Remember: always validate before boarding Italian trains.',
-      textItalian: '✅ Biglietto comprato e convalidato! Ricorda: convalida sempre prima di salire sui treni italiani.',
-      choices: []
-    }
-  }
-};
-
-// ============================================
-// BATHROOM SCENARIOS
-// ============================================
-
-const bathroomPharmacyScenario: BranchingScenario = {
-  id: 'bathroom-pharmacy-visit',
-  roomId: 'bathroom',
-  title: 'The Pharmacy Visit',
-  titleNative: "La Visita in Farmacia",
-  timeContext: 'Wednesday morning',
+const bedroomScenario: BranchingScenario = {
+  id: 'bedroom-morning-rush',
+  roomId: 'bedroom',
+  title: 'The Morning Rush',
+  titleNative: 'La Fuga Mattutina',
+  timeContext: 'Weekday, 8:15 AM',
   startNodeId: 'wake-up',
-  culturalLesson: 'Italian pharmacies (farmacia) are the first stop for minor health issues. The pharmacist can recommend treatments without a prescription.',
+  culturalLesson: 'Italians often live with family longer and share bathrooms. Coordinating morning routines requires negotiation, not demands.',
+  phrasesLearned: [
+    { target: 'Che ore sono?', source: 'What time is it?', situation: 'Asking time' },
+    { target: 'Mi presti il phon?', source: 'Can you lend me the hair dryer?', situation: 'Borrowing item' },
+    { target: 'Dobbiamo uscire tra dieci minuti.', source: 'We have to leave in ten minutes.', situation: 'Urging hurry' },
+  ],
   catCharacter: {
-    id: 'pharmacist-cat',
-    name: 'Pharmacist Cat',
-    emoji: '💊',
-    color: '#EC4899'
+    id: 'partner-cat',
+    name: 'Partner',
+    emoji: '🧑',
+    color: '#8B5CF6'
   },
   nodes: {
     'wake-up': {
       id: 'wake-up',
       speaker: 'narrator',
-      text: 'You wake up with a headache and sore throat. The medicine cabinet is empty.',
-      textItalian: 'Ti svegli con mal di testa e mal di gola. L\'armadietto dei medicinali è vuoto.',
+      text: 'Your alarm didn\'t go off. You\'re late. Your partner is already getting dressed.',
+      textTarget: 'La sveglia non è suonata. Sei in ritardo. Il tuo partner si sta già vestendo.',
       choices: [
-        { 
-          text: '🏥 Go to the pharmacy (farmacia)', 
-          textItalian: 'Vai in farmacia',
-          nextNodeId: 'at-pharmacy' 
-        },
-        { 
-          text: '🏥 Go to the hospital (ospedale)', 
-          textItalian: 'Vai in ospedale',
-          nextNodeId: 'hospital-wrong' 
-        },
-        { 
-          text: '🛌 Stay in bed and hope it passes', 
-          textItalian: 'Resta a letto e spera che passi',
-          nextNodeId: 'wait-wrong' 
-        }
+        { text: '⏰ "Che ore sono?"', textTarget: 'Che ore sono?', nextNodeId: 'ask-time' },
+        { text: '😱 "Siamo in ritardo!"', textTarget: 'Siamo in ritardo!', nextNodeId: 'panic-mode' },
+        { text: '🚿 "Mi presti il phon?"', textTarget: 'Mi presti il phon?', nextNodeId: 'borrow-dryer' },
       ]
     },
-    'hospital-wrong': {
-      id: 'hospital-wrong',
-      speaker: 'narrator',
-      text: 'The hospital emergency room is for serious cases. For a sore throat, they\'ll send you to the pharmacy anyway.',
-      textItalian: 'Il pronto soccorso dell\'ospedale è per casi gravi. Per un mal di gola, ti manderanno comunque in farmacia.',
-      choices: [
-        { 
-          text: '🏥 Go to the pharmacy instead', 
-          textItalian: 'Vai invece in farmacia',
-          nextNodeId: 'at-pharmacy' 
-        }
-      ]
-    },
-    'wait-wrong': {
-      id: 'wait-wrong',
-      speaker: 'narrator',
-      text: 'You spend the whole day in bed. The headache gets worse. You should have gone to the pharmacy.',
-      textItalian: 'Passi tutta la giornata a letto. Il mal di testa peggiora. Saresti dovuto andare in farmacia.',
-      choices: [
-        { 
-          text: '🏥 Go to the pharmacy now', 
-          textItalian: 'Vai in farmacia ora',
-          nextNodeId: 'at-pharmacy' 
-        }
-      ]
-    },
-    'at-pharmacy': {
-      id: 'at-pharmacy',
+    'ask-time': {
+      id: 'ask-time',
       speaker: 'npc',
-      text: '🐱 Pharmacist Cat looks up. "Buongiorno! Come posso aiutarla?" (How can I help you?)',
-      textItalian: '🐱 Pharmacist Cat alza lo sguardo. "Buongiorno! Come posso aiutarla?"',
+      text: '"Sono le otto e un quarto. Dobbiamo correre!" At least now you know how much time you have.',
+      textTarget: '"Sono le otto e un quarto. Dobbiamo correre!" Almeno ora sai quanto tempo hai.',
+      backgroundEffect: 'surprised',
       choices: [
-        { 
-          text: '💬 "Ho mal di gola e mal di testa."', 
-          textItalian: 'Ho mal di gola e mal di testa.',
-          nextNodeId: 'examine-good' 
-        },
-        { 
-          text: '💬 "Ho bisogno di medicine."', 
-          textItalian: 'Ho bisogno di medicine.',
-          nextNodeId: 'need-more-info' 
-        },
-        { 
-          text: '💬 "Dov\'è il paracetamolo?"', 
-          textItalian: 'Dov\'è il paracetamolo?',
-          nextNodeId: 'self-diagnose' 
-        }
+        { text: '💬 "Dieci minuti e sono pronto."', textTarget: 'Dieci minuti e sono pronto.', nextNodeId: 'promise-ready' },
+        { text: '🏃 "Vado in bagno prima tu!"', textTarget: 'Vado in bagno prima tu!', nextNodeId: 'bathroom-race' },
       ]
     },
-    'examine-good': {
-      id: 'examine-good',
+    'panic-mode': {
+      id: 'panic-mode',
       speaker: 'npc',
-      text: '🐱 Pharmacist Cat nods sympathetically. "Mi dispiace. Ha anche la febbre?" (I\'m sorry. Do you also have a fever?)',
-      textItalian: '🐱 Pharmacist Cat annuisce con compassione. "Mi dispiace. Ha anche la febbre?"',
+      text: '"Lo so! Non serve gridare!" Panic is contagious — and unproductive.',
+      textTarget: '"Lo so! Non serve gridare!" Il panico è contagioso — e improduttivo.',
+      backgroundEffect: 'angry',
+      choices: [
+        { text: '💬 "Scusa, sono stressato."', textTarget: 'Scusa, sono stressato.', nextNodeId: 'recover-calm' },
+        { text: '😤 "Dobbiamo andare!"', textTarget: 'Dobbiamo andare!', nextNodeId: 'end-hostile' },
+      ]
+    },
+    'borrow-dryer': {
+      id: 'borrow-dryer',
+      speaker: 'npc',
+      text: '"Certo, ecco. Ma sbrigati, per favore." Sharing is caring, but time is ticking.',
+      textTarget: '"Certo, ecco. Ma sbrigati, per favore." Condividere è bello, ma il tempo stringe.',
+      backgroundEffect: 'happy',
+      choices: [
+        { text: '💬 "Grazie, due minuti."', textTarget: 'Grazie, due minuti.', nextNodeId: 'end-good' },
+      ]
+    },
+    'promise-ready': {
+      id: 'promise-ready',
+      speaker: 'npc',
+      text: '"Va bene, ti aspetto in macchina." Setting clear expectations helps.',
+      textTarget: '"Va bene, ti aspetto in macchina." Stabilire aspettative chiare aiuta.',
       backgroundEffect: 'neutral',
       choices: [
-        { 
-          text: '💬 "Sì, un po\'."', 
-          textItalian: 'Sì, un po\'.',
-          nextNodeId: 'recommend-treatment' 
-        },
-        { 
-          text: '💬 "No, solo mal di gola."', 
-          textItalian: 'No, solo mal di gola.',
-          nextNodeId: 'recommend-simple' 
-        }
+        { text: '💬 "Perfetto, arrivo subito."', textTarget: 'Perfetto, arrivo subito.', nextNodeId: 'end-good' },
       ]
     },
-    'need-more-info': {
-      id: 'need-more-info',
+    'bathroom-race': {
+      id: 'bathroom-race',
       speaker: 'npc',
-      text: '🐱 Pharmacist Cat asks questions. "Che sintomi ha? Mal di testa? Febbre? Tosse?"',
-      textItalian: '🐱 Pharmacist Cat fa domande. "Che sintomi ha? Mal di testa? Febbre? Tosse?"',
+      text: '"No, io devo truccarmi! Tu aspetta." Some battles aren\'t worth fighting at 8:15 AM.',
+      textTarget: '"No, io devo truccarmi! Tu aspetta." Alcune battaglie non valgono la pena alle 8:15.',
+      backgroundEffect: 'angry',
       choices: [
-        { 
-          text: '💬 "Mal di gola e mal di testa."', 
-          textItalian: 'Mal di gola e mal di testa.',
-          nextNodeId: 'examine-good' 
-        }
+        { text: '💬 "Va bene, vado dopo."', textTarget: 'Va bene, vado dopo.', nextNodeId: 'end-good' },
       ]
     },
-    'self-diagnose': {
-      id: 'self-diagnose',
+    'recover-calm': {
+      id: 'recover-calm',
       speaker: 'npc',
-      text: '🐱 Pharmacist Cat raises an eyebrow. "Prima mi dica i sintomi. Devo capire cosa ha."',
-      textItalian: '🐱 Pharmacist Cat alza un sopracciglio. "Prima mi dica i sintomi. Devo capire cosa ha."',
-      choices: [
-        { 
-          text: '💬 "Ho mal di gola e mal di testa."', 
-          textItalian: 'Ho mal di gola e mal di testa.',
-          nextNodeId: 'examine-good' 
-        }
-      ]
-    },
-    'recommend-treatment': {
-      id: 'recommend-treatment',
-      speaker: 'npc',
-      text: '🐱 Pharmacist Cat gets some medicines. "Le do un antinfiammatorio e uno sciroppo per la tosse. Riposi e beva molta acqua."',
-      textItalian: '🐱 Pharmacist Cat prende dei medicinali. "Le do un antinfiammatorio e uno sciroppo per la tosse. Riposi e beva molta acqua."',
+      text: '"Tranquillo, ce la facciamo." Acknowledging stress calms the situation.',
+      textTarget: '"Tranquillo, ce la facciamo." Riconoscere lo stress calma la situazione.',
       backgroundEffect: 'happy',
       choices: [
-        { 
-          text: '💬 "Grazie mille! Quanto costa?"', 
-          textItalian: 'Grazie mille! Quanto costa?',
-          nextNodeId: 'end-perfect' 
-        }
-      ]
-    },
-    'recommend-simple': {
-      id: 'recommend-simple',
-      speaker: 'npc',
-      text: '🐱 Pharmacist Cat smiles. "Niente febbre? Bene. Prenda questo per il mal di gola. Passerà presto."',
-      textItalian: '🐱 Pharmacist Cat sorride. "Niente febbre? Bene. Prenda questo per il mal di gola. Passerà presto."',
-      backgroundEffect: 'happy',
-      choices: [
-        { 
-          text: '💬 "Grazie!"', 
-          textItalian: 'Grazie!',
-          nextNodeId: 'end-perfect' 
-        }
+        { text: '💬 "Grazie. Andiamo!"', textTarget: 'Grazie. Andiamo!', nextNodeId: 'end-perfect' },
       ]
     },
     'end-perfect': {
       id: 'end-perfect',
       speaker: 'narrator',
-      text: '✅ You got the right treatment! In Italy, pharmacists are trusted health advisors for minor issues.',
-      textItalian: '✅ Hai ricevuto il trattamento giusto! In Italia, i farmacisti sono consulenti sanitari di fiducia per problemi minori.',
+      text: '✅ You handled the rush with grace. Clear communication + apologies when needed = smooth mornings.',
+      textTarget: '✅ Hai gestito la fuga con eleganza. Comunicazione chiara + scuse quando necessario = mattine serene.',
       choices: []
-    }
+    },
+    'end-good': {
+      id: 'end-good',
+      speaker: 'narrator',
+      text: '✅ You made it out the door. Morning coordination is a skill — keep practicing those polite requests.',
+      textTarget: '✅ Sei uscito di casa. La coordinazione mattutina è un\'abilità — continua a praticare quelle richieste educate.',
+      choices: []
+    },
+    'end-hostile': {
+      id: 'end-hostile',
+      speaker: 'narrator',
+      text: '⚠️ You left in a bad mood. Stress happens, but taking it out on others doesn\'t help.',
+      textTarget: '⚠️ Sei uscito di cattivo umore. Lo stress capita, ma scaricarlo sugli altri non aiuta.',
+      choices: []
+    },
   }
 };
 
 // ============================================
-// EXPORT ALL SCENARIOS
+// TRANSPORT — At the Station
 // ============================================
 
+const transportScenario: BranchingScenario = {
+  id: 'transport-station',
+  roomId: 'transport',
+  title: 'At the Station',
+  titleNative: 'Alla Stazione',
+  timeContext: 'Thursday, 11:00 AM',
+  startNodeId: 'arrive-station',
+  culturalLesson: 'Italian train tickets often need validation (timbratura) before boarding. Look for the small green machines on the platform.',
+  phrasesLearned: [
+    { target: 'Un biglietto per Roma, per favore.', source: 'A ticket to Rome, please.', situation: 'Buying ticket' },
+    { target: 'A che ora parte il prossimo treno?', source: 'What time does the next train leave?', situation: 'Asking schedule' },
+    { target: 'Devo timbrare il biglietto?', source: 'Do I need to validate the ticket?', situation: 'Asking about validation' },
+  ],
+  catCharacter: {
+    id: 'ticket-cat',
+    name: 'Ticket Agent',
+    emoji: '🎫',
+    color: '#3B82F6'
+  },
+  nodes: {
+    'arrive-station': {
+      id: 'arrive-station',
+      speaker: 'narrator',
+      text: 'You\'re at the train station. The departure board shows multiple trains to Rome. You need a ticket.',
+      textTarget: 'Sei alla stazione. Il tabellone partenze mostra diversi treni per Roma. Ti serve un biglietto.',
+      choices: [
+        { text: '💬 "Un biglietto per Roma, per favore."', textTarget: 'Un biglietto per Roma, per favore.', nextNodeId: 'buy-ticket' },
+        { text: '⏰ "A che ora parte il prossimo treno?"', textTarget: 'A che ora parte il prossimo treno?', nextNodeId: 'ask-schedule' },
+        { text: '📱 Use the ticket machine', textTarget: 'Uso la macchinetta.', nextNodeId: 'machine-buy' },
+      ]
+    },
+    'buy-ticket': {
+      id: 'buy-ticket',
+      speaker: 'npc',
+      text: '"Andata o andata e ritorno?" The agent waits for your choice.',
+      textTarget: '"Andata o andata e ritorno?" L\'agente aspetta la tua scelta.',
+      backgroundEffect: 'neutral',
+      choices: [
+        { text: '💬 "Solo andata, grazie."', textTarget: 'Solo andata, grazie.', nextNodeId: 'ticket-price' },
+        { text: '💬 "Andata e ritorno, per favore."', textTarget: 'Andata e ritorno, per favore.', nextNodeId: 'ticket-price' },
+      ]
+    },
+    'ask-schedule': {
+      id: 'ask-schedule',
+      speaker: 'npc',
+      text: '"Il prossimo parte alle undici e trenta, binario quattro." Clear and precise.',
+      textTarget: '"Il prossimo parte alle undici e trenta, binario quattro." Chiaro e preciso.',
+      backgroundEffect: 'happy',
+      choices: [
+        { text: '💬 "Grazie. E devo timbrare il biglietto?"', textTarget: 'Grazie. E devo timbrare il biglietto?', nextNodeId: 'validate-question' },
+        { text: '💬 "Quanto costa?"', textTarget: 'Quanto costa?', nextNodeId: 'ticket-price' },
+      ]
+    },
+    'machine-buy': {
+      id: 'machine-buy',
+      speaker: 'narrator',
+      text: 'The machine works in English too, but practicing Italian at the counter builds confidence.',
+      textTarget: 'La macchinetta funziona anche in inglese, ma praticare l\'italiano allo sportello costruisce fiducia.',
+      backgroundEffect: 'neutral',
+      choices: [
+        { text: '💬 Go back to the counter', textTarget: 'Torno allo sportello.', nextNodeId: 'arrive-station' },
+        { text: '💳 Buy from the machine', textTarget: 'Compro dalla macchinetta.', nextNodeId: 'end-good' },
+      ]
+    },
+    'ticket-price': {
+      id: 'ticket-price',
+      speaker: 'npc',
+      text: '"Quindici euro. Ecco lo scontrino." You have your ticket.',
+      textTarget: '"Quindici euro. Ecco lo scontrino." Hai il tuo biglietto.',
+      backgroundEffect: 'happy',
+      choices: [
+        { text: '💬 "Devo timbrare il biglietto?"', textTarget: 'Devo timbrare il biglietto?', nextNodeId: 'validate-question' },
+        { text: '💬 "Grazie, buona giornata!"', textTarget: 'Grazie, buona giornata!', nextNodeId: 'end-perfect' },
+      ]
+    },
+    'validate-question': {
+      id: 'validate-question',
+      speaker: 'npc',
+      text: '"Sì, alle macchinette verdi sul binario. È importante!" Validation saved — no fine.',
+      textTarget: '"Sì, alle macchinette verdi sul binario. È importante!" Convalida fatta — nessuna multa.',
+      backgroundEffect: 'happy',
+      choices: [
+        { text: '💬 "Grazie per l\'avviso!"', textTarget: 'Grazie per l\'avviso!', nextNodeId: 'end-perfect' },
+      ]
+    },
+    'end-perfect': {
+      id: 'end-perfect',
+      speaker: 'narrator',
+      text: '✅ Ticket bought, validated, and you\'re on the right platform. Small questions prevent big problems.',
+      textTarget: '✅ Biglietto comprato, convalidato e sei sul binario giusto. Le piccole domande prevengono grandi problemi.',
+      choices: []
+    },
+    'end-good': {
+      id: 'end-good',
+      speaker: 'narrator',
+      text: '✅ You got your ticket. Next time, try asking in Italian — even a simple "per favore" goes a long way.',
+      textTarget: '✅ Hai ottenuto il biglietto. La prossima volta prova a chiedere in italiano — anche un semplice "per favore" conta molto.',
+      choices: []
+    },
+  }
+};
+
+// ============================================
+// LIVING ROOM — The Remote
+// ============================================
+
+const livingRoomScenario: BranchingScenario = {
+  id: 'living-room-remote',
+  roomId: 'living-room',
+  title: 'The Remote Control',
+  titleNative: 'Il Telecomando',
+  timeContext: 'Sunday evening',
+  startNodeId: 'on-sofa',
+  culturalLesson: 'Italian TV culture is strong, but asking to change the channel is normal. Just be ready for a debate about which show is best.',
+  phrasesLearned: [
+    { target: 'Puoi alzare il volume?', source: 'Can you turn up the volume?', situation: 'Asking to adjust TV' },
+    { target: 'Cambi canale, per favore?', source: 'Can you change the channel, please?', situation: 'Asking to change channel' },
+    { target: 'A che ora inizia il film?', source: 'What time does the movie start?', situation: 'Asking about schedule' },
+  ],
+  catCharacter: {
+    id: 'friend-cat',
+    name: 'Friend',
+    emoji: '🧑',
+    color: '#10B981'
+  },
+  nodes: {
+    'on-sofa': {
+      id: 'on-sofa',
+      speaker: 'narrator',
+      text: 'You\'re on the sofa watching TV with a friend. The volume is too low and you can\'t hear the dialogue.',
+      textTarget: 'Sei sul divano a guardare la TV con un amico. Il volume è troppo basso e non senti i dialoghi.',
+      choices: [
+        { text: '🔊 "Puoi alzare il volume?"', textTarget: 'Puoi alzare il volume?', nextNodeId: 'ask-volume' },
+        { text: '📺 "Cambi canale, per favore?"', textTarget: 'Cambi canale, per favore?', nextNodeId: 'ask-channel' },
+        { text: '🤐 Say nothing', textTarget: 'Non dico niente.', nextNodeId: 'stay-quiet' },
+      ]
+    },
+    'ask-volume': {
+      id: 'ask-volume',
+      speaker: 'npc',
+      text: '"Certo, meglio?" Your friend turns it up. Simple requests get simple results.',
+      textTarget: '"Certo, meglio?" Il tuo amico alza. Le richieste semplici ottengono risultati semplici.',
+      backgroundEffect: 'happy',
+      choices: [
+        { text: '💬 "Sì, perfetto. Grazie!"', textTarget: 'Sì, perfetto. Grazie!', nextNodeId: 'end-perfect' },
+      ]
+    },
+    'ask-channel': {
+      id: 'ask-channel',
+      speaker: 'npc',
+      text: '"Su che canale? Stanno dando il calcio!" Your friend is protective of the match.',
+      textTarget: '"Su che canale? Stanno dando il calcio!" Il tuo amico è protettivo della partita.',
+      backgroundEffect: 'neutral',
+      choices: [
+        { text: '⚽ "Va bene, lascia il calcio."', textTarget: 'Va bene, lascia il calcio.', nextNodeId: 'end-good' },
+        { text: '📺 "Dopo il calcio, mettiamo un film?"', textTarget: 'Dopo il calcio, mettiamo un film?', nextNodeId: 'negotiate-movie' },
+      ]
+    },
+    'stay-quiet': {
+      id: 'stay-quiet',
+      speaker: 'narrator',
+      text: 'You miss the whole plot. Speaking up is part of conversation practice — and friendship.',
+      textTarget: 'Hai perso tutta la trama. Esprimersi è parte della pratica conversazionale — e dell\'amicizia.',
+      backgroundEffect: 'neutral',
+      choices: [
+        { text: '💬 "Scusa, puoi alzare il volume?"', textTarget: 'Scusa, puoi alzare il volume?', nextNodeId: 'ask-volume' },
+      ]
+    },
+    'negotiate-movie': {
+      id: 'negotiate-movie',
+      speaker: 'npc',
+      text: '"D\'accordo, dopo il calcio. A che ora inizia il film?" Negotiation successful.',
+      textTarget: '"D\'accordo, dopo il calcio. A che ora inizia il film?" Negoziazione riuscita.',
+      backgroundEffect: 'happy',
+      choices: [
+        { text: '💬 "Alle nove, penso."', textTarget: 'Alle nove, penso.', nextNodeId: 'end-perfect' },
+      ]
+    },
+    'end-perfect': {
+      id: 'end-perfect',
+      speaker: 'narrator',
+      text: '✅ You spoke up and got what you needed. Small daily requests are the backbone of fluency.',
+      textTarget: '✅ Ti sei espresso e hai ottenuto ciò di cui avevi bisogno. Le piccole richieste quotidiane sono la spina dorsale della fluidità.',
+      choices: []
+    },
+    'end-good': {
+      id: 'end-good',
+      speaker: 'narrator',
+      text: '✅ You compromised. Sometimes letting others have their way is the most social thing you can do.',
+      textTarget: '✅ Hai fatto un compromesso. A volte lasciare che gli altri abbiano la loro strada è la cosa più sociale che puoi fare.',
+      choices: []
+    },
+  }
+};
+
+// ============================================
+// GARDEN — The Weekend Plan
+// ============================================
+
+const gardenScenario: BranchingScenario = {
+  id: 'garden-weekend-plan',
+  roomId: 'garden',
+  title: 'The Weekend Plan',
+  titleNative: "Il Programma del Weekend",
+  timeContext: 'Saturday morning',
+  startNodeId: 'grass',
+  culturalLesson: 'Italians often adapt plans to the weather. Arguing with rain is futile — flexibility is key.',
+  phrasesLearned: [
+    { target: 'Che tempo fa oggi?', source: 'What\'s the weather like today?', situation: 'Asking about weather' },
+    { target: 'Andiamo al parco?', source: 'Shall we go to the park?', situation: 'Suggesting activity' },
+    { target: 'Restiamo a casa?', source: 'Shall we stay home?', situation: 'Suggesting alternative' },
+  ],
+  catCharacter: {
+    id: 'friend-cat',
+    name: 'Friend',
+    emoji: '🧑',
+    color: '#22C55E'
+  },
+  nodes: {
+    'grass': {
+      id: 'grass',
+      speaker: 'narrator',
+      text: 'You and a friend are in the garden. The sun is warm but a dark cloud is approaching.',
+      textTarget: 'Tu e un amico siete in giardino. Il sole è caldo ma si avvicina una nuvola scura.',
+      choices: [
+        { text: '🌤️ "Che tempo fa oggi?"', textTarget: 'Che tempo fa oggi?', nextNodeId: 'check-weather' },
+        { text: '🏞️ "Andiamo al parco?"', textTarget: 'Andiamo al parco?', nextNodeId: 'park-plan' },
+        { text: '🏠 "Restiamo a casa?"', textTarget: 'Restiamo a casa?', nextNodeId: 'stay-home' },
+      ]
+    },
+    'check-weather': {
+      id: 'check-weather',
+      speaker: 'npc',
+      text: '"Sembra che pioverà. Meglio restare qui." Your friend reads the sky better than the app.',
+      textTarget: '"Sembra che pioverà. Meglio restare qui." Il tuo amico legge il cielo meglio dell\'app.',
+      backgroundEffect: 'neutral',
+      choices: [
+        { text: '🏠 "Hai ragione, restiamo a casa."', textTarget: 'Hai ragione, restiamo a casa.', nextNodeId: 'end-perfect' },
+        { text: '☂️ "Non importa, andiamo lo stesso!"', textTarget: 'Non importa, andiamo lo stesso!', nextNodeId: 'brave-rain' },
+      ]
+    },
+    'park-plan': {
+      id: 'park-plan',
+      speaker: 'npc',
+      text: '"Bella idea! Ma guarda quella nuvola..." Plans are great, but weather rules.',
+      textTarget: '"Bella idea! Ma guarda quella nuvola..." I piani sono belli, ma il tempo comanda.',
+      backgroundEffect: 'surprised',
+      choices: [
+        { text: '🏠 "Allora restiamo a casa."', textTarget: 'Allora restiamo a casa.', nextNodeId: 'stay-home' },
+        { text: '🌳 "Andiamo nel giardino dietro casa."', textTarget: 'Andiamo nel giardino dietro casa.', nextNodeId: 'end-good' },
+      ]
+    },
+    'stay-home': {
+      id: 'stay-home',
+      speaker: 'npc',
+      text: '"Perfetto. Preparo il tè." Sometimes the best plan is no plan.',
+      textTarget: '"Perfetto. Preparo il tè." A volte il miglior piano è non avere un piano.',
+      backgroundEffect: 'happy',
+      choices: [
+        { text: '💬 "Ottima idea!"', textTarget: 'Ottima idea!', nextNodeId: 'end-perfect' },
+      ]
+    },
+    'brave-rain': {
+      id: 'brave-rain',
+      speaker: 'narrator',
+      text: 'You go out and get soaked. In Italy, you adapt to the weather, not the other way around.',
+      textTarget: 'Sei uscito e ti sei bagnato. In Italia ti adatti al tempo, non il contrario.',
+      backgroundEffect: 'angry',
+      choices: [
+        { text: '🏠 "Ok, torniamo indietro!"', textTarget: 'Ok, torniamo indietro!', nextNodeId: 'end-good' },
+      ]
+    },
+    'end-perfect': {
+      id: 'end-perfect',
+      speaker: 'narrator',
+      text: '✅ Flexible, resourceful, and culturally aware. That\'s Italian weekend harmony.',
+      textTarget: '✅ Flessibile, ingegnoso e culturalmente consapevole. Questa è l\'armonia del weekend italiano.',
+      choices: []
+    },
+    'end-good': {
+      id: 'end-good',
+      speaker: 'narrator',
+      text: '✅ You adapted. Weather in Italy is unpredictable — being ready to change plans is a life skill.',
+      textTarget: '✅ Ti sei adattato. Il tempo in Italia è imprevedibile — essere pronti a cambiare piano è un\'abilità di vita.',
+      choices: []
+    },
+  }
+};
+
+// ============================================
+// TODO STUBS for remaining 12 rooms
+// ============================================
+
+const entranceHallStub: BranchingScenario = {
+  id: 'entrance-hall-stub',
+  roomId: 'entrance-hall',
+  title: 'Meeting the Family',
+  titleNative: 'Incontrare la Famiglia',
+  timeContext: 'Sunday lunch',
+  startNodeId: 'enter',
+  culturalLesson: 'Italian family introductions are warm but formal at first. Always greet everyone individually.',
+  phrasesLearned: [
+    { target: 'Piacere di conoscerti.', source: 'Nice to meet you.', situation: 'Introduction' },
+  ],
+  catCharacter: { id: 'stub', name: 'Family', emoji: '👋', color: '#E7A04D' },
+  nodes: {
+    enter: { id: 'enter', speaker: 'narrator', text: 'TODO: Practical conversation scenario for entrance-hall.', choices: [] }
+  }
+};
+
+const libraryStub: BranchingScenario = {
+  id: 'library-stub',
+  roomId: 'library',
+  title: 'At the Library',
+  titleNative: 'In Biblioteca',
+  timeContext: 'Tuesday afternoon',
+  startNodeId: 'enter',
+  culturalLesson: 'Italian libraries are quiet spaces. Asking for help in a whisper is polite.',
+  phrasesLearned: [
+    { target: 'Dov\'è la sezione storia?', source: 'Where is the history section?', situation: 'Asking in library' },
+  ],
+  catCharacter: { id: 'stub', name: 'Librarian', emoji: '📚', color: '#8B5CF6' },
+  nodes: {
+    enter: { id: 'enter', speaker: 'narrator', text: 'TODO: Practical conversation scenario for library.', choices: [] }
+  }
+};
+
+const bathroomStub: BranchingScenario = {
+  id: 'bathroom-stub',
+  roomId: 'bathroom',
+  title: 'The Shared Bathroom',
+  titleNative: 'Il Bagno Condiviso',
+  timeContext: 'Morning rush',
+  startNodeId: 'enter',
+  culturalLesson: 'In shared Italian homes, bathroom time is negotiated, not claimed.',
+  phrasesLearned: [
+    { target: 'Quanto ci metti?', source: 'How long will you be?', situation: 'Asking about time' },
+  ],
+  catCharacter: { id: 'stub', name: 'Roommate', emoji: '🚿', color: '#3B82F6' },
+  nodes: {
+    enter: { id: 'enter', speaker: 'narrator', text: 'TODO: Practical conversation scenario for bathroom.', choices: [] }
+  }
+};
+
+const galleryStub: BranchingScenario = {
+  id: 'gallery-stub',
+  roomId: 'gallery',
+  title: 'At the Gallery',
+  titleNative: 'In Galleria',
+  timeContext: 'Saturday afternoon',
+  startNodeId: 'enter',
+  culturalLesson: 'Italian galleries often have free entry on first Sundays. Asking about discounts is normal.',
+  phrasesLearned: [
+    { target: 'Quanto costa il biglietto?', source: 'How much is the ticket?', situation: 'Asking price' },
+  ],
+  catCharacter: { id: 'stub', name: 'Guide', emoji: '🎨', color: '#EC4899' },
+  nodes: {
+    enter: { id: 'enter', speaker: 'narrator', text: 'TODO: Practical conversation scenario for gallery.', choices: [] }
+  }
+};
+
+const animalsStub: BranchingScenario = {
+  id: 'animals-stub',
+  roomId: 'animals',
+  title: 'At the Pet Shop',
+  titleNative: 'Nel Negozio di Animali',
+  timeContext: 'Saturday morning',
+  startNodeId: 'enter',
+  culturalLesson: 'Italians love their pets. Asking about an animal\'s age and diet shows you care.',
+  phrasesLearned: [
+    { target: 'Quanti anni ha questo cane?', source: 'How old is this dog?', situation: 'Asking about pet' },
+  ],
+  catCharacter: { id: 'stub', name: 'Shopkeeper', emoji: '🐕', color: '#10B981' },
+  nodes: {
+    enter: { id: 'enter', speaker: 'narrator', text: 'TODO: Practical conversation scenario for animals.', choices: [] }
+  }
+};
+
+const weatherStub: BranchingScenario = {
+  id: 'weather-stub',
+  roomId: 'weather',
+  title: 'Checking the Forecast',
+  titleNative: 'Controllare le Previsioni',
+  timeContext: 'Before leaving',
+  startNodeId: 'enter',
+  culturalLesson: 'Weather is the ultimate Italian small talk. Everyone has an opinion.',
+  phrasesLearned: [
+    { target: 'Pioverà oggi?', source: 'Will it rain today?', situation: 'Asking about rain' },
+  ],
+  catCharacter: { id: 'stub', name: 'Neighbor', emoji: '🌦️', color: '#6366F1' },
+  nodes: {
+    enter: { id: 'enter', speaker: 'narrator', text: 'TODO: Practical conversation scenario for weather.', choices: [] }
+  }
+};
+
+const toolsStub: BranchingScenario = {
+  id: 'tools-stub',
+  roomId: 'tools',
+  title: 'Borrowing Tools',
+  titleNative: 'Prendere in Prestito degli Attrezzi',
+  timeContext: 'Saturday DIY project',
+  startNodeId: 'enter',
+  culturalLesson: 'Italian neighbors often lend tools. Asking politely and returning them quickly builds trust.',
+  phrasesLearned: [
+    { target: 'Mi presti il cacciavite?', source: 'Can you lend me the screwdriver?', situation: 'Borrowing tool' },
+  ],
+  catCharacter: { id: 'stub', name: 'Neighbor', emoji: '🔧', color: '#A16207' },
+  nodes: {
+    enter: { id: 'enter', speaker: 'narrator', text: 'TODO: Practical conversation scenario for tools.', choices: [] }
+  }
+};
+
+const actionsStub: BranchingScenario = {
+  id: 'actions-stub',
+  roomId: 'actions',
+  title: 'At the Gym',
+  titleNative: 'In Palestra',
+  timeContext: 'After work',
+  startNodeId: 'enter',
+  culturalLesson: 'Italian gyms are social spaces. Asking to work in on a machine is normal.',
+  phrasesLearned: [
+    { target: 'Quante serie ti mancano?', source: 'How many sets do you have left?', situation: 'At the gym' },
+  ],
+  catCharacter: { id: 'stub', name: 'Trainer', emoji: '🏋️', color: '#F59E0B' },
+  nodes: {
+    enter: { id: 'enter', speaker: 'narrator', text: 'TODO: Practical conversation scenario for actions.', choices: [] }
+  }
+};
+
+const emotionsStub: BranchingScenario = {
+  id: 'emotions-stub',
+  roomId: 'emotions',
+  title: 'A Friend in Need',
+  titleNative: 'Un Amico in Difficoltà',
+  timeContext: 'Evening call',
+  startNodeId: 'enter',
+  culturalLesson: 'Italians express emotions openly. Asking "come stai?" and really listening matters.',
+  phrasesLearned: [
+    { target: 'Come stai?', source: 'How are you?', situation: 'Checking on friend' },
+  ],
+  catCharacter: { id: 'stub', name: 'Friend', emoji: '💙', color: '#EC4899' },
+  nodes: {
+    enter: { id: 'enter', speaker: 'narrator', text: 'TODO: Practical conversation scenario for emotions.', choices: [] }
+  }
+};
+
+const farmStub: BranchingScenario = {
+  id: 'farm-stub',
+  roomId: 'farm',
+  title: 'At the Market',
+  titleNative: 'Al Mercato',
+  timeContext: 'Saturday morning',
+  startNodeId: 'enter',
+  culturalLesson: 'Italian markets are about relationships. Regulars get the best produce and prices.',
+  phrasesLearned: [
+    { target: 'Quanto costa un chilo di pomodori?', source: 'How much is a kilo of tomatoes?', situation: 'At market' },
+  ],
+  catCharacter: { id: 'stub', name: 'Vendor', emoji: '🍅', color: '#22C55E' },
+  nodes: {
+    enter: { id: 'enter', speaker: 'narrator', text: 'TODO: Practical conversation scenario for farm.', choices: [] }
+  }
+};
+
+const fantasyStub: BranchingScenario = {
+  id: 'fantasy-stub',
+  roomId: 'fantasy',
+  title: 'The Bookstore',
+  titleNative: 'In Libreria',
+  timeContext: 'Rainy afternoon',
+  startNodeId: 'enter',
+  culturalLesson: 'Italian bookstores are cultural hubs. Asking for recommendations sparks real conversations.',
+  phrasesLearned: [
+    { target: 'Mi consiglia un bel romanzo?', source: 'Can you recommend a good novel?', situation: 'Asking recommendation' },
+  ],
+  catCharacter: { id: 'stub', name: 'Bookseller', emoji: '📖', color: '#8B5CF6' },
+  nodes: {
+    enter: { id: 'enter', speaker: 'narrator', text: 'TODO: Practical conversation scenario for fantasy.', choices: [] }
+  }
+};
+
 export const branchingScenarios: BranchingScenario[] = [
-  kitchenBreakfastScenario,
-  bedroomWrongBagScenario,
-  livingRoomMatchScenario,
-  gardenWeekendScenario,
-  cafeOrderScenario,
-  supermarketShoppingScenario,
-  transportTicketScenario,
-  bathroomPharmacyScenario,
+  kitchenScenario,
+  cafeScenario,
+  supermarketScenario,
+  bedroomScenario,
+  transportScenario,
+  livingRoomScenario,
+  gardenScenario,
+  entranceHallStub,
+  libraryStub,
+  bathroomStub,
+  galleryStub,
+  animalsStub,
+  weatherStub,
+  toolsStub,
+  actionsStub,
+  emotionsStub,
+  farmStub,
+  fantasyStub,
 ];
-
-export const getScenarioById = (id: string): BranchingScenario | undefined => {
-  return branchingScenarios.find(s => s.id === id);
-};
-
-export const getScenariosByRoom = (roomId: string): BranchingScenario[] => {
-  return branchingScenarios.filter(s => s.roomId === roomId);
-};

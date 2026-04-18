@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import { X, Volume2, Sparkles, AlertCircle, CheckCircle, Info, Trophy, TrendingUp } from 'lucide-react';
 import type { BranchingScenario, DialogueNode } from '../data/cultural-fluency';
 import { useDialogueProgress } from '../context/DialogueProgressContext';
+import { useLanguage } from '../context/LanguageContext';
+import { getTtsCode } from '../lib/language-config';
 
 interface DialogueSceneProps {
   scenario: BranchingScenario;
@@ -81,10 +83,11 @@ export default function DialogueScene({ scenario, onClose, onComplete }: Dialogu
     }, 400);
   };
 
+  const { currentLanguage } = useLanguage();
   const speak = (text: string) => {
     if ('speechSynthesis' in window) {
       const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'it-IT';
+      utterance.lang = getTtsCode(currentLanguage);
       utterance.rate = 0.8;
       window.speechSynthesis.speak(utterance);
     }
