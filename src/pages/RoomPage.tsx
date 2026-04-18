@@ -241,6 +241,7 @@ export default function RoomPage() {
           word={selectedWord}
           onClose={() => setSelectedWord(null)}
           onSpeak={() => speak(selectedWord.native)}
+          onSpeakText={speak}
           progress={getWordProgress(room.id, selectedWord.id)}
           onMarkLearned={() => markWordLearned(room.id, selectedWord.id)}
           getGenderColor={getGenderColor}
@@ -334,6 +335,18 @@ function ExploreTab({ room, roomVocab, setSelectedWord, setSelectedZone, getGend
   );
 }
 
+// ── Position override helpers (localStorage) ──────────────────────────────
+const POS_OVERRIDES_KEY = 'mp-vocab-pos';
+function loadPosOverrides(): Record<string, { x: number; y: number }> {
+  try { return JSON.parse(localStorage.getItem(POS_OVERRIDES_KEY) || '{}'); }
+  catch { return {}; }
+}
+function savePosOverride(key: string, pos: { x: number; y: number }) {
+  const all = loadPosOverrides();
+  all[key] = pos;
+  localStorage.setItem(POS_OVERRIDES_KEY, JSON.stringify(all));
+}
+
 // Subroom Overlay - Shows interior image with vocabulary positioned on it
 function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGenderColor }: {
   zone: Zone;
@@ -369,6 +382,57 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
   const [editingEntry, setEditingEntry] = useState<{ id: string; native: string } | null>(null);
   const imageWrapRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Drag-to-reposition preset vocab pins
+  const [posOverrides, setPosOverrides] = useState<Record<string, { x: number; y: number }>>(loadPosOverrides);
+  const [draggingId, setDraggingId] = useState<string | null>(null);
+  const [dragLive, setDragLive] = useState<{ x: number; y: number } | null>(null);
+  const dragMovedRef = useRef(false);
+
+  const getPosKey = useCallback((wordId: string) => `${room!.id}:${zone.id}:${wordId}`, [room, zone.id]);
+  const getPos = useCallback((iv: { wordId: string; x: number; y: number }) => {
+    return posOverrides[getPosKey(iv.wordId)] ?? { x: iv.x, y: iv.y };
+  }, [posOverrides, getPosKey]);
+
+  const handlePinPointerDown = useCallback((e: React.PointerEvent, wordId: string) => {
+    if (!editMode) return;
+    e.stopPropagation();
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+    dragMovedRef.current = false;
+    setDraggingId(wordId);
+    const rect = imageWrapRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    setDragLive({
+      x: ((e.clientX - rect.left) / rect.width) * 100,
+      y: ((e.clientY - rect.top) / rect.height) * 100,
+    });
+  }, [editMode]);
+
+  const handlePinPointerMove = useCallback((e: React.PointerEvent, wordId: string) => {
+    if (draggingId !== wordId) return;
+    dragMovedRef.current = true;
+    const rect = imageWrapRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    setDragLive({
+      x: Math.max(2, Math.min(98, ((e.clientX - rect.left) / rect.width) * 100)),
+      y: Math.max(2, Math.min(98, ((e.clientY - rect.top) / rect.height) * 100)),
+    });
+  }, [draggingId]);
+
+  const handlePinPointerUp = useCallback((_e: React.PointerEvent, wordId: string, word: VocabularyItem) => {
+    if (draggingId !== wordId) return;
+    if (dragMovedRef.current && dragLive) {
+      const key = getPosKey(wordId);
+      savePosOverride(key, dragLive);
+      setPosOverrides(loadPosOverrides());
+    } else {
+      // No movement — treat as click, open word modal
+      onSelectWord(word);
+    }
+    setDraggingId(null);
+    setDragLive(null);
+    dragMovedRef.current = false;
+  }, [draggingId, dragLive, getPosKey, onSelectWord]);
 
   useEffect(() => {
     setUserEntries(listForZone(targetLang, room.id, zone.id));
@@ -536,7 +600,7 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
         {editMode && (
           <div className="mb-2 text-xs text-palace-gold/80 font-cinzel flex items-center gap-2">
             <Plus className="w-3 h-3" />
-            Click anywhere on the image to add a word. Auto-translates to {targetLang.toUpperCase()}.
+            Drag existing labels to reposition · Click empty space to add a word · Auto-translates to {targetLang.toUpperCase()}.
           </div>
         )}
         {showPractice && (
@@ -577,12 +641,16 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
           {zone.interiorVocab?.map((iv) => {
             const word = roomVocab.find(w => w.id === iv.wordId);
             if (!word) return null;
+            const pos = (draggingId === word.id && dragLive) ? dragLive : getPos(iv);
             return (
               <button
                 key={word.id}
-                onClick={(e) => { e.stopPropagation(); onSelectWord(word); }}
-                className="absolute transform -translate-x-1/2 -translate-y-1/2 group"
-                style={{ left: `${iv.x}%`, top: `${iv.y}%` }}
+                onClick={(e) => { if (dragMovedRef.current) { e.stopPropagation(); return; } if (!editMode) { e.stopPropagation(); onSelectWord(word); } }}
+                onPointerDown={(e) => handlePinPointerDown(e, word.id)}
+                onPointerMove={(e) => handlePinPointerMove(e, word.id)}
+                onPointerUp={(e) => handlePinPointerUp(e, word.id, word)}
+                className={`absolute transform -translate-x-1/2 -translate-y-1/2 group ${editMode ? 'cursor-grab active:cursor-grabbing' : ''} ${draggingId === word.id ? 'z-20 scale-125' : ''}`}
+                style={{ left: `${pos.x}%`, top: `${pos.y}%`, touchAction: 'none' }}
               >
                 <div
                   className="w-4 h-4 rounded-full border-2 border-white shadow-lg group-hover:scale-150 transition-transform"
@@ -1298,10 +1366,11 @@ function DialogueTab({ roomScenarios, activeScenario, currentNode, onStartScenar
   );
 }
 
-function WordModal({ word, onClose, onSpeak, progress, onMarkLearned, getGenderColor, onAddToSRS, onCheckDeck, inDeck }: {
+function WordModal({ word, onClose, onSpeak, onSpeakText, progress, onMarkLearned, getGenderColor, onAddToSRS, onCheckDeck, inDeck }: {
   word: VocabularyItem;
   onClose: () => void;
   onSpeak: () => void;
+  onSpeakText: (text: string) => void;
   progress: { learned: boolean; attempts: number; correct: number } | undefined;
   onMarkLearned: () => void;
   getGenderColor: (g: Gender) => string;
@@ -1374,11 +1443,18 @@ function WordModal({ word, onClose, onSpeak, progress, onMarkLearned, getGenderC
           {showPhrases && (
             <div className="mb-6 space-y-2">
               {practicalPhrases.map((phrase, i) => (
-                <div key={i} className="p-3 bg-palace-gold/5 rounded-xl border border-palace-gold/20">
-                  <p className="text-palace-text font-cinzel text-sm">{phrase.italian}</p>
-                  <p className="text-palace-text/60 text-xs mt-1">{phrase.english}</p>
-                  <p className="text-palace-text/40 text-xs italic mt-1">{phrase.situation}</p>
-                </div>
+                <button
+                  key={i}
+                  onClick={() => onSpeakText(phrase.italian)}
+                  className="w-full text-left p-3 bg-palace-gold/5 rounded-xl border border-palace-gold/20 hover:bg-palace-gold/10 transition-colors group flex items-start justify-between gap-2"
+                >
+                  <div>
+                    <p className="text-palace-text font-cinzel text-sm">{phrase.italian}</p>
+                    <p className="text-palace-text/60 text-xs mt-1">{phrase.english}</p>
+                    <p className="text-palace-text/40 text-xs italic mt-1">{phrase.situation}</p>
+                  </div>
+                  <Volume2 className="w-4 h-4 text-palace-gold/40 group-hover:text-palace-gold mt-0.5 shrink-0" />
+                </button>
               ))}
             </div>
           )}
