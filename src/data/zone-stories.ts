@@ -28,7 +28,6 @@ export interface ZoneStory {
   exchanges: ZoneExchange[];
 }
 
-// Keyed by "zoneId_level" e.g. "entrance-hall_a2", "entrance-hall_b1"
 export const zoneStories: Record<string, ZoneStory> = {
   "bathroom_a2": {
     zoneId: "bathroom",
@@ -475,18 +474,18 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "Furniture",
     level: "a2",
     exchanges: [
-      { speaker: "Tu", it: "Questo tavolo è troppo grande. Lo spostiamo?", en: "" },
-      { speaker: "Amico", it: "Sì, ma dove mettiamo la sedia?", en: "" },
-      { speaker: "Tu", it: "Lì, vicino alla lampada. E il quadro, lo togliamo?", en: "" },
-      { speaker: "Amico", it: "No, lasciamolo. Poi mettiamo il tappeto.", en: "" },
-      { speaker: "Tu", it: "Bene. E le tende? Sono troppo pesanti.", en: "" },
+      { speaker: "Tu", it: "Questo tavolo è troppo grande. Lo spostiamo?", en: "This table is too big. Shall we move it?" },
+      { speaker: "Amico", it: "Sì, ma dove mettiamo la sedia?", en: "Yes, but where do we put the chair?" },
+      { speaker: "Tu", it: "Lì, vicino alla lampada. E il quadro, lo togliamo?", en: "There, near the lamp. And the painting, shall we take it down?" },
+      { speaker: "Amico", it: "No, lasciamolo. Poi mettiamo il tappeto.", en: "No, let's leave it. Then we'll put down the carpet." },
+      { speaker: "Tu", it: "Bene. E le tende? Sono troppo pesanti.", en: "Good. And the tents? They are too heavy." },
       { speaker: "Amico", it: "Sì, ma il specchio va bene così.", en: "---" },
-      { speaker: "You", it: "This table is too big. Should we move it?", en: "" },
-      { speaker: "Friend", it: "Yes, but where do we put the chair?", en: "" },
-      { speaker: "You", it: "There, next to the lamp. And the picture, do we take it down?", en: "" },
-      { speaker: "Friend", it: "No, leave it. Then we put the rug.", en: "" },
-      { speaker: "You", it: "Good. And the curtains? They're too heavy.", en: "" },
-      { speaker: "Friend", it: "Yes, but the mirror is fine like this.", en: "" }
+      { speaker: "You", it: "This table is too big. Should we move it?", en: "This table is too big. Should we move it?" },
+      { speaker: "Friend", it: "Yes, but where do we put the chair?", en: "Yes, but where do we put the chair?" },
+      { speaker: "You", it: "There, next to the lamp. And the picture, do we take it down?", en: "There, next to the lamp. And the picture, do we take it down?" },
+      { speaker: "Friend", it: "No, leave it. Then we put the rug.", en: "No, leave it. Then we put the rug." },
+      { speaker: "You", it: "Good. And the curtains? They're too heavy.", en: "Good. And the curtains? They're too heavy." },
+      { speaker: "Friend", it: "Yes, but the mirror is fine like this.", en: "Yes, but the mirror is fine like this." }
     ]
   },
   "furniture_b1": {
@@ -494,18 +493,18 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "Furniture",
     level: "b1",
     exchanges: [
-      { speaker: "Tu", it: "Questo tavolo è troppo grande. Lo spostiamo?", en: "" },
-      { speaker: "You", it: "This table is too big. Should we move it?", en: "" },
-      { speaker: "Amico", it: "Sì, ma dove mettiamo la sedia? Non ho visto un posto libero.", en: "" },
-      { speaker: "Friend", it: "Yes, but where do we put the chair? I didn’t see a free spot.", en: "" },
-      { speaker: "Tu", it: "Lì, vicino alla lampada. E il quadro, lo togliamo?", en: "" },
-      { speaker: "You", it: "There, next to the lamp. And the picture, do we take it down?", en: "" },
-      { speaker: "Amico", it: "No, lasciamolo. Poi mettiamo il tappeto, così sembra più caldo.", en: "" },
-      { speaker: "Friend", it: "No, leave it. Then we put the rug, it’ll look warmer.", en: "" },
-      { speaker: "Tu", it: "Bene. E le tende? Sono troppo pesanti.", en: "" },
-      { speaker: "You", it: "Good. And the curtains? They’re too heavy.", en: "" },
-      { speaker: "Amico", it: "Sì, ma penso che il specchio vada bene così. Comunque, non è un problema.", en: "" },
-      { speaker: "Friend", it: "Yes, but I think the mirror is fine like this. Anyway, it’s not a problem.", en: "" }
+      { speaker: "Tu", it: "Questo tavolo è troppo grande. Lo spostiamo?", en: "This table is too big. Shall we move it?" },
+      { speaker: "You", it: "This table is too big. Should we move it?", en: "This table is too big. Should we move it?" },
+      { speaker: "Amico", it: "Sì, ma dove mettiamo la sedia? Non ho visto un posto libero.", en: "Yes, but where do we put the chair? I didn't see a free spot." },
+      { speaker: "Friend", it: "Yes, but where do we put the chair? I didn’t see a free spot.", en: "Yes, but where do we put the chair? I didn’t see a free spot." },
+      { speaker: "Tu", it: "Lì, vicino alla lampada. E il quadro, lo togliamo?", en: "There, near the lamp. And the painting, shall we take it down?" },
+      { speaker: "You", it: "There, next to the lamp. And the picture, do we take it down?", en: "There, next to the lamp. And the picture, do we take it down?" },
+      { speaker: "Amico", it: "No, lasciamolo. Poi mettiamo il tappeto, così sembra più caldo.", en: "No, let's leave it. Then we'll put down the carpet, so it looks warmer." },
+      { speaker: "Friend", it: "No, leave it. Then we put the rug, it’ll look warmer.", en: "No, leave it. Then we put the rug, it’ll look warmer." },
+      { speaker: "Tu", it: "Bene. E le tende? Sono troppo pesanti.", en: "Good. And the tents? They are too heavy." },
+      { speaker: "You", it: "Good. And the curtains? They’re too heavy.", en: "Good. And the curtains? They're too heavy." },
+      { speaker: "Amico", it: "Sì, ma penso che il specchio vada bene così. Comunque, non è un problema.", en: "Yes, but I think the mirror is fine as it is. Anyway, it's not a problem." },
+      { speaker: "Friend", it: "Yes, but I think the mirror is fine like this. Anyway, it’s not a problem.", en: "Yes, but I think the mirror is fine like this. Anyway, it’s not a problem." }
     ]
   },
   "garden_a2": {
@@ -552,18 +551,18 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "Hand Tools",
     level: "b1",
     exchanges: [
-      { speaker: "Tu", it: "Hai il martello? Me lo serve subito.", en: "" },
-      { speaker: "You", it: "Do you have the hammer? I need it right away.", en: "" },
-      { speaker: "Amico", it: "Sì, qua. Però hai il cacciavite?", en: "" },
-      { speaker: "Friend", it: "Yes, here. But do you have the screwdriver?", en: "" },
-      { speaker: "Tu", it: "Sì, e anche la pinza. Quante viti hai?", en: "" },
-      { speaker: "You", it: "Yes, and also the pliers. How many screws do you have?", en: "" },
-      { speaker: "Amico", it: "Un po', ma non molto. Usa quelle là.", en: "" },
-      { speaker: "Friend", it: "A few, but not many. Use those ones there.", en: "" },
-      { speaker: "Tu", it: "Bene. E il trapano? Lo usiamo?", en: "" },
-      { speaker: "You", it: "Good. And the drill? Are we using it?", en: "" },
-      { speaker: "Amico", it: "Sì, per i buchi grossi. Prendi la sega anche?", en: "" },
-      { speaker: "Friend", it: "Yes, for the big holes. Do you need the saw too?", en: "" }
+      { speaker: "Tu", it: "Hai il martello? Me lo serve subito.", en: "Do you have the hammer? I need it right away." },
+      { speaker: "You", it: "Do you have the hammer? I need it right away.", en: "Do you have the hammer? I need it right away." },
+      { speaker: "Amico", it: "Sì, qua. Però hai il cacciavite?", en: "Yes, here. But do you have a screwdriver?" },
+      { speaker: "Friend", it: "Yes, here. But do you have the screwdriver?", en: "Yes, here. But do you have the screwdriver?" },
+      { speaker: "Tu", it: "Sì, e anche la pinza. Quante viti hai?", en: "Yes, and also the pliers. How many screws do you have?" },
+      { speaker: "You", it: "Yes, and also the pliers. How many screws do you have?", en: "Yes, and also the pliers. How many screws do you have?" },
+      { speaker: "Amico", it: "Un po', ma non molto. Usa quelle là.", en: "A little, but not much. Use those ones." },
+      { speaker: "Friend", it: "A few, but not many. Use those ones there.", en: "A few, but not many. Use those ones there." },
+      { speaker: "Tu", it: "Bene. E il trapano? Lo usiamo?", en: "Well. And the drill? Do we use it?" },
+      { speaker: "You", it: "Good. And the drill? Are we using it?", en: "Good. And the drill? Are we using it?" },
+      { speaker: "Amico", it: "Sì, per i buchi grossi. Prendi la sega anche?", en: "Yes, for the big holes. Take the saw too?" },
+      { speaker: "Friend", it: "Yes, for the big holes. Do you need the saw too?", en: "Yes, for the big holes. Do you need the saw too?" }
     ]
   },
   "jewelry_a2": {
@@ -700,18 +699,18 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "Movement Zone",
     level: "a2",
     exchanges: [
-      { speaker: "Tu", it: "Vuoi correre o camminare?", en: "" },
-      { speaker: "Amico", it: "Correre! Ma non troppo veloce, eh?", en: "" },
-      { speaker: "Tu", it: "D'accordo. Poi possiamo saltare un po'?", en: "" },
-      { speaker: "Amico", it: "Sì, ma non troppo in alto, o rischiamo di cadere.", en: "" },
-      { speaker: "Tu", it: "Hai paura? Io invece vorrei nuotare.", en: "" },
+      { speaker: "Tu", it: "Vuoi correre o camminare?", en: "Do you want to run or walk?" },
+      { speaker: "Amico", it: "Correre! Ma non troppo veloce, eh?", en: "Run! But not too fast, huh?" },
+      { speaker: "Tu", it: "D'accordo. Poi possiamo saltare un po'?", en: "Okay. Then can we skip a bit?" },
+      { speaker: "Amico", it: "Sì, ma non troppo in alto, o rischiamo di cadere.", en: "Yes, but not too high, or we risk falling." },
+      { speaker: "Tu", it: "Hai paura? Io invece vorrei nuotare.", en: "Are you afraid? I would rather swim." },
       { speaker: "Amico", it: "Non oggi. Forse domani. Per ora spingiamo il carrello.", en: "---" },
-      { speaker: "You", it: "Do you want to run or walk?", en: "" },
-      { speaker: "Friend", it: "Run! But not too fast, okay?", en: "" },
-      { speaker: "You", it: "Okay. Then can we jump a little?", en: "" },
-      { speaker: "Friend", it: "Yes, but not too high, or we might fall.", en: "" },
-      { speaker: "You", it: "Are you scared? I would rather swim.", en: "" },
-      { speaker: "Friend", it: "Not today. Maybe tomorrow. For now, let's push the cart.", en: "" }
+      { speaker: "You", it: "Do you want to run or walk?", en: "Do you want to run or walk?" },
+      { speaker: "Friend", it: "Run! But not too fast, okay?", en: "Run! But not too fast, okay?" },
+      { speaker: "You", it: "Okay. Then can we jump a little?", en: "Okay. Then can we jump a little?" },
+      { speaker: "Friend", it: "Yes, but not too high, or we might fall.", en: "Yes, but not too high, or we might fall." },
+      { speaker: "You", it: "Are you scared? I would rather swim.", en: "Are you scared? I would rather swim." },
+      { speaker: "Friend", it: "Not today. Maybe tomorrow. For now, let's push the cart.", en: "Not today. Maybe tomorrow. For now, let's push the cart." }
     ]
   },
   "movement_b1": {
@@ -719,18 +718,18 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "Movement Zone",
     level: "b1",
     exchanges: [
-      { speaker: "Tu", it: "Allora, vuoi correre o camminare?", en: "" },
-      { speaker: "You", it: "So, do you want to run or walk?", en: "" },
-      { speaker: "Amico", it: "Correre, ma non troppo veloce, però.", en: "" },
-      { speaker: "Friend", it: "Run, but not too fast, though.", en: "" },
-      { speaker: "Tu", it: "D’accordo. Poi, magari possiamo saltare un po’?", en: "" },
-      { speaker: "You", it: "Okay. Then, maybe we can jump a little?", en: "" },
-      { speaker: "Amico", it: "Sì, ma non troppo in alto, altrimenti rischiamo di cadere.", en: "" },
-      { speaker: "Friend", it: "Yes, but not too high, or we might fall.", en: "" },
-      { speaker: "Tu", it: "Hai paura? Io invece vorrei nuotare.", en: "" },
-      { speaker: "You", it: "Are you scared? I, on the other hand, would like to swim.", en: "" },
-      { speaker: "Amico", it: "Non oggi. Forse domani. Per ora, spingiamo il carrello, figurati.", en: "" },
-      { speaker: "Friend", it: "Not today. Maybe tomorrow. For now, let's push the cart, come on.", en: "" }
+      { speaker: "Tu", it: "Allora, vuoi correre o camminare?", en: "Then, do you want to run or walk?" },
+      { speaker: "You", it: "So, do you want to run or walk?", en: "So, do you want to run or walk?" },
+      { speaker: "Amico", it: "Correre, ma non troppo veloce, però.", en: "Run, but not too fast, though." },
+      { speaker: "Friend", it: "Run, but not too fast, though.", en: "Run, but not too fast, though." },
+      { speaker: "Tu", it: "D’accordo. Poi, magari possiamo saltare un po’?", en: "Okay. Then, maybe we can skip a bit?" },
+      { speaker: "You", it: "Okay. Then, maybe we can jump a little?", en: "Okay. Then, maybe we can jump a little?" },
+      { speaker: "Amico", it: "Sì, ma non troppo in alto, altrimenti rischiamo di cadere.", en: "Yes, but not too high, otherwise we risk falling." },
+      { speaker: "Friend", it: "Yes, but not too high, or we might fall.", en: "Yes, but not too high, or we might fall." },
+      { speaker: "Tu", it: "Hai paura? Io invece vorrei nuotare.", en: "Are you afraid? I would rather swim." },
+      { speaker: "You", it: "Are you scared? I, on the other hand, would like to swim.", en: "Are you scared? I, on the other hand, would like to swim." },
+      { speaker: "Amico", it: "Non oggi. Forse domani. Per ora, spingiamo il carrello, figurati.", en: "Not today. Maybe tomorrow. For now, let's push the cart, you know." },
+      { speaker: "Friend", it: "Not today. Maybe tomorrow. For now, let's push the cart, come on.", en: "Not today. Maybe tomorrow. For now, let's push the cart, come on." }
     ]
   },
   "nightstand_a2": {
@@ -776,16 +775,16 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "House Number",
     level: "b1",
     exchanges: [
-      { speaker: "Tu", it: "Qual è il numero civico?", en: "" },
-      { speaker: "Amico", it: "Cinque, però non ne sono sicuro. Forse sei?", en: "" },
-      { speaker: "Tu", it: "No, aspetta — lì c'è scritto 'otto'.", en: "" },
-      { speaker: "Amico", it: "Ah, hai ragione. Ma il tuo non è dieci?", en: "" },
+      { speaker: "Tu", it: "Qual è il numero civico?", en: "What is the house number?" },
+      { speaker: "Amico", it: "Cinque, però non ne sono sicuro. Forse sei?", en: "Five, but I'm not sure. Maybe six?" },
+      { speaker: "Tu", it: "No, aspetta — lì c'è scritto 'otto'.", en: "No, wait — there it says \"eight." },
+      { speaker: "Amico", it: "Ah, hai ragione. Ma il tuo non è dieci?", en: "Ah, you're right. But isn't yours ten?" },
       { speaker: "Tu", it: "No, è dodici. Due porte più avanti.", en: "---" },
-      { speaker: "You", it: "What is the house number?", en: "" },
-      { speaker: "Friend", it: "Five, but I'm not sure. Maybe six?", en: "" },
-      { speaker: "You", it: "No, wait — there it says 'eight'.", en: "" },
-      { speaker: "Friend", it: "Oh, you're right. But isn't yours ten?", en: "" },
-      { speaker: "You", it: "No, it's twelve. Two doors ahead.", en: "" }
+      { speaker: "You", it: "What is the house number?", en: "What is the house number?" },
+      { speaker: "Friend", it: "Five, but I'm not sure. Maybe six?", en: "Five, but I'm not sure. Maybe six?" },
+      { speaker: "You", it: "No, wait — there it says 'eight'.", en: "No, wait — it says 'eight'." },
+      { speaker: "Friend", it: "Oh, you're right. But isn't yours ten?", en: "Oh, you're right. But isn't yours ten?" },
+      { speaker: "You", it: "No, it's twelve. Two doors ahead.", en: "No, it's twelve. Two doors ahead." }
     ]
   },
   "paintings_a2": {
@@ -793,14 +792,14 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "The Paintings",
     level: "a2",
     exchanges: [
-      { speaker: "Tu", it: "Guarda questo quadro! Che colore hai preferito?", en: "" },
-      { speaker: "Amico", it: "Io il blu. Ma ti piace il rosso?", en: "" },
-      { speaker: "Tu", it: "Sì, ma è troppo forte. C'è una scultura in mostra?", en: "" },
-      { speaker: "Amico", it: "Sì, lì in fondo. Ma non mi piace la luce là.", en: "" },
-      { speaker: "Tu", it: "Dove è l'artista? Lo vedo?", en: "" },
-      { speaker: "Amico", it: "No, non c'è. Ma c'è un pennello appeso. Strano.", en: "" },
-      { speaker: "Tu", it: "Sì, ma non è un quadro. Vuoi andare a vedere la mostra?", en: "" },
-      { speaker: "Amico", it: "Sì, un po' di luce mi piace di più.", en: "" }
+      { speaker: "Tu", it: "Guarda questo quadro! Che colore hai preferito?", en: "Look at this painting! Which color did you like best?" },
+      { speaker: "Amico", it: "Io il blu. Ma ti piace il rosso?", en: "I me blue. But do you like red?" },
+      { speaker: "Tu", it: "Sì, ma è troppo forte. C'è una scultura in mostra?", en: "Yes, but it's too strong. Is there a sculpture on display?" },
+      { speaker: "Amico", it: "Sì, lì in fondo. Ma non mi piace la luce là.", en: "Yes, over there. But I don't like the light there." },
+      { speaker: "Tu", it: "Dove è l'artista? Lo vedo?", en: "Where is the artist? I see him?" },
+      { speaker: "Amico", it: "No, non c'è. Ma c'è un pennello appeso. Strano.", en: "No, there isn't. But there's a brush hanging. Strange." },
+      { speaker: "Tu", it: "Sì, ma non è un quadro. Vuoi andare a vedere la mostra?", en: "Yes, but it's not a painting. Want to go see the exhibition?" },
+      { speaker: "Amico", it: "Sì, un po' di luce mi piace di più.", en: "Yes, I prefer a little light." }
     ]
   },
   "paintings_b1": {
@@ -950,18 +949,18 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "Gift Shop",
     level: "a2",
     exchanges: [
-      { speaker: "Tu", it: "Cerchi un regalo? Hai visto quelle magliette?", en: "" },
-      { speaker: "Amico", it: "Sì, ma preferisco un libro. Hai visto i libri?", en: "" },
-      { speaker: "Tu", it: "Ecco, li vedi? E quelle cartoline, non sono belle?", en: "" },
-      { speaker: "Amico", it: "Sì, sono molto belle. Ma io voglio un souvenir per mio figlio.", en: "" },
-      { speaker: "Tu", it: "C’è un sacco di souvenir qui. Quanti ne vuoi?", en: "" },
+      { speaker: "Tu", it: "Cerchi un regalo? Hai visto quelle magliette?", en: "Are you looking for a gift? Have you seen those T-shirts?" },
+      { speaker: "Amico", it: "Sì, ma preferisco un libro. Hai visto i libri?", en: "Yes, but I prefer a book. Have you seen any books?" },
+      { speaker: "Tu", it: "Ecco, li vedi? E quelle cartoline, non sono belle?", en: "Here, do you see them? And those postcards, aren't they nice?" },
+      { speaker: "Amico", it: "Sì, sono molto belle. Ma io voglio un souvenir per mio figlio.", en: "Yes, they are very beautiful. But I want a souvenir for my son." },
+      { speaker: "Tu", it: "C’è un sacco di souvenir qui. Quanti ne vuoi?", en: "There are a lot of souvenirs here. How many do you want?" },
       { speaker: "Amico", it: "Un po’ bastano. Prendo quelle con il disegno dell’isola.", en: "---" },
-      { speaker: "You", it: "Looking for a gift? Have you seen those T-shirts?", en: "" },
-      { speaker: "Friend", it: "Yes, but I prefer a book. Have you seen the books?", en: "" },
-      { speaker: "You", it: "Here they are. And those postcards, aren’t they nice?", en: "" },
-      { speaker: "Friend", it: "Yes, they’re very nice. But I want a souvenir for my son.", en: "" },
-      { speaker: "You", it: "There are lots of souvenirs here. How many do you want?", en: "" },
-      { speaker: "Friend", it: "A few will do. I’ll take those with the island drawing.", en: "" }
+      { speaker: "You", it: "Looking for a gift? Have you seen those T-shirts?", en: "Looking for a gift? Have you seen those T-shirts?" },
+      { speaker: "Friend", it: "Yes, but I prefer a book. Have you seen the books?", en: "Yes, but I prefer a book. Have you seen the books?" },
+      { speaker: "You", it: "Here they are. And those postcards, aren’t they nice?", en: "Here they are. And those postcards, aren't they nice?" },
+      { speaker: "Friend", it: "Yes, they’re very nice. But I want a souvenir for my son.", en: "Yes, they're very nice. But I want a souvenir for my son." },
+      { speaker: "You", it: "There are lots of souvenirs here. How many do you want?", en: "There are lots of souvenirs here. How many do you want?" },
+      { speaker: "Friend", it: "A few will do. I’ll take those with the island drawing.", en: "A few will do. I'll take those with the island drawing." }
     ]
   },
   "shopping_b1": {
@@ -969,18 +968,18 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "Gift Shop",
     level: "b1",
     exchanges: [
-      { speaker: "Tu", it: "Cerchi un regalo? Hai visto quelle magliette?", en: "" },
-      { speaker: "You", it: "Looking for a gift? Have you seen those T-shirts?", en: "" },
-      { speaker: "Amico", it: "Sì, ma preferisco un libro. Ho già visto i libri?", en: "" },
-      { speaker: "Friend", it: "Yes, but I prefer a book. Have I already seen the books?", en: "" },
-      { speaker: "Tu", it: "Ecco, li vedi? E quelle cartoline, non sono belle?", en: "" },
-      { speaker: "You", it: "Here they are. And those postcards, aren’t they nice?", en: "" },
-      { speaker: "Amico", it: "Sì, sono molto belle. Pero io voglio un souvenir per mio figlio.", en: "" },
-      { speaker: "Friend", it: "Yes, they’re very nice. But I want a souvenir for my son.", en: "" },
-      { speaker: "Tu", it: "C’è un sacco di souvenir qui. Quanti ne vuoi?", en: "" },
-      { speaker: "You", it: "There are lots of souvenirs here. How many do you want?", en: "" },
-      { speaker: "Amico", it: "Un po’ bastano. Prendo quelle con il disegno dell’isola.", en: "" },
-      { speaker: "Friend", it: "A few will do. I’ll take those with the island drawing.", en: "" }
+      { speaker: "Tu", it: "Cerchi un regalo? Hai visto quelle magliette?", en: "Are you looking for a gift? Have you seen those T-shirts?" },
+      { speaker: "You", it: "Looking for a gift? Have you seen those T-shirts?", en: "Looking for a gift? Have you seen those T-shirts?" },
+      { speaker: "Amico", it: "Sì, ma preferisco un libro. Ho già visto i libri?", en: "Yes, but I prefer a book. Have I already seen the books?" },
+      { speaker: "Friend", it: "Yes, but I prefer a book. Have I already seen the books?", en: "Yes, but I prefer a book. Have I already seen the books?" },
+      { speaker: "Tu", it: "Ecco, li vedi? E quelle cartoline, non sono belle?", en: "Here, do you see them? And those postcards, aren't they nice?" },
+      { speaker: "You", it: "Here they are. And those postcards, aren’t they nice?", en: "Here they are. And those postcards, aren't they nice?" },
+      { speaker: "Amico", it: "Sì, sono molto belle. Pero io voglio un souvenir per mio figlio.", en: "Yes, they are very beautiful. But I want a souvenir for my son." },
+      { speaker: "Friend", it: "Yes, they’re very nice. But I want a souvenir for my son.", en: "Yes, they're very nice. But I want a souvenir for my son." },
+      { speaker: "Tu", it: "C’è un sacco di souvenir qui. Quanti ne vuoi?", en: "There are a lot of souvenirs here. How many do you want?" },
+      { speaker: "You", it: "There are lots of souvenirs here. How many do you want?", en: "There are lots of souvenirs here. How many do you want?" },
+      { speaker: "Amico", it: "Un po’ bastano. Prendo quelle con il disegno dell’isola.", en: "A few are enough. I'll take the ones with the island drawing." },
+      { speaker: "Friend", it: "A few will do. I’ll take those with the island drawing.", en: "A few will do. I'll take those with the island drawing." }
     ]
   },
   "shower_a2": {
@@ -1089,12 +1088,12 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "Mental States",
     level: "a2",
     exchanges: [
-      { speaker: "Tu", it: "Hai visto come ha parlato di me? Ho tanto orgoglio.", en: "" },
-      { speaker: "Amico", it: "Sì, ma non ti ha detto niente di male. Però... hai paura?", en: "" },
-      { speaker: "Tu", it: "Un po' di ansia, sì. E tu? Hai fiducia in lui?", en: "" },
-      { speaker: "Amico", it: "Un po', ma non tanto. Mi ha sorpreso.", en: "" },
-      { speaker: "Tu", it: "E non ti vergogni di averlo detto?", en: "" },
-      { speaker: "Amico", it: "No, non mi vergogno. È la verità.", en: "" }
+      { speaker: "Tu", it: "Hai visto come ha parlato di me? Ho tanto orgoglio.", en: "Have you seen how he spoke about me? I'm so proud." },
+      { speaker: "Amico", it: "Sì, ma non ti ha detto niente di male. Però... hai paura?", en: "Yes, but he didn't say anything bad to you. However... are you afraid?" },
+      { speaker: "Tu", it: "Un po' di ansia, sì. E tu? Hai fiducia in lui?", en: "A little anxiety, yes. And you? Do you trust him?" },
+      { speaker: "Amico", it: "Un po', ma non tanto. Mi ha sorpreso.", en: "A little, but not too much. It surprised me." },
+      { speaker: "Tu", it: "E non ti vergogni di averlo detto?", en: "And don't you feel ashamed of saying that?" },
+      { speaker: "Amico", it: "No, non mi vergogno. È la verità.", en: "No, I don't feel ashamed. It's the truth." }
     ]
   },
   "states_b1": {
@@ -1115,18 +1114,18 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "Storm Center",
     level: "a2",
     exchanges: [
-      { speaker: "Tu", it: "Guarda quel temporale! Che brutto tuono!", en: "" },
-      { speaker: "Amico", it: "Sì, e quel fulmine! Ti sembra che piova?", en: "" },
-      { speaker: "Tu", it: "Sì, un po'. E c'è anche la nebbia.", en: "" },
-      { speaker: "Amico", it: "Pensi che venga la grandine?", en: "" },
-      { speaker: "Tu", it: "Non so. Preferisco stare qui, al coperto.", en: "" },
+      { speaker: "Tu", it: "Guarda quel temporale! Che brutto tuono!", en: "Look at that thunderstorm! What terrible thunder!" },
+      { speaker: "Amico", it: "Sì, e quel fulmine! Ti sembra che piova?", en: "Yes, and that lightning! Does it seem to you that it's raining?" },
+      { speaker: "Tu", it: "Sì, un po'. E c'è anche la nebbia.", en: "Yes, a bit. And there's also fog." },
+      { speaker: "Amico", it: "Pensi che venga la grandine?", en: "Do you think hail is coming?" },
+      { speaker: "Tu", it: "Non so. Preferisco stare qui, al coperto.", en: "I don't know. I prefer to stay here, out of the weather." },
       { speaker: "Amico", it: "Anch'io. Non usciamo finché non passa.", en: "---" },
-      { speaker: "You", it: "Look at that storm! What a loud thunder!", en: "" },
-      { speaker: "Friend", it: "Yes, and that lightning! Do you think it's raining?", en: "" },
-      { speaker: "You", it: "Yes, a little. And there's also fog.", en: "" },
-      { speaker: "Friend", it: "Do you think there will be hail?", en: "" },
-      { speaker: "You", it: "I don't know. I prefer to stay here, under cover.", en: "" },
-      { speaker: "Friend", it: "Me too. We won't go out until it passes.", en: "" }
+      { speaker: "You", it: "Look at that storm! What a loud thunder!", en: "Look at that storm! What loud thunder!" },
+      { speaker: "Friend", it: "Yes, and that lightning! Do you think it's raining?", en: "Yes, and that lightning! Do you think it's raining?" },
+      { speaker: "You", it: "Yes, a little. And there's also fog.", en: "Yes, a little. And there's also fog." },
+      { speaker: "Friend", it: "Do you think there will be hail?", en: "Do you think there will be hail?" },
+      { speaker: "You", it: "I don't know. I prefer to stay here, under cover.", en: "I don't know. I prefer to stay here, under cover." },
+      { speaker: "Friend", it: "Me too. We won't go out until it passes.", en: "Me too. We won't go out until it passes." }
     ]
   },
   "storms_b1": {
@@ -1409,7 +1408,6 @@ export const zoneStories: Record<string, ZoneStory> = {
   }
 };
 
-// Convenience: get story for a zone at a given level
 export function getZoneStory(zoneId: string, level: LanguageLevel = 'a2'): ZoneStory | undefined {
   return zoneStories[`${zoneId}_${level}`] ?? zoneStories[`${zoneId}_a2`];
 }
