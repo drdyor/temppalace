@@ -315,7 +315,7 @@ function ExploreTab({ room, roomVocab, setSelectedWord, setSelectedZone, getGend
     });
   };
 
-  const handleZonePointerUp = (e: React.PointerEvent, zone: Zone) => {
+  const handleZonePointerUp = (_e: React.PointerEvent, zone: Zone) => {
     if (draggingZoneId !== zone.id) return;
     if (zoneDragMovedRef.current && dragZoneLive) {
       const key = `${room.id}:${zone.id}`;
@@ -1013,7 +1013,7 @@ function renderTaggedItalian(
   savedSet: Set<string>,
   saveWord: (w: string, s: string, t: string) => void,
   en: string,
-  isActive: boolean,
+  _isActive: boolean,
 ) {
   if (!grammarTags?.length) return null; // fall back to WordSpan rendering
 
@@ -1144,10 +1144,18 @@ function ZoneDialoguePanel({ story, onClose, speakIt, lang }: {
       const u = new SpeechSynthesisUtterance(story.exchanges[idx].it);
       u.lang = lang;
       u.rate = 0.85;
-      u.onend = () => {
+      // Chrome/Windows: onend sometimes never fires — fallback timer advances the chain
+      const wordCount = story.exchanges[idx].it.split(' ').length;
+      const estimatedMs = (wordCount / 2.5) * (1000 / 0.85);
+      let advanced = false;
+      const advance = () => {
+        if (advanced) return;
+        advanced = true;
         if (!playRef.current) return;
         setTimeout(() => speakLine(idx + 1), 800);
       };
+      const fallback = setTimeout(advance, estimatedMs + 1500);
+      u.onend = () => { clearTimeout(fallback); advance(); };
       window.speechSynthesis.speak(u);
     };
 
@@ -1261,9 +1269,7 @@ function ZoneDialoguePanel({ story, onClose, speakIt, lang }: {
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div>
-                      {!isLearner && (
-                        <span className="text-xs font-cinzel text-palace-gold/60 block mb-1">{ex.speaker}</span>
-                      )}
+                      <span className="text-xs font-cinzel text-palace-gold/60 block mb-1">{ex.speaker}</span>
                       <p className={`font-medium transition-colors leading-relaxed ${isActive ? 'text-palace-gold' : 'text-palace-text'}`}>
                         {renderTaggedItalian(ex.it, ex.grammarTags, savedSet, saveWord, ex.en || '', isActive) ??
                           ex.it.split(/(\s+)/).map((token, ti) =>
