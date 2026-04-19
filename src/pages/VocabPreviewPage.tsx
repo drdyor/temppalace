@@ -1,13 +1,35 @@
 import { useState } from 'react';
 import { useLocation } from 'wouter';
 import { rooms } from '../data/rooms';
-import { ArrowLeft, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, AlertTriangle, Download } from 'lucide-react';
+
+const POS_OVERRIDES_KEY = 'mp-vocab-pos';
+
+function loadPosOverrides(): Record<string, { x: number; y: number }> {
+  try { return JSON.parse(localStorage.getItem(POS_OVERRIDES_KEY) || '{}'); }
+  catch { return {}; }
+}
+
+function exportPositions() {
+  const overrides = loadPosOverrides();
+  if (Object.keys(overrides).length === 0) {
+    alert('No position overrides saved yet. Drag words in a zone (Edit mode) first.');
+    return;
+  }
+  const blob = new Blob([JSON.stringify(overrides, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'vocab-position-overrides.json';
+  a.click();
+}
 
 export default function VocabPreviewPage() {
   const [, setLocation] = useLocation();
   const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
+  const [posOverrides] = useState<Record<string, { x: number; y: number }>>(loadPosOverrides);
 
   const activeRoom = selectedRoom ? rooms.find(r => r.id === selectedRoom) : null;
+  const overrideCount = Object.keys(posOverrides).length;
 
   return (
     <div className="min-h-screen bg-palace-bg text-palace-text p-4">
@@ -17,10 +39,22 @@ export default function VocabPreviewPage() {
             className="p-2 text-palace-text/60 hover:text-palace-gold">
             <ArrowLeft className="w-5 h-5" />
           </button>
-          <div>
+          <div className="flex-1">
             <h1 className="font-cinzel text-2xl text-palace-gold">Vocab Preview</h1>
             <p className="text-palace-text/50 text-xs">Check which words are visible in each zone image</p>
           </div>
+          <button
+            onClick={exportPositions}
+            className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-cinzel transition-colors ${
+              overrideCount > 0
+                ? 'bg-palace-gold/20 text-palace-gold border border-palace-gold/40 hover:bg-palace-gold/30'
+                : 'bg-palace-text/10 text-palace-text/40 border border-palace-text/10 cursor-not-allowed'
+            }`}
+            title={overrideCount > 0 ? `Export ${overrideCount} repositioned words` : 'No repositioned words yet'}
+          >
+            <Download className="w-3.5 h-3.5" />
+            Export Positions {overrideCount > 0 && `(${overrideCount})`}
+          </button>
         </div>
 
         {!activeRoom ? (
@@ -29,6 +63,8 @@ export default function VocabPreviewPage() {
             {rooms.map(room => {
               const totalZones = room.zones.length;
               const zonesWithImage = room.zones.filter(z => z.interiorImage).length;
+              const roomOverrides = room.zones.reduce((n, z) =>
+                n + (z.interiorVocab?.filter(iv => posOverrides[`${room.id}:${z.id}:${iv.wordId}`]).length ?? 0), 0);
               return (
                 <button
                   key={room.id}
@@ -42,6 +78,9 @@ export default function VocabPreviewPage() {
                       <AlertTriangle className="w-3 h-3" />
                       {totalZones - zonesWithImage} missing
                     </div>
+                  )}
+                  {roomOverrides > 0 && (
+                    <div className="mt-1 text-palace-gold/70 text-xs">{roomOverrides} repositioned</div>
                   )}
                 </button>
               );
@@ -70,18 +109,27 @@ export default function VocabPreviewPage() {
                         className="absolute inset-0 w-full h-full object-cover"
                         onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}
                       />
-                      {/* Vocab labels overlaid */}
-                      {zone.interiorVocab?.map((item, i) => (
-                        <div
-                          key={i}
-                          className="absolute transform -translate-x-1/2 -translate-y-1/2"
-                          style={{ left: `${item.x}%`, top: `${item.y}%` }}
-                        >
-                          <span className="bg-black/70 text-white text-xs px-1.5 py-0.5 rounded font-cinzel whitespace-nowrap border border-palace-gold/30">
-                            {item.wordId}
-                          </span>
-                        </div>
-                      ))}
+                      {zone.interiorVocab?.map((item, i) => {
+                        const overrideKey = `${activeRoom.id}:${zone.id}:${item.wordId}`;
+                        const override = posOverrides[overrideKey];
+                        const pos = override ?? item;
+                        const isOverridden = !!override;
+                        return (
+                          <div
+                            key={i}
+                            className="absolute transform -translate-x-1/2 -translate-y-1/2"
+                            style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
+                          >
+                            <span className={`text-xs px-1.5 py-0.5 rounded font-cinzel whitespace-nowrap border ${
+                              isOverridden
+                                ? 'bg-palace-gold/80 text-black border-palace-gold'
+                                : 'bg-black/70 text-white border-palace-gold/30'
+                            }`}>
+                              {item.wordId}
+                            </span>
+                          </div>
+                        );
+                      })}
                     </div>
                   ) : (
                     <div className="p-4 flex items-center gap-2 text-amber-400">
@@ -95,11 +143,18 @@ export default function VocabPreviewPage() {
                     <div className="p-3 border-t border-palace-text/10">
                       <p className="text-palace-text/40 text-xs font-cinzel mb-2">Words at positions:</p>
                       <div className="flex flex-wrap gap-1.5">
-                        {zone.interiorVocab.map((item, i) => (
-                          <span key={i} className="text-xs px-2 py-0.5 bg-palace-text/10 rounded-full text-palace-text/70 font-cinzel">
-                            {item.wordId} <span className="text-palace-text/30">({item.x},{item.y})</span>
-                          </span>
-                        ))}
+                        {zone.interiorVocab.map((item, i) => {
+                          const override = posOverrides[`${activeRoom.id}:${zone.id}:${item.wordId}`];
+                          const pos = override ?? item;
+                          return (
+                            <span key={i} className={`text-xs px-2 py-0.5 rounded-full font-cinzel ${
+                              override ? 'bg-palace-gold/20 text-palace-gold' : 'bg-palace-text/10 text-palace-text/70'
+                            }`}>
+                              {item.wordId} <span className="opacity-50">({Math.round(pos.x)},{Math.round(pos.y)})</span>
+                              {override && <span className="ml-1 opacity-60">✓</span>}
+                            </span>
+                          );
+                        })}
                       </div>
                     </div>
                   )}
