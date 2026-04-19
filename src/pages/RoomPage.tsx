@@ -1734,6 +1734,27 @@ function CultureTab({ speak }: { speak: (text: string) => void }) {
           </div>
         ))}
       </div>
+
+      {/* Survival Phrases */}
+      <div>
+        <h3 className="font-cinzel text-palace-gold text-lg mb-3">💬 Useful Phrases</h3>
+        <div className="space-y-2">
+          {practicalPhrases.map((phrase, i) => (
+            <button
+              key={i}
+              onClick={() => speak(phrase.italian)}
+              className="w-full text-left p-3 bg-palace-gold/5 rounded-xl border border-palace-gold/20 hover:bg-palace-gold/10 transition-colors group flex items-start justify-between gap-2"
+            >
+              <div>
+                <p className="text-palace-text font-cinzel text-sm">{phrase.italian}</p>
+                <p className="text-palace-text/60 text-xs mt-1">{phrase.english}</p>
+                <p className="text-palace-text/40 text-xs italic mt-1">{phrase.situation}</p>
+              </div>
+              <Volume2 className="w-4 h-4 text-palace-gold/40 group-hover:text-palace-gold mt-0.5 shrink-0" />
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
@@ -1884,7 +1905,6 @@ function WordModal({ word, onClose, onSpeak, onSpeakText, progress, onMarkLearne
 }) {
   const { currentLanguage, sourceLabel, getSourceText } = useLanguage();
   const sentences = getWordSentences(word.id, word);
-  const [showPhrases, setShowPhrases] = useState(false);
 
   useEffect(() => { onCheckDeck(); }, [word.id, onCheckDeck]);
 
@@ -1935,31 +1955,6 @@ function WordModal({ word, onClose, onSpeak, onSpeakText, progress, onMarkLearne
                   </button>
                 ))}
               </div>
-            </div>
-          )}
-
-          {/* Practical Phrases Toggle */}
-          <button onClick={() => setShowPhrases(!showPhrases)} className="w-full p-3 bg-palace-text/10 rounded-xl text-palace-text hover:bg-palace-text/20 transition-colors mb-4 flex items-center justify-between">
-            <span className="font-cinzel">💬 Useful Phrases</span>
-            <span>{showPhrases ? '▲' : '▼'}</span>
-          </button>
-
-          {showPhrases && (
-            <div className="mb-6 space-y-2">
-              {practicalPhrases.map((phrase, i) => (
-                <button
-                  key={i}
-                  onClick={() => onSpeakText(phrase.italian)}
-                  className="w-full text-left p-3 bg-palace-gold/5 rounded-xl border border-palace-gold/20 hover:bg-palace-gold/10 transition-colors group flex items-start justify-between gap-2"
-                >
-                  <div>
-                    <p className="text-palace-text font-cinzel text-sm">{phrase.italian}</p>
-                    <p className="text-palace-text/60 text-xs mt-1">{phrase.english}</p>
-                    <p className="text-palace-text/40 text-xs italic mt-1">{phrase.situation}</p>
-                  </div>
-                  <Volume2 className="w-4 h-4 text-palace-gold/40 group-hover:text-palace-gold mt-0.5 shrink-0" />
-                </button>
-              ))}
             </div>
           )}
 
