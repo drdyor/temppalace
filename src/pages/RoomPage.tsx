@@ -52,20 +52,23 @@ function useTtsSpeech() {
 
   const speak = useCallback((text: string) => {
     if (!('speechSynthesis' in window)) return;
-    window.speechSynthesis.cancel();
     const cleanedText = cleanTextForSpeech(text);
     if (!cleanedText) return;
-    const utterance = new SpeechSynthesisUtterance(cleanedText);
     const ttsCode = getTtsCode(currentLanguage);
     const voiceHints = getVoiceSearch(currentLanguage);
-    utterance.lang = ttsCode;
-    utterance.rate = 0.85;
-    utterance.pitch = 1;
     const matchedVoice = voices.find(v =>
       voiceHints.some(h => v.lang.toLowerCase().startsWith(h) || v.name.toLowerCase().includes(h))
     );
-    if (matchedVoice) utterance.voice = matchedVoice;
-    window.speechSynthesis.speak(utterance);
+    window.speechSynthesis.cancel();
+    // Chrome: cancel() needs a tick before speak() or the new utterance is silenced
+    setTimeout(() => {
+      const utterance = new SpeechSynthesisUtterance(cleanedText);
+      utterance.lang = ttsCode;
+      utterance.rate = 0.85;
+      utterance.pitch = 1;
+      if (matchedVoice) utterance.voice = matchedVoice;
+      window.speechSynthesis.speak(utterance);
+    }, 50);
   }, [voices, currentLanguage]);
 
   return { speak, cleanTextForSpeech };
