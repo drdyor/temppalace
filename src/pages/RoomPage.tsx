@@ -775,179 +775,199 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
         )}
         
         {/* Interior Image with Vocabulary Labels */}
-        <div
-          ref={imageWrapRef}
-          onClick={handleImageClick}
-          className={`flex-1 relative bg-palace-bg/50 rounded-2xl overflow-hidden border border-palace-text/10 ${
-            editMode ? 'cursor-crosshair ring-2 ring-palace-gold/40' : ''
-          }`}
-          data-image-surface="true"
-        >
-          {zone.interiorImage ? (
-            <div data-image-surface="true" className="w-full h-full pointer-events-none">
-              <RoomImage src={zone.interiorImage} alt={zone.name} roomId={room.id} className="w-full h-full" />
-            </div>
-          ) : (
-            <div data-image-surface="true" className="w-full h-full flex items-center justify-center">
-              <span className="text-palace-text/40">Interior image coming soon</span>
-            </div>
-          )}
+        <div className={`flex-1 flex gap-2 min-h-0 ${zone.interiorImageAlt ? '' : 'relative bg-palace-bg/50 rounded-2xl overflow-hidden border border-palace-text/10'}`}>
+          {/* Primary image — interactive with pins */}
+          <div
+            ref={imageWrapRef}
+            onClick={handleImageClick}
+            className={`flex-1 relative bg-palace-bg/50 rounded-2xl overflow-hidden border border-palace-text/10 min-h-0 ${
+              editMode ? 'cursor-crosshair ring-2 ring-palace-gold/40' : ''
+            }`}
+            data-image-surface="true"
+          >
+            {zone.interiorImage ? (
+              <div data-image-surface="true" className="w-full h-full pointer-events-none">
+                <RoomImage src={zone.interiorImage} alt={zone.name} roomId={room.id} className="w-full h-full" />
+              </div>
+            ) : (
+              <div data-image-surface="true" className="w-full h-full flex items-center justify-center">
+                <span className="text-palace-text/40">Interior image coming soon</span>
+              </div>
+            )}
 
-          {/* Preset vocabulary labels */}
-          {zone.interiorVocab?.map((iv) => {
-            const word = roomVocab.find(w => w.id === iv.wordId);
-            if (!word) return null;
-            const pos = (draggingId === word.id && dragLive) ? dragLive : getPos(iv);
-            return (
-              <button
-                key={word.id}
-                onClick={(e) => { if (dragMovedRef.current) { e.stopPropagation(); return; } if (!editMode) { e.stopPropagation(); onSelectWord(word); } }}
-                onPointerDown={(e) => handlePinPointerDown(e, word.id)}
-                onPointerMove={(e) => handlePinPointerMove(e, word.id)}
-                onPointerUp={(e) => handlePinPointerUp(e, word.id, word)}
-                className={`absolute transform -translate-x-1/2 -translate-y-1/2 group ${editMode ? 'cursor-grab active:cursor-grabbing' : ''} ${draggingId === word.id ? 'z-20 scale-125' : ''}`}
-                style={{ left: `${pos.x}%`, top: `${pos.y}%`, touchAction: 'none' }}
-              >
-                <div
-                  className="w-4 h-4 rounded-full border-2 border-white shadow-lg group-hover:scale-150 transition-transform"
-                  style={{ backgroundColor: getGenderColor(word.gender) }}
-                />
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 whitespace-nowrap z-10">
-                  <span
-                    className="px-2 py-0.5 rounded text-xs font-cinzel font-bold shadow-md"
-                    style={{
-                      backgroundColor: getGenderColor(word.gender),
-                      color: 'white'
-                    }}
-                  >
-                    {word.native}
-                  </span>
-                </div>
-                <div className="absolute top-[calc(100%+18px)] left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
-                  <span className="bg-palace-bg/90 text-palace-text/70 px-2 py-0.5 rounded text-xs border border-palace-text/20">
-                    {word.english}
-                  </span>
-                </div>
-              </button>
-            );
-          })}
-
-          {/* User-added vocabulary markers */}
-          {userEntries.map((entry) => (
-            <div
-              key={entry.id}
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 group"
-              style={{ left: `${entry.x}%`, top: `${entry.y}%` }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="w-4 h-4 rounded-full border-2 border-palace-gold bg-palace-bg shadow-lg group-hover:scale-150 transition-transform" />
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 whitespace-nowrap z-10 flex items-center gap-1">
-                {editMode && editingEntry?.id === entry.id ? (
-                  <div className="flex items-center gap-1">
-                    <input
-                      autoFocus
-                      type="text"
-                      value={editingEntry.native}
-                      onChange={(e) => setEditingEntry({ ...editingEntry, native: e.target.value })}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter') handleSaveEdit();
-                        if (e.key === 'Escape') setEditingEntry(null);
+            {/* Preset vocabulary labels */}
+            {zone.interiorVocab?.map((iv) => {
+              const word = roomVocab.find(w => w.id === iv.wordId);
+              if (!word) return null;
+              const pos = (draggingId === word.id && dragLive) ? dragLive : getPos(iv);
+              return (
+                <button
+                  key={word.id}
+                  onClick={(e) => { if (dragMovedRef.current) { e.stopPropagation(); return; } if (!editMode) { e.stopPropagation(); onSelectWord(word); } }}
+                  onPointerDown={(e) => handlePinPointerDown(e, word.id)}
+                  onPointerMove={(e) => handlePinPointerMove(e, word.id)}
+                  onPointerUp={(e) => handlePinPointerUp(e, word.id, word)}
+                  className={`absolute transform -translate-x-1/2 -translate-y-1/2 group ${editMode ? 'cursor-grab active:cursor-grabbing' : ''} ${draggingId === word.id ? 'z-20 scale-125' : ''}`}
+                  style={{ left: `${pos.x}%`, top: `${pos.y}%`, touchAction: 'none' }}
+                >
+                  <div
+                    className="w-4 h-4 rounded-full border-2 border-white shadow-lg group-hover:scale-150 transition-transform"
+                    style={{ backgroundColor: getGenderColor(word.gender) }}
+                  />
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 whitespace-nowrap z-10 flex items-center gap-1">
+                    <span
+                      className="px-2 py-0.5 rounded text-xs font-cinzel font-bold shadow-md"
+                      style={{
+                        backgroundColor: getGenderColor(word.gender),
+                        color: 'white'
                       }}
-                      className="w-28 px-2 py-0.5 rounded text-xs bg-palace-bg border border-palace-gold text-palace-text focus:outline-none"
-                    />
-                    <button
-                      onClick={handleSaveEdit}
-                      className="p-1 rounded bg-palace-gold text-palace-bg"
-                      title="Save"
                     >
-                      <Check className="w-3 h-3" />
+                      {word.native}
+                    </span>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); speakIt(word.native); }}
+                      className="w-5 h-5 rounded-full bg-palace-gold text-palace-bg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                      title="Listen"
+                    >
+                      <Volume2 className="w-3 h-3" />
                     </button>
                   </div>
-                ) : (
-                  <button
-                    onClick={() => {
-                      if (editMode) {
-                        setEditingEntry({ id: entry.id, native: entry.native });
-                      } else {
-                        speakIt(entry.native || entry.english);
-                      }
-                    }}
-                    className="px-2 py-0.5 rounded text-xs font-cinzel font-bold shadow-md bg-palace-gold text-palace-bg border border-palace-bg/20"
-                    title={editMode ? 'Click to edit translation' : entry.needsReview ? 'Auto-translated — verify with DeepL later' : undefined}
-                  >
-                    {entry.native || entry.english}
-                    {entry.needsReview && <span className="ml-1 opacity-60">·</span>}
-                  </button>
-                )}
-                {editMode && editingEntry?.id !== entry.id && (
-                  <button
-                    onClick={() => handleDeleteUser(entry.id)}
-                    className="p-1 rounded bg-red-500/80 text-white hover:bg-red-500"
-                    title="Remove"
-                  >
-                    <Trash2 className="w-3 h-3" />
-                  </button>
-                )}
-              </div>
-              <div className="absolute top-[calc(100%+22px)] left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 flex items-center gap-1">
-                <span className="bg-palace-bg/90 text-palace-text/70 px-2 py-0.5 rounded text-xs border border-palace-text/20">
-                  {entry.english}
-                </span>
-                {editMode && (
-                  <button
-                    onClick={() => handleRetranslate(entry)}
-                    className="text-xs text-palace-gold/80 hover:text-palace-gold underline"
-                  >
-                    re-translate
-                  </button>
-                )}
-              </div>
-            </div>
-          ))}
+                  <div className="absolute top-[calc(100%+18px)] left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">
+                    <span className="bg-palace-bg/90 text-palace-text/70 px-2 py-0.5 rounded text-xs border border-palace-text/20">
+                      {word.english}
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
 
-          {/* Draft popover — in-place form for a new word */}
-          {draft && (
-            <div
-              className="absolute z-20 -translate-x-1/2"
-              style={{ left: `${draft.x}%`, top: `${draft.y}%` }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="mt-2 w-56 bg-palace-bg border border-palace-gold rounded-xl shadow-2xl p-3">
-                <p className="text-xs text-palace-text/60 font-cinzel mb-1">
-                  New word → {targetLang.toUpperCase()}
-                </p>
-                <input
-                  autoFocus
-                  type="text"
-                  value={draft.english}
-                  placeholder="source word"
-                  onChange={(e) => setDraft({ ...draft, english: e.target.value, error: null })}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter') submitDraft();
-                    if (e.key === 'Escape') setDraft(null);
-                  }}
-                  className="w-full px-2 py-1 rounded bg-palace-bg/50 border border-palace-text/20 text-palace-text text-sm focus:outline-none focus:border-palace-gold"
-                />
-                {draft.error && (
-                  <p className="text-xs text-red-400 mt-1">{draft.error}</p>
-                )}
-                <div className="flex items-center justify-between mt-2">
-                  <button
-                    onClick={() => setDraft(null)}
-                    className="text-xs text-palace-text/50 hover:text-palace-text"
-                  >
-                    cancel
-                  </button>
-                  <button
-                    onClick={submitDraft}
-                    disabled={!draft.english.trim() || draft.loading}
-                    className="flex items-center gap-1 px-3 py-1 rounded bg-palace-gold text-palace-bg text-xs font-cinzel disabled:opacity-50"
-                  >
-                    {draft.loading ? <Loader2 className="w-3 h-3 animate-spin" /> : <Plus className="w-3 h-3" />}
-                    save
-                  </button>
+            {/* User-added vocabulary markers */}
+            {userEntries.map((entry) => (
+              <div
+                key={entry.id}
+                className="absolute transform -translate-x-1/2 -translate-y-1/2 group"
+                style={{ left: `${entry.x}%`, top: `${entry.y}%` }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="w-4 h-4 rounded-full border-2 border-palace-gold bg-palace-bg shadow-lg group-hover:scale-150 transition-transform" />
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 whitespace-nowrap z-10 flex items-center gap-1">
+                  {editMode && editingEntry?.id === entry.id ? (
+                    <div className="flex items-center gap-1">
+                      <input
+                        autoFocus
+                        type="text"
+                        value={editingEntry.native}
+                        onChange={(e) => setEditingEntry({ ...editingEntry, native: e.target.value })}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') handleSaveEdit();
+                          if (e.key === 'Escape') setEditingEntry(null);
+                        }}
+                        className="w-28 px-2 py-0.5 rounded text-xs bg-palace-bg border border-palace-gold text-palace-text focus:outline-none"
+                      />
+                      <button
+                        onClick={handleSaveEdit}
+                        className="p-1 rounded bg-palace-gold text-palace-bg"
+                        title="Save"
+                      >
+                        <Check className="w-3 h-3" />
+                      </button>
+                    </div>
+                  ) : (
+                    <button
+                      onClick={() => {
+                        if (editMode) {
+                          setEditingEntry({ id: entry.id, native: entry.native });
+                        } else {
+                          speakIt(entry.native || entry.english);
+                        }
+                      }}
+                      className="px-2 py-0.5 rounded text-xs font-cinzel font-bold shadow-md bg-palace-gold text-palace-bg border border-palace-bg/20"
+                      title={editMode ? 'Click to edit translation' : entry.needsReview ? 'Auto-translated — verify with DeepL later' : undefined}
+                    >
+                      {entry.native || entry.english}
+                      {entry.needsReview && <span className="ml-1 opacity-60">·</span>}
+                    </button>
+                  )}
+                  {editMode && editingEntry?.id !== entry.id && (
+                    <button
+                      onClick={() => handleDeleteUser(entry.id)}
+                      className="p-1 rounded bg-red-500/80 text-white hover:bg-red-500"
+                      title="Remove"
+                    >
+                      <Trash2 className="w-3 h-3" />
+                    </button>
+                  )}
+                </div>
+                <div className="absolute top-[calc(100%+22px)] left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10 flex items-center gap-1">
+                  <span className="bg-palace-bg/90 text-palace-text/70 px-2 py-0.5 rounded text-xs border border-palace-text/20">
+                    {entry.english}
+                  </span>
+                  {editMode && (
+                    <button
+                      onClick={() => handleRetranslate(entry)}
+                      className="text-xs text-palace-gold/80 hover:text-palace-gold underline"
+                    >
+                      re-translate
+                    </button>
+                  )}
                 </div>
               </div>
+            ))}
+
+            {/* Draft popover — in-place form for a new word */}
+            {draft && (
+              <div
+                className="absolute z-20 -translate-x-1/2"
+                style={{ left: `${draft.x}%`, top: `${draft.y}%` }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="mt-2 w-56 bg-palace-bg border border-palace-gold rounded-xl shadow-2xl p-3">
+                  <p className="text-xs text-palace-text/60 font-cinzel mb-1">
+                    New word → {targetLang.toUpperCase()}
+                  </p>
+                  <input
+                    autoFocus
+                    type="text"
+                    value={draft.english}
+                    placeholder="source word"
+                    onChange={(e) => setDraft({ ...draft, english: e.target.value, error: null })}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') submitDraft();
+                      if (e.key === 'Escape') setDraft(null);
+                    }}
+                    className="w-full px-2 py-1 rounded bg-palace-bg/50 border border-palace-text/20 text-palace-text text-sm focus:outline-none focus:border-palace-gold"
+                  />
+                  {draft.error && (
+                    <p className="text-xs text-red-400 mt-1">{draft.error}</p>
+                  )}
+                  <div className="flex items-center justify-between mt-2">
+                    <button
+                      onClick={() => setDraft(null)}
+                      className="text-xs text-palace-text/50 hover:text-palace-text"
+                    >
+                      cancel
+                    </button>
+                    <button
+                      onClick={submitDraft}
+                      disabled={!draft.english.trim() || draft.loading}
+                      className="flex items-center gap-1 px-3 py-1 rounded bg-palace-gold text-palace-bg text-xs font-cinzel disabled:opacity-50"
+                    >
+                      {draft.loading ? <Loader2 className="w-3 h-3 animate-spin" /> : <Plus className="w-3 h-3" />}
+                      save
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Alternative image (Kimi) */}
+          {zone.interiorImageAlt && (
+            <div className="flex-1 relative bg-palace-bg/50 rounded-2xl overflow-hidden border border-palace-text/10 min-h-0">
+              <div className="absolute top-2 left-2 z-10 bg-black/60 text-white text-[10px] font-cinzel px-2 py-0.5 rounded-full">
+                Reference (Kimi)
+              </div>
+              <RoomImage src={zone.interiorImageAlt} alt={`${zone.name} (alt)`} roomId={room.id} className="w-full h-full" />
             </div>
           )}
         </div>
@@ -958,11 +978,18 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
             <button
               key={word.id}
               onClick={() => onSelectWord(word)}
-              className="px-3 py-1.5 bg-palace-text/10 rounded-full text-sm text-palace-text hover:bg-palace-gold/20 hover:text-palace-gold transition-colors flex items-center gap-2"
+              className="px-3 py-1.5 bg-palace-text/10 rounded-full text-sm text-palace-text hover:bg-palace-gold/20 hover:text-palace-gold transition-colors flex items-center gap-2 group"
             >
               <span>{word.emoji}</span>
               <span>{word.native}</span>
               <span className="text-palace-text/50">- {word.english}</span>
+              <span
+                onClick={(e) => { e.stopPropagation(); speakIt(word.native); }}
+                className="ml-1 p-1 rounded-full bg-palace-gold/0 text-palace-gold/0 group-hover:bg-palace-gold/20 group-hover:text-palace-gold hover:!bg-palace-gold hover:!text-palace-bg transition-colors cursor-pointer"
+                title="Listen"
+              >
+                <Volume2 className="w-3 h-3" />
+              </span>
             </button>
           ))}
         </div>
@@ -1923,7 +1950,7 @@ function WordModal({ word, onClose, onSpeak, onSpeakText, progress, onMarkLearne
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-palace-text/50 text-sm">{getArticle(word.gender === 'none' ? 'none' : word.gender, currentLanguage)}</span>
+                  <span className="text-sm font-cinzel font-bold" style={{ color: getGenderColor(word.gender) }}>{getArticle(word.gender === 'none' ? 'none' : word.gender, currentLanguage)}</span>
                 </div>
                 <h3 className="font-cinzel text-3xl text-palace-text">{word.native}</h3>
               </div>
@@ -1951,10 +1978,13 @@ function WordModal({ word, onClose, onSpeak, onSpeakText, progress, onMarkLearne
               <p className="text-palace-text/70 text-sm font-cinzel mb-3">📚 Examples in Context:</p>
               <div className="space-y-3">
                 {sentences.map((sent, i) => (
-                  <button key={i} onClick={() => onSpeakText(sent.italian)} className="w-full text-left p-3 bg-palace-text/5 rounded-xl hover:bg-palace-text/10 transition-colors">
-                    <p className="text-palace-text font-cinzel">{sent.italian}</p>
-                    <p className="text-palace-text/60 text-sm mt-1">{sent.english}</p>
-                    <span className="text-xs text-palace-gold/70 mt-1 inline-block">💡 {sent.context}</span>
+                  <button key={i} onClick={() => onSpeakText(sent.italian)} className="w-full text-left p-3 bg-palace-text/5 rounded-xl hover:bg-palace-text/10 transition-colors group flex items-start justify-between gap-2">
+                    <div>
+                      <p className="text-palace-text font-cinzel">{sent.italian}</p>
+                      <p className="text-palace-text/60 text-sm mt-1">{sent.english}</p>
+                      <span className="text-xs text-palace-gold/70 mt-1 inline-block">💡 {sent.context}</span>
+                    </div>
+                    <Volume2 className="w-4 h-4 text-palace-gold/40 group-hover:text-palace-gold mt-1 shrink-0" />
                   </button>
                 ))}
               </div>
