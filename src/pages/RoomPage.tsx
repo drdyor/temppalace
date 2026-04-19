@@ -1,9 +1,11 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { useParams, useLocation } from 'wouter';
-import { ArrowLeft, Map, BookOpen, GraduationCap, ClipboardCheck, Volume2, X, Check, Sparkles, MessageCircle, Mic, ChevronRight, Brain, MessagesSquare, Pencil, Trash2, Download, Upload, Loader2, Plus } from 'lucide-react';
+import { ArrowLeft, Map, BookOpen, GraduationCap, ClipboardCheck, Volume2, X, Check, Sparkles, MessageCircle, Mic, ChevronRight, Brain, MessagesSquare, Pencil, Trash2, Download, Upload, Loader2, Plus, Play, Square, Bookmark } from 'lucide-react';
 import { getRoomById, rooms } from '../data/rooms';
 import { expandedPhrases, type ExpandedPhrase } from '../data/conversation-templates';
+import { getZoneStory, type LanguageLevel } from '../data/zone-stories';
 import TemplateDrill from '../components/TemplateDrill';
+import { FillBlankPanel } from '../components/FillBlankPanel';
 import { translate, isoFor } from '../lib/translate';
 import {
   listForZone,
@@ -375,6 +377,10 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
   }, [speechLang]);
 
   const [editMode, setEditMode] = useState(false);
+  const [showDialogue, setShowDialogue] = useState(false);
+  const [showFillBlank, setShowFillBlank] = useState(false);
+  const [dialogueLevel, setDialogueLevel] = useState<LanguageLevel>('a2');
+  const zoneStory = getZoneStory(zone.id, dialogueLevel);
   const [userEntries, setUserEntries] = useState<UserVocabEntry[]>(() =>
     listForZone(targetLang, room.id, zone.id),
   );
@@ -546,6 +552,39 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
             </div>
           </div>
           <div className="flex items-center gap-2">
+            {zoneStory && (
+              <div className="flex items-center gap-1">
+                <button
+                  onClick={() => setShowDialogue(true)}
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg border border-palace-gold/40 text-palace-gold hover:bg-palace-gold/10 font-cinzel text-sm"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  Conversation
+                </button>
+                <div className="flex rounded-lg border border-palace-text/20 overflow-hidden text-xs font-cinzel">
+                  {(['a2', 'b1'] as LanguageLevel[]).map(lvl => (
+                    <button
+                      key={lvl}
+                      onClick={() => setDialogueLevel(lvl)}
+                      className={`px-2 py-1.5 uppercase transition-colors ${
+                        dialogueLevel === lvl
+                          ? 'bg-palace-gold text-palace-bg'
+                          : 'text-palace-text/50 hover:text-palace-gold'
+                      }`}
+                    >
+                      {lvl}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+            <button
+              onClick={() => setShowFillBlank(true)}
+              className="flex items-center gap-2 px-3 py-2 rounded-lg border border-palace-gold/40 text-palace-gold hover:bg-palace-gold/10 font-cinzel text-sm"
+            >
+              <Brain className="w-4 h-4" />
+              Fill in
+            </button>
             {roomPhrases.length > 0 && (
               <button
                 onClick={() => setShowPractice(true)}
@@ -616,6 +655,12 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
             </div>
             <TemplateDrill phrases={roomPhrases} title={`${room.name} — Practice`} />
           </div>
+        )}
+        {showDialogue && zoneStory && (
+          <ZoneDialoguePanel story={zoneStory} onClose={() => setShowDialogue(false)} speakIt={speakIt} lang={speechLang} />
+        )}
+        {showFillBlank && (
+          <FillBlankPanel zoneId={zone.id} onClose={() => setShowFillBlank(false)} />
         )}
         
         {/* Interior Image with Vocabulary Labels */}
@@ -810,6 +855,351 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
             </button>
           ))}
         </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Saved Words ──────────────────────────────────────────────────────────────
+
+interface SavedWord {
+  word: string;
+  sentence: string;
+  translation: string;
+  zone: string;
+  savedAt: number;
+}
+
+const SAVED_KEY = 'dialogue_saved_words';
+
+function loadSavedWords(): SavedWord[] {
+  try { return JSON.parse(localStorage.getItem(SAVED_KEY) || '[]'); } catch { return []; }
+}
+
+function exportAnki(words: SavedWord[]) {
+  const rows = words.map(w =>
+    [w.word, w.sentence, w.translation, w.zone].map(s => `"${s.replace(/"/g, '""')}"`).join('\t')
+  );
+  const content = 'Word\tContext\tTranslation\tZone\n' + rows.join('\n');
+  const blob = new Blob([content], { type: 'text/plain' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'italian_words.txt';
+  a.click();
+}
+
+// ── Grammar tag colours ───────────────────────────────────────────────────────
+
+const GRAMMAR_COLOURS: Record<string, { bg: string; text: string; label: string }> = {
+  passato_prossimo: { bg: 'bg-amber-500/15',  text: 'text-amber-400',  label: 'past' },
+  imperfetto:       { bg: 'bg-orange-500/15', text: 'text-orange-400', label: 'imperfect' },
+  futuro:           { bg: 'bg-sky-500/15',    text: 'text-sky-400',    label: 'future' },
+  congiuntivo:      { bg: 'bg-purple-500/15', text: 'text-purple-400', label: 'subjunctive' },
+  condizionale:     { bg: 'bg-pink-500/15',   text: 'text-pink-400',   label: 'conditional' },
+  imperativo:       { bg: 'bg-green-500/15',  text: 'text-green-400',  label: 'imperative' },
+};
+
+function renderTaggedItalian(
+  it: string,
+  grammarTags: import('../data/zone-stories').GrammarTag[] | undefined,
+  savedSet: Set<string>,
+  saveWord: (w: string, s: string, t: string) => void,
+  en: string,
+  isActive: boolean,
+) {
+  if (!grammarTags?.length) return null; // fall back to WordSpan rendering
+
+  // Build a list of tagged ranges sorted by start position
+  const ranges: { start: number; end: number; type: string }[] = [];
+  for (const tag of grammarTags) {
+    const idx = it.toLowerCase().indexOf(tag.text.toLowerCase());
+    if (idx !== -1) {
+      ranges.push({ start: idx, end: idx + tag.text.length, type: tag.type });
+    }
+  }
+  ranges.sort((a, b) => a.start - b.start);
+
+  // Build segments: plain | tagged
+  const segments: { text: string; type: string | null }[] = [];
+  let pos = 0;
+  for (const r of ranges) {
+    if (r.start > pos) segments.push({ text: it.slice(pos, r.start), type: null });
+    segments.push({ text: it.slice(r.start, r.end), type: r.type });
+    pos = r.end;
+  }
+  if (pos < it.length) segments.push({ text: it.slice(pos), type: null });
+
+  return (
+    <span>
+      {segments.map((seg, si) => {
+        if (seg.type) {
+          const col = GRAMMAR_COLOURS[seg.type] ?? { bg: 'bg-palace-text/10', text: '', label: seg.type };
+          return (
+            <span key={si} className={`${col.bg} ${col.text} rounded px-0.5`} title={col.label}>
+              {seg.text}
+            </span>
+          );
+        }
+        return seg.text.split(/(\s+)/).map((token, ti) =>
+          /\s/.test(token) ? token :
+          <WordSpan
+            key={`${si}-${ti}`}
+            word={token.replace(/[.,!?"""]/g, '')}
+            saved={savedSet.has(token.replace(/[.,!?"""]/g, ''))}
+            onSave={() => saveWord(token.replace(/[.,!?"""]/g, ''), it, en)}
+          />
+        );
+      })}
+    </span>
+  );
+}
+
+// ── Word span with long-press save ────────────────────────────────────────────
+
+function WordSpan({ word, saved, onSave }: { word: string; saved: boolean; onSave: () => void }) {
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cancel = () => { if (timer.current) { clearTimeout(timer.current); timer.current = null; } };
+  return (
+    <span
+      className={`cursor-pointer select-none transition-colors ${
+        saved ? 'text-palace-gold underline underline-offset-2' : 'hover:text-palace-gold/80'
+      }`}
+      onPointerDown={e => { e.stopPropagation(); timer.current = setTimeout(() => { onSave(); timer.current = null; }, 500); }}
+      onPointerUp={cancel}
+      onPointerLeave={cancel}
+    >
+      {word}
+    </span>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+function ZoneDialoguePanel({ story, onClose, speakIt, lang }: {
+  story: import('../data/zone-stories').ZoneStory;
+  onClose: () => void;
+  speakIt: (text: string) => void;
+  lang: string;
+}) {
+  const [revealed, setReveal] = useState<Set<number>>(new Set());
+  const [playing, setPlaying] = useState(false);
+  const [activeLine, setActiveLine] = useState<number | null>(null);
+  const [savedWords, setSavedWords] = useState<SavedWord[]>(loadSavedWords);
+  const [showSaved, setShowSaved] = useState(false);
+  const [saveFlash, setSaveFlash] = useState<string | null>(null);
+  const playRef = useRef(false);
+  const lineRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const savedSet = useMemo(() => new Set(savedWords.map(w => w.word)), [savedWords]);
+
+  const saveWord = useCallback((word: string, sentence: string, translation: string) => {
+    if (savedSet.has(word)) return;
+    const entry: SavedWord = { word, sentence, translation, zone: story.zoneName, savedAt: Date.now() };
+    setSavedWords(prev => {
+      const next = [...prev, entry];
+      localStorage.setItem(SAVED_KEY, JSON.stringify(next));
+      return next;
+    });
+    setSaveFlash(word);
+    setTimeout(() => setSaveFlash(null), 1200);
+  }, [savedSet, story.zoneName]);
+
+  const toggle = (i: number) => setReveal(prev => {
+    const next = new Set(prev);
+    next.has(i) ? next.delete(i) : next.add(i);
+    return next;
+  });
+
+  const stopPlay = useCallback(() => {
+    playRef.current = false;
+    setPlaying(false);
+    setActiveLine(null);
+    window.speechSynthesis.cancel();
+  }, []);
+
+  const playFrom = useCallback((startIdx: number) => {
+    if (!('speechSynthesis' in window)) return;
+    playRef.current = true;
+    setPlaying(true);
+
+    const speakLine = (idx: number) => {
+      if (!playRef.current || idx >= story.exchanges.length) {
+        playRef.current = false;
+        setPlaying(false);
+        setActiveLine(null);
+        return;
+      }
+      setActiveLine(idx);
+      lineRefs.current[idx]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(story.exchanges[idx].it);
+      u.lang = lang;
+      u.rate = 0.85;
+      u.onend = () => {
+        if (!playRef.current) return;
+        setTimeout(() => speakLine(idx + 1), 800);
+      };
+      window.speechSynthesis.speak(u);
+    };
+
+    speakLine(startIdx);
+  }, [story.exchanges, lang]);
+
+  useEffect(() => () => stopPlay(), [stopPlay]);
+
+  return (
+    <div className="fixed inset-0 z-60 bg-palace-bg/98 backdrop-blur-md overflow-y-auto p-4">
+      <div className="max-w-2xl mx-auto">
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <h3 className="font-cinzel text-xl text-palace-gold">{story.zoneName}</h3>
+            <p className="text-palace-text/50 text-xs mt-0.5">Tap a line to reveal · speaker to hear · play to listen through</p>
+          </div>
+          <button onClick={onClose} className="p-2 text-palace-text/70 hover:text-palace-gold">
+            <X className="w-6 h-6" />
+          </button>
+        </div>
+
+        {/* Playback + saved controls */}
+        <div className="flex items-center gap-2 mb-5 flex-wrap">
+          {!playing ? (
+            <button
+              onClick={() => playFrom(0)}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-palace-gold/20 border border-palace-gold/40 text-palace-gold hover:bg-palace-gold/30 font-cinzel text-sm"
+            >
+              <Play className="w-4 h-4" />
+              Play all
+            </button>
+          ) : (
+            <button
+              onClick={stopPlay}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-palace-gold/20 border border-palace-gold/40 text-palace-gold hover:bg-palace-gold/30 font-cinzel text-sm"
+            >
+              <Square className="w-4 h-4" />
+              Stop
+            </button>
+          )}
+          {activeLine !== null && (
+            <span className="text-palace-text/40 text-xs font-cinzel">
+              {activeLine + 1} / {story.exchanges.length}
+            </span>
+          )}
+          <div className="ml-auto flex items-center gap-2">
+            <button
+              onClick={() => setShowSaved(v => !v)}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-lg border border-palace-text/20 text-palace-text/60 hover:text-palace-gold text-sm font-cinzel"
+            >
+              <Bookmark className="w-4 h-4" />
+              {savedWords.length > 0 && <span className="text-palace-gold">{savedWords.length}</span>}
+            </button>
+            {savedWords.length > 0 && (
+              <button
+                onClick={() => exportAnki(savedWords)}
+                className="flex items-center gap-1.5 px-3 py-2 rounded-lg border border-palace-text/20 text-palace-text/60 hover:text-palace-gold text-sm font-cinzel"
+              >
+                <Download className="w-4 h-4" />
+                Export
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Save flash */}
+        {saveFlash && (
+          <div className="fixed top-6 left-1/2 -translate-x-1/2 bg-palace-gold text-palace-bg px-4 py-2 rounded-full font-cinzel text-sm z-70 pointer-events-none">
+            Saved: {saveFlash}
+          </div>
+        )}
+
+        {/* Saved words list */}
+        {showSaved && savedWords.length > 0 && (
+          <div className="mb-4 bg-palace-text/5 border border-palace-text/10 rounded-xl p-3">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-cinzel text-xs text-palace-gold/70">Saved words</span>
+              <button onClick={() => { setSavedWords([]); localStorage.removeItem(SAVED_KEY); }} className="text-palace-text/30 hover:text-red-400 text-xs">Clear all</button>
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {savedWords.map((w, i) => (
+                <span key={i} className="px-2 py-0.5 bg-palace-gold/10 border border-palace-gold/20 rounded-full text-palace-gold text-xs font-cinzel" title={w.sentence}>
+                  {w.word}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="space-y-2">
+          {story.exchanges.map((ex, i) => {
+            const isLearner = ex.speaker === 'Tu';
+            const isActive = activeLine === i;
+            return (
+              <div
+                key={i}
+                ref={el => { lineRefs.current[i] = el; }}
+                className={`flex ${isLearner ? 'justify-end' : 'justify-start'}`}
+              >
+                <div
+                  className={`max-w-[80%] rounded-2xl px-4 py-3 cursor-pointer select-none transition-all duration-200 ${
+                    isActive
+                      ? 'ring-2 ring-palace-gold scale-[1.02]'
+                      : ''
+                  } ${
+                    isLearner
+                      ? 'bg-palace-gold/20 border border-palace-gold/30'
+                      : 'bg-palace-text/10 border border-palace-text/20'
+                  }`}
+                  onClick={() => toggle(i)}
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      {!isLearner && (
+                        <span className="text-xs font-cinzel text-palace-gold/60 block mb-1">{ex.speaker}</span>
+                      )}
+                      <p className={`font-medium transition-colors leading-relaxed ${isActive ? 'text-palace-gold' : 'text-palace-text'}`}>
+                        {renderTaggedItalian(ex.it, ex.grammarTags, savedSet, saveWord, ex.en || '', isActive) ??
+                          ex.it.split(/(\s+)/).map((token, ti) =>
+                            /\s/.test(token) ? token :
+                            <WordSpan
+                              key={ti}
+                              word={token.replace(/[.,!?"""]/g, '')}
+                              saved={savedSet.has(token.replace(/[.,!?"""]/g, ''))}
+                              onSave={() => saveWord(token.replace(/[.,!?"""]/g, ''), ex.it, ex.en || '')}
+                            />
+                          )
+                        }
+                      </p>
+                      {ex.grammarTags && ex.grammarTags.length > 0 && (
+                        <div className="flex flex-wrap gap-1 mt-1.5">
+                          {[...new Set(ex.grammarTags.map(t => t.type))].map(type => {
+                            const col = GRAMMAR_COLOURS[type];
+                            return col ? (
+                              <span key={type} className={`text-xs px-1.5 py-0.5 rounded-full ${col.bg} ${col.text} font-cinzel`}>
+                                {col.label}
+                              </span>
+                            ) : null;
+                          })}
+                        </div>
+                      )}
+                      {revealed.has(i) && (
+                        <p className="text-palace-text/60 text-sm mt-1 italic">{ex.en}</p>
+                      )}
+                    </div>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); if (playing) stopPlay(); speakIt(ex.it); }}
+                      className="shrink-0 text-palace-text/40 hover:text-palace-gold mt-0.5"
+                    >
+                      <Volume2 className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <p className="text-center text-palace-text/30 text-xs mt-6 font-cinzel">
+          {revealed.size === story.exchanges.length ? '✓ All translated' : `${story.exchanges.length - revealed.size} lines hidden`}
+        </p>
       </div>
     </div>
   );

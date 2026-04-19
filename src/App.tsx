@@ -8,6 +8,7 @@ import RoomListPage from './pages/RoomListPage';
 import RoomPage from './pages/RoomPage';
 import ReviewPage from './pages/ReviewPage';
 import AuditPage from './pages/AuditPage';
+import VocabPreviewPage from './pages/VocabPreviewPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path="/rooms/:roomId" component={RoomPage} />
               <Route path="/review" component={ReviewPage} />
               <Route path="/audit" component={AuditPage} />
+              <Route path="/preview" component={VocabPreviewPage} />
             </Switch>
           </DialogueProgressProvider>
         </ProgressProvider>

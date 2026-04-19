@@ -1,0 +1,2723 @@
+{
+  "entrance-hall": {
+    "zoneId": "entrance-hall",
+    "zoneName": "Foyer",
+    "vocabUsed": [
+      "madre",
+      "padre",
+      "fratello",
+      "sorella",
+      "nonno",
+      "nonna",
+      "zio",
+      "zia",
+      "figlio",
+      "figlia"
+    ],
+    "title": "La Famiglia Reunita",
+    "titleNative": "La Famiglia Reunita",
+    "sentences": [
+      {
+        "it": "Madre e padre si preparavano a festeggiare l'arrivo del figlio più piccolo nel foyer.",
+        "en": "Mother and father were getting ready to celebrate the arrival of their youngest son in the foyer.",
+        "handWord": "sorella",
+        "distractors": [
+          "padre",
+          "fratello"
+        ]
+      },
+      {
+        "it": "Fratello e sorella, accompagnati da nonno e nonna, salutarono figlia e zio con un abbraccio caloroso.",
+        "en": "Brother and sister, accompanied by grandfather and grandmother, greeted daughter and uncle with a warm hug.",
+        "handWord": "nonno",
+        "distractors": [
+          "fratello",
+          "sorella"
+        ]
+      },
+      {
+        "it": "Zia e zio si misero al centro della stanza, mentre figlio e figlia correvano verso i dolci.",
+        "en": "Aunt and uncle took center stage, while son and daughter rushed toward the sweets.",
+        "handWord": "zio",
+        "distractors": [
+          "madre",
+          "figlio"
+        ]
+      },
+      {
+        "it": "Padre raccontò storie a nonno, mentre madre sorrideva guardando la famiglia unita.",
+        "en": "Father told stories to grandfather, while mother smiled watching the united family.",
+        "handWord": "nonna",
+        "distractors": [
+          "padre",
+          "figlio"
+        ]
+      },
+      {
+        "it": "Nel foyer, ogni membro della famiglia trovò il suo posto, come sempre.",
+        "en": "In the foyer, every family member found their place, as always.",
+        "handWord": "figlio",
+        "distractors": [
+          "madre",
+          "fratello"
+        ]
+      }
+    ]
+  },
+  "coat-rack": {
+    "zoneId": "coat-rack",
+    "zoneName": "Coat Rack",
+    "vocabUsed": [
+      "cappotto",
+      "giacca",
+      "impermeabile",
+      "sciarpa",
+      "cappello",
+      "guanto",
+      "cravatta",
+      "cintura",
+      "borsa",
+      "maglione"
+    ],
+    "title": "Un Giorno Freddo",
+    "titleNative": "Un Giorno Freddo",
+    "sentences": [
+      {
+        "it": "Maria si infilò il cappotto mentre cercava la sciarpa e il cappello.",
+        "en": "Maria put on her coat while looking for the scarf and hat.",
+        "handWord": "cappotto",
+        "distractors": [
+          "sciarpa",
+          "cappello"
+        ]
+      },
+      {
+        "it": "Indossò i guanti, la cravatta e la cintura con decisione.",
+        "en": "She wore the gloves, tie, and belt with determination.",
+        "handWord": "guanto",
+        "distractors": [
+          "cappotto",
+          "cappello"
+        ]
+      },
+      {
+        "it": "Nel bagaglio trovò la borsa e decise di aggiungere il maglione.",
+        "en": "In her bag she found the purse and decided to add the sweater.",
+        "handWord": "borsa",
+        "distractors": [
+          "giacca impermeabile",
+          "cravatta"
+        ]
+      },
+      {
+        "it": "Mentre usciva, si ricordò di prendere l'impermeabile.",
+        "en": "As she left, she remembered to take the raincoat.",
+        "handWord": "giacca",
+        "distractors": [
+          "cravatta",
+          "cintura"
+        ]
+      },
+      {
+        "it": "Con tutti gli accessori, si sentì pronta per il freddo autunnale.",
+        "en": "With all the accessories, she felt ready for the autumn cold.",
+        "handWord": "cappello",
+        "distractors": [
+          "cravatta",
+          "cintura"
+        ]
+      }
+    ]
+  },
+  "mirror": {
+    "zoneId": "mirror",
+    "zoneName": "The Mirror",
+    "vocabUsed": [
+      "bello",
+      "brutto",
+      "giovane",
+      "vecchio",
+      "alto",
+      "basso",
+      "magro",
+      "grasso",
+      "forte",
+      "debole"
+    ],
+    "title": "Il Specchio",
+    "titleNative": "Il Specchio",
+    "sentences": [
+      {
+        "it": "Luca, giovane e alto, era magro ma bello.",
+        "en": "Luca, young and tall, was thin but handsome.",
+        "handWord": "giovane",
+        "distractors": [
+          "vecchio",
+          "alto"
+        ]
+      },
+      {
+        "it": "Nel suo vecchio specchio, però, appariva brutto e basso.",
+        "en": "But in his old mirror, he looked ugly and short.",
+        "handWord": "vecchio",
+        "distractors": [
+          "bello",
+          "brutto"
+        ]
+      },
+      {
+        "it": "Un uomo grasso e debole lo osservava ridendo.",
+        "en": "A fat and weak man laughed at him.",
+        "handWord": "grasso",
+        "distractors": [
+          "bello",
+          "brutto"
+        ]
+      },
+      {
+        "it": "Luca era forte, ma il suo cuore era debole.",
+        "en": "Luca was strong, but his heart was weak.",
+        "handWord": "forte",
+        "distractors": [
+          "basso",
+          "magro"
+        ]
+      },
+      {
+        "it": "Il specchio rivelò la verità: nessuno era perfetto.",
+        "en": "The mirror revealed the truth: no one was perfect.",
+        "handWord": "basso",
+        "distractors": [
+          "brutto",
+          "magro"
+        ]
+      }
+    ]
+  },
+  "clock": {
+    "zoneId": "clock",
+    "zoneName": "The Clock",
+    "vocabUsed": [
+      "secondo",
+      "minuto",
+      "ora",
+      "giorno",
+      "notte",
+      "mattina",
+      "sera",
+      "mezzogiorno",
+      "mezzanotte",
+      "tempo"
+    ],
+    "title": "La Danza del Tempo",
+    "titleNative": "La Danza del Tempo",
+    "sentences": [
+      {
+        "it": "Nella mattina, il sole splende e il tempo sembra fluire lentamente.",
+        "en": "In the morning, the sun shines and time seems to flow slowly.",
+        "handWord": "mattina",
+        "distractors": [
+          "minuto",
+          "notte"
+        ]
+      },
+      {
+        "it": "Ogni ora, il minuto scorre e il secondo echeggia come un richiamo.",
+        "en": "Every hour, the minute flows and the second echoes like a call.",
+        "handWord": "minuto",
+        "distractors": [
+          "secondo",
+          "giorno"
+        ]
+      },
+      {
+        "it": "Al mezzogiorno, il giorno raggiunge il suo apice, mentre la notte dorme ancora.",
+        "en": "At noon, the day reaches its peak, while the night still sleeps.",
+        "handWord": "mezzogiorno",
+        "distractors": [
+          "sera",
+          "notte"
+        ]
+      },
+      {
+        "it": "Nella sera, le ombre si allungano, e la mezzanotte arriva come un segreto.",
+        "en": "In the evening, shadows stretch, and midnight arrives like a secret.",
+        "handWord": "notte",
+        "distractors": [
+          "mattina",
+          "minuto"
+        ]
+      },
+      {
+        "it": "Il tempo, però, non si ferma mai, e ogni momento è un frammento del giorno.",
+        "en": "Time, however, never stops, and every moment is a fragment of the day.",
+        "handWord": "tempo",
+        "distractors": [
+          "giorno",
+          "sera"
+        ]
+      }
+    ]
+  },
+  "welcome-mat": {
+    "zoneId": "welcome-mat",
+    "zoneName": "Welcome Mat",
+    "vocabUsed": [
+      "ciao",
+      "buongiorno",
+      "buonasera",
+      "buonanotte",
+      "grazie",
+      "prego",
+      "scusa",
+      "arrivederci",
+      "permesso",
+      "forse"
+    ],
+    "title": "A Day in Italy",
+    "titleNative": "Un Giorno in Italia",
+    "sentences": [
+      {
+        "it": "Ciao! Buongiorno, signora, permesso per passare.",
+        "en": "Hello! Good morning, ma'am, excuse me for passing through.",
+        "handWord": "buongiorno",
+        "distractors": [
+          "ciao",
+          "buonanotte"
+        ]
+      },
+      {
+        "it": "Scusa, forse posso aiutarti a trovare la strada.",
+        "en": "Sorry, maybe I can help you find the way.",
+        "handWord": "scusa",
+        "distractors": [
+          "grazie",
+          "permesso"
+        ]
+      },
+      {
+        "it": "Buonasera, grazie per il tuo aiuto, prego entra.",
+        "en": "Good evening, thank you for your help, please come in.",
+        "handWord": "buonasera",
+        "distractors": [
+          "ciao",
+          "grazie"
+        ]
+      },
+      {
+        "it": "Buonanotte, arrivederci, e non preoccuparti.",
+        "en": "Good night, goodbye, and don't worry.",
+        "handWord": "buonanotte",
+        "distractors": [
+          "ciao",
+          "grazie"
+        ]
+      },
+      {
+        "it": "Forse un altro giorno, ciao e buona fortuna.",
+        "en": "Maybe another day, goodbye and good luck.",
+        "handWord": "permesso",
+        "distractors": [
+          "ciao",
+          "grazie"
+        ]
+      }
+    ]
+  },
+  "kitchen": {
+    "zoneId": "kitchen",
+    "zoneName": "Kitchen",
+    "vocabUsed": [
+      "acqua",
+      "latte",
+      "uova",
+      "burro",
+      "formaggio",
+      "carne",
+      "pesce",
+      "pollo",
+      "yogurt",
+      "panna"
+    ],
+    "title": "La Ricetta Segreta",
+    "titleNative": "La Ricetta Segreta",
+    "sentences": [
+      {
+        "it": "In cucina, Maria preparava una ricetta segreta usando acqua fresca e latte appena aperto.",
+        "en": "In the kitchen, Maria was preparing a secret recipe using fresh water and just-opened milk.",
+        "handWord": "acqua",
+        "distractors": [
+          "uova",
+          "formaggio"
+        ]
+      },
+      {
+        "it": "Mescolando uova e burro, creava una crema cremosa per il dolce.",
+        "en": "By mixing eggs and butter, she made a creamy sauce for the dessert.",
+        "handWord": "uova",
+        "distractors": [
+          "formaggio",
+          "burro"
+        ]
+      },
+      {
+        "it": "Dopo, aggiungeva formaggio grattugiato e carne di manzo alla sua pasta.",
+        "en": "Then, she added grated cheese and beef to her pasta.",
+        "handWord": "formaggio",
+        "distractors": [
+          "uova",
+          "burro"
+        ]
+      },
+      {
+        "it": "Per il pranzo, preparava pesce al forno e pollo arrosto, sempre con una spolverata di sale.",
+        "en": "For lunch, she cooked baked fish and roasted chicken, always with a sprinkle of salt.",
+        "handWord": "pesce",
+        "distractors": [
+          "burro",
+          "carne"
+        ]
+      },
+      {
+        "it": "A fine pasto, serviva yogurt greco con panna fresca, il suo piatto preferito.",
+        "en": "At the end of the meal, she served Greek yogurt with fresh cream, her favorite dish.",
+        "handWord": "yogurt",
+        "distractors": [
+          "latte",
+          "carne"
+        ]
+      }
+    ]
+  },
+  "pantry": {
+    "zoneId": "pantry",
+    "zoneName": "The Pantry",
+    "vocabUsed": [
+      "pasta",
+      "riso",
+      "pane",
+      "farina",
+      "zucchero",
+      "caffe",
+      "olio",
+      "sale"
+    ],
+    "title": "La Dispensa Segreta",
+    "titleNative": "The Secret Pantry",
+    "sentences": [
+      {
+        "it": "Mia nonna mi ha portato nella dispensa per insegnarmi a organizzare gli ingredienti.",
+        "en": "My grandmother took me to the pantry to teach me how to organize the ingredients.",
+        "handWord": "pane",
+        "distractors": [
+          "zucchero",
+          "caffe"
+        ]
+      },
+      {
+        "it": "Ha aperto gli scaffali e mi ha mostrato pasta, riso, pane, farina, zucchero, caffe, olio e sale.",
+        "en": "She opened the shelves and showed me pasta, rice, bread, flour, sugar, coffee, oil, and salt.",
+        "handWord": "pasta",
+        "distractors": [
+          "zucchero",
+          "caffe"
+        ]
+      },
+      {
+        "it": "Mi ha spiegato come conservarli bene per non farli andare a male.",
+        "en": "She explained how to store them properly to prevent them from going bad.",
+        "handWord": "zucchero",
+        "distractors": [
+          "riso",
+          "caffe"
+        ]
+      },
+      {
+        "it": "Mi ha detto che ogni ingrediente ha un posto speciale, proprio come ogni ricetta.",
+        "en": "She told me that each ingredient has a special place, just like every recipe.",
+        "handWord": "farina",
+        "distractors": [
+          "caffe",
+          "olio"
+        ]
+      },
+      {
+        "it": "Quando ho finito, mi ha dato un bacio e mi ha detto che la cucina è come un libro pieno di storie.",
+        "en": "When I finished, she gave me a kiss and said that cooking is like a book full of stories.",
+        "handWord": "olio",
+        "distractors": [
+          "riso",
+          "sale"
+        ]
+      }
+    ]
+  },
+  "utensil-drawer": {
+    "zoneId": "utensil-drawer",
+    "zoneName": "Utensil Drawer",
+    "vocabUsed": [
+      "coltello",
+      "forchetta",
+      "cucchiaio",
+      "mestolo",
+      "spatola",
+      "grattugia"
+    ],
+    "title": "La Scatola dei Gadgets",
+    "titleNative": "La Scatola dei Gadgets",
+    "sentences": [
+      {
+        "it": "Aprii il cassetto e trovai il coltello affilato e la forchetta lucida.",
+        "en": "I opened the drawer and found the sharp knife and the shiny fork.",
+        "handWord": "coltello",
+        "distractors": [
+          "forchetta",
+          "cucchiaio"
+        ]
+      },
+      {
+        "it": "Accanto al cucchiaio di legno c'era il mestolo d'ottone polverizzato.",
+        "en": "Next to the wooden spoon was the powdered copper ladle.",
+        "handWord": "cucchiaio",
+        "distractors": [
+          "coltello",
+          "grattugia"
+        ]
+      },
+      {
+        "it": "La spatola di silicone era appesa al muro, mentre la grattugia giaceva in un angolo.",
+        "en": "The silicone spatula was hanging on the wall, while the grater lay in a corner.",
+        "handWord": "spatola",
+        "distractors": [
+          "grattugia",
+          "cucchiaio"
+        ]
+      },
+      {
+        "it": "Tutti gli attrezzi sembravano pronti per un pasto fantastico.",
+        "en": "All the tools seemed ready for a magical meal.",
+        "handWord": "grattugia",
+        "distractors": [
+          "forchetta",
+          "mestolo"
+        ]
+      },
+      {
+        "it": "Solo la grattugia aveva un graffio che raccontava anni di uso.",
+        "en": "Only the grater had a scratch that told stories of years of use.",
+        "handWord": "mestolo",
+        "distractors": [
+          "forchetta",
+          "grater"
+        ]
+      }
+    ]
+  },
+  "stove": {
+    "zoneId": "stove",
+    "zoneName": "The Stove",
+    "vocabUsed": [
+      "padella",
+      "pentola",
+      "tagliere",
+      "forno",
+      "fornello",
+      "colino"
+    ],
+    "title": "The Stove",
+    "titleNative": "Il Fornello",
+    "sentences": [
+      {
+        "it": "Marta si avvicinò al fornello, dove la padella scintillava al calore.",
+        "en": "Marta approached the stove, where the pan shimmered with heat.",
+        "handWord": "fornello",
+        "distractors": [
+          "padella",
+          "colino"
+        ]
+      },
+      {
+        "it": "La pentola bolliva un brodo caldo mentre su il tagliere tagliava verdure fresche.",
+        "en": "The pot boiled a hot broth as she chopped fresh vegetables on the cutting board.",
+        "handWord": "pentola",
+        "distractors": [
+          "tagliere",
+          "fornello"
+        ]
+      },
+      {
+        "it": "Il forno ronzava piano, pronto a accogliere il dolce che stava preparando.",
+        "en": "The oven hummed softly, ready to welcome the dessert she was making.",
+        "handWord": "forno",
+        "distractors": [
+          "padella",
+          "colino"
+        ]
+      },
+      {
+        "it": "Tra i rumori del fornello e del forno, il cuoco sentiva il profumo della ricetta tradizionale.",
+        "en": "Amid the sounds of the stove and oven, the cook smelled the aroma of the traditional recipe.",
+        "handWord": "colino",
+        "distractors": [
+          "padella",
+          "tagliere"
+        ]
+      },
+      {
+        "it": "La pentola e il tagliere erano i compagni fedeli del suo lavoro quotidiano.",
+        "en": "The pot and cutting board were her loyal companions in daily work.",
+        "handWord": "tagliere",
+        "distractors": [
+          "padella",
+          "padella"
+        ]
+      }
+    ]
+  },
+  "table": {
+    "zoneId": "table",
+    "zoneName": "The Table",
+    "vocabUsed": [
+      "piatto",
+      "bicchiere",
+      "tazza",
+      "tovagliolo",
+      "vino",
+      "birra",
+      "succo"
+    ],
+    "title": "A Dinner at The Table",
+    "titleNative": "Un pranzo al tavolo",
+    "sentences": [
+      {
+        "it": "Luca posò il piatto di pasta sul tavolo, accanto al bicchiere di vino e alla tazza di caffè.",
+        "en": "Luca placed the pasta plate on the table, next to the wine glass and the coffee cup.",
+        "handWord": "piatto",
+        "distractors": [
+          "vino",
+          "birra"
+        ]
+      },
+      {
+        "it": "Maria tirò fuori il tovagliolo e lo posò accanto al bicchiere di birra.",
+        "en": "Maria took out the napkin and placed it next to the beer glass.",
+        "handWord": "tovagliolo",
+        "distractors": [
+          "piatto",
+          "bicchiere"
+        ]
+      },
+      {
+        "it": "Gianni versò del succo di arancia nella tazza vuota, mentre il piatto era ancora caldo.",
+        "en": "Gianni poured orange juice into the empty cup, while the plate was still warm.",
+        "handWord": "tazza",
+        "distractors": [
+          "piatto",
+          "vino"
+        ]
+      },
+      {
+        "it": "Tutti si sedettero, con il tovagliolo piegato e il bicchiere pieno di vino.",
+        "en": "Everyone sat down, with the napkin folded and the glass full of wine.",
+        "handWord": "vino",
+        "distractors": [
+          "bicchiere",
+          "tazza"
+        ]
+      },
+      {
+        "it": "Il pranzo finì con un brindisi al tavolo, tra risate e bicchieri vuoti.",
+        "en": "The meal ended with a toast at the table, between laughter and empty glasses.",
+        "handWord": "bicchiere",
+        "distractors": [
+          "piatto",
+          "tazza"
+        ]
+      }
+    ]
+  },
+  "dessert": {
+    "zoneId": "dessert",
+    "zoneName": "Dessert Station",
+    "vocabUsed": [
+      "torta",
+      "gelato",
+      "cornetto",
+      "cioccolata",
+      "miele",
+      "biscotto"
+    ],
+    "title": "La Stanza dei Dolci",
+    "titleNative": "The Dessert Room",
+    "sentences": [
+      {
+        "it": "Maria entrò nella Dessert Station, il naso che annusava il profumo del cornetto appena sfornato.",
+        "en": "Maria entered the Dessert Station, her nose twitching at the scent of the freshly baked cornetto.",
+        "handWord": "cornetto",
+        "distractors": [
+          "torta",
+          "biscotto"
+        ]
+      },
+      {
+        "it": "Ordinò un gelato al cioccolato, mentre un venditore le mostrava una torta di mele croccante.",
+        "en": "She ordered a chocolate gelato, while a vendor showed her a crisp apple tart.",
+        "handWord": "cioccolata",
+        "distractors": [
+          "torta",
+          "biscotto"
+        ]
+      },
+      {
+        "it": "Mentre mangiava, notò un biscotto ripieno di miele che brillava al sole.",
+        "en": "As she ate, she noticed a honey-filled biscotto glowing in the sunlight.",
+        "handWord": "biscotto",
+        "distractors": [
+          "torta",
+          "gelato"
+        ]
+      },
+      {
+        "it": "Il sapore dolce della cioccolata le fece ricordare la sua infanzia in Sicilia.",
+        "en": "The sweet taste of the chocolate made her remember her childhood in Sicily.",
+        "handWord": "torta",
+        "distractors": [
+          "gelato",
+          "miele"
+        ]
+      },
+      {
+        "it": "Tornò a casa con un sacchetto pieno di dolci, il cuore pieno di gioia.",
+        "en": "She returned home with a bag full of sweets, her heart full of joy.",
+        "handWord": "miele",
+        "distractors": [
+          "gelato",
+          "sweets"
+        ]
+      }
+    ]
+  },
+  "library": {
+    "zoneId": "library",
+    "zoneName": "Knowledge Hub",
+    "vocabUsed": [
+      "libro",
+      "romanzo",
+      "poesia",
+      "dizionario",
+      "rivista",
+      "giornale",
+      "manuale",
+      "racconto",
+      "biografia",
+      "biblioteca"
+    ],
+    "title": "La Biblioteca Segreta",
+    "titleNative": "La Biblioteca Segreta",
+    "sentences": [
+      {
+        "it": "Sofia trovò un libro antico nella biblioteca che raccontava di un romanzo mai pubblicato.",
+        "en": "Sofia found an ancient book in the library that told of an unpublished novel.",
+        "handWord": "libro",
+        "distractors": [
+          "romanzo",
+          "poesia"
+        ]
+      },
+      {
+        "it": "Tra le pagine c'era una poesia sull'eternità e un dizionario di parole dimenticate.",
+        "en": "Among the pages was a poem about eternity and a dictionary of forgotten words.",
+        "handWord": "poesia",
+        "distractors": [
+          "libro",
+          "dizionario"
+        ]
+      },
+      {
+        "it": "Una rivista vecchia e un giornale di guerra rivelarono un manuale segreto di resistenza.",
+        "en": "An old magazine and a war newspaper revealed a secret manual of resistance.",
+        "handWord": "giornale",
+        "distractors": [
+          "libro",
+          "poesia"
+        ]
+      },
+      {
+        "it": "Scrisse un racconto ispirato alla biografia di un inventore sconosciuto.",
+        "en": "She wrote a story inspired by the biography of an unknown inventor.",
+        "handWord": "romanzo",
+        "distractors": [
+          "poesia",
+          "dizionario"
+        ]
+      },
+      {
+        "it": "La biblioteca le diede la chiave per decifrare il mondo con nuovi occhi.",
+        "en": "The library gave her the key to decipher the world with new eyes.",
+        "handWord": "biblioteca",
+        "distractors": [
+          "manuale",
+          "racconto"
+        ]
+      }
+    ]
+  },
+  "desk": {
+    "zoneId": "desk",
+    "zoneName": "Study Desk",
+    "vocabUsed": [
+      "quaderno",
+      "penna",
+      "matita",
+      "gomma",
+      "righello",
+      "calendario",
+      "carta",
+      "scrivania",
+      "lezione",
+      "pagina"
+    ],
+    "title": "La Lezione al Scrivania",
+    "titleNative": "La lezione alla scrivania",
+    "sentences": [
+      {
+        "it": "Sul tavolo della scrivania, Luca sistemò il quaderno, la penna, la matita, la gomma e il righello.",
+        "en": "On the desk, Luca arranged the notebook, pen, pencil, eraser, and ruler.",
+        "handWord": "quaderno",
+        "distractors": [
+          "penna",
+          "matita"
+        ]
+      },
+      {
+        "it": "Con il calendario a portata di mano, iniziò a preparare le note per la lezione di italiano.",
+        "en": "With the calendar within reach, he started preparing notes for the Italian lesson.",
+        "handWord": "calendario",
+        "distractors": [
+          "quaderno",
+          "matita"
+        ]
+      },
+      {
+        "it": "Sul foglio di carta, disegnò un grafico usando il righello e corresse gli errori con la gomma.",
+        "en": "On the paper, he drew a graph using the ruler and corrected mistakes with the eraser.",
+        "handWord": "righello",
+        "distractors": [
+          "quaderno",
+          "gomma"
+        ]
+      },
+      {
+        "it": "Dopo aver riempito una pagina del quaderno, controllò il calendario per ricordare l'ora della prossima lezione.",
+        "en": "After filling a page in the notebook, he checked the calendar to remember the next lesson's time.",
+        "handWord": "pagina",
+        "distractors": [
+          "matita",
+          "scrivania"
+        ]
+      },
+      {
+        "it": "Con la matita in mano, si preparò a scrivere la relazione per la lezione successiva.",
+        "en": "With the pencil in hand, he prepared to write the report for the next lesson.",
+        "handWord": "penna",
+        "distractors": [
+          "quaderno",
+          "gomma"
+        ]
+      }
+    ]
+  },
+  "computer": {
+    "zoneId": "computer",
+    "zoneName": "Computer Station",
+    "vocabUsed": [
+      "schermo",
+      "tastiera",
+      "mouse",
+      "stampante",
+      "password",
+      "file",
+      "computer",
+      "studente",
+      "studentessa",
+      "scienza"
+    ],
+    "title": "La Prima Lezione",
+    "titleNative": "La Prima Lezione",
+    "sentences": [
+      {
+        "it": "Il studente e la studentessa si sedettero davanti al computer, con schermo e tastiera accesi.",
+        "en": "The student and the studentessa sat in front of the computer, with screen and keyboard turned on.",
+        "handWord": "screen",
+        "distractors": [
+          "mouse",
+          "password"
+        ]
+      },
+      {
+        "it": "Usarono il mouse per aprire un file contenente dati scientifici sulle scienze.",
+        "en": "They used the mouse to open a file containing scientific data on science.",
+        "handWord": "mouse",
+        "distractors": [
+          "file",
+          "password"
+        ]
+      },
+      {
+        "it": "Dopo aver inserito la password, la stampante iniziò a stampare i risultati.",
+        "en": "After entering the password, the printer started printing the results.",
+        "handWord": "stampante",
+        "distractors": [
+          "password",
+          "mouse"
+        ]
+      },
+      {
+        "it": "Il computer mostrava un'interfaccia pulita, mentre la studentessa chiedeva aiuto per un errore.",
+        "en": "The computer displayed a clean interface, while the studentessa asked for help with an error.",
+        "handWord": "studentessa",
+        "distractors": [
+          "password",
+          "computer"
+        ]
+      },
+      {
+        "it": "Finalmente, il studente salvò il file e si congratulò con la studentessa per il lavoro fatto.",
+        "en": "Finally, the student saved the file and congratulated the studentessa for the work done.",
+        "handWord": "file",
+        "distractors": [
+          "mouse",
+          "password"
+        ]
+      }
+    ]
+  },
+  "bedroom": {
+    "zoneId": "bedroom",
+    "zoneName": "Bedroom",
+    "vocabUsed": [
+      "camicia",
+      "maglietta",
+      "giacca",
+      "vestito",
+      "gonna",
+      "pantaloni",
+      "jeans",
+      "pigiama",
+      "maglione",
+      "cappotto"
+    ],
+    "title": "La Stanza dei Sogni",
+    "titleNative": "The Room of Dreams",
+    "sentences": [
+      {
+        "it": "Marta ha appeso la maglietta colorata accanto alla camicia bianca, mentre i pantaloni jeans giacciono piegati sul letto.",
+        "en": "Marta hung the colorful t-shirt next to the white shirt, while the jeans pants lie folded on the bed.",
+        "handWord": "pantaloni",
+        "distractors": [
+          "camicia",
+          "giacca"
+        ]
+      },
+      {
+        "it": "Sul comodino, la giacca di lana e il cappotto pesante attendono di essere indossati per la serata fuori casa.",
+        "en": "On the nightstand, the wool jacket and heavy coat await to be worn for the evening outing.",
+        "handWord": "giacca",
+        "distractors": [
+          "camicia",
+          "vestito"
+        ]
+      },
+      {
+        "it": "Nel guardaroba, il vestito rosso e la gonna a pieghe sono pronti per la cena formale, mentre il maglione è riposizionato dopo la notte.",
+        "en": "In the wardrobe, the red dress and pleated skirt are ready for the formal dinner, while the sweater was repositioned after the night.",
+        "handWord": "gonna",
+        "distractors": [
+          "camicia",
+          "giacca"
+        ]
+      },
+      {
+        "it": "Il pigiama a righe è stato messo da parte, ma la giacca di pelle resta appesa, ricordando l'ultimo viaggio in montagna.",
+        "en": "The striped pajamas were set aside, but the leather jacket remains hanging, reminding of the last mountain trip.",
+        "handWord": "jeans",
+        "distractors": [
+          "maglione",
+          "maglietta"
+        ]
+      },
+      {
+        "it": "Tra i capi, ogni pezzo racconta una storia, come se il letto stesso custodisse i segreti dei sogni notturni.",
+        "en": "Among the clothes, each piece tells a story, as if the bed itself guarded the secrets of night dreams.",
+        "handWord": "camicia",
+        "distractors": [
+          "camicia",
+          "maglietta"
+        ]
+      }
+    ]
+  },
+  "shoes": {
+    "zoneId": "shoes",
+    "zoneName": "Shoe Rack",
+    "vocabUsed": [
+      "scarpa",
+      "stivale",
+      "sandali",
+      "pantofole",
+      "scarpette"
+    ],
+    "title": "La Collezione di Luca",
+    "titleNative": "Luca's Collection",
+    "sentences": [
+      {
+        "it": "Luca organizzava le sue scarpe e stivali sullo scaffale.",
+        "en": "Luca was organizing his shoes and boots on the rack.",
+        "handWord": "scarpa",
+        "distractors": [
+          "sandali",
+          "pantofole"
+        ]
+      },
+      {
+        "it": "Tra le scarpe c’erano anche i sandali per l’estate.",
+        "en": "Among the shoes there were also sandals for summer.",
+        "handWord": "sandali",
+        "distractors": [
+          "scarpa",
+          "pantofole"
+        ]
+      },
+      {
+        "it": "Accanto ai sandali, le pantofole erano sempre pronte per la casa.",
+        "en": "Next to the sandals, the slippers were always ready for home.",
+        "handWord": "pantofole",
+        "distractors": [
+          "stivale",
+          "scarpette"
+        ]
+      },
+      {
+        "it": "Le scarpette di suo figlio erano appese vicino al muro.",
+        "en": "His son’s little shoes were hanging near the wall.",
+        "handWord": "scarpette",
+        "distractors": [
+          "stivale",
+          "stivale"
+        ]
+      },
+      {
+        "it": "Ogni tipo di calzatura aveva il suo posto, come se ogni scarpa avesse una storia da raccontare.",
+        "en": "Every type of footwear had its place, as if every shoe had a story to tell.",
+        "handWord": "stivale",
+        "distractors": [
+          "stivale",
+          "stivale"
+        ]
+      }
+    ]
+  },
+  "nightstand": {
+    "zoneId": "nightstand",
+    "zoneName": "Nightstand",
+    "vocabUsed": [
+      "sveglia",
+      "lampada",
+      "libro",
+      "orologio",
+      "occhiali"
+    ],
+    "title": "La Mattina Serena",
+    "titleNative": "La Mattina Serena",
+    "sentences": [
+      {
+        "it": "La sveglia suonava piano, svegliando il silenzio della stanza.",
+        "en": "The alarm clock rang softly, breaking the silence of the room.",
+        "handWord": "orologio",
+        "distractors": [
+          "lampada",
+          "libro"
+        ]
+      },
+      {
+        "it": "La lampada a lato del letto proiettava un'ombra morbida sul muro.",
+        "en": "The lamp next to the bed cast a soft shadow on the wall.",
+        "handWord": "lampada",
+        "distractors": [
+          "libro",
+          "orologio"
+        ]
+      },
+      {
+        "it": "Accanto al libro aperto, l'orologio segnava le sei e mezzo.",
+        "en": "Beside the open book, the clock showed half past six.",
+        "handWord": "libro",
+        "distractors": [
+          "occhiali",
+          "sveglia"
+        ]
+      },
+      {
+        "it": "Sui cuscini, gli occhiali da lettura brillavano nel riflesso della lampada.",
+        "en": "On the pillows, the reading glasses gleamed in the lamp's reflection.",
+        "handWord": "occhiali",
+        "distractors": [
+          "lampada",
+          "libro"
+        ]
+      },
+      {
+        "it": "Un sospirò di pace si diffuse nell'aria fresca del mattino.",
+        "en": "A sigh of peace spread through the fresh morning air.",
+        "handWord": "sveglia",
+        "distractors": [
+          "IDs",
+          "Sentence"
+        ]
+      }
+    ]
+  },
+  "bathroom": {
+    "zoneId": "bathroom",
+    "zoneName": "Bathroom",
+    "vocabUsed": [
+      "sapone",
+      "dentifricio",
+      "spazzolino",
+      "asciugamano",
+      "specchio",
+      "rubinetto"
+    ],
+    "title": "La mattina in bagno",
+    "titleNative": "Morning in the Bathroom",
+    "sentences": [
+      {
+        "it": "Guarda nel specchio mentre ti lavi i denti.",
+        "en": "Look in the mirror while you brush your teeth.",
+        "handWord": "specchio",
+        "distractors": [
+          "sapone",
+          "rubinetto"
+        ]
+      },
+      {
+        "it": "Prende lo spazzolino e il dentifricio dal lavandino.",
+        "en": "Picks up the toothbrush and toothpaste from the sink.",
+        "handWord": "rubinetto",
+        "distractors": [
+          "sapone",
+          "specchio"
+        ]
+      },
+      {
+        "it": "Apre il rubinetto per far scorrere l'acqua fresca.",
+        "en": "Opens the faucet to let fresh water flow.",
+        "handWord": "sapone",
+        "distractors": [
+          "spazzolino",
+          "asciugamano"
+        ]
+      },
+      {
+        "it": "Usa il sapone per pulire le mani e il viso.",
+        "en": "Uses the soap to clean hands and face.",
+        "handWord": "dentifricio",
+        "distractors": [
+          "spazzolino",
+          "asciugamano"
+        ]
+      },
+      {
+        "it": "Asciuga il viso con l'asciugamano prima di uscire.",
+        "en": "Dries your face with the towel before leaving.",
+        "handWord": "asciugamano",
+        "distractors": [
+          "sapone",
+          "specchio"
+        ]
+      }
+    ]
+  },
+  "shower": {
+    "zoneId": "shower",
+    "zoneName": "The Shower",
+    "vocabUsed": [
+      "doccia",
+      "shampoo",
+      "bagnoschiuma",
+      "asciugamano",
+      "acqua"
+    ],
+    "title": "La Doccia Serale",
+    "titleNative": "The Evening Shower",
+    "sentences": [
+      {
+        "it": "Marta si infilò nella doccia, godendosi il caldo getto d'acqua.",
+        "en": "Marta stepped into the shower, enjoying the warm stream of water.",
+        "handWord": "acqua",
+        "distractors": [
+          "doccia",
+          "asciugamano"
+        ]
+      },
+      {
+        "it": "Mentre si lavava i capelli con lo shampoo, si ricordò di applicare il bagnoschiuma per un effetto più profumato.",
+        "en": "While washing her hair with shampoo, she remembered to apply the body foam for a more fragrant effect.",
+        "handWord": "shampoo",
+        "distractors": [
+          "doccia",
+          "asciugamano"
+        ]
+      },
+      {
+        "it": "Dopo aver risciacquato via il bagnoschiuma, prese l'asciugamano per asciugarsi.",
+        "en": "After rinsing off the body foam, she grabbed the towel to dry herself.",
+        "handWord": "asciugamano",
+        "distractors": [
+          "doccia",
+          "shampoo"
+        ]
+      },
+      {
+        "it": "L'acqua calda la rilassava, e ogni goccia sembrava cancellare le preoccupazioni.",
+        "en": "The warm water relaxed her, and each drop seemed to wash away her worries.",
+        "handWord": "doccia",
+        "distractors": [
+          "bagnoschiuma",
+          "doccia"
+        ]
+      },
+      {
+        "it": "Quando uscì dalla doccia, si sentiva finalmente serena e rinvigorita.",
+        "en": "When she stepped out of the shower, she felt finally calm and revitalized.",
+        "handWord": "bagnoschiuma",
+        "distractors": [
+          "IDs",
+          "Sentence"
+        ]
+      }
+    ]
+  },
+  "cabinet": {
+    "zoneId": "cabinet",
+    "zoneName": "Medicine Cabinet",
+    "vocabUsed": [
+      "medicina",
+      "cerotto",
+      "termometro",
+      "aspirina",
+      "pomata",
+      "cotone"
+    ],
+    "title": "La Scatola dei Ricordi",
+    "titleNative": "La Scatola dei Ricordi",
+    "sentences": [
+      {
+        "it": "Nella stanza buia, la scatola di legno ospitava oggetti dimenticati della nonna: un termometro incrinato, un flacone di aspirina e una pomata per le ferite.",
+        "en": "In the dark room, the wooden box held forgotten items from Grandma: a cracked thermometer, a bottle of aspirin, and a salve for wounds.",
+        "handWord": "termometro",
+        "distractors": [
+          "aspirina",
+          "pomata"
+        ]
+      },
+      {
+        "it": "La nonna, con le mani tremanti, applicava un cerotto sul polso di Luca, che aveva sbattuto contro il tavolo.",
+        "en": "Grandma, with trembling hands, applied a band-aid to Luca's wrist, which had bumped against the table.",
+        "handWord": "cerotto",
+        "distractors": [
+          "aspirina",
+          "pomata"
+        ]
+      },
+      {
+        "it": "Mentre lui asciugava la ferita con il cotone, lei gli preparava una tisana con le erbe della medicina tradizionale.",
+        "en": "While he dried the wound with cotton, she brewed a tea with herbs from traditional medicine.",
+        "handWord": "cotone",
+        "distractors": [
+          "medicina",
+          "aspirina"
+        ]
+      },
+      {
+        "it": "Tra i sussurri del farmaco e il profumo di menta, il passato si riaffacciava nella stanza silenziosa.",
+        "en": "Between the whispers of the medicine and the scent of mint, the past reemerged in the silent room.",
+        "handWord": "aspirina",
+        "distractors": [
+          "medicina",
+          "pomata"
+        ]
+      },
+      {
+        "it": "La scatola, però, taceva, custodendo segreti che nessuno aveva mai osato raccontare.",
+        "en": "The box, however, remained silent, guarding secrets no one had ever dared to tell.",
+        "handWord": "medicina",
+        "distractors": [
+          "IDs",
+          "Sentence"
+        ]
+      }
+    ]
+  },
+  "garden": {
+    "zoneId": "garden",
+    "zoneName": "Garden",
+    "vocabUsed": [
+      "fiore",
+      "rosa",
+      "erba",
+      "albero",
+      "foglia",
+      "ramo",
+      "radice"
+    ],
+    "title": "Il Giardino Segreto",
+    "titleNative": "The Secret Garden",
+    "sentences": [
+      {
+        "it": "Nel giardino segreto, i fiori danzavano tra i rami dell'albero antico.",
+        "en": "In the secret garden, the flowers danced among the branches of the ancient tree.",
+        "handWord": "ramo",
+        "distractors": [
+          "fiore",
+          "albero"
+        ]
+      },
+      {
+        "it": "Tra le foglie verdi, una rosa rossa splendeva sotto il sole.",
+        "en": "Among the green leaves, a red rose bloomed under the sun.",
+        "handWord": "fiore",
+        "distractors": [
+          "erba",
+          "ramo"
+        ]
+      },
+      {
+        "it": "L'erba alta ondeggiava dolcemente al vento.",
+        "en": "The tall grass swayed gently in the wind.",
+        "handWord": "erba",
+        "distractors": [
+          "fiore",
+          "albero"
+        ]
+      },
+      {
+        "it": "Le radici dell'albero si intrecciavano con le radici delle piante vicine.",
+        "en": "The tree's roots intertwined with the roots of nearby plants.",
+        "handWord": "albero",
+        "distractors": [
+          "fiore",
+          "ramo"
+        ]
+      },
+      {
+        "it": "Ogni foglia, ogni fiore, ogni ramo raccontava la storia del giardino.",
+        "en": "Every leaf, every flower, every branch told the garden's story.",
+        "handWord": "foglia",
+        "distractors": [
+          "fiore",
+          "ramo"
+        ]
+      }
+    ]
+  },
+  "path": {
+    "zoneId": "path",
+    "zoneName": "The Path",
+    "vocabUsed": [
+      "sentiero",
+      "ponte",
+      "cancello",
+      "pietra",
+      "terra"
+    ],
+    "title": "Il Segreto del Sentiero",
+    "titleNative": "Il Segreto del Sentiero",
+    "sentences": [
+      {
+        "it": "Sul sentiero, un cancello di ferro si apriva verso un bosco immenso.",
+        "en": "On the path, an iron gate opened towards an endless forest.",
+        "handWord": "ponte",
+        "distractors": [
+          "sentiero",
+          "terra"
+        ]
+      },
+      {
+        "it": "Sopra un ponte di pietre antiche, il vento sussurrava segreti dimenticati.",
+        "en": "Above an ancient stone bridge, the wind whispered forgotten secrets.",
+        "handWord": "sentiero",
+        "distractors": [
+          "sentiero",
+          "cancello"
+        ]
+      },
+      {
+        "it": "La terra tremò, rivelando una pietra incisa con un antico simbolo.",
+        "en": "The earth shook, revealing a stone carved with an ancient symbol.",
+        "handWord": "pietra",
+        "distractors": [
+          "sentiero",
+          "cancello"
+        ]
+      },
+      {
+        "it": "La pietra, un segno di una civiltà scomparsa, guidava il sentiero verso un mistero.",
+        "en": "The stone, a sign of a vanished civilization, led the path toward a mystery.",
+        "handWord": "cancello",
+        "distractors": [
+          "IDs",
+          "Sentence"
+        ]
+      },
+      {
+        "it": "Sul ponte, il sole tramontava, illuminando la terra di un'ultima luce dorata.",
+        "en": "On the bridge, the sun set, illuminating the earth with a final golden light.",
+        "handWord": "terra",
+        "distractors": [
+          "terra",
+          "terra"
+        ]
+      }
+    ]
+  },
+  "transport": {
+    "zoneId": "transport",
+    "zoneName": "Transport Hub",
+    "vocabUsed": [
+      "biglietto",
+      "orario",
+      "valigia",
+      "zaino",
+      "abbonamento",
+      "partenza",
+      "arrivo"
+    ],
+    "title": "La Partenza",
+    "titleNative": "La Partenza",
+    "sentences": [
+      {
+        "it": "Maria controllò l'orario del treno mentre sistemava la valigia e il zaino.",
+        "en": "Maria checked the train's schedule while organizing her suitcase and backpack.",
+        "handWord": "valigia",
+        "distractors": [
+          "abbonamento",
+          "zaino"
+        ]
+      },
+      {
+        "it": "Il biglietto per Roma era già in tasca, ma pensò all'abbonamento per viaggi frequenti.",
+        "en": "The ticket to Rome was already in her pocket, but she thought about the subscription for frequent travels.",
+        "handWord": "abbonamento",
+        "distractors": [
+          "valigia",
+          "zaino"
+        ]
+      },
+      {
+        "it": "Con un sorriso, fissò l'orario della partenza e immaginò l'arrivo a destinazione.",
+        "en": "With a smile, she stared at the departure time and imagined the arrival at her destination.",
+        "handWord": "partenza",
+        "distractors": [
+          "valigia",
+          "abbonamento"
+        ]
+      },
+      {
+        "it": "La valigia pesava, ma il zaino era leggero come il suo entusiasmo.",
+        "en": "The suitcase was heavy, but the backpack was light as her enthusiasm.",
+        "handWord": "zaino",
+        "distractors": [
+          "biglietto",
+          "arrivo"
+        ]
+      },
+      {
+        "it": "L'abbonamento avrebbe risparmiato tempo, ma il biglietto era il primo passo verso l'avventura.",
+        "en": "The subscription would save time, but the ticket was the first step toward the adventure.",
+        "handWord": "biglietto",
+        "distractors": [
+          "orario",
+          "arrivo"
+        ]
+      }
+    ]
+  },
+  "platform": {
+    "zoneId": "platform",
+    "zoneName": "Platform",
+    "vocabUsed": [
+      "treno",
+      "binario",
+      "partenza",
+      "arrivo",
+      "ritardo",
+      "vagone"
+    ],
+    "title": "Un Treno in Ritardo",
+    "titleNative": "A Train Delay",
+    "sentences": [
+      {
+        "it": "Il treno era parcheggiato sul binario, pronto per la partenza.",
+        "en": "The train was parked on the track, ready for departure.",
+        "handWord": "binario",
+        "distractors": [
+          "treno",
+          "vagone"
+        ]
+      },
+      {
+        "it": "Ma c'era un ritardo imprevisto che fece perdere la speranza ai passeggeri.",
+        "en": "But there was an unexpected delay that made passengers lose hope.",
+        "handWord": "ritardo",
+        "distractors": [
+          "treno",
+          "vagone"
+        ]
+      },
+      {
+        "it": "Nel vagone più vicino, un uomo controllava le valigie.",
+        "en": "In the nearest carriage, a man checked the luggage.",
+        "handWord": "vagone",
+        "distractors": [
+          "treno",
+          "binario"
+        ]
+      },
+      {
+        "it": "L'arrivo era previsto per le 15, ma nessuno sapeva se sarebbe stato in orario.",
+        "en": "The arrival was scheduled for 3 PM, but no one knew if it would be on time.",
+        "handWord": "arrivo",
+        "distractors": [
+          "treno",
+          "ritardo"
+        ]
+      },
+      {
+        "it": "Il rumore dei ferrovieri rivelò che il ritardo si era già propagato lungo la tratta.",
+        "en": "The sound of the railway workers revealed that the delay had already spread along the route.",
+        "handWord": "treno",
+        "distractors": [
+          "IDs",
+          "Sentence"
+        ]
+      }
+    ]
+  },
+  "street": {
+    "zoneId": "street",
+    "zoneName": "Street Exit",
+    "vocabUsed": [
+      "uscita",
+      "entrata",
+      "semaforo",
+      "incrocio",
+      "direzione",
+      "cartello",
+      "strada"
+    ],
+    "title": "La Prima Uscita",
+    "titleNative": "La Prima Uscita",
+    "sentences": [
+      {
+        "it": "Luca si trovava all'uscita di una strada stretta, confuso davanti al semaforo che lampeggiava rosso.",
+        "en": "Luca was at the exit of a narrow street, confused in front of the traffic light that blinked red.",
+        "handWord": "semaphore",
+        "distractors": [
+          "incrocio",
+          "direzione"
+        ]
+      },
+      {
+        "it": "Decise di seguire l'incrocio indicato da un cartello che segnalava la direzione Est.",
+        "en": "He decided to follow the intersection indicated by a sign that showed the direction East.",
+        "handWord": "incrocio",
+        "distractors": [
+          "semaforo",
+          "direzione"
+        ]
+      },
+      {
+        "it": "Dopo aver attraversato l'entrata di un negozio, notò che la strada si allargava verso un parco.",
+        "en": "After crossing the entrance of a store, he noticed the street widened toward a park.",
+        "handWord": "entrata",
+        "distractors": [
+          "semaphore",
+          "direzione"
+        ]
+      },
+      {
+        "it": "Uscì dal quartiere seguendo il cartello che segnalava la direzione opposta a quella indicata.",
+        "en": "He exited the neighborhood following the sign that indicated the opposite direction.",
+        "handWord": "strada",
+        "distractors": [
+          "uscita",
+          "direzione"
+        ]
+      },
+      {
+        "it": "Finalmente, trovò l'uscita desiderata dopo aver letto attentamente il cartello stradale.",
+        "en": "Finally, he found the desired exit after carefully reading the road sign.",
+        "handWord": "semaforo",
+        "distractors": [
+          "entrata",
+          "direzione"
+        ]
+      }
+    ]
+  },
+  "living-room": {
+    "zoneId": "living-room",
+    "zoneName": "Living Room",
+    "vocabUsed": [
+      "divano",
+      "poltrona",
+      "tavolino",
+      "cuscino",
+      "coperta"
+    ],
+    "title": "Un pomeriggio in salotto",
+    "titleNative": "A Afternoon in the Living Room",
+    "sentences": [
+      {
+        "it": "Il divano era coperto da una coperta colorata mentre la poltrona accanto brillava al sole.",
+        "en": "The sofa was covered with a colorful blanket while the armchair next to it gleamed in the sunlight.",
+        "handWord": "coperta",
+        "distractors": [
+          "divano",
+          "poltrona"
+        ]
+      },
+      {
+        "it": "Un cuscino morbido giaceva sul tavolino, vicino a un libro aperto.",
+        "en": "A soft cushion lay on the coffee table, next to an open book.",
+        "handWord": "tavolino",
+        "distractors": [
+          "divano",
+          "coperta"
+        ]
+      },
+      {
+        "it": "La coperta si era infilata tra le gambe di una donna che leggeva seduta sulla poltrona.",
+        "en": "The blanket had slipped between the legs of a woman reading on the armchair.",
+        "handWord": "cuscino",
+        "distractors": [
+          "divano",
+          "poltrona"
+        ]
+      },
+      {
+        "it": "Il tavolino ospitava anche un bicchiere di vino, mentre il cuscino era stato spostato per far posto al gatto.",
+        "en": "The coffee table also held a glass of wine, while the cushion had been moved to make room for the cat.",
+        "handWord": "divano",
+        "distractors": [
+          "poltrona",
+          "cushion"
+        ]
+      },
+      {
+        "it": "Il silenzio del salotto era interrotto solo dal rumore dei piedi del gatto sul pavimento.",
+        "en": "The silence of the living room was broken only by the sound of the cat's paws on the floor.",
+        "handWord": "poltrona",
+        "distractors": [
+          "cat",
+          "floor"
+        ]
+      }
+    ]
+  },
+  "tv": {
+    "zoneId": "tv",
+    "zoneName": "The TV",
+    "vocabUsed": [
+      "televisione",
+      "telecomando",
+      "film",
+      "musica",
+      "schermo"
+    ],
+    "title": "La Serata al Cinema",
+    "titleNative": "La Serata al Cinema",
+    "sentences": [
+      {
+        "it": "Dopo una lunga giornata, Luca accese la televisione e posizionò il telecomando sul tavolo.",
+        "en": "After a long day, Luca turned on the television and placed the remote control on the table.",
+        "handWord": "televisore",
+        "distractors": [
+          "telecomando",
+          "musica"
+        ]
+      },
+      {
+        "it": "Sul schermo apparve un film d'azione con effetti speciali strabilianti.",
+        "en": "On the screen appeared an action movie with stunning special effects.",
+        "handWord": "schermo",
+        "distractors": [
+          "televisione",
+          "film"
+        ]
+      },
+      {
+        "it": "La musica ambientale del film si mescolava al rumore del frigorifero nel soggiorno.",
+        "en": "The ambient music of the film mixed with the sound of the refrigerator in the living room.",
+        "handWord": "musica",
+        "distractors": [
+          "televisione",
+          "schermo"
+        ]
+      },
+      {
+        "it": "Mentre guardava, il telecomando scivolò e cadde sul pavimento, interrompendo la musica.",
+        "en": "While watching, the remote slipped and fell to the floor, interrupting the music.",
+        "handWord": "televisione",
+        "distractors": [
+          "telecomando",
+          "film"
+        ]
+      },
+      {
+        "it": "Con un sospiro, Luca si alzò per riprendere il telecomando e ripartire dal film.",
+        "en": "With a sigh, Luca got up to retrieve the remote and resume the movie.",
+        "handWord": "telecomando",
+        "distractors": [
+          "televisione",
+          "film"
+        ]
+      }
+    ]
+  },
+  "furniture": {
+    "zoneId": "furniture",
+    "zoneName": "Furniture",
+    "vocabUsed": [
+      "tavolo",
+      "sedia",
+      "lampada",
+      "quadro",
+      "tappeto",
+      "tenda",
+      "specchio",
+      "libreria"
+    ],
+    "title": "La stanza perfetta",
+    "titleNative": "La stanza perfetta",
+    "sentences": [
+      {
+        "it": "Nella stanza accogliente, un tavolo di legno scuro era al centro, circondato da sedie eleganti.",
+        "en": "In the cozy room, a dark wooden table was at the center, surrounded by elegant chairs.",
+        "handWord": "tavolo",
+        "distractors": [
+          "sedia",
+          "lampada"
+        ]
+      },
+      {
+        "it": "Sopra il tavolo, una lampada dorata proiettava un caldo alone.",
+        "en": "Above the table, a golden lamp cast a warm glow.",
+        "handWord": "lampada",
+        "distractors": [
+          "tavolo",
+          "tenda"
+        ]
+      },
+      {
+        "it": "Sul muro, un quadro astratto aggiungeva colore e profondità alla parete.",
+        "en": "On the wall, an abstract painting added color and depth to the surface.",
+        "handWord": "quadro",
+        "distractors": [
+          "tavolo",
+          "tenda"
+        ]
+      },
+      {
+        "it": "Sotto il tavolo, un tappeto blu scuro copriva il pavimento, mentre una tenda di seta filtrava la luce del sole.",
+        "en": "Under the table, a dark blue carpet covered the floor, while a silk curtain filtered the sunlight.",
+        "handWord": "tappeto",
+        "distractors": [
+          "lampada",
+          "tenda"
+        ]
+      },
+      {
+        "it": "Di fronte al tavolo, uno specchio rotondo rifletteva l'intera stanza, e accanto a esso, una libreria piena di libri antichi completava l'arredamento.",
+        "en": "In front of the table, a round mirror reflected the entire room, and next to it, a bookshelf full of ancient books completed the decor.",
+        "handWord": "tenda",
+        "distractors": [
+          "lampada",
+          "quadro"
+        ]
+      }
+    ]
+  },
+  "checkout": {
+    "zoneId": "checkout",
+    "zoneName": "Checkout",
+    "vocabUsed": [
+      "cassa",
+      "carrello",
+      "scontrino",
+      "contanti",
+      "carta",
+      "prezzo",
+      "euro"
+    ],
+    "title": "La Spesa al Supermercato",
+    "titleNative": "La Spesa al Supermercato",
+    "sentences": [
+      {
+        "it": "Marta ha finito di controllare i prodotti nel carrello e si è diretta alla cassa.",
+        "en": "Marta finished checking the products in her cart and headed to the checkout.",
+        "handWord": "contanti",
+        "distractors": [
+          "cassa",
+          "carta"
+        ]
+      },
+      {
+        "it": "Al banco, il cassiere le ha chiesto se pagherà con contanti o carta.",
+        "en": "At the counter, the cashier asked her if she would pay with cash or card.",
+        "handWord": "carrello",
+        "distractors": [
+          "contanti",
+          "prezzo"
+        ]
+      },
+      {
+        "it": "Marta ha scelto la carta e ha inserito il codice di pagamento.",
+        "en": "Marta chose the card and entered her payment code.",
+        "handWord": "carta",
+        "distractors": [
+          "contanti",
+          "scontrino"
+        ]
+      },
+      {
+        "it": "Il prezzo totale, espresso in euro, è stato confermato dal sistema.",
+        "en": "The total price, expressed in euros, was confirmed by the system.",
+        "handWord": "prezzo",
+        "distractors": [
+          "cassa",
+          "contanti"
+        ]
+      },
+      {
+        "it": "Dopo il pagamento, il cassiere le ha dato il scontrino e ha salutato con un sorriso.",
+        "en": "After the payment, the cashier gave her the receipt and smiled.",
+        "handWord": "scontrino",
+        "distractors": [
+          "contanti",
+          "carta"
+        ]
+      }
+    ]
+  },
+  "cafe": {
+    "zoneId": "cafe",
+    "zoneName": "Café",
+    "vocabUsed": [
+      "caffe",
+      "cornetto",
+      "tazza",
+      "menu",
+      "barista"
+    ],
+    "title": "Una Mornin' Al Caffè",
+    "titleNative": "Una Mornin' Al Caffè",
+    "sentences": [
+      {
+        "it": "Maria entrò nel caffe, annusando l'aria dolce del mattino.",
+        "en": "Maria entered the café, inhaling the sweet morning air.",
+        "handWord": "tazza",
+        "distractors": [
+          "caffe",
+          "barista"
+        ]
+      },
+      {
+        "it": "Sorseggiò un caffè mentre guardava il menu appeso al muro.",
+        "en": "She sipped her coffee while looking at the menu pinned to the wall.",
+        "handWord": "menu",
+        "distractors": [
+          "cornetto",
+          "tazza"
+        ]
+      },
+      {
+        "it": "Il barista le consegnò un cornetto ancora caldo e una tazza piena di latte.",
+        "en": "The barista handed her a warm croissant and a mug full of milk.",
+        "handWord": "cornetto",
+        "distractors": [
+          "tazza",
+          "menu"
+        ]
+      },
+      {
+        "it": "Mentre mangiava, notò un errore nel menu che decise di segnalare.",
+        "en": "While eating, she noticed an error in the menu and decided to report it.",
+        "handWord": "barista",
+        "distractors": [
+          "caffe",
+          "IDs"
+        ]
+      },
+      {
+        "it": "Il barista la ringraziò con un sorriso e le augurò una buona giornata.",
+        "en": "The barista thanked her with a smile and wished her a good day.",
+        "handWord": "caffe",
+        "distractors": [
+          "IDs",
+          "Sentence"
+        ]
+      }
+    ]
+  },
+  "table-cafe": {
+    "zoneId": "table-cafe",
+    "zoneName": "Table",
+    "vocabUsed": [
+      "tavolo",
+      "sedia",
+      "menu",
+      "conto",
+      "bicchiere",
+      "piatto",
+      "tovagliolo"
+    ],
+    "title": "La Serata al Ristorante",
+    "titleNative": "The Dinner at the Restaurant",
+    "sentences": [
+      {
+        "it": "Maria si sedette su una sedia vicino a un tavolo coperto di piatti.",
+        "en": "Maria sat on a chair next to a table covered with dishes.",
+        "handWord": "sedia",
+        "distractors": [
+          "tavolo",
+          "piatto"
+        ]
+      },
+      {
+        "it": "Guardò il menu appeso al muro e prese un bicchiere d'acqua.",
+        "en": "She looked at the menu hanging on the wall and took a glass of water.",
+        "handWord": "piatto",
+        "distractors": [
+          "sedia",
+          "conto"
+        ]
+      },
+      {
+        "it": "Dopo aver ordinato, posò il tovagliolo sul tavolo e aspettò il piatto principale.",
+        "en": "After ordering, she placed the napkin on the table and waited for the main dish.",
+        "handWord": "tavolo",
+        "distractors": [
+          "bicchiere",
+          "conto"
+        ]
+      },
+      {
+        "it": "Quando arrivò il conto, sorrideva pensando alla serata perfetta.",
+        "en": "When the bill arrived, she smiled thinking about the perfect evening.",
+        "handWord": "conto",
+        "distractors": [
+          "sedia",
+          "bicchiere"
+        ]
+      },
+      {
+        "it": "Mentre gustava il piatto, si chiese come sarebbe andata la serata.",
+        "en": "While savoring the dish, she wondered how the evening would go.",
+        "handWord": "bicchiere",
+        "distractors": [
+          "menu",
+          "tovagliolo"
+        ]
+      }
+    ]
+  },
+  "gallery": {
+    "zoneId": "gallery",
+    "zoneName": "Gallery",
+    "vocabUsed": [
+      "quadro",
+      "scultura",
+      "colore",
+      "luce",
+      "artista",
+      "mostra",
+      "pennello"
+    ],
+    "title": "A Gallery of Light and Color",
+    "titleNative": "Un'Esposizione di Luce e Colore",
+    "sentences": [
+      {
+        "it": "L'artista stava preparando la mostra con entusiasmo, aggiustando ogni quadro e scultura.",
+        "en": "The artist was preparing the exhibition with enthusiasm, adjusting every painting and sculpture.",
+        "handWord": "scultura",
+        "distractors": [
+          "colore",
+          "artista"
+        ]
+      },
+      {
+        "it": "Tra i quadri più famosi c'era un quadro vibrante di colore azzurro e oro.",
+        "en": "Among the most famous paintings was a vibrant blue and gold canvas.",
+        "handWord": "pennello",
+        "distractors": [
+          "quadro",
+          "colore"
+        ]
+      },
+      {
+        "it": "Accanto a una scultura di marmo, la luce filtrava attraverso le finestre, creando un'atmosfera magica.",
+        "en": "Next to a marble sculpture, light filtered through the windows, creating a magical atmosphere.",
+        "handWord": "mostra",
+        "distractors": [
+          "quadro",
+          "colore"
+        ]
+      },
+      {
+        "it": "Con il pennello, aveva trasformato l'oscurità in un'opera d'arte luminosa.",
+        "en": "With the brush, he had transformed darkness into a luminous artwork.",
+        "handWord": "quadro",
+        "distractors": [
+          "colore",
+          "artista"
+        ]
+      },
+      {
+        "it": "La mostra era un'esperienza unica, dove arte e luce si univano in perfetta armonia.",
+        "en": "The exhibition was a unique experience where art and light united in perfect harmony.",
+        "handWord": "artista",
+        "distractors": [
+          "colore",
+          "luce"
+        ]
+      }
+    ]
+  },
+  "shopping": {
+    "zoneId": "shopping",
+    "zoneName": "Gift Shop",
+    "vocabUsed": [
+      "regalo",
+      "cartolina",
+      "maglietta",
+      "libro",
+      "souvenir"
+    ],
+    "title": "Un Regalo Memorable",
+    "titleNative": "Un Regalo Memorable",
+    "sentences": [
+      {
+        "it": "Nel negozio di souvenir, Maria scelse un regalo per sua madre.",
+        "en": "In the souvenir shop, Maria chose a gift for her mother.",
+        "handWord": "souvenir",
+        "distractors": [
+          "regalo",
+          "cartolina"
+        ]
+      },
+      {
+        "it": "Tra i gadget, trovò una cartolina con il paesaggio della costa.",
+        "en": "Among the gadgets, she found a postcard with the coastline scenery.",
+        "handWord": "cartolina",
+        "distractors": [
+          "maglietta",
+          "libro"
+        ]
+      },
+      {
+        "it": "Decise di comprare anche una maglietta con il logo del museo.",
+        "en": "She decided to buy a t-shirt with the museum's logo as well.",
+        "handWord": "maglietta",
+        "distractors": [
+          "regalo",
+          "libro"
+        ]
+      },
+      {
+        "it": "Accanto al libro di storia locale, notò un’offerta speciale.",
+        "en": "Next to the local history book, she noticed a special offer.",
+        "handWord": "libro",
+        "distractors": [
+          "regalo",
+          "cartolina"
+        ]
+      },
+      {
+        "it": "Con le sue scelte, si sentì come un vero souvenir della città.",
+        "en": "With her choices, she felt like a real souvenir of the city.",
+        "handWord": "regalo",
+        "distractors": [
+          "IDs",
+          "Sentence"
+        ]
+      }
+    ]
+  },
+  "weather": {
+    "zoneId": "weather",
+    "zoneName": "Weather Station",
+    "vocabUsed": [
+      "temporale",
+      "tuono",
+      "fulmine",
+      "nebbia",
+      "grandine",
+      "pioggia"
+    ],
+    "title": "La Tempesta",
+    "titleNative": "The Storm",
+    "sentences": [
+      {
+        "it": "La stazione meteorologica segnalava un temporale imminente.",
+        "en": "The weather station warned of an approaching storm.",
+        "handWord": "nebbia",
+        "distractors": [
+          "temporale",
+          "pioggia"
+        ]
+      },
+      {
+        "it": "Il tuono rimbombava mentre il fulmine illuminava il cielo.",
+        "en": "Thunder echoed as lightning illuminated the sky.",
+        "handWord": "tuono",
+        "distractors": [
+          "nebbia",
+          "pioggia"
+        ]
+      },
+      {
+        "it": "La nebbia si insinuava tra i monti, oscurando la vista.",
+        "en": "Fog crept into the mountains, obscuring the view.",
+        "handWord": "pioggia",
+        "distractors": [
+          "temporale",
+          "grandine"
+        ]
+      },
+      {
+        "it": "La grandine picchiava sui tetti, accompagnata da una pioggia battente.",
+        "en": "Hail pattered on the roofs, accompanied by a downpour.",
+        "handWord": "grandine",
+        "distractors": [
+          "nebbia",
+          "pioggia"
+        ]
+      },
+      {
+        "it": "I tecnici osservavano i dati, preoccupati per l'intensità della tempesta.",
+        "en": "The technicians monitored the data, worried about the storm's intensity.",
+        "handWord": "temporale",
+        "distractors": [
+          "IDs",
+          "Sentence"
+        ]
+      }
+    ]
+  },
+  "sky-weather": {
+    "zoneId": "sky-weather",
+    "zoneName": "Sky View",
+    "vocabUsed": [
+      "sole",
+      "nuvola",
+      "vento",
+      "arcobaleno",
+      "fulmine",
+      "pioggia"
+    ],
+    "title": "Il Temporale di Sky View",
+    "titleNative": "Il Temporale di Sky View",
+    "sentences": [
+      {
+        "it": "Il sole splendeva mentre una nuvola grigia oscurava il cielo.",
+        "en": "The sun shone as a gray cloud darkened the sky.",
+        "handWord": "nuvola",
+        "distractors": [
+          "sole",
+          "fulmine"
+        ]
+      },
+      {
+        "it": "Il vento soffiava forte, agitando le foglie degli alberi.",
+        "en": "The wind blew strongly, stirring the leaves of the trees.",
+        "handWord": "vento",
+        "distractors": [
+          "sole",
+          "nuvola"
+        ]
+      },
+      {
+        "it": "All'improvviso, un fulmine illuminò il cielo, seguito da una pioggia battente.",
+        "en": "Suddenly, a lightning bolt illuminated the sky, followed by a downpour.",
+        "handWord": "fulmine",
+        "distractors": [
+          "sole",
+          "nuvola"
+        ]
+      },
+      {
+        "it": "Dopo il temporale, un arcobaleno si formò tra le nuvole.",
+        "en": "After the storm, a rainbow formed between the clouds.",
+        "handWord": "arcobaleno",
+        "distractors": [
+          "pioggia",
+          "sole"
+        ]
+      },
+      {
+        "it": "Il sole tornò a splendere, colorando l'arcobaleno di nuance vivaci.",
+        "en": "The sun returned to shine, coloring the rainbow with vibrant hues.",
+        "handWord": "sole",
+        "distractors": [
+          "pioggia",
+          "rainbow"
+        ]
+      }
+    ]
+  },
+  "tools": {
+    "zoneId": "tools",
+    "zoneName": "Workshop",
+    "vocabUsed": [
+      "martello",
+      "cacciavite",
+      "pinza",
+      "sega",
+      "trapano",
+      "metro",
+      "vite",
+      "chiodo"
+    ],
+    "title": "La Riparazione",
+    "titleNative": "La Riparazione",
+    "sentences": [
+      {
+        "it": "Luca stava riparando un armadio rotto nel suo workshop.",
+        "en": "Luca was repairing a broken cabinet in his workshop.",
+        "handWord": "martello",
+        "distractors": [
+          "pinza",
+          "sega"
+        ]
+      },
+      {
+        "it": "Usò la metro per misurare le tavole da tagliare.",
+        "en": "He used the metro to measure the planks to cut.",
+        "handWord": "metro",
+        "distractors": [
+          "martello",
+          "cacciavite"
+        ]
+      },
+      {
+        "it": "Con la sega, tagliò le parti necessarie e con il trapano forò i fori per i chiodi.",
+        "en": "With the sega, he cut the necessary parts and with the trapano he drilled holes for the nails.",
+        "handWord": "sega",
+        "distractors": [
+          "martello",
+          "trapano"
+        ]
+      },
+      {
+        "it": "Il martello e la pinza aiutarono a fissare i pezzi mentre il cacciavite sistemava le vite.",
+        "en": "The martello and pinza helped secure the pieces while the cacciavite tightened the screws.",
+        "handWord": "pinza",
+        "distractors": [
+          "martello",
+          "sega"
+        ]
+      },
+      {
+        "it": "Dopo ore di lavoro, l'armadio era riparato e funzionante.",
+        "en": "After hours of work, the cabinet was repaired and functional.",
+        "handWord": "trapano",
+        "distractors": [
+          "martello",
+          "metro"
+        ]
+      }
+    ]
+  },
+  "workbench": {
+    "zoneId": "workbench",
+    "zoneName": "Workbench",
+    "vocabUsed": [
+      "banco",
+      "morsa",
+      "lima"
+    ],
+    "title": "La Scultura del Banco",
+    "titleNative": "La Scultura del Banco",
+    "sentences": [
+      {
+        "it": "Nel laboratorio del maestro artigiano, il banco di legno era il cuore della creatività.",
+        "en": "In the master craftsman's workshop, the wooden workbench was the heart of creativity.",
+        "handWord": "lima",
+        "distractors": [
+          "banco",
+          "morsa"
+        ]
+      },
+      {
+        "it": "L'apprendista, con le mani sudate, afferrò la morsa per fissare il legname.",
+        "en": "The apprentice, with sweaty hands, grabbed the vise to secure the wood.",
+        "handWord": "banco",
+        "distractors": [
+          "banco",
+          "morsa"
+        ]
+      },
+      {
+        "it": "La lima scivolò tra le sue dita, rivelando la forma nascosta del mobile.",
+        "en": "The file slipped between his fingers, revealing the hidden shape of the furniture.",
+        "handWord": "morsa",
+        "distractors": [
+          "morsa",
+          "morsa"
+        ]
+      },
+      {
+        "it": "Il maestro annuì, orgoglioso del suo primo successo nella scultura.",
+        "en": "The master nodded, proud of his first success in sculpture.",
+        "handWord": null,
+        "distractors": []
+      },
+      {
+        "it": "Da quel giorno, il banco diventò il testimone silenzioso delle sue conquiste.",
+        "en": "From that day on, the workbench became the silent witness to his achievements.",
+        "handWord": null,
+        "distractors": []
+      }
+    ]
+  },
+  "actions": {
+    "zoneId": "actions",
+    "zoneName": "Action Arena",
+    "vocabUsed": [
+      "correre",
+      "saltare",
+      "camminare",
+      "nuotare",
+      "volare",
+      "cadere",
+      "spingere",
+      "tirare",
+      "girare"
+    ],
+    "title": "La Gara dei Sogni",
+    "titleNative": "La Gara dei Sogni",
+    "sentences": [
+      {
+        "it": "Luca correrebbe lungo il sentiero, saltando sopra le rocce mentre camminava tra le foglie.",
+        "en": "Luca would run along the path, jumping over rocks while walking among the leaves.",
+        "handWord": "correre",
+        "distractors": [
+          "nuotare",
+          "volare"
+        ]
+      },
+      {
+        "it": "Nel lago, si tuffò nuotare, ma cadde in acqua dopo un forte spingere del vento.",
+        "en": "In the lake, he doveled to swim, but fell into the water after a strong push from the wind.",
+        "handWord": "nuotare",
+        "distractors": [
+          "correre",
+          "cadere"
+        ]
+      },
+      {
+        "it": "Tirando la corda, girare il volano per far volare il drago di carta.",
+        "en": "Pulling the rope, he turned the windmill to make the paper dragon fly.",
+        "handWord": "volare",
+        "distractors": [
+          "correre",
+          "cadere"
+        ]
+      },
+      {
+        "it": "Cadeva sempre, ma ogni volta si alzava, correre verso la vittoria.",
+        "en": "He always fell, but each time he rose, running toward victory.",
+        "handWord": "cadere",
+        "distractors": [
+          "correre",
+          "saltare"
+        ]
+      },
+      {
+        "it": "Nel finale, saltare e girare intorno al cerchio, il suo volare era il premio.",
+        "en": "In the end, he jumped and turned around the circle, his flying was the prize.",
+        "handWord": "girare",
+        "distractors": [
+          "saltare",
+          "spingere"
+        ]
+      }
+    ]
+  },
+  "daily-actions": {
+    "zoneId": "daily-actions",
+    "zoneName": "Daily Actions",
+    "vocabUsed": [
+      "svegliarsi",
+      "lavarsi",
+      "vestirsi",
+      "pettinarsi",
+      "addormentarsi",
+      "alzarsi",
+      "aprire",
+      "chiudere"
+    ],
+    "title": "Una Routine Serena",
+    "titleNative": "Una Routine Serena",
+    "sentences": [
+      {
+        "it": "Svegliarsi presto e alzarsi con energia.",
+        "en": "Wake up early and get up with energy.",
+        "handWord": "alzarsi",
+        "distractors": [
+          "svegliarsi",
+          "pettinarsi"
+        ]
+      },
+      {
+        "it": "Lavarsi il viso, vestirsi in fretta e pettinarsi i capelli.",
+        "en": "Wash the face, get dressed quickly, and comb the hair.",
+        "handWord": "lavarsi",
+        "distractors": [
+          "addormentarsi",
+          "vestirsi"
+        ]
+      },
+      {
+        "it": "Aprire la finestra per godersi l’aria fresca, poi chiudere gli occhi per riposare.",
+        "en": "Open the window to enjoy the fresh air, then close the eyes to rest.",
+        "handWord": "pettinarsi",
+        "distractors": [
+          "lavarsi",
+          "addormentarsi"
+        ]
+      },
+      {
+        "it": "Passare la giornata con calma e addormentarsi serenamente alla sera.",
+        "en": "Spend the day calmly and fall asleep peacefully in the evening.",
+        "handWord": "addormentarsi",
+        "distractors": [
+          "lavarsi",
+          "vestirsi"
+        ]
+      },
+      {
+        "it": "Ripetere ogni mattina questa routine per sentirsi in armonia.",
+        "en": "Repeat this routine every morning to feel in harmony.",
+        "handWord": "aprire",
+        "distractors": [
+          "svegliarsi",
+          "vestirsi"
+        ]
+      }
+    ]
+  },
+  "emotions": {
+    "zoneId": "emotions",
+    "zoneName": "Emotion Chamber",
+    "vocabUsed": [
+      "gioia",
+      "tristezza",
+      "rabbia",
+      "paura",
+      "amore",
+      "odio"
+    ],
+    "title": "La Fiamma dell'Anima",
+    "titleNative": "La Fiamma dell'Anima",
+    "sentences": [
+      {
+        "it": "Gioia brillò negli occhi di Luca quando vide sua madre dopo anni di distanza.",
+        "en": "Joy shone in Luca's eyes when he saw his mother after years of separation.",
+        "handWord": "gioia",
+        "distractors": [
+          "odio",
+          "amore"
+        ]
+      },
+      {
+        "it": "Tristezza però affondò nel cuore quando lei lo abbracciò con un dolore che non riusciva a spiegare.",
+        "en": "Sadness, however, sank into his heart when she hugged him with a pain he couldn't explain.",
+        "handWord": "tristezza",
+        "distractors": [
+          "gioia",
+          "odio"
+        ]
+      },
+      {
+        "it": "Rabbia esplose quando scopri che lui era stato scelto per un destino che la separava da lui per sempre.",
+        "en": "Rage erupted when he learned he had been chosen for a fate that would separate them forever.",
+        "handWord": "rabbia",
+        "distractors": [
+          "amore",
+          "odio"
+        ]
+      },
+      {
+        "it": "Paura lo paralizzò all'idea di perdere l'amore che credeva fosse eterno, ma odio lo divorava dall'interno.",
+        "en": "Fear paralyzed him at the thought of losing the love he believed was eternal, but hatred devoured him from within.",
+        "handWord": "paura",
+        "distractors": [
+          "gioia",
+          "odio"
+        ]
+      },
+      {
+        "it": "Amore e odio si intrecciarono in un ballo di fuoco che lo sconvolse fino all'anima.",
+        "en": "Love and hatred intertwined in a fiery dance that shook him to his soul.",
+        "handWord": "odio",
+        "distractors": [
+          "gioia",
+          "amore"
+        ]
+      }
+    ]
+  },
+  "states": {
+    "zoneId": "states",
+    "zoneName": "Mental States",
+    "vocabUsed": [
+      "fiducia",
+      "sorpresa",
+      "ansia",
+      "orgoglio",
+      "vergogna"
+    ],
+    "title": "La Prova Finale",
+    "titleNative": "La Prova Finale",
+    "sentences": [
+      {
+        "it": "Maria aveva ansia prima dell'esame, ma si ripromise di non perdere la fiducia.",
+        "en": "Maria had anxiety before the exam, but she vowed not to lose her confidence.",
+        "handWord": "ansia",
+        "distractors": [
+          "orgoglio",
+          "vergogna"
+        ]
+      },
+      {
+        "it": "Quando vide la domanda sull'argomento che non aveva studiato, provò sorpresa e panico.",
+        "en": "When she saw the question on a topic she hadn't studied, she felt surprise and panic.",
+        "handWord": "sorpresa",
+        "distractors": [
+          "orgoglio",
+          "vergogna"
+        ]
+      },
+      {
+        "it": "Dopo aver ottenuto un buon punteggio, si sentì invadere da orgoglio e sollievo.",
+        "en": "After getting a good score, she felt overwhelmed by pride and relief.",
+        "handWord": "orgoglio",
+        "distractors": [
+          "sorpresa",
+          "vergogna"
+        ]
+      },
+      {
+        "it": "Temeva però che un fallimento avrebbe portato vergogna davanti ai genitori.",
+        "en": "She feared that a failure would bring shame in front of her parents.",
+        "handWord": "vergogna",
+        "distractors": [
+          "fiducia",
+          "orgoglio"
+        ]
+      },
+      {
+        "it": "Nonostante tutto, la sua fiducia nell'abilità propria la mantenne sveglia e determinata.",
+        "en": "Despite everything, her trust in her own ability kept her alert and determined.",
+        "handWord": "fiducia",
+        "distractors": [
+          "fiducia",
+          "fiducia"
+        ]
+      }
+    ]
+  },
+  "fruits": {
+    "zoneId": "fruits",
+    "zoneName": "Fruit Orchard",
+    "vocabUsed": [
+      "mela",
+      "pera",
+      "pesca",
+      "ciliegia",
+      "limone",
+      "arancia",
+      "fragola",
+      "uva"
+    ],
+    "title": "La Collezione di Frutta",
+    "titleNative": "The Fruit Collection",
+    "sentences": [
+      {
+        "it": "Marta si svegliò con il sole che splendeva tra i rami degli alberi fruttiferi.",
+        "en": "Marta woke up with the sun shining through the branches of the fruit trees.",
+        "handWord": "pesca",
+        "distractors": [
+          "limone",
+          "ciliegia"
+        ]
+      },
+      {
+        "it": "Raccolse mela, pera, pesca e ciliegia, mentre il profumo del limone e dell'arancia riempiva l'aria.",
+        "en": "She picked apple, pear, peach, and cherry, while the scent of lemon and orange filled the air.",
+        "handWord": "pera",
+        "distractors": [
+          "limone",
+          "ciliegia"
+        ]
+      },
+      {
+        "it": "Tra i cespugli trovò fragola e uva, che aggiunse al suo cesto di frutta fresca.",
+        "en": "Among the bushes she found strawberry and grape, which she added to her basket of fresh fruit.",
+        "handWord": "limone",
+        "distractors": [
+          "mela",
+          "pesca"
+        ]
+      },
+      {
+        "it": "Mentre camminava, ogni frutto sembrava raccontare una storia diversa del giardino.",
+        "en": "As she walked, each fruit seemed to tell a different story of the garden.",
+        "handWord": "uva",
+        "distractors": [
+          "mela",
+          "ciliegia"
+        ]
+      },
+      {
+        "it": "Con il cesto pieno, Marta si sedette sotto un albero e sorseggiò il suo succo di frutta.",
+        "en": "With her basket full, Marta sat under a tree and sipped her fruit juice.",
+        "handWord": "fragola",
+        "distractors": [
+          "mela",
+          "ciliegia"
+        ]
+      }
+    ]
+  },
+  "fantasy": {
+    "zoneId": "fantasy",
+    "zoneName": "Fantasy Realm",
+    "vocabUsed": [
+      "drago",
+      "elfo",
+      "fata",
+      "strega",
+      "nano",
+      "mago"
+    ],
+    "title": "La Battaglia della Foresta Magica",
+    "titleNative": "La Battaglia della Foresta Magica",
+    "sentences": [
+      {
+        "it": "Il drago infuriato divorava le montagne quando un elfo coraggioso si avvicinò per chiedere aiuto.",
+        "en": "The raging dragon devoured the mountains when a brave elf approached to seek help.",
+        "handWord": "drago",
+        "distractors": [
+          "elfo",
+          "mago"
+        ]
+      },
+      {
+        "it": "Una fata luminosa guidò una strega anziana verso un antico incantesimo per placare la bestia.",
+        "en": "A luminous fairy guided an old witch toward an ancient spell to calm the beast.",
+        "handWord": "fata",
+        "distractors": [
+          "mago",
+          "nano"
+        ]
+      },
+      {
+        "it": "Un nano astuto e un mago saggio unirono le loro forze per creare una barriera di luce.",
+        "en": "A cunning dwarf and a wise wizard joined forces to create a barrier of light.",
+        "handWord": "nano",
+        "distractors": [
+          "mago",
+          "elfo"
+        ]
+      },
+      {
+        "it": "Quando il drago si gettò contro la barriera, l'elfo scagliò un colpo decisivo con la sua spada d'argento.",
+        "en": "When the dragon charged against the barrier, the elf struck a decisive blow with his silver sword.",
+        "handWord": "elf",
+        "distractors": [
+          "dragon",
+          "mago"
+        ]
+      },
+      {
+        "it": "Nel silenzio successivo, la fata, la strega e il nano si abbracciarono, celebrando la vittoria del mago.",
+        "en": "In the silence that followed, the fairy, the witch, and the dwarf embraced, celebrating the wizard's victory.",
+        "handWord": "mago",
+        "distractors": [
+          "elfo",
+          "strega"
+        ]
+      }
+    ]
+  },
+  "supernatural": {
+    "zoneId": "supernatural",
+    "zoneName": "Supernatural",
+    "vocabUsed": [
+      "fantasma",
+      "strega",
+      "zombie",
+      "vampiro"
+    ],
+    "title": "La Maschera del Passato",
+    "titleNative": "La Maschera del Passato",
+    "sentences": [
+      {
+        "it": "Nel piccolo paese di Velluto, la strega Livia aveva lanciato una maledizione che ora risvegliava zombie e vampiri.",
+        "en": "In the small village of Velluto, the witch Livia had cast a curse that now awakened zombies and vampires.",
+        "handWord": "zombie",
+        "distractors": [
+          "vampiro",
+          "strega"
+        ]
+      },
+      {
+        "it": "Un fantasma stridulo si materializzò nel cortile, urlando di dolore.",
+        "en": "A wailing ghost materialized in the courtyard, screaming in pain.",
+        "handWord": "fantasma",
+        "distractors": [
+          "zombie",
+          "vampiro"
+        ]
+      },
+      {
+        "it": "Lorenzo, un giovane studioso, scoprì che la maledizione era legata a un antico rituale.",
+        "en": "Lorenzo, a young scholar, discovered the curse was tied to an ancient ritual.",
+        "handWord": "vampiro",
+        "distractors": [
+          "fantasma",
+          "zombie"
+        ]
+      },
+      {
+        "it": "La strega aveva trasformato i morti in creature assetate di sangue, ma il suo spirito era imprigionato nel cuore della foresta.",
+        "en": "The witch had turned the dead into blood-thirsty creatures, but her spirit was trapped in the heart of the forest.",
+        "handWord": "strega",
+        "distractors": [
+          "IDs",
+          "Sentence"
+        ]
+      },
+      {
+        "it": "Quando Lorenzo distrusse il talismano, tutti i fantasmi si dissolsero, lasciando solo il silenzio della notte.",
+        "en": "When Lorenzo destroyed the talisman, all the ghosts dissolved, leaving only the silence of night.",
+        "handWord": null,
+        "distractors": []
+      }
+    ]
+  }
+}
