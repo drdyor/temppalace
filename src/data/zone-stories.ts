@@ -34,11 +34,11 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "Bathroom",
     level: "a2",
     exchanges: [
-      { speaker: "Tu", it: "Posso entrare? Mi lavo i denti.", en: "Can I come in? I need to brush my teeth.", grammarTags: [{"text": "Posso", "type": "congiuntivo"}, {"text": "Mi lavo", "type": "passato_prossimo"}] },
-      { speaker: "Amico", it: "Sì, ma ho finito. Ecco lo spazzolino e il dentifricio.", en: "Yes, but I'm done. Here's the toothbrush and toothpaste.", grammarTags: [{"text": "ho finito", "type": "passato_prossimo"}, {"text": "Ecco", "type": "imperativo"}, {"text": "ho", "type": "presente"}] },
+      { speaker: "Tu", it: "Posso entrare? Mi lavo i denti.", en: "Can I come in? I need to brush my teeth." },
+      { speaker: "Amico", it: "Sì, ma ho finito. Ecco lo spazzolino e il dentifricio.", en: "Yes, but I'm done. Here's the toothbrush and toothpaste." },
       { speaker: "Tu", it: "Dov'è il sapone?", en: "Where's the soap?" },
       { speaker: "Amico", it: "Accanto al rubinetto. Apri l'acqua.", en: "Next to the faucet. Turn on the water." },
-      { speaker: "Tu", it: "Grazie. Mi passi l'asciugamano? Ho la faccia sporca.", en: "Thanks. Can you pass me the towel? My face is dirty.", grammarTags: [{"text": "Grazie", "type": "congiuntivo"}, {"text": "Mi passi", "type": "imperativo"}, {"text": "Ho", "type": "passato_prossimo"}, {"text": "la faccia sporca", "type": "presente"}] }
+      { speaker: "Tu", it: "Grazie. Mi passi l'asciugamano? Ho la faccia sporca.", en: "Thanks. Can you pass me the towel? My face is dirty." }
     ]
   },
   "bathroom_b1": {
@@ -185,11 +185,10 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "Coat Rack",
     level: "a2",
     exchanges: [
-      { speaker: "Amica", it: "Prendo il cappotto? Fa freddo fuori.", en: "Should I take the coat? It's cold outside.", grammarTags: [{"text": "Prendo", "type": "passato_prossimo"}, {"text": "Fa", "type": "imperfetto"}] },
-      { speaker: "Tu", it: "Prendi anche la sciarpa e i guanti. E il cappello.", en: "Take the scarf and gloves too. And the hat.", grammarTags: [{"text": "Prendi", "type": "imperativo"}, {"text": "anche", "type": "presente"}, {"text": "la", "type": "presente"}, {"text": "sciarpa", "type": "presente"}, {"text": "e", "type": "presente"}, {"text": "i", "type": "presente"}, {"text": "guanti", "type": "presente"}, {"text": "E", "type": "presente"}, {"text": "il", "type": "presente"}, {"text": "cappello", "type": "presente"}] },
-      { speaker: "Amica", it: "La giacca è abbastanza, no?", en: "Isn't the jacket enough?" },
-      { speaker: "Tu", it: "No, ho visto la pioggia. Porta l'impermeabile.", en: "No, I saw rain. Bring the raincoat.", grammarTags: [{"text": "ho visto", "type": "passato_prossimo"}, {"text": "Porta", "type": "imperativo"}, {"text": "l'impermeabile", "type": "presente"}] },
-      { speaker: "Amica", it: "Ok. E la borsa? Ci sta il maglione dentro.", en: "Ok. And the bag? The sweater fits inside.", grammarTags: [{"text": "Ci sta", "type": "passato_prossimo"}, {"text": "sta", "type": "imperfetto"}] }
+      { speaker: "Tu", it: "Prendo il cappotto? Fa freddo fuori.", en: "Should I take the coat? It's cold outside." },
+      { speaker: "Amica", it: "Ok. E la sciarpa e i guanti? Ci sta il cappello dentro.", en: "Take the scarf and gloves too. And the hat." },
+      { speaker: "Tu", it: "No, ho visto la pioggia. Porta l'impermeabile.", en: "Isn't the jacket enough?" },
+      { speaker: "Amica", it: "Ok. E la borsa? Ci sta il maglione dentro?", en: "No, I saw rain. Bring the raincoat." }
     ]
   },
   "coat-rack_b1": {
@@ -294,11 +293,10 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "Daily Actions",
     level: "a2",
     exchanges: [
-      { speaker: "Amico", it: "A che ora ti sei alzato?", en: "What time did you get up?", grammarTags: [{"text": "ti sei alzato", "type": "passato_prossimo"}, {"text": "A che ora", "type": "presente"}] },
-      { speaker: "Tu", it: "Alle sette. Mi sono lavato e vestito in cinque minuti.", en: "At seven. I washed and got dressed in five minutes.", grammarTags: [{"text": "Mi sono lavato", "type": "passato_prossimo"}] },
-      { speaker: "Amico", it: "Non ti sei nemmeno pettinato, si vede.", en: "You didn't even comb your hair, it shows.", grammarTags: [{"text": "Non ti sei nemmeno pettinato", "type": "passato_prossimo"}, {"text": "si vede", "type": "presente"}] },
-      { speaker: "Tu", it: "Dai, ho aperto gli occhi e sono uscito. Quasi mi sono riaddormentato.", en: "Come on, I opened my eyes and left. I almost fell back asleep.", grammarTags: [{"text": "Dai", "type": "imperativo"}, {"text": "ho aperto", "type": "passato_prossimo"}, {"text": "sono uscito", "type": "passato_prossimo"}, {"text": "Quasi mi sono riaddormentato", "type": "passato_prossimo"}] },
-      { speaker: "Amico", it: "Stasera almeno chiudi la porta — hai lasciato tutto aperto.", en: "Tonight at least close the door — you left everything open.", grammarTags: [{"text": "chiudi", "type": "imperativo"}, {"text": "hai lasciato", "type": "passato_prossimo"}, {"text": "hai lasciato", "type": "congiuntivo"}, {"text": "lasciato", "type": "passato_prossimo"}] }
+      { speaker: "Amico", it: "A che ora ti sei alzato?", en: "What time did you get up?" },
+      { speaker: "Tu", it: "Alle sette. Mi sono lavato e vestito in cinque minuti.", en: "At seven. I washed and got dressed in five minutes." },
+      { speaker: "Amico", it: "Non ti sei nemmeno pettinato, si vede.", en: "You didn't even comb your hair, it shows." },
+      { speaker: "Tu", it: "Dai, ho aperto gli occhi e sono uscito. Quasi mi sono riaddormentato.", en: "Come on, I opened my eyes and left. I almost fell back asleep." }
     ]
   },
   "daily-actions_b1": {
@@ -319,12 +317,11 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "Study Desk",
     level: "a2",
     exchanges: [
-      { speaker: "Tu", it: "Hai una penna? La mia non scrive.", en: "Do you have a pen? Mine doesn't write.", grammarTags: [{"text": "Hai", "type": "imperfetto"}, {"text": "non scrive", "type": "imperfetto"}] },
-      { speaker: "Amico", it: "Prendi questa matita. E la gomma.", en: "Take this pencil. And the eraser.", grammarTags: [{"text": "Prendi", "type": "imperativo"}, {"text": "questa", "type": "presente"}, {"text": "la", "type": "presente"}, {"text": "gomma", "type": "presente"}] },
-      { speaker: "Tu", it: "Grazie. Dov'è il righello? Devo fare una linea.", en: "Thanks. Where's the ruler? I need to draw a line.", grammarTags: [{"text": "Devo", "type": "imperfetto"}, {"text": "Devo", "type": "imperfetto"}] },
-      { speaker: "Amico", it: "Sulla scrivania, vicino al quaderno.", en: "On the desk, next to the notebook." },
-      { speaker: "Tu", it: "Che lezione abbiamo dopo?", en: "What lesson do we have next?" },
-      { speaker: "Amico", it: "Italiano. Guarda il calendario — oggi è pagina 45.", en: "Italian. Look at the calendar — today is page 45.", grammarTags: [{"text": "Guarda", "type": "imperativo"}, {"text": "è", "type": "passato_prossimo"}, {"text": "è", "type": "presente"}] }
+      { speaker: "Tu", it: "hai una penna? la mia non scrive.", en: "Do you have a pen? Mine doesn't write." },
+      { speaker: "Amico", it: "prendi questa matita. e la gomma.", en: "Take this pencil. And the eraser." },
+      { speaker: "Tu", it: "grazie. dov'è il righello? devo fare una linea.", en: "Thanks. Where's the ruler? I need to draw a line." },
+      { speaker: "Amico", it: "sulla scrivania, vicino al quaderno.", en: "On the desk, next to the notebook." },
+      { speaker: "Tu", it: "che lezione abbiamo dopo?", en: "What lesson do we have next?" }
     ]
   },
   "desk_b1": {
@@ -476,16 +473,10 @@ export const zoneStories: Record<string, ZoneStory> = {
     exchanges: [
       { speaker: "Tu", it: "Questo tavolo è troppo grande. Lo spostiamo?", en: "This table is too big. Shall we move it?" },
       { speaker: "Amico", it: "Sì, ma dove mettiamo la sedia?", en: "Yes, but where do we put the chair?" },
-      { speaker: "Tu", it: "Lì, vicino alla lampada. E il quadro, lo togliamo?", en: "There, near the lamp. And the painting, shall we take it down?" },
-      { speaker: "Amico", it: "No, lasciamolo. Poi mettiamo il tappeto.", en: "No, let's leave it. Then we'll put down the carpet.", grammarTags: [{"text": "lasciamolo", "type": "congiuntivo"}, {"text": "mettiamo", "type": "congiuntivo"}, {"text": "Poi mettiamo", "type": "imperativo"}] },
-      { speaker: "Tu", it: "Bene. E le tende? Sono troppo pesanti.", en: "Good. And the tents? They are too heavy.", grammarTags: [{"text": "Sono troppo pesanti", "type": "passato_prossimo"}, {"text": "Sono troppo pesanti", "type": "presente"}] },
-      { speaker: "Amico", it: "Sì, ma il specchio va bene così.", en: "---", grammarTags: [{"text": "va", "type": "passato_prossimo"}, {"text": "così", "type": "presente"}] },
-      { speaker: "You", it: "This table is too big. Should we move it?", en: "This table is too big. Should we move it?" },
-      { speaker: "Friend", it: "Yes, but where do we put the chair?", en: "Yes, but where do we put the chair?" },
-      { speaker: "You", it: "There, next to the lamp. And the picture, do we take it down?", en: "There, next to the lamp. And the picture, do we take it down?" },
-      { speaker: "Friend", it: "No, leave it. Then we put the rug.", en: "No, leave it. Then we put the rug.", grammarTags: [{"text": "leave it", "type": "imperativo"}, {"text": "we put", "type": "passato_prossimo"}, {"text": "put", "type": "presente"}] },
-      { speaker: "You", it: "Good. And the curtains? They're too heavy.", en: "Good. And the curtains? They're too heavy." },
-      { speaker: "Friend", it: "Yes, but the mirror is fine like this.", en: "Yes, but the mirror is fine like this." }
+      { speaker: "Tu", it: "Lì vicino alla lampada. E il quadro, lo togliamo?", en: "There, near the lamp. And the painting, shall we take it down?" },
+      { speaker: "Amico", it: "No, lasciamolo. Poi mettiamo il tappeto.", en: "No, let's leave it. Then we'll put down the carpet." },
+      { speaker: "Tu", it: "Bene. E le tende? Sono troppo pesanti.", en: "Good. And the tents? They are too heavy." },
+      { speaker: "Amico", it: "Sì, ma il specchio va bene così.", en: "---" }
     ]
   },
   "furniture_b1": {
@@ -699,18 +690,12 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "Movement Zone",
     level: "a2",
     exchanges: [
-      { speaker: "Tu", it: "Vuoi correre o camminare?", en: "Do you want to run or walk?", grammarTags: [{"text": "Vuoi", "type": "imperativo"}, {"text": "correre", "type": "presente"}, {"text": "camminare", "type": "presente"}] },
-      { speaker: "Amico", it: "Correre! Ma non troppo veloce, eh?", en: "Run! But not too fast, huh?", grammarTags: [{"text": "Correre!", "type": "imperativo"}, {"text": "Correre", "type": "presente"}, {"text": "non troppo veloce", "type": "presente"}, {"text": "eh", "type": "presente"}] },
+      { speaker: "Tu", it: "Vuoi correre o camminare?", en: "Do you want to run or walk?" },
+      { speaker: "Amico", it: "Correre! Ma non troppo veloce, eh?", en: "Run! But not too fast, huh?" },
       { speaker: "Tu", it: "D'accordo. Poi possiamo saltare un po'?", en: "Okay. Then can we skip a bit?" },
-      { speaker: "Amico", it: "Sì, ma non troppo in alto, o rischiamo di cadere.", en: "Yes, but not too high, or we risk falling.", grammarTags: [{"text": "Sì", "type": "presente"}, {"text": "rischiamo", "type": "passato_prossimo"}] },
-      { speaker: "Tu", it: "Hai paura? Io invece vorrei nuotare.", en: "Are you afraid? I would rather swim.", grammarTags: [{"text": "Hai paura", "type": "congiuntivo"}, {"text": "vorrei", "type": "condizionale"}] },
-      { speaker: "Amico", it: "Non oggi. Forse domani. Per ora spingiamo il carrello.", en: "---", grammarTags: [{"text": "Non oggi", "type": "presente"}, {"text": "Forse domani", "type": "futuro"}, {"text": "Per ora spingiamo il carrello", "type": "passato_prossimo"}] },
-      { speaker: "You", it: "Do you want to run or walk?", en: "Do you want to run or walk?" },
-      { speaker: "Friend", it: "Run! But not too fast, okay?", en: "Run! But not too fast, okay?" },
-      { speaker: "You", it: "Okay. Then can we jump a little?", en: "Okay. Then can we jump a little?" },
-      { speaker: "Friend", it: "Yes, but not too high, or we might fall.", en: "Yes, but not too high, or we might fall." },
-      { speaker: "You", it: "Are you scared? I would rather swim.", en: "Are you scared? I would rather swim.", grammarTags: [{"text": "Are you scared?", "type": "imperfetto"}, {"text": "I would rather swim.", "type": "condizionale"}] },
-      { speaker: "Friend", it: "Not today. Maybe tomorrow. For now, let's push the cart.", en: "Not today. Maybe tomorrow. For now, let's push the cart." }
+      { speaker: "Amico", it: "Sì, ma non troppo in alto, o rischiamo di cadere.", en: "Yes, but not too high, or we risk falling." },
+      { speaker: "Tu", it: "Hai paura? Io invece vorrei nuotare.", en: "Are you afraid? I would rather swim." },
+      { speaker: "Amico", it: "Non oggi. Forse domani. Per ora spingiamo il carrello.", en: "---" }
     ]
   },
   "movement_b1": {
@@ -1012,11 +997,10 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "The Sky",
     level: "a2",
     exchanges: [
-      { speaker: "Tu", it: "Hai visto che cielo oggi?", en: "Have you seen the sky today?", grammarTags: [{"text": "Hai visto", "type": "passato_prossimo"}, {"text": "che", "type": "congiuntivo"}, {"text": "oggi", "type": "presente"}] },
-      { speaker: "Amico", it: "Bellissimo. Non c'è una nuvola.", en: "Beautiful. Not a cloud in sight.", grammarTags: [{"text": "Bellissimo", "type": "presente"}, {"text": "Non c'è", "type": "passato_prossimo"}, {"text": "una nuvola", "type": "presente"}] },
-      { speaker: "Tu", it: "E il vento è sparito. Ci andiamo fuori?", en: "And the wind is gone. Shall we go outside?", grammarTags: [{"text": "è sparito", "type": "passato_prossimo"}, {"text": "è", "type": "presente"}, {"text": "andiamo", "type": "imperfetto"}, {"text": "andiamo", "type": "imperativo"}] },
-      { speaker: "Amico", it: "Sì, ma porta l'ombrello — domani dicono pioggia.", en: "Yes, but bring an umbrella — they say rain tomorrow.", grammarTags: [{"text": "domani dicono pioggia", "type": "imperfetto"}] },
-      { speaker: "Tu", it: "Per oggi non ci penso. Andiamo.", en: "Not worrying about today. Let's go.", grammarTags: [{"text": "Per oggi non ci penso", "type": "passato_prossimo"}, {"text": "Andiamo", "type": "imperativo"}] }
+      { speaker: "Tu", it: "Hai visto che cielo oggi?", en: "Have you seen the sky today?" },
+      { speaker: "Amico", it: "Bellissimo. Non c'è una nuvola.", en: "Beautiful. Not a cloud in sight." },
+      { speaker: "Tu", it: "E il vento è sparito. Ci andiamo fuori?", en: "And the wind is gone. Shall we go outside?" },
+      { speaker: "Amico", it: "Sì, ma porta l'ombrello — domani dicono pioggia.", en: "Yes, but bring an umbrella — they say rain tomorrow." }
     ]
   },
   "sky_b1": {
@@ -1119,13 +1103,7 @@ export const zoneStories: Record<string, ZoneStory> = {
       { speaker: "Tu", it: "Sì, un po'. E c'è anche la nebbia.", en: "Yes, a bit. And there's also fog.", grammarTags: [{"text": "c'è", "type": "congiuntivo"}, {"text": "nebbia", "type": "presente"}] },
       { speaker: "Amico", it: "Pensi che venga la grandine?", en: "Do you think hail is coming?", grammarTags: [{"text": "Pensi", "type": "congiuntivo"}, {"text": "venga", "type": "congiuntivo"}] },
       { speaker: "Tu", it: "Non so. Preferisco stare qui, al coperto.", en: "I don't know. I prefer to stay here, out of the weather.", grammarTags: [{"text": "Non so", "type": "congiuntivo"}, {"text": "Preferisco", "type": "presente"}] },
-      { speaker: "Amico", it: "Anch'io. Non usciamo finché non passa.", en: "---", grammarTags: [{"text": "Non usciamo", "type": "imperfetto"}, {"text": "finché non passa", "type": "passato_prossimo"}, {"text": "passa", "type": "passato_prossimo"}] },
-      { speaker: "You", it: "Look at that storm! What a loud thunder!", en: "Look at that storm! What loud thunder!" },
-      { speaker: "Friend", it: "Yes, and that lightning! Do you think it's raining?", en: "Yes, and that lightning! Do you think it's raining?", grammarTags: [{"text": "Do you think it's raining?", "type": "imperfetto"}, {"text": "it's raining", "type": "passato_prossimo"}] },
-      { speaker: "You", it: "Yes, a little. And there's also fog.", en: "Yes, a little. And there's also fog." },
-      { speaker: "Friend", it: "Do you think there will be hail?", en: "Do you think there will be hail?" },
-      { speaker: "You", it: "I don't know. I prefer to stay here, under cover.", en: "I don't know. I prefer to stay here, under cover." },
-      { speaker: "Friend", it: "Me too. We won't go out until it passes.", en: "Me too. We won't go out until it passes.", grammarTags: [{"text": "won't go", "type": "futuro"}, {"text": "passes", "type": "imperfetto"}] }
+      { speaker: "Amico", it: "Anch'io. Non usciamo finché non passa.", en: "---", grammarTags: [{"text": "Non usciamo", "type": "imperfetto"}, {"text": "finché non passa", "type": "passato_prossimo"}, {"text": "passa", "type": "passato_prossimo"}] }
     ]
   },
   "storms_b1": {
@@ -1307,12 +1285,12 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "The TV",
     level: "a2",
     exchanges: [
-      { speaker: "Tu", it: "Vuoi accendere la televisione?", en: "Do you want to turn on the TV?", grammarTags: [{"text": "Vuoi", "type": "imperativo"}] },
-      { speaker: "Amico", it: "Sì, ma prima mettiamo un po' di musica.", en: "Yes, but first let's play some music.", grammarTags: [{"text": "mettiamo", "type": "imperfetto"}, {"text": "mettiamo", "type": "imperativo"}] },
-      { speaker: "Tu", it: "C'è un film interessante in programma. Lo guardiamo?", en: "There's an interesting movie on. Do we watch it?", grammarTags: [{"text": "C'è", "type": "congiuntivo"}, {"text": "guardiamo", "type": "imperfetto"}] },
-      { speaker: "Amico", it: "No, preferisco la musica. Troppo volume in quel film.", en: "No, I prefer music. Too much volume in that movie.", grammarTags: [{"text": "preferisco", "type": "passato_prossimo"}, {"text": "Troppo volume", "type": "presente"}, {"text": "in quel film", "type": "presente"}] },
-      { speaker: "Tu", it: "Allora accendo la musica. Tu regoli il volume?", en: "Then I'll turn on the music. You adjust the volume?", grammarTags: [{"text": "accendo", "type": "passato_prossimo"}, {"text": "regoli", "type": "imperfetto"}] },
-      { speaker: "Amico", it: "Sì, lo faccio. Vuoi che metta il telecomando sullo schermo?", en: "Yes, I'll do it. Do you want me to put the remote on the screen?", grammarTags: [{"text": "lo faccio", "type": "passato_prossimo"}, {"text": "Vuoi", "type": "imperfetto"}, {"text": "che metta", "type": "congiuntivo"}, {"text": "metta", "type": "congiuntivo"}, {"text": "sullo", "type": "presente"}, {"text": "Vuoi", "type": "imperfetto"}] }
+      { speaker: "Tu", it: "Accendi la televisione?", en: "Do you want to turn on the TV?" },
+      { speaker: "Amico", it: "Sì, ma prima mettiamo un po' di musica.", en: "Yes, but first let's play some music." },
+      { speaker: "Tu", it: "C'è un film interessante in programma. Lo guardiamo?", en: "There's an interesting movie on. Do we watch it?" },
+      { speaker: "Amico", it: "No, preferisco la musica. Troppo volume in quel film.", en: "No, I prefer music. Too much volume in that movie." },
+      { speaker: "Tu", it: "Allora accendo la musica. Tu regoli il volume?", en: "Then I'll turn on the music. You adjust the volume?" },
+      { speaker: "Amico", it: "Sì, lo faccio. Vuoi che metta il telecomando sullo schermo?", en: "Yes, I'll do it. Do you want me to put the remote on the screen?" }
     ]
   },
   "tv_b1": {
