@@ -6,6 +6,11 @@ import { ArrowLeft, AlertTriangle, Download } from 'lucide-react';
 const POS_OVERRIDES_KEY = 'mp-vocab-pos';
 const ZONE_POS_KEY = 'mp-zone-pos';
 
+function resolveAsset(src: string) {
+  if (!src) return src;
+  return src.startsWith('/') ? import.meta.env.BASE_URL + src.slice(1) : src;
+}
+
 function loadPosOverrides(): Record<string, { x: number; y: number }> {
   try { return JSON.parse(localStorage.getItem(POS_OVERRIDES_KEY) || '{}'); }
   catch { return {}; }
@@ -108,7 +113,7 @@ export default function VocabPreviewPage() {
                   {zone.interiorImage ? (
                     <div className="relative" style={{ paddingBottom: '66%' }}>
                       <img
-                        src={zone.interiorImage}
+                        src={resolveAsset(zone.interiorImage!)}
                         alt={zone.name}
                         className="absolute inset-0 w-full h-full object-cover"
                         onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}

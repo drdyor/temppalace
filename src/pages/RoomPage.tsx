@@ -1928,11 +1928,11 @@ function WordModal({ word, onClose, onSpeak, onSpeakText, progress, onMarkLearne
               <p className="text-palace-text/70 text-sm font-cinzel mb-3">📚 Examples in Context:</p>
               <div className="space-y-3">
                 {sentences.map((sent, i) => (
-                  <div key={i} className="p-3 bg-palace-text/5 rounded-xl">
+                  <button key={i} onClick={() => onSpeakText(sent.italian)} className="w-full text-left p-3 bg-palace-text/5 rounded-xl hover:bg-palace-text/10 transition-colors">
                     <p className="text-palace-text font-cinzel">{sent.italian}</p>
                     <p className="text-palace-text/60 text-sm mt-1">{sent.english}</p>
                     <span className="text-xs text-palace-gold/70 mt-1 inline-block">💡 {sent.context}</span>
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>

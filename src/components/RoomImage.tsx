@@ -50,6 +50,11 @@ const roomIcons: Record<string, string> = {
   'fantasy': '🐉',
 };
 
+function resolveAsset(src: string) {
+  if (!src) return src;
+  return src.startsWith('/') ? import.meta.env.BASE_URL + src.slice(1) : src;
+}
+
 export default function RoomImage({ src, alt, roomId, className = '' }: RoomImageProps) {
   const [hasError, setHasError] = useState(false);
   const gradient = roomGradients[roomId] || 'from-stone-800/60 via-neutral-900/50 to-stone-950/60';
@@ -59,7 +64,7 @@ export default function RoomImage({ src, alt, roomId, className = '' }: RoomImag
     <div className={`relative overflow-hidden ${className}`}>
       {!hasError ? (
         <img
-          src={src}
+          src={resolveAsset(src)}
           alt={alt}
           className="w-full h-full object-cover"
           onError={() => setHasError(true)}
