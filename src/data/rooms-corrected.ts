@@ -9,7 +9,7 @@ export const roomsCorrected: Room[] = [
     name: 'Kitchen',
     subtitle: 'Fare & -ARE Verbs',
     nameNative: "Cucina",
-    image: '/rooms/kitchen.jpg',
+    image: 'rooms/kitchen.jpg',
     description: 'La cucina del palazzo — where every object tells a story and teaches the verb "fare".',
     grammarFocus: 'fare & regular -ARE verbs',
     // Full vocabulary list for the room
@@ -48,7 +48,7 @@ export const roomsCorrected: Room[] = [
         y: 45,
         width: 15,
         height: 25,
-        interiorImage: '/rooms/kitchen-fridge.jpg',
+        interiorImage: 'rooms/kitchen-fridge.jpg',
         interiorVocab: [
           { wordId: 'acqua', x: 15, y: 15 },      // water bottles
           { wordId: 'latte', x: 35, y: 15 },      // milk carton
@@ -78,7 +78,7 @@ export const roomsCorrected: Room[] = [
         y: 40,
         width: 10,
         height: 30,
-        interiorImage: '/rooms/kitchen-pantry.jpg',
+        interiorImage: 'rooms/kitchen-pantry.jpg',
         interiorVocab: [
           { wordId: 'pasta', x: 15, y: 15 },      // pasta packages
           { wordId: 'riso', x: 35, y: 15 },       // rice
@@ -105,7 +105,7 @@ export const roomsCorrected: Room[] = [
         y: 70,
         width: 15,
         height: 12,
-        interiorImage: '/rooms/kitchen-drawer.jpg',
+        interiorImage: 'rooms/kitchen-drawer.jpg',
         interiorVocab: [
           { wordId: 'coltello', x: 20, y: 25 },    // knives
           { wordId: 'forchetta', x: 40, y: 25 },   // forks
@@ -128,7 +128,7 @@ export const roomsCorrected: Room[] = [
         y: 55,
         width: 15,
         height: 15,
-        interiorImage: '/rooms/kitchen-stove.jpg',
+        interiorImage: 'rooms/kitchen-stove.jpg',
         interiorVocab: [
           { wordId: 'padella', x: 20, y: 25 },     // frying pan
           { wordId: 'pentola', x: 50, y: 25 },     // pot
@@ -151,7 +151,7 @@ export const roomsCorrected: Room[] = [
         y: 65,
         width: 20,
         height: 15,
-        interiorImage: '/rooms/kitchen-table.jpg',
+        interiorImage: 'rooms/kitchen-table.jpg',
         interiorVocab: [
           { wordId: 'piatto', x: 15, y: 25 },      // plate
           { wordId: 'bicchiere', x: 35, y: 25 },   // glass
@@ -177,7 +177,7 @@ export const roomsCorrected: Room[] = [
         y: 50,
         width: 12,
         height: 15,
-        interiorImage: '/rooms/kitchen-dessert.jpg',
+        interiorImage: 'rooms/kitchen-dessert.jpg',
         interiorVocab: [
           { wordId: 'torta', x: 25, y: 30 },       // cake
           { wordId: 'gelato', x: 50, y: 30 },      // ice cream
@@ -200,7 +200,7 @@ export const roomsCorrected: Room[] = [
     name: 'Bedroom',
     subtitle: 'Family & Descriptions',
     nameNative: "Camera da Letto",
-    image: '/rooms/bedroom.jpg',
+    image: 'rooms/bedroom.jpg',
     description: 'Learn family members and master adjective agreement.',
     grammarFocus: 'possessive adjectives & adjective agreement',
     vocabularyIds: [
@@ -232,7 +232,7 @@ export const roomsCorrected: Room[] = [
         y: 40,
         width: 15,
         height: 30,
-        interiorImage: '/rooms/bedroom-wardrobe.jpg',
+        interiorImage: 'rooms/bedroom-wardrobe.jpg',
         interiorVocab: [
           { wordId: 'camicia', x: 12, y: 15 },      // shirt
           { wordId: 'camicetta', x: 25, y: 15 },    // blouse
@@ -259,7 +259,7 @@ export const roomsCorrected: Room[] = [
         y: 60,
         width: 12,
         height: 15,
-        interiorImage: '/rooms/bedroom-drawer.jpg',
+        interiorImage: 'rooms/bedroom-drawer.jpg',
         interiorVocab: [
           { wordId: 'calze', x: 20, y: 25 },        // socks
           { wordId: 'cravatta', x: 50, y: 25 },     // tie
@@ -280,7 +280,7 @@ export const roomsCorrected: Room[] = [
         y: 55,
         width: 12,
         height: 12,
-        interiorImage: '/rooms/bedroom-jewelry.jpg',
+        interiorImage: 'rooms/bedroom-jewelry.jpg',
         interiorVocab: [
           { wordId: 'anello', x: 20, y: 25 },       // ring
           { wordId: 'collana', x: 50, y: 25 },      // necklace
@@ -299,7 +299,7 @@ export const roomsCorrected: Room[] = [
         y: 75,
         width: 20,
         height: 12,
-        interiorImage: '/rooms/bedroom-shoes.jpg',
+        interiorImage: 'rooms/bedroom-shoes.jpg',
         interiorVocab: [
           { wordId: 'scarpe', x: 15, y: 35 },       // shoes
           { wordId: 'stivali', x: 40, y: 35 },      // boots
@@ -318,7 +318,7 @@ export const roomsCorrected: Room[] = [
         y: 55,
         width: 25,
         height: 20,
-        interiorImage: '/rooms/bedroom-bed.jpg',
+        interiorImage: 'rooms/bedroom-bed.jpg',
         interiorVocab: [
           { wordId: 'letto', x: 20, y: 30 },        // bed
           { wordId: 'cuscino', x: 50, y: 30 },      // pillow
@@ -338,7 +338,7 @@ export const roomsCorrected: Room[] = [
         y: 70,
         width: 10,
         height: 12,
-        interiorImage: '/rooms/bedroom-nightstand.jpg',
+        interiorImage: 'rooms/bedroom-nightstand.jpg',
         interiorVocab: [
           { wordId: 'comodino', x: 20, y: 30 },     // nightstand
           { wordId: 'lampada', x: 50, y: 30 },      // lamp
@@ -360,7 +360,7 @@ export const roomsCorrected: Room[] = [
     name: 'Bathroom',
     subtitle: 'Daily Routine & Reflexives',
     nameNative: "Bagno",
-    image: '/rooms/bathroom.jpg',
+    image: 'rooms/bathroom.jpg',
     description: 'Il bagno — master daily routines and reflexive verbs.',
     grammarFocus: 'reflexive verbs (mi lavo, mi pettino) & daily routine',
     vocabularyIds: [
@@ -387,7 +387,7 @@ export const roomsCorrected: Room[] = [
         y: 45,
         width: 20,
         height: 25,
-        interiorImage: '/rooms/bathroom-sink.jpg',
+        interiorImage: 'rooms/bathroom-sink.jpg',
         interiorVocab: [
           { wordId: 'faccia', x: 30, y: 20 },       // face (in mirror)
           { wordId: 'occhi', x: 50, y: 20 },        // eyes
@@ -411,7 +411,7 @@ export const roomsCorrected: Room[] = [
         y: 35,
         width: 25,
         height: 35,
-        interiorImage: '/rooms/bathroom-shower.jpg',
+        interiorImage: 'rooms/bathroom-shower.jpg',
         interiorVocab: [
           { wordId: 'corpo', x: 25, y: 25 },        // body
           { wordId: 'testa', x: 50, y: 25 },        // head
@@ -435,7 +435,7 @@ export const roomsCorrected: Room[] = [
         y: 30,
         width: 12,
         height: 20,
-        interiorImage: '/rooms/bathroom-medicine.jpg',
+        interiorImage: 'rooms/bathroom-medicine.jpg',
         interiorVocab: [
           { wordId: 'medicina', x: 25, y: 25 },     // medicine
           { wordId: 'cerotto', x: 50, y: 25 },      // band-aid
