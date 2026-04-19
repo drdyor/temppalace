@@ -272,6 +272,23 @@ function saveZonePosOverride(key: string, pos: { x: number; y: number }) {
 }
 
 // NEW Explore Tab - Room image with zone hotspots overlaid
+function zoneWordInfo(nameNative: string, name: string, roomVocab: VocabularyItem[]): VocabularyItem {
+  const lower = nameNative.toLowerCase();
+  let gender: Gender = 'none';
+  let bare = nameNative;
+  if (lower.startsWith('il '))       { gender = 'masculine'; bare = nameNative.slice(3); }
+  else if (lower.startsWith('lo '))  { gender = 'masculine'; bare = nameNative.slice(3); }
+  else if (lower.startsWith('i '))   { gender = 'masculine'; bare = nameNative.slice(2); }
+  else if (lower.startsWith('gli ')) { gender = 'masculine'; bare = nameNative.slice(4); }
+  else if (lower.startsWith('la '))  { gender = 'feminine';  bare = nameNative.slice(3); }
+  else if (lower.startsWith('le '))  { gender = 'feminine';  bare = nameNative.slice(3); }
+  else if (lower.startsWith("l'"))   { gender = 'none';      bare = nameNative.slice(2); }
+  const bareId = bare.toLowerCase().split(' ')[0];
+  const found = roomVocab.find(w => w.id === bareId || w.native.toLowerCase() === bare.toLowerCase());
+  if (found) return found;
+  return { id: bareId, native: bare, english: name.replace(/^The /, ''), gender, pronunciation: bare.toUpperCase(), emoji: '', translations: { it: bare }, wordClass: 'noun' } as unknown as VocabularyItem;
+}
+
 function ExploreTab({ room, roomVocab, setSelectedWord, setSelectedZone, getGenderColor }: {
   room: ReturnType<typeof getRoomById>;
   roomVocab: VocabularyItem[];
@@ -353,6 +370,8 @@ function ExploreTab({ room, roomVocab, setSelectedWord, setSelectedZone, getGend
           {room.zones.map(zone => {
             const pos = (draggingZoneId === zone.id && dragZoneLive) ? dragZoneLive : getZonePos(zone);
             const isOverridden = !!zonePosOverrides[`${room.id}:${zone.id}`];
+            const zw = zoneWordInfo(zone.nameNative || zone.name, zone.name, roomVocab);
+            const dotColor = getGenderColor(zw.gender);
             return (
               <div
                 key={zone.id}
@@ -363,13 +382,14 @@ function ExploreTab({ room, roomVocab, setSelectedWord, setSelectedZone, getGend
                 onPointerDown={e => handleZonePointerDown(e, zone.id)}
                 onPointerMove={e => handleZonePointerMove(e, zone.id)}
                 onPointerUp={e => handleZonePointerUp(e, zone)}
-                onClick={e => { if (zoneDragMovedRef.current) e.stopPropagation(); }}
+                onClick={e => { if (zoneDragMovedRef.current) { e.stopPropagation(); return; } if (!zoneEditMode) setSelectedWord(zw); }}
               >
                 <div className={`flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-cinzel shadow-lg border transition-colors ${
                   isOverridden
                     ? 'bg-palace-gold/90 text-black border-palace-gold'
                     : 'bg-black/70 text-white border-white/20 group-hover:border-palace-gold/60'
                 }`}>
+                  <div className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: dotColor }} />
                   <span>{zone.icon}</span>
                   <span className="hidden sm:inline">{zone.nameNative || zone.name}</span>
                 </div>

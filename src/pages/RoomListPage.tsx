@@ -63,7 +63,7 @@ export default function RoomListPage() {
                     roomId={room.id}
                     className="w-full h-full opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-palace-bg via-palace-bg/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-palace-bg via-palace-bg/50 to-transparent pointer-events-none" />
                   
                   {/* Room Number */}
                   <div className="absolute top-4 left-4 w-8 h-8 rounded-full bg-palace-gold/20 border border-palace-gold/50 flex items-center justify-center">
