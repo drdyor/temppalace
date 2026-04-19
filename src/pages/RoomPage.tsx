@@ -256,7 +256,19 @@ export default function RoomPage() {
   );
 }
 
-// NEW Explore Tab - Room image with subrooms listed BELOW
+// Zone hotspot position overrides (main room image)
+const ZONE_POS_KEY = 'mp-zone-pos';
+function loadZonePosOverrides(): Record<string, { x: number; y: number }> {
+  try { return JSON.parse(localStorage.getItem(ZONE_POS_KEY) || '{}'); }
+  catch { return {}; }
+}
+function saveZonePosOverride(key: string, pos: { x: number; y: number }) {
+  const all = loadZonePosOverrides();
+  all[key] = pos;
+  localStorage.setItem(ZONE_POS_KEY, JSON.stringify(all));
+}
+
+// NEW Explore Tab - Room image with zone hotspots overlaid
 function ExploreTab({ room, roomVocab, setSelectedWord, setSelectedZone, getGenderColor }: {
   room: ReturnType<typeof getRoomById>;
   roomVocab: VocabularyItem[];
@@ -265,12 +277,108 @@ function ExploreTab({ room, roomVocab, setSelectedWord, setSelectedZone, getGend
   getGenderColor: (g: Gender) => string;
 }) {
   if (!room) return null;
-  
+
+  const [zoneEditMode, setZoneEditMode] = useState(false);
+  const [zonePosOverrides, setZonePosOverrides] = useState<Record<string, { x: number; y: number }>>(loadZonePosOverrides);
+  const [draggingZoneId, setDraggingZoneId] = useState<string | null>(null);
+  const [dragZoneLive, setDragZoneLive] = useState<{ x: number; y: number } | null>(null);
+  const zoneDragMovedRef = useRef(false);
+  const mainImageRef = useRef<HTMLDivElement>(null);
+
+  const getZonePos = (zone: Zone) => {
+    const key = `${room.id}:${zone.id}`;
+    return zonePosOverrides[key] ?? { x: zone.x, y: zone.y };
+  };
+
+  const handleZonePointerDown = (e: React.PointerEvent, zoneId: string) => {
+    if (!zoneEditMode) return;
+    e.stopPropagation();
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+    zoneDragMovedRef.current = false;
+    setDraggingZoneId(zoneId);
+    const rect = mainImageRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    setDragZoneLive({
+      x: ((e.clientX - rect.left) / rect.width) * 100,
+      y: ((e.clientY - rect.top) / rect.height) * 100,
+    });
+  };
+
+  const handleZonePointerMove = (e: React.PointerEvent, zoneId: string) => {
+    if (draggingZoneId !== zoneId) return;
+    zoneDragMovedRef.current = true;
+    const rect = mainImageRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    setDragZoneLive({
+      x: Math.max(2, Math.min(98, ((e.clientX - rect.left) / rect.width) * 100)),
+      y: Math.max(2, Math.min(98, ((e.clientY - rect.top) / rect.height) * 100)),
+    });
+  };
+
+  const handleZonePointerUp = (e: React.PointerEvent, zone: Zone) => {
+    if (draggingZoneId !== zone.id) return;
+    if (zoneDragMovedRef.current && dragZoneLive) {
+      const key = `${room.id}:${zone.id}`;
+      saveZonePosOverride(key, dragZoneLive);
+      setZonePosOverrides(loadZonePosOverrides());
+    } else if (!zoneDragMovedRef.current) {
+      setSelectedZone(zone);
+    }
+    setDraggingZoneId(null);
+    setDragZoneLive(null);
+    zoneDragMovedRef.current = false;
+  };
+
   return (
     <div className="space-y-8">
-      {/* Room Image - No clickable zones inside */}
-      <div className="relative aspect-[4/3] bg-palace-bg/50 rounded-2xl overflow-hidden border border-palace-text/10">
-        <RoomImage src={room.image} alt={room.name} roomId={room.id} className="w-full h-full" />
+      {/* Room Image with zone hotspots overlaid */}
+      <div>
+        <div className="flex items-center justify-end mb-2">
+          <button
+            onClick={() => setZoneEditMode(m => !m)}
+            className={`text-xs font-cinzel px-3 py-1 rounded-lg border transition-colors ${
+              zoneEditMode
+                ? 'bg-palace-gold/20 text-palace-gold border-palace-gold/40'
+                : 'text-palace-text/40 border-palace-text/10 hover:border-palace-text/30'
+            }`}
+          >
+            {zoneEditMode ? 'Done' : 'Edit Labels'}
+          </button>
+        </div>
+        <div ref={mainImageRef} className={`relative aspect-[4/3] bg-palace-bg/50 rounded-2xl overflow-hidden border border-palace-text/10 ${zoneEditMode ? 'cursor-crosshair' : ''}`}>
+          <RoomImage src={room.image} alt={room.name} roomId={room.id} className="w-full h-full" />
+          {room.zones.map(zone => {
+            const pos = (draggingZoneId === zone.id && dragZoneLive) ? dragZoneLive : getZonePos(zone);
+            const isOverridden = !!zonePosOverrides[`${room.id}:${zone.id}`];
+            return (
+              <div
+                key={zone.id}
+                className={`absolute transform -translate-x-1/2 -translate-y-1/2 group z-10 ${
+                  zoneEditMode ? 'cursor-grab active:cursor-grabbing' : 'cursor-pointer'
+                } ${draggingZoneId === zone.id ? 'z-20 scale-110' : ''}`}
+                style={{ left: `${pos.x}%`, top: `${pos.y}%`, touchAction: 'none' }}
+                onPointerDown={e => handleZonePointerDown(e, zone.id)}
+                onPointerMove={e => handleZonePointerMove(e, zone.id)}
+                onPointerUp={e => handleZonePointerUp(e, zone)}
+                onClick={e => { if (zoneDragMovedRef.current) e.stopPropagation(); }}
+              >
+                <div className={`flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-cinzel shadow-lg border transition-colors ${
+                  isOverridden
+                    ? 'bg-palace-gold/90 text-black border-palace-gold'
+                    : 'bg-black/70 text-white border-white/20 group-hover:border-palace-gold/60'
+                }`}>
+                  <span>{zone.icon}</span>
+                  <span className="hidden sm:inline">{zone.nameNative || zone.name}</span>
+                </div>
+              </div>
+            );
+          })}
+          {zoneEditMode && (
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/70 text-white/70 text-xs px-3 py-1 rounded-full font-cinzel">
+              Drag labels to reposition · tap to open zone
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Subrooms Grid - Listed BELOW the image */}

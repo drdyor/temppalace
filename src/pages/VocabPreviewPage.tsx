@@ -4,6 +4,7 @@ import { rooms } from '../data/rooms';
 import { ArrowLeft, AlertTriangle, Download } from 'lucide-react';
 
 const POS_OVERRIDES_KEY = 'mp-vocab-pos';
+const ZONE_POS_KEY = 'mp-zone-pos';
 
 function loadPosOverrides(): Record<string, { x: number; y: number }> {
   try { return JSON.parse(localStorage.getItem(POS_OVERRIDES_KEY) || '{}'); }
@@ -11,12 +12,15 @@ function loadPosOverrides(): Record<string, { x: number; y: number }> {
 }
 
 function exportPositions() {
-  const overrides = loadPosOverrides();
-  if (Object.keys(overrides).length === 0) {
-    alert('No position overrides saved yet. Drag words in a zone (Edit mode) first.');
+  const vocabOverrides = JSON.parse(localStorage.getItem(POS_OVERRIDES_KEY) || '{}');
+  const zoneOverrides = JSON.parse(localStorage.getItem(ZONE_POS_KEY) || '{}');
+  const combined = { vocabPositions: vocabOverrides, zonePositions: zoneOverrides };
+  const total = Object.keys(vocabOverrides).length + Object.keys(zoneOverrides).length;
+  if (total === 0) {
+    alert('No position overrides saved yet. Drag labels in Edit mode first.');
     return;
   }
-  const blob = new Blob([JSON.stringify(overrides, null, 2)], { type: 'application/json' });
+  const blob = new Blob([JSON.stringify(combined, null, 2)], { type: 'application/json' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
   a.download = 'vocab-position-overrides.json';
