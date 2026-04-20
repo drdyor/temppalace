@@ -395,6 +395,123 @@ export const rooms: Room[] = [
       { id: 'imperative-health', title: 'Health Imperatives', explanation: 'Doctor\'s instructions', example: 'Si sieda qui. Mi dica. Respiri profondo.', color: '#10B981' },
     ],
   },
+  // ── La Piazza ──────────────────────────────────────────────────────────
+  {
+    id: 'piazza',
+    name: 'The Town Square',
+    subtitle: 'Essential Verbs',
+    nameNative: 'La Piazza',
+    image: 'rooms/piazza.jpg',
+    description: 'La piazza della città — where Italians live, move, and talk. Master the 20 most essential Italian verbs.',
+    grammarFocus: 'essere, avere, fare + modal verbs (volere, potere, dovere)',
+    vocabularyIds: ['essere', 'avere', 'stare', 'fare', 'dare', 'andare', 'venire', 'partire', 'arrivare', 'uscire', 'tornare', 'volere', 'potere', 'dovere', 'prendere', 'mettere', 'dire', 'parlare', 'vedere', 'sapere', 'capire'],
+    zones: [
+      {
+        id: 'fontana-piazza', name: 'The Fountain', nameNative: 'La Fontana',
+        description: 'Essere & stare — being and staying',
+        icon: '⛲', x: 45, y: 50, width: 15, height: 18,
+        interiorImage: 'rooms/piazza-fontana.jpg',
+        interiorVocab: [
+          { wordId: 'essere', x: 20, y: 30 }, { wordId: 'stare', x: 50, y: 30 }, { wordId: 'avere', x: 80, y: 30 },
+          { wordId: 'fare', x: 20, y: 70 }, { wordId: 'dare', x: 50, y: 70 }
+        ]
+      },
+      {
+        id: 'bar-piazza', name: 'The Bar', nameNative: 'Il Bar',
+        description: 'Modal verbs — wanting, being able, having to',
+        icon: '☕', x: 15, y: 35, width: 18, height: 20,
+        interiorImage: 'rooms/piazza-bar.jpg',
+        interiorVocab: [
+          { wordId: 'volere', x: 20, y: 25 }, { wordId: 'potere', x: 50, y: 25 }, { wordId: 'dovere', x: 80, y: 25 },
+          { wordId: 'prendere', x: 35, y: 65 }, { wordId: 'mettere', x: 65, y: 65 }
+        ]
+      },
+      {
+        id: 'fermata-piazza', name: 'Bus Stop', nameNative: 'La Fermata',
+        description: 'Movement verbs — going, coming, leaving, arriving',
+        icon: '🚌', x: 78, y: 60, width: 16, height: 16,
+        interiorImage: 'rooms/piazza-fermata.jpg',
+        interiorVocab: [
+          { wordId: 'andare', x: 15, y: 25 }, { wordId: 'venire', x: 40, y: 25 }, { wordId: 'partire', x: 65, y: 25 }, { wordId: 'arrivare', x: 90, y: 25 },
+          { wordId: 'uscire', x: 30, y: 70 }, { wordId: 'tornare', x: 65, y: 70 }
+        ]
+      },
+      {
+        id: 'panchina-piazza', name: 'Park Bench', nameNative: 'La Panchina',
+        description: 'Communication verbs — saying, speaking, seeing, knowing',
+        icon: '🪑', x: 25, y: 70, width: 20, height: 14,
+        interiorImage: 'rooms/piazza-panchina.jpg',
+        interiorVocab: [
+          { wordId: 'dire', x: 20, y: 30 }, { wordId: 'parlare', x: 50, y: 30 }, { wordId: 'vedere', x: 80, y: 30 },
+          { wordId: 'sapere', x: 30, y: 70 }, { wordId: 'capire', x: 65, y: 70 }
+        ]
+      },
+    ],
+    grammarPoints: [
+      { id: 'modal-verbs', title: 'Modal Verbs', explanation: 'Volere, potere, dovere + infinitive', example: 'Voglio andare. Posso parlare? Devo studiare.', color: '#8B5CF6' },
+      { id: 'movement-verbs', title: 'Movement Verbs', explanation: 'Andare/venire take essere in perfect tense', example: 'Sono andato. Sono venuto.', color: '#10B981' },
+    ],
+  },
+
+  // ── Il Calendario ───────────────────────────────────────────────────────
+  {
+    id: 'calendario',
+    name: 'The Calendar Room',
+    subtitle: 'Days, Months & Time',
+    nameNative: 'Il Calendario',
+    image: 'rooms/calendario.jpg',
+    description: 'A room filled with calendars and clocks — master the days, months, seasons, and time expressions that every Italian speaker needs.',
+    grammarFocus: 'days of the week, months, seasons, time adverbs',
+    vocabularyIds: ['lunedi', 'martedi', 'mercoledi', 'giovedi', 'venerdi', 'sabato', 'domenica', 'gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre', 'primavera', 'estate', 'autunno', 'inverno', 'oggi', 'ieri', 'domani', 'adesso', 'dopo', 'prima', 'sempre', 'mai', 'ancora', 'tardi'],
+    zones: [
+      {
+        id: 'settimana', name: 'The Week', nameNative: 'La Settimana',
+        description: 'Seven days of the week',
+        icon: '📅', x: 20, y: 35, width: 25, height: 25,
+        interiorImage: 'rooms/calendario-settimana.jpg',
+        interiorVocab: [
+          { wordId: 'lunedi', x: 13, y: 17 }, { wordId: 'martedi', x: 29, y: 17 }, { wordId: 'mercoledi', x: 45, y: 17 }, { wordId: 'giovedi', x: 61, y: 17 },
+          { wordId: 'venerdi', x: 77, y: 17 }, { wordId: 'sabato', x: 30, y: 60 }, { wordId: 'domenica', x: 65, y: 60 }
+        ]
+      },
+      {
+        id: 'mesi', name: 'The Months', nameNative: 'I Mesi',
+        description: 'Twelve months of the year',
+        icon: '🗓️', x: 62, y: 30, width: 28, height: 28,
+        interiorImage: 'rooms/calendario-mesi.jpg',
+        interiorVocab: [
+          { wordId: 'gennaio', x: 13, y: 15 }, { wordId: 'febbraio', x: 38, y: 15 }, { wordId: 'marzo', x: 63, y: 15 }, { wordId: 'aprile', x: 88, y: 15 },
+          { wordId: 'maggio', x: 13, y: 45 }, { wordId: 'giugno', x: 38, y: 45 }, { wordId: 'luglio', x: 63, y: 45 }, { wordId: 'agosto', x: 88, y: 45 },
+          { wordId: 'settembre', x: 13, y: 75 }, { wordId: 'ottobre', x: 38, y: 75 }, { wordId: 'novembre', x: 63, y: 75 }, { wordId: 'dicembre', x: 88, y: 75 }
+        ]
+      },
+      {
+        id: 'stagioni', name: 'The Seasons', nameNative: 'Le Stagioni',
+        description: 'Four seasons of the year',
+        icon: '🌸', x: 15, y: 68, width: 22, height: 20,
+        interiorImage: 'rooms/calendario-stagioni.jpg',
+        interiorVocab: [
+          { wordId: 'primavera', x: 20, y: 25 }, { wordId: 'estate', x: 50, y: 25 },
+          { wordId: 'autunno', x: 20, y: 70 }, { wordId: 'inverno', x: 50, y: 70 }
+        ]
+      },
+      {
+        id: 'avverbi-tempo', name: 'Today & Tomorrow', nameNative: 'Oggi e Domani',
+        description: 'Essential time adverbs',
+        icon: '⏰', x: 58, y: 68, width: 26, height: 20,
+        interiorImage: 'rooms/calendario-tempo.jpg',
+        interiorVocab: [
+          { wordId: 'oggi', x: 13, y: 20 }, { wordId: 'ieri', x: 38, y: 20 }, { wordId: 'domani', x: 63, y: 20 }, { wordId: 'adesso', x: 88, y: 20 },
+          { wordId: 'dopo', x: 13, y: 55 }, { wordId: 'prima', x: 38, y: 55 }, { wordId: 'sempre', x: 63, y: 55 }, { wordId: 'mai', x: 88, y: 55 },
+          { wordId: 'ancora', x: 20, y: 85 }, { wordId: 'tardi', x: 50, y: 85 }, { wordId: 'spesso', x: 80, y: 85 }
+        ]
+      },
+    ],
+    grammarPoints: [
+      { id: 'giorni', title: 'Days of the Week', explanation: 'Days are lowercase in Italian. Use "il/la" for habitual actions.', example: 'Il lunedì vado al lavoro. (On Mondays I go to work.)', color: '#3B82F6' },
+      { id: 'mesi-grammar', title: 'Months & Seasons', explanation: 'Months are lowercase. Use "in" before months and seasons.', example: 'In gennaio fa freddo. In estate fa caldo.', color: '#10B981' },
+    ],
+  },
 ];
 
 export const getRoomById = (id: string): Room | undefined => {
@@ -425,6 +542,8 @@ export const getAdjacentRooms = (id: string): Room[] => {
     'fantasy': ['gallery', 'emotions'],
     'self': ['entrance-hall', 'library', 'bedroom'],
     'doctor': ['bathroom', 'supermarket'],
+    'piazza': ['entrance-hall', 'cafe', 'transport'],
+    'calendario': ['library', 'entrance-hall'],
   };
   const adjacentIds = adjacencyMap[id] || [];
   return adjacentIds

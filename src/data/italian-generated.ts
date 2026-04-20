@@ -2835,7 +2835,7 @@ export const italianVocabulary: Record<string, VocabularyItem> = {
   },
   giovedi: {
     id: 'giovedi',
-    native: 'giovedi',
+    native: 'giovedì',
     english: 'Thursday',
     gender: 'masculine',
     pronunciation: 'jee-OH-vay-dee',
@@ -3519,7 +3519,7 @@ export const italianVocabulary: Record<string, VocabularyItem> = {
   },
   lunedi: {
     id: 'lunedi',
-    native: 'lunedi',
+    native: 'lunedì',
     english: 'Monday',
     gender: 'masculine',
     pronunciation: 'loo-neh-DEE',
@@ -3717,7 +3717,7 @@ export const italianVocabulary: Record<string, VocabularyItem> = {
   },
   martedi: {
     id: 'martedi',
-    native: 'martedi',
+    native: 'martedì',
     english: 'Tuesday',
     gender: 'masculine',
     pronunciation: 'mar-teh-DEE',
@@ -3852,7 +3852,7 @@ export const italianVocabulary: Record<string, VocabularyItem> = {
   },
   mercoledi: {
     id: 'mercoledi',
-    native: 'mercoledi',
+    native: 'mercoledì',
     english: 'Wednesday',
     gender: 'masculine',
     pronunciation: 'mehr-koh-leh-DEE',
@@ -7326,7 +7326,7 @@ export const italianVocabulary: Record<string, VocabularyItem> = {
   },
   venerdi: {
     id: 'venerdi',
-    native: 'venerdi',
+    native: 'venerdì',
     english: 'Friday',
     gender: 'masculine',
     pronunciation: 've-NEHR-dee',
@@ -8886,4 +8886,5 @@ export const italianVocabulary: Record<string, VocabularyItem> = {
   arancione: { id: 'arancione', native: 'arancione', english: 'orange (color)', gender: 'none', pronunciation: 'ahran-CHOH-neh', emoji: '🟠', x: 50, y: 50 },
   viola: { id: 'viola', native: 'viola', english: 'purple', gender: 'none', pronunciation: 'vee-OH-lah', emoji: '🟣', x: 50, y: 50 },
   corto: { id: 'corto', native: 'corto', english: 'short', gender: 'masculine', pronunciation: 'kor-TOH', emoji: '📏', x: 50, y: 50 },
+  spesso: { id: 'spesso', native: 'spesso', english: 'often', gender: 'none', pronunciation: 'SPESS-oh', emoji: '🔁', x: 50, y: 50 },
 };
