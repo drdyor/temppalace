@@ -498,14 +498,32 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
   const { currentLanguage } = useLanguage();
   const targetLang = isoFor(currentLanguage);
   const speechLang = useMemo(() => getTtsCode(currentLanguage), [currentLanguage]);
+  // Find matched Italian voice for dialogue panel sequential playback
+  const [allVoices, setAllVoices] = useState<SpeechSynthesisVoice[]>([]);
+  useEffect(() => {
+    const load = () => setAllVoices(window.speechSynthesis.getVoices());
+    load();
+    window.speechSynthesis.onvoiceschanged = load;
+    return () => { window.speechSynthesis.onvoiceschanged = null; };
+  }, []);
+  const italianVoice = useMemo(() => {
+    const voiceHints = getVoiceSearch(currentLanguage);
+    return allVoices.find(v =>
+      voiceHints.some(h => v.lang.toLowerCase().startsWith(h) || v.name.toLowerCase().includes(h))
+    ) ?? null;
+  }, [allVoices, currentLanguage]);
+
   const speakIt = useCallback((text: string) => {
     if (!text || !('speechSynthesis' in window)) return;
     window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = speechLang;
-    u.rate = 0.85;
-    window.speechSynthesis.speak(u);
-  }, [speechLang]);
+    setTimeout(() => {
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = speechLang;
+      u.rate = 0.85;
+      if (italianVoice) u.voice = italianVoice;
+      window.speechSynthesis.speak(u);
+    }, 50);
+  }, [speechLang, italianVoice]);
 
   const [editMode, setEditMode] = useState(false);
   const [showDialogue, setShowDialogue] = useState(false);
@@ -788,7 +806,7 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
           </div>
         )}
         {showDialogue && zoneStory && (
-          <ZoneDialoguePanel story={zoneStory} onClose={() => setShowDialogue(false)} speakIt={speakIt} lang={speechLang} />
+          <ZoneDialoguePanel story={zoneStory} onClose={() => setShowDialogue(false)} speakIt={speakIt} lang={speechLang} voice={italianVoice} />
         )}
         {showFillBlank && (
           <FillBlankPanel zoneId={zone.id} onClose={() => setShowFillBlank(false)} />
@@ -1133,11 +1151,12 @@ function WordSpan({ word, saved, onSave }: { word: string; saved: boolean; onSav
 
 // ─────────────────────────────────────────────────────────────────────────────
 
-function ZoneDialoguePanel({ story, onClose, speakIt, lang }: {
+function ZoneDialoguePanel({ story, onClose, speakIt, lang, voice }: {
   story: import('../data/zone-stories').ZoneStory;
   onClose: () => void;
   speakIt: (text: string) => void;
   lang: string;
+  voice: SpeechSynthesisVoice | null;
 }) {
   const [revealed, setReveal] = useState<Set<number>>(new Set());
   const [playing, setPlaying] = useState(false);
@@ -1177,6 +1196,7 @@ function ZoneDialoguePanel({ story, onClose, speakIt, lang }: {
 
   const playFrom = useCallback((startIdx: number) => {
     if (!('speechSynthesis' in window)) return;
+    // voice captured via closure from prop
     playRef.current = true;
     setPlaying(true);
 
@@ -1194,6 +1214,7 @@ function ZoneDialoguePanel({ story, onClose, speakIt, lang }: {
       const u = new SpeechSynthesisUtterance(story.exchanges[idx].it);
       u.lang = lang;
       u.rate = 0.85;
+      if (voice) u.voice = voice;
       // Chrome/Windows: onend sometimes never fires — fallback timer advances the chain
       const wordCount = story.exchanges[idx].it.split(' ').length;
       const estimatedMs = (wordCount / 2.5) * (1000 / 0.85);
@@ -1210,7 +1231,7 @@ function ZoneDialoguePanel({ story, onClose, speakIt, lang }: {
     };
 
     speakLine(startIdx);
-  }, [story.exchanges, lang]);
+  }, [story.exchanges, lang, voice]);
 
   useEffect(() => () => stopPlay(), [stopPlay]);
 
