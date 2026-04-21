@@ -71,7 +71,7 @@ function useTtsSpeech() {
     }, 50);
   }, [voices, currentLanguage]);
 
-  return { speak, cleanTextForSpeech };
+  return { speak, cleanTextForSpeech, matchedVoiceName: voices.find(v => getVoiceSearch(currentLanguage).some(h => v.lang.toLowerCase().startsWith(h) || v.name.toLowerCase().includes(h)))?.name ?? null };
 }
 
 export default function RoomPage() {
@@ -86,7 +86,7 @@ export default function RoomPage() {
   const room = roomId ? getRoomById(roomId) : undefined;
   const { getWordProgress, markWordLearned, getRoomMastery } = useProgress();
   const { getWord } = useLanguage();
-  const { speak } = useTtsSpeech();
+  const { speak, matchedVoiceName } = useTtsSpeech();
   const { addWord: addToSRS, getCard } = useFSRS();
   const [inDeck, setInDeck] = useState<Record<string, boolean>>({});
 
@@ -146,8 +146,12 @@ export default function RoomPage() {
             <span className="text-palace-text/40 text-xs block">ROOM {currentIndex + 1}</span>
             <span className="font-cinzel text-palace-text">{room.name}</span>
           </div>
-          <div className="w-20 text-right">
+          <div className="w-20 text-right flex flex-col items-end gap-0.5">
             {mastery > 0 && <span className="text-palace-gold font-cinzel">{Math.round(mastery)}%</span>}
+            {matchedVoiceName
+              ? <span className="text-xs text-green-400/70 truncate max-w-[80px]" title={matchedVoiceName}>🔊 {matchedVoiceName.split(' ')[0]}</span>
+              : <span className="text-xs text-red-400/80" title="No Italian voice found — install Italian in Windows Settings">🔇 No IT voice</span>
+            }
           </div>
         </div>
       </nav>
