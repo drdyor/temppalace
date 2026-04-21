@@ -2493,15 +2493,15 @@ export const zoneStories: Record<string, ZoneStory> = {
     zoneName: "Il Bar",
     level: "a2",
     exchanges: [
-      { speaker: "Barista", it: "Buongiorno! Cosa vuole?", en: "Good morning! What would you like?" },
+      { speaker: "Barista", it: "Buongiorno! Cosa vuoi?", en: "Good morning! What would you like?" },
       { speaker: "Tu", it: "Voglio un caffè, per favore.", en: "I'd like a coffee, please." },
-      { speaker: "Barista", it: "Subito. Può sedersi al tavolo.", en: "Right away. You can sit at the table." },
+      { speaker: "Barista", it: "Subito. Puoi sederti al tavolo.", en: "Right away. You can sit at the table." },
       { speaker: "Tu", it: "Posso avere anche un cornetto?", en: "Can I also have a croissant?" },
-      { speaker: "Barista", it: "Certo! Deve aspettare un momento.", en: "Of course! You need to wait a moment." },
+      { speaker: "Barista", it: "Certo! Devi aspettare un momento.", en: "Of course! You need to wait a moment." },
       { speaker: "Tu", it: "Va bene. Devo prendere anche l'acqua.", en: "That's fine. I also need to get some water." },
-      { speaker: "Barista", it: "Eccolo. Desidera altro?", en: "Here you go. Would you like anything else?" },
+      { speaker: "Barista", it: "Eccolo. Vuoi altro?", en: "Here you go. Would you like anything else?" },
       { speaker: "Tu", it: "No, grazie. Posso pagare adesso?", en: "No, thank you. Can I pay now?" },
-      { speaker: "Barista", it: "Certo, deve pagare alla cassa.", en: "Of course, you need to pay at the till." },
+      { speaker: "Barista", it: "Certo, devi pagare alla cassa.", en: "Of course, you need to pay at the till." },
     ]
   },
   "fermata-piazza_a2": {
