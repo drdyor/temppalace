@@ -28,7 +28,7 @@ import { useLanguage } from '../context/LanguageContext';
 import type { TabType, VocabularyItem, Gender, Zone, BranchingScenario, ScenarioNode } from '../types';
 import RoomImage from '../components/RoomImage';
 import { PatternsTab } from '../components/PatternsTab';
-import { getTtsCode, getVoiceSearch, getArticle } from '../lib/language-config';
+import { getTtsCode, getVoiceSearch, getArticle, findBestVoice } from '../lib/language-config';
 
 // Hook for dynamic TTS — reads current language from context
 function useTtsSpeech() {
@@ -57,10 +57,7 @@ function useTtsSpeech() {
     const cleanedText = cleanTextForSpeech(text);
     if (!cleanedText) return;
     const ttsCode = getTtsCode(currentLanguage);
-    const voiceHints = getVoiceSearch(currentLanguage);
-    const matchedVoice = voices.find(v =>
-      voiceHints.some(h => v.lang.toLowerCase().startsWith(h) || v.name.toLowerCase().includes(h))
-    );
+    const matchedVoice = findBestVoice(voices, currentLanguage);
     window.speechSynthesis.cancel();
     // Chrome: cancel() needs a tick before speak() or the new utterance is silenced
     setTimeout(() => {
@@ -518,12 +515,7 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
     window.speechSynthesis.onvoiceschanged = load;
     return () => { window.speechSynthesis.onvoiceschanged = null; };
   }, []);
-  const italianVoice = useMemo(() => {
-    const voiceHints = getVoiceSearch(currentLanguage);
-    return allVoices.find(v =>
-      voiceHints.some(h => v.lang.toLowerCase().startsWith(h) || v.name.toLowerCase().includes(h))
-    ) ?? null;
-  }, [allVoices, currentLanguage]);
+  const italianVoice = useMemo(() => findBestVoice(allVoices, currentLanguage), [allVoices, currentLanguage]);
 
   const speakIt = useCallback((text: string) => {
     if (!text || !('speechSynthesis' in window)) return;

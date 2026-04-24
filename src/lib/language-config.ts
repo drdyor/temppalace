@@ -72,6 +72,39 @@ export function getArticle(gender: 'masculine' | 'feminine' | 'none', lang: Lang
   return '';
 }
 
+/** Find the best TTS voice for a language. Prioritizes lang-matching; name-matching only uses whole words. */
+export function findBestVoice(
+  voices: SpeechSynthesisVoice[],
+  lang: Language
+): SpeechSynthesisVoice | null {
+  const cfg = getLangConfig(lang);
+  const hints = cfg.voiceSearch;
+
+  // 1st pass: lang prefix match (most reliable)
+  for (const v of voices) {
+    const vl = v.lang.toLowerCase();
+    if (hints.some(h => vl.startsWith(h))) {
+      return v;
+    }
+  }
+
+  // 2nd pass: name match with whole-word boundaries for short hints
+  for (const v of voices) {
+    const vn = v.name.toLowerCase();
+    for (const h of hints) {
+      if (h.length >= 4) {
+        if (vn.includes(h)) return v;
+      } else {
+        // Short hint like "it" — require whole word to avoid "Microsoft"
+        const re = new RegExp(`\\b${h}\\b`, 'i');
+        if (re.test(v.name)) return v;
+      }
+    }
+  }
+
+  return null;
+}
+
 // Semantic helpers for learning direction
 // In "target" mode you learn {native} from English.
 // In "inverse" mode you learn English from {native}.
