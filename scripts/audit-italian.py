@@ -170,7 +170,8 @@ def generate_prompts():
     print("\nNext steps:")
     print("  1. Start Ollama: ollama serve")
     print("  2. Run: python scripts/audit-italian.py --batch --model minerva")
-    print("  3. Review results in: audit-results-italian.json")
+    print("  3. Review raw results in: audit-results-italian.json")
+    print("  4. Human-readable report auto-generated in: audits/audit-YYYY-MM-DD-<model>.md")
 
 
 def batch_audit(model: str, delay: float):
@@ -233,6 +234,21 @@ def batch_audit(model: str, delay: float):
         print(f"Errors: {len(errors)}")
         for eid, err in errors:
             print(f"  - {eid}: {err}")
+
+    # Auto-generate Markdown report
+    try:
+        import subprocess
+        report_script = PROJECT_ROOT / "scripts" / "generate_audit_report.py"
+        result = subprocess.run(
+            ["python", str(report_script), str(output_file), "--model", model],
+            capture_output=True, text=True, cwd=str(PROJECT_ROOT)
+        )
+        if result.returncode == 0:
+            print(result.stdout.strip())
+        else:
+            print(f"Report generation warning: {result.stderr.strip()}")
+    except Exception as e:
+        print(f"Note: Could not auto-generate report: {e}")
 
 
 def main():

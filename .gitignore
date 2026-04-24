@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Audit / generated files (root only — tracked reports live in audits/)
+audit-*.json
+audit-*.log
+scripts/test-*.py
+!audits/
