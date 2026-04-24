@@ -1,0 +1,85 @@
+### **Prioritized Recommendations & Critical Gaps**  
+*(Ordered by impact on user experience, technical debt, and scalability)*  
+
+---
+
+### **1. Implement User Accounts (High Priority)**  
+**Why?**  
+- **LocalStorage/IndexedDB is a dealbreaker**: Users lose progress when switching devices, clearing cache, or using incognito mode. This undermines retention and long-term engagement.  
+- **No sharing or collaboration features**: Without accounts, the app cannot support multi-user scenarios (e.g., family learning, teacher-student sync).  
+- **Data ownership and privacy**: Users cannot export/import their data or control storage.  
+
+**Action Steps**:  
+- **Backend integration**: Use Firebase Authentication, Supabase, or a custom backend (Node.js/Express) with PostgreSQL for user data.  
+- **Sync architecture**: Implement real-time syncing of SRS intervals, progress, and preferences via WebSocket or REST API.  
+- **Data migration**: Allow users to import/export data (e.g., CSV/JSON) for portability.  
+
+---
+
+### **2. Fix SRS Interval Tracking Per Direction (High Priority)**  
+**Why?**  
+- **Shared intervals across EN→IT and IT→EN** reduce the effectiveness of spaced repetition. Learning curves differ drastically between directions (e.g., Italian grammar is more complex for English speakers).  
+- **No bidirectional optimization**: Users might over-rehearse easy directions and under-rehearse hard ones.  
+
+**Action Steps**:  
+- **Refactor FSRS logic**: Track intervals separately for each direction (e.g., `enToItIntervals`, `itToEnIntervals`).  
+- **UI feedback**: Add a per-direction progress bar or stats dashboard to show users how their performance varies.  
+
+---
+
+### **3. Add French/Spanish Vocabulary Data (High Priority)**  
+**Why?**  
+- **Infrastructure is ready**, but no content means the app feels incomplete and limits scalability.  
+- **Monetization and user base growth** depend on supporting multiple languages.  
+
+**Action Steps**:  
+- **Leverage existing Italian content**: Use the same room/zone structure to port vocabulary and stories.  
+- **Automate data generation**: Use LLMs (e.g., GPT-4) or open-source tools (e.g., Tatoeba) to generate initial content for French/Spanish.  
+- **Community contributions**: Enable user-submitted vocabulary via a moderation system.  
+
+---
+
+### **4. Optimize Bundle Size (Medium Priority)**  
+**Why?**  
+- **1.2MB is over the recommended limit** for static sites (ideally <1MB). This affects load times on mobile/data-limited users.  
+
+**Action Steps**:  
+- **Tree-shaking**: Ensure unused code (e.g., unused components, libraries) is removed.  
+- **Code splitting**: Use React.lazy() and Suspense for lazy-loading non-critical features (e.g., audit reports).  
+- **Image optimization**: Compress interior images and use WebP formats.  
+
+---
+
+### **5. Fix Direction Toggle Consistency (Medium Priority)**  
+**Why?**  
+- **PatternsTab direction selector is isolated** from the global toggle, causing confusion if users change directions mid-session.  
+
+**Action Steps**:  
+- **Centralize direction state**: Use a global Redux/Context state manager to sync all components (e.g., SRS, stories, patterns).  
+- **UI feedback**: Add a visual indicator (e.g., a toggle switch) in all direction-dependent sections.  
+
+---
+
+### **6. Localize Homepage (Medium Priority)**  
+**Why?**  
+- **Hardcoded Italian subtitle** breaks the illusion of multilingual support and confuses users learning Italian→English.  
+
+**Action Steps**:  
+- **i18n setup**: Use `react-i18next` or `lingui` to manage translations.  
+- **Dynamic subtitle**: Display the target language (e.g., "Learn Italian" or "Learn English") based on the global direction.  
+
+---
+
+### **7. Stress-Test Speak/Gender Modes (Medium Priority)**  
+**Why?**  
+- **Unproven reliability**: Speech recognition and TTS may fail under edge cases (e.g., background noise, non-native accents).  
+
+**Action Steps**:  
+- **Simulate edge cases**: Test with diverse accents, low-quality mics, and background noise.  
+- **Fallback UI**: Add a "Retry" button and error messages for failed speech recognition.  
+
+---
+
+### **8. Backend-Independent Features (Low Priority but Critical for Scalability)**  
+**Why?**  
+- **GitHub Pages is a static-only host**, which limits

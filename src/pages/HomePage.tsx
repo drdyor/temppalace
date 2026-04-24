@@ -3,10 +3,13 @@ import { useLocation } from 'wouter';
 import { ArrowRight, Brain, BookOpen, Map, ListChecks } from 'lucide-react';
 import DirectionToggle from '../components/DirectionToggle';
 import { useFSRS } from '../hooks/useFSRS';
+import { useLanguage } from '../context/LanguageContext';
+import { rooms } from '../data/rooms';
 
 export default function HomePage() {
   const [, setLocation] = useLocation();
   const { getAllCards, getDueCards } = useFSRS();
+  const { targetLabel } = useLanguage();
   const [stats, setStats] = useState<{ total: number; due: number }>({ total: 0, due: 0 });
 
   useEffect(() => {
@@ -29,7 +32,7 @@ export default function HomePage() {
           <h1 className="font-cinzel text-5xl md:text-7xl text-palace-text mb-6">Memory Palace</h1>
           <p className="text-palace-gold text-xl md:text-2xl font-cinzel mb-4">Learn Languages Through Space</p>
           <p className="text-palace-text/70 text-lg mb-8 max-w-lg mx-auto">
-            Master Italian vocabulary by exploring a virtual palace. Each room teaches new words through spatial memory and stories.
+            Master {targetLabel} vocabulary by exploring a virtual palace. Each room teaches new words through spatial memory and stories.
           </p>
 
           <button
@@ -48,7 +51,7 @@ export default function HomePage() {
             <NavTile
               icon={<Map className="w-5 h-5" />}
               title="Rooms"
-              sub="Explore all 18"
+              sub={`Explore all ${rooms.length}`}
               onClick={() => setLocation('/rooms')}
             />
             <NavTile
