@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { useParams, useLocation } from 'wouter';
-import { ArrowLeft, Map, BookOpen, GraduationCap, ClipboardCheck, Volume2, X, Check, Sparkles, MessageCircle, Mic, ChevronRight, Brain, MessagesSquare, Pencil, Trash2, Download, Upload, Loader2, Plus, Play, Square, Bookmark } from 'lucide-react';
+import { ArrowLeft, Map, BookOpen, GraduationCap, ClipboardCheck, Volume2, X, Check, Sparkles, MessageCircle, Mic, ChevronRight, Brain, MessagesSquare, Pencil, Trash2, Download, Upload, Loader2, Plus, Play, Square, Bookmark, Lightbulb } from 'lucide-react';
 import DirectionToggle from '../components/DirectionToggle';
 import { getRoomById, rooms } from '../data/rooms';
 import { expandedPhrases, type ExpandedPhrase } from '../data/conversation-templates';
@@ -1397,7 +1397,48 @@ function ZoneDialoguePanel({ story, onClose, speakIt, lang, voice }: {
         <p className="text-center text-palace-text/30 text-xs mt-6 font-cinzel">
           {revealed.size === story.exchanges.length ? '✓ All translated' : `${story.exchanges.length - revealed.size} lines hidden`}
         </p>
+
+        {/* Cultural Tips */}
+        <CulturalTips story={story} />
       </div>
+    </div>
+  );
+}
+
+function CulturalTips({ story }: { story: import('../data/zone-stories').ZoneStory }) {
+  const [expanded, setExpanded] = useState(false);
+
+  // Simple keyword matching: check if any rule phrases appear in the dialogue
+  const allText = story.exchanges.map(e => e.it.toLowerCase()).join(' ');
+  const matched = universalRules.filter(rule => {
+    return rule.phrases.some(p => allText.includes(p.italian.toLowerCase()))
+      || allText.includes(rule.title.toLowerCase())
+      || rule.category.split(' ').some(cat => allText.includes(cat));
+  }).slice(0, 2);
+
+  if (matched.length === 0) return null;
+
+  return (
+    <div className="mt-6 bg-palace-gold/5 border border-palace-gold/20 rounded-xl overflow-hidden">
+      <button
+        onClick={() => setExpanded(e => !e)}
+        className="w-full flex items-center gap-2 px-4 py-3 text-left"
+      >
+        <Lightbulb className="w-4 h-4 text-palace-gold shrink-0" />
+        <span className="font-cinzel text-sm text-palace-gold">Cultural Tips ({matched.length})</span>
+        <ChevronRight className={`w-4 h-4 text-palace-gold/60 ml-auto transition-transform ${expanded ? 'rotate-90' : ''}`} />
+      </button>
+      {expanded && (
+        <div className="px-4 pb-4 space-y-3">
+          {matched.map(rule => (
+            <div key={rule.id} className="text-sm">
+              <p className="font-cinzel text-palace-text mb-1">{rule.title}</p>
+              <p className="text-palace-text/70">{rule.why}</p>
+              <p className="text-palace-gold/80 mt-1 italic">{rule.solution}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -1581,7 +1622,7 @@ function PracticeTab({ vocabulary, roomId, onMarkLearned }: { vocabulary: Vocabu
   const [showGenderResult, setShowGenderResult] = useState<'correct' | 'incorrect' | null>(null);
   const [speakResult, setSpeakResult] = useState<{ similarity: number; isMatch: boolean; missingWords: string[] } | null>(null);
 
-  const { isListening, transcript, hasSupport, startListening, stopListening } = useSpeechRecognition({
+  const { isListening, transcript, hasSupport, error: speechError, startListening, stopListening } = useSpeechRecognition({
     language: getTtsCode(currentLanguage),
     onResult: (spoken) => {
       const expected = getTargetText(currentWord);
@@ -1590,6 +1631,16 @@ function PracticeTab({ vocabulary, roomId, onMarkLearned }: { vocabulary: Vocabu
       if (result.isMatch) onMarkLearned(roomId, currentWord.id);
     },
   });
+
+  const speechErrorMessage = speechError
+    ? speechError === 'not-allowed'
+      ? 'Microphone access denied. Check browser permissions.'
+      : speechError === 'no-speech'
+        ? 'No speech detected. Try speaking louder or closer.'
+        : speechError === 'network'
+          ? 'Network error. Check your connection.'
+          : `Error: ${speechError}. Tap retry.`
+    : null;
 
   const currentWord = vocabulary[currentIndex];
   if (!currentWord) return null;
@@ -1666,11 +1717,22 @@ function PracticeTab({ vocabulary, roomId, onMarkLearned }: { vocabulary: Vocabu
             <p className="text-palace-text/50 text-sm">Speech recognition is not supported in this browser.</p>
           ) : (
             <>
-              <button onClick={isListening ? stopListening : startListening} className={`w-24 h-24 mx-auto rounded-full flex items-center justify-center transition-all ${isListening ? 'bg-red-500/20 text-red-500 animate-pulse scale-110' : 'bg-palace-gold/20 text-palace-gold hover:bg-palace-gold/30 hover:scale-105'}`}>
+              <button onClick={isListening ? stopListening : startListening} className={`w-24 h-24 mx-auto rounded-full flex items-center justify-center transition-all ${isListening ? 'bg-red-500/20 text-red-500 animate-pulse scale-110' : speechError ? 'bg-red-500/10 text-red-400 hover:bg-red-500/20' : 'bg-palace-gold/20 text-palace-gold hover:bg-palace-gold/30 hover:scale-105'}`}>
                 <Mic className="w-10 h-10" />
               </button>
               {isListening && <p className="text-palace-text/60 text-sm italic">{transcript || 'Listening...'}</p>}
-              {speakResult && !isListening && (
+              {speechErrorMessage && !isListening && (
+                <div className="space-y-2">
+                  <p className="text-red-400 text-sm">{speechErrorMessage}</p>
+                  <button
+                    onClick={startListening}
+                    className="px-4 py-2 rounded-lg border border-palace-gold/40 text-palace-gold hover:bg-palace-gold/10 font-cinzel text-sm"
+                  >
+                    Retry
+                  </button>
+                </div>
+              )}
+              {speakResult && !isListening && !speechError && (
                 <div className={`p-4 rounded-xl ${speakResult.isMatch ? 'bg-green-500/10 text-green-500' : 'bg-yellow-500/10 text-yellow-500'}`}>
                   <p className="text-palace-text/70 text-sm">You said: "{transcript}"</p>
                   <p className="text-palace-text/70 text-sm">Expected: "{getTargetText(currentWord)}"</p>

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { X, Volume2, Sparkles, AlertCircle, CheckCircle, Info, Trophy, TrendingUp } from 'lucide-react';
+import { X, Volume2, Sparkles, AlertCircle, CheckCircle, Info, Trophy, TrendingUp, ArrowLeft } from 'lucide-react';
 import type { BranchingScenario, DialogueNode } from '../data/cultural-fluency';
 import { useDialogueProgress } from '../context/DialogueProgressContext';
 import { useLanguage } from '../context/LanguageContext';
@@ -56,13 +56,30 @@ export default function DialogueScene({ scenario, onClose, onComplete }: Dialogu
     }
   };
 
+  const handleBack = () => {
+    if (history.length === 0) return;
+    const newHistory = [...history];
+    const lastEntry = newHistory.pop();
+    setHistory(newHistory);
+    if (lastEntry) {
+      setCurrentNodeId(lastEntry.node.id);
+    }
+    setIsEnding(false);
+    setShowLesson(false);
+    setCulturalNotes(prev => {
+      // Remove the last cultural note if it was added on this step
+      const lastNote = lastEntry?.choiceText;
+      return prev;
+    });
+  };
+
   const handleChoice = (choiceIndex: number) => {
     const choice = currentNode?.choices?.[choiceIndex];
     if (!choice) return;
-    
+
     playSound('click');
     setIsTransitioning(true);
-    
+
     // Add current node to history with animation
     setHistory(prev => [...prev, { node: currentNode, choiceText: choice.text }]);
 
@@ -194,7 +211,16 @@ export default function DialogueScene({ scenario, onClose, onComplete }: Dialogu
             <span className="text-palace-text font-cinzel">Reputation: {progress.reputationScore}%</span>
           </div>
           <span className="text-palace-text/50 text-sm">{scenario.timeContext}</span>
-          <button 
+          {history.length > 0 && (
+            <button
+              onClick={handleBack}
+              className="p-2 hover:bg-palace-text/10 rounded-full transition-colors"
+              title="Go back"
+            >
+              <ArrowLeft className="w-5 h-5 text-palace-text/70" />
+            </button>
+          )}
+          <button
             onClick={onClose}
             className="p-2 hover:bg-palace-text/10 rounded-full transition-colors"
           >

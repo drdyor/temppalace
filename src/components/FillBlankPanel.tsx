@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { X, ChevronRight, RotateCcw } from 'lucide-react';
+import { X, ChevronRight, RotateCcw, Check, XIcon } from 'lucide-react';
 import fillData from '../data/fill-stories.json';
 
 interface FillSentence {
@@ -30,6 +30,21 @@ function shuffle<T>(arr: T[]): T[] {
 function blankSentence(it: string, word: string): string {
   const re = new RegExp(`\\b${word}\\b`, 'i');
   return it.replace(re, '___');
+}
+
+function revealSentence(it: string, word: string): JSX.Element {
+  const parts = it.split(new RegExp(`(\\b${word}\\b)`, 'i'));
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.toLowerCase() === word.toLowerCase() ? (
+          <span key={i} className="text-palace-gold font-bold">{part}</span>
+        ) : (
+          <span key={i}>{part}</span>
+        )
+      )}
+    </>
+  );
 }
 
 interface FillBlankPanelProps {
@@ -130,7 +145,7 @@ export function FillBlankPanel({ zoneId, onClose }: FillBlankPanelProps) {
             {/* Italian with blank */}
             <div className="bg-palace-text/5 border border-palace-text/10 rounded-2xl p-5 mb-6">
               <p className="text-palace-text text-lg font-medium leading-relaxed">
-                {blankSentence(sentence.it, sentence.handWord)}
+                {chosen ? revealSentence(sentence.it, sentence.handWord) : blankSentence(sentence.it, sentence.handWord)}
               </p>
             </div>
 
@@ -140,17 +155,19 @@ export function FillBlankPanel({ zoneId, onClose }: FillBlankPanelProps) {
                 const isCorrect = opt === sentence.handWord;
                 const isChosen = opt === chosen;
                 let cls = 'border border-palace-text/20 text-palace-text hover:border-palace-gold/40 hover:text-palace-gold';
+                let icon = null;
                 if (chosen) {
-                  if (isCorrect) cls = 'border-green-500 bg-green-500/10 text-green-400';
-                  else if (isChosen) cls = 'border-red-500 bg-red-500/10 text-red-400';
+                  if (isCorrect) { cls = 'border-green-500 bg-green-500/10 text-green-400'; icon = <Check className="w-4 h-4" />; }
+                  else if (isChosen) { cls = 'border-red-500 bg-red-500/10 text-red-400'; icon = <XIcon className="w-4 h-4" />; }
                   else cls = 'border-palace-text/10 text-palace-text/30';
                 }
                 return (
                   <button
                     key={opt}
                     onClick={() => pick(opt)}
-                    className={`px-4 py-3 rounded-xl font-cinzel text-sm transition-all ${cls}`}
+                    className={`px-4 py-3 rounded-xl font-cinzel text-sm transition-all flex items-center justify-center gap-2 ${cls}`}
                   >
+                    {icon}
                     {opt}
                   </button>
                 );

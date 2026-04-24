@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import type { WordProgress, RoomProgress } from '../types';
+import { useLanguage } from './LanguageContext';
 
 interface ProgressContextType {
   progress: Record<string, RoomProgress>;
@@ -12,25 +13,46 @@ interface ProgressContextType {
 
 const ProgressContext = createContext<ProgressContextType | undefined>(undefined);
 
-const STORAGE_KEY = 'memory-palace-progress';
+function getStorageKey(direction: string): string {
+  return `memory-palace-progress-${direction}`;
+}
 
 export function ProgressProvider({ children }: { children: React.ReactNode }) {
-  const [progress, setProgress] = useState<Record<string, RoomProgress>>({});
+  const { learningDirection, currentLanguage } = useLanguage();
 
+  const getDirection = useCallback((): string => {
+    const code = currentLanguage === 'french' ? 'fr'
+      : currentLanguage === 'spanish' ? 'es'
+      : 'it';
+    return learningDirection === 'inverse' ? `${code}-en` : `en-${code}`;
+  }, [currentLanguage, learningDirection]);
+
+  const [progress, setProgress] = useState<Record<string, RoomProgress>>({});
+  const [loadedDirection, setLoadedDirection] = useState<string>('');
+
+  // Load progress when direction changes
   useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
+    const dir = getDirection();
+    const saved = localStorage.getItem(getStorageKey(dir));
     if (saved) {
       try {
         setProgress(JSON.parse(saved));
       } catch {
         console.error('Failed to load progress');
+        setProgress({});
       }
+    } else {
+      setProgress({});
     }
-  }, []);
+    setLoadedDirection(dir);
+  }, [getDirection]);
 
+  // Persist progress whenever it changes (but only for the loaded direction)
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
-  }, [progress]);
+    if (loadedDirection) {
+      localStorage.setItem(getStorageKey(loadedDirection), JSON.stringify(progress));
+    }
+  }, [progress, loadedDirection]);
 
   const getOrCreateRoomProgress = (roomId: string): RoomProgress => {
     if (!progress[roomId]) {
@@ -53,17 +75,16 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         attempts: 0,
         correct: 0,
       };
-      
+
       roomProgress.words[wordId] = {
         ...wordProgress,
         learned: true,
         level: Math.max(wordProgress.level, 1),
       };
-      
-      // Recalculate mastery
+
       const words = Object.values(roomProgress.words);
       roomProgress.mastery = words.filter(w => w.learned).length / Math.max(words.length, 1) * 100;
-      
+
       return { ...prev, [roomId]: roomProgress };
     });
   };
@@ -78,15 +99,15 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         attempts: 0,
         correct: 0,
       };
-      
-      const intervals = [1, 3, 7, 14, 30]; // SRS intervals in days
-      const newLevel = correct 
+
+      const intervals = [1, 3, 7, 14, 30];
+      const newLevel = correct
         ? Math.min(wordProgress.level + 1, 4)
         : Math.max(wordProgress.level - 1, 0);
-      
+
       const nextReview = new Date();
       nextReview.setDate(nextReview.getDate() + intervals[newLevel]);
-      
+
       roomProgress.words[wordId] = {
         ...wordProgress,
         learned: correct || wordProgress.learned,
@@ -95,10 +116,10 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         attempts: wordProgress.attempts + 1,
         correct: wordProgress.correct + (correct ? 1 : 0),
       };
-      
+
       const words = Object.values(roomProgress.words);
       roomProgress.mastery = words.filter(w => w.learned).length / Math.max(words.length, 1) * 100;
-      
+
       return { ...prev, [roomId]: roomProgress };
     });
   };

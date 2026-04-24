@@ -2,23 +2,34 @@ import { createEmptyCard, fsrs, Rating, type Card, type Grade } from 'ts-fsrs';
 import { openDB, type IDBPDatabase } from 'idb';
 import { useCallback } from 'react';
 
-interface StoredCard extends Card {
+export interface StoredCard extends Card {
+  id: string;       // composite key: `${wordId}:${direction}`
   wordId: string;
+  direction: string; // e.g. 'en-it', 'it-en'
   addedAt: number;
 }
 
-const DB_NAME = 'vocab-srs';
+const DB_NAME = 'vocab-srs-v2';
 const STORE = 'cards';
 
 let dbPromise: Promise<IDBPDatabase> | null = null;
+
+/** Read current learning direction from localStorage (same keys as LanguageContext) */
+function getCurrentDirection(): string {
+  const dir = localStorage.getItem('memory-palace-learning-direction') as 'target' | 'inverse' | null;
+  const lang = localStorage.getItem('memory-palace-language') as 'italian' | 'french' | 'spanish' | null;
+  const code = lang === 'french' ? 'fr' : lang === 'spanish' ? 'es' : 'it';
+  return dir === 'inverse' ? `${code}-en` : `en-${code}`;
+}
 
 function getDB() {
   if (!dbPromise) {
     dbPromise = openDB(DB_NAME, 1, {
       upgrade(db) {
         if (!db.objectStoreNames.contains(STORE)) {
-          const store = db.createObjectStore(STORE, { keyPath: 'wordId' });
+          const store = db.createObjectStore(STORE, { keyPath: 'id' });
           store.createIndex('due', 'due');
+          store.createIndex('direction', 'direction');
         }
       },
     });
@@ -29,29 +40,36 @@ function getDB() {
 const scheduler = fsrs();
 
 export function useFSRS() {
-  const getCard = useCallback(async (wordId: string): Promise<StoredCard | null> => {
+  const getCard = useCallback(async (wordId: string, direction?: string): Promise<StoredCard | null> => {
     const db = await getDB();
-    return (await db.get(STORE, wordId)) ?? null;
+    const dir = direction ?? getCurrentDirection();
+    return (await db.get(STORE, `${wordId}:${dir}`)) ?? null;
   }, []);
 
-  const addWord = useCallback(async (wordId: string): Promise<StoredCard> => {
+  const addWord = useCallback(async (wordId: string, direction?: string): Promise<StoredCard> => {
     const db = await getDB();
-    const existing = await db.get(STORE, wordId);
-    if (existing) return existing;
+    const dir = direction ?? getCurrentDirection();
+    const id = `${wordId}:${dir}`;
+    const existing = await db.get(STORE, id);
+    if (existing) return existing as StoredCard;
     const card = createEmptyCard();
-    const stored: StoredCard = { ...card, wordId, addedAt: Date.now() };
+    const stored: StoredCard = { ...card, id, wordId, direction: dir, addedAt: Date.now() };
     await db.put(STORE, stored);
     return stored;
   }, []);
 
-  const reviewCard = useCallback(async (wordId: string, rating: Grade): Promise<StoredCard> => {
+  const reviewCard = useCallback(async (wordId: string, rating: Grade, direction?: string): Promise<StoredCard> => {
     const db = await getDB();
-    const existing = (await db.get(STORE, wordId)) as StoredCard | undefined;
+    const dir = direction ?? getCurrentDirection();
+    const id = `${wordId}:${dir}`;
+    const existing = (await db.get(STORE, id)) as StoredCard | undefined;
     const base: Card = existing ?? createEmptyCard();
     const { card } = scheduler.next(base, new Date(), rating);
     const stored: StoredCard = {
       ...card,
+      id,
       wordId,
+      direction: dir,
       addedAt: existing?.addedAt ?? Date.now(),
     };
     await db.put(STORE, stored);
@@ -59,27 +77,32 @@ export function useFSRS() {
   }, []);
 
   const getDueCards = useCallback(
-    async (wordIds?: string[], now: Date = new Date()): Promise<StoredCard[]> => {
+    async (wordIds?: string[], now: Date = new Date(), direction?: string): Promise<StoredCard[]> => {
       const db = await getDB();
+      const dir = direction ?? getCurrentDirection();
       const all = (await db.getAll(STORE)) as StoredCard[];
-      const filtered = wordIds ? all.filter((c) => wordIds.includes(c.wordId)) : all;
-      return filtered.filter((c) => new Date(c.due) <= now);
+      return all
+        .filter((c) => c.direction === dir)
+        .filter((c) => (wordIds ? wordIds.includes(c.wordId) : true))
+        .filter((c) => new Date(c.due) <= now);
     },
     []
   );
 
-  const getAllCards = useCallback(async (): Promise<StoredCard[]> => {
+  const getAllCards = useCallback(async (direction?: string): Promise<StoredCard[]> => {
     const db = await getDB();
-    return (await db.getAll(STORE)) as StoredCard[];
+    const dir = direction ?? getCurrentDirection();
+    const all = (await db.getAll(STORE)) as StoredCard[];
+    return all.filter((c) => c.direction === dir);
   }, []);
 
-  const removeCard = useCallback(async (wordId: string) => {
+  const removeCard = useCallback(async (wordId: string, direction?: string) => {
     const db = await getDB();
-    await db.delete(STORE, wordId);
+    const dir = direction ?? getCurrentDirection();
+    await db.delete(STORE, `${wordId}:${dir}`);
   }, []);
 
   return { getCard, addWord, reviewCard, getDueCards, getAllCards, removeCard };
 }
 
 export { Rating };
-export type { StoredCard };

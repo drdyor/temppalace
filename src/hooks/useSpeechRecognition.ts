@@ -34,6 +34,7 @@ export function useSpeechRecognition(options: UseSpeechRecognitionOptions = {}) 
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState('');
   const [hasSupport, setHasSupport] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const recognitionRef = useRef<any>(null);
 
   useEffect(() => {
@@ -59,6 +60,7 @@ export function useSpeechRecognition(options: UseSpeechRecognitionOptions = {}) 
       };
 
       recognitionRef.current.onerror = (event: SpeechRecognitionErrorEvent) => {
+        setError(event.error);
         onError?.(event.error);
         setIsListening(false);
       };
@@ -82,6 +84,7 @@ export function useSpeechRecognition(options: UseSpeechRecognitionOptions = {}) 
   const startListening = useCallback(() => {
     if (recognitionRef.current) {
       setTranscript('');
+      setError(null);
       setIsListening(true);
       try {
         recognitionRef.current.start();
@@ -106,6 +109,7 @@ export function useSpeechRecognition(options: UseSpeechRecognitionOptions = {}) 
     isListening,
     transcript,
     hasSupport,
+    error,
     startListening,
     stopListening,
   };
