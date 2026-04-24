@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'wouter';
 import { ArrowRight, Brain, BookOpen, Map, ListChecks } from 'lucide-react';
+import DirectionToggle from '../components/DirectionToggle';
 import { useFSRS } from '../hooks/useFSRS';
 
 export default function HomePage() {
@@ -38,6 +39,10 @@ export default function HomePage() {
             Enter the Palace
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
+
+          <div className="mt-4 flex justify-center">
+            <DirectionToggle />
+          </div>
 
           <div className="mt-10 grid sm:grid-cols-3 gap-3 max-w-xl mx-auto">
             <NavTile

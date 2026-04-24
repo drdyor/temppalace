@@ -1,5 +1,6 @@
 import { useLocation } from 'wouter';
 import { ArrowLeft, ChevronRight } from 'lucide-react';
+import DirectionToggle from '../components/DirectionToggle';
 import { rooms } from '../data/rooms';
 import RoomImage from '../components/RoomImage';
 import { useLanguage } from '../context/LanguageContext';
@@ -25,7 +26,7 @@ export default function RoomListPage() {
           
           <h1 className="font-cinzel text-xl text-palace-text">The Palace</h1>
           
-          {/* Language Switcher */}
+          {/* Language Switcher + Direction */}
           <div className="flex items-center gap-2">
             {availableLanguages.map(lang => (
               <button
@@ -40,6 +41,7 @@ export default function RoomListPage() {
                 {lang.flag}
               </button>
             ))}
+            <DirectionToggle compact />
           </div>
         </div>
       </nav>

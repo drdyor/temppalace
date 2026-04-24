@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { useParams, useLocation } from 'wouter';
 import { ArrowLeft, Map, BookOpen, GraduationCap, ClipboardCheck, Volume2, X, Check, Sparkles, MessageCircle, Mic, ChevronRight, Brain, MessagesSquare, Pencil, Trash2, Download, Upload, Loader2, Plus, Play, Square, Bookmark } from 'lucide-react';
+import DirectionToggle from '../components/DirectionToggle';
 import { getRoomById, rooms } from '../data/rooms';
 import { expandedPhrases, type ExpandedPhrase } from '../data/conversation-templates';
 import { getZoneStory, type LanguageLevel } from '../data/zone-stories';
@@ -147,12 +148,15 @@ export default function RoomPage() {
             <span className="text-palace-text/40 text-xs block">ROOM {currentIndex + 1}</span>
             <span className="font-cinzel text-palace-text">{room.name}</span>
           </div>
-          <div className="w-20 text-right flex flex-col items-end gap-0.5">
-            {mastery > 0 && <span className="text-palace-gold font-cinzel">{Math.round(mastery)}%</span>}
-            {matchedVoiceName
-              ? <span className="text-xs text-green-400/70 truncate max-w-[80px]" title={matchedVoiceName}>🔊 {matchedVoiceName.split(' ')[0]}</span>
-              : <span className="text-xs text-red-400/80" title="No Italian voice found — install Italian in Windows Settings">🔇 No IT voice</span>
-            }
+          <div className="flex items-center gap-3">
+            <DirectionToggle compact />
+            <div className="w-20 text-right flex flex-col items-end gap-0.5">
+              {mastery > 0 && <span className="text-palace-gold font-cinzel">{Math.round(mastery)}%</span>}
+              {matchedVoiceName
+                ? <span className="text-xs text-green-400/70 truncate max-w-[80px]" title={matchedVoiceName}>🔊 {matchedVoiceName.split(' ')[0]}</span>
+                : <span className="text-xs text-red-400/80" title="No Italian voice found — install Italian in Windows Settings">🔇 No IT voice</span>
+              }
+            </div>
           </div>
         </div>
       </nav>
@@ -1569,8 +1573,9 @@ function StoriesTab({ stories, speak }: { stories: typeof import('../data/storie
 // (keeping the same implementation as before)
 
 function PracticeTab({ vocabulary, roomId, onMarkLearned }: { vocabulary: VocabularyItem[]; roomId: string; onMarkLearned: (_roomId: string, wordId: string) => void }) {
-  const { currentLanguage, targetLabel, sourceLabel, getTargetText, getSourceText } = useLanguage();
+  const { currentLanguage, targetLabel, sourceLabel, getTargetText, getSourceText, learningDirection } = useLanguage();
   const [mode, setMode] = useState<'flashcard' | 'gender' | 'speak'>('flashcard');
+  const isTargetMode = learningDirection === 'target';
   const [currentIndex, setCurrentIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [showGenderResult, setShowGenderResult] = useState<'correct' | 'incorrect' | null>(null);
@@ -1579,7 +1584,8 @@ function PracticeTab({ vocabulary, roomId, onMarkLearned }: { vocabulary: Vocabu
   const { isListening, transcript, hasSupport, startListening, stopListening } = useSpeechRecognition({
     language: getTtsCode(currentLanguage),
     onResult: (spoken) => {
-      const result = compareSpoken(spoken, currentWord.native);
+      const expected = getTargetText(currentWord);
+      const result = compareSpoken(spoken, expected);
       setSpeakResult(result);
       if (result.isMatch) onMarkLearned(roomId, currentWord.id);
     },
@@ -1607,8 +1613,8 @@ function PracticeTab({ vocabulary, roomId, onMarkLearned }: { vocabulary: Vocabu
   return (
     <div className="space-y-6">
       <div className="flex justify-center gap-2 flex-wrap">
-        {['flashcard', 'gender', 'speak'].map(m => (
-          <button key={m} onClick={() => setMode(m as typeof mode)} className={`px-4 py-2 rounded-full font-cinzel text-sm ${mode === m ? 'bg-palace-gold text-palace-bg' : 'text-palace-text/70'}`}>
+        {(['flashcard', isTargetMode ? 'gender' : null, 'speak'].filter(Boolean) as typeof mode[]).map(m => (
+          <button key={m} onClick={() => setMode(m)} className={`px-4 py-2 rounded-full font-cinzel text-sm ${mode === m ? 'bg-palace-gold text-palace-bg' : 'text-palace-text/70'}`}>
             {m === 'flashcard' ? 'Flashcards' : m === 'gender' ? 'Gender Practice' : 'Speak It'}
           </button>
         ))}
@@ -1636,8 +1642,8 @@ function PracticeTab({ vocabulary, roomId, onMarkLearned }: { vocabulary: Vocabu
 
       {mode === 'gender' && (
         <div className="max-w-md mx-auto text-center">
-          <h3 className="font-cinzel text-3xl text-palace-text mb-8">{currentWord.native}</h3>
-          <p className="text-palace-text/50 mb-8">What is the gender?</p>
+          <h3 className="font-cinzel text-3xl text-palace-text mb-8">{getSourceText(currentWord)}</h3>
+          <p className="text-palace-text/50 mb-8">What is the gender of "{getTargetText(currentWord)}"?</p>
           <div className="flex gap-4 justify-center">
             <button onClick={() => checkGender('masculine')} className="px-8 py-4 bg-palace-blue text-white rounded-full font-cinzel text-lg hover:opacity-90">♂ {getArticle('masculine', currentLanguage)} (masculine)</button>
             <button onClick={() => checkGender('feminine')} className="px-8 py-4 bg-palace-pink text-white rounded-full font-cinzel text-lg hover:opacity-90">♀ {getArticle('feminine', currentLanguage)} (feminine)</button>
@@ -1654,7 +1660,7 @@ function PracticeTab({ vocabulary, roomId, onMarkLearned }: { vocabulary: Vocabu
         <div className="max-w-md mx-auto text-center space-y-6">
           <div>
             <span className="text-palace-text/50 text-sm block mb-2">Say this in {targetLabel}:</span>
-            <h3 className="font-cinzel text-2xl text-palace-text">{currentWord.english}</h3>
+            <h3 className="font-cinzel text-2xl text-palace-text">{getSourceText(currentWord)}</h3>
           </div>
           {!hasSupport ? (
             <p className="text-palace-text/50 text-sm">Speech recognition is not supported in this browser.</p>
@@ -1667,7 +1673,7 @@ function PracticeTab({ vocabulary, roomId, onMarkLearned }: { vocabulary: Vocabu
               {speakResult && !isListening && (
                 <div className={`p-4 rounded-xl ${speakResult.isMatch ? 'bg-green-500/10 text-green-500' : 'bg-yellow-500/10 text-yellow-500'}`}>
                   <p className="text-palace-text/70 text-sm">You said: "{transcript}"</p>
-                  <p className="text-palace-text/70 text-sm">Expected: "{currentWord.native}"</p>
+                  <p className="text-palace-text/70 text-sm">Expected: "{getTargetText(currentWord)}"</p>
                 </div>
               )}
             </>
