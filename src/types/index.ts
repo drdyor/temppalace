@@ -39,6 +39,7 @@ export interface Zone {
   width: number;
   height: number;
   interiorImage?: string;
+  interiorImageAlt?: string; // alternative image (e.g. Kimi-generated) for side-by-side review
   interiorVocab?: Array<{
     wordId: string;
     x: number;
