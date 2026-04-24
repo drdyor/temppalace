@@ -53,7 +53,7 @@ export function FillBlankPanel({ zoneId, onClose }: FillBlankPanelProps) {
 
   if (!story) {
     return (
-      <div className="fixed inset-0 z-60 bg-palace-bg/98 backdrop-blur-md flex items-center justify-center p-4">
+      <div className="fixed inset-0 z-[60] bg-palace-bg backdrop-blur-md flex items-center justify-center p-4">
         <div className="text-palace-text/50 font-cinzel text-center">
           <p>No practice available for this zone yet.</p>
           <button onClick={onClose} className="mt-4 px-4 py-2 border border-palace-text/20 rounded-lg hover:text-palace-gold">Close</button>
@@ -85,7 +85,7 @@ export function FillBlankPanel({ zoneId, onClose }: FillBlankPanelProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-60 bg-palace-bg/98 backdrop-blur-md overflow-y-auto p-4">
+    <div className="fixed inset-0 z-[60] bg-palace-bg backdrop-blur-md overflow-y-auto p-4">
       <div className="max-w-2xl mx-auto">
         <div className="flex items-center justify-between mb-6">
           <div>

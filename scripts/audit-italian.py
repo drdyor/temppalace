@@ -200,7 +200,7 @@ def batch_audit(model: str, delay: float):
                 "stream": False,
                 "options": {"temperature": 0.3, "num_predict": 800},
             }
-            resp = requests.post(OLLAMA_URL, json=payload, timeout=120)
+            resp = requests.post(OLLAMA_URL, json=payload, timeout=600)
             resp.raise_for_status()
             result = resp.json()["response"].strip()
             

@@ -800,7 +800,7 @@ function SubroomOverlay({ zone, room, roomVocab, onClose, onSelectWord, getGende
           </div>
         )}
         {showPractice && (
-          <div className="fixed inset-0 z-60 bg-palace-bg/98 backdrop-blur-md overflow-y-auto p-4">
+          <div className="fixed inset-0 z-[60] bg-palace-bg backdrop-blur-md overflow-y-auto p-4">
             <div className="max-w-2xl mx-auto flex justify-end mb-2">
               <button
                 onClick={() => setShowPractice(false)}
@@ -1244,7 +1244,7 @@ function ZoneDialoguePanel({ story, onClose, speakIt, lang, voice }: {
   useEffect(() => () => stopPlay(), [stopPlay]);
 
   return (
-    <div className="fixed inset-0 z-60 bg-palace-bg/98 backdrop-blur-md overflow-y-auto p-4">
+    <div className="fixed inset-0 z-[60] bg-palace-bg backdrop-blur-md overflow-y-auto p-4">
       <div className="max-w-2xl mx-auto">
         <div className="flex items-center justify-between mb-4">
           <div>
@@ -1302,7 +1302,7 @@ function ZoneDialoguePanel({ story, onClose, speakIt, lang, voice }: {
 
         {/* Save flash */}
         {saveFlash && (
-          <div className="fixed top-6 left-1/2 -translate-x-1/2 bg-palace-gold text-palace-bg px-4 py-2 rounded-full font-cinzel text-sm z-70 pointer-events-none">
+          <div className="fixed top-6 left-1/2 -translate-x-1/2 bg-palace-gold text-palace-bg px-4 py-2 rounded-full font-cinzel text-sm z-[70] pointer-events-none">
             Saved: {saveFlash}
           </div>
         )}
