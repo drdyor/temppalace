@@ -26,6 +26,7 @@ import { useFSRS } from '../hooks/useFSRS';
 import { useLanguage } from '../context/LanguageContext';
 import type { TabType, VocabularyItem, Gender, Zone, BranchingScenario, ScenarioNode } from '../types';
 import RoomImage from '../components/RoomImage';
+import { PatternsTab } from '../components/PatternsTab';
 import { getTtsCode, getVoiceSearch, getArticle } from '../lib/language-config';
 
 // Hook for dynamic TTS — reads current language from context
@@ -164,6 +165,7 @@ export default function RoomPage() {
             { id: 'learn', label: 'Learn', icon: BookOpen },
             { id: 'stories', label: 'Stories', icon: BookOpen },
             { id: 'practice', label: 'Practice', icon: GraduationCap },
+            { id: 'patterns', label: 'Patterns', icon: Brain },
             { id: 'dialogue', label: 'Dialogue', icon: MessageCircle },
             { id: 'culture', label: 'Culture', icon: Sparkles },
             { id: 'test', label: 'Test', icon: ClipboardCheck },
@@ -209,6 +211,8 @@ export default function RoomPage() {
           {activeTab === 'culture' && <CultureTab speak={speak} />}
 
           {activeTab === 'test' && <TestTab vocabulary={roomVocab} />}
+
+          {activeTab === 'patterns' && <PatternsTab />}
 
           {activeTab === 'dialogue' && (
             <DialogueTab roomScenarios={roomScenarios} activeScenario={activeScenario} currentNode={currentNode} onStartScenario={startScenario} onChoice={(nextNodeId) => setCurrentNodeId(nextNodeId)} onClose={() => { setActiveScenario(null); setCurrentNodeId(''); }} speak={speak} />
