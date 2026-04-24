@@ -297,7 +297,7 @@ export const thinkLikeEnFr: ThinkLikeLesson[] = [
     youThink: "Je suis d'accord → I am agree",
     youSay: 'I am agree.',
     nativeSay: 'I agree.',
-    why: "French uses ETRE + d'accord: "Je suis d'accord." English uses the verb AGREE directly.",
+    why: "French uses ETRE + d'accord: 'Je suis d'accord.' English uses the verb AGREE directly.",
     tip: 'AGREE is a verb. No "to be."',
     parallels: [
       { lang: 'fr', text: "Je suis d'accord." },

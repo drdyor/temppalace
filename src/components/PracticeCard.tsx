@@ -54,6 +54,7 @@ export function PracticeCard({ scenarios, sourceLang, targetLang, onComplete }: 
     setSelectedWrong(false);
     setShuffled(true);
   }, []);
+  void handleRestart; // reserved for future UI
 
   if (!scenario) {
     return (
@@ -109,9 +110,10 @@ export function PracticeCard({ scenarios, sourceLang, targetLang, onComplete }: 
         <div className="space-y-3">
           {options.map((opt, i) => {
             const isRevealed = answerState !== 'idle';
-            const isSelected =
+            const _isSelected =
               (answerState === 'correct' && opt.correct) ||
               (answerState === 'wrong' && !opt.correct && selectedWrong);
+            void _isSelected;
 
             let btnClass =
               'w-full text-left px-4 py-3 rounded-xl border transition-all duration-200 text-sm leading-relaxed ';
