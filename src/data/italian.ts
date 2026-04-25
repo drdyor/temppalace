@@ -1,6 +1,7 @@
 // TODO(LANG-VELCRO): Italian-only content. Create parallel files for French/Spanish.
 import type { LanguageData, NarrativeParagraph } from '../types';
 import { italianVocabulary } from './italian-generated';
+import { schoolItalianVocabulary } from './school';
 
 // Rich content additions (examples, mnemonics, etc.) for key words
 export const italianRichContent: Record<string, { 
@@ -480,13 +481,19 @@ export const italianNarratives: Record<string, NarrativeParagraph[]> = {
   ],
 };
 
+// Merge school vocabulary (English-source A1 words with Italian translations when available)
+export const mergedItalianVocabulary = {
+  ...italianVocabulary,
+  ...schoolItalianVocabulary,
+};
+
 // Export as LanguageData object
 export const italianData: LanguageData = {
   code: 'italian',
   name: 'Italian',
   nativeName: 'Italiano',
   flag: '🇮🇹',
-  vocabulary: italianVocabulary,
+  vocabulary: mergedItalianVocabulary,
   narratives: italianNarratives,
 };
 

@@ -1,7 +1,12 @@
 // Room structure - language agnostic
-// All 18 rooms from the original camera-cafe-learner
+// All 18 rooms from the original camera-cafe-learner + School Palace rooms
 
 import type { Room } from '../types';
+import {
+  classroomRoom, playgroundRoom, lunchHallRoom, schoolNurseRoom, schoolBathroomRoom, hallwayLockerRoom,
+  schoolLibraryRoom, gymRoom, musicRoomRoom, scienceLabRoom, computerRoomRoom,
+  principalOfficeRoom, lostPropertyRoom, schoolBusRoom,
+} from './school';
 
 export const rooms: Room[] = [
   {
@@ -512,6 +517,21 @@ export const rooms: Room[] = [
       { id: 'mesi-grammar', title: 'Months & Seasons', explanation: 'Months are lowercase. Use "in" before months and seasons.', example: 'In gennaio fa freddo. In estate fa caldo.', color: '#10B981' },
     ],
   },
+  // ── School Palace rooms ────────────────────────────────────────────────
+  classroomRoom,
+  playgroundRoom,
+  lunchHallRoom,
+  schoolNurseRoom,
+  schoolBathroomRoom,
+  hallwayLockerRoom,
+  schoolLibraryRoom,
+  gymRoom,
+  musicRoomRoom,
+  scienceLabRoom,
+  computerRoomRoom,
+  principalOfficeRoom,
+  lostPropertyRoom,
+  schoolBusRoom,
 ];
 
 export const getRoomById = (id: string): Room | undefined => {
@@ -544,6 +564,20 @@ export const getAdjacentRooms = (id: string): Room[] => {
     'doctor': ['bathroom', 'supermarket'],
     'piazza': ['entrance-hall', 'cafe', 'transport'],
     'calendario': ['library', 'entrance-hall'],
+    'classroom': ['library', 'entrance-hall', 'playground', 'lunch-hall'],
+    'playground': ['garden', 'classroom'],
+    'lunch-hall': ['kitchen', 'classroom'],
+    'school-nurse': ['classroom', 'bathroom'],
+    'school-bathroom': ['classroom', 'school-nurse'],
+    'hallway-locker': ['classroom', 'entrance-hall', 'school-bathroom'],
+    'school-library': ['classroom', 'hallway-locker'],
+    'gym': ['playground', 'hallway-locker'],
+    'music-room': ['classroom', 'hallway-locker'],
+    'science-lab': ['classroom', 'school-library'],
+    'computer-room': ['classroom', 'school-library'],
+    'principal-office': ['hallway-locker', 'school-nurse'],
+    'lost-property': ['hallway-locker', 'school-bathroom'],
+    'school-bus': ['entrance-hall', 'hallway-locker'],
   };
   const adjacentIds = adjacencyMap[id] || [];
   return adjacentIds

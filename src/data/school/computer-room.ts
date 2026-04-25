@@ -1,0 +1,197 @@
+// School Palace — Computer Room
+// English source layer (truth layer)
+// A1 level, concrete objects only for image pins
+
+import type { Room } from '../../types';
+
+export const computerRoomRoom: Room = {
+  id: 'computer-room',
+  name: 'Computer Room',
+  subtitle: 'Click & Type',
+  nameNative: 'Aula di Informatica',
+  image: 'rooms/school/computer-room.jpg',
+  description: 'Where you learn to use computers safely and have fun.',
+  grammarFocus: 'technology words & safety rules',
+  vocabularyIds: [
+    'comp-computer', 'comp-screen', 'comp-monitor', 'comp-keyboard', 'comp-mouse',
+    'comp-mousepad', 'comp-cable', 'comp-charger', 'comp-headphone', 'comp-webcam',
+    'comp-printer', 'comp-speaker', 'comp-button', 'comp-port', 'comp-disk',
+    'comp-click', 'comp-double-click', 'comp-type', 'comp-scroll', 'comp-drag',
+    'comp-drop', 'comp-save', 'comp-open', 'comp-close', 'comp-delete',
+    'comp-copy', 'comp-paste', 'comp-print', 'comp-turn-on', 'comp-turn-off',
+    'comp-internet', 'comp-website', 'comp-email', 'comp-password', 'comp-username',
+    'comp-login', 'comp-logout', 'comp-safe', 'comp-danger', 'comp-stranger',
+    'comp-private', 'comp-share', 'comp-friend', 'comp-game', 'comp-video',
+  ],
+  zones: [
+    {
+      id: 'computer-parts',
+      name: 'Computer Parts',
+      nameNative: 'Parti del Computer',
+      description: 'What a computer is made of',
+      icon: '💻',
+      x: 25, y: 30, width: 30, height: 25,
+      interiorImage: 'rooms/school/computer-parts.jpg',
+      interiorVocab: [
+        { wordId: 'comp-computer', x: 20, y: 25 }, { wordId: 'comp-screen', x: 50, y: 20 },
+        { wordId: 'comp-monitor', x: 80, y: 25 }, { wordId: 'comp-keyboard', x: 25, y: 45 },
+        { wordId: 'comp-mouse', x: 55, y: 40 }, { wordId: 'comp-mousepad', x: 80, y: 45 },
+        { wordId: 'comp-cable', x: 15, y: 60 }, { wordId: 'comp-charger', x: 40, y: 60 },
+        { wordId: 'comp-headphone', x: 65, y: 60 }, { wordId: 'comp-webcam', x: 85, y: 60 },
+        { wordId: 'comp-printer', x: 20, y: 80 }, { wordId: 'comp-speaker', x: 45, y: 80 },
+        { wordId: 'comp-button', x: 70, y: 80 }, { wordId: 'comp-port', x: 30, y: 90 },
+        { wordId: 'comp-disk', x: 60, y: 90 },
+      ],
+    },
+    {
+      id: 'using-computer',
+      name: 'Using a Computer',
+      nameNative: 'Usare il Computer',
+      description: 'What you do with it',
+      icon: '⌨️',
+      x: 60, y: 30, width: 30, height: 25,
+      interiorImage: 'rooms/school/computer-using.jpg',
+      interiorVocab: [
+        { wordId: 'comp-click', x: 20, y: 20 }, { wordId: 'comp-double-click', x: 50, y: 20 },
+        { wordId: 'comp-type', x: 80, y: 20 }, { wordId: 'comp-scroll', x: 20, y: 45 },
+        { wordId: 'comp-drag', x: 50, y: 45 }, { wordId: 'comp-drop', x: 80, y: 45 },
+        { wordId: 'comp-save', x: 20, y: 65 }, { wordId: 'comp-open', x: 45, y: 65 },
+        { wordId: 'comp-close', x: 70, y: 65 }, { wordId: 'comp-delete', x: 85, y: 65 },
+        { wordId: 'comp-copy', x: 20, y: 85 }, { wordId: 'comp-paste', x: 45, y: 85 },
+        { wordId: 'comp-print', x: 65, y: 85 }, { wordId: 'comp-turn-on', x: 30, y: 95 },
+        { wordId: 'comp-turn-off', x: 55, y: 95 },
+      ],
+    },
+    {
+      id: 'internet-safety',
+      name: 'Internet & Safety',
+      nameNative: 'Internet e Sicurezza',
+      description: 'Staying safe online',
+      icon: '🛡️',
+      x: 40, y: 60, width: 35, height: 25,
+      interiorImage: 'rooms/school/computer-safety.jpg',
+      interiorVocab: [
+        { wordId: 'comp-internet', x: 20, y: 20 }, { wordId: 'comp-website', x: 50, y: 20 },
+        { wordId: 'comp-email', x: 80, y: 20 }, { wordId: 'comp-password', x: 20, y: 45 },
+        { wordId: 'comp-username', x: 50, y: 45 }, { wordId: 'comp-login', x: 80, y: 45 },
+        { wordId: 'comp-logout', x: 20, y: 65 }, { wordId: 'comp-safe', x: 45, y: 65 },
+        { wordId: 'comp-danger', x: 70, y: 65 }, { wordId: 'comp-stranger', x: 85, y: 65 },
+        { wordId: 'comp-private', x: 20, y: 85 }, { wordId: 'comp-share', x: 45, y: 85 },
+        { wordId: 'comp-friend', x: 65, y: 85 }, { wordId: 'comp-game', x: 35, y: 95 },
+        { wordId: 'comp-video', x: 60, y: 95 },
+      ],
+    },
+  ],
+  grammarPoints: [
+    { id: 'comp-imperatives', title: 'Computer Commands', explanation: 'What to click and type', example: 'Click here. Type your name. Press enter.', color: '#3B82F6' },
+    { id: 'comp-safety', title: 'Online Safety', explanation: 'Rules for the internet', example: 'Do not talk to strangers. Keep your password private.', color: '#EF4444' },
+  ],
+};
+
+export interface SchoolConcept {
+  id: string; emoji?: string;
+  en: { word: string; phrase?: string; context?: string };
+  it?: { word: string; phrase?: string; gender?: 'masculine' | 'feminine' | 'none'; pronunciation?: string; audit?: { status: 'pending' | 'pass' | 'fix' | 'reject'; auditor: string; notes?: string } };
+  fr?: { word: string; phrase?: string; gender?: 'masculine' | 'feminine' | 'none'; pronunciation?: string; audit?: { status: 'pending' | 'pass' | 'fix' | 'reject'; auditor: string; notes?: string } };
+  mt?: { word: string; phrase?: string; audit?: { status: 'pending' | 'pass' | 'fix' | 'reject'; auditor: string; notes?: string } };
+}
+
+export const computerRoomVocabulary: SchoolConcept[] = [
+  { id: 'comp-computer', emoji: '💻', en: { word: 'computer', phrase: 'Turn on the computer.', context: 'Device' } },
+  { id: 'comp-screen', emoji: '🖥️', en: { word: 'screen', phrase: 'Look at the screen.', context: 'Display' } },
+  { id: 'comp-monitor', emoji: '🖥️', en: { word: 'monitor', phrase: 'The monitor is big.', context: 'Display' } },
+  { id: 'comp-keyboard', emoji: '⌨️', en: { word: 'keyboard', phrase: 'Type on the keyboard.', context: 'Input' } },
+  { id: 'comp-mouse', emoji: '🖱️', en: { word: 'mouse', phrase: 'Move the mouse.', context: 'Input' } },
+  { id: 'comp-mousepad', emoji: '🖱️', en: { word: 'mousepad', phrase: 'The mouse is on the pad.', context: 'Surface' } },
+  { id: 'comp-cable', emoji: '🔌', en: { word: 'cable', phrase: 'Plug in the cable.', context: 'Connection' } },
+  { id: 'comp-charger', emoji: '🔋', en: { word: 'charger', phrase: 'The charger is broken.', context: 'Power' } },
+  { id: 'comp-headphone', emoji: '🎧', en: { word: 'headphone', phrase: 'Put on your headphones.', context: 'Audio' } },
+  { id: 'comp-webcam', emoji: '📷', en: { word: 'webcam', phrase: 'Smile at the webcam.', context: 'Camera' } },
+  { id: 'comp-printer', emoji: '🖨️', en: { word: 'printer', phrase: 'Print the page.', context: 'Output' } },
+  { id: 'comp-speaker', emoji: '🔊', en: { word: 'speaker', phrase: 'The speaker is loud.', context: 'Audio' } },
+  { id: 'comp-button', emoji: '🔘', en: { word: 'button', phrase: 'Press the button.', context: 'Control' } },
+  { id: 'comp-port', emoji: '🔌', en: { word: 'port', phrase: 'Plug into the port.', context: 'Connection' } },
+  { id: 'comp-disk', emoji: '💿', en: { word: 'disk', phrase: 'Save to the disk.', context: 'Storage' } },
+
+  { id: 'comp-click', emoji: '👆', en: { word: 'click', phrase: 'Click the mouse.', context: 'Action' } },
+  { id: 'comp-double-click', emoji: '👆', en: { word: 'double-click', phrase: 'Double-click the icon.', context: 'Action' } },
+  { id: 'comp-type', emoji: '⌨️', en: { word: 'type', phrase: 'Type your name.', context: 'Action' } },
+  { id: 'comp-scroll', emoji: '📜', en: { word: 'scroll', phrase: 'Scroll down.', context: 'Action' } },
+  { id: 'comp-drag', emoji: '👆', en: { word: 'drag', phrase: 'Drag the file.', context: 'Action' } },
+  { id: 'comp-drop', emoji: '👇', en: { word: 'drop', phrase: 'Drop it here.', context: 'Action' } },
+  { id: 'comp-save', emoji: '💾', en: { word: 'save', phrase: 'Save your work.', context: 'Action' } },
+  { id: 'comp-open', emoji: '📂', en: { word: 'open', phrase: 'Open the file.', context: 'Action' } },
+  { id: 'comp-close', emoji: '❌', en: { word: 'close', phrase: 'Close the window.', context: 'Action' } },
+  { id: 'comp-delete', emoji: '🗑️', en: { word: 'delete', phrase: 'Delete this.', context: 'Action' } },
+  { id: 'comp-copy', emoji: '📋', en: { word: 'copy', phrase: 'Copy and paste.', context: 'Action' } },
+  { id: 'comp-paste', emoji: '📋', en: { word: 'paste', phrase: 'Paste it here.', context: 'Action' } },
+  { id: 'comp-print', emoji: '🖨️', en: { word: 'print', phrase: 'Print the picture.', context: 'Action' } },
+  { id: 'comp-turn-on', emoji: '🔌', en: { word: 'turn on', phrase: 'Turn on the computer.', context: 'Power' } },
+  { id: 'comp-turn-off', emoji: '⏻️', en: { word: 'turn off', phrase: 'Turn off the monitor.', context: 'Power' } },
+
+  { id: 'comp-internet', emoji: '🌐', en: { word: 'internet', phrase: 'The internet is slow.', context: 'Web' } },
+  { id: 'comp-website', emoji: '🌐', en: { word: 'website', phrase: 'Open the website.', context: 'Page' } },
+  { id: 'comp-email', emoji: '📧', en: { word: 'email', phrase: 'Send an email.', context: 'Message' } },
+  { id: 'comp-password', emoji: '🔑', en: { word: 'password', phrase: 'Do not tell your password.', context: 'Secret' } },
+  { id: 'comp-username', emoji: '👤', en: { word: 'username', phrase: 'Type your username.', context: 'Identity' } },
+  { id: 'comp-login', emoji: '🔓', en: { word: 'login', phrase: 'Login to the site.', context: 'Access' } },
+  { id: 'comp-logout', emoji: '🔒', en: { word: 'logout', phrase: 'Logout when you finish.', context: 'Exit' } },
+  { id: 'comp-safe', emoji: '✅', en: { word: 'safe', phrase: 'This site is safe.', context: 'Security' } },
+  { id: 'comp-danger', emoji: '⚠️', en: { word: 'danger', phrase: 'Danger. Do not click.', context: 'Warning' } },
+  { id: 'comp-stranger', emoji: '🚷', en: { word: 'stranger', phrase: 'Do not talk to strangers.', context: 'Safety' } },
+  { id: 'comp-private', emoji: '🔐', en: { word: 'private', phrase: 'Keep it private.', context: 'Secret' } },
+  { id: 'comp-share', emoji: '📤', en: { word: 'share', phrase: 'Do not share photos.', context: 'Caution' } },
+  { id: 'comp-friend', emoji: '👫', en: { word: 'friend', phrase: 'Only add friends you know.', context: 'Social' } },
+  { id: 'comp-game', emoji: '🎮', en: { word: 'game', phrase: 'Play a learning game.', context: 'Fun' } },
+  { id: 'comp-video', emoji: '🎬', en: { word: 'video', phrase: 'Watch the video.', context: 'Media' } },
+];
+
+export interface SchoolDialogueTurn { speaker: 'teacher' | 'student' | 'peer'; en: string; it?: string; fr?: string; mt?: string; }
+export interface SchoolDialogue { id: string; scenario: string; turns: SchoolDialogueTurn[]; }
+
+export const computerRoomDialogues: SchoolDialogue[] = [
+  { id: 'comp-turn-on', scenario: 'Starting the computer', turns: [
+    { speaker: 'teacher', en: 'Turn on the computer.' },
+    { speaker: 'student', en: 'The screen is black.' },
+    { speaker: 'teacher', en: 'Check the cable.' },
+  ]},
+  { id: 'comp-type-name', scenario: 'Typing practice', turns: [
+    { speaker: 'teacher', en: 'Type your name on the keyboard.' },
+    { speaker: 'student', en: 'How do I save it?' },
+    { speaker: 'teacher', en: 'Click save.' },
+  ]},
+  { id: 'comp-internet-safe', scenario: 'Internet safety', turns: [
+    { speaker: 'teacher', en: 'Do not talk to strangers online.' },
+    { speaker: 'student', en: 'What about my password?' },
+    { speaker: 'teacher', en: 'Keep it private. Never share.' },
+  ]},
+  { id: 'comp-print-work', scenario: 'Printing work', turns: [
+    { speaker: 'student', en: 'Can I print my picture?' },
+    { speaker: 'teacher', en: 'Yes. Click print.' },
+    { speaker: 'student', en: 'The printer is not working.' },
+  ]},
+  { id: 'comp-headphones', scenario: 'Using headphones', turns: [
+    { speaker: 'teacher', en: 'Put on your headphones.' },
+    { speaker: 'student', en: 'The sound is too loud.' },
+    { speaker: 'teacher', en: 'Turn down the speaker.' },
+  ]},
+  { id: 'comp-logout', scenario: 'Finishing the lesson', turns: [
+    { speaker: 'teacher', en: 'Time to finish.' },
+    { speaker: 'student', en: 'Do I logout?' },
+    { speaker: 'teacher', en: 'Yes. Then turn off the monitor.' },
+  ]},
+];
+
+export const computerRoomImagePrompts: Record<string, string> = {
+  'computer-parts': `A primary school computer room showing one desktop computer station.
+Visible items: desktop computer tower, flat screen monitor, black keyboard, computer mouse on a mousepad, power cable, charger plug, headphones on the desk, small webcam on top of monitor, printer on a side table, speaker, power button glowing, USB port, disk drive.
+Style: warm children's book illustration, soft colours, friendly, clear outlines, European primary school, no text, no labels, no watermarks.`,
+
+  'using-computer': `A child using a computer in a primary school computer room.
+Visible items: child clicking the mouse, child typing on keyboard, child scrolling down a page, child dragging a file icon, child dropping it into a folder, child pressing save button, child opening a file, child closing a window, child deleting an item, child copying text, child pasting it, child printing a picture, child turning on the computer, child turning off the monitor.
+Style: warm children's book illustration, soft colours, friendly, diverse child, European primary school, no text, no labels.`,
+
+  'internet-safety': `Children learning about internet safety in a primary school computer room.
+Visible items: safe website with a green check, danger warning sign, stranger icon with a red cross, private lock symbol, child keeping password secret, child sharing with a real friend, child playing an educational game, child watching a learning video, login screen with username box, logout button, email envelope, internet globe symbol.
+Style: warm children's book illustration, soft colours, friendly, diverse children, European primary school, no text, no labels.`,
+};
