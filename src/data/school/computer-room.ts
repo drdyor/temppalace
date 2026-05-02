@@ -154,32 +154,68 @@ export const computerRoomDialogues: SchoolDialogue[] = [
     { speaker: 'teacher', en: 'Turn on the computer.' },
     { speaker: 'student', en: 'The screen is black.' },
     { speaker: 'teacher', en: 'Check the cable.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'teacher', en: 'Turn on your computer.' },
+      { speaker: 'student', en: "The screen's black." },
+      { speaker: 'teacher', en: 'Check the cable.' },
+    ]},
+  
   { id: 'comp-type-name', scenario: 'Typing practice', turns: [
     { speaker: 'teacher', en: 'Type your name on the keyboard.' },
     { speaker: 'student', en: 'How do I save it?' },
     { speaker: 'teacher', en: 'Click save.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'teacher', en: 'Type your name on the keyboard.' },
+      { speaker: 'student', en: 'How do I save it?' },
+      { speaker: 'teacher', en: 'Click save.' },
+    ]},
+  
   { id: 'comp-internet-safe', scenario: 'Internet safety', turns: [
     { speaker: 'teacher', en: 'Do not talk to strangers online.' },
     { speaker: 'student', en: 'What about my password?' },
     { speaker: 'teacher', en: 'Keep it private. Never share.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'teacher', en: "Don't talk to strangers online." },
+      { speaker: 'student', en: 'What about my password?' },
+      { speaker: 'teacher', en: 'Keep it private. Never share.' },
+    ]},
+  
   { id: 'comp-print-work', scenario: 'Printing work', turns: [
     { speaker: 'student', en: 'Can I print my picture?' },
     { speaker: 'teacher', en: 'Yes. Click print.' },
     { speaker: 'student', en: 'The printer is not working.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'student', en: 'Can I print my picture?' },
+      { speaker: 'teacher', en: 'Yeah. Click print.' },
+      { speaker: 'student', en: "The printer isn't working." },
+    ]},
+  
   { id: 'comp-headphones', scenario: 'Using headphones', turns: [
     { speaker: 'teacher', en: 'Put on your headphones.' },
     { speaker: 'student', en: 'The sound is too loud.' },
     { speaker: 'teacher', en: 'Turn down the speaker.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'teacher', en: 'Put your headphones on.' },
+      { speaker: 'student', en: "It's too loud." },
+      { speaker: 'teacher', en: 'Turn the volume down.' },
+    ]},
+  
   { id: 'comp-logout', scenario: 'Finishing the lesson', turns: [
     { speaker: 'teacher', en: 'Time to finish.' },
     { speaker: 'student', en: 'Do I logout?' },
     { speaker: 'teacher', en: 'Yes. Then turn off the monitor.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'teacher', en: 'Time to finish up.' },
+      { speaker: 'student', en: 'Do I logout?' },
+      { speaker: 'teacher', en: 'Yeah. Then turn the monitor off.' },
+    ]},
+  
 ];
 
 export const computerRoomImagePrompts: Record<string, string> = {

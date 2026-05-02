@@ -155,41 +155,89 @@ export const schoolLibraryDialogues: SchoolDialogue[] = [
     { speaker: 'peer', en: 'Yes. Show your card.' },
     { speaker: 'student', en: 'Here.' },
     { speaker: 'peer', en: 'Bring it back next week.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'student', en: 'Can I borrow this book?' },
+      { speaker: 'peer', en: 'Yeah. Show your card.' },
+      { speaker: 'student', en: 'Here.' },
+      { speaker: 'peer', en: 'Bring it back next week.' },
+    ]},
+  
   { id: 'lib-be-quiet', scenario: 'Being too loud', turns: [
     { speaker: 'peer', en: 'Shh. Be quiet.' },
     { speaker: 'student', en: 'Sorry.' },
     { speaker: 'peer', en: 'Whisper, please.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'peer', en: 'Shh. Be quiet.' },
+      { speaker: 'student', en: 'Sorry.' },
+      { speaker: 'peer', en: 'Whisper.' },
+    ]},
+  
   { id: 'lib-find-book', scenario: 'Finding a book', turns: [
     { speaker: 'student', en: 'Where are the animal books?' },
     { speaker: 'peer', en: 'On that shelf.' },
     { speaker: 'student', en: 'Thank you.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'student', en: 'Where are the animal books?' },
+      { speaker: 'peer', en: 'On that shelf.' },
+      { speaker: 'student', en: 'Thanks.' },
+    ]},
+  
   { id: 'lib-return-late', scenario: 'Returning late', turns: [
     { speaker: 'student', en: 'Sorry, the book is late.' },
     { speaker: 'peer', en: 'That is okay. Next time, be on time.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'student', en: 'Sorry, the book is late.' },
+      { speaker: 'peer', en: "That's okay. Next time, be on time." },
+    ]},
+  
   { id: 'lib-damaged', scenario: 'Damaged book', turns: [
     { speaker: 'student', en: 'The page is torn.' },
     { speaker: 'peer', en: 'Be more careful next time.' },
     { speaker: 'student', en: 'I am sorry.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'student', en: 'The page is torn.' },
+      { speaker: 'peer', en: 'Be more careful next time.' },
+      { speaker: 'student', en: "I'm sorry." },
+    ]},
+  
   { id: 'lib-read-together', scenario: 'Reading together', turns: [
     { speaker: 'peer', en: 'Do you want to read together?' },
     { speaker: 'student', en: 'Yes! Which book?' },
     { speaker: 'peer', en: 'This story about a cat.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'peer', en: 'Wanna read together?' },
+      { speaker: 'student', en: 'Yeah! Which book?' },
+      { speaker: 'peer', en: 'This story about a cat.' },
+    ]},
+  
   { id: 'lib-no-food', scenario: 'Food in the library', turns: [
     { speaker: 'peer', en: 'No food in the library.' },
     { speaker: 'student', en: 'Sorry. I will put it away.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'peer', en: 'No food in the library.' },
+      { speaker: 'student', en: "Sorry. I'll put it away." },
+    ]},
+  
   { id: 'lib-help-find', scenario: 'Librarian helps', turns: [
     { speaker: 'student', en: 'I cannot find this book.' },
     { speaker: 'peer', en: 'Let me help you.' },
     { speaker: 'peer', en: 'Here it is.' },
     { speaker: 'student', en: 'Thank you very much.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'student', en: "I can't find this book." },
+      { speaker: 'peer', en: 'Let me help you.' },
+      { speaker: 'peer', en: "Here it is." },
+      { speaker: 'student', en: 'Thanks very much.' },
+    ]},
+  
 ];
 
 export const schoolLibraryImagePrompts: Record<string, string> = {

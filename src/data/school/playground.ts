@@ -268,7 +268,12 @@ export const playgroundDialogues: SchoolDialogue[] = [
       { speaker: 'peer', en: 'Yes, in one minute.' },
       { speaker: 'peer', en: 'Thank you.' },
     ],
-  },
+    natural: [
+      { speaker: 'peer', en: 'Can I have a turn?' },
+      { speaker: 'peer', en: 'Yeah, in one minute.' },
+      { speaker: 'peer', en: 'Thanks.' },
+    ]},
+  
   {
     id: 'play-fell-down',
     scenario: 'Fell down in the playground',
@@ -278,7 +283,13 @@ export const playgroundDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'My knee hurts.' },
       { speaker: 'peer', en: 'I will get the teacher.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: 'I fell down.' },
+      { speaker: 'peer', en: 'Are you okay?' },
+      { speaker: 'student', en: 'My knee hurts.' },
+      { speaker: 'peer', en: "I'll get the teacher." },
+    ]},
+  
   {
     id: 'play-want-to-play',
     scenario: 'Asking to join a game',
@@ -288,7 +299,13 @@ export const playgroundDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'What are we playing?' },
       { speaker: 'peer', en: 'We are playing tag.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: 'Can I play?' },
+      { speaker: 'peer', en: 'Yeah, come on.' },
+      { speaker: 'student', en: 'What we playing?' },
+      { speaker: 'peer', en: "We're playing tag." },
+    ]},
+  
   {
     id: 'play-sharing',
     scenario: 'Sharing a toy',
@@ -297,7 +314,12 @@ export const playgroundDialogues: SchoolDialogue[] = [
       { speaker: 'peer', en: 'Yes, we can share.' },
       { speaker: 'peer', en: 'Your turn.' },
     ],
-  },
+    natural: [
+      { speaker: 'peer', en: 'Can I play with the ball?' },
+      { speaker: 'peer', en: 'Yeah, we can share.' },
+      { speaker: 'peer', en: 'Your turn.' },
+    ]},
+  
   {
     id: 'play-hurt',
     scenario: 'Telling the teacher about an injury',
@@ -306,7 +328,12 @@ export const playgroundDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'Let me see.' },
       { speaker: 'teacher', en: 'You need a plaster.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: "Teacher, I've hurt my arm." },
+      { speaker: 'teacher', en: 'Let me see.' },
+      { speaker: 'teacher', en: 'You need a plaster.' },
+    ]},
+  
   {
     id: 'play-time-to-go',
     scenario: 'Time to go inside',
@@ -315,7 +342,12 @@ export const playgroundDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'Do we have to?' },
       { speaker: 'teacher', en: 'Yes, it is time for lunch.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'Inside everyone.' },
+      { speaker: 'student', en: 'Do we have to?' },
+      { speaker: 'teacher', en: "Yeah, it's time for lunch." },
+    ]},
+  
   {
     id: 'play-lonely',
     scenario: 'Feeling left out',
@@ -324,7 +356,12 @@ export const playgroundDialogues: SchoolDialogue[] = [
       { speaker: 'peer', en: 'I will play with you.' },
       { speaker: 'student', en: 'Thank you. You are my friend.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: 'No one wants to play.' },
+      { speaker: 'peer', en: "I'll play with you." },
+      { speaker: 'student', en: "Thanks. You're my friend." },
+    ]},
+  
   {
     id: 'play-bathroom',
     scenario: 'Needing the bathroom during play',
@@ -332,7 +369,11 @@ export const playgroundDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'I need the bathroom.' },
       { speaker: 'teacher', en: 'Go quickly. Come back after.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: 'I need the toilet.' },
+      { speaker: 'teacher', en: 'Go quickly. Come back.' },
+    ]},
+  
 ];
 
 export const playgroundImagePrompts: Record<string, string> = {

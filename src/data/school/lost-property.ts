@@ -155,35 +155,75 @@ export const lostPropertyDialogues: SchoolDialogue[] = [
     { speaker: 'teacher', en: 'Check the lost property box.' },
     { speaker: 'student', en: 'It is not there.' },
     { speaker: 'teacher', en: 'What colour is it?' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'student', en: 'I lost my bag.' },
+      { speaker: 'teacher', en: 'Check the lost property box.' },
+      { speaker: 'student', en: "It's not there." },
+      { speaker: 'teacher', en: 'What colour is it?' },
+    ]},
+  
   { id: 'los-claim-jacket', scenario: 'Claiming a jacket', turns: [
     { speaker: 'student', en: 'Is this jacket yours?' },
     { speaker: 'peer', en: 'No. Mine is bigger.' },
     { speaker: 'student', en: 'Does it belong to him?' },
     { speaker: 'peer', en: 'Yes. It has his name.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'student', en: 'Is this your jacket?' },
+      { speaker: 'peer', en: "No. Mine's bigger." },
+      { speaker: 'student', en: 'Is it his?' },
+      { speaker: 'peer', en: 'Yeah. It has his name.' },
+    ]},
+  
   { id: 'los-describe', scenario: 'Describing a lost item', turns: [
     { speaker: 'teacher', en: 'Describe your shoe.' },
     { speaker: 'student', en: 'It is small and blue.' },
     { speaker: 'teacher', en: 'Does it have stripes?' },
     { speaker: 'student', en: 'No. It is plain.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'teacher', en: 'Describe your shoe.' },
+      { speaker: 'student', en: "It's small and blue." },
+      { speaker: 'teacher', en: 'Does it have stripes?' },
+      { speaker: 'student', en: "No. It's plain." },
+    ]},
+  
   { id: 'los-label', scenario: 'Name labels', turns: [
     { speaker: 'teacher', en: 'Put your name on the label.' },
     { speaker: 'student', en: 'Then I will not lose it.' },
     { speaker: 'teacher', en: 'If you lose it, we can find it.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'teacher', en: 'Put your name on the label.' },
+      { speaker: 'student', en: "Then I won't lose it." },
+      { speaker: 'teacher', en: 'If you lose it, we can find it.' },
+    ]},
+  
   { id: 'los-search', scenario: 'Searching together', turns: [
     { speaker: 'peer', en: 'I will help you look.' },
     { speaker: 'student', en: 'Let us search the classroom.' },
     { speaker: 'peer', en: 'Check your locker too.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'peer', en: "I'll help you look." },
+      { speaker: 'student', en: "Let's search the classroom." },
+      { speaker: 'peer', en: 'Check your locker too.' },
+    ]},
+  
   { id: 'los-found', scenario: 'Something found', turns: [
     { speaker: 'peer', en: 'I found a key.' },
     { speaker: 'student', en: 'Is it yours?' },
     { speaker: 'peer', en: 'No. It is not mine.' },
     { speaker: 'student', en: 'Let us ask whose it is.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'peer', en: 'I found a key.' },
+      { speaker: 'student', en: 'Is it yours?' },
+      { speaker: 'peer', en: "No. It's not mine." },
+      { speaker: 'student', en: "Let's ask whose it is." },
+    ]},
+  
 ];
 
 export const lostPropertyImagePrompts: Record<string, string> = {

@@ -155,34 +155,73 @@ export const gymDialogues: SchoolDialogue[] = [
     { speaker: 'teacher', en: 'Warm up time.' },
     { speaker: 'student', en: 'What are we playing?' },
     { speaker: 'teacher', en: 'Football.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'teacher', en: 'Line up everyone.' },
+      { speaker: 'teacher', en: 'Warm up time.' },
+      { speaker: 'student', en: 'What we playing?' },
+      { speaker: 'teacher', en: 'Football.' },
+    ]},
+  
   { id: 'gym-teams', scenario: 'Picking teams', turns: [
     { speaker: 'peer', en: 'Can I be on your team?' },
     { speaker: 'peer', en: 'Yes. We need one more.' },
     { speaker: 'student', en: 'I want to play too.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'peer', en: 'Can I be on your team?' },
+      { speaker: 'peer', en: 'Yeah. We need one more.' },
+      { speaker: 'student', en: 'I wanna play too.' },
+    ]},
+  
   { id: 'gym-hurt', scenario: 'Getting hurt in PE', turns: [
     { speaker: 'student', en: 'I hurt my leg.' },
     { speaker: 'teacher', en: 'Sit down. Rest.' },
     { speaker: 'student', en: 'Can I still play?' },
     { speaker: 'teacher', en: 'Not today.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'student', en: "I've hurt my leg." },
+      { speaker: 'teacher', en: 'Sit down. Rest.' },
+      { speaker: 'student', en: 'Can I still play?' },
+      { speaker: 'teacher', en: 'Not today.' },
+    ]},
+  
   { id: 'gym-win', scenario: 'Winning a game', turns: [
     { speaker: 'peer', en: 'We won!' },
     { speaker: 'student', en: 'Good game!' },
     { speaker: 'peer', en: 'You played well.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'peer', en: 'We won!' },
+      { speaker: 'student', en: 'Great game!' },
+      { speaker: 'peer', en: 'Nice one.' },
+    ]},
+  
   { id: 'gym-fair', scenario: 'Not fair play', turns: [
     { speaker: 'student', en: 'That is not fair.' },
     { speaker: 'teacher', en: 'What happened?' },
     { speaker: 'student', en: 'He pushed me.' },
     { speaker: 'teacher', en: 'No pushing in PE.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'student', en: "That's not fair." },
+      { speaker: 'teacher', en: 'What happened?' },
+      { speaker: 'student', en: 'He pushed me.' },
+      { speaker: 'teacher', en: 'No pushing.' },
+    ]},
+  
   { id: 'gym-shower', scenario: 'After PE', turns: [
     { speaker: 'teacher', en: 'PE is finished.' },
     { speaker: 'student', en: 'I am hot.' },
     { speaker: 'teacher', en: 'Drink some water.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'teacher', en: "PE's finished." },
+      { speaker: 'student', en: "I'm hot." },
+      { speaker: 'teacher', en: 'Drink some water.' },
+    ]},
+  
 ];
 
 export const gymImagePrompts: Record<string, string> = {

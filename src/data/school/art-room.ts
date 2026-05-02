@@ -263,7 +263,13 @@ export const artRoomDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'Mix them. You get green.' },
       { speaker: 'student', en: 'It is magic!' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'What colour do you want?' },
+      { speaker: 'student', en: 'I want blue and yellow.' },
+      { speaker: 'teacher', en: 'Mix them together. You get green.' },
+      { speaker: 'student', en: "It's magic!" },
+    ]},
+  
   {
     id: 'art-draw-shape',
     scenario: 'Drawing shapes',
@@ -273,7 +279,13 @@ export const artRoomDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'Yes. Use the ruler for the triangle.' },
       { speaker: 'student', en: 'I did it.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'Draw a circle and a square.' },
+      { speaker: 'student', en: 'Can I draw a star too?' },
+      { speaker: 'teacher', en: 'Yeah. Use the ruler for the triangle.' },
+      { speaker: 'student', en: 'I did it.' },
+    ]},
+  
   {
     id: 'art-cut-stick',
     scenario: 'Cutting and sticking',
@@ -283,7 +295,13 @@ export const artRoomDialogues: SchoolDialogue[] = [
       { speaker: 'peer', en: 'Thank you. Pass the glue please.' },
       { speaker: 'student', en: 'Here. Be careful with the cap.' },
     ],
-  },
+    natural: [
+      { speaker: 'peer', en: 'Can I borrow the scissors?' },
+      { speaker: 'student', en: "Yeah. Here you go." },
+      { speaker: 'peer', en: 'Thanks. Pass the glue.' },
+      { speaker: 'student', en: 'Here. Be careful with the cap.' },
+    ]},
+  
   {
     id: 'art-painting',
     scenario: 'Painting a picture',
@@ -293,7 +311,13 @@ export const artRoomDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'Use all the colours then.' },
       { speaker: 'student', en: 'It is beautiful.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'Use the brush for the sky.' },
+      { speaker: 'student', en: 'I wanna paint a rainbow.' },
+      { speaker: 'teacher', en: 'Use all the colours then.' },
+      { speaker: 'student', en: "It's beautiful." },
+    ]},
+  
   {
     id: 'art-collage',
     scenario: 'Making a collage',
@@ -303,7 +327,13 @@ export const artRoomDialogues: SchoolDialogue[] = [
       { speaker: 'peer', en: 'Can I help?' },
       { speaker: 'student', en: 'Yes. Tear the paper into small pieces.' },
     ],
-  },
+    natural: [
+      { speaker: 'peer', en: 'What are you making?' },
+      { speaker: 'student', en: 'A collage with paper and card.' },
+      { speaker: 'peer', en: 'Can I help?' },
+      { speaker: 'student', en: 'Yeah. Tear the paper into small pieces.' },
+    ]},
+  
   {
     id: 'art-clean-up',
     scenario: 'Cleaning up',
@@ -313,7 +343,13 @@ export const artRoomDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'On the shelf. Close the pots.' },
       { speaker: 'student', en: 'I clean my table too.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'Wash your brush.' },
+      { speaker: 'student', en: 'Where do I put the paint?' },
+      { speaker: 'teacher', en: 'On the shelf. Put the lids on.' },
+      { speaker: 'student', en: "I'll clean my table too." },
+    ]},
+  
   {
     id: 'art-show-work',
     scenario: 'Showing your work',
@@ -323,7 +359,13 @@ export const artRoomDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'Thank you. I worked hard.' },
       { speaker: 'peer', en: 'You are a good artist.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: 'Look at my picture.' },
+      { speaker: 'peer', en: "It's very nice. I like the colours." },
+      { speaker: 'student', en: 'Thanks. I worked hard on it.' },
+      { speaker: 'peer', en: "You're a good artist." },
+    ]},
+  
   {
     id: 'art-missing-tool',
     scenario: 'Finding a tool',
@@ -334,7 +376,14 @@ export const artRoomDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'Take a new one from the table.' },
       { speaker: 'student', en: 'Thank you.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: "I can't find my pencil." },
+      { speaker: 'teacher', en: 'Check the pencil box.' },
+      { speaker: 'student', en: "It's not there." },
+      { speaker: 'teacher', en: 'Take a new one from the table.' },
+      { speaker: 'student', en: 'Thanks.' },
+    ]},
+  
 ];
 
 // ============================================================================

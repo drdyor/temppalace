@@ -664,7 +664,12 @@ export const classroomDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'Here, take one.' },
       { speaker: 'student', en: 'Thank you.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: "I don't have a pencil." },
+      { speaker: 'teacher', en: 'Here, take one.' },
+      { speaker: 'student', en: 'Thanks.' },
+    ]},
+  
   {
     id: 'desk-can-i-use',
     scenario: 'Asking to use something',
@@ -672,7 +677,11 @@ export const classroomDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'Can I use the scissors?' },
       { speaker: 'teacher', en: 'Yes, but be careful.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: 'Can I use the scissors?' },
+      { speaker: 'teacher', en: 'Yeah, but be careful.' },
+    ]},
+  
   {
     id: 'desk-sharing-glue',
     scenario: 'Sharing supplies',
@@ -681,7 +690,12 @@ export const classroomDialogues: SchoolDialogue[] = [
       { speaker: 'peer', en: 'Yes, here.' },
       { speaker: 'peer', en: 'Thanks!' },
     ],
-  },
+    natural: [
+      { speaker: 'peer', en: 'Can I use your glue?' },
+      { speaker: 'peer', en: 'Yeah, here.' },
+      { speaker: 'peer', en: 'Thanks!' },
+    ]},
+  
   {
     id: 'teacher-sit-down',
     scenario: 'Teacher starts class',
@@ -691,7 +705,13 @@ export const classroomDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'Which page?' },
       { speaker: 'teacher', en: 'Page ten.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'Sit down, everyone.' },
+      { speaker: 'teacher', en: 'Get your books out.' },
+      { speaker: 'student', en: 'Which page?' },
+      { speaker: 'teacher', en: 'Page ten.' },
+    ]},
+  
   {
     id: 'teacher-raise-hand',
     scenario: 'Asking a question',
@@ -700,7 +720,12 @@ export const classroomDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'Can I go to the bathroom?' },
       { speaker: 'teacher', en: 'Yes, but hurry back.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'Hands up.' },
+      { speaker: 'student', en: 'Can I go to the bathroom?' },
+      { speaker: 'teacher', en: 'Yeah, but hurry back.' },
+    ]},
+  
   {
     id: 'teacher-look-at-board',
     scenario: 'Teacher gives instruction',
@@ -709,7 +734,12 @@ export const classroomDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'I cannot see.' },
       { speaker: 'teacher', en: 'Move your chair forward.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'Look at the board.' },
+      { speaker: 'student', en: "I can't see." },
+      { speaker: 'teacher', en: 'Move your chair up.' },
+    ]},
+  
   {
     id: 'walls-late-arrival',
     scenario: 'Arriving late',
@@ -717,7 +747,11 @@ export const classroomDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'Sorry, I am late.' },
       { speaker: 'teacher', en: 'Sit down. Quietly.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: "Sorry, I'm late." },
+      { speaker: 'teacher', en: 'Sit down. Quietly.' },
+    ]},
+  
   {
     id: 'walls-leaving',
     scenario: 'Leaving the classroom',
@@ -726,7 +760,12 @@ export const classroomDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'Where are we going?' },
       { speaker: 'teacher', en: 'To the playground.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'Line up.' },
+      { speaker: 'student', en: 'Where are we going?' },
+      { speaker: 'teacher', en: 'Playground.' },
+    ]},
+  
   {
     id: 'read-choose-book',
     scenario: 'Choosing a book',
@@ -734,7 +773,11 @@ export const classroomDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'Can I read this book?' },
       { speaker: 'teacher', en: 'Yes. Put it back after.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: 'Can I read this book?' },
+      { speaker: 'teacher', en: 'Yeah. Put it back after.' },
+    ]},
+  
   {
     id: 'group-work-together',
     scenario: 'Starting group work',
@@ -743,7 +786,12 @@ export const classroomDialogues: SchoolDialogue[] = [
       { speaker: 'peer', en: 'What do we do?' },
       { speaker: 'peer', en: 'We draw a poster.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'Get into groups.' },
+      { speaker: 'peer', en: 'What do we do?' },
+      { speaker: 'peer', en: 'We draw a poster.' },
+    ]},
+  
 ];
 
 // ============================================================================

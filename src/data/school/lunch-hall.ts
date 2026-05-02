@@ -262,7 +262,12 @@ export const lunchHallDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'I have a sandwich and an apple.' },
       { speaker: 'peer', en: 'Nice. I have pasta.' },
     ],
-  },
+    natural: [
+      { speaker: 'peer', en: 'What are you having for lunch?' },
+      { speaker: 'student', en: 'I have a sandwich and an apple.' },
+      { speaker: 'peer', en: 'Nice. I have pasta.' },
+    ]},
+  
   {
     id: 'lunch-can-i-sit',
     scenario: 'Asking to sit together',
@@ -271,7 +276,12 @@ export const lunchHallDialogues: SchoolDialogue[] = [
       { speaker: 'peer', en: 'Yes, sit down.' },
       { speaker: 'student', en: 'Thank you.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: 'Can I sit here?' },
+      { speaker: 'peer', en: 'Yeah, sit down.' },
+      { speaker: 'student', en: 'Thanks.' },
+    ]},
+  
   {
     id: 'lunch-sharing-food',
     scenario: 'Sharing food',
@@ -281,7 +291,13 @@ export const lunchHallDialogues: SchoolDialogue[] = [
       { speaker: 'peer', en: 'Here you are.' },
       { speaker: 'student', en: 'Thanks!' },
     ],
-  },
+    natural: [
+      { speaker: 'peer', en: 'Want some crisps?' },
+      { speaker: 'student', en: 'Yeah.' },
+      { speaker: 'peer', en: "Here you go." },
+      { speaker: 'student', en: 'Thanks!' },
+    ]},
+  
   {
     id: 'lunch-hungry',
     scenario: 'Feeling hungry',
@@ -291,7 +307,13 @@ export const lunchHallDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'I do not like it.' },
       { speaker: 'teacher', en: 'Try a little bit.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: "I'm hungry." },
+      { speaker: 'teacher', en: 'Eat your lunch.' },
+      { speaker: 'student', en: "I don't like it." },
+      { speaker: 'teacher', en: 'Try a little bit.' },
+    ]},
+  
   {
     id: 'lunch-thirsty',
     scenario: 'Needing a drink',
@@ -301,7 +323,13 @@ export const lunchHallDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'Can I have juice?' },
       { speaker: 'teacher', en: 'After you drink water.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: "I'm thirsty." },
+      { speaker: 'teacher', en: 'Drink some water.' },
+      { speaker: 'student', en: 'Can I have juice?' },
+      { speaker: 'teacher', en: 'After you drink water.' },
+    ]},
+  
   {
     id: 'lunch-finished',
     scenario: 'Finished eating',
@@ -311,7 +339,13 @@ export const lunchHallDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'Yes, it was good.' },
       { speaker: 'teacher', en: 'Now wash your hands.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: "I'm finished." },
+      { speaker: 'teacher', en: 'Was it good?' },
+      { speaker: 'student', en: 'Yeah, it was good.' },
+      { speaker: 'teacher', en: 'Wash your hands.' },
+    ]},
+  
   {
     id: 'lunch-queue',
     scenario: 'Waiting in line',
@@ -320,7 +354,12 @@ export const lunchHallDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'I want pizza.' },
       { speaker: 'teacher', en: 'Wait your turn.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'Queue up.' },
+      { speaker: 'student', en: 'I want pizza.' },
+      { speaker: 'teacher', en: 'Wait your turn.' },
+    ]},
+  
   {
     id: 'lunch-allergies',
     scenario: 'Food allergy',
@@ -330,7 +369,13 @@ export const lunchHallDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'Here is a safe sandwich.' },
       { speaker: 'student', en: 'Thank you.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: "I can't eat nuts." },
+      { speaker: 'teacher', en: 'Thanks for telling me.' },
+      { speaker: 'teacher', en: "Here's a safe sandwich." },
+      { speaker: 'student', en: 'Thanks.' },
+    ]},
+  
 ];
 
 // ============================================================================

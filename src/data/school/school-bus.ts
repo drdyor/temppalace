@@ -154,34 +154,72 @@ export const schoolBusDialogues: SchoolDialogue[] = [
     { speaker: 'driver', en: 'Good morning.' },
     { speaker: 'student', en: 'Good morning. Here is my pass.' },
     { speaker: 'driver', en: 'Sit down, please.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'driver', en: 'Good morning.' },
+      { speaker: 'student', en: "Good morning. Here's my pass." },
+      { speaker: 'driver', en: 'Sit down.' },
+    ]},
+  
   { id: 'bus-missed-stop', scenario: 'Missing your stop', turns: [
     { speaker: 'student', en: 'Did we pass my stop?' },
     { speaker: 'peer', en: 'Yes. The next stop is after school.' },
     { speaker: 'student', en: 'What do I do?' },
     { speaker: 'peer', en: 'Ask the driver.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'student', en: 'Did we pass my stop?' },
+      { speaker: 'peer', en: 'Yeah. The next stop is after school.' },
+      { speaker: 'student', en: 'What do I do?' },
+      { speaker: 'peer', en: 'Ask the driver.' },
+    ]},
+  
   { id: 'bus-no-seat', scenario: 'No seats left', turns: [
     { speaker: 'student', en: 'There are no seats.' },
     { speaker: 'driver', en: 'Hold on tight.' },
     { speaker: 'student', en: 'I will stand by the door.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'student', en: 'No seats left.' },
+      { speaker: 'driver', en: 'Hold on tight.' },
+      { speaker: 'student', en: "I'll stand by the door." },
+    ]},
+  
   { id: 'bus-loud', scenario: 'Being too loud', turns: [
     { speaker: 'driver', en: 'No shouting on the bus.' },
     { speaker: 'student', en: 'Sorry.' },
     { speaker: 'driver', en: 'Stay seated and be quiet.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'driver', en: 'No shouting on the bus.' },
+      { speaker: 'student', en: 'Sorry.' },
+      { speaker: 'driver', en: 'Stay seated and be quiet.' },
+    ]},
+  
   { id: 'bus-crossing', scenario: 'Crossing the road', turns: [
     { speaker: 'teacher', en: 'Look both ways before you cross.' },
     { speaker: 'student', en: 'The road is clear.' },
     { speaker: 'teacher', en: 'Walk. Do not run.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'teacher', en: 'Look both ways before you cross.' },
+      { speaker: 'student', en: 'The road is clear.' },
+      { speaker: 'teacher', en: "Walk. Don't run." },
+    ]},
+  
   { id: 'bus-stranger', scenario: 'Stranger at the stop', turns: [
     { speaker: 'student', en: 'A stranger is talking to me.' },
     { speaker: 'driver', en: 'Get on the bus quickly.' },
     { speaker: 'student', en: 'Should I tell my teacher?' },
     { speaker: 'driver', en: 'Yes. Always tell an adult.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'student', en: 'A stranger is talking to me.' },
+      { speaker: 'driver', en: 'Get on the bus quickly.' },
+      { speaker: 'student', en: 'Should I tell my teacher?' },
+      { speaker: 'driver', en: 'Yeah. Always tell an adult.' },
+    ]},
+  
 ];
 
 export const schoolBusImagePrompts: Record<string, string> = {

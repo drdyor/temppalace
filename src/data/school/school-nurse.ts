@@ -230,7 +230,12 @@ export const schoolNurseDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'Go to the nurse.' },
       { speaker: 'student', en: 'Okay.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: 'I feel sick.' },
+      { speaker: 'teacher', en: 'Go to the nurse.' },
+      { speaker: 'student', en: 'Okay.' },
+    ]},
+  
   {
     id: 'nurse-head-hurts',
     scenario: 'Headache',
@@ -239,7 +244,12 @@ export const schoolNurseDialogues: SchoolDialogue[] = [
       { speaker: 'nurse', en: 'Sit down. Rest.' },
       { speaker: 'student', en: 'Thank you.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: 'My head hurts.' },
+      { speaker: 'nurse', en: 'Sit down. Rest.' },
+      { speaker: 'student', en: 'Thanks.' },
+    ]},
+  
   {
     id: 'nurse-cut-finger',
     scenario: 'Cut finger',
@@ -249,7 +259,13 @@ export const schoolNurseDialogues: SchoolDialogue[] = [
       { speaker: 'nurse', en: 'I will put a plaster on it.' },
       { speaker: 'student', en: 'Thank you.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: 'I cut my finger.' },
+      { speaker: 'nurse', en: 'Let me see.' },
+      { speaker: 'nurse', en: "I'll put a plaster on it." },
+      { speaker: 'student', en: 'Thanks.' },
+    ]},
+  
   {
     id: 'nurse-temperature',
     scenario: 'Checking temperature',
@@ -259,7 +275,13 @@ export const schoolNurseDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'Can I go home?' },
       { speaker: 'nurse', en: 'I will call your mum.' },
     ],
-  },
+    natural: [
+      { speaker: 'nurse', en: 'Open your mouth.' },
+      { speaker: 'nurse', en: 'You have a fever.' },
+      { speaker: 'student', en: 'Can I go home?' },
+      { speaker: 'nurse', en: "I'll call your mum." },
+    ]},
+  
   {
     id: 'nurse-stomach-ache',
     scenario: 'Stomach ache',
@@ -269,7 +291,13 @@ export const schoolNurseDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'No.' },
       { speaker: 'nurse', en: 'Drink some water.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: 'My stomach hurts.' },
+      { speaker: 'nurse', en: 'Did you eat lunch?' },
+      { speaker: 'student', en: 'No.' },
+      { speaker: 'nurse', en: 'Drink some water.' },
+    ]},
+  
   {
     id: 'nurse-scared',
     scenario: 'Feeling scared',
@@ -279,7 +307,13 @@ export const schoolNurseDialogues: SchoolDialogue[] = [
       { speaker: 'nurse', en: 'You are safe here.' },
       { speaker: 'student', en: 'Thank you.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: "I'm scared." },
+      { speaker: 'nurse', en: "Don't worry." },
+      { speaker: 'nurse', en: "You're safe here." },
+      { speaker: 'student', en: 'Thanks.' },
+    ]},
+  
   {
     id: 'nurse-go-home',
     scenario: 'Sent home',
@@ -289,7 +323,13 @@ export const schoolNurseDialogues: SchoolDialogue[] = [
       { speaker: 'nurse', en: 'Yes. Rest at home.' },
       { speaker: 'student', en: 'Bye. Thank you.' },
     ],
-  },
+    natural: [
+      { speaker: 'nurse', en: 'Your mum is here.' },
+      { speaker: 'student', en: 'Can I go home?' },
+      { speaker: 'nurse', en: 'Yeah. Rest at home.' },
+      { speaker: 'student', en: 'Bye. Thanks.' },
+    ]},
+  
   {
     id: 'nurse-better',
     scenario: 'Feeling better',
@@ -298,7 +338,12 @@ export const schoolNurseDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'I feel better.' },
       { speaker: 'nurse', en: 'Good. Go back to class.' },
     ],
-  },
+    natural: [
+      { speaker: 'nurse', en: 'How do you feel?' },
+      { speaker: 'student', en: 'I feel better.' },
+      { speaker: 'nurse', en: 'Good. Go back to class.' },
+    ]},
+  
 ];
 
 // ============================================================================

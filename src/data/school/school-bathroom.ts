@@ -180,7 +180,12 @@ export const schoolBathroomDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'Yes, but hurry back.' },
       { speaker: 'student', en: 'Thank you.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: 'Can I go to the bathroom?' },
+      { speaker: 'teacher', en: 'Yeah, but hurry back.' },
+      { speaker: 'student', en: 'Thanks.' },
+    ]},
+  
   {
     id: 'sb-wash-hands',
     scenario: 'Teacher reminds to wash hands',
@@ -189,7 +194,12 @@ export const schoolBathroomDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'Okay.' },
       { speaker: 'teacher', en: 'Use soap.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'Wash your hands.' },
+      { speaker: 'student', en: 'Okay.' },
+      { speaker: 'teacher', en: 'And use soap.' },
+    ]},
+  
   {
     id: 'sb-no-paper',
     scenario: 'No toilet paper',
@@ -198,7 +208,12 @@ export const schoolBathroomDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'I will get some.' },
       { speaker: 'student', en: 'Thank you.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: "There's no paper." },
+      { speaker: 'teacher', en: "I'll get some." },
+      { speaker: 'student', en: 'Thanks.' },
+    ]},
+  
   {
     id: 'sb-hurry',
     scenario: 'Hurrying back',
@@ -206,7 +221,11 @@ export const schoolBathroomDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'Hurry up, please.' },
       { speaker: 'student', en: 'I am coming.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'Hurry up.' },
+      { speaker: 'student', en: "I'm coming." },
+    ]},
+  
   {
     id: 'sb-queue',
     scenario: 'Waiting in line',
@@ -214,7 +233,11 @@ export const schoolBathroomDialogues: SchoolDialogue[] = [
       { speaker: 'peer', en: 'Wait your turn.' },
       { speaker: 'student', en: 'Okay. Sorry.' },
     ],
-  },
+    natural: [
+      { speaker: 'peer', en: 'Wait your turn.' },
+      { speaker: 'student', en: 'Okay. Sorry.' },
+    ]},
+  
   {
     id: 'sb-dry-hands',
     scenario: 'Drying hands',
@@ -223,7 +246,12 @@ export const schoolBathroomDialogues: SchoolDialogue[] = [
       { speaker: 'peer', en: 'Use the towel.' },
       { speaker: 'student', en: 'Thank you.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: 'My hands are wet.' },
+      { speaker: 'peer', en: 'Use the towel.' },
+      { speaker: 'student', en: 'Thanks.' },
+    ]},
+  
 ];
 
 // ============================================================================

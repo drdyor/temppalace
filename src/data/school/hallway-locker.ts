@@ -230,7 +230,12 @@ export const hallwayLockerDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'Where do we go?' },
       { speaker: 'teacher', en: 'To the classroom.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'Line up.' },
+      { speaker: 'student', en: 'Where do we go?' },
+      { speaker: 'teacher', en: 'To class.' },
+    ]},
+  
   {
     id: 'hl-lost',
     scenario: 'Lost in the hallway',
@@ -239,7 +244,12 @@ export const hallwayLockerDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'Turn left. Then right.' },
       { speaker: 'student', en: 'Thank you.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: "Where's my classroom?" },
+      { speaker: 'teacher', en: 'Left. Then right.' },
+      { speaker: 'student', en: 'Thanks.' },
+    ]},
+  
   {
     id: 'hl-locker',
     scenario: 'At the locker',
@@ -248,7 +258,12 @@ export const hallwayLockerDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'Yes. Here is my name tag.' },
       { speaker: 'peer', en: 'Sorry. I made a mistake.' },
     ],
-  },
+    natural: [
+      { speaker: 'peer', en: 'Is this your locker?' },
+      { speaker: 'student', en: "Yeah. Here's my name tag." },
+      { speaker: 'peer', en: 'Sorry. I made a mistake.' },
+    ]},
+  
   {
     id: 'hl-no-running',
     scenario: 'No running in the hallway',
@@ -257,7 +272,12 @@ export const hallwayLockerDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'Sorry.' },
       { speaker: 'teacher', en: 'Walk, please.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: "Don't run." },
+      { speaker: 'student', en: 'Sorry.' },
+      { speaker: 'teacher', en: 'Walk.' },
+    ]},
+  
   {
     id: 'hl-be-quiet',
     scenario: 'Being quiet',
@@ -265,7 +285,11 @@ export const hallwayLockerDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'Be quiet in the hallway.' },
       { speaker: 'student', en: 'Okay. Sorry.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'Quiet in the hallway.' },
+      { speaker: 'student', en: 'Okay. Sorry.' },
+    ]},
+  
   {
     id: 'hl-follow',
     scenario: 'Following the teacher',
@@ -274,7 +298,12 @@ export const hallwayLockerDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'Where are we going?' },
       { speaker: 'teacher', en: 'To the playground.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'Follow me.' },
+      { speaker: 'student', en: 'Where are we going?' },
+      { speaker: 'teacher', en: 'Playground.' },
+    ]},
+  
   {
     id: 'hl-stairs',
     scenario: 'On the stairs',
@@ -283,7 +312,12 @@ export const hallwayLockerDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'Which floor?' },
       { speaker: 'teacher', en: 'The first floor.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'Up the stairs.' },
+      { speaker: 'student', en: 'Which floor?' },
+      { speaker: 'teacher', en: 'The first floor.' },
+    ]},
+  
   {
     id: 'hl-exit',
     scenario: 'Finding the exit',
@@ -292,7 +326,12 @@ export const hallwayLockerDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'Go straight. Then left.' },
       { speaker: 'student', en: 'Thank you.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: "Where's the exit?" },
+      { speaker: 'teacher', en: 'Go straight. Then left.' },
+      { speaker: 'student', en: 'Thanks.' },
+    ]},
+  
 ];
 
 // ============================================================================

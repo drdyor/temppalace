@@ -152,35 +152,72 @@ export interface SchoolDialogue { id: string; scenario: string; turns: SchoolDia
 export const scienceLabDialogues: SchoolDialogue[] = [
   { id: 'sci-microscope-look', scenario: 'Using the microscope', turns: [
     { speaker: 'teacher', en: 'Look in the microscope.' },
-    { speaker: 'student', en: 'What do I see?' },
+    { speaker: 'student', en: 'What am I looking at?' },
     { speaker: 'teacher', en: 'A tiny insect.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'teacher', en: 'Look in the microscope.' },
+      { speaker: 'student', en: 'What am I looking at?' },
+      { speaker: 'teacher', en: 'A tiny insect.' },
+    ]},
+  
   { id: 'sci-mix-pour', scenario: 'Mixing experiment', turns: [
     { speaker: 'teacher', en: 'Pour the water into the beaker.' },
-    { speaker: 'student', en: 'Now what?' },
+    { speaker: 'student', en: 'What now?' },
     { speaker: 'teacher', en: 'Mix and stir.' },
     { speaker: 'student', en: 'The colour changed.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'teacher', en: 'Pour the water into the beaker.' },
+      { speaker: 'student', en: 'What now?' },
+      { speaker: 'teacher', en: 'Mix and stir.' },
+      { speaker: 'student', en: 'The colour changed.' },
+    ]},
+  
   { id: 'sci-plant-seed', scenario: 'Growing a seed', turns: [
     { speaker: 'teacher', en: 'Plant the seed in the soil.' },
     { speaker: 'student', en: 'Will it grow?' },
     { speaker: 'teacher', en: 'Yes. Water it and watch.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'teacher', en: 'Plant the seed in the soil.' },
+      { speaker: 'student', en: 'Will it grow?' },
+      { speaker: 'teacher', en: 'Yeah. Water it and watch.' },
+    ]},
+  
   { id: 'sci-measure-weigh', scenario: 'Measuring things', turns: [
     { speaker: 'student', en: 'Can I weigh the rock?' },
     { speaker: 'teacher', en: 'Use the scale.' },
     { speaker: 'student', en: 'Now I will measure it with the ruler.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'student', en: 'Can I weigh the rock?' },
+      { speaker: 'teacher', en: 'Use the scale.' },
+      { speaker: 'student', en: "Now I'll measure it with the ruler." },
+    ]},
+  
   { id: 'sci-safety', scenario: 'Safety first', turns: [
     { speaker: 'teacher', en: 'Wear your goggles.' },
     { speaker: 'student', en: 'Do I need gloves?' },
     { speaker: 'teacher', en: 'Yes. And the apron too.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'teacher', en: 'Wear your goggles.' },
+      { speaker: 'student', en: 'Do I need gloves?' },
+      { speaker: 'teacher', en: 'Yeah. And the apron too.' },
+    ]},
+  
   { id: 'sci-guess-result', scenario: 'Making a guess', turns: [
     { speaker: 'teacher', en: 'What do you guess will happen?' },
     { speaker: 'student', en: 'I guess it will change.' },
     { speaker: 'teacher', en: 'Let us test it and see the result.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'teacher', en: 'What do you think will happen?' },
+      { speaker: 'student', en: "I guess it'll change." },
+      { speaker: 'teacher', en: "Let's test it and see the result." },
+    ]},
+  
 ];
 
 export const scienceLabImagePrompts: Record<string, string> = {

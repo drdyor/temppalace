@@ -154,32 +154,68 @@ export const musicRoomDialogues: SchoolDialogue[] = [
     { speaker: 'student', en: 'Can I play the piano?' },
     { speaker: 'teacher', en: 'Yes. Be careful.' },
     { speaker: 'student', en: 'It sounds nice.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'student', en: 'Can I play the piano?' },
+      { speaker: 'teacher', en: 'Yeah. Be careful.' },
+      { speaker: 'student', en: 'Sounds lovely.' },
+    ]},
+  
   { id: 'mus-loud-drum', scenario: 'Drum is too loud', turns: [
     { speaker: 'teacher', en: 'The drum is too loud.' },
     { speaker: 'student', en: 'Sorry. I will play quietly.' },
     { speaker: 'teacher', en: 'Thank you.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'teacher', en: "That drum's too loud." },
+      { speaker: 'student', en: "Sorry. I'll play quietly." },
+      { speaker: 'teacher', en: 'Thanks.' },
+    ]},
+  
   { id: 'mus-concert-ready', scenario: 'Concert practice', turns: [
     { speaker: 'teacher', en: 'The concert is on Friday.' },
     { speaker: 'student', en: 'I need to practise more.' },
     { speaker: 'teacher', en: 'Practise the chorus.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'teacher', en: "Concert's on Friday." },
+      { speaker: 'student', en: 'I need more practice.' },
+      { speaker: 'teacher', en: 'Work on the chorus then.' },
+    ]},
+  
   { id: 'mus-choir-sing', scenario: 'Singing in choir', turns: [
     { speaker: 'peer', en: 'Do you sing in the choir?' },
     { speaker: 'student', en: 'Yes. I like the melody.' },
     { speaker: 'peer', en: 'The harmony is beautiful.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'peer', en: 'Do you sing in the choir?' },
+      { speaker: 'student', en: 'Yeah. I like the melody.' },
+      { speaker: 'peer', en: "The harmony's beautiful." },
+    ]},
+  
   { id: 'mus-clap-rhythm', scenario: 'Clapping rhythm', turns: [
     { speaker: 'teacher', en: 'Clap the beat.' },
     { speaker: 'student', en: 'Like this?' },
     { speaker: 'teacher', en: 'Yes. Keep the rhythm.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'teacher', en: 'Clap the beat.' },
+      { speaker: 'student', en: 'Like this?' },
+      { speaker: 'teacher', en: 'Yeah. Keep the rhythm.' },
+    ]},
+  
   { id: 'mus-recorder', scenario: 'Playing recorder', turns: [
     { speaker: 'student', en: 'Can I try the recorder?' },
     { speaker: 'teacher', en: 'Blow gently.' },
     { speaker: 'student', en: 'It makes a high sound.' },
-  ]},
+  ],
+    natural: [
+      { speaker: 'student', en: 'Can I try the recorder?' },
+      { speaker: 'teacher', en: 'Blow gently.' },
+      { speaker: 'student', en: "It's really high." },
+    ]},
+  
 ];
 
 export const musicRoomImagePrompts: Record<string, string> = {

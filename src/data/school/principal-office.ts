@@ -262,7 +262,12 @@ export const principalOfficeDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'Yes, come in. Sit down.' },
       { speaker: 'student', en: 'Thank you.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: 'Can I come in?' },
+      { speaker: 'teacher', en: 'Yeah, come in. Sit down.' },
+      { speaker: 'student', en: 'Thanks.' },
+    ]},
+  
   {
     id: 'principal-problem',
     scenario: 'Talking about a problem',
@@ -272,7 +277,13 @@ export const principalOfficeDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'Tell me the truth.' },
       { speaker: 'student', en: 'He took my pen.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: "What's the problem?" },
+      { speaker: 'student', en: 'A boy was unkind to me.' },
+      { speaker: 'teacher', en: 'Tell me what happened.' },
+      { speaker: 'student', en: 'He took my pen.' },
+    ]},
+  
   {
     id: 'principal-sorry',
     scenario: 'Saying sorry',
@@ -282,7 +293,13 @@ export const principalOfficeDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'I was rude.' },
       { speaker: 'teacher', en: 'Thank you for telling me.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: "I'm sorry." },
+      { speaker: 'teacher', en: 'Why are you sorry?' },
+      { speaker: 'student', en: 'I was rude.' },
+      { speaker: 'teacher', en: 'Thanks for telling me.' },
+    ]},
+  
   {
     id: 'principal-rules',
     scenario: 'Learning the rules',
@@ -292,7 +309,13 @@ export const principalOfficeDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'Good. Include everyone.' },
       { speaker: 'student', en: 'I understand.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: "What's the rule?" },
+      { speaker: 'student', en: 'Be kind and polite.' },
+      { speaker: 'teacher', en: 'Good. Include everyone.' },
+      { speaker: 'student', en: 'I understand.' },
+    ]},
+  
   {
     id: 'principal-worry',
     scenario: 'Feeling worried',
@@ -302,7 +325,13 @@ export const principalOfficeDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'I do not understand the work.' },
       { speaker: 'teacher', en: 'I will help you.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: 'I feel worried.' },
+      { speaker: 'teacher', en: "Don't worry. Explain to me." },
+      { speaker: 'student', en: "I don't understand the work." },
+      { speaker: 'teacher', en: "I'll help you." },
+    ]},
+  
   {
     id: 'principal-promise',
     scenario: 'Making a promise',
@@ -312,7 +341,13 @@ export const principalOfficeDialogues: SchoolDialogue[] = [
       { speaker: 'teacher', en: 'I trust you.' },
       { speaker: 'student', en: 'Thank you.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'Can you be good?' },
+      { speaker: 'student', en: 'Yeah, I promise.' },
+      { speaker: 'teacher', en: 'I trust you.' },
+      { speaker: 'student', en: 'Thanks.' },
+    ]},
+  
   {
     id: 'principal-fair',
     scenario: 'Being fair',
@@ -322,7 +357,13 @@ export const principalOfficeDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'He did not share.' },
       { speaker: 'teacher', en: 'I will talk to him.' },
     ],
-  },
+    natural: [
+      { speaker: 'student', en: "That's unfair." },
+      { speaker: 'teacher', en: 'Why do you think that?' },
+      { speaker: 'student', en: "He didn't share." },
+      { speaker: 'teacher', en: "I'll talk to him." },
+    ]},
+  
   {
     id: 'principal-respect',
     scenario: 'Showing respect',
@@ -331,7 +372,12 @@ export const principalOfficeDialogues: SchoolDialogue[] = [
       { speaker: 'student', en: 'Yes, I will.' },
       { speaker: 'teacher', en: 'Respect helps us be friends.' },
     ],
-  },
+    natural: [
+      { speaker: 'teacher', en: 'Show respect to everyone.' },
+      { speaker: 'student', en: "Yeah, I will." },
+      { speaker: 'teacher', en: 'Respect helps us all be friends.' },
+    ]},
+  
 ];
 
 // ============================================================================
